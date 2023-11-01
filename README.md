@@ -41,4 +41,4 @@ Colombia) .
 https://www.mercadolibre.com.ar/ - https://www.fanaticguitars.com/en/
 https://www.hoffmannmusica.com.ar/
 
-4. DESCRIPCIÓN DE LOS INTEGRANTES DEL GRUPO
+
