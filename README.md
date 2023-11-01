@@ -38,8 +38,7 @@ nuestras audiencias.
 Colombia) .
 
 2. REFERENTES DE INSPIRACIÓN
-Referentes de Pablo: https://www.mercadolibre.com.ar/ - https://www.hoffmannmusica.com.ar/](https://www.fanaticguitars.com/en/
-
-Referentes de JuanF: https://www.hoffmannmusica.com.ar/
+https://www.mercadolibre.com.ar/ - https://www.fanaticguitars.com/en/
+https://www.hoffmannmusica.com.ar/
 
 4. DESCRIPCIÓN DE LOS INTEGRANTES DEL GRUPO
