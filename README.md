@@ -1,5 +1,27 @@
 # PROYECTO INTEGRADOR GRUPO 11
+Nombre del sitio: SoundBox®
 
+1. BREVE DESCRIPCIÓN DEL E-COMMERCE (BRIEF)
+// Para revisar y definir en grupo antes de subir el README GitHub
+¿Qué es soundBox®?
+Es una tienda taller online especializada en la venta, alquiler y reparación de instrumentos
+musicales e implementos para la producción musical. Además, asesoramos y realizamos el
+montaje de escenarios para conciertos musicales de todo tipo.
+¿Cuáles son los productos y servicios que ofrecerá este ecommerce?
+1) Productos
+a. Venta
+• Instrumentos musicales e implementos para la producción musical nuevos
+• Instrumentos musicales e implementos para la producción musical de segunda
+(en muy buen estado)
+2) Servicios
+b. Alquiler
+• Instrumentos musicales e implementos para la producción musical.
+c. Reparación
+• Instrumentos musicales e implementos para la producción musical.
+d. Envíos
+• Servicio de recogida y entrega (venta, alquiler y reparación) con cobertura local
+(Sedes en Argentina y Colombia).
+e. Montaje de escenarios para conciertos
 ¿Quién será su audiencia?
 
 1) Primaria: Músicos, ‘melómanos’ y personas que en general les apasione la música y la
