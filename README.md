@@ -50,4 +50,11 @@ https://www.hoffmannmusica.com.ar/
 --Soy estudiante de Digital House
 
 - ##### Pablo Ariel Bellotto
-- Actualmente soy estudiante de Digital House, desde que descubri el mundo de la programacion senti que era super interesante y entretenido como resolver un rompecabezas. 
+- Actualmente soy estudiante de Digital House, desde que descubri el mundo de la programacion senti que era super interesante y entretenido como resolver un rompecabezas.
+
+- #### Juan Fosch
+Soy Argentino, de la provincia de Mendoza y tengo 32 años. Me considero una persona muy curiosa, me interesa aprender y saber de todo.
+Soy muy futbolero (hincha de Boca), me encanta la música, salir con amigos y todavía mantengo el gusto por los videojuegos.
+Fui Piloto de Avión durante 10 años, de los cuales 6 fueron como profesional. Trabajé en diferentes tipos de vuelos en muchos lugares de Argentina y de Chile, pero dejé esa carrera en busca de un mejor estilo de vida. 
+Después de eso trabajé un año y medio como desarrollador de tableros de visualización en proyectos de Business Intelligence con Power BI, con cierta participación en el manejo de Bases de Datos y procesos ETL.
+Hace un año que estoy estudiando programación de manera autodidacta, con el lenguaje Python y el framework Django, y últimamente estoy haciendo un curso donde también se aplica JavaScript como lenguaje de Front-End.
