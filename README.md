@@ -55,8 +55,8 @@ https://www.hoffmannmusica.com.ar/
     - <b>HTML</b> 🟠
     - <b>Css</b> 🔵
     - <b>JavaScript</b> 🟡
- - ##### Mi rol en el grupo
-   - Ahun no se mi rol  
+  - ###### Mi rol en el grupo
+    - Aún no se mi rol  
 
 - ##### Pablo Ariel Bellotto
 - Actualmente soy estudiante de Digital House, desde que descubri el mundo de la programacion senti que era super interesante y entretenido como resolver un rompecabezas.
