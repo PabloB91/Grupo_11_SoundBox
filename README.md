@@ -47,7 +47,16 @@ https://www.hoffmannmusica.com.ar/
 3. DESCRIPCIÓN DE LOS INTEGRANTES DEL GRUPO
 
 - ##### Miguel Angel Varags Navarro
---Soy estudiante de Digital House
+  - Soy estudiante de Digital House.
+  - Soy un apasionado por las nuevas tecnologias y me gusta estar en constante aprendizaje.
+
+  - Tego conocimientos basicos en las siguientes tecnlogias de desarrollo :
+
+    - <b>HTML</b> 🟠
+    - <b>Css</b> 🔵
+    - <b>JavaScript</b> 🟡
+ - ##### Mi rol en el grupo
+   - Ahun no se mi rol  
 
 - ##### Pablo Ariel Bellotto
 - Actualmente soy estudiante de Digital House, desde que descubri el mundo de la programacion senti que era super interesante y entretenido como resolver un rompecabezas.
