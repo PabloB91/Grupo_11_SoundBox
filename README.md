@@ -67,3 +67,13 @@ Soy muy futbolero (hincha de Boca), me encanta la música, salir con amigos y to
 Fui Piloto de Avión durante 10 años, de los cuales 6 fueron como profesional. Trabajé en diferentes tipos de vuelos en muchos lugares de Argentina y de Chile, pero dejé esa carrera en busca de un mejor estilo de vida. 
 Después de eso trabajé un año y medio como desarrollador de tableros de visualización en proyectos de Business Intelligence con Power BI, con cierta participación en el manejo de Bases de Datos y procesos ETL.
 Hace un año que estoy estudiando programación de manera autodidacta, con el lenguaje Python y el framework Django, y últimamente estoy haciendo un curso donde también se aplica JavaScript como lenguaje de Front-End.
+
+- ##### Francisco Capitani
+Soy argentino, vivo en Buenos Aires, tengo 18 años. Estoy terminando la secundaria y encaminado a entrar a una universidad a estudiar "Ingenieria en Informatica".
+ Conocimiento (cursos en FreeCodeCamp o paginas externas):
+   -HTML5
+   -CSS
+   -Python(muy basico)
+
+Soy una persona que me amoldo muy facilmente a la situacion, puedo dar opiniones sobre varias perspectivas de vista y me encanta ayudar en todo lo posible.
+         AUN NO SE MI ROL EN EL GRUPO
