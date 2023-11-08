@@ -41,7 +41,7 @@ b.	Envíos
 
 2. REFERENTES DE INSPIRACIÓN
 https://www.mercadolibre.com.ar/ - https://www.fanaticguitars.com/en/
-https://www.hoffmannmusica.com.ar/
+https://www.hoffmannmusica.com.ar/ https://musicplace.themerex.net/home-2/
 
 
 3. DESCRIPCIÓN DE LOS INTEGRANTES DEL GRUPO
@@ -79,6 +79,9 @@ Soy argentino, vivo en Buenos Aires, tengo 18 años. Estoy terminando la secunda
 
 Soy una persona que me amoldo muy facilmente a la situacion, puedo dar opiniones sobre varias perspectivas de vista y me encanta ayudar en todo lo posible.
          AUN NO SE MI ROL EN EL GRUPO
+
+- #### Juan Sebastián Cárdenas Salas
+20 años cultivando experiencias como diseñador gráfico, director creativo, director audiovisual, y experto en branding. Encuentro mi verdadera vocación al descubrir una ciencia holística que me permite entender a las empresas como ‘sistemas vivientes’ más allá de ‘marcas’. Trabajo en la actualidad como Consultor en Comunicaciones & Desarrollo Organizacional Ecosocial (DOE) facilitando procesos de comunicación corporativa, gestión de interdependencias, branding y transformación cultural en varias compañías.
          
   
   
