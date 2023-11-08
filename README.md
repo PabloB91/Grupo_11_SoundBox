@@ -77,3 +77,32 @@ Soy argentino, vivo en Buenos Aires, tengo 18 años. Estoy terminando la secunda
 
 Soy una persona que me amoldo muy facilmente a la situacion, puedo dar opiniones sobre varias perspectivas de vista y me encanta ayudar en todo lo posible.
          AUN NO SE MI ROL EN EL GRUPO
+         
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  - ##### Bautista Garcia Oliver
+
+tengo 20 años, soy de Buenos Aires, tengo perfecto conocimiento en cuatro idiomas, me interesé en la programación en tiempos de pandemia.
+    aún no tengo asignado un rol en el proyecto
