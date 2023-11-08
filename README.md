@@ -60,6 +60,8 @@ https://www.hoffmannmusica.com.ar/
 
 - ##### Pablo Ariel Bellotto
 - Actualmente soy estudiante de Digital House, desde que descubri el mundo de la programacion senti que era super interesante y entretenido como resolver un rompecabezas.
+- ###### Mi rol en el grupo
+- Aun no se el rol de grupo.
 
 - #### Juan Fosch
 Soy Argentino, de la provincia de Mendoza y tengo 32 años. Me considero una persona muy curiosa, me interesa aprender y saber de todo.
