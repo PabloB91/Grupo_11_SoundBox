@@ -46,7 +46,7 @@ https://www.hoffmannmusica.com.ar/
 
 3. DESCRIPCIÓN DE LOS INTEGRANTES DEL GRUPO
 
-- ##### Miguel Ángel Varagas Navarro
+- ##### Miguel Ángel Vargas Navarro
   - Soy estudiante de Digital House.
   - Soy un apasionado por las nuevas tecnologías y me gusta estar en constante aprendizaje.
 
