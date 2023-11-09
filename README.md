@@ -15,28 +15,23 @@ Es una tienda online especializada en la venta de instrumentos musicales e imple
 ### 3) ¿Cuáles son los productos y servicios que ofrecerá este ecommerce?
 
    -	Productos
-
-      a.	Venta
-
+     a.	Venta
       -	Instrumentos musicales e implementos para la producción musical nuevos
       -	Instrumentos musicales e implementos para la producción musical de segunda (en muy buen estado)
 
    -	Servicios
-
       b.	Envíos
-
       -	Servicio de entrega y recogida (venta, alquiler y reparación) con cobertura local (Sedes en Argentina y Colombia).
 
 ### 4) ¿Quién será su audiencia?
-
-    -	Primaria: Músicos, ‘melómanos’ y personas que en general les apasione la música y la producción musical.
+   -	Primaria: Músicos, ‘melómanos’ y personas que en general les apasione la música y la producción musical.
 
 ### 5) ¿Cómo nos comunicaremos y relacionaremos con la audiencia?
 
-    -	El sitio web es el medio principal de comunicación, oferta y venta de productos y servicios. 
-    -	Diferentes redes sociales para generar interacciones con las audiencias. 
-    -	Sedes físicas (de Lunes a Sábado de 8 a.m. a 5 p.m.)
-    -	Presencia en diferentes eventos y ferias musicales (Argentina y Colombia).
+   -	El sitio web es el medio principal de comunicación, oferta y venta de productos y servicios. 
+   -	Diferentes redes sociales para generar interacciones con las audiencias. 
+   -	Sedes físicas (de Lunes a Sábado de 8 a.m. a 5 p.m.)
+   -	Presencia en diferentes eventos y ferias musicales (Argentina y Colombia).
 
 ### 6) REFERENTES DE INSPIRACIÓN :
   - https://www.mercadolibre.com.ar/
@@ -46,7 +41,7 @@ Es una tienda online especializada en la venta de instrumentos musicales e imple
     
 ### 7) WIREFRAMES
 
-     - #### Formularios de registro e inicio.
+   - #### Formularios de registro e inicio.
      ![andoid](/wireframes/Android) 
 
 ### 8) DESCRIPCIÓN DE LOS INTEGRANTES DEL GRUPO
@@ -97,7 +92,7 @@ ________________________________________________________________________________
      
   Soy una persona que me amoldo muy facilmente a la situacion, puedo dar opiniones sobre varias perspectivas de vista y me encanta ayudar en todo lo posible.
   
-    AUN NO SE MI ROL EN EL GRUPO
+   AUN NO SE MI ROL EN EL GRUPO
          
 ___________________________________________________________________________________________________________________________________
 
