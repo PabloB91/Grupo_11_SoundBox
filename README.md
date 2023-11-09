@@ -38,6 +38,7 @@ Es una tienda online especializada en la venta de instrumentos musicales e imple
   - https://www.fanaticguitars.com/en/
   - https://www.hoffmannmusica.com.ar/
   - https://musicplace.themerex.net/home-2/
+  - https://www.musimaster.com/guitarras-tipo-les-paul-c-7/marca-gibson
     
 ## 7. WIREFRAMES
 
