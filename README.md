@@ -42,7 +42,9 @@ Es una tienda online especializada en la venta de instrumentos musicales e imple
 ### 7) WIREFRAMES
 
    - #### Formularios de registro e inicio.
-     ![andoid](/wireframes/Android) 
+     
+     ![android](/wireframes/Android_Small_Log-in.png)
+     
 
 ### 8) DESCRIPCIÓN DE LOS INTEGRANTES DEL GRUPO
 ___________________________________________________________________________________________________________________________________
@@ -57,7 +59,7 @@ ________________________________________________________________________________
       - <b>HTML</b> 🟠
       - <b>Css</b> 🔵
       - <b>JavaScript</b> 🟡
-      - 
+        
     - ###### Mi rol en el grupo
       - Aún no sé mi rol  
 ___________________________________________________________________________________________________________________________________
@@ -102,30 +104,8 @@ ________________________________________________________________________________
 
 ___________________________________________________________________________________________________________________________________
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  - ##### Bautista Garcia Oliver
+  - #### Bautista Garcia Oliver
 
-tengo 20 años, soy de Buenos Aires, tengo perfecto conocimiento en cuatro idiomas, me interesé en la programación en tiempos de pandemia.
-    aún no tengo asignado un rol en el proyecto
+    Tengo 20 años, soy de Buenos Aires, tengo perfecto conocimiento en cuatro idiomas, me interesé en la programación en tiempos de pandemia.
+    Aún no tengo asignado un rol en el proyecto
+___________________________________________________________________________________________________________________________________
