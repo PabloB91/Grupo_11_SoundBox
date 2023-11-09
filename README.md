@@ -50,7 +50,7 @@ Es una tienda online especializada en la venta de instrumentos musicales e imple
 
      - Computador
 
-     ![log-in](/Wireframes/Forms_for_computer_sign-in.jpg)
+     ![log-in](/Wireframes/Forms_for_computer_Log-in.jpg)
      ![sign-up](/Wireframes/Forms_for_computer_sign-up.jpg)
 
    - ### Home
