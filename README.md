@@ -1,73 +1,41 @@
 # PROYECTO INTEGRADOR GRUPO 11
 Temática del Market Place, Referentes y Perfil del grupo
 
-## soundBox® 
-// nombre momentáneo
+## BREVE DESCRIPCIÓN DEL E-COMMERCE "soundBox"® 
 
-## 1. BREVE DESCRIPCIÓN DEL E-COMMERCE (BRIEF)
- 
-// Para revisar y definir en grupo antes de subir el README GitHub
-
-## 2. ¿Qué es soundBox®?
+## 1. ¿Qué es soundBox®?
 
 Es una tienda online especializada en la venta de instrumentos musicales e implementos para la producción musical nuevos y de segunda.
 
-## 3. ¿Cuáles son los productos y servicios que ofrecerá este ecommerce?
+## 2. ¿Cuáles son los productos y servicios que ofrecerá este ecommerce?
 
-   -	Productos
-     a.	Venta
-      -	Instrumentos musicales e implementos para la producción musical nuevos
-      -	Instrumentos musicales e implementos para la producción musical de segunda (en muy buen estado)
+Productos:
 
-   -	Servicios
-      b.	Envíos
-      -	Servicio de entrega y recogida (venta, alquiler y reparación) con cobertura local (Sedes en Argentina y Colombia).
+- Venta de instrumentos musicales e implementos para la producción musical nuevos.
+- Venta de instrumentos musicales e implementos para la producción musical de segunda (en muy buen estado).
 
-## 4. ¿Quién será su audiencia?
-   -	Primaria: Músicos, ‘melómanos’ y personas que en general les apasione la música y la producción musical.
+Servicios:
+   -	Servicio de entrega y recogida (venta, alquiler) con cobertura local (Sedes en Argentina y Colombia).
+      
 
-## 5. ¿Cómo nos comunicaremos y relacionaremos con la audiencia?
+## 3. ¿Quién será su audiencia?
+   Músicos, ‘melómanos’ y personas que en general les apasione la música y la producción musical.
+
+## 4. ¿Cómo nos comunicaremos y relacionaremos con la audiencia?
 
    -	El sitio web es el medio principal de comunicación, oferta y venta de productos y servicios. 
    -	Diferentes redes sociales para generar interacciones con las audiencias. 
    -	Sedes físicas (de Lunes a Sábado de 8 a.m. a 5 p.m.)
    -	Presencia en diferentes eventos y ferias musicales (Argentina y Colombia).
 
-## 6. REFERENTES DE INSPIRACIÓN :
+## 5. REFERENTES DE INSPIRACIÓN :
   - https://www.mercadolibre.com.ar/
   - https://www.fanaticguitars.com/en/
   - https://www.hoffmannmusica.com.ar/
   - https://musicplace.themerex.net/home-2/
   - https://www.musimaster.com/guitarras-tipo-les-paul-c-7/marca-gibson
-    
-## 7. WIREFRAMES
-
-   - ### Formularios de registro e inicio.
-
-     - Android
-
-     ![Log-in](/Wireframes/Android_Small_Log-in.png)
-     ![Sign-up](/Wireframes/Android_Small_Sign-up.png)
-
-     - Computador
-
-     ![sig-in](/Wireframes/Forms_for_computer_Log-in.jpg)
-     ![sign-up](/Wireframes/Forms_for_computer_sign-up.jpg)
-
-   - ### Home
-
-     - Computador
-
-     ![home_slider](/Wireframes/Header_Banner_2.jpg)
-
-   - ### Mi cajita (carrito)
-
-     - Computador
-
-     ![MIcajita_carrito](/Wireframes/miCajitaSoundBox.png)
      
-
-### 8. DESCRIPCIÓN DE LOS INTEGRANTES DEL GRUPO
+### 6. DESCRIPCIÓN DE LOS INTEGRANTES DEL GRUPO
 ___________________________________________________________________________________________________________________________________
 
   - ##### Miguel Ángel Vargas Navarro
