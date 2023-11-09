@@ -39,9 +39,11 @@ b.	Envíos
 •	Presencia en diferentes eventos y ferias musicales (Argentina y Colombia).
 
 
-2. REFERENTES DE INSPIRACIÓN
-https://www.mercadolibre.com.ar/ - https://www.fanaticguitars.com/en/
-https://www.hoffmannmusica.com.ar/ https://musicplace.themerex.net/home-2/
+2. REFERENTES DE INSPIRACIÓN :
+  - https://www.mercadolibre.com.ar/
+  - https://www.fanaticguitars.com/en/
+  - https://www.hoffmannmusica.com.ar/
+  - https://musicplace.themerex.net/home-2/
 
 
 3. DESCRIPCIÓN DE LOS INTEGRANTES DEL GRUPO
