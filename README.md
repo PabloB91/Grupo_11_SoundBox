@@ -1,18 +1,18 @@
 # PROYECTO INTEGRADOR GRUPO 11
 Temática del Market Place, Referentes y Perfil del grupo
 
-<b>soundBox®</b> 
+## soundBox® 
 // nombre momentáneo
 
-1. BREVE DESCRIPCIÓN DEL E-COMMERCE (BRIEF)
+## 1. BREVE DESCRIPCIÓN DEL E-COMMERCE (BRIEF)
  
 // Para revisar y definir en grupo antes de subir el README GitHub
 
-## 2) ¿Qué es soundBox®?
+## 2. ¿Qué es soundBox®?
 
 Es una tienda online especializada en la venta de instrumentos musicales e implementos para la producción musical nuevos y de segunda.
 
-### 3) ¿Cuáles son los productos y servicios que ofrecerá este ecommerce?
+### 3. ¿Cuáles son los productos y servicios que ofrecerá este ecommerce?
 
    -	Productos
      a.	Venta
@@ -23,30 +23,37 @@ Es una tienda online especializada en la venta de instrumentos musicales e imple
       b.	Envíos
       -	Servicio de entrega y recogida (venta, alquiler y reparación) con cobertura local (Sedes en Argentina y Colombia).
 
-### 4) ¿Quién será su audiencia?
+### 4. ¿Quién será su audiencia?
    -	Primaria: Músicos, ‘melómanos’ y personas que en general les apasione la música y la producción musical.
 
-### 5) ¿Cómo nos comunicaremos y relacionaremos con la audiencia?
+### 5. ¿Cómo nos comunicaremos y relacionaremos con la audiencia?
 
    -	El sitio web es el medio principal de comunicación, oferta y venta de productos y servicios. 
    -	Diferentes redes sociales para generar interacciones con las audiencias. 
    -	Sedes físicas (de Lunes a Sábado de 8 a.m. a 5 p.m.)
    -	Presencia en diferentes eventos y ferias musicales (Argentina y Colombia).
 
-### 6) REFERENTES DE INSPIRACIÓN :
+### 6. REFERENTES DE INSPIRACIÓN :
   - https://www.mercadolibre.com.ar/
   - https://www.fanaticguitars.com/en/
   - https://www.hoffmannmusica.com.ar/
   - https://musicplace.themerex.net/home-2/
     
-### 7) WIREFRAMES
+### 7. WIREFRAMES
 
    - #### Formularios de registro e inicio.
-     
-     ![android](/Wireframes/Android_Small_Log-in.png)
+     - Android
+
+     ![Log-in](/Wireframes/Android_Small_Log-in.png)
+     ![Sign-up](/Wireframes/Android_Small_Sign-up.png)
+
+     - Computador
+
+     ![log-in](/Wireframes/Forms_for_computer_sign-in.jpg)
+     ![sign-up](/Wireframes/Forms_for_computer_sign-up.jpg)
      
 
-### 8) DESCRIPCIÓN DE LOS INTEGRANTES DEL GRUPO
+### 8. DESCRIPCIÓN DE LOS INTEGRANTES DEL GRUPO
 ___________________________________________________________________________________________________________________________________
 
   - ##### Miguel Ángel Vargas Navarro
