@@ -43,7 +43,7 @@ Es una tienda online especializada en la venta de instrumentos musicales e imple
 
    - #### Formularios de registro e inicio.
      
-     ![android](/wireframes/Android_Small_Log-in.png)
+     ![android](/Wireframes/Android_Small_Log-in.png)
      
 
 ### 8) DESCRIPCIÓN DE LOS INTEGRANTES DEL GRUPO
