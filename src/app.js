@@ -20,3 +20,10 @@ app.get("/login", (req, res)=>{
   let htmlPath = path.resolve(__dirname, "views/login.html");
   res.sendFile(htmlPath)
 })
+
+/* carrito  */
+
+app.get("/productCart", (req, res)=>{
+  let htmlPath = path.resolve(__dirname, "views/productCart.html");
+  res.sendFile(htmlPath)
+})

@@ -1,0 +1,239 @@
+* {
+    box-sizing: border-box;
+
+}
+main {
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    width: 100%;
+}
+
+.carrito {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.title {
+display: flex;
+}
+
+
+
+.galery {
+    background-color: gray;
+
+    width: 65%;
+    height: 36rem;
+    
+    /* flex-properties */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    aspect-ratio: 10 / 12;
+    overflow: scroll;
+}
+
+.card {
+    height: 10rem;
+    width: 95%;
+    height: 20%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    left: 0;
+    position: sticky;
+    /* flex properties */
+
+    background-color: #ebebeb;
+    border-radius: 25px;
+    margin: 10px;
+}
+
+.product-image {
+    padding: 1rem;
+    width: 45%;
+
+}
+
+.product-image img {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-self: center;
+    align-self: center;
+    padding: 3px;
+}
+
+.product-description {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+
+}
+
+.product-description h5 {
+margin: 0.5rem;
+}
+
+.delete-card-button {
+    width: 10%;
+    display: flex;
+    border-radius: 8px;
+}
+
+.delete-card-button button{
+    width: 100%;
+    display: flex;
+    border-radius: 8px;
+}
+
+.card-middle-divisor {
+    
+}
+
+.card-middle-divisor input {
+    width: 60%;
+    height: 25px;
+    align-self: center;
+    justify-self: center;
+}
+
+.delete-card-button {
+    display: none;
+    height: 15px;
+    align-self: flex-start;
+}
+
+.delete-card-button button {
+    height: 25px;
+    margin: 5px;
+    padding: 2px;
+}
+
+.payement-card {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    /* ( flex properties ) */
+
+    margin-right: 1.5rem;
+    margin-bottom: 1.5rem;
+    margin-left: 1.5rem;
+    margin-top: 0;
+}
+
+.total {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border-radius: 25%;
+    width: 100%;
+    height: 10rem;
+    background-color: orange;
+
+}
+
+.payement-button {
+    width: 60%;
+    height: 50%;
+    align-self: center;
+    justify-self: flex-end;
+    
+}
+
+.payement-button button {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+
+}
+
+.total-amount {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+
+.subtotal {
+    padding: 1rem;
+    margin-top: 1rem;
+    background-color: orange;
+    border-radius: 8px;
+
+    display: flex;
+    flex-direction: column;
+    
+    position: relative;
+    aspect-ratio: 10 / 8.5;
+    overflow: scroll;
+}
+
+.subtotal .subtotal-item-cards {
+    display: flex;
+    padding: 0.3rem;
+    left: 0;
+    position: sticky;
+
+}
+
+.subtotal-item-cards span {
+    display: flex;
+    justify-content: flex-end;
+    align-self: center;
+
+}
+
+.corredor {
+    width: 90vw;
+    height: 25rem;
+    background-color: red;
+    margin: 0.5rem;
+    padding: 0.5rem;
+
+    /* flex-properties */
+    display: flex;
+    position: relative;
+    aspect-ratio: 1 / 2;
+    overflow: scroll;
+}
+
+.image-related {
+    width: 25%;
+    left: 0;
+    position: sticky;
+
+}
+
+
+
+
+
+
+
+/* animacion simple */
+
+.card:hover .delete-card-button {
+    display: flex;
+
+}
+
+.card:hover {
+    /* box-shadow: 10 10 10 100px gray; */
+    transform: scale(0.95);
+
+}
+
+/* animacion simple */
