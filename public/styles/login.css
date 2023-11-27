@@ -1,0 +1,11 @@
+form{
+    border: solid 2px #f00;
+}
+
+section {
+    border: solid 1px #0f0;
+}
+
+div {
+    border: solid 1px #00f;
+}

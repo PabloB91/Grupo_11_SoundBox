@@ -11,3 +11,14 @@ app.get("/", (req, res)=>{
   let htmlPath = path.resolve(__dirname, "src/views/home.html");
   res.sendFile(htmlPath)
 })
+
+/* FORMS */
+app.get("/login", (req, res)=>{
+  let htmlPath = path.resolve(__dirname, "src/views/login.html");
+  res.sendFile(htmlPath)
+})
+
+app.get("/register", (req, res)=>{
+  let htmlPath = path.resolve(__dirname, "src/views/register.html");
+  res.sendFile(htmlPath)
+})
