@@ -8,7 +8,7 @@ app.listen(3050,()=>{
 });
 
 app.get("/", (req, res)=>{
-  let htmlPath = path.resolve(__dirname, "src/views/home.html");
+  let htmlPath = path.resolve(__dirname, "views/home.html");
   res.sendFile(htmlPath)
 })
 

@@ -1,0 +1,134 @@
+
+
+.separador {
+    width: 100%;
+    height: 1rem;
+    background-color: orange;
+    border: none;
+}
+
+/*-----------------------------------------------
+--------------------HEADER-----------------------
+-------------------------------------------------*/
+
+header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+header #logo {
+    width: 10%;
+}
+.nav-bar ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-end;
+    padding-right: 1rem;
+}
+
+.nav-bar li {
+    padding-right: 1rem;
+}
+
+.login-bar ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.login-bar li {
+    padding-right: 1rem;
+}
+
+/*-----------------------------------------------
+--------------------MAIN-----------------------
+-------------------------------------------------*/
+
+main {
+    background-color: beige;
+}
+
+h2 {
+    text-align: center;
+}
+
+.items-categorias {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.items-mas-vendidos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+
+.items-productos-mostrados {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.complementos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+
+
+
+/*-----------------------------------------------
+--------------------FOOTER-----------------------
+-------------------------------------------------*/
+footer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-end;
+    background-color: dimgray;
+}
+
+#logo-footer {
+    width: 10%;
+}
+.footer-bar ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.footer-bar li {
+    padding-right: 1rem;
+}
+
+.redes ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.redes li {
+    padding-right: 1rem;
+}
