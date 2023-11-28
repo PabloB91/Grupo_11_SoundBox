@@ -1,0 +1,153 @@
+/* ----------------------- GENERAL ----------------------- */
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+main{
+    padding: 25px 220px;
+}
+
+/* ----------------------- HEADER ----------------------- */
+
+.logo{
+    width: 125px;
+}
+
+.nav-bar-ul{
+    display: flex;
+}
+
+.nav-bar-li{
+    padding-right: 15px;
+}
+
+.nav-bar-menu{
+    display: flex;
+    align-items: center;
+}
+
+.nav-bar-menu-icon{
+    display: flex;
+    padding: 0 15px;
+}
+
+.header-log-bar{
+    display: flex;
+    align-items: center;
+    padding-bottom: 12px;
+    justify-content: space-evenly;
+}
+
+.nav-bar-ul-sec{
+    display: flex;
+
+}
+
+.nav-bar-menu-sec{
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 0;
+}
+
+
+
+/* ----------------------- MAIN ----------------------- */
+
+.product-image-n1{
+    width: 450px
+}
+
+.information-product-general{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.product-complete-web-description{
+    display: flex;
+    align-items: flex-start;
+}
+
+.product-name-title{
+    padding: 8px 0 0 0;
+}
+
+
+.product-price{
+    display: flex;
+    padding: 22px 0;
+}
+
+.product-description{
+    padding: 0 0 20px 0;
+}
+
+.product-select-color-web{
+    padding: 15px 0;
+}
+
+.product-quant-web-color-options{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#product-quantity{
+    width: 65px;
+    text-align: center;
+    border: none;
+    position: relative;
+    top: 15px;
+}
+
+.add-to-the-shop-cart{
+    padding: 0 30px;
+    position: relative;
+    top: 40px;
+    right: 80px;
+}
+
+.color-bottom-invisible{
+    margin-right: 50px;
+}
+
+.categories-product-relationated{
+    padding: 45px 0 0 0;
+}
+
+.tags-products-web{
+    padding: 15px 0 0 0;
+}
+
+
+/* ----------------------- FOOTER ----------------------- */
+
+.footer-bar-ul{
+    display: flex;
+}
+
+.footer-bar-ul-redes{
+    display: flex;
+}
+
+.footer-bar-menu-sec{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer-bar-li{
+    padding: 0 8px;    
+}
+
+.logo-footer{
+    width: 100px;
+}
+
+a:link, a:visited,  a:hover, a:active{
+    text-decoration: none;
+    color: black;
+}

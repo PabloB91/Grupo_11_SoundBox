@@ -27,3 +27,4 @@ app.get("/productCart", (req, res)=>{
   let htmlPath = path.resolve(__dirname, "views/productCart.html");
   res.sendFile(htmlPath)
 })
+
