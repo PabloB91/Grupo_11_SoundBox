@@ -28,3 +28,9 @@ app.get("/productCart", (req, res)=>{
   res.sendFile(htmlPath)
 })
 
+/* descripcion de producto  */
+
+app.get("/productDetail", (req, res)=>{
+  let htmlPath = path.resolve(__dirname, "views/productDetail.html");
+  res.sendFile(htmlPath)
+})
