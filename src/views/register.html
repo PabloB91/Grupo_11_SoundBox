@@ -126,30 +126,34 @@
         </section>
     </header>
     
-    <section>
-        <h2>Crear cuenta<h2>
-        <form action="/register" method="POST">
+    <section class="main">
+        
+        <h2 class="title">Crear cuenta<h2>
+        
+            <form action="/register" method="POST">
             
-            <div class="box-container">
-            <div class="form">
+            <div class>
+                <div class="form">
                 <label>Nombre</label>
                 <input type="text" name="nombre">
-            </div>
-            <div class="form"> 
+                </div>
+                <div class="form">
                 <label>Apellido</label>
                 <input type="text" name="apellido">
-            </div>
-            <div class="form">
+                </div>
+                <div class="form">
                 <label>Nombre de usuario</label>
                 <input type="text" name="username">
-            </div>
-            <div class="form">
+                </div>
+                <div class="form">
                 <label>Email</label>
                 <input type="email" name="email">
-            </div>
+                </div>
             <div class="form">
+                <div class="inputBar">
                 <label>Contraseña</label> 
                 <input type="password" name="contraseña">
+            </div>
             </div>
             <div class="form">
                 <label>Repetir contraseña</label> 
@@ -159,6 +163,7 @@
                 <button type="submit">Crear cuenta</button>
             </div>
         </div>
+        </div>        
         </form>
         <p class="login">¿Ya tienes una cuenta? <a href="login.html">Iniciar sesion</a></p>
     </section>

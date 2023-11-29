@@ -26,6 +26,8 @@ div {
 .title{
     width: 100%;
     text-align: center;
+    color: #ff540a;
+    font-family: sans-serif;
 }
 
 .form{
@@ -56,3 +58,8 @@ div {
     color: #ff540a;
 }
 
+.inputBar{
+    display: block;
+    max-width: 60%;
+    margin-bottom: 15px;
+  }
