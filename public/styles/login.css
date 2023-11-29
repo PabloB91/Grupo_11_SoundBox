@@ -1,4 +1,4 @@
-form{
+/* form{
     border: solid 2px #f00;
 }
 
@@ -7,5 +7,51 @@ section {
 }
 
 div {
+
     border: solid 1px #00f;
+} */
+
+.main{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 80vh;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+    color: #fff;
+    
+}
+
+.title{
+    width: 100%;
+    text-align: center;
+}
+
+.form{
+    display: flex;
+    margin: auto;
+    width: 90%;
+    height: 80%;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: 15px;
+    background: #e6e6e6;
+    backdrop-filter: blur(0.5rem);
+    -webkit-backdrop-filter: blur(0.4rem);
+    
+
+}
+
+
+.box-container{
+    color: #000;
+    width: 100%;
+    height: 50%;
+}
+
+.box-container{
+    color: #ff540a;
 }
