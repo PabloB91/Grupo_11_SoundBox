@@ -114,12 +114,14 @@ p {
 
 .note-title {
     font-size: 18px;
+    font-weight: bold;
     text-decoration: underline;
     color:#ffffff;
 }
 
 .note-text {
     font-size: 18px;
+    line-height: 26px;
     background-color: black;
-    color: #FF540A;
+    color:#ffffff;
 }
