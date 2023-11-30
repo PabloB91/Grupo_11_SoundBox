@@ -17,42 +17,173 @@ main {
 
 h2 {
     text-align: center;
+    font-family: 'Montserrat';
+    font-weight:900
 }
 
+
+/*-----COMPRA POR CATEGORÍA-----*/
 .compra-por-categoria{
     background-color: #B7B3A1;
+    height: 70vh
 }
-
+.compra-por-categoria h2{
+    position: relative;
+    top:1rem;
+}
 .items-categorias {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     align-items: flex-end;
+    margin-top: 2rem;
+}
+.categoria{
+    position: relative;
+    border: solid white;
+    width: 20vw;
+    height: 17vh;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    margin-right: 2rem;
+    z-index: 3;
+}
+.categoria a{
+    text-decoration: none;
+}
+.categoria p{
+    position: relative;
+    font-size: 28px;
+    top: 6.1vh;
+    left: 6.8vw;
+    z-index: 2;
+    color: white;
 }
 
+.categoria img{
+    width: 19.7vw;
+    height: 16.2vh;
+    border-radius: 8px;
+    opacity: 0.5;
+    position: absolute;
+    left: 0px;
+    right: 1px;
+    top: 0px;
+}
+
+
+.compra-por-categoria .button{
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+
+}
+.compra-por-categoria button{
+    font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 12px;
+    color: white;
+    background-color: black;
+    width: 18vw;
+    height: 8vh;
+    padding: 1rem;
+    border-radius: 18px;
+}
+
+
+/*-----MÁS VENDIDOS-----*/
+.fa-chevron-up {
+    color: black;
+}
 .items-mas-vendidos {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: flex-end;
+    justify-content: center;
+    align-items: flex-start;
 }
 
+.producto img{
+    border: solid black;
+    width: 16vw;
+    height: 45vh;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    margin-right: 2rem;
+}
+.producto p{
+    font-family: 'Montserrat';
+    font-size: 12px;
+}
+.detalle-producto{
+    width: 16vw;
+}
+.container-detalle{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 
+/*----PRODUCTOS MOSTRADOS-----*/
 .items-productos-mostrados {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: flex-end;
+    justify-content: center;
+    align-items: flex-start;
 }
+
+
+
+/*----COMPLEMENTOS-----*/
+
 
 .complementos {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: flex-end;
+    justify-content: center;
+    align-items: flex-start;
 }
 
+.complementos h3 {
+    text-align: left;
+    font-family: 'Montserrat';
+    font-weight:900;
+    border-bottom: solid #FF540A;
+}
+
+.destacados,
+.comentarios,
+.novedades {
+    display: flex;
+    flex-direction: column;
+}
+
+.complementos .producto{
+    display: flex;
+    flex-direction: row;
+}
+.complementos .producto img{
+    width: 8vw;
+    height: 20vh;
+}
+.complementos .container-detalle{
+    display: flex;
+    flex-direction: column;
+}
+.complementos .detalle-producto {
+    width: 10vw;
+}
+
+.espacio-publicitario img{
+    width: 15vw;
+    height: 45vh;
+}
+
+
+.mas-vendidos, .productos-mostrados, .complementos {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
