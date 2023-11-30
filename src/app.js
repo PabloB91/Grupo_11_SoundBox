@@ -30,6 +30,7 @@ app.get("/productCart", (req, res)=>{
 
 /* Para ver la guía tipográfica - luego se puede eliminar  */
 
-app.get('/fontguide', (req, res) => {
-  res.sendFile(path.resolve(__dirname, './src/views/fontsguidesbx.html'));
+app.get('/fontguide', (req, res)=>{
+  let htmlPath = path.resolve(__dirname, "views/fontsguidesbx.html");
+  res.sendFile(htmlPath)
 })
