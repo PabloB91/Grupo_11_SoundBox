@@ -28,9 +28,9 @@ app.get("/productCart", (req, res)=>{
   res.sendFile(htmlPath)
 })
 
-/* descripcion de producto  */
+/* Para ver la guía tipográfica - luego se puede eliminar  */
 
-app.get("/productDetail", (req, res)=>{
-  let htmlPath = path.resolve(__dirname, "views/productDetail.html");
+app.get('/fontguide', (req, res)=>{
+  let htmlPath = path.resolve(__dirname, "views/fontsguidesbx.html");
   res.sendFile(htmlPath)
 })

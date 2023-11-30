@@ -3,52 +3,11 @@
 *{
     margin: 0;
     padding: 0;
+
 }
 
 main{
-    padding: 25px 220px;
-}
-
-/* ----------------------- HEADER ----------------------- */
-
-.logo{
-    width: 125px;
-}
-
-.nav-bar-ul{
-    display: flex;
-}
-
-.nav-bar-li{
-    padding-right: 15px;
-}
-
-.nav-bar-menu{
-    display: flex;
-    align-items: center;
-}
-
-.nav-bar-menu-icon{
-    display: flex;
-    padding: 0 15px;
-}
-
-.header-log-bar{
-    display: flex;
-    align-items: center;
-    padding-bottom: 12px;
-    justify-content: space-evenly;
-}
-
-.nav-bar-ul-sec{
-    display: flex;
-
-}
-
-.nav-bar-menu-sec{
-    display: flex;
-    justify-content: space-around;
-    padding: 15px 0;
+    padding: 33px 220px;
 }
 
 
@@ -122,30 +81,6 @@ main{
     padding: 15px 0 0 0;
 }
 
-
-/* ----------------------- FOOTER ----------------------- */
-
-.footer-bar-ul{
-    display: flex;
-}
-
-.footer-bar-ul-redes{
-    display: flex;
-}
-
-.footer-bar-menu-sec{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.footer-bar-li{
-    padding: 0 8px;    
-}
-
-.logo-footer{
-    width: 100px;
-}
 
 a:link, a:visited,  a:hover, a:active{
     text-decoration: none;

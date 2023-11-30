@@ -26,6 +26,8 @@ div {
 .title{
     width: 100%;
     text-align: center;
+    color: #ff540a;
+    font-family: sans-serif;
 }
 
 .form{
@@ -54,4 +56,30 @@ div {
 
 .box-container{
     color: #ff540a;
+}
+
+.inputBar{
+    display: block;
+    max-width: 60%;
+    margin-bottom: 15px;
+  }
+.fontForm{
+    text-decoration: none;
+    font-family: 'Bebas Neue' ;   
+    font-size: 30px;
+    color: #ff540a;
+    text-align: center;
+}
+
+.formB{
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 10px;
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        transition: 0.2s .7s ease-in-out;
+   
 }
