@@ -3,7 +3,7 @@
 -------------------------------------------------*/
 
 header {
-    height: 28vh;
+    height: 30vh;
 }
 
 header #logo {
@@ -12,8 +12,9 @@ header #logo {
 
 header a {
     text-decoration: none;
-    font-family: 'Bebas Neue' ;   
-    font-size: 20px;
+    font-family: 'Montserrat' ;   
+    font-size: 14px;
+    font-weight: 400;
 }
 
 .header-superior{

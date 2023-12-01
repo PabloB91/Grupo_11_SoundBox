@@ -40,7 +40,7 @@
             </div>
         </section>
         <section class="header-inferior">
-            <img id="logo" src="/img/svg/estandar.svg" alt="SoundBox">
+            <a href="/" target="_blank"><img id="logo" src="/img/svg/estandar.svg" alt="SoundBox"></a> 
             <div class="nav-bar">
                 <ul>
                     <div class="dropdown">
@@ -126,49 +126,58 @@
         </section>
     </header>
     
-    <section class="main">
+    <form action="/register">
         
-        <h2 class="title">Crear cuenta<h2>
-        
-            <form action="/register" method="POST">
-            
-            <div class="fontForm">
-                <div class="formB">
-                <label>Nombre de usuario</label>
-                <input type="text" name="username">
-                </div>
-                <div class="formB">
-                <label>Email</label>
-                <input type="email" name="email">
-                </div>
-            <div class="formB">
-                <div class="inputBar">
-                <label>Contraseña</label> 
-                <input type="password" name="contraseña">
-            </div>
-            </div>
-            <div class="formB">
-                <label>Repetir contraseña</label> 
-                <input type="password" name="contraseña">
-            </div>
-            <div class="boton">
-                <button type="submit">Crear cuenta</button>
-            </div>
+        <div class="contenedor">
+          <h1 class="mainTitleRegister">REGISTRARSE</h1>
+          <p class="subTitleRegister">¡CREAR CUENTA NUEVA!</p>
+          <hr>
+          <div class="alignForm">    
+          <label for="email"><b>EMAIL</b></label>
+          <input type="text" placeholder="Ingresar mail" name="email" id="email" required>
+      
+          <label for="password"><b>CONTRASEÑA</b></label>
+          <input type="password" placeholder="Ingresar contraseña" name="contraseña" id="contraseña" required>
+      
+          <label for="password2"><b>REPETIR CONTRASEÑA</b></label>
+          <input type="password" placeholder="Repetir contraseña" name="RepetirContrseña" id="RepetirContrseña" required>
+          <hr>
+           <button type="submit" class="registerboton">¡BUENA VIBRA!</button>
         </div>
-        </div>        
-        </form>
-        <p>
-        ¿Ya tienes una cuenta?
-        <a href="login.html">
-        <a href="/login">  
-        Iniciar sesion</p></a>  
-    </section>
-
+        </div>  
+        <div>
+         <p class="bottomRegister"> YA TENES CUENTA? <a href="login.html"></a><a href="/login">¡CLICK AQUI!</a></p>  
+         <p class="bottomRegister">AL CREAR SU CUENTA ESTA DE ACUERDO CON NUESTROS <a href="#">TERMINOS Y CONDICIONES</a>.</p>  
+         </div>
+      </form> 
 </body>
 
 
 <footer>
-
+    <img id="logo-footer" src="/img/svg/fondoNegro2.svg" alt="SoundBox">
+    <div class="info">
+        <div class="footer-bar">
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Quiénes somos</a></li>
+                <li><a href="#">Nuestros servicios</a></li>
+                <li><a href="#">Tiendas</a></li>
+                <li><a href="#">Garantía post-venta</a></li>
+                <li><a href="#">Contáctanos</a></li>
+            </ul>
+        </div>
+        <div class="copyright">
+            <p>SOUNDBOX   <span> Todos los derechos reservados</span></p>
+        </div>
+    </div>
+        <div class="redes">
+            <ul>
+                <li><img src="/img/svg/facebook1.svg"></li>
+                <li><img src="/img/svg/twitter1.svg"></li>
+                <li><img src="/img/svg/youtube1.svg"></li>
+                <li><img src="/img/svg/instagram1.svg" alt="Instagram"></li>
+            </ul>
+        </div>
 </footer>
 
 </html>

@@ -21,6 +21,11 @@ app.get("/login", (req, res)=>{
   res.sendFile(htmlPath)
 })
 
+/*register*/
+app.get("/register", (req, res)=>{
+  let htmlPath = path.resolve(__dirname, "views/register.html");
+  res.sendFile(htmlPath)
+})
 /* carrito  */
 
 app.get("/productCart", (req, res)=>{
