@@ -170,18 +170,12 @@ a {
 .titleRegister {
     background-color: #000;
     text-align: center;
-<<<<<<< HEAD
     font-family: 'Montserrat Bold';
     color: black;
-=======
-    font-family: 'Bebas Neue';
-    color: #f1f1f1;
->>>>>>> 6bb280ee7faed19b84b26e46b7b6778ff5977c01
    }
 
 
 .alignForm {
-<<<<<<< HEAD
     background-color: white;
     text-align: center;
     font-family: 'Montserrat Bold';
@@ -189,16 +183,5 @@ a {
     font-size: 30px;
     -webkit-text-stroke-width: 0.1px;
     -webkit-text-stroke-color: black;
-=======
-  background-color: white;
-  text-align: center;
-  font-family: 'Bebas Neue';
-  color:#ff540a;
-  font-size: 30px;
-  -webkit-text-stroke-width: 0.1px;
-  -webkit-text-stroke-color: black;
-  
 }
->>>>>>> 6bb280ee7faed19b84b26e46b7b6778ff5977c01
-
 /*================================================================================================================*/
