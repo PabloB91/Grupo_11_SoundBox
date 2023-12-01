@@ -55,7 +55,7 @@ div {
 
   .one{
     background: #fff;
-    top: 10px;
+    margin: 15px 10px 0px 10px;
   }
 
   .two{
@@ -103,6 +103,7 @@ div {
   }
 
   .one{
+    top: auto;
     border-radius: 15px;
     position: absolute;
     display: flex;
@@ -167,7 +168,7 @@ h1 {
     font-family: 'Bebas Neue', sans-serif;
     font-weight: 400;
     font-size: 48px;
-    color: black;
+    
 }
 
 h2 {
