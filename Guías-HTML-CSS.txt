@@ -1,0 +1,92 @@
+----------------------
+        HEADER
+----------------------
+
+-Section: clase "header-superior":
+    --Div: clase "envíos-bar":
+        ---ul
+            ----li
+                ----span: clase "material-symbols-outlined"
+                ----p
+    --Div: clase "login-bar":
+        ---ul
+            ----li
+                ----a
+                    -----span: clase "material-symbols-outlined"
+
+-Section: clase "header-inferior":
+    --Img id "logo"
+    --Div: clase "nav-bar":
+        ---ul
+            ----Divs: clase "dropdown":
+                -----li
+                    ------a
+                -----Divs: clase "dropdown-content"
+                    ------a
+        ---Divs: clase "search-bar":
+            ----form
+                -----input
+                -----span: clase "material-symbols-outlined"
+
+-Section: clase "carrusel":
+
+----------------------
+        MAIN
+----------------------
+
+-Section: clase "compra-por-categoria":
+    --Div: clase "items-categorias":
+        ---Articles: clase "categoria"
+            ----p
+            ----img
+    --Div: clase "button"
+
+-Section: clase "mas-vendidos":
+    --Div: clase "nav-bar":
+        ---u
+            ----li
+                -----a
+    --Div: clase "items-mas-vendidos":
+        ---Articles: clase "producto":
+            ----img
+            ----Divs: clase "detalle-producto":
+                -----p: clase "descripciones"
+                ----Divs: clase "container-detalle":
+                    -----p: clase "calificacion"
+                    -----p: clase "precios"
+
+-Section: clase "productos-mostrados":
+    --Div: clase "items-productos-mostrados"
+        ---Articles: clase "producto": (igual a la sección previa)
+
+-Section: clase "complementos":
+    --Div: clase "destacados", "comentarios" y "novedades":
+        ---h3
+        ---Articles: clase "producto":
+            ----img
+            ----Divs: clase "detalle-producto":
+                ----Divs: clase "container-detalle":
+                    -----p: clase "descripciones"
+                    -----p: clase "precios"
+                    -----p: clase "descuentos"
+    --Div: clase "espacio-publicitario":
+        ---img
+
+----------------------
+        FOOTER
+----------------------
+
+-img: id "logo-footer"
+-Div: clase "info":
+    --Div: clase "footer-bar":
+        ---ul
+            ----li
+                ----a
+    --Div: clase "copyright":
+        ---p
+            ----span
+-Div: clase "redes":
+    --ul
+        ---li
+            ---img
+            

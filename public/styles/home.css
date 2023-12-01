@@ -93,9 +93,48 @@ h2 {
 
 
 /*-----MÁS VENDIDOS-----*/
+
+.mas-vendidos .nav-bar{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-end;
+    padding-right: 1rem;
+    list-style: none;
+}
+
 .fa-chevron-up {
     color: black;
 }
+
+
+.nav-bar li {
+    padding-right: 3rem;
+}
+
+.fa-chevron-down, .fa-magnifying-glass, .fa-id-card, .fa-right-to-bracket, .fa-basket-shopping {
+    color: #FF540A;
+}
+
+.nav-bar li:hover {
+    border-bottom: solid 1px #FF540A;
+}
+.mas-vendidos a {
+    text-decoration: none;
+    font-family: 'Montserrat' ;   
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.mas-vendidos a:link, 
+.mas-vendidos a:visited,
+.mas-vendidos a:hover,
+.mas-vendidos a:active{
+    color: black;
+}
+
+
 .items-mas-vendidos {
     display: flex;
     flex-direction: row;
