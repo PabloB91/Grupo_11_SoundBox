@@ -73,6 +73,12 @@ div {
   background-color:white;
   }
 
+  .titleRegister {
+    background-color: #000;
+    text-align: center;
+    font-family: 'Bebas Neue';
+    color: #f1f1f1;
+   }
 
 
 input[type=text], input[type=password] {
@@ -122,19 +128,13 @@ a {
 }
 
 
-.signin {
-  background-color: black;
-  text-align: center;
-  font-family: 'Bebas Neue';
-  color: white;
-}
-
-.titleRegister {
-    background-color: #000;
+.registerBottom {
+    background-color: #B7B3A1;
     text-align: center;
     font-family: 'Bebas Neue';
-    color: #f1f1f1;
+    color: black;
    }
+
 
 .alignForm {
     background-color: white;
