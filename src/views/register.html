@@ -126,44 +126,33 @@
         </section>
     </header>
     
-    <section class="mainRegister">
+    <form action="/register">
         
-        <h2 class="titleRegister">Crear cuenta<h2>
-        
-            <form action="/register" method="POST">
-            
-            <div class="fontForm">
-                <div class="formB">
-                <label>Nombre de usuario</label>
-                <input type="text" name="username">
-                </div>
-                <div class="formB">
-                <label>Email</label>
-                <input type="email" name="email">
-                </div>
-            <div class="formB">
-                <div class="inputBar">
-                <label>Contraseña</label> 
-                <input type="password" name="contraseña">
-            </div>
-            </div>
-            <div class="formB">
-                <label>Repetir contraseña</label> 
-                <input type="password" name="contraseña">
-            </div>
-            <div class="boton">
-                <button type="submit">Crear cuenta</button>
-            </div>
+        <div class="contenedor">
+          <h1 class="titleRegister">Registrarse</h1>
+          <p class="titleRegister">Crear una cuenta nueva.</p>
+          <hr>
+          <div class="alignForm">    
+          <label for="email"><b>Email</b></label>
+          <input type="text" placeholder="Ingresar mail" name="email" id="email" required>
+      
+          <label for="password"><b>Password</b></label>
+          <input type="password" placeholder="Ingresar Password" name="psw" id="psw" required>
+      
+          <label for="password2"><b>Repetir Password</b></label>
+          <input type="password" placeholder="Repetir password" name="psw-repeat" id="psw-repeat" required>
+          <hr>
+      
+          <p>Al crear su cuenta esta de acuedo con nuestro <a href="#">Terminos</a>.</p>
+          <button type="submit" class="registerboton">BUENA VIBRA!</button>
         </div>
-        </div>        
-        </form>
-        <p>
-        ¿Ya tienes una cuenta?
-        <a href="login.html">
-        <a href="/login">  
-        Iniciar sesion</p></a>  
-    </section>
-
+        </div>  
+        <div class="container signin">
+            
+                
+          <p> Ya tenes una cuenta? <a href="login.html"></a><a href="/login">click aqui!</a></p>
+        </div>
+      </form> 
 </body>
 
 
