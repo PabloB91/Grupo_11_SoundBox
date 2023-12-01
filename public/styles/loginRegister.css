@@ -68,7 +68,7 @@ div {
 
 .contenedor {
   padding: 16px;
-  font-family: 'Bebas Neue';
+  font-family: 'Montserrat Bold';
   font-size: 20px;
   background-color:white;
   }
@@ -76,10 +76,18 @@ div {
   .titleRegister {
     background-color: #000;
     text-align: center;
-    font-family: 'Bebas Neue';
+    font-family: 'Montserrat Bold';
     color: #f1f1f1;
+    font-size: 28 px;
    }
 
+   .subTitleRegister {
+    background-color: #000;
+    text-align: center;
+    font-family: 'Montserrat Bold';
+    font-weight:900;
+    color: #ddd;
+   }
 
 input[type=text], input[type=password] {
   width: 100%;
@@ -113,7 +121,7 @@ hr {
   cursor: pointer;
   width: 20%;
   opacity: 0.9;
-  font-family: 'Bebas Neue';
+  font-family: 'Montserrat Bold';
   font-size: 30px;
   
 }
@@ -131,7 +139,7 @@ a {
 .registerBottom {
     background-color: white;
     text-align: center;
-    font-family: 'Bebas Neue';
+    font-family: 'Montserrat Bold';
     color: black;
    }
 
@@ -139,7 +147,7 @@ a {
 .alignForm {
     background-color: white;
     text-align: center;
-    font-family: 'Bebas Neue';
+    font-family: 'Montserrat Bold';
     color:#ff540a;
     font-size: 30px;
     -webkit-text-stroke-width: 0.1px;
