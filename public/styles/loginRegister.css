@@ -1,181 +1,392 @@
-/* form{
-  border: solid 2px #f00;
-}
-
-section {
-  border: solid 1px #0f0;
-}
-
-div {
-  
-  border: solid 1px #00f;
-} */
-
 /*===============================================================================================================*/
 
 /* LOGIN */
 
-.main-login{
+body {
+    width: 100%;
+}
+
+.main-login {
     display: flex; /* para separar el titulo del form */
     flex-wrap: wrap;
     width: 100%;
     height: 100vh;
-    background: #000;    
+    background: #000;
 }
 
-.main-login_title{
+.main-login_title {
     width: 100%;
     text-align: center;
     color: #ff540a;
-    font-family: 'Bebas Neue';
-    margin:auto;
-
+    font-family: "Bebas Neue";
+    margin: auto;
 }
 
-.main-login_form{
+.main-login_form {
     display: flex;
     margin: 0px auto;
     width: 90%;
     height: 70%;
     flex-wrap: wrap;
+    align-items: center;
     border-radius: 6px;
     background: #e6e6e6;
-  }
-  
-  
-  .main-login_form_box-container{
+}
+
+.main-login_form_box-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     color: #000;
     width: 100%;
-    height: 50%;
+}
+
+.one-login {
+    display: flex;
+    background: #fff;
+    margin: 15px 10px 0px 10px;
+    height: 75%;
+    border-radius: 10px 10px 11% 11%;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.one-login .mail {
+    width: 100%;
+}
+
+.one-login .password {
+    width: 100%;
+}
+
+.main-login_form .input {
+    display: flex;
+    justify-content: center;
+}
+
+.one-login .fieldset input {
+    font-weight: 400;
+    font-size: 11px;
+    font-family: "Montserrat";
+    text-rendering: auto;
+    color: fieldtext;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block /* flex */;
+    text-align: start;
+    appearance: auto;
+    -webkit-rtl-ordering: logical;
+    cursor: auto;
+    padding: 1px 0px;
+    border: none;
+    border-image: initial;
+    border-bottom: 2px inset #ff540a;
+    padding-block: 2px;
+    padding-inline: 5px;
+    width: 80%;
+    outline: none;
+    transition: 500ms;
+
+    &:focus {
+        background-color: #f5c5b3;
+        border-bottom: 2px inset #f5c5b3;
+        border-radius: 4px;
+    }
+}
+
+.one-login label {
+    font-family: "Montserrat";
+    font-size: 14px;
+    font-weight: 400;
+
+    /* padding-left: 45px; */
+}
+
+.two-login {
+    align-content: flex-start;
+      height: 22%;
   }
 
+  .two-login .paragraph {
+      background: #fff;
+      width: 70%;
+      border-radius: 0px 0px 15px 15px;
+  }
+
+  .two-login .paragraph p {
+      text-align: center;
+      font-family: "Montserrat";
+      font-size: 14px;
+      font-weight: 400;
+  }
+
+  .a-crear-cuenta {
+      text-align: center;
+  }
+
+  .two-login .paragraph a {
+      font-family: "Montserrat";
+      color: #ff540a;
+    font-size: 16px;
+
+    margin: 0px auto;
+}
+
+.one-login .button {
+    width: 100%;
+    text-align: center;
+
+    & input {
+        border: none;
+        background: #ff540a;
+        color: #fff;
+        height: 30px;
+        width: 100px;
+
+        font-family: "Montserrat";
+        font-size: 14px;
+        font-weight: 400;
+    }
+}
+
+.two-login .button {
+    display: none;
+}
 /*----------------------------------------------------------------------------------------------------------------*/
 /* MEDIA QUERIES */
 
 @media screen and (min-width: 768px) {
 
-  .main-login_form{
-    width: 70%;
-    height: 50%;
-    position: relative;
-  }
+    .main-login_form {
+        width: 70%;
+        height: 50%;
+        position: relative;
+    }
 
-  .main-login_form_box-container{
-    width: 50%;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-  }
+    .main-login_form_box-container {
+        width: 50%;
+        align-items: center;
+        flex-wrap: wrap;
+    }
 
-  .one{
-    position: absolute;
-    display: flex;
-    border-radius: 15px;
-    height: 50vh;
-    background: #fff;
-    left: 15px;
-    box-shadow: 0 0 10 #000;
-  }
+    .one-login {
+        top: auto;
+        border-radius: 15px;
+        position: absolute;
+        flex-wrap: wrap;
+        height: 120%;
+        left: 15px;
+        margin: 0px;
+    }
 
-  .two{
-   text-align: center;
-   
-  }
+    .one-login .label {
+        width: 100%;
+    }
+
+    .one-login .fieldset input {
+        font-size: 12px;
+        /* width: 70%; */
+    }
+
+    .two-login {
+        height: 100%;
+        position: absolute;
+        right: 1px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 47%;
+    }
+
+    .two-login .paragraph {
+        background: none;
+        margin-bottom: 10px;
+    }
+
+    .two-login .paragraph p {
+        background: none;
+        font-size: 15px;
+    }
+
+    .two-login .paragraph a {
+        display: none;
+    }
+
+    .two-login .button {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: center;
+
+        & input {
+            border: none;
+            background: #ff540a;
+            color: #fff;
+            height: 30px;
+            width: 100px;
+
+            font-family: "Montserrat";
+            font-size: 14px;
+            font-weight: 400;
+        }
+    }
 }
+
+@media screen and (min-width: 1024px) {
+
+    .main-login_form {
+        width: 60%;
+        height: 50%;
+        position: relative;
+    }
+
+    .one-login .fieldset input {
+        font-size: 14px;
+        width: 77%;
+    }
+}
+/*----------------------------------------------------------------------------------------------------------------*/
+
+
 
 /*================================================================================================================*/
 
 /*Register */
 
-
 .contenedor {
-  padding: 16px;
-  font-family: 'Bebas Neue';
-  font-size: 20px;
-  background-color:white;
+    padding: 16px;
+    font-family: "Montserrat Bold";
+    font-size: 20px;
+    background-color: white;
 }
 
-  .titleRegister {
+.subTitleRegister {
     background-color: #000;
     text-align: center;
-    font-family: 'Bebas Neue';
-    color: #f1f1f1;
-   }
-
-
-.contenedor input[type=text],
-.contenedor [type=password] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #f1f1f1;
-  text-align: center;
-  
+    font-family: "Montserrat Bold";
+    font-weight: 900;
+    color: white;
 }
 
-.contenedor input[type=text]:focus,
-.contenedor input[type=password]:focus{
-  background-color: #ddd;
-  outline: none;
+.mainTitleRegister {
+    background-color: #000;
+    text-align: center;
+    font-family: "bebas neue";
+    font-weight: 900;
+    color: white;
 }
 
+h1 {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 48px;
+}
+
+h2 {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    color: black;
+}
+
+h3 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: black;
+}
+
+h4 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    color: black;
+}
+
+h5 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 21px;
+    color: black;
+}
+
+h6 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: black;
+}
+
+.contenedor input[type="text"],
+.contenedor [type="password"] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+    text-align: center;
+}
+
+.contenedor input[type="text"]:focus,
+.contenedor input[type="password"]:focus {
+    background-color: #ddd;
+    outline: none;
+}
 
 .contenedor hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
 }
 
-
 .registerboton {
-  background-color: #ff540a;
-  color: white;
-  padding: 16px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 20%;
-  opacity: 0.9;
-  font-family: 'Bebas Neue';
-  font-size: 30px;
-  
+    background-color: #ff540a;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 20%;
+    opacity: 0.9;
+    font-family: "Montserrat Bold";
+    font-size: 30px;
 }
 
 .registerboton:hover {
-  opacity:1;
+    opacity: 1;
 }
 
-
-a {
-  color: dodgerblue;
+.contenedor a {
+    color: dodgerblue;
 }
-
 
 .signin {
-  background-color: black;
-  text-align: center;
-  font-family: 'Bebas Neue';
-  color: white;
+    background-color: black;
+    text-align: center;
+    font-family: "Bebas Neue";
+    color: white;
 }
 
-.titleRegister {
-    background-color: #000;
+.bottomRegister {
+    background-color: white;
     text-align: center;
-    font-family: 'Bebas Neue';
-    color: #f1f1f1;
-   }
-
+    font-family: "Montserrat Bold";
+    font-weight: 900;
+    color: black;
+}
 
 .alignForm {
-  background-color: white;
-  text-align: center;
-  font-family: 'Bebas Neue';
-  color:#ff540a;
-  font-size: 30px;
-  -webkit-text-stroke-width: 0.1px;
-  -webkit-text-stroke-color: black;
-  
+    background-color: white;
+    text-align: center;
+    font-family: "Montserrat Bold";
+    color: #ff540a;
+    font-size: 30px;
+    -webkit-text-stroke-width: 0.1px;
+    -webkit-text-stroke-color: black;
 }
-
 /*================================================================================================================*/
