@@ -2,6 +2,7 @@
     box-sizing: border-box;
 
 }
+
 main {
     margin: 0;
     padding: 0;
@@ -10,68 +11,175 @@ main {
 
 body {
     width: 100%;
+
 }
 
 .carrito {
     display: flex;
     flex-wrap: nowrap;
+    height: 50rem;
 }
-
-.title {
-display: flex;
-}
-
-
 
 .galery {
-    background-color: gray;
-
-    width: 65%;
-    height: 36rem;
-    
-    /* flex-properties */
+    margin-left: 1.5rem;
+    width: 70vw;
+    height: auto;
     display: flex;
     flex-direction: column;
-    position: relative;
-    aspect-ratio: 10 / 12;
-    overflow: scroll;
+    aspect-ratio: 8 / 12;
+    overflow-x: scroll;
 }
 
-.card {
-    height: 10rem;
-    width: 95%;
-    height: 20%;
+.carrito-contenedor {
     display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-evenly;
-    left: 0;
-    position: sticky;
-    /* flex properties */
+    padding-bottom: 0.5rem;
 
-    background-color: #ebebeb;
-    border-radius: 25px;
-    margin: 10px;
+}
+
+.carrito-contenedor i {
+    display: flex;
+    margin: auto;
+    font-size: 50px;
+
+}
+
+.links {
+    background-color: #FF540A;
+    width: 100%;
+    height: 90%;
+    /* display: none; */
+
+    /* oculto */
+}
+
+.desplegable {
+    position: absolute;
+
+}
+
+.cancelar-bespegable {
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 35px;
+
+}
+
+.ordenar-lista {
+    display: flex;
+    flex-direction: column;
+
+
+    background-color: #FF540A;
+    width: 100%;
+    border-radius: 50px 50px 0 0
+}
+
+.descripcion-de-lista {
+    display: flex;
+    margin: auto;
+    width: 100%;
+    background-color: #FF540A;
+    justify-content: center;
+    border-radius: 0 0 50px 50px;
+}
+
+.ordenar-descripcion-container {
+    display: flex; 
+    justify-content: center;
+    position: sticky;
+    background-color: white;
+    margin: 15px;
+    align-items: center;
+    /* align-content: center; */
+}
+
+.ordenar-lista-descripcion {
+    display: flex;
+    width: 100%;
+    text-align: start;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+.ordenar-lista h4 {
+    justify-content: center;
+    padding-top: 10px;
+
+}
+
+.botonera-ordenar-lista {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid;
+}
+
+.botonera-ordenar-lista button {
+
+    width: 40px;
+    height: 30px;
+    text-align: center;
+
+}
+
+.botonera-ordenar-lista label {
+    margin: auto;
+
+}
+
+.labels-orden {
+    display: flex;
+    margin: auto;
+    width: 50%;
+    justify-content: space-evenly;
+}
+
+.botones-orden {
+    display: flex;
+    width: 50%;
+    justify-content: space-evenly;
+}
+
+
+
+.card {
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    background-color: white;
+    /* border-radius: 25px;                             agregar al media querie de tablet*/
+    margin: 15px;
+    align-items: center;
+    align-content: center;
+}
+
+.card-checkbox-container {
+    width: 15%;
+
 }
 
 .product-image {
-    padding: 1rem;
-    width: 45%;
+    width: 25%;
+    height: 90%;
+    justify-self: center;
+    align-self: center;
 
 }
 
 .product-image img {
     display: flex;
-    width: 100%;
+    width: 75%;
     height: 100%;
-    justify-self: center;
-    align-self: center;
     padding: 3px;
 }
 
 .product-description {
     width: 100%;
+    height: 100%;
     display: flex;
-    flex-wrap: wrap;
 
     align-items: center;
     justify-content: center;
@@ -79,8 +187,30 @@ display: flex;
 
 }
 
-.product-description h5 {
-margin: 0.5rem;
+.product-description h2 {
+    width: 25%;
+
+}
+
+.without-stock {
+    margin: auto;
+    padding: 0.5;
+
+}
+
+.product-price {
+    display: flex;
+    padding: 0.5rem;
+    margin: auto;
+
+}
+
+
+.card-checkbox {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+
 }
 
 .delete-card-button {
@@ -89,37 +219,78 @@ margin: 0.5rem;
     border-radius: 8px;
 }
 
-.delete-card-button button{
+.delete-card-button button {
     width: 100%;
     display: flex;
     border-radius: 8px;
 }
 
 .card-middle-divisor {
-    
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    flex-direction: column;
 }
 
 .card-middle-divisor input {
-    width: 60%;
+    width: 50%;
     height: 25px;
     align-self: center;
     justify-self: center;
+}
+
+.card-contador {
+    display: flex;
+    width: 60%;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+
+.card-contador .contador-button {
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.product-price {
+    font-size: 30px;
+
+}
+
+.product-price-discount {
+    width: 50%;
+
+}
+
+.product-price-discount h1 {
+    color: green;
+    font-size: 15px;
+
 }
 
 .delete-card-button {
     display: none;
     height: 15px;
     align-self: flex-start;
+    position: absolute;
+    right: 10px;
+    top: 10px;
 }
 
 .delete-card-button button {
     height: 25px;
     margin: 5px;
     padding: 2px;
+    background-color: rgb(39, 39, 39);
 }
 
 .payement-card {
-    width: 40%;
+    width: 30vw;
     display: flex;
     flex-direction: column;
     display: flex;
@@ -135,23 +306,29 @@ margin: 0.5rem;
     display: flex;
     flex-direction: column;
     padding: 1rem;
-    border-radius: 25%;
-    width: 100%;
+    border-radius: 50px;
+    width: auto;
     height: 10rem;
-    background-color: orange;
+    background-color: #FF540A;
 
 }
 
 .payement-button {
+    display: flex;
     width: 60%;
     height: 50%;
     align-self: center;
-    justify-self: flex-end;
-    
+    justify-content: center;
+
+}
+
+.payment-currency-input {
+    width: 50px;
+
 }
 
 .payement-button button {
-    width: 100%;
+    width: 70%;
     height: 100%;
     border-radius: 15px;
 
@@ -168,16 +345,16 @@ margin: 0.5rem;
 }
 
 .subtotal {
+    height: 35rem;
     padding: 1rem;
     margin-top: 1rem;
-    background-color: orange;
+    background-color: #ebebeb;
     border-radius: 8px;
 
     display: flex;
     flex-direction: column;
-    
+
     position: relative;
-    aspect-ratio: 10 / 8.5;
     overflow: scroll;
 }
 
@@ -196,10 +373,18 @@ margin: 0.5rem;
 
 }
 
+.titulo-subtotal {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    padding: 0.5rem;
+
+}
+
 .corredor {
-    width: 90vw;
-    height: 25rem;
-    background-color: red;
+    width: 60vw;
+    height: 285px;
+    background-color: #ebebeb;
     margin: 0.5rem;
     padding: 0.5rem;
 
@@ -208,31 +393,58 @@ margin: 0.5rem;
     position: relative;
     aspect-ratio: 1 / 2;
     overflow: scroll;
+
 }
 
 .image-related {
-    width: 25%;
-    left: 0;
-    position: sticky;
+    display: flex;
+    width: auto;
 
+    flex-wrap: nowrap;
+    justify-content: space-around;
 }
 
+.image-related img {
+    height: 250px;
 
-
-
+}
 
 
 
 /* animacion simple */
+
+
+.despegable:active .links {
+    display: block;
+
+
+}
+
+.despegable:focus .links {
+    display: flex;
+
+
+}
 
 .card:hover .delete-card-button {
     display: flex;
 
 }
 
+
+
+
 .card:hover {
-    /* box-shadow: 10 10 10 100px gray; */
+    box-shadow: 10 10 10 100px gray;
     transform: scale(0.95);
+    background-color: #f1f1f1;
+
+}
+
+
+
+.payment-currency-input:hover {
+    transform: scale(1.5);
 
 }
 
