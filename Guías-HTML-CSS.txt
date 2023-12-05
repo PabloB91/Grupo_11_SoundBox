@@ -59,6 +59,13 @@
     --Div: clase "items-productos-mostrados"
         ---Articles: clase "producto": (igual a la sección previa)
 
+-Section: clase "marcas-banners"
+    --Div: clase "box-marcas"
+        ---Div
+	   ---img
+	---Div: clase "box-promoBanners"
+	   ---Divs: clase "promoBanners"
+
 -Section: clase "complementos":
     --Div: clase "destacados", "comentarios" y "novedades":
         ---h3
