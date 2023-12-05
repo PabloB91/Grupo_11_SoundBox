@@ -29,6 +29,8 @@
                 -----span: clase "material-symbols-outlined"
 
 -Section: clase "carrusel":
+    --Img
+    --Div: clase "player"
 
 ----------------------
         MAIN

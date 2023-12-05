@@ -7,6 +7,24 @@
     border: none;
 }
 
+/*------ETIQUETAS BANNER CARRUSEL------*/
+
+.carrusel {
+    width: 80%;
+    margin: auto;
+    padding: 0px 10px;
+    display: block;
+}
+
+.player {
+    background-color: #FF540A;
+    width: 100%;
+    margin: 0px;
+    height: 60px;
+    padding: 0px 10px;
+    display: block;
+}
+
 /*-----------------------------------------------
 --------------------MAIN-----------------------
 -------------------------------------------------*/
