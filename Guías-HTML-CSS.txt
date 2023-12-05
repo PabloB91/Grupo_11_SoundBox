@@ -27,6 +27,10 @@
             ----form
                 -----input
                 -----span: clase "material-symbols-outlined"
+                
+----------------------
+        CARRUSEL
+----------------------
 
 -Section: clase "carrusel":
     --Img
