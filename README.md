@@ -90,9 +90,13 @@ ________________________________________________________________________________
     - 20 años cultivando experiencias como diseñador gráfico, director creativo, director audiovisual, y experto en branding. Encuentro mi verdadera vocación al descubrir una ciencia holística que me permite entender a las empresas como ‘sistemas vivientes’ más allá de ‘marcas’. Trabajo en la actualidad como Consultor en Comunicaciones & Desarrollo Organizacional Ecosocial (DOE) facilitando procesos de comunicación corporativa, gestión de interdependencias, branding y transformación cultural en varias compañías.
 
 ___________________________________________________________________________________________________________________________________
+
   
   - #### Bautista Garcia Oliver
 
     Tengo 20 años, soy de Buenos Aires, tengo perfecto conocimiento en cuatro idiomas, me interesé en la programación en tiempos de pandemia.
     Aún no tengo asignado un rol en el proyecto
 ___________________________________________________________________________________________________________________________________
+
+## Enlace al tablero de trabajo en Trello: 
+[https://trello.com/invite/b/15IevA4D/ATTI06459906c2364a88715aac99c44fae55D4E248C7/e-commerce](https://trello.com/b/15IevA4D/e-commerce)https://trello.com/b/15IevA4D/e-commerce
