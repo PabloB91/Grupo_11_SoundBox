@@ -39,3 +39,10 @@ app.get('/fontguide', (req, res)=>{
   let htmlPath = path.resolve(__dirname, "views/fontsguidesbx.html");
   res.sendFile(htmlPath)
 })
+
+/* detalles del producto  */
+
+app.get('/productDetail', (req, res)=>{
+  let htmlPath = path.resolve(__dirname, "views/productDetail.html");
+  res.sendFile(htmlPath)
+})
