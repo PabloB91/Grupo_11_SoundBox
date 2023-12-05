@@ -3,11 +3,12 @@
 *{
     margin: 0;
     padding: 0;
-
+    font-size: 16px;
+    font-family: "Montserrat";
 }
 
 main{
-    padding: 33px 220px;
+    padding: 33px 165px;
 }
 
 
@@ -15,7 +16,20 @@ main{
 /* ----------------------- MAIN ----------------------- */
 
 .product-image-n1{
-    width: 450px
+    width: 350px;
+    margin-right: 18px
+}
+
+.product-image-n2{
+    width: 100px;
+    margin: 2px;
+}
+
+.img-web-product-zoom-sec{
+    display: flex;
+    padding-bottom: 40px;
+    border-bottom: solid 2px rgb(241, 241, 241);
+    margin-right: 27px;
 }
 
 .information-product-general{
@@ -23,29 +37,32 @@ main{
     align-items: center;
     flex-wrap: wrap;
     justify-content: flex-start;
+    margin: 0 0 0 20px;
 }
 
 .product-complete-web-description{
     display: flex;
     align-items: flex-start;
+    margin: 0 0 200px 0;
 }
 
 .product-name-title{
     padding: 8px 0 0 0;
 }
 
-
 .product-price{
     display: flex;
-    padding: 22px 0;
+    padding: 28px 10px;
+    color: #FF540A;
+    -webkit-text-stroke: 0.4px;
 }
 
 .product-description{
-    padding: 0 0 20px 0;
+    padding: 0 0 15px 0;
 }
 
 .product-select-color-web{
-    padding: 15px 0;
+    padding: 12px 0;
 }
 
 .product-quant-web-color-options{
@@ -55,11 +72,12 @@ main{
 }
 
 #product-quantity{
-    width: 65px;
+    width: 95px;
+    height: 50px;
     text-align: center;
     border: none;
     position: relative;
-    top: 15px;
+    right: 100px;
 }
 
 .add-to-the-shop-cart{
@@ -74,15 +92,69 @@ main{
 }
 
 .categories-product-relationated{
-    padding: 45px 0 0 0;
+    margin: 45px 0 0 0;
+    padding: 20px 0 0 0;
+    border-top: solid 2px rgba(43, 43, 43, 0.651);
 }
 
 .tags-products-web{
-    padding: 15px 0 0 0;
+    padding: 35px 0 0 0;
 }
-
 
 a:link, a:visited,  a:hover, a:active{
     text-decoration: none;
     color: black;
 }
+
+#product-colors-available{
+    width: 250px;
+    height: 50px;
+    border: none;
+    position: relative;
+    left: 30px;
+}
+
+.add-to-cart{
+    background-color: rgba(255, 84, 10, 0.56);
+    border-radius: 2px;
+    width: 250px;
+    height: 50px;
+    text-align: center;
+    border: none;
+    position: relative;
+    right: 140px;
+    border-radius: 5px 20px;
+}
+
+.add-to-cart:hover{
+    background-color: rgba(133, 93, 73, 0.651);
+}
+
+.extra-manu-list-dropdown{
+    display: flex;
+}
+
+.additional-information-tab-web-dropdown-list{
+    visibility: hidden;
+}
+
+.additional-information-general-product, .reviews-general-product, .description-general-product{
+    margin: 20px 40px 0 0;
+}
+
+.description-general-product:hover{
+    border-bottom: solid 2px black;
+}
+
+.description-tab-web-dropdown-list{
+    margin: 30px 0 0 0;
+}
+
+.description-tab-web-dropdown-list-h4, .description-tab-web-dropdown-list-p{
+    margin: 0 0 15px 0;
+}
+
+@media (min-width: 361px){
+
+}
+
