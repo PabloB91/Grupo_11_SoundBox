@@ -1,273 +1,253 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <script src="https://kit.fontawesome.com/971bd64f71.js" crossorigin="anonymous"></script>
-
-    <link rel="stylesheet" href="/styles/productDetail.css">
-    <link rel="stylesheet" href="/styles/header-footer.css">
-    <link rel="stylesheet" href="/styles.reset.css">
-
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" />
-
-    <title>Product Detail</title>
-
-</head>
-<body>
+<!DOCTYPE html> 
+<html lang="en"> 
+    <head> 
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <script src="https://kit.fontawesome.com/971bd64f71.js" crossorigin="anonymous"></script> 
+        <link rel="stylesheet" href="/styles/productDetail.css"> 
+        <link rel="stylesheet" href="/styles/header-footer.css"> 
+        <link rel="stylesheet" href="/styles/reset.css"> 
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" /> 
+        <link rel="preconnect" href="https://fonts.googleapis.com"> 
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Roboto&display=swap" rel="stylesheet"> 
+        
+        <title>Product Detail</title> 
     
-    
-<!------------------------- NAV-BAR ------------------------->
-<header>
-    <section class="header-superior">
-        <div class="envíos-bar">
-            <ul>
-                <li>
-                    <span class="material-symbols-outlined">local_shipping</span>
-                    <span class="material-symbols-outlined">travel</span>
-                    <p>Envíos locales e internacionales inmediatos</p>
-                </li>
-            </ul>
-        </div>
-        <div class="login-bar">
-            <ul>
-                <li><a href="#">Crear cuenta</a></li>
-                <li><a href="/login">Ingresar</a><span class="material-symbols-outlined">login</span></li>
-                <li class="mi-cajita"><span id="mi_cajita" class="material-symbols-outlined">shopping_cart</span><a href="/productCart">Mi Cajita</a></li>
-            </ul>
-        </div>
-    </section>
-    <section class="header-inferior">
-        <img id="logo" src="/img/svg/estandar.svg" alt="SoundBox">
-        <div class="nav-bar">
-            <ul>
-                <div class="dropdown">
-                    <li>
-                        <a href="#">Instrumentos musicales</a><i class="fa-solid fa-chevron-down"></i>
-                    </li>
-                    <div class="dropdown-content">
-                        <a href="#">Link 1</a>
-                        <a href="#">Link 2</a>
-                        <a href="#">Link 3</a>
-                    </div>
-                </div>
-                <div class="dropdown">    
-                    <li>
-                        <a href="#">Amplificación</a><i class="fa-solid fa-chevron-down"></i>
-                    </li>
-                    <div class="dropdown-content">
-                        <a href="#">Link 1</a>
-                        <a href="#">Link 2</a>
-                        <a href="#">Link 3</a>
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <li>
-                        <a href="#">Efectos</a><i class="fa-solid fa-chevron-down"></i>
-                    </li>
-                    <div class="dropdown-content">
-                        <a href="#">Link 1</a>
-                        <a href="#">Link 2</a>
-                        <a href="#">Link 3</a>
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <li>
-                        <a href="#">Accesorios</a><i class="fa-solid fa-chevron-down"></i>
-                    </li>
-                    <div class="dropdown-content">
-                        <a href="#">Link 1</a>
-                        <a href="#">Link 2</a>
-                        <a href="#">Link 3</a>
-                    </div>
-                </div>
-                    <div class="dropdown">
-                <li>
-                    <a href="#">Segunda mano</a><i class="fa-solid fa-chevron-down"></i>
-                </li>
-                <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
-                </div>
-                    </div>
-                <div class="dropdown">
-                    <li>
-                        <a href="#">Ofertas</a><i class="fa-solid fa-chevron-down"></i>
-                    </li>
-                    <div class="dropdown-content">
-                        <a href="#">Link 1</a>
-                        <a href="#">Link 2</a>
-                        <a href="#">Link 3</a>
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <li>
-                        <a href="#">Marcas</a><i class="fa-solid fa-chevron-down"></i>
-                    </li>
-                    <div class="dropdown-content">
-                        <a href="#">Link 1</a>
-                        <a href="#">Link 2</a>
-                        <a href="#">Link 3</a>
-                    </div>
-                </div>
-                <li>
-                <div class="search-bar">
-                    <form>
-                        <input type="text" placeholder="Buscar productos, marcas">
-                        <span class="material-symbols-outlined">search</span>
-                    </form>
-                </div>
-                </li>
-            </ul>  
-        </div>
-    </section>
-</header>
+    </head> 
+    <body> 
 
-
-
-<!------------------------- MAIN ------------------------->
-    
-    <main>
-        <section class="section-product">
-            
-            <div class="product-complete-web-description">
-                <div class="img-web-product-zoom">
-                    <img src="/img/productos/guitarras/guitarra-1.jpg" alt="product-img" class="product-image-n1">
-                </div>
-                    
-
-                <div class="information-product-general">
-
-                    <div class="product-name-title">
-                        <h1>Gibson 2016 T Les Paul Studio 50's Tribute</h1>
-                    </div>
-                    
-                    <div class="product-price">
-                        <p class="price"> $899.00 - $950.00</p>
-                    </div>
-                    
-                    <div class="product-description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure reiciendis temporibus minus eum quia sit obcaecati blanditiis minima quae id maiores vero soluta eveniet magni nostrum ad ex, neque impedit sed quisquam deleniti incidunt. Necessitatibus sapiente nulla quidem optio praesentium? Nobis quasi numquam cupiditate ducimus nesciunt deserunt aut.
-                    </div>
-                    
-                    <div class="product-quant-web-color-options">
-                        <div class="product-select-color-web">
-                            <form>
-                                <label for="color" class="color-bottom-invisible">Color</label>
-                                <select name="Colores" id="product-colors-available">
-                                    <option value="choose-option">Choose an option</option>
-                                    <option value="black">Black</option>
-                                    <option value="gray">Gray</option>
-                                    <option value="brown">Brown</option>
-                                    <option value="red">Red</option>
-                                    <option value="yellow">Yellow</option>
-                                </select>
-                            </form>
-                        </div>
-                        
-                        <div class="product-quant-web">
-                            <input type="number" id="product-quantity" name="quantity" value="1" aria-label="Product quantity" size="4" min="1" max="" step="1" placeholder="" inputmode="numeric" autocomplete="off">
-                        </div>
-                    </div>
-                        
-                        <div class="add-to-the-shop-cart">
-                            <button type="submit" class="add-to-cart">ADD TO CART</button>
-                        </div>
-                    
-                    <div class="categories-product-relationated">
-                        <span class="categories">Categories: 
-                            <a href="#" rel="tag">Band & Orchestra</a>
-                            ,        
-                            <a href="#" rel="tag">Bass Guitar</a>
-                            , 
-                            <a href="#" rel="tag">Guitars</a>
-                            , 
-                            <a href="#" rel="tag">Instruments</a>
-                            , 
-                            <a href="#" rel="tag">Orchestral Strings</a>
-                        </span>
-                    </div>
-                    
-                    <div class="tags-products-web">
-                        <span class="product-tagest">Tags:
-                            <a href="#">company</a>
-                            <a href="#">electric guitars</a>
-                            <a href="#">sale</a>
-                        </span>
-                    </div>
-                </div>
-            </div>
-                </section>
+<!------------------------- NAV-BAR -------------------------> 
+        <header> 
+            <section class="header-superior"> 
+                <div class="envíos-bar"> 
+                    <ul> 
+                        <li><span class="material-symbols-outlined">local_shipping</span> 
+                            <span class="material-symbols-outlined">travel</span> 
+                            <p>Envíos locales e internacionales inmediatos</p> 
+                        </li> 
+                    </ul> 
+                </div> 
                 
-                <section>
-        <div class="web-dropdown-list-tab">
-            <ul class="extra-manu-list-dropdown" style="list-style: none;">
-                <li class="description-general-product" role="tab" aria-controls="tab-description">
-                    <a href="#tab/description"> Description </a>
-                </li>
-                <li class="additional-information-general-product" role="tab" aria-controls="tab-additional-information">
-                    <a href="#tab/additional-information"> Additional Information </a>
-                </li>
-                <li class="reviews-general-product" role="tab" aria-controls="tab-reviews">
-                    <a href="#tab/reviews"> Reviews </a>
-                </li>
-            </ul>
+                <div class="login-bar"> 
+                    <ul> 
+                        <li><a href="#">Crear cuenta</a></li> 
+                        <li><a href="/login">Ingresar</a><span class="material-symbols-outlined">login</span></li>
+                        <li class="mi-cajita"><span id="mi_cajita" class="material-symbols-outlined">shopping_cart</span> <a href="/productCart">Mi Cajita</a></li> 
+                    </ul> 
+                </div> 
+            </section> 
 
-            <div class="description-tab-web-dropdown-list">
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut dolores neque provident ipsum, quisquam ea, tenetur temporibus et facere error ratione sapiente accusamus tempora. Et voluptatibus necessitatibus dolorum optio ratione aperiam quo? Similique, vel pariatur? Cupiditate atque dolorem fuga doloribus nobis voluptatem quas aut vel laudantium! Laboriosam necessitatibus ullam minima culpa iure veritatis soluta aperiam officia, ab inventore a possimus suscipit delectus at harum sed deserunt praesentium aspernatur. Quod, omnis!</p>
+            <section class="header-inferior"> 
+                <img id="logo" src="/img/svg/estandar.svg" alt="SoundBox"> 
+                <div class="nav-bar"> 
+                    <ul> 
+                        <div class="dropdown"> 
+                            <li> <a href="#">Instrumentos musicales</a><i class="fa-solid fa-chevron-down"></i> </li> 
+                            <div class="dropdown-content"> 
+                                <a href="#">Link 1</a> 
+                                <a href="#">Link 2</a> 
+                                <a href="#">Link 3</a> 
+                            </div> 
+                        </div> 
 
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est sed repellendus magnam adipisci. Rem, soluta molestias facilis veniam magni animi cupiditate ratione ut sed perferendis minima itaque, iusto, nam fuga ea molestiae nobis veritatis ad minus quae deserunt libero totam odio ipsum. Iure, nesciunt sunt perferendis necessitatibus quas voluptatem tenetur nobis incidunt maxime quod voluptate ab officiis non qui dolor ratione. Ipsa quam quaerat consequatur nemo quo tenetur nihil praesentium id reiciendis labore soluta quod dolorem est inventore itaque quasi fugiat exercitationem, recusandae autem omnis sint illum nisi. Temporibus eligendi cupiditate corporis magnam consectetur placeat quas soluta distinctio id ipsa.</p>
-            </div>
+                        <div class="dropdown"> 
+                            <li> <a href="#">Amplificación</a><i class="fa-solid fa-chevron-down"></i> </li> 
+                            <div class="dropdown-content"> 
+                                <a href="#">Link 1</a> 
+                                <a href="#">Link 2</a> 
+                                <a href="#">Link 3</a> 
+                            </div> 
+                        </div>
+                        
+                        <div class="dropdown"> 
+                            <li> <a href="#">Efectos</a><i class="fa-solid fa-chevron-down"></i> </li> 
+                            <div class="dropdown-content"> 
+                                <a href="#">Link 1</a> 
+                                <a href="#">Link 2</a> 
+                                <a href="#">Link 3</a> 
+                            </div> 
+                        </div> 
+                        
+                        <div class="dropdown"> 
+                            <li> <a href="#">Accesorios</a><i class="fa-solid fa-chevron-down"></i> </li> 
+                            <div class="dropdown-content"> 
+                                <a href="#">Link 1</a> 
+                                <a href="#">Link 2</a> 
+                                <a href="#">Link 3</a> 
+                            </div> 
+                        </div> 
+                        
+                        <div class="dropdown"> 
+                            <li> <a href="#">Segunda mano</a><i class="fa-solid fa-chevron-down"></i> </li> 
+                            <div class="dropdown-content"> 
+                                <a href="#">Link 1</a> 
+                                <a href="#">Link 2</a> 
+                                <a href="#">Link 3</a> 
+                            </div> 
+                        </div> 
+                        
+                        <div class="dropdown"> 
+                            <li> <a href="#">Ofertas</a><i class="fa-solid fa-chevron-down"></i> </li> 
+                            <div class="dropdown-content"> 
+                                <a href="#">Link 1</a> 
+                                <a href="#">Link 2</a> 
+                                <a href="#">Link 3</a> 
+                            </div> 
+                        </div> 
+                        
+                        <div class="dropdown"> 
+                            <li> <a href="#">Marcas</a><i class="fa-solid fa-chevron-down"></i> </li> 
+                            <div class="dropdown-content"> 
+                                <a href="#">Link 1</a> 
+                                <a href="#">Link 2</a> 
+                                <a href="#">Link 3</a> 
+                            </div> 
+                        </div> 
+                        
+                        <li> 
+                            <div class="search-bar"> 
+                                <form> 
+                                    <input type="text" placeholder="Buscar productos, marcas"> 
+                                    <span class="material-symbols-outlined">search</span> 
+                                </form> 
+                            </div> 
+                        </li> 
+                    </ul> 
+                </div> 
+            </section> 
+        </header> 
 
-            <div class="additional-information-tab-web-dropdown-list">
-                <h2>additional information</h2>
+<!------------------------- MAIN -------------------------> 
+<main> 
+    <section class="section-product"> 
+        <div class="product-complete-web-description"> 
+            <div class="img-web-product-zoom"> 
+                <img src="/img/productos/guitarras/guitarra-1.jpg" alt="product-img" class="product-image-n1"> 
+            </div> 
 
-                <div class="additional-information-tab-web-dropdown-list-p">
-                    <p>
-                        Color
-                    </p>
+            <div class="information-product-general"> 
+                <div class="product-name-title"> 
+                    <h1>Gibson 2016 T Les Paul Studio 50's Tribute</h1> 
+                </div> 
 
-                    <span>Black, Red, White</span>
-                </div>
-            </div>
-        </div>
-    </section>
-    </main>
+                <div class="product-price"> 
+                    <p class="price"> $899.00 - $950.00</p> 
+                </div> 
 
+                <div class="product-description"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt modi cupiditate voluptatem porro magni ipsum, mollitia reprehenderit eaque officiis minus unde, maiores minima beatae illo illum eligendi error animi. Natus laudantium, non quis quasi quo rem repudiandae amet adipisci, aspernatur in distinctio eius eveniet sed doloribus, minus molestias. Delectus obcaecati natus quasi fugiat quisquam nostrum quam sed officiis deserunt! Molestiae inventore eum, obcaecati consequatur sint labore totam, alias, quibusdam atque deleniti!! </div> 
+                
+                <div class="product-quant-web-color-options"> 
+                    <div class="product-select-color-web"> 
+                        <form> 
+                            <label for="color" class="color-bottom-invisible">Color</label> 
+                            <select name="Colores" id="product-colors-available"> 
+                                <option value="choose-option">Choose an option</option> 
+                                <option value="black">Black</option> 
+                                <option value="gray">Gray</option> 
+                                <option value="brown">Brown</option> 
+                                <option value="red">Red</option> 
+                                <option value="yellow">Yellow</option> 
+                            </select> 
+                        </form> 
+                    </div> 
 
+                    <div class="product-quant-web"> 
+                        <input type="number" id="product-quantity" name="quantity" value="1" aria-label="Product quantity" size="4" min="1" max="" step="1" placeholder="" inputmode="numeric" autocomplete="off"> 
+                    </div> 
+                </div> 
+                
+                <div class="add-to-the-shop-cart"> 
+                    <button type="submit" class="add-to-cart">ADD TO CART</button> 
+                </div> 
+                
+                <div class="categories-product-relationated"> 
+                    <span class="categories">Categories: 
+                        <a href="#" rel="tag">Band & Orchestra</a>
+                        , 
+                        <a href="#" rel="tag">Bass Guitar</a>
+                        ,
+                        <a href="#" rel="tag">Guitars</a> 
+                        , 
+                        <a href="#" rel="tag">Instruments</a> 
+                        , 
+                        <a href="#" rel="tag">Orchestral Strings</a> 
+                    </span> 
+                </div> 
+                
+                <div class="tags-products-web"> 
+                    <span class="product-tagest">Tags: 
+                        <a href="#">company</a> 
+                        , 
+                        <a href="#">electric guitars</a> 
+                        , 
+                        <a href="#">sale</a> 
+                    </span> 
+                </div> 
+            
+            </div> 
+        </div> 
+    </section> 
+    
+    <section> 
+        <div class="web-dropdown-list-tab"> 
+            <ul class="extra-manu-list-dropdown" style="list-style: none;"> 
+                <li class="description-general-product" role="tab" aria-controls="tab-description"> <a href="#tab/description"> Description </a> </li> 
+                <li class="additional-information-general-product" role="tab" aria-controls="tab-additional-information"> <a href="#tab/additional-information"> Additional Information </a> </li> 
+                <li class="reviews-general-product" role="tab" aria-controls="tab-reviews"> <a href="#tab/reviews"> Reviews </a> </li> 
+            </ul> 
+            
+            <div class="description-tab-web-dropdown-list"> 
+                <h4 class="description-tab-web-dropdown-list-h4">Description</h4> 
+                    
+                <p class="description-tab-web-dropdown-list-p">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut dolores neque provident ipsum, quisquam ea, tenetur temporibus et facere error ratione sapiente accusamus tempora. Et voluptatibus necessitatibus dolorum optio ratione aperiam quo? Similique, vel pariatur? Cupiditate atque dolorem fuga doloribus nobis voluptatem quas aut vel laudantium! Laboriosam necessitatibus ullam minima culpa iure veritatis soluta aperiam officia, ab inventore a possimus suscipit delectus at harum sed deserunt praesentium aspernatur. Quod, omnis!</p> 
+                
+                <p class="description-tab-web-dropdown-list-p">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est sed repellendus magnam adipisci. Rem, soluta molestias facilis veniam magni animi cupiditate ratione ut sed perferendis minima itaque, iusto, nam fuga ea molestiae nobis veritatis ad minus quae deserunt libero totam odio ipsum. Iure, nesciunt sunt perferendis necessitatibus quas voluptatem tenetur nobis incidunt maxime quod voluptate ab officiis non qui dolor ratione. Ipsa quam quaerat consequatur nemo quo tenetur nihil praesentium id reiciendis labore soluta quod dolorem est inventore itaque quasi fugiat exercitationem, recusandae autem omnis sint illum nisi. Temporibus eligendi cupiditate corporis magnam consectetur placeat quas soluta distinctio id ipsa.</p> 
 
-<!------------------------- FOOTER ------------------------->
+            </div> 
+            
+            <div class="additional-information-tab-web-dropdown-list"> 
+                <h2>additional information</h2> 
+                <div class="additional-information-tab-web-dropdown-list-p"> 
+                    <p> Color </p> 
+                    <span>Black, Red, White</span> 
+                </div> 
+            </div> 
+        </div> 
+    </section> 
+</main> 
 
-    <footer>
-        <img id="logo-footer" src="/img/svg/fondoNegro2.svg" alt="SoundBox">
-        <div class="info">
-            <div class="footer-bar">
-                <ul>
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Quiénes somos</a></li>
-                    <li><a href="#">Nuestros servicios</a></li>
-                    <li><a href="#">Tiendas</a></li>
-                    <li><a href="#">Garantía post-venta</a></li>
-                    <li><a href="#">Contáctanos</a></li>
-                </ul>
-            </div>
-            <div class="copyright">
-                <p>SOUNDBOX   <span> Todos los derechos reservados</span></p>
-            </div>
-        </div>
-            <div class="redes">
-                <ul>
-                    <li><img src="/img/svg/facebook1.svg"></li>
-                    <li><img src="/img/svg/twitter1.svg"></li>
-                    <li><img src="/img/svg/youtube1.svg"></li>
-                    <li><img src="/img/svg/instagram1.svg" alt="Instagram"></li>
-                </ul>
-            </div>
-    </footer>
-
-</body>
+<!------------------------- FOOTER -------------------------> 
+<footer> 
+    <img id="logo-footer" src="/img/svg/fondoNegro2.svg" alt="SoundBox"> 
+    <div class="info"> 
+        <div class="footer-bar"> 
+            <ul> 
+                <li><a href="#">Inicio</a></li> 
+                <li><a href="#">Quiénes somos</a></li> 
+                <li><a href="#">Nuestros servicios</a></li> 
+                <li><a href="#">Tiendas</a></li> 
+                <li><a href="#">Garantía post-venta</a></li> 
+                <li><a href="#">Contáctanos</a></li> 
+            </ul> 
+        </div> 
+        
+        <div class="copyright"> 
+            <p>SOUNDBOX   
+                <span> Todos los derechos reservados</span>
+            </p> 
+        </div> 
+    </div> 
+    
+    <div class="redes"> 
+        <ul> 
+            <li><img src="/img/svg/facebook1.svg"></li> 
+            <li><img src="/img/svg/twitter1.svg"></li> 
+            <li><img src="/img/svg/youtube1.svg"></li> 
+            <li><img src="/img/svg/instagram1.svg" alt="Instagram"></li> 
+        </ul> 
+    </div> 
+</footer> 
+</body> 
 </html>
