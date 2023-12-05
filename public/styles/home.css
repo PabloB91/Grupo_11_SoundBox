@@ -173,7 +173,38 @@ h2 {
     align-items: flex-start;
 }
 
+/*----MARCAS Y BANNERS PROMOS-----*/
 
+/* Pendiente definir para que se acomode según estructura del home en el Repo */
+.marcas-banners {
+    width: auto;
+    margin: auto;
+    padding: auto;
+    display: block;
+}
+
+/* Pendiente definir para que se acomode según estructura del home en el Repo */
+.box-marcas {
+    width: 80%;
+    margin: auto;
+    padding: 18px;
+}
+
+/* Pendiente definir para que se acomode según estructura del home en el Repo */
+.box-promoBanners {
+    width: 80%;
+    margin: auto;
+    padding: 10px 0px 10px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.promoBanners {
+    width: 30%;
+    margin: auto;
+    padding: 10px 0px 10px 0px;
+}
 
 /*----COMPLEMENTOS-----*/
 
