@@ -53,12 +53,33 @@ body {
 .carrito-container {
     display: flex;
     flex-direction: column;
-
+    height: 100%;
     width: 100%;
 
 }
 
+.contenedor-boton-cajita .cabecera-carrito,
+.contenedor-boton-cajita .desplegable-ejemplo,
+.contenedor-boton-cajita .pie-carrito {
+    /* background: radial-gradient(circle, hsla(18, 100%, 52%, 1) 39%, hsla(329, 82%, 76%, 1) 92%, hsla(342, 95%, 78%, 1) 100%); */
+    /* otro tipo de degradado para los botones */
+
+    background: linear-gradient(315deg, hsla(18, 100%, 52%, 1) 22%, rgb(255, 64, 64) 51%, rgb(255, 192, 211) 100%);
+}
+
+.contenedor-boton-favoritos .cabecera-carrito,
+.contenedor-boton-favoritos .desplegable-ejemplo,
+.contenedor-boton-favoritos .pie-carrito {
+    background: linear-gradient(315deg, hsla(18, 100%, 52%, 1) 22%, rgb(255, 64, 64) 51%, rgb(255, 192, 211) 100%);
+}
+
+
+
+
+
+
 .contenedor-boton-cajita {
+    height: 50%;
     margin-left: 1rem;
     margin-top: 1rem;
     border-radius: 100px 100px 100px 100px;
@@ -66,6 +87,7 @@ body {
 }
 
 .contenedor-boton-favoritos {
+    height: 50%;
     margin-left: 1rem;
     margin-top: 5rem;
     margin-bottom: 1rem;
@@ -78,17 +100,13 @@ body {
     flex-direction: column;
 
 
-
-    background-color: #FF540A;
     width: 100%;
     height: 5rem;
     border-radius: 100px 100px 0 0;
 
 }
 
-.cabecera-carrito h4 {
 
-}
 
 .botones-ordenador {
     display: flex;
@@ -117,8 +135,8 @@ body {
 }
 
 .botones-ordenador .boton {
+    background-color: inherit;
     font-size: 30px;
-    background-color: #FF540A;
     border: 0;
     width: 40px;
     height: 40px;
@@ -127,12 +145,12 @@ body {
 
 
 .desplegable-ejemplo {
-    display: none;                                                                
-                                                                    /* DESPLEGABLE OCULTO */
+    display: none;
+                                /* DESPLEGABLE OCULTO */
     flex-wrap: nowrap;
     overflow-y: scroll;
     flex-direction: column;
-    background-color: #FF540A;
+
     width: 100%;
     height: 80%;
 }
@@ -140,7 +158,7 @@ body {
 .pie-carrito {
     display: flex;
     flex-direction: column;
-    background-color: #FF540A;
+
     width: 100%;
     height: 5rem;
     border-radius: 0 0 100px 100px;
@@ -164,43 +182,24 @@ body {
 
 
 
-.contenedor-boton-cajita:hover, .contenedor-boton-favoritos:hover {
-    height: 34rem;
+/* 
+@keyframes degradado {
+    0% {
+        background-color: #FF540A;
+    }
 
-} 
+    25% {
+        background-color: red;
+    }
 
-.contenedor-boton-cajita:hover .desplegable-ejemplo {
-    display: flex;
+    50% {
+        background-color: rgb(202, 151, 56);
+    }
 
-}
-
-
-.contenedor-boton-cajita:hover .tira-pie-carrito {
-    display: flex;
-    
-}
-
-.contenedor-boton-cajita:hover .botonera-ordenar {
-    display: flex;
-    
-}
-
-.contenedor-boton-favoritos:hover .desplegable-ejemplo {
-    display: flex;
-
-}
-
-.contenedor-boton-favoritos:hover .tira-pie-carrito {
-    display: flex;
-    
-}
-
-.contenedor-boton-favoritos:hover .botonera-ordenar {
-    display: flex;
-    
-}
-
-
+    100% {
+        background-color: gold;
+    }
+} */
 
 
 
@@ -210,7 +209,6 @@ body {
     justify-content: center;
     position: sticky;
     background-color: white;
-    /* border-radius: 25px;                             agregar al media querie de tablet*/
     margin: 8px;
     align-items: center;
     align-content: center;
@@ -231,9 +229,9 @@ body {
 
 .product-image img {
     display: flex;
-    width: 75%;
+    width: 100%;
     height: 100%;
-    padding: 3px;
+    padding: 2px;
 }
 
 .product-description {
@@ -248,8 +246,12 @@ body {
 }
 
 .product-description h2 {
-    width: 25%;
-
+    font-size: 25px;
+    display: flex;
+    margin: auto;
+    width: 50%;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 .without-stock {
@@ -382,7 +384,7 @@ body {
     border-radius: 50px;
     width: auto;
     height: 30%;
-    background-color: #FF540A;
+    background: linear-gradient(315deg, hsla(18, 100%, 52%, 1) 22%, rgb(255, 64, 64) 51%, rgb(255, 192, 211) 100%);
     box-shadow: 25px 25px 10px gray;
 
 }
@@ -412,14 +414,13 @@ body {
     display: flex;
     width: 100%;
     height: 100%;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     flex-wrap: nowrap;
-    flex-direction: row;
 }
 
 .subtotal {
-    height: 70%;
     padding: 1rem;
     margin: 0.5rem;
     background-color: #ebebeb;
@@ -449,7 +450,6 @@ body {
 .titulo-subtotal {
     display: flex;
     justify-content: center;
-    margin: auto;
     padding: 0.5rem;
 
 }
@@ -462,17 +462,15 @@ body {
 
 .corredor {
     width: 70vw;
-    height: 285px;
+    height: auto;
     background-color: #ebebeb;
-    margin: 0.5rem;
+    margin: 1rem;
     padding: 0.5rem;
 
     /* flex-properties */
     display: flex;
-    position: relative;
-    aspect-ratio: 1 / 2;
     overflow: scroll;
-
+    align-items: center;
 }
 
 .image-related {
@@ -484,8 +482,8 @@ body {
 }
 
 .image-related img {
-    height: 250px;
-
+    height: 200px;
+    margin: 0.5rem;
 }
 
 .metodos-pago {
@@ -499,6 +497,13 @@ body {
 
 }
 
+.middle-metodos-pago {
+    padding: 10px;
+    font-size: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
 
 /* animacion simple */
 
@@ -507,9 +512,6 @@ body {
 
 }
 
-
-
-
 .card:hover {
     box-shadow: 10 10 10 100px black;
     transform: scale(0.95);
@@ -517,19 +519,89 @@ body {
 
 }
 
-
-
-.payment-currency-input:hover {
-    transform: scale(1.5);
-
-}
-
 /* animacion simple */
 
 
 
+/* media queeries para pc */
+@media (min-width:1024px) {
 
+
+    .contenedor-boton-cajita:hover,
+    .contenedor-boton-favoritos:hover {
+        height: 55rem;
+
+    }
+
+    .contenedor-boton-cajita:hover .desplegable-ejemplo {
+        display: flex;
+
+    }
+
+
+    .contenedor-boton-cajita:hover .tira-pie-carrito {
+        display: flex;
+
+    }
+
+    .contenedor-boton-cajita:hover .botonera-ordenar {
+        display: flex;
+
+    }
+
+    .contenedor-boton-favoritos:hover .desplegable-ejemplo {
+        display: flex;
+    }
+
+    .contenedor-boton-favoritos:hover .tira-pie-carrito {
+        display: flex;
+
+    }
+
+    .contenedor-boton-favoritos:hover .botonera-ordenar {
+        display: flex;
+
+    }
+
+
+}
 /* MEDIA QUERIES PARA TABLET */
 
+@media(max-width:1024px) {
+
+    .desplegable-ejemplo {
+        display: flex;
+
+    }
+
+}
 
 /* MEDIA QUERIES PARA TELEFONO */
+@media(max-width:688px) {
+
+    .carrito {
+        flex-direction: column;
+
+    }
+
+    .contenedor-boton-cajita {
+        height: 40%;
+        margin: 1rem;
+    }
+
+    .contenedor-boton-favoritos {
+        height: 40%;
+        margin: 1rem;
+    }
+
+    .card {
+        border-radius: 25px;
+
+    }
+
+    .payement-card {
+        width: 70%;
+        align-self: center;
+    }
+
+}
