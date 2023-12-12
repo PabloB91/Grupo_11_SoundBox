@@ -10,7 +10,7 @@ app.set("view engine", "ejs")
 app.set('views', path.resolve(__dirname, "views"));
 
 // Rutas
-const mainRouter = require("../../../Grupo_11_SoundBox/src/routes/mainRouter");
+const mainRouter = require("./routes/mainRouter");
 app.use("/", mainRouter);
 
 app.listen(3050,()=> {
