@@ -58,28 +58,13 @@ body {
 
 }
 
-.contenedor-boton-cajita .cabecera-carrito,
-.contenedor-boton-cajita .desplegable-ejemplo,
-.contenedor-boton-cajita .pie-carrito {
-
-}
-
-.contenedor-boton-favoritos .cabecera-carrito,
-.contenedor-boton-favoritos .desplegable-ejemplo,
-.contenedor-boton-favoritos .pie-carrito {
-
-}
-
-
-
-
-
-
 .contenedor-boton-cajita {
+    background-color: inherit;
     height: 50%;
     margin-left: 1rem;
     margin-top: 1rem;
     border-radius: 100px 100px 100px 100px;
+    
     box-shadow: 25px 25px 10px gray;
 }
 
@@ -143,15 +128,15 @@ body {
 
 .desplegable-ejemplo {
     display: none;
-                                /* DESPLEGABLE OCULTO */
+    /* DESPLEGABLE OCULTO */
     flex-wrap: nowrap;
     overflow-y: scroll;
     flex-direction: column;
 
     width: 100%;
     height: 80%;
-    
-    
+
+
 }
 
 .pie-carrito {
@@ -177,12 +162,6 @@ body {
     justify-content: center;
 
 }
-
-
-
-
-
-
 
 .card {
     display: flex;
@@ -364,8 +343,8 @@ body {
     border-radius: 50px;
     width: auto;
     height: 30%;
-    
-    
+
+
     box-shadow: 25px 25px 10px gray;
 
 }
@@ -418,13 +397,12 @@ body {
 .subtotal .subtotal-item-cards {
     display: flex;
     position: sticky;
-    justify-content: space-evenly;
+    justify-content: space-around;
+
 }
 
 .subtotal-item-cards span {
     display: flex;
-    justify-content: flex-end;
-    align-self: center;
 
 }
 
@@ -546,6 +524,7 @@ body {
 
 
 }
+
 /* MEDIA QUERIES PARA TABLET */
 
 @media(max-width:1024px) {

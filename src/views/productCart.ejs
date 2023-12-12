@@ -162,11 +162,11 @@
                                         <input class="card-checkbox" type="checkbox">
                                     </div>
                                     <div class="product-image">
-                                        <img src=<%=producto.imagen %> alt="">
+                                        <img src= <%=producto.imagen %> alt="">
                                     </div>
                                     <div class="product-description">
                                         <h2>
-                                            <%= producto.nombre %>
+                                            <%= producto.nombre + " " + producto.marca %>
                                         </h2>
                                         <div class="card-middle-divisor">
                                             <p class="with-stock">Unidade/s</p>
@@ -262,7 +262,7 @@
                                     </div>
                                     <div class="product-description">
                                         <h2>
-                                            <%= producto.nombre %>
+                                            <%= producto.nombre + " " + producto.marca %>
                                         </h2>
                                         <div class="card-middle-divisor">
                                             <p class="with-stock">Unidade/s</p>
@@ -355,101 +355,35 @@
                         </strong>
 
                         <div class="subtotal-sumatory">
+                            <% instrumentos.forEach(producto=> { %>
+                                <div class="product-description-subtotal">
+                                    <div class="subtotal-item-cards">
+                                        <p>
+                                            <%= producto.nombre + "  " + producto.marca %>
+                                        </p>
+                                        <span>
+                                            <%= producto.precio + "  $" %>
+                                        </span>
+                                    </div>
+                                </div>
+                                <% }); %>
 
-                            <div class="product-description-subtotal">
-                                <div class="subtotal-item-cards">
-                                    <p>nombre</p>
-                                    <span>34$</span>
-                                </div>
-                            </div>
-
-                            <div class="product-description-subtotal">
-                                <div class="subtotal-item-cards">
-                                    <p>nombre</p>
-                                    <span>34$</span>
-                                </div>
-                            </div>
-
-                            <div class="product-description-subtotal">
-                                <div class="subtotal-item-cards">
-                                    <p>nombre</p>
-                                    <span>34$</span>
-                                </div>
-                            </div>
-
-                            <div class="product-description-subtotal">
-                                <div class="subtotal-item-cards">
-                                    <p>nombre</p>
-                                    <span>34$</span>
-                                </div>
-                            </div>
-
-
-                            <h1 class="titulo-subtotal">DESCUENTOS</h1>
-
-                            <div class="product-description-subtotal">
-                                <div class="subtotal-item-cards">
-                                    <p>nombre</p>
-                                    <p>-50% OFF</p>
-                                    <span>17$</span>
-                                </div>
-                            </div>
-                            <div class="product-description-subtotal">
-                                <div class="subtotal-item-cards">
-                                    <p>nombre</p>
-                                    <p>-50% OFF</p>
-                                    <span>17$</span>
-                                </div>
-                            </div>
-                            <div class="product-description-subtotal">
-                                <div class="subtotal-item-cards">
-                                    <p>nombre</p>
-                                    <p>-50% OFF</p>
-                                    <span>17$</span>
-                                </div>
-                            </div>
-                            <div class="product-description-subtotal">
-                                <div class="subtotal-item-cards">
-                                    <p>nombre</p>
-                                    <p>-50% OFF</p>
-                                    <span>17$</span>
-                                </div>
-                            </div>
-                            <div class="product-description-subtotal">
-                                <div class="subtotal-item-cards">
-                                    <p>nombre</p>
-                                    <p>-50% OFF</p>
-                                    <span>17$</span>
-                                </div>
-                            </div>
-                            <div class="product-description-subtotal">
-                                <div class="subtotal-item-cards">
-                                    <p>nombre</p>
-                                    <p>-50% OFF</p>
-                                    <span>17$</span>
-                                </div>
-                            </div>
-                            <div class="product-description-subtotal">
-                                <div class="subtotal-item-cards">
-                                    <p>nombre</p>
-                                    <p>-50% OFF</p>
-                                    <span>17$</span>
-                                </div>
-                            </div>
-                            <div class="product-description-subtotal">
-                                <div class="subtotal-item-cards">
-                                    <p>nombre</p>
-                                    <p>-50% OFF</p>
-                                    <span>17$</span>
-                                </div>
-                            </div>
-                            <div class="product-description-subtotal">
-                                <div class="subtotal-item-cards">
-                                    <p>nombre</p>
-                                    <p>-50% OFF</p>
-                                    <span>17$</span>
-                                </div>
-                            </div>
+                                    <h1 class="titulo-subtotal">DESCUENTOS</h1>
+                                    <% instrumentos.forEach(producto=> { %>
+                                        <div class="product-description-subtotal">
+                                            <div class="subtotal-item-cards">
+                                                <p>
+                                                    <%= producto.nombre + "  " + producto.marca %>
+                                                </p>
+                                                <p>
+                                                    <%= "-" + producto.descuento + "%" %>
+                                                </p>
+                                                <span>
+                                                    <%= producto.precio + "  $" %>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <% }); %>
                         </div>
                     </section>
                 </section>
@@ -475,11 +409,9 @@
                     <div class="image-related">
                         <img src="https://artemusical.com.ar/wp/wp-content/uploads/2019/06/18174_medium.jpg" alt="">
                     </div>
-                    <div class="image-related">
-                        <img src="https://artemusical.com.ar/wp/wp-content/uploads/2019/06/18174_medium.jpg" alt="">
-                    </div>
                     <!-- fin del carrusel agregar a carrito -->
                 </div>
+
                 <!-- fin del carrusel agregar a carrito -->
                 <section class="metodos-pago">
                     <ul style="width: 100%; padding: 0.5rem;">
@@ -499,6 +431,18 @@
                         </li>
                     </ul>
                 </section>
+            </section>
+            <section class="desplegable-metodos-pago">
+                <div class="circular-metodos-pago">
+                    <ul>
+                        <li>
+
+                        </li>
+                    </ul>
+                    <div>
+                        cerrar seccion
+                    </div>
+                </div>
             </section>
         </main>
 

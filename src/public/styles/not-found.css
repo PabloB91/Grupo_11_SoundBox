@@ -1,0 +1,36 @@
+.seccion {
+    display: flex;
+    height: 65rem;
+    width: 100vw;
+    background-color: #B7B3A1;
+    justify-content: center;
+    align-items: center;
+}
+
+.circular-seccion {
+    display: flex;
+    width: 75vw;
+    height: 75%;
+    background-color: #FF540A;
+    border-radius: 150px;
+}
+
+.lista-desordenada {
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    padding: 1rem;
+
+}
+
+.separador-interno {
+    width: 100vw;
+    height: 1rem;
+    background-color: #FF540A;
+}
+
+.separador-externo {
+    width: 100vw;
+    height: 1rem;
+    background-color: black;
+}

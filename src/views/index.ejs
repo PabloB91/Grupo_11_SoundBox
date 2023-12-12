@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/styles/reset.css" rel="stylesheet">
@@ -10,10 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" />
     <title>Sound Box</title>
-</head> -->
-<%- include("./partials/head") %>
+</head>
 <body>
-    <!-- <header>
+    <header>
         <section class="header-superior">
             <div class="envíos-bar">
                 <ul>
@@ -28,8 +27,7 @@
                 <ul>
                     <li><a href="/register">Crear cuenta</a></li>
                     <li><a href="/login">Ingresar</a><span class="material-symbols-outlined">login</span></li>
-                    <li class="mi-cajita"><span id="mi_cajita" class="material-symbols-outlined">shopping_cart</span>
-                        <a href="/productCart">Mi Cajita</a></li>
+                    <li class="mi-cajita"><span id="mi_cajita" class="material-symbols-outlined">shopping_cart</span><a href="/productCart">Mi Cajita</a></li>
                 </ul>
             </div>
         </section>
@@ -118,10 +116,7 @@
                 </ul>  
             </div>
         </section>
-    </header> -->
-
-    <%- include("./partials/header") %>
-
+    </header>
     <section class="carrusel"><!--Imagen momentánea solo por visualización: debe actualizarse (textos, botón, aplicación flex, etc.)-->
         <img src="/img/banners/Banner-carrusel1.jpg" width= 100%; alt="Banner de ofertas">
         <div class="player"></div><!--Pendiente ubicar botones controladores (play/stop/adelantar/retroceder)-->
@@ -140,6 +135,7 @@
                     <img src="/img/home/categoria-accesorios.jpg" alt="Accesorios">
                 </article>
                 <article class="categoria">
+                    <a href="/productDetail">
                     <p>Efectos</p>
                     <img src="/img/home/categoria-efectos.jpg" alt="Efectos"></a>
                 </article>
@@ -298,48 +294,6 @@
         <hr class="separador">
         <section class="complementos">
             <div class="destacados">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 <h3>Destacados</h3>
                 <article class="producto">
                     <img src="/img/productos/varios/trompeta.jpg" alt="Trompeta" >
@@ -413,7 +367,7 @@
             </div>
         </section>
     </main>
-    <!-- <footer>
+    <footer>
         <img id="logo-footer" src="/img/svg/fondoNegro2.svg" alt="SoundBox">
         <div class="info">
             <div class="footer-bar">
@@ -438,9 +392,6 @@
                 <li><img src="/img/svg/instagram1.svg" alt="Instagram"></li>
             </ul>
         </div>
-    </footer> -->
-
-    <%- include("./partials/footer") %>
-
+    </footer>
 </body>
 </html>
