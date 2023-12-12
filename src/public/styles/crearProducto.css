@@ -1,0 +1,12 @@
+.admin-container {
+
+    display: flex;
+    width: 50%;
+    margin: auto;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.formulario-admin {
+    display: flex;
+}

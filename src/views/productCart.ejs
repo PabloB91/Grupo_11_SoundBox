@@ -155,356 +155,48 @@
                         </div>
                         <section class="desplegable-ejemplo">
                             <!-- desplegable -->
-                            <div class="card">
-                                <div class="card-checkbox-container">
-                                    <input class="card-checkbox" type="checkbox">
-                                </div>
-                                <div class="product-image">
-                                    <img src="https://artemusical.com.ar/wp/wp-content/uploads/2019/06/18174_medium.jpg"
-                                        alt="">
-                                </div>
-                                <div class="product-description">
-                                    <h2>guitarra criolla</h2>
-                                    <div class="card-middle-divisor">
-                                        <p class="with-stock">Unidade/s</p>
-                                        <div class="card-contador">
-                                            <button class="contador-button"><strong>
-                                                    <i class="fa-solid fa-minus"></i>
-                                                </strong></button>
-                                            <input type="number" min="1" max="9000" placeholder="Cantidad" required>
-                                            <button class="contador-button"><strong>
-                                                    <i class="fa-solid fa-plus"></i>
-                                                </strong></button>
-                                            <!-- <p class="without-stock" style="color: red;">fuera de stock</p> -->
+
+                            <% instrumentos.forEach(producto=> { %>
+                                <div class="card">
+                                    <div class="card-checkbox-container">
+                                        <input class="card-checkbox" type="checkbox">
+                                    </div>
+                                    <div class="product-image">
+                                        <img src=<%=producto.imagen %> alt="">
+                                    </div>
+                                    <div class="product-description">
+                                        <h2>
+                                            <%= producto.nombre %>
+                                        </h2>
+                                        <div class="card-middle-divisor">
+                                            <p class="with-stock">Unidade/s</p>
+                                            <div class="card-contador">
+                                                <button class="contador-button"><strong>
+                                                        <i class="fa-solid fa-minus"></i>
+                                                    </strong></button>
+                                                <input type="number" min="1" max="9000" placeholder="Cantidad" required>
+                                                <button class="contador-button"><strong>
+                                                        <i class="fa-solid fa-plus"></i>
+                                                    </strong></button>
+                                                <p class="without-stock" style="color: red;">fuera de stock</p>
+                                            </div>
+                                        </div>
+                                        <div class="product-price-discount">
+                                            <strong><span class="product-price">
+                                                    <%= producto.precio + " $" %>
+                                                </span></strong>
+                                            <strong>
+                                                <h1>
+                                                    <%= "-" + producto.descuento + " % OFF" %>
+                                                </h1>
+                                            </strong>
                                         </div>
                                     </div>
-                                    <div class="product-price-discount">
-                                        <strong><span class="product-price">23$</span></strong>
-                                        <strong>
-                                            <h1>-50% OFF</h1>
-                                        </strong>
+                                    <div class="delete-card-button">
+                                        <button style="color: white;">Eliminar</button>
                                     </div>
                                 </div>
-                                <div class="delete-card-button">
-                                    <button style="color: white;">Eliminar</button>
-                                </div>
-                            </div>
-
-                            <div class="card">
-                                <div class="card-checkbox-container">
-                                    <input class="card-checkbox" type="checkbox">
-                                </div>
-                                <div class="product-image">
-                                    <img src="https://artemusical.com.ar/wp/wp-content/uploads/2019/06/18174_medium.jpg"
-                                        alt="">
-                                </div>
-                                <div class="product-description">
-                                    <h2>guitarra criolla</h2>
-                                    <div class="card-middle-divisor">
-                                        <p class="with-stock">Unidade/s</p>
-                                        <div class="card-contador">
-                                            <button class="contador-button"><strong>
-                                                    <i class="fa-solid fa-minus"></i>
-                                                </strong></button>
-                                            <input type="number" min="1" max="9000" placeholder="Cantidad" required>
-                                            <button class="contador-button"><strong>
-                                                    <i class="fa-solid fa-plus"></i>
-                                                </strong></button>
-                                            <!-- <p class="without-stock" style="color: red;">fuera de stock</p> -->
-                                        </div>
-                                    </div>
-                                    <div class="product-price-discount">
-                                        <strong><span class="product-price">23$</span></strong>
-                                        <strong>
-                                            <h1>-50% OFF</h1>
-                                        </strong>
-                                    </div>
-                                </div>
-                                <div class="delete-card-button">
-                                    <button style="color: white;">Eliminar</button>
-                                </div>
-                            </div>
-
-                            <div class="card">
-                                <div class="card-checkbox-container">
-                                    <input class="card-checkbox" type="checkbox">
-                                </div>
-                                <div class="product-image">
-                                    <img src="https://artemusical.com.ar/wp/wp-content/uploads/2019/06/18174_medium.jpg"
-                                        alt="">
-                                </div>
-                                <div class="product-description">
-                                    <h2>guitarra criolla</h2>
-                                    <div class="card-middle-divisor">
-                                        <p class="with-stock">Unidade/s</p>
-                                        <div class="card-contador">
-                                            <button class="contador-button"><strong>
-                                                    <i class="fa-solid fa-minus"></i>
-                                                </strong></button>
-                                            <input type="number" min="1" max="9000" placeholder="Cantidad" required>
-                                            <button class="contador-button"><strong>
-                                                    <i class="fa-solid fa-plus"></i>
-                                                </strong></button>
-                                            <!-- <p class="without-stock" style="color: red;">fuera de stock</p> -->
-                                        </div>
-                                    </div>
-                                    <div class="product-price-discount">
-                                        <strong><span class="product-price">23$</span></strong>
-                                        <strong>
-                                            <h1>-50% OFF</h1>
-                                        </strong>
-                                    </div>
-                                </div>
-                                <div class="delete-card-button">
-                                    <button style="color: white;">Eliminar</button>
-                                </div>
-                            </div>
-
-                            <div class="card">
-                                <div class="card-checkbox-container">
-                                    <input class="card-checkbox" type="checkbox">
-                                </div>
-                                <div class="product-image">
-                                    <img src="https://artemusical.com.ar/wp/wp-content/uploads/2019/06/18174_medium.jpg"
-                                        alt="">
-                                </div>
-                                <div class="product-description">
-                                    <h2>guitarra criolla</h2>
-                                    <div class="card-middle-divisor">
-                                        <p class="with-stock">Unidade/s</p>
-                                        <div class="card-contador">
-                                            <button class="contador-button"><strong>
-                                                    <i class="fa-solid fa-minus"></i>
-                                                </strong></button>
-                                            <input type="number" min="1" max="9000" placeholder="Cantidad" required>
-                                            <button class="contador-button"><strong>
-                                                    <i class="fa-solid fa-plus"></i>
-                                                </strong></button>
-                                            <!-- <p class="without-stock" style="color: red;">fuera de stock</p> -->
-                                        </div>
-                                    </div>
-                                    <div class="product-price-discount">
-                                        <strong><span class="product-price">23$</span></strong>
-                                        <strong>
-                                            <h1>-50% OFF</h1>
-                                        </strong>
-                                    </div>
-                                </div>
-                                <div class="delete-card-button">
-                                    <button style="color: white;">Eliminar</button>
-                                </div>
-                            </div>
-
-                            <div class="card">
-                                <div class="card-checkbox-container">
-                                    <input class="card-checkbox" type="checkbox">
-                                </div>
-                                <div class="product-image">
-                                    <img src="https://artemusical.com.ar/wp/wp-content/uploads/2019/06/18174_medium.jpg"
-                                        alt="">
-                                </div>
-                                <div class="product-description">
-                                    <h2>guitarra criolla</h2>
-                                    <div class="card-middle-divisor">
-                                        <p class="with-stock">Unidade/s</p>
-                                        <div class="card-contador">
-                                            <button class="contador-button"><strong>
-                                                    <i class="fa-solid fa-minus"></i>
-                                                </strong></button>
-                                            <input type="number" min="1" max="9000" placeholder="Cantidad" required>
-                                            <button class="contador-button"><strong>
-                                                    <i class="fa-solid fa-plus"></i>
-                                                </strong></button>
-                                            <!-- <p class="without-stock" style="color: red;">fuera de stock</p> -->
-                                        </div>
-                                    </div>
-                                    <div class="product-price-discount">
-                                        <strong><span class="product-price">23$</span></strong>
-                                        <strong>
-                                            <h1>-50% OFF</h1>
-                                        </strong>
-                                    </div>
-                                </div>
-                                <div class="delete-card-button">
-                                    <button style="color: white;">Eliminar</button>
-                                </div>
-                            </div>
-
-                            <div class="card">
-                                <div class="card-checkbox-container">
-                                    <input class="card-checkbox" type="checkbox">
-                                </div>
-                                <div class="product-image">
-                                    <img src="https://artemusical.com.ar/wp/wp-content/uploads/2019/06/18174_medium.jpg"
-                                        alt="">
-                                </div>
-                                <div class="product-description">
-                                    <h2>guitarra criolla</h2>
-                                    <div class="card-middle-divisor">
-                                        <p class="with-stock">Unidade/s</p>
-                                        <div class="card-contador">
-                                            <button class="contador-button"><strong>
-                                                    <i class="fa-solid fa-minus"></i>
-                                                </strong></button>
-                                            <input type="number" min="1" max="9000" placeholder="Cantidad" required>
-                                            <button class="contador-button"><strong>
-                                                    <i class="fa-solid fa-plus"></i>
-                                                </strong></button>
-                                            <!-- <p class="without-stock" style="color: red;">fuera de stock</p> -->
-                                        </div>
-                                    </div>
-                                    <div class="product-price-discount">
-                                        <strong><span class="product-price">23$</span></strong>
-                                        <strong>
-                                            <h1>-50% OFF</h1>
-                                        </strong>
-                                    </div>
-                                </div>
-                                <div class="delete-card-button">
-                                    <button style="color: white;">Eliminar</button>
-                                </div>
-                            </div>
-
-
-                            <div class="card">
-                                <div class="card-checkbox-container">
-                                    <input class="card-checkbox" type="checkbox">
-                                </div>
-                                <div class="product-image">
-                                    <img src="https://artemusical.com.ar/wp/wp-content/uploads/2019/06/18174_medium.jpg"
-                                        alt="">
-                                </div>
-                                <div class="product-description">
-                                    <h2>guitarra criolla</h2>
-                                    <div class="card-middle-divisor">
-                                        <p class="with-stock">Unidade/s</p>
-                                        <div class="card-contador">
-                                            <button class="contador-button"><strong>
-                                                    <i class="fa-solid fa-minus"></i>
-                                                </strong></button>
-                                            <input type="number" min="1" max="9000" placeholder="Cantidad" required>
-                                            <button class="contador-button"><strong>
-                                                    <i class="fa-solid fa-plus"></i>
-                                                </strong></button>
-                                            <!-- <p class="without-stock" style="color: red;">fuera de stock</p> -->
-                                        </div>
-                                    </div>
-                                    <div class="product-price-discount">
-                                        <strong><span class="product-price">23$</span></strong>
-                                        <strong>
-                                            <h1>-50% OFF</h1>
-                                        </strong>
-                                    </div>
-                                </div>
-                                <div class="delete-card-button">
-                                    <button style="color: white;">Eliminar</button>
-                                </div>
-                            </div>
-
-                            <div class="card">
-                                <div class="card-checkbox-container">
-                                    <input class="card-checkbox" type="checkbox">
-                                </div>
-                                <div class="product-image">
-                                    <img src="https://artemusical.com.ar/wp/wp-content/uploads/2019/06/18174_medium.jpg"
-                                        alt="">
-                                </div>
-                                <div class="product-description">
-                                    <h2>guitarra criolla</h2>
-                                    <div class="card-middle-divisor">
-                                        <p class="with-stock">Unidade/s</p>
-                                        <div class="card-contador">
-                                            <button class="contador-button"><strong>
-                                                    <i class="fa-solid fa-minus"></i>
-                                                </strong></button>
-                                            <input type="number" min="1" max="9000" placeholder="Cantidad" required>
-                                            <button class="contador-button"><strong>
-                                                    <i class="fa-solid fa-plus"></i>
-                                                </strong></button>
-                                            <!-- <p class="without-stock" style="color: red;">fuera de stock</p> -->
-                                        </div>
-                                    </div>
-                                    <div class="product-price-discount">
-                                        <strong><span class="product-price">23$</span></strong>
-                                        <strong>
-                                            <h1>-50% OFF</h1>
-                                        </strong>
-                                    </div>
-                                </div>
-                                <div class="delete-card-button">
-                                    <button style="color: white;">Eliminar</button>
-                                </div>
-                            </div>
-
-                            <div class="card">
-                                <div class="card-checkbox-container">
-                                    <input class="card-checkbox" type="checkbox">
-                                </div>
-                                <div class="product-image">
-                                    <img src="https://artemusical.com.ar/wp/wp-content/uploads/2019/06/18174_medium.jpg"
-                                        alt="">
-                                </div>
-                                <div class="product-description">
-                                    <h2>guitarra criolla</h2>
-                                    <div class="card-middle-divisor">
-                                        <p class="with-stock">Unidade/s</p>
-                                        <div class="card-contador">
-                                            <button class="contador-button"><strong>
-                                                    <i class="fa-solid fa-minus"></i>
-                                                </strong></button>
-                                            <input type="number" min="1" max="9000" placeholder="Cantidad" required>
-                                            <button class="contador-button"><strong>
-                                                    <i class="fa-solid fa-plus"></i>
-                                                </strong></button>
-                                            <!-- <p class="without-stock" style="color: red;">fuera de stock</p> -->
-                                        </div>
-                                    </div>
-                                    <div class="product-price-discount">
-                                        <strong><span class="product-price">23$</span></strong>
-                                        <strong>
-                                            <h1>-50% OFF</h1>
-                                        </strong>
-                                    </div>
-                                </div>
-                                <div class="delete-card-button">
-                                    <button style="color: white;">Eliminar</button>
-                                </div>
-                            </div>
-
-                            <div class="card">
-                                <div class="card-checkbox-container">
-                                    <input class="card-checkbox" type="checkbox">
-                                </div>
-                                <div class="product-image">
-                                    <img src="https://artemusical.com.ar/wp/wp-content/uploads/2019/06/18174_medium.jpg"
-                                        alt="">
-                                </div>
-                                <div class="product-description">
-                                    <h2>guitarra criolla</h2>
-                                    <div class="card-middle-divisor">
-                                        <!-- <p class="with-stock">Unidade/s</p> -->
-                                        <div class="card-contador">
-                                            <!-- <button class="contador-button"><strong>
-                                                <i class="fa-solid fa-minus"></i>
-                                            </strong></button>
-                                            <input type="number" min="1" max="9000" placeholder="Cantidad" required>
-                                            <button class="contador-button"><strong>
-                                                <i class="fa-solid fa-plus"></i>
-                                            </strong></button> -->
-                                            <p class="without-stock" style="color: red;">fuera de stock</p>
-                                        </div>
-                                    </div>
-                                    <div class="product-price-discount">
-                                        <strong><span class="product-price">23$</span></strong>
-                                        <strong>
-                                            <h1>-50% OFF</h1>
-                                        </strong>
-                                    </div>
-                                </div>
-                                <div class="delete-card-button">
-                                    <button style="color: white;">Eliminar</button>
-                                </div>
-                            </div>
+                                <% }); %>
                         </section>
 
                         <div class="pie-carrito">
@@ -566,27 +258,33 @@
                                         <input class="card-checkbox" type="checkbox">
                                     </div>
                                     <div class="product-image">
-                                        <img src=<%= producto.imagen %> alt="">
+                                        <img src=<%=producto.imagen %> alt="">
                                     </div>
                                     <div class="product-description">
-                                        <h2><%= producto.nombre %></h2>
+                                        <h2>
+                                            <%= producto.nombre %>
+                                        </h2>
                                         <div class="card-middle-divisor">
                                             <p class="with-stock">Unidade/s</p>
                                             <div class="card-contador">
                                                 <button class="contador-button"><strong>
-                                                <i class="fa-solid fa-minus"></i>
-                                            </strong></button>
-                                            <input type="number" min="1" max="9000" placeholder="Cantidad" required>
-                                            <button class="contador-button"><strong>
-                                                <i class="fa-solid fa-plus"></i>
-                                            </strong></button>
+                                                        <i class="fa-solid fa-minus"></i>
+                                                    </strong></button>
+                                                <input type="number" min="1" max="9000" placeholder="Cantidad" required>
+                                                <button class="contador-button"><strong>
+                                                        <i class="fa-solid fa-plus"></i>
+                                                    </strong></button>
                                                 <p class="without-stock" style="color: red;">fuera de stock</p>
                                             </div>
                                         </div>
                                         <div class="product-price-discount">
-                                            <strong><span class="product-price"><%= producto.precio + " $" %> </span></strong>
+                                            <strong><span class="product-price">
+                                                    <%= producto.precio + " $" %>
+                                                </span></strong>
                                             <strong>
-                                                <h1><%= "-" + producto.descuento + " % OFF"  %></h1>
+                                                <h1>
+                                                    <%= "-" + producto.descuento + " % OFF" %>
+                                                </h1>
                                             </strong>
                                         </div>
                                     </div>

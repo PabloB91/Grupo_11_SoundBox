@@ -38,50 +38,50 @@ const todosLosInstrumentos = [
 
 const mainController = {
 
+    // formularios
+    login: (req, res) => {
+        
+        res.render("login");
+        
+    },
+    
+    register: (req, res) => {
+        
+        res.render("register");
+        
+    },
+    
+    // aca ponemos los que necesitan los productos->
+    crear: (req, res) => {
+        res.render("crearProducto", { instrumentos: todosLosInstrumentos })
+        
+    },
+
     index: (req, res) => {
         // const listaObjetos = "conjunto de datos";
         // const datos2 = ["dato1", "dato2", "dato3", "dato4"];
-
+    
         res.render("index", { instrumentos: todosLosInstrumentos }
             // , {listaObjetos: listaObjetos}
         );
-
+    
     },
-
-
-
-    // administrador: (req, res) => {
-    //     res.render("crearProducto", { instrumentos: todosLosInstrumentos })
-        
-    // },
-
+    
     carrito: (req, res) => {
-
+        
         res.render("productCart",
-            { instrumentos: todosLosInstrumentos }
-            // { productos }
+        { instrumentos: todosLosInstrumentos }
+        // { productos }
         );
-
+        
     },
-
-    login: (req, res) => {
-
-        res.render("login");
-
-    },
-
-    register: (req, res) => {
-
-        res.render("register");
-
-    },
-
+    
     productDetail: (req, res) => {
-
+        
         res.render("productDetail");
-
+        
     },
-
+    
 }
 
 

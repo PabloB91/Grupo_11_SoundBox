@@ -14,9 +14,6 @@ router.get("/register", mainController.register);
 
 router.get("/productDetail", mainController.productDetail);
 
-// router.get("/crear", mainController.carrito);
-
-// router.get("/crear", mainController.administrador)
-// Acá exportamos el resultado
+router.get("/crearProducto", mainController.crear);
 
 module.exports = router;
