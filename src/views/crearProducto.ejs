@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <%- include("./partials/head") %>
+        <link href="styles/administrador.css" rel="stylesheet">
+</head>
+
+<body>
+    <%- include("./partials/header") %>
+        <main>
+            <section class="admin-container">
+                <h1 style="width: 100%; height: auto;"> usted esta en cuenta de administrador! </h1>
+                <form action="" method="POST">
+                    <div class="formulario-admin">
+                        <div>
+                            <label style="color: white;" for="">nombre de producto</label>
+                            <input type="text" value="" name="nombre">
+                            <br>
+                        </div>
+                        <div>
+                            <label style="color: white;" for="">cantidad disponible</label>
+                            <input type="text" value="" name="nombre">
+                            <br>
+
+                        </div>
+                        <div>
+                            <label style="color: white;" for="">precio</label>
+                            <input type="text" value="" name="nombre">
+                            <br>
+                        </div>
+                        <div>
+                            <label style="color: white;" for="">descuento</label>
+                            <input type="text" value="" name="nombre">
+                            <br>
+                        </div>
+
+                    </div>
+                </form>
+
+            </section>
+
+            <%- include("./partials/footer") %>
+
+        </main>
+</body>
+
+</html>

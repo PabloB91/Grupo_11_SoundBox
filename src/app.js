@@ -3,46 +3,16 @@ const path = require("path")
 const app = express();
 app.use(express.static("public"));
 
-app.listen(3050,()=>{
+// Acá falta el template engine
+
+app.set("view engine", "ejs")
+
+app.set('views', path.resolve(__dirname, "views"));
+
+// Rutas
+const mainRouter = require("../../../Grupo_11_SoundBox/src/routes/mainRouter");
+app.use("/", mainRouter);
+
+app.listen(3050,()=> {
     console.log ("Servidor funcionando en: http://localhost:3050/")
 });
-
-app.get("/", (req, res)=>{
-  let htmlPath = path.resolve(__dirname, "views/home.html");
-  res.sendFile(htmlPath)
-})
-
-/* FORMS */
-
-/*login*/
-
-app.get("/login", (req, res)=>{
-  let htmlPath = path.resolve(__dirname, "views/login.html");
-  res.sendFile(htmlPath)
-})
-
-/*register*/
-app.get("/register", (req, res)=>{
-  let htmlPath = path.resolve(__dirname, "views/register.html");
-  res.sendFile(htmlPath)
-})
-/* carrito  */
-
-app.get("/productCart", (req, res)=>{
-  let htmlPath = path.resolve(__dirname, "views/productCart.html");
-  res.sendFile(htmlPath)
-})
-
-/* Para ver la guía tipográfica - luego se puede eliminar  */
-
-app.get('/fontguide', (req, res)=>{
-  let htmlPath = path.resolve(__dirname, "views/fontsguidesbx.html");
-  res.sendFile(htmlPath)
-})
-
-/* detalles del producto  */
-
-app.get('/productDetail', (req, res)=>{
-  let htmlPath = path.resolve(__dirname, "views/productDetail.html");
-  res.sendFile(htmlPath)
-})
