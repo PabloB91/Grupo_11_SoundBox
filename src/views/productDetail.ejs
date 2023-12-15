@@ -1,134 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <script src="https://kit.fontawesome.com/971bd64f71.js" crossorigin="anonymous"></script>
-
+<!------------------------- HEAD ------------------------->
+    <%- include("./partials/head") %>
+    <script src="https://kit.fontawesome.com/971bd64f71.js" crossorigin="anonymous"></script>   
     <link rel="stylesheet" href="/styles/productDetail.css">
-    <link rel="stylesheet" href="/styles/header-footer.css">
-    <link rel="stylesheet" href="/styles.reset.css">
-
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" />
-
-    <title>Product Detail</title>
-
-</head>
+    
 <body>
-    
-    
+
+<!-- =============================================================================================================== -->
 <!------------------------- NAV-BAR ------------------------->
-<header>
-    <section class="header-superior">
-        <div class="envíos-bar">
-            <ul>
-                <li>
-                    <span class="material-symbols-outlined">local_shipping</span>
-                    <span class="material-symbols-outlined">travel</span>
-                    <p>Envíos locales e internacionales inmediatos</p>
-                </li>
-            </ul>
-        </div>
-        <div class="login-bar">
-            <ul>
-                <li><a href="#">Crear cuenta</a></li>
-                <li><a href="/login">Ingresar</a><span class="material-symbols-outlined">login</span></li>
-                <li class="mi-cajita"><span id="mi_cajita" class="material-symbols-outlined">shopping_cart</span><a href="/productCart">Mi Cajita</a></li>
-            </ul>
-        </div>
-    </section>
-    <section class="header-inferior">
-        <img id="logo" src="/img/svg/estandar.svg" alt="SoundBox">
-        <div class="nav-bar">
-            <ul>
-                <div class="dropdown">
-                    <li>
-                        <a href="#">Instrumentos musicales</a><i class="fa-solid fa-chevron-down"></i>
-                    </li>
-                    <div class="dropdown-content">
-                        <a href="#">Link 1</a>
-                        <a href="#">Link 2</a>
-                        <a href="#">Link 3</a>
-                    </div>
-                </div>
-                <div class="dropdown">    
-                    <li>
-                        <a href="#">Amplificación</a><i class="fa-solid fa-chevron-down"></i>
-                    </li>
-                    <div class="dropdown-content">
-                        <a href="#">Link 1</a>
-                        <a href="#">Link 2</a>
-                        <a href="#">Link 3</a>
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <li>
-                        <a href="#">Efectos</a><i class="fa-solid fa-chevron-down"></i>
-                    </li>
-                    <div class="dropdown-content">
-                        <a href="#">Link 1</a>
-                        <a href="#">Link 2</a>
-                        <a href="#">Link 3</a>
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <li>
-                        <a href="#">Accesorios</a><i class="fa-solid fa-chevron-down"></i>
-                    </li>
-                    <div class="dropdown-content">
-                        <a href="#">Link 1</a>
-                        <a href="#">Link 2</a>
-                        <a href="#">Link 3</a>
-                    </div>
-                </div>
-                    <div class="dropdown">
-                <li>
-                    <a href="#">Segunda mano</a><i class="fa-solid fa-chevron-down"></i>
-                </li>
-                <div class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
-                </div>
-                    </div>
-                <div class="dropdown">
-                    <li>
-                        <a href="#">Ofertas</a><i class="fa-solid fa-chevron-down"></i>
-                    </li>
-                    <div class="dropdown-content">
-                        <a href="#">Link 1</a>
-                        <a href="#">Link 2</a>
-                        <a href="#">Link 3</a>
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <li>
-                        <a href="#">Marcas</a><i class="fa-solid fa-chevron-down"></i>
-                    </li>
-                    <div class="dropdown-content">
-                        <a href="#">Link 1</a>
-                        <a href="#">Link 2</a>
-                        <a href="#">Link 3</a>
-                    </div>
-                </div>
-                <li>
-                <div class="search-bar">
-                    <form>
-                        <input type="text" placeholder="Buscar productos, marcas">
-                        <span class="material-symbols-outlined">search</span>
-                    </form>
-                </div>
-                </li>
-            </ul>  
-        </div>
-    </section>
-</header>
+
+    <%- include('./partials/header.ejs') %>
 
 
 
+<!-- =============================================================================================================== -->
 <!------------------------- MAIN ------------------------->
     
     <main>
@@ -240,34 +127,14 @@
 
 
 
+<!-- =============================================================================================================== -->
 <!------------------------- FOOTER ------------------------->
 
-    <footer>
-        <img id="logo-footer" src="/img/svg/fondoNegro2.svg" alt="SoundBox">
-        <div class="info">
-            <div class="footer-bar">
-                <ul>
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Quiénes somos</a></li>
-                    <li><a href="#">Nuestros servicios</a></li>
-                    <li><a href="#">Tiendas</a></li>
-                    <li><a href="#">Garantía post-venta</a></li>
-                    <li><a href="#">Contáctanos</a></li>
-                </ul>
-            </div>
-            <div class="copyright">
-                <p>SOUNDBOX   <span> Todos los derechos reservados</span></p>
-            </div>
-        </div>
-            <div class="redes">
-                <ul>
-                    <li><img src="/img/svg/facebook1.svg"></li>
-                    <li><img src="/img/svg/twitter1.svg"></li>
-                    <li><img src="/img/svg/youtube1.svg"></li>
-                    <li><img src="/img/svg/instagram1.svg" alt="Instagram"></li>
-                </ul>
-            </div>
-    </footer>
+    <%- include('./partials/footer.ejs') %>
+
+
+
+<!-- =============================================================================================================== -->
 
 </body>
 </html>
