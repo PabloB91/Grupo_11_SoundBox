@@ -58,34 +58,13 @@ body {
 
 }
 
-.contenedor-boton-cajita .cabecera-carrito,
-.contenedor-boton-cajita .desplegable-ejemplo,
-.contenedor-boton-cajita .pie-carrito {
-    /* background: radial-gradient(circle, hsla(18, 100%, 52%, 1) 39%, hsla(329, 82%, 76%, 1) 92%, hsla(342, 95%, 78%, 1) 100%); */
-    /* otro tipo de degradado para los botones */
-    background: linear-gradient(90deg, hsla(18, 100%, 52%, 1) 22%, rgb(255, 64, 64) 51%, rgb(255, 192, 211) 100%);
-    /* background: linear-gradient(90deg, hsla(18, 100%, 52%, 1) 22%, rgb(255, 64, 64) 51%, rgb(255, 192, 211) 100%); */
-    /* background: linear-gradient(90deg, hsla(310, 60%, 88%, 1) 0%, hsla(27, 100%, 64%, 1) 50%, hsla(11, 100%, 52%, 1) 100%); */
-}
-
-.contenedor-boton-favoritos .cabecera-carrito,
-.contenedor-boton-favoritos .desplegable-ejemplo,
-.contenedor-boton-favoritos .pie-carrito {
-    /* background: linear-gradient(90deg, hsla(18, 100%, 52%, 1) 22%, rgb(255, 64, 64) 51%, rgb(255, 192, 211) 100%); */
-    /* background: linear-gradient(90deg, hsla(310, 60%, 88%, 1) 0%, hsla(27, 100%, 64%, 1) 50%, hsla(11, 100%, 52%, 1) 100%); */
-    background: linear-gradient(90deg, hsla(18, 100%, 52%, 1) 22%, rgb(255, 64, 64) 51%, rgb(255, 192, 211) 100%);
-}
-
-
-
-
-
-
 .contenedor-boton-cajita {
+    background-color: inherit;
     height: 50%;
     margin-left: 1rem;
     margin-top: 1rem;
     border-radius: 100px 100px 100px 100px;
+    
     box-shadow: 25px 25px 10px gray;
 }
 
@@ -149,15 +128,15 @@ body {
 
 .desplegable-ejemplo {
     display: none;
-                                /* DESPLEGABLE OCULTO */
+    /* DESPLEGABLE OCULTO */
     flex-wrap: nowrap;
     overflow-y: scroll;
     flex-direction: column;
 
     width: 100%;
     height: 80%;
-    background: linear-gradient(315deg, hsla(18, 100%, 52%, 1) 22%, rgb(255, 64, 64) 51%, rgb(255, 192, 211) 100%);
-    /* background: -moz-linear-gradient(90deg, hsla(310, 60%, 88%, 1) 0%, hsla(27, 100%, 64%, 1) 35%, hsla(11, 100%, 52%, 1) 100%); */
+
+
 }
 
 .pie-carrito {
@@ -184,36 +163,11 @@ body {
 
 }
 
-
-
-
-/* 
-@keyframes degradado {
-    0% {
-        background-color: #FF540A;
-    }
-
-    25% {
-        background-color: red;
-    }
-
-    50% {
-        background-color: rgb(202, 151, 56);
-    }
-
-    100% {
-        background-color: gold;
-    }
-} */
-
-
-
-
 .card {
     display: flex;
     justify-content: center;
     position: sticky;
-    background-color: inherit;
+    background-color: gray;
     margin: 8px;
     align-items: center;
     align-content: center;
@@ -389,8 +343,8 @@ body {
     border-radius: 50px;
     width: auto;
     height: 30%;
-    /* background: linear-gradient(315deg, hsla(18, 100%, 52%, 1) 22%, rgb(255, 64, 64) 51%, rgb(255, 192, 211) 100%); */
-    background: linear-gradient(135deg, hsla(310, 60%, 88%, 1) 0%, hsla(27, 100%, 64%, 1) 50%, hsla(11, 100%, 52%, 1) 100%);
+
+
     box-shadow: 25px 25px 10px gray;
 
 }
@@ -443,13 +397,12 @@ body {
 .subtotal .subtotal-item-cards {
     display: flex;
     position: sticky;
-    justify-content: space-evenly;
+    justify-content: space-around;
+
 }
 
 .subtotal-item-cards span {
     display: flex;
-    justify-content: flex-end;
-    align-self: center;
 
 }
 
@@ -571,6 +524,7 @@ body {
 
 
 }
+
 /* MEDIA QUERIES PARA TABLET */
 
 @media(max-width:1024px) {

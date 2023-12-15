@@ -10,7 +10,7 @@ body {
     display: flex; /* para separar el titulo del form */
     flex-wrap: wrap;
     width: 100%;
-    height: 100vh;
+    height: 60%;
     background: #000;
 }
 
