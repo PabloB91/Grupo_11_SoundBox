@@ -10,13 +10,16 @@ header #logo {
     width: 10%;
 }
 
+
+
 header a {
     text-decoration: none;
     font-family: 'Montserrat' ;   
     font-size: 14px;
     font-weight: 400;
+    
 }
-
+ 
 .header-superior{
     display: flex;
     flex-direction: row;
