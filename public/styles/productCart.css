@@ -58,13 +58,34 @@ body {
 
 }
 
+.contenedor-boton-cajita .cabecera-carrito,
+.contenedor-boton-cajita .desplegable-ejemplo,
+.contenedor-boton-cajita .pie-carrito {
+    /* background: radial-gradient(circle, hsla(18, 100%, 52%, 1) 39%, hsla(329, 82%, 76%, 1) 92%, hsla(342, 95%, 78%, 1) 100%); */
+    /* otro tipo de degradado para los botones */
+
+    background: linear-gradient(135deg, hsla(342, 100%, 88%, 1) 0%, hsla(0, 84%, 76%, 1) 17%, hsla(18, 100%, 52%, 1) 71%);
+}
+
+.contenedor-boton-favoritos .cabecera-carrito,
+.contenedor-boton-favoritos .desplegable-ejemplo,
+.contenedor-boton-favoritos .pie-carrito {
+    /* background: radial-gradient(circle, hsla(18, 100%, 52%, 1) 39%, hsla(329, 82%, 76%, 1) 92%, hsla(342, 95%, 78%, 1) 100%); */
+    /* otro tipo de degradado para los botones */
+    
+    background: linear-gradient(135deg, hsla(342, 100%, 88%, 1) 0%, hsla(0, 84%, 76%, 1) 17%, hsla(18, 100%, 52%, 1) 71%);
+}
+
+
+
+
+
+
 .contenedor-boton-cajita {
-    background-color: inherit;
     height: 50%;
     margin-left: 1rem;
     margin-top: 1rem;
     border-radius: 100px 100px 100px 100px;
-    
     box-shadow: 25px 25px 10px gray;
 }
 
@@ -128,15 +149,15 @@ body {
 
 .desplegable-ejemplo {
     display: none;
-    /* DESPLEGABLE OCULTO */
+                                                        /* DESPLEGABLE OCULTO */
     flex-wrap: nowrap;
     overflow-y: scroll;
     flex-direction: column;
 
     width: 100%;
     height: 80%;
-
-
+    background: none;
+    background: linear-gradient(90deg, hsla(342, 100%, 88%, 1) 0%, hsla(0, 84%, 76%, 1) 30%, hsla(18, 100%, 52%, 1) 52%);
 }
 
 .pie-carrito {
@@ -163,11 +184,36 @@ body {
 
 }
 
+
+
+
+/* 
+@keyframes degradado {
+    0% {
+        background-color: #FF540A;
+    }
+
+    25% {
+        background-color: red;
+    }
+
+    50% {
+        background-color: rgb(202, 151, 56);
+    }
+
+    100% {
+        background-color: gold;
+    }
+} */
+
+
+
+
 .card {
     display: flex;
     justify-content: center;
     position: sticky;
-    background-color: gray;
+    background-color: #f1f1f1;
     margin: 8px;
     align-items: center;
     align-content: center;
@@ -343,10 +389,9 @@ body {
     border-radius: 50px;
     width: auto;
     height: 30%;
-
-
     box-shadow: 25px 25px 10px gray;
 
+    background: linear-gradient(135deg, hsla(342, 100%, 88%, 1) 0%, hsla(0, 84%, 76%, 1) 17%, hsla(18, 100%, 52%, 1) 71%);
 }
 
 .payement-button {
@@ -397,12 +442,13 @@ body {
 .subtotal .subtotal-item-cards {
     display: flex;
     position: sticky;
-    justify-content: space-around;
-
+    justify-content: space-evenly;
 }
 
 .subtotal-item-cards span {
     display: flex;
+    justify-content: flex-end;
+    align-self: center;
 
 }
 
