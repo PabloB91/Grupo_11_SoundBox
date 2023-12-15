@@ -1,40 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include("./partials/head") %>
+    <!-- Head -->
+    <%- include("./partials/head") %>
     <link href="styles/crearProductos.css" rel="stylesheet">
 
     <body>
+<!-- =============================================================================================================== -->
+
+        <!-- Header -->
         <%- include("./partials/header") %>
+
+<!-- =============================================================================================================== -->
+
             <main>
+                <section class="admin-container">
 
-                <body>
-                    <section class="admin-container">
-                        <h1 style="width: 100%; height: auto;"> usted esta en cuenta de administrador! </h1>
-                        <div class="formulario-admin">
-                            <form action="" method="POST">
-                                <label style="color: white;" for=""></label>
-                                <input placeholder=" nombre" type="text" value="" name="nombre">
-                                <br>
-                                <label style="color: white;" for=""></label>
-                                <input placeholder=" cantidad" type="text" value="" name="nombre">
-                                <br>
-                                <label style="color: white;" for=""></label>
-                                <input placeholder=" precio" type="text" value="" name="nombre">
-                                <br>
-                                <label style="color: white;" for=""></label>
-                                <input placeholder=" descuento" type="text" value="" name="nombre">
-                                <br>
-                            </form>
-                        </div>
+                    <h1 style="width: 100%; height: auto;"> usted esta en cuenta de administrador! </h1>
 
-                    </section>
+                    <div class="formulario-admin">
+                        <form action="" method="POST">
+                            <label style="color: white;" for=""></label>
+                            <input placeholder=" nombre" type="text" value="" name="nombre">
+                            <br>
+                            <label style="color: white;" for=""></label>
+                            <input placeholder=" cantidad" type="text" value="" name="nombre">
+                            <br>
+                            <label style="color: white;" for=""></label>
+                            <input placeholder=" precio" type="text" value="" name="nombre">
+                            <br>
+                            <label style="color: white;" for=""></label>
+                            <input placeholder=" descuento" type="text" value="" name="nombre">
+                            <br>
+                       </form>
+                    </div>
 
-                </body>
-
-                <%- include("./partials/footer") %>
-
+                </section>
             </main>
-    </body>
 
+<!-- =============================================================================================================== -->
+
+            <!-- Footer -->
+            <%- include("./partials/footer") %>
+            
+<!-- =============================================================================================================== -->
+
+    </body>
 </html>

@@ -5,7 +5,7 @@ const app = express();
 app.use(express.static("public"));
 
 // Acá falta el template engine
-
+    
 app.set("view engine", "ejs")
 
 app.set('views', path.resolve(__dirname, "views"));
