@@ -1,11 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <%- include("./partials/head") %>
-<link href="/styles/reset.css" rel="stylesheet">
-<link href="/styles/header-footer.css" rel="stylesheet">
-<link href="styles/crearProductos.css" rel="stylesheet"> 
+    <link href="styles/crearProductos.css" rel="stylesheet">
 
 
     <body>
+<!-- =============================================================================================================== -->
+
+        <!-- Header -->
         <%- include("./partials/header") %>
+
+<!-- =============================================================================================================== -->
+
             <main>
 
                 <body>
@@ -14,28 +21,30 @@
                         <div class="formulario-admin">
                             <form action="" method="POST">
                                 <label style="color: white;" for=""></label>
-                                <input placeholder="nombre" type="text" value="" name="nombre">
+                                <input placeholder=" nombre" type="text" value="" name="nombre">
                                 <br>
                                 <label style="color: white;" for=""></label>
-                                <input placeholder="cantidad" type="text" value="" name="cantidad">
+                                <input placeholder=" cantidad" type="text" value="" name="nombre">
                                 <br>
                                 <label style="color: white;" for=""></label>
-                                <input placeholder="precio" type="text" value="" name="precio">
+                                <input placeholder=" precio" type="text" value="" name="nombre">
                                 <br>
                                 <label style="color: white;" for=""></label>
-                                <input placeholder="descuento" type="text" value="" name="descuento">
+                                <input placeholder=" descuento" type="text" value="" name="nombre">
                                 <br>
-                                <label style="color: white;" for=""></label>
-                                <input placeholder="imagen" type="image" value="" name="imagen">
                             </form>
                         </div>
 
-                    </section>
-
-                </body>
-
-                <%- include("./partials/footer") %>
-
+                </section>
             </main>
+
+<!-- =============================================================================================================== -->
+
+            <!-- Footer -->
+            <%- include("./partials/footer") %>
+            
+<!-- =============================================================================================================== -->
+
     </body>
 
+</html>
