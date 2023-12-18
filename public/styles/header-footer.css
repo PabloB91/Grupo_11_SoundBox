@@ -182,15 +182,19 @@ footer{
     margin-right: 6rem;
 }
 
-#logo-footer {
-    width: 10%;
-    margin-left: 0rem;
+.container-simbol {
+    width: 8%;
+    padding: 20px;
+}
+
+#simbol-footer {
+    width: 100%;
 }
 
 footer a, p, span {
     text-decoration: none;
-    font-family: 'Bebas Neue' ;   
-    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;   
+    font-size: 14px;
 }
 footer a:link,
 footer a:visited,
@@ -233,7 +237,8 @@ footer a:active{
 .copyright {
     color: white;
     background-color: black;
-    margin-left: 3.2vw;
+    margin-top: 5px;
+    margin-left: 0;
 }
 
 .copyright span {
