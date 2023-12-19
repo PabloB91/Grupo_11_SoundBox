@@ -77,6 +77,34 @@
 
 }
 
+.nombre-form, .marca-form, .descripcion-form, .cantidad-form, .precio-form, .descuento-form{
+    width: 300px;
+    height: 24px;
+    outline: none;
+}
+
+.crear-carta-borrar-carta{
+    display: flex;
+}
+
+.enviar-form, .borrar-form{
+    width: 80px;
+    border: none;
+    background-color: #ff540a;
+    color: white;
+    height: 24px;
+    border-radius: 4px;
+}
+
+
+/* BORRAR FLECHAS DE LOS INPUT TYPE "NUMBER" */
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 /* media query */
 
 @media (max-width:768px) {

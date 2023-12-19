@@ -11,30 +11,35 @@
                         <div class="separador-efecto">.</div>
                         <div class="formulario-admin">
                             <form action="#" method="POST">
+
                                 <label for=""></label>
-                                <input placeholder="imagen" type="text" value="" name="imagen">
-                                <br>
+                                <input placeholder="Imagen" type="file" value="" name="imagen" class="imagen-form"> <br>
+                                
                                 <label for=""></label>
-                                <input placeholder="nombre" type="text" value="" name="nombre">
-                                <br>
+                                <input placeholder="Nombre" type="text" value="" name="nombre" class="nombre-form"> <br>
+                                
                                 <label for=""></label>
-                                <input placeholder="marca" type="text" value="" name="marca">
-                                <br>
+                                <input placeholder="Marca" type="text" value="" name="marca" class="marca-form"> <br>
+
                                 <label for=""></label>
-                                <input placeholder="descripcion" type="text" value="" name="descripcion">
-                                <br>
+                                <input placeholder="Descripcion" type="text" value="" name="descripcion" class="descripcion-form"> <br>
+
                                 <label for=""></label>
-                                <input placeholder="cantidad" type="number" value="" name="cantidad">
-                                <br>
+                                <input placeholder="Cantidad" type="number" value="" name="cantidad" min="1" max="1000" class="cantidad-form"> <br>
+
                                 <label for=""></label>
-                                <input placeholder="precio" type="text" value="" name="precio">
-                                <br>
+                                <input placeholder="Precio" type="number" value="" name="precio" min="1" max="9999999" class="precio-form"> <br>
+
                                 <label for=""></label>
-                                <input placeholder="descuento" type="text" value="" name="descuento">
-                                <br>
-                                <label for=""></label>
-                                <input type="submit" value="crear">
-                                <br>
+                                <input placeholder="Descuento" type="number" value="" name="descuento" min="1" max="100" class="descuento-form"> <br>
+
+                                <div class="crear-carta-borrar-carta">
+                                    <label for=""></label>
+                                    <input type="submit" value="Crear" class="enviar-form"> <br>
+
+                                    <label for=""></label>
+                                    <input type="reset" value="Eliminar" class="borrar-form">
+                                </div>
                             </form>
                         </div>
 
