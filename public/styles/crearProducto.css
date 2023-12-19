@@ -1,12 +1,75 @@
-.admin-container {
+.titulo {
+    text-align: center;
 
+}
+
+.admin-container {
     display: flex;
-    width: 50%;
-    margin: auto;
+    width: 100%;
+    height: 100vw;
+    align-items: center;
     justify-content: center;
     flex-direction: column;
+    flex-wrap: wrap;
 }
 
 .formulario-admin {
     display: flex;
+    width: 45%;
+    height: 100%;
+    margin: auto;
+    background-color: #FF540A;
+    justify-content: center;
+    padding: 1rem;
+    border: 2px solid black;
+    border-radius: 25px 25px 25px;
+    box-shadow: 25px 25px 10px gray;
+}
+
+.formulario-admin input {
+    margin: 0.5rem;
+    width: 90%;
+
+}
+
+.formulario-admin label {
+    margin-top: 0.5rem;
+    
+}
+
+.card-creator {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    height: 100%;
+    margin: auto;
+    background-color: #FF540A;
+    justify-content: space-evenly;
+    padding: 1rem;
+    border: 2px solid black;
+    border-radius: 25px 25px 25px;
+    box-shadow: 25px 25px 10px gray;
+    align-items: center;
+}
+
+.main-section {
+    display: flex;
+    width: 100%;
+
+}
+
+.show-case {
+    margin: 0.5rem;
+
+}
+
+.product-image {
+    width: 25%;
+    height: 25%;
+
+}
+
+.product-image img {
+    width: 100%;
+
 }
