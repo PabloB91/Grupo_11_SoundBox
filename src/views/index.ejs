@@ -1,25 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<!-- Head -->
-<%- include("./partials/head") %>
-<link href="styles/home.css" rel="stylesheet">
+<%- include('./partials/head.ejs') %>
+<link href="/styles/reset.css" rel="stylesheet">
+<link href="/styles/header-footer.css" rel="stylesheet">
+<link href="/styles/home.css" rel="stylesheet">
 
 <body>
-<!-- =============================================================================================================== -->
 
-    <!-- header -->
     <%- include('./partials/header.ejs') %>
 
-<!-- =============================================================================================================== -->
-
     <section class="carrusel"><!--Imagen momentánea solo por visualización: debe actualizarse (textos, botón, aplicación flex, etc.)-->
-        <img src="/img/banners/Banner-carrusel1.jpg" width= 100%; alt="Banner de ofertas">
+        <div class="banner">
+            <img src="/img/banners/Banner-carrusel1.jpg" width= 100%; alt="Banner de ofertas">
+        </div>
         <div class="player"></div><!--Pendiente ubicar botones controladores (play/stop/adelantar/retroceder)-->
     </section>
     <hr class="separador"><!-- Separador momentáneo para diferenciar secciones-->
     <main>
         <section class="compra-por-categoria">
-            <h2>COMPRA POR CATEGORÍA</h2>
+            <h3>COMPRA POR CATEGORÍA</h3>
             <div class="items-categorias">  <!-- <img src="/img/home/categoria-guitarras.jpg" alt="Guitarras"> -->
                 <article class="categoria">
                     <p>Guitarras</p>
@@ -61,7 +58,7 @@
         </section>
         <hr class="separador">
         <section class="mas-vendidos">
-            <h2>Más vendidos</h2>
+            <h3>Más vendidos</h3>
             <div class="nav-bar">
                 <ul>
                     <li>
@@ -122,52 +119,6 @@
             </div>
         </section>
         <hr class="separador">
-        <section class="productos-mostrados">
-            <h2>Productos mostrados</h2>
-            <div class="items-productos-mostrados">
-                <article class="producto">
-                    <img src="/img/productos/efectos/mezcla-1.jpg" alt="Mezcladora"  >
-                    <div class="detalle-producto">
-                        <p class="descripciones"><strong>Mezcladora</strong></p>
-                        <div class="container-detalle">
-                            <p class="calificacion">Estrellas</p>
-                            <p class="precios">$6.770</p>
-                        </div>
-                    </div>
-                </article>
-                <article class="producto">
-                    <img src="/img/productos/efectos/mezcla-2.jpg" alt="Mezcladora"  >
-                    <div class="detalle-producto">
-                        <p class="descripciones"><strong>Mezcladora</strong></p>
-                        <div class="container-detalle">
-                            <p class="calificacion">Estrellas</p>
-                            <p class="precios">$6.770</p>
-                        </div>
-                    </div>
-                </article>
-                <article class="producto">
-                    <img src="/img/productos/efectos/mezcla-3.jpg" alt="Mezcladora"  >
-                    <div class="detalle-producto">
-                        <p class="descripciones"><strong>Mezcladora</strong></p>
-                        <div class="container-detalle">
-                            <p class="calificacion">Estrellas</p>
-                            <p class="precios">$6.770</p>
-                        </div>
-                    </div>
-                </article>
-                <article class="producto">
-                    <img src="/img/productos/efectos/mezcla-4.jpg" alt="Mezcladora"  >
-                    <div class="detalle-producto">
-                        <p class="descripciones"><strong>Mezcladora</strong></p>
-                        <div class="container-detalle">
-                            <p class="calificacion">Estrellas</p>
-                            <p class="precios">$6.770</p>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </section>
-        <hr class="separador">
         <section class="marcas-banners"><!--ver sección añadida en archivo 'Guías-HTML-CSS.TXT'-->
             <div class="box-marcas">
                 <div>
@@ -187,9 +138,9 @@
             </div>
         </section>
         <hr class="separador">
-        <section class="complementos">
+        <section class="complementos"><!--pendiente centrar esta sección con respecto al main-->
             <div class="destacados">
-                <h3>Destacados</h3>
+                <h4>Destacados</h4><!--cambio de h3 a h4-->
                 <article class="producto">
                     <img src="/img/productos/varios/trompeta.jpg" alt="Trompeta" >
                     <div class="detalle-producto">
@@ -212,7 +163,7 @@
                 </article>
             </div>
             <div class="comentarios">
-                <h3>Comentarios</h3>
+                <h4>Comentarios</h4><!--cambio de h3 a h4-->
                 <article class="producto">
                     <img src="/img/productos/orquesta/orquesta-1.jpg" alt="Orquesta" >
                     <div class="detalle-producto">
@@ -235,7 +186,7 @@
                 </article>
             </div>
             <div class="novedades">
-                <h3>Novedades</h3>
+                <h4>Novedades</h4><!--cambio de h3 a h4-->
                 <article class="producto">
                     <img src="/img/productos/accesorios/audifonos-1.jpg" alt="Audifonos" >
                     <div class="detalle-producto">
@@ -263,12 +214,6 @@
         </section>
     </main>
 
-<!-- =============================================================================================================== -->
-
-    <!-- Footer  -->
     <%- include('./partials/footer.ejs') %>
 
-<!-- =============================================================================================================== -->
-
 </body>
-</html>

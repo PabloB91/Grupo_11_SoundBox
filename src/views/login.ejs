@@ -1,93 +1,89 @@
-<!DOCTYPE html>
-<html lang="en-es">
+<%- include('./partials/head.ejs') %>
+<link href="/styles/reset.css" rel="stylesheet">
+<link href="/styles/header-footer.css" rel="stylesheet">
+<link href="/styles/loginRegister.css" rel="stylesheet">
 
-    <!-- HEAD / CABEZA -->
-    <%- include("./partials/head") %>
-    <link rel="stylesheet" href="/styles/loginRegister.css">
-    <link rel="stylesheet" href="/style/icon.css">
+<body>
 
-    <body>
-
-<!-- =========================================================================================================== -->
+    <!-- =========================================================================================================== -->
 
     <!-- -HEADER / ENCABEZADO- -->
     <%- include('./partials/header.ejs') %>
 
-<!-- =========================================================================================================== -->
+    <!-- =========================================================================================================== -->
 
-        <!-- ----LOGIN / ACCESO---- -->
+    <!-- ----LOGIN / ACCESO---- -->
 
-        <main class="main-login">
+    <main class="main-login">
 
-            <div class="main-login_title">
-                <h1>¡Lleva la buena vibra!</h1>
+        <div class="main-login_title">
+            <h1>¡Lleva la buena vibra!</h1>
+        </div>
+
+        <form action="/log-in" method="POST" class="main-login_form">
+
+            <div class="main-login_form_box-container one-login">
+
+                <div class="fieldset mail">
+
+                    <div class="label">
+                        <label for="email"><!-- Email --></label>
+                    </div>
+
+                    <div class="input">
+                        <input id="email" type="email" placeholder="Email" required>
+                    </div>
+
+                </div>
+
+                <div class="fieldset password">
+
+                    <div class="label">
+                        <label for="password"><!-- Contraseña --></label>
+                    </div>
+
+                    <div class="input">
+                        <input id="password" type="password" placeholder="Contraseña" required>
+                    </div>
+
+                </div>
+
+                <div class="button">
+                    <input type="submit" value="Ingresar">
+                </div>
+
             </div>
 
-            <form action="/log-in" method="POST" class="main-login_form">
+            <div class="main-login_form_box-container two-login">
 
-                <div class="main-login_form_box-container one-login">
+                <article class="paragraph">
+                    <p>Si aun no eres parte de SoundBox</p>
 
-                    <div class="fieldset mail">
-
-                        <div class="label">
-                            <label for="email"><!-- Email --></label>
-                        </div>
-
-                        <div class="input">
-                            <input id="email" type="email" placeholder="Email" required>
-                        </div>
-
+                    <div class="a-crear-cuenta">
+                        <a href="/register">Crear cuenta</a>
                     </div>
 
-                    <div class="fieldset password">
+                </article>
 
-                        <div class="label">
-                            <label for="password"><!-- Contraseña --></label>
-                        </div>
+                <div class="button">
 
-                        <div class="input">
-                            <input id="password" type="password" placeholder="Contraseña" required>
-                        </div>
-
-                    </div>
-
-                    <div class="button">
-                        <input type="submit" value="Ingresar">
-                    </div>
+                    <a href="/register">
+                        <input type="button" name="" id="" value="Crear cuenta">
+                    </a>
 
                 </div>
 
-                <div class="main-login_form_box-container two-login">
+            </div>
 
-                    <article class="paragraph">
-                        <p>Si aun no eres parte de SoundBox</p>
+        </form>
 
-                        <div class="a-crear-cuenta">
-                            <a href="/register">Crear cuenta</a>
-                        </div>
+    </main>
 
-                    </article>
+    <!-- =========================================================================================================== -->
 
-                    <div class="button">
+    <!-- FOOTER / PIE DE PAGINA -->
+    <%- include('./partials/footer.ejs') %>
 
-                        <a href="/register">
-                            <input type="button" name="" id="" value="Crear cuenta">
-                        </a>
+    <!-- =========================================================================================================== -->
+</body>
 
-                    </div>
-
-                </div>
-
-            </form>
-
-        </main>
-
-<!-- =========================================================================================================== -->
-
-        <!-- FOOTER / PIE DE PAGINA -->
-     <%- include('./partials/footer.ejs') %>
-
-<!-- =========================================================================================================== -->
-    </body>
-
-</html>

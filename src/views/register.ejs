@@ -1,85 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="/img/svg/favicons.svg" type="image/x-icon">
-    <title>Registrarse</title>
-    <link rel="stylesheet" href="/styles/reset.css">
-    
-        <link rel="stylesheet" href="/styles/header-footer.css">
+<%- include('./partials/head.ejs') %>
 
-        <link rel="stylesheet" href="/styles/loginRegister.css">
+<link href="/styles/reset.css" rel="stylesheet">
+<link href="/styles/header-footer.css" rel="stylesheet">
+<link href="/styles/loginRegister.css" rel="stylesheet">
 
-        <link rel="stylesheet" href="/style/icon.css">
 
-        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" />
+<body>
 
-    
-        <!DOCTYPE html>
-        <html lang="en">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link rel="shortcut icon" href="/img/svg/favicons.svg" type="image/x-icon">
-            <title>Registrarse</title>
-            <link rel="stylesheet" href="/styles/reset.css">
-            
-                <link rel="stylesheet" href="/styles/header-footer.css">
+    <%- include('./partials/header.ejs') %>
+
+    <form action="/register">
         
-                <link rel="stylesheet" href="/styles/loginRegister.css">
-        
-                <link rel="stylesheet" href="/style/icon.css">
-        
-                <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-                <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-                <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" />
-        
-            </head>
-        
-           <body>
-            
-            <%- include('./partials/header.ejs') %>    
-        
-            <main>
-                
-              
-        
-                <form action="/register">
-                
-                <div class="contenedor">
-                  <h1 class="mainTitleRegister">REGISTRARSE</h1>
-                  <p class="subTitleRegister">¡CREAR CUENTA NUEVA!</p>
-                  <hr>
-                  <div class="alignForm">    
-                  <label for="email"><b>EMAIL</b></label>
-                  <input type="text" placeholder="Ingresar mail" name="email" id="email" required>
-              
-                  <label for="password"><b>CONTRASEÑA</b></label>
-                  <input type="password" placeholder="Ingresar contraseña" name="contraseña" id="contraseña" required>
-              
-                  <label for="password2"><b>REPETIR CONTRASEÑA</b></label>
-                  <input type="password" placeholder="Repetir contraseña" name="RepetirContrseña" id="RepetirContrseña" required>
-                  <hr>
-                   <button type="submit" class="registerboton">¡BUENA VIBRA!</button>
-                </div>
-                </div>  
-                <div>
-                 <p class="bottomRegister"> YA TENES CUENTA? <a href="login.html"></a><a href="/login">¡CLICK AQUI!</a></p>  
-                 <p class="bottomRegister">AL CREAR SU CUENTA ESTA DE ACUERDO CON NUESTROS <a href="#">TERMINOS Y CONDICIONES</a>.</p>  
-                 </div>
-              </form> 
-              <button id="adminButton">Admin</button>
-              <table id="adminTable">
-              
-        
-        </main>
-        
-        <%- include('./partials/footer.ejs') %>
-        
-        </body>
-        
-        </html>
-        
+        <div class="contenedor">
+          <h1 class="mainTitleRegister">REGISTRARSE</h1>
+          <p class="subTitleRegister">¡CREAR CUENTA NUEVA!</p>
+          <hr>
+          <div class="alignForm">    
+          <label for="email"><b>EMAIL</b></label>
+          <input type="text" placeholder="Ingresar mail" name="email" id="email" required>
+      
+          <label for="password"><b>CONTRASEÑA</b></label>
+          <input type="password" placeholder="Ingresar contraseña" name="contraseña" id="contraseña" required>
+      
+          <label for="password2"><b>REPETIR CONTRASEÑA</b></label>
+          <input type="password" placeholder="Repetir contraseña" name="RepetirContrseña" id="RepetirContrseña" required>
+          <hr>
+           <button type="submit" class="registerboton">¡BUENA VIBRA!</button>
+        </div>
+        </div>  
+        <div>
+         <p class="bottomRegister"> YA TENES CUENTA? <a href="login.html"></a><a href="/login">¡CLICK AQUI!</a></p>  
+         <p class="bottomRegister">AL CREAR SU CUENTA ESTA DE ACUERDO CON NUESTROS <a href="#">TERMINOS Y CONDICIONES</a>.</p>  
+         </div>
+      </form> 
+</body>
+
+
+<%- include('./partials/footer.ejs') %>
+
+

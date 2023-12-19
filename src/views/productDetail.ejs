@@ -1,21 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include('./partials/head.ejs') %>
 
-<!------------------------- HEAD ------------------------->
-    <%- include("./partials/head") %>
-    <script src="https://kit.fontawesome.com/971bd64f71.js" crossorigin="anonymous"></script>   
-    <link rel="stylesheet" href="/styles/productDetail.css">
-    
+<link href="/styles/reset.css" rel="stylesheet">
+<link href="/styles/header-footer.css" rel="stylesheet">
+<link href="/styles/productDetail.css" rel="stylesheet">
+
+
 <body>
+    
+<%- include('./partials/header.ejs') %>
 
-<!-- =============================================================================================================== -->
-<!------------------------- NAV-BAR ------------------------->
-
-    <%- include('./partials/header.ejs') %>
-
-
-
-<!-- =============================================================================================================== -->
 <!------------------------- MAIN ------------------------->
     
     <main>
@@ -127,14 +120,8 @@
 
 
 
-<!-- =============================================================================================================== -->
 <!------------------------- FOOTER ------------------------->
 
-    <%- include('./partials/footer.ejs') %>
-
-
-
-<!-- =============================================================================================================== -->
+<%- include('./partials/footer.ejs') %>
 
 </body>
-</html>
