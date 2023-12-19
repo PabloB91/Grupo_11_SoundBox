@@ -1,127 +1,155 @@
-<%- include('./partials/head.ejs') %>
+<!---------------- HEAD ---------------->
+<%- include ("./partials/head") %>
 
 <link href="/styles/reset.css" rel="stylesheet">
-<link href="/styles/header-footer.css" rel="stylesheet">
 <link href="/styles/productDetail.css" rel="stylesheet">
 
 
-<body>
-    
-<%- include('./partials/header.ejs') %>
+<script src="https://kit.fontawesome.com/971bd64f71.js" crossorigin="anonymous"></script>
 
-<!------------------------- MAIN ------------------------->
-    
-    <main>
-        <section class="section-product">
+
+<!---------------- HEADER ---------------->
+
+<%- include ("./partials/header") %>
+
+<!---------------- BODY ---------------->
+
+<body>
+<section>
+    <div class="caja-general">
+            <div class="caja-objeto-favorito caja-me-gusta">
+                <a href="#"> <i class="fa-solid fa-heart"></i> </a>
+            </div>
             
-            <div class="product-complete-web-description">
-                <div class="img-web-product-zoom">
-                    <img src="/img/productos/guitarras/guitarra-1.jpg" alt="product-img" class="product-image-n1">
+            <div class="caja-imagenes-general">
+                <img src="/img/productos/guitarras/guitarra-1.jpg" alt="guitarra1" class="imagen-producto-principal">
+                
+                <div class="imagenes-secundarias-inferior">
+                    <img src="/img/productos/guitarras/guitarra-1.jpg" alt="guitarra1" class="imagen-producto-secundaria">
+                    <img src="/img/productos/guitarras/guitarra-1.jpg" alt="guitarra1" class="imagen-producto-secundaria">
+                    <img src="/img/productos/guitarras/guitarra-1.jpg" alt="guitarra1" class="imagen-producto-secundaria">
+                </div>
+            </div>
+
+        <div class="caja-sub-general-informacion">
+            <div class="caja-primera">
+                <div class="caja-titulo-producto">
+                    <h2 class="titulo-producto"> Gibson 50Th</h2>
                 </div>
                     
+                <div class="caja-precio-clasificacion">
+                    <span class="precio-producto"> $900 - $1000 </span>
 
-                <div class="information-product-general">
+                    <form>
+                        <p class="clasificacion">
+                        <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                        --><label for="radio1"><i class="fa-solid fa-star"></i></label><!--
+                        --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                        --><label for="radio2"><i class="fa-solid fa-star"></i></label><!--
+                        --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                        --><label for="radio3"><i class="fa-solid fa-star"></i></label><!--
+                        --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                        --><label for="radio4"><i class="fa-solid fa-star"></i></label><!--
+                        --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                        --><label for="radio5"><i class="fa-solid fa-star"></i></label>
+                        </p>
+                    </form>
+                </div>
+            </div>
 
-                    <div class="product-name-title">
-                        <h1>Gibson 2016 T Les Paul Studio 50's Tribute</h1>
-                    </div>
+            <div class="caja-segunda">
+                <div class="caja-descripcion-producto">
+                    <p class="descripcion-producto"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima ab voluptatem nisi, blanditiis iste harum perspiciatis nulla numquam recusandae fugiat perferendis labore tenetur laudantium culpa ipsam fugit corrupti quaerat sed quisquam minus, quasi pariatur, repellendus consequatur.
+                    </p>
+                </div>
+
+                <div class="caja-colores-producto">
+                    <span class="texto-color">Color</span>
                     
-                    <div class="product-price">
-                        <p class="price"> $899.00 - $950.00</p>
-                    </div>
-                    
-                    <div class="product-description">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure reiciendis temporibus minus eum quia sit obcaecati blanditiis minima quae id maiores vero soluta eveniet magni nostrum ad ex, neque impedit sed quisquam deleniti incidunt. Necessitatibus sapiente nulla quidem optio praesentium? Nobis quasi numquam cupiditate ducimus nesciunt deserunt aut.
-                    </div>
-                    
-                    <div class="product-quant-web-color-options">
-                        <div class="product-select-color-web">
-                            <form>
-                                <label for="color" class="color-bottom-invisible">Color</label>
-                                <select name="Colores" id="product-colors-available">
-                                    <option value="choose-option">Choose an option</option>
-                                    <option value="black">Black</option>
-                                    <option value="gray">Gray</option>
-                                    <option value="brown">Brown</option>
-                                    <option value="red">Red</option>
-                                    <option value="yellow">Yellow</option>
-                                </select>
-                            </form>
-                        </div>
-                        
-                        <div class="product-quant-web">
-                            <input type="number" id="product-quantity" name="quantity" value="1" aria-label="Product quantity" size="4" min="1" max="" step="1" placeholder="" inputmode="numeric" autocomplete="off">
-                        </div>
-                    </div>
-                        
-                        <div class="add-to-the-shop-cart">
-                            <button type="submit" class="add-to-cart">ADD TO CART</button>
-                        </div>
-                    
-                    <div class="categories-product-relationated">
-                        <span class="categories">Categories: 
-                            <a href="#" rel="tag">Band & Orchestra</a>
-                            ,        
-                            <a href="#" rel="tag">Bass Guitar</a>
-                            , 
-                            <a href="#" rel="tag">Guitars</a>
-                            , 
-                            <a href="#" rel="tag">Instruments</a>
-                            , 
-                            <a href="#" rel="tag">Orchestral Strings</a>
-                        </span>
-                    </div>
-                    
-                    <div class="tags-products-web">
-                        <span class="product-tagest">Tags:
-                            <a href="#">company</a>
-                            <a href="#">electric guitars</a>
-                            <a href="#">sale</a>
-                        </span>
+                    <div class="caja-seleccion-colores">
+                        <form action="">
+                            <select id="colores-seleccion" value>
+                                <option value="negro" selected>Negro</option>
+                                <option value="gris">Gris</option>
+                                <option value="blanco">Blanco</option>
+                                <option value="rojo">Rojo</option>
+                                <option value="amarillo">Amarilla</option>
+                            </select>
+                        </form>
                     </div>
                 </div>
             </div>
-                </section>
-                
-                <section>
-        <div class="web-dropdown-list-tab">
-            <ul class="extra-manu-list-dropdown" style="list-style: none;">
-                <li class="description-general-product" role="tab" aria-controls="tab-description">
+
+                <div class="caja-cantidad-producto-carrito">
+                    <div class="caja-cantidad-producto">
+                        <input type="number" id="cantidad-seleccion" min="1" max="100" value="1">
+                    </div>
+
+                    <div class="caja-botones-cantidad-producto">
+                        <i class="fa-solid fa-caret-up"></i>
+                        <i class="fa-solid fa-caret-down"></i>
+                    </div>
+
+                    <div class="caja-agregar-carrito">
+                        <form action="" class="formulario-boton-agregar-carrito">
+                            <button type="submit" class="boton-agregar-carrito"><i class="fa-solid fa-cart-shopping"></i> <span class="texto-boton-agregar-carrito">ADD TO CART</span></button>
+                        </form>
+                    </div>
+                </div>
+
+            <div class="caja-links-extra-producto">
+                <div class="caja-categorias-producto">
+                    <span class="links-categorias-producto">Categories:
+                        <a href="#">Guitars</a>,
+                        <a href="#">Band & Orchestra</a>,
+                        <a href="#">Bass Guitar</a>,
+                        <a href="#">Instruments</a>,
+                        <a href="#">Orchestral Strings</a>
+                    </span>
+                </div>
+
+                <div class="caja-tags-producto">
+                    <span class="links-tags-producto">Tags:
+                        <a href="#">sale</a>,
+                        <a href="#">company</a>,
+                        <a href="#">electric guitars</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="caja-prefooter-informacion-extra-producto">
+        <div class="caja-secciones-secundarias-informacion">
+            <ul class="lista-menu-desplegable-producto" style="list-style: none;">
+                <li class="descripcion-secundaria-producto">
                     <a href="#tab/description"> Description </a>
                 </li>
-                <li class="additional-information-general-product" role="tab" aria-controls="tab-additional-information">
+                <li class="informacion-adicional-secundaria-producto">
                     <a href="#tab/additional-information"> Additional Information </a>
                 </li>
-                <li class="reviews-general-product" role="tab" aria-controls="tab-reviews">
+                <li class="review-secundaria-producto">
                     <a href="#tab/reviews"> Reviews </a>
                 </li>
             </ul>
 
-            <div class="description-tab-web-dropdown-list">
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut dolores neque provident ipsum, quisquam ea, tenetur temporibus et facere error ratione sapiente accusamus tempora. Et voluptatibus necessitatibus dolorum optio ratione aperiam quo? Similique, vel pariatur? Cupiditate atque dolorem fuga doloribus nobis voluptatem quas aut vel laudantium! Laboriosam necessitatibus ullam minima culpa iure veritatis soluta aperiam officia, ab inventore a possimus suscipit delectus at harum sed deserunt praesentium aspernatur. Quod, omnis!</p>
-
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est sed repellendus magnam adipisci. Rem, soluta molestias facilis veniam magni animi cupiditate ratione ut sed perferendis minima itaque, iusto, nam fuga ea molestiae nobis veritatis ad minus quae deserunt libero totam odio ipsum. Iure, nesciunt sunt perferendis necessitatibus quas voluptatem tenetur nobis incidunt maxime quod voluptate ab officiis non qui dolor ratione. Ipsa quam quaerat consequatur nemo quo tenetur nihil praesentium id reiciendis labore soluta quod dolorem est inventore itaque quasi fugiat exercitationem, recusandae autem omnis sint illum nisi. Temporibus eligendi cupiditate corporis magnam consectetur placeat quas soluta distinctio id ipsa.</p>
+            <div class="caja-descripcion-secundaria-producto">
+                <p class="texto-descripcion-secundaria-producto">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae labore voluptas assumenda earum quo dolor ab nesciunt beatae magnam ea necessitatibus iusto aliquam, non molestiae at totam fuga eius magni, incidunt omnis. Debitis nam dolor nihil numquam voluptate odio omnis natus tenetur ducimus consectetur maiores ipsam sapiente illum ad nobis repellendus molestiae voluptas perspiciatis praesentium labore, fugit cupiditate! Accusamus odit aspernatur perferendis recusandae autem quos magni molestiae sapiente amet aliquam nihil repudiandae eligendi ipsam laudantium qui officiis et quas, vero, pariatur tempora hic id, excepturi impedit distinctio.
+                Sunt ullam eaque corporis repudiandae in cumque vero deserunt, laboriosam dicta ad, quidem quas excepturi molestias harum asperiores repellat dolorum, ipsam similique ipsum. Quidem voluptas velit, cumque, laboriosam perferendis placeat consequatur.
+                </p>
             </div>
 
-            <div class="additional-information-tab-web-dropdown-list">
-                <h2>additional information</h2>
+            <div>
+                <h2></h2>
 
-                <div class="additional-information-tab-web-dropdown-list-p">
+                <div>
                     <p>
-                        Color
+                        
                     </p>
 
-                    <span>Black, Red, White</span>
+                    <span></span>
                 </div>
             </div>
         </div>
-    </section>
-    </main>
-
-
-
-<!------------------------- FOOTER ------------------------->
-
-<%- include('./partials/footer.ejs') %>
-
-</body>
+    </div>
+</section>
