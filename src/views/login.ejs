@@ -1,6 +1,4 @@
 <%- include('./partials/head.ejs') %>
-<link href="/styles/reset.css" rel="stylesheet">
-<link href="/styles/header-footer.css" rel="stylesheet">
 <link href="/styles/loginRegister.css" rel="stylesheet">
 
 <body>
@@ -23,6 +21,10 @@
         <form action="/log-in" method="POST" class="main-login_form">
 
             <div class="main-login_form_box-container one-login">
+                
+                <div class="main-login-form-box-container_title">
+                        <h2>INGRESAR COMO USUARIO</h2>
+                </div>
 
                 <div class="fieldset mail">
 
@@ -46,6 +48,16 @@
                         <input id="password" type="password" placeholder="Contraseña" required>
                     </div>
 
+                    <div class="input">
+                        <label for="">Id Admin</label>
+                        <input id="password" type="password" placeholder="Identificacion" required>
+                    </div>
+
+
+                </div>
+
+                <div class="button-ingresar-como">
+                    <span>Ingresar como<i class="fa-solid fa-chevron-down"></i></span>
                 </div>
 
                 <div class="button">
