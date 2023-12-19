@@ -1,41 +1,59 @@
 <%- include("./partials/head") %>
-<link href="/styles/reset.css" rel="stylesheet">
-<link href="/styles/header-footer.css" rel="stylesheet">
-<link href="styles/crearProductos.css" rel="stylesheet"> 
+    <link href="styles/crearProducto.css" rel="stylesheet">
 
 
     <body>
         <%- include("./partials/header") %>
             <main>
-
-                <body>
-                    <section class="admin-container">
-                        <h1 style="width: 100%; height: auto;"> usted esta en cuenta de administrador! </h1>
+                <section class="admin-container">
+                    <h1> usted esta en cuenta de administrador! </h1>
+                    <section class="contenedor-total">
+                        <div class="separador-efecto">.</div>
                         <div class="formulario-admin">
-                            <form action="" method="POST">
-                                <label style="color: white;" for=""></label>
+                            <form action="#" method="POST">
+                                <label for=""></label>
+                                <input placeholder="imagen" type="text" value="" name="imagen">
+                                <br>
+                                <label for=""></label>
                                 <input placeholder="nombre" type="text" value="" name="nombre">
                                 <br>
-                                <label style="color: white;" for=""></label>
-                                <input placeholder="cantidad" type="text" value="" name="cantidad">
+                                <label for=""></label>
+                                <input placeholder="marca" type="text" value="" name="marca">
                                 <br>
-                                <label style="color: white;" for=""></label>
+                                <label for=""></label>
+                                <input placeholder="descripcion" type="text" value="" name="descripcion">
+                                <br>
+                                <label for=""></label>
+                                <input placeholder="cantidad" type="number" value="" name="cantidad">
+                                <br>
+                                <label for=""></label>
                                 <input placeholder="precio" type="text" value="" name="precio">
                                 <br>
-                                <label style="color: white;" for=""></label>
+                                <label for=""></label>
                                 <input placeholder="descuento" type="text" value="" name="descuento">
                                 <br>
-                                <label style="color: white;" for=""></label>
-                                <input placeholder="imagen" type="image" value="" name="imagen">
+                                <label for=""></label>
+                                <input type="submit" value="crear">
+                                <br>
                             </form>
                         </div>
 
+                        <div class="creacion-carta">
+                            <span class="centrar">id= #22</span>
+                            <img src="../img/productos/guitarras/guitarra-2.jpg" alt="">
+                            <div class="nombre-marca">
+                                <p>nombre</p>
+                                <p>marca</p>
+                            </div>
+                            <p class="centrar">descripcion</p>
+                            <p class="centrar">cantidad</p>
+                            <div class="precio-descuento">
+                                <p>precio</p>
+                                <p>descuento</p>
+                            </div>
+                        </div>
                     </section>
-
-                </body>
-
+                </section>
                 <%- include("./partials/footer") %>
-
             </main>
     </body>
-
