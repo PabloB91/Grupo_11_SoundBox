@@ -2,45 +2,16 @@
 const path = require("path")
 const express = require("express")
 const app = express();
+const fs = require("fs");
 // Acá nos falta un objeto literal con las acciones para cada ruta
 
-const todosLosInstrumentos = [
-
-    {
-        id: 1,
-        imagen: "../img/productos/guitarras/guitarra-1.jpg",
-        nombre: "guitarra criolla",
-        marca: "Gibson.",
-        precio: 2000,
-        descuento: 15,
-    },
-    {
-        id: 2,
-        imagen: "../img/productos/guitarras/guitarra-2.jpg",
-        nombre: "piano",
-        marca: "Gibson.",
-        precio: 3000,
-        descuento: 25,
-    },
-    {
-        id: 3,
-        imagen: "../img/productos/guitarras/guitarra-3.jpg",
-        nombre: "bateria",
-        marca: "Gibson.",
-        precio: 4000,
-        descuento: 35,
-    },
-
-
-];
-
-
+const productPath = path.join(__dirname, "../data/database.json");
 
 const mainController = {
 
     // formularios
     login: (req, res) => {
-        
+
         res.render("login");
         
     },
@@ -53,13 +24,26 @@ const mainController = {
     
     // aca ponemos los que necesitan los productos->
     crear: (req, res) => {
-        res.render("crearProducto", { instrumentos: todosLosInstrumentos })
-        
+
+        const product = JSON.parse(fs.readFileSync(productPath, "utf-8"))
+
+        const singleProduct = product.find(products => {
+			return products.id == req.params.id
+		})
+
+        res.render("crearProducto", {singleProduct })
+
     },
 
     index: (req, res) => {
     
-        res.render("index", { instrumentos: todosLosInstrumentos }
+        const product = JSON.parse(fs.readFileSync(productPath, "utf-8"))
+
+        const singleProduct = product.find(products => {
+			return products.id == req.params.id
+		})
+
+        res.render("index", {singleProduct}
             //listaObjetos
         );
     
@@ -67,7 +51,13 @@ const mainController = {
     
     carrito: (req, res) => {
         
-        res.render("productCart", { instrumentos: todosLosInstrumentos }
+        const product = JSON.parse(fs.readFileSync(productPath, "utf-8"))
+
+        const singleProduct = product.find(products => {
+			return products.id == req.params.id
+		})
+
+        res.render("productCart", {singleProduct}
         // { productos }
         );
         
@@ -75,7 +65,13 @@ const mainController = {
     
     productDetail: (req, res) => {
         
-        res.render("productDetail", { instrumentos: todosLosInstrumentos });
+        const product = JSON.parse(fs.readFileSync(productPath, "utf-8"))
+
+        const singleProduct = product.find(products => {
+			return products.id == req.params.id
+		})
+
+        res.render("productDetail", {singleProduct});
         
     },
     
