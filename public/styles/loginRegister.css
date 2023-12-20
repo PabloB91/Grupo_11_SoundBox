@@ -41,6 +41,10 @@ body {
     width: 100%;
 }
 
+.main-login-form-box-container_title {
+    color: #ff540a;
+}
+
 .one-login {
     display: flex;
     background: #fff;
@@ -278,48 +282,6 @@ body {
     font-family: "bebas neue";
     font-weight: 900;
     color: white;
-}
-
-h1 {
-    font-family: "Bebas Neue", sans-serif;
-    font-weight: 400;
-    font-size: 48px;
-}
-
-h2 {
-    font-family: "Bebas Neue", sans-serif;
-    font-weight: 400;
-    font-size: 36px;
-    color: black;
-}
-
-h3 {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 700;
-    font-size: 28px;
-    color: black;
-}
-
-h4 {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 600;
-    font-size: 24px;
-    color: black;
-}
-
-h5 {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 400;
-    text-transform: uppercase;
-    font-size: 21px;
-    color: black;
-}
-
-h6 {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 400;
-    font-size: 18px;
-    color: black;
 }
 
 .contenedor input[type="text"],
