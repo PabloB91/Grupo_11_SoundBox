@@ -3,12 +3,22 @@
 
 
     <body>
+
+        <!-- HEADER -->
         <%- include("./partials/header") %>
+        <!-- /HEADER -->
+
+
             <main>
+
                 <section class="admin-container">
-                    <h1> usted esta en cuenta de administrador! </h1>
+
+                    <div class="admin-containe_title">
+                        <h1> CREAR PRODUCTO </h1>
+                    </div>
+
                     <section class="contenedor-total">
-                        <div class="separador-efecto">.</div>
+
                         <div class="formulario-admin">
                             <form action="#" method="POST">
 
@@ -44,21 +54,113 @@
                         </div>
 
                         <div class="creacion-carta">
-                            <span class="centrar">id= #22</span>
-                            <img src="../img/productos/guitarras/guitarra-2.jpg" alt="">
-                            <div class="nombre-marca">
-                                <p>nombre</p>
-                                <p>marca</p>
-                            </div>
-                            <p class="centrar">descripcion</p>
-                            <p class="centrar">cantidad</p>
-                            <div class="precio-descuento">
-                                <p>precio</p>
-                                <p>descuento</p>
+                            <div class="caja-general">
+                                <div class="caja-objeto-favorito caja-me-gusta">
+                                    <a href="#"> <i class="fa-solid fa-heart"></i> </a>
+                                </div>
+                                
+                                <div class="caja-imagenes-general">
+                                    <img src="/img/productos/guitarras/guitarra-1.jpg" alt="guitarra1" class="imagen-producto-principal">
+                                    
+                                    <div class="imagenes-secundarias-inferior">
+                                        <img src="/img/productos/guitarras/guitarra-1.jpg" alt="guitarra1" class="imagen-producto-secundaria">
+                                        <img src="/img/productos/guitarras/guitarra-1.jpg" alt="guitarra1" class="imagen-producto-secundaria">
+                                        <img src="/img/productos/guitarras/guitarra-1.jpg" alt="guitarra1" class="imagen-producto-secundaria">
+                                    </div>
+                                </div>
+                    
+                            <div class="caja-sub-general-informacion">
+                                <div class="caja-primera">
+                                    <div class="caja-titulo-producto">
+                                        <h2 class="titulo-producto"> Gibson 50Th</h2>
+                                    </div>
+                                        
+                                    <div class="caja-precio-clasificacion">
+                                        <span class="precio-producto"> $900 - $1000 </span>
+                    
+                                        <form>
+                                            <p class="clasificacion">
+                                            <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                                            --><label for="radio1"><i class="fa-solid fa-star"></i></label><!--
+                                            --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                                            --><label for="radio2"><i class="fa-solid fa-star"></i></label><!--
+                                            --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                                            --><label for="radio3"><i class="fa-solid fa-star"></i></label><!--
+                                            --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                                            --><label for="radio4"><i class="fa-solid fa-star"></i></label><!--
+                                            --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                                            --><label for="radio5"><i class="fa-solid fa-star"></i></label>
+                                            </p>
+                                        </form>
+                                    </div>
+                                </div>
+                    
+                                <div class="caja-segunda">
+                                    <div class="caja-descripcion-producto">
+                                        <p class="descripcion-producto"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima ab voluptatem nisi, blanditiis iste harum perspiciatis nulla numquam recusandae fugiat perferendis labore tenetur laudantium culpa ipsam fugit corrupti quaerat sed quisquam minus, quasi pariatur, repellendus consequatur.
+                                        </p>
+                                    </div>
+                    
+                                    <div class="caja-colores-producto">
+                                        <span class="texto-color">Color</span>
+                                        
+                                        <div class="caja-seleccion-colores">
+                                            <form action="">
+                                                <select id="colores-seleccion" value>
+                                                    <option value="negro" selected>Negro</option>
+                                                    <option value="gris">Gris</option>
+                                                    <option value="blanco">Blanco</option>
+                                                    <option value="rojo">Rojo</option>
+                                                    <option value="amarillo">Amarilla</option>
+                                                </select>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                    
+                                    <div class="caja-cantidad-producto-carrito">
+                                        <div class="caja-cantidad-producto">
+                                            <input type="number" id="cantidad-seleccion" min="1" max="100" value="1">
+                                        </div>
+                    
+                                        <div class="caja-botones-cantidad-producto">
+                                            <i class="fa-solid fa-caret-up"></i>
+                                            <i class="fa-solid fa-caret-down"></i>
+                                        </div>
+                    
+                                        <div class="caja-agregar-carrito">
+                                            <form action="" class="formulario-boton-agregar-carrito">
+                                                <button type="submit" class="boton-agregar-carrito"><i class="fa-solid fa-cart-shopping"></i> <span class="texto-boton-agregar-carrito">ADD TO CART</span></button>
+                                            </form>
+                                        </div>
+                                    </div>
+                    
+                                <div class="caja-links-extra-producto">
+                                    <div class="caja-categorias-producto">
+                                        <span class="links-categorias-producto">Categories:
+                                            <a href="#">Guitars</a>,
+                                            <a href="#">Band & Orchestra</a>,
+                                            <a href="#">Bass Guitar</a>,
+                                            <a href="#">Instruments</a>,
+                                            <a href="#">Orchestral Strings</a>
+                                        </span>
+                                    </div>
+                    
+                                    <div class="caja-tags-producto">
+                                        <span class="links-tags-producto">Tags:
+                                            <a href="#">sale</a>,
+                                            <a href="#">company</a>,
+                                            <a href="#">electric guitars</a>
+                                        </span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                        </div>
                     </section>
+
                 </section>
-                <%- include("./partials/footer") %>
             </main>
+
+            <%- /* include("./partials/footer") */ %>
     </body>

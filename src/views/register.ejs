@@ -1,102 +1,41 @@
 <%- include('./partials/head.ejs') %>
+
+<link href="/styles/reset.css" rel="stylesheet">
+<link href="/styles/header-footer.css" rel="stylesheet">
 <link href="/styles/loginRegister.css" rel="stylesheet">
+
 
 <body>
 
-    <!-- =========================================================================================================== -->
-
-    <!-- -HEADER / ENCABEZADO- -->
     <%- include('./partials/header.ejs') %>
 
-    <!-- =========================================================================================================== -->
-
-    <!-- ----LOGIN / ACCESO---- -->
-
-    <main class="main-login">
-
-        <div class="main-login_title">
-            <h1>¡Comienza la buena vibra!</h1>
+    <form action="/register">
+        
+        <div class="contenedor">
+          <h1 class="mainTitleRegister">REGISTRARSE</h1>
+          <p class="subTitleRegister">¡CREAR CUENTA NUEVA!</p>
+          <hr>
+          <div class="alignForm">    
+          <label for="email"><b>EMAIL</b></label>
+          <input type="text" placeholder="Ingresar mail" name="email" id="email" required>
+      
+          <label for="password"><b>CONTRASEÑA</b></label>
+          <input type="password" placeholder="Ingresar contraseña" name="contraseña" id="contraseña" required>
+      
+          <label for="password2"><b>REPETIR CONTRASEÑA</b></label>
+          <input type="password" placeholder="Repetir contraseña" name="RepetirContrseña" id="RepetirContrseña" required>
+          <hr>
+           <button type="submit" class="registerboton">¡BUENA VIBRA!</button>
         </div>
-
-        <form action="/register" method="POST" class="main-login_form">
-
-            <div class="main-login_form_box-container one-login">
-                
-                <div class="main-login-form-box-container_title">
-                        <h2>CREAR CUENTA</h2>
-                </div>
-
-                <div class="fieldset mail">
-
-                    <div class="label">
-                        <label for="email"><!-- Email --></label>
-                    </div>
-
-                    <div class="input">
-                        <input id="email" type="email" placeholder="Email" required>
-                    </div>
-
-                </div>
-
-                <div class="fieldset password">
-
-                    <div class="label">
-                        <label for="password"></label>
-                    </div>
-
-                    <div class="input">
-                        <input id="password" type="password" placeholder="Contraseña" required>
-                    </div>
-
-                    <div class="input">
-                      <input id="password" type="password" placeholder="Repetir contraseña" required>
-                    </div>
-
-
-
-                </div>
-
-               
-
-                <div class="button">
-                    <input type="submit" value="Crear">
-                </div>
-
-            </div>
-
-            <div class="main-login_form_box-container two-login">
-
-                <article class="paragraph">
-                    <p>Ya eres parte de SoundBox?</p>
-
-                    <div class="a-crear-cuenta">
-                        <a href="/login">Ingresar</a>
-                    </div>
-
-                </article>
-
-                <div class="button">
-
-                    <a href="/login">
-                        <input type="button" name="" id="" value="Ingresar">
-                    </a>
-
-                </div>
-
-            </div>
-
-        </form>
-
-    </main>
-
-    <!-- =========================================================================================================== -->
-
-    <!-- FOOTER / PIE DE PAGINA -->
-    <%- include('./partials/footer.ejs') %>
-
-    <!-- =========================================================================================================== -->
+        </div>  
+        <div>
+         <p class="bottomRegister"> YA TENES CUENTA? <a href="login.html"></a><a href="/login">¡CLICK AQUI!</a></p>  
+         <p class="bottomRegister">AL CREAR SU CUENTA ESTA DE ACUERDO CON NUESTROS <a href="#">TERMINOS Y CONDICIONES</a>.</p>  
+         </div>
+      </form> 
 </body>
 
 
+<%- include('./partials/footer.ejs') %>
 
 
