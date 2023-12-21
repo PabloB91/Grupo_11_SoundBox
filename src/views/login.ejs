@@ -14,79 +14,102 @@
 
     <main class="main-login">
 
-        <div class="main-login_title">
-            <h1>¡Lleva la buena vibra!</h1>
-        </div>
+        <section class="main-login_section">
 
-        <form action="/log-in" method="POST" class="main-login_form">
-
-            <div class="main-login_form_box-container one-login">
-                
-                <div class="main-login-form-box-container_title">
-                        <h2>INGRESAR COMO USUARIO</h2>
-                </div>
-
-                <div class="fieldset mail">
-
-                    <div class="label">
-                        <label for="email"><!-- Email --></label>
-                    </div>
-
-                    <div class="input">
-                        <input id="email" type="email" placeholder="Email" required>
-                    </div>
-
-                </div>
-
-                <div class="fieldset password">
-
-                    <div class="label">
-                        <label for="password"><!-- Contraseña --></label>
-                    </div>
-
-                    <div class="input">
-                        <input id="password" type="password" placeholder="Contraseña" required>
-                    </div>
-
-                    <div class="input">
-                        <input id="password" type="password" placeholder="Id Admin" required>
-                    </div>
-
-
-                </div>
-
-                <div class="button-ingresar-como">
-                    <span>Ingresar como<i class="fa-solid fa-chevron-down"></i></span>
-                </div>
-
-                <div class="button">
-                    <input type="submit" value="Ingresar">
-                </div>
-
+            <div class="main-login_title">
+                <h1>¡Lleva la buena vibra!</h1>
             </div>
+    
+            <form action="/log-in" method="POST" class="main-login_form">
+    
+                <div class="main-login_form_box-container one-login">
+                    
+                    <div class="main-login-form-box-container_title">
+                            <h2>INGRESAR COMO USUARIO</h2>
+                    </div>
+    
+                    <div class="fieldset mail">
+    
+                        <div class="label">
+                            <label for="email"><!-- Email --></label>
+                        </div>
+    
+                        <div class="fa-onda fa-logo">
+                            <img src="/img/svg/simbolequalizer.svg" alt="">
+                        </div>
 
-            <div class="main-login_form_box-container two-login">
-
-                <article class="paragraph">
-                    <p>Si aun no eres parte de SoundBox</p>
-
-                    <div class="a-crear-cuenta">
-                        <a href="/register">Crear cuenta</a>
+                        <div class="input">
+                            <input id="email" type="email"  placeholder="E-mail" required>
+                        </div>
+    
                     </div>
 
-                </article>
+                    <div class="fieldset password">
+    
+                        <div class="label">
+                            <label for="password"><!-- Contraseña --></label>
+                        </div>
 
-                <div class="button">
+                        <div class="fa-onda fa-logo">
+                            <img src="/img/svg/simbolequalizer.svg" alt="">
+                        </div>
+    
+                        <div class="input">
+                            <input id="password" type="password" placeholder="Contraseña" required>
+                        </div>
+    
+                    </div>
 
-                    <a href="/register">
-                        <input type="button" name="" id="" value="Crear cuenta">
-                    </a>
+                    <div class="fieldset idAdmin">
+    
+                        <div class="label">
+                            <label for="idAdmin"><!-- IdAdmin --></label>
+                        </div>
 
+                        <div class="fa-onda fa-logo">
+                            <img src="/img/svg/simbolequalizer.svg" alt="">
+                        </div>
+    
+                        <div class="input">
+                            <input id="IdAdmin" type="password" placeholder="ID de Administrador" required>
+                        </div>
+    
+                    </div>
+    
+                    <div class="button button-ingresar-como">
+                        <span>Ingresar como<i class="fa-solid fa-chevron-down"></i></span>
+                    </div>
+    
+                    <div class="button button-ingresar">
+                        <input type="submit" value="Ingresar">
+                    </div>
+    
                 </div>
+    
+                <div class="main-login_form_box-container two-login">
+    
+                    <article class="paragraph">
+                        <p>Si aun no eres parte de SoundBox</p>
+    
+                        <div class="a-crear-cuenta">
+                            <a href="/register">Crear cuenta</a>
+                        </div>
+    
+                    </article>
+    
+                    <div class="button">
+    
+                        <a href="/register">
+                            <input type="button" name="" id="" value="Crear cuenta">
+                        </a>
+    
+                    </div>
+    
+                </div>
+    
+            </form>
 
-            </div>
-
-        </form>
+        </section>
 
     </main>
 

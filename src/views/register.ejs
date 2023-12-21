@@ -14,89 +14,115 @@
 
     <main class="main-login">
 
-        <div class="main-login_title">
-            <h1>¡Comienza la buena vibra!</h1>
-        </div>
+        <section class="main-login_section">
 
-        <form action="/register" method="POST" class="main-login_form">
-
-            <div class="main-login_form_box-container one-login">
-                
-                <div class="main-login-form-box-container_title">
-                        <h2>CREAR CUENTA</h2>
-                </div>
-
-                <div class="fieldset mail">
-
-                  <div class="label">
-                      <label for="nombre y apellido"></label>
-                  </div>
-
-                  <div class="input">
-                      <input id="nombre y apellido" type="nombre y apellido" placeholder="nombre y apellido" required>
-                    </div>
+            <div class="main-login_title">
+                <h1>¡Comienza la buena vibra!</h1>
+            </div>
+    
+            <form action="/register" method="POST" class="main-login_form">
+    
+                <div class="main-login_form_box-container one-login">
                     
+                    <div class="main-login-form-box-container_title">
+                            <h2>CREAR CUENTA</h2>
+                    </div>
+    
+                    <div class="fieldset nombres-apellidos">
+    
+                      <div class="label">
+                          <label for="Nombres y Apellidos"></label>
+                      </div>
 
+                      <div class="fa-onda fa-logo">
+                        <img src="/img/svg/simbolequalizer.svg" alt="">
+                        </div>
+    
+                      <div class="input">
+                          <input id="nombre y apellido" type="nombre y apellido" placeholder="Nombres y Apellidos" required>
+                        </div>
+    
+                    </div>
+    
+                      <div class="fieldset mail">
+    
+                        <div class="label">
+                            <label for="email"></label>
+                        </div>
+
+                        <div class="fa-onda fa-logo">
+                            <img src="/img/svg/simbolequalizer.svg" alt="">
+                        </div>
+    
+                        <div class="input">
+                            <input id="email" type="email" placeholder="Email" required>
+                        </div>
+    
+                    </div>
+    
+                    <div class="fieldset password">
+    
+                        <div class="label">
+                            <label for="password"></label>
+                        </div>
+
+                        <div class="fa-onda fa-logo">
+                            <img src="/img/svg/simbolequalizer.svg" alt="">
+                        </div>
+    
+                        <div class="input">
+                            <input id="password" type="password" placeholder="Contraseña" required>
+                        </div>
+
+                     </div>
+
+                    <div class="fieldset confirm-password">
+    
+                        <div class="label">
+                            <label for="confirm-password"></label>
+                        </div>
+    
+                        <div class="fa-onda fa-logo">
+                            <img src="/img/svg/simbolequalizer.svg" alt="">
+                        </div>
+    
+                        <div class="input">
+                          <input id="password" type="password" placeholder="Repetir contraseña" required>
+                        </div>
+
+                     </div>
+    
+                    <div class="button crear">
+                        <input type="submit" value="Crear">
+                    </div>
+    
                 </div>
-
-                  <div class="fieldset mail">
-
-                    <div class="label">
-                        <label for="email"></label>
+    
+                <div class="main-login_form_box-container two-login">
+    
+                    <article class="paragraph">
+                        <p>Ya eres parte de SoundBox?</p>
+    
+                        <div class="a-crear-cuenta">
+                            <a href="/login">Ingresar</a>
+                        </div>
+    
+                    </article>
+    
+                    <div class="button">
+    
+                        <a href="/login">
+                            <input type="button" name="" id="" value="Ingresar">
+                        </a>
+    
                     </div>
-
-                    <div class="input">
-                        <input id="email" type="email" placeholder="Email" required>
-                    </div>
-
+    
                 </div>
+    
+            </form>
 
-                <div class="fieldset password">
+        </section>
 
-                    <div class="label">
-                        <label for="password"></label>
-                    </div>
-
-                    <div class="input">
-                        <input id="password" type="password" placeholder="Contraseña" required>
-                    </div>
-
-                    <div class="input">
-                      <input id="password" type="password" placeholder="Repetir contraseña" required>
-                    </div>
-                 </div>
-
-             
-               
-
-                <div class="button">
-                    <input type="submit" value="Crear">
-                </div>
-
-            </div>
-
-            <div class="main-login_form_box-container two-login">
-
-                <article class="paragraph">
-                    <p>Ya eres parte de SoundBox?</p>
-
-                    <div class="a-crear-cuenta">
-                        <a href="/login">Ingresar</a>
-                    </div>
-
-                </article>
-
-                <div class="button">
-
-                    <a href="/login">
-                        <input type="button" name="" id="" value="Ingresar">
-                    </a>
-
-                </div>
-
-            </div>
-
-        </form>
 
     </main>
 
