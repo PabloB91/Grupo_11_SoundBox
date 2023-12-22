@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "imagen": "../img/productos/guitarras/guitarra-1.jpg",
+        "nombre": "guitarra criolla",
+        "marca": "Gibson.",
+        "cantidad": 50,
+        "precio": 2000,
+        "descuento": 15,
+        "category": "visited"
+    },
+    {
+        "id": 2,
+        "imagen": "../img/productos/guitarras/guitarra-2.jpg",
+        "nombre": "piano",
+        "marca": "Gibson.",
+        "cantidad": 50,
+        "precio": 3000,
+        "descuento": 25,
+        "category": "visited"
+    },
+    {
+        "id": 3,
+        "imagen": "../img/productos/guitarras/guitarra-3.jpg",
+        "nombre": "bateria",
+        "marca": "Gibson.",
+        "cantidad": 50,
+        "precio": 4000,
+        "descuento": 35,
+        "category": "visited"
+    }
+]
