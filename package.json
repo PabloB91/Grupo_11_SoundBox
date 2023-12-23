@@ -13,7 +13,11 @@
   "dependencies": {
     "ejs": "^3.1.9",
     "express": "^4.18.2",
+<<<<<<< HEAD
     "method": "^2.0.0"
+=======
+    "method-override": "^3.0.0"
+>>>>>>> 239fac5075947febaa2e5436936f1febe7c614ba
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
