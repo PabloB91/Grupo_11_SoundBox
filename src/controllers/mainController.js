@@ -88,6 +88,12 @@ const mainController = {
         res.render("productDetail", { instrumentos: todosLosInstrumentos });
         
     },
+
+    allProducts: (req, res) => {
+
+        res.render("todosLosProductos", { instrumentos: todosLosInstrumentos })
+
+    }
     
 }
 

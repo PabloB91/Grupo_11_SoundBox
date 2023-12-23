@@ -5,24 +5,28 @@ const router = express.Router();
 // ************ Controller Require ************
 const productsController = require('../controllers/productsController');
 
-/* Quiten el comentario y editen según el enunciado
-
 // Devolver todos los productos  
-router.???('/', productsController.index); 
-
-// Crear un producto
-router.???('/???/', productsController.create); 
-router.???('/', productsController.store); 
+router.get('/', productsController.index);
 
 // Devolver un producto 
-router.???('/:id/', productsController.detail); 
+router.get('/detail/:id/', productsController.detail);
+
+// Crear un producto
+router.get('/create', productsController.create);
+router.post('/create', productsController.processCreate);
 
 // Editar un producto 
-router.???('/:id/???', productsController.edit); 
-router.???('/:id', productsController.update); 
+router.get('/edit/:id', productsController.edit); 
+router.put('/edit/:id', productsController.processEdit);
 
 // Eliminar un producto 
-router.???('/:id', productsController.destroy);
+router.delete('/delete/:id', productsController.destroy);
+/* Quiten el comentario y editen según el enunciado
+
+
+
+
+
 
 */
 

@@ -1,0 +1,39 @@
+.seccion-general {
+    height: auto;
+    background-color: #B7B3A1;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.titulo {
+    text-align: center;
+
+}
+
+.card {
+    width: 20%;
+    background-color: white;
+    height: 300px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+@media (max-width:769px) {
+    .card {
+        width: 45%;
+
+    }
+
+}
+
+
+@media (max-width:500px) {
+    .card {
+        width: 90%;
+
+    }
+
+}

@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "imagen": "../img/productos/guitarras/guitarra-1.jpg",
+        "imagen": "../../img/productos/guitarras/guitarra-1.jpg",
         "nombre": "guitarra criolla",
         "marca": "Gibson.",
         "cantidad": 50,
@@ -11,7 +11,7 @@
     },
     {
         "id": 2,
-        "imagen": "../img/productos/guitarras/guitarra-2.jpg",
+        "imagen": "../../img/productos/guitarras/guitarra-2.jpg",
         "nombre": "piano",
         "marca": "Gibson.",
         "cantidad": 50,
@@ -21,7 +21,7 @@
     },
     {
         "id": 3,
-        "imagen": "../img/productos/guitarras/guitarra-3.jpg",
+        "imagen": "../../img/productos/guitarras/guitarra-3.jpg",
         "nombre": "bateria",
         "marca": "Gibson.",
         "cantidad": 50,

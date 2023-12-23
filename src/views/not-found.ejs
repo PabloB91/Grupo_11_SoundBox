@@ -1,23 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include("./partials/head") %>
-    <link rel="stylesheet" href="not-found.css">
+<head>
+    <link rel="stylesheet" href="/styles/not-found.css">
+    <%- include("./partials/head") %>
+</head>
+
+<body>  
     <%- include("./partials/header") %>
-<main>
-    <body>
-        <div class="separador-externo "></div>
-        <div class="separador-interno"></div>
-        <section class="seccion">
-            <div class="circular-seccion">
-             <span> <h1> ERROR 404 NOT-FOUND!</h1></span>
-             <SPAN>Lo que busca, no existe</SPAN>
-            </div>
-        </section>
-        <div class="separador-interno "></div>
-        <div class="separador-externo "></div>
-    </body>
-    <%- include("./partials/footer") %>
-</main>
+        <main>
+            <div class="separador-externo"></div>
+            <div class="separador-interno"></div>
+            <section class="seccion-general">
+                <div class="circular-seccion">
+                    <div class="texto-404">
+                       <span>
+                        <h1 class="text-oops">OOPS... <i class="fa-solid fa-ban"></i></h1>
+                        <h1> ERROR 404 NOT-FOUND!</h1>
+                    </span>
+                    <span class="bottom-text">Lo que busca, no existe</span> 
+                    </div>
+                    <div class="botton-redirect">
+                        <a href="/">volver al home</a>
+                    </div>
+                </div>
+            </section>
+            <div class="separador-interno"></div>
+            <div class="separador-externo"></div>
+            <%- include("./partials/footer") %>
+        </main>
+</body>
 
 </html>
