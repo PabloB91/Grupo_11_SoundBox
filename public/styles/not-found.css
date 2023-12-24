@@ -53,6 +53,10 @@
     border-radius: 8px;
     border: solid 1px black;
 
+    a{
+        color: #fff;
+    }
+
 }
 
 .text-oops {
