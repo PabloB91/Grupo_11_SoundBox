@@ -19,21 +19,24 @@ header{
 }
 
 .main-login_title {
+	display: flex;
 	width: 100%;
-	text-align: center;
+	justify-content: center;
+	align-items: center;
 	color: #ff540a;
-	font-family: "Bebas Neue";
 	margin: auto;
+	height: 10%;
+
+	h1{
+		font-size: 30px;
+	}
 }
 
 .main-login_form {
-	display: flex;
 	margin: 0px auto;
-	width: 90%;
+	width: 311px;
 	flex-wrap: wrap;
-	align-items: center;
 	border-radius: 6px;
-	background: #e6e6e6;
 }
 
 .main-login_form_box-container {
@@ -45,6 +48,9 @@ header{
 }
 
 .main-login-form-box-container_title {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	color: #ff540a;
 
     h2{
@@ -55,10 +61,11 @@ header{
 .one-login {
 	display: flex;
 	background: #fff;
-	margin: 15px 10px 0px 10px;
 	border-radius: 10px 10px 11% 11%;
 	flex-direction: column;
 	justify-content: space-evenly;
+	height: 360px;
+	width: 100%;
 }
 
 .one-login .mail {
@@ -81,8 +88,12 @@ header{
     .fa-onda.fa-logo {
         width: 18px;
         position: absolute;
-        left: 12%;
+        left: 10%;
         top: 1px;
+
+		img{
+			width: 100%;
+		}
     }
 }
 
@@ -133,9 +144,22 @@ header{
 }
 
 .two-login .paragraph {
+	display: flex;
 	background: #fff;
 	width: 70%;
 	border-radius: 0px 0px 15px 15px;
+
+	.img-link-soundBox{
+		width: 25%;
+
+		img{
+			width: 100%;
+		}
+	}
+
+	.text{
+		width: 85%;
+	}
 }
 
 .two-login .paragraph p {
@@ -177,14 +201,25 @@ header{
 .two-login .button {
 	display: none;
 }
+
+footer{
+	height: 12vh;
+}
 /*----------------------------------------------------------------------------------------------------------------*/
 /* MEDIA QUERIES */
 
 @media screen and (min-width: 768px) {
+
+	
+
 	.main-login_form {
-		width: 70%;
-		height: 50%;
+		width: 80%;
+		height: 325px;
 		position: relative;
+	    background: #e6e6e6;
+	    align-items: center;
+		display: flex;
+		margin: 30px 84px;
 	}
 
 	.main-login_form_box-container {
@@ -198,9 +233,9 @@ header{
 		border-radius: 15px;
 		position: absolute;
 		flex-wrap: wrap;
-		height: 120%;
+		height: 390px;
 		left: 15px;
-		margin: 0px;
+		
 	}
 
 	.one-login .label {
@@ -223,8 +258,19 @@ header{
 	}
 
 	.two-login .paragraph {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 		background: none;
 		margin-bottom: 10px;
+
+		.img-link-soundBox{
+			width: 50%;
+		}
+
+		.text{
+			width: 100%;
+		}
 	}
 
 	.two-login .paragraph p {
@@ -257,21 +303,5 @@ header{
 }
 
 @media screen and (min-width: 1024px) {
-	.main-login_form {
-		width: 60%;
-		height: 50%;
-		position: relative;
-	}
-
-	.one-login .fieldset input {
-		font-size: 14px;
-		width: 77%;
-	}
+	
 }
-/*----------------------------------------------------------------------------------------------------------------*/
-
-/*================================================================================================================*/
-
-/*Register */
-
-/*================================================================================================================*/
