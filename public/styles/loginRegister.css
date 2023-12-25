@@ -303,5 +303,13 @@ footer{
 }
 
 @media screen and (min-width: 1024px) {
-	
+	.main-login_form{
+		width: 70%;
+		height: 360px;
+		margin: 30px auto;
+	}
+
+	.one-login{
+		height: 420px;
+	}
 }
