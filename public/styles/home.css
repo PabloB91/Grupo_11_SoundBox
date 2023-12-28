@@ -73,6 +73,13 @@ h3 {
     z-index: 3;
 }
 .categoria a{
+    color: white;
+    text-decoration: none;
+}
+.categoria a:hover{
+    color: black;
+}
+.categoria a:visited, a:active{
     text-decoration: none;
 }
 .categoria p{
