@@ -31,6 +31,7 @@ const productsRouter = require('./routes/productsRouter');
 app.use("/", mainRouter);
 app.use("/products", productsRouter);
 
+// 404, si no esta la ruta buscada arrojaria este error
 app.use((req, res, next) => {
     res.status(404).render("not-found")
 });
