@@ -1,4 +1,64 @@
+main {
+    display: flex;
+    margin-top: 50px;
+
+}
+
+.ordenador {
+    width: 10vw;
+    background-color: #FF540A;
+
+}
+
+.titulo-ordenador {
+    margin-left: 1.2rem;
+    position: fixed;
+}
+
+.filtrar-plata {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    padding: 0.5rem;
+}
+
+.primer-seccion {
+    margin: 1rem;
+    padding: 0.5rem;
+
+}
+
+.segunda-seccion {
+    margin: 1rem;
+    padding: 0.5rem;
+}
+
+.tercer-seccion {
+    margin: 1rem;
+    padding: 0.5rem;
+
+}
+
+.cuarta-seccion {
+    margin: 1rem;
+    padding: 0.5rem;
+
+}
+
+.titulo-filtros {
+    display: flex;
+    justify-content: center;
+
+}
+
+.populares-1 {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem;
+}
+
 .seccion-general {
+    width: 100vw;
     height: auto;
     background-color: #B7B3A1;
     display: flex;
@@ -7,8 +67,9 @@
 }
 
 .titulo {
-    text-align: center;
-
+    position: absolute;
+    top: 150PX;
+    left: 35vw;
 }
 
 .card {
@@ -20,6 +81,33 @@
     margin-left: 0.5rem;
     margin-right: 0.5rem;
 }
+
+/* animaciones */
+
+.dropdown-ordenador {
+    display: none;
+
+}
+
+.ordenador:hover {
+    width: 30vw;
+    height: 124vw;
+    position: absolute;
+    border-radius: 0px 25px 25px 0px;
+    transition: 0.5s;
+}
+
+.ordenador:hover .dropdown-ordenador {
+    display: flex;
+    flex-direction: column;
+}
+
+.ordenador:hover .titulo-ordenador {
+    margin-left: 1rem;
+    position: sticky;
+}
+
+/* media queryes */
 
 @media (max-width:769px) {
     .card {

@@ -1,5 +1,3 @@
-
-
 <head>
     <%- include("./partials/head") %>
         <link rel="stylesheet" href="styles/productCart.css">
@@ -33,9 +31,9 @@
                                     <img src=<%=producto.imagen %>
                                     alt="">
                                     <div class="nombre-marca">
-                                        <h2>
+                                        <h6>
                                             <%= producto.nombre %>
-                                        </h2>
+                                        </h6>
                                         <p>
                                             <%= producto.marca %>
                                         </p>
@@ -89,9 +87,9 @@
                                     <img src=<%=producto.imagen %>
                                     alt="">
                                     <div class="nombre-marca">
-                                        <h2>
+                                        <h6>
                                             <%= producto.nombre %>
-                                        </h2>
+                                        </h6>
                                         <p>
                                             <%= producto.marca %>
                                         </p>
@@ -178,6 +176,8 @@
             </section>
 
             <section class="carruseles-contenedor">
+                <div class="separador-externo"></div>
+                <div class="separador"></div>
                 <section class="seccion-carrusel">
                     <div class="corredor">
                         <div class="image-related">
@@ -225,6 +225,8 @@
                         <!-- fin del carrusel agregar a carrito 2 -->
                     </div>
                 </section>
+                <div class="separador"></div>
+                <div class="separador-externo"></div>
             </section>
         </main>
 

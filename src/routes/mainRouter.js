@@ -6,6 +6,9 @@ const router = express.Router()
 const mainController = require("../controllers/mainController")
 router.get("/", mainController.index);
 
+router.get("/categoria/:nombre", mainController.categorias)
+//---Agregar la ruta de la vista por categoría
+
 router.get("/productCart", mainController.carrito);
 
 router.get("/login", mainController.login);

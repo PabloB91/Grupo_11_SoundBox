@@ -19,15 +19,15 @@
             <h3>COMPRA POR CATEGORÍA</h3>
             <div class="items-categorias">  <!-- <img src="/img/home/categoria-guitarras.jpg" alt="Guitarras"> -->
                 <article class="categoria">
-                    <p>Guitarras</p>
+                    <p><a href="categoria/Guitarras">Guitarras</a></p>
                     <img src="/img/home/categoria-guitarras.jpg" alt="Guitarras">
                 </article>
                 <article class="categoria">
-                    <p>Guitarras</p>
+                    <p><a href="/categoria/Accesorios">Accesorios</a></p>
                     <img src="/img/home/categoria-accesorios.jpg" alt="Accesorios">
                 </article>
                 <article class="categoria">
-                    <p>Efectos</p>
+                    <p><a href="categoria/Efectos">Efectos</a></p>
                     <img src="/img/home/categoria-efectos.jpg" alt="Efectos"></a>
                 </article>
                 <article class="categoria">
@@ -35,7 +35,7 @@
                     <img src="/img/home/categoria-pianos-teclados.jpg" alt="Teclados&Pianos">
                 </article>
                 <article class="categoria">
-                    <p>Orquesta</p>
+                    <p><a href="categoria/Orquesta">Orquesta</a></p>
                     <img src="/img/home/categoria-orquesta.jpg" alt="Orquesta">
                 </article>
                 <article class="categoria">
@@ -47,7 +47,7 @@
                     <img src="/img/home/categoria-segundamano.jpg" alt="Segunda Mano">
                 </article>
                 <article class="categoria">
-                    <p>Grabación</p>
+                    <p><a href="categoria/Grabacion">Grabación</a></p>
                     <img src="/img/home/categoria-grabacion.jpg" alt="Grabación">
                 </article>
             </div>
@@ -75,54 +75,21 @@
                 </ul>  
             </div>
             <div class="items-mas-vendidos">  
-            <article class="producto">
-                <a href="/productDetail">
-                <img src="/img/productos/varios/trompeta.jpg" alt="Trompeta">
-                <div class="detalle-producto">
-                    <p class="descripciones"><strong>Plastic Trumpet, White</strong></p>
-                    <div class="container-detalle">
-                        <p class="calificacion">Estrellas</p>
-                        <p class="precios">$6.770</p>
-                    </div>
-                </div>
-                </a>
-            </article>
-            <article class="producto">
-                <a href="/productDetail">
-                <img src="/img/productos/percusion/percusion-2.jpg" alt="Percusion" >
-                <div class="detalle-producto">
-                    <p class="descripciones"><strong>Mein Cymbals Arena Marching Cymbals Pair</strong></p>
-                    <div class="container-detalle">
-                        <p class="calificacion">Estrellas</p>
-                        <p class="precios">$6.770</p>
-                    </div>
-                </div>
-                </a>
-            </article>
-            <article class="producto">
-                <a href="/productDetail">
-                <img src="/img/productos/orquesta/orquesta-1.jpg" alt="Orquesta" >
-                <div class="detalle-producto">
-                    <p class="descripciones"><strong>Handcrafted Wood Aoustic Violin</strong></p>
-                    <div class="container-detalle">
-                        <p class="calificacion">Estrellas</p>
-                        <p class="descuentos">40% OFF</p>
-                    </div>
-                </div>
-                </a>
-            </article>
-            <article class="producto">
-                <a href="/productDetail">
-                <img src="/img/productos/guitarras/guitarra-1.jpg" alt="Guitarra" >
-                <div class="detalle-producto">
-                    <p class="descripciones"><strong>Gibson 2016 T Les Paul Studio 50'S Tribute</strong></p>
-                    <div class="container-detalle">
-                        <p class="calificacion">Estrellas</p>
-                        <p class="precios">$6.770</p>
-                    </div>
-                </div>
-                </a>
-            </article>
+                <% masVendidos.forEach(product => { %>
+         
+                    <article class="producto">
+                        <a href="/productDetail">
+                        <img src=<%= product.imagen %> alt="Imagen">
+                        <div class="detalle-producto">
+                            <p class="descripciones"><strong><%= product.nombre %></strong></p>
+                            <div class="container-detalle">
+                                <p class="calificacion">Estrellas</p>
+                                <p class="precios">$<%= product.precio %></p>
+                            </div>
+                        </div>
+                        </a>
+                    </article>
+                <% }) %>
             </div>
         </section>
         <hr class="separador">

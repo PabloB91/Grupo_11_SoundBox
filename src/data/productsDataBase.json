@@ -2,31 +2,211 @@
     {
         "id": 1,
         "imagen": "../../img/productos/guitarras/guitarra-1.jpg",
-        "nombre": "Guitarra Criolla",
-        "marca": "Gibson.",
+        "nombre": "2016 T Les Paul Studio 50’s Tribute",
+        "marca": "Gibson",
         "cantidad": 50,
         "precio": 2000,
         "descuento": 15,
-        "category": "visited"
+        "categoria": "Guitarras"
     },
     {
         "id": 2,
-        "imagen": "../../img/productos/guitarras/guitarra-2.jpg",
-        "nombre": "piano",
-        "marca": "Gibson.",
+        "imagen": "../../img/productos/guitarras/guitarra-4.jpg",
+        "nombre": "Guitarra amarilla",
+        "marca": "Gibson",
         "cantidad": 50,
         "precio": 3000,
         "descuento": 25,
-        "category": "visited"
+        "categoria": "Guitarras"
     },
     {
         "id": 3,
-        "imagen": "../../img/productos/guitarras/guitarra-3.jpg",
-        "nombre": "bateria",
-        "marca": "Gibson.",
+        "imagen": "../../img/productos/guitarras/guitarra-5.jpg",
+        "nombre": "Custom Zone 6-String Full-Size Electric Guitar",
+        "marca": "Gibson",
+        "cantidad": 8,
+        "precio": 4000,
+        "descuento": 0,
+        "categoria": "Guitarras"
+    },
+    {
+        "id": 4,
+        "imagen": "../../img/productos/accesorios/audifonos-1.jpg",
+        "nombre": "DT 770 PRO, 250 ohms",
+        "marca": "Beyerdynamic ",
         "cantidad": 50,
         "precio": 4000,
-        "descuento": 35,
-        "category": "visited"
+        "descuento": 20,
+        "categoria": "Accesorios"
+    },
+    {
+        "id": 5,
+        "imagen": "../../img/productos/accesorios/audifonos-2.jpg",
+        "nombre": "High-Definition Studio Monitor Headphones",
+        "marca": "Gibson",
+        "cantidad": 50,
+        "precio": 4000,
+        "descuento": 0,
+        "categoria": "Accesorios"
+    },
+    {
+        "id": 6,
+        "imagen": "../../img/productos/accesorios/audifonos-3.jpg",
+        "nombre": "Stereo Monitor Headphones",
+        "marca": "Panasonic",
+        "cantidad": 6,
+        "precio": 4000,
+        "descuento": 0,
+        "categoria": "Accesorios"
+    },
+    {
+        "id": 7,
+        "imagen": "../../img/productos/accesorios/audifonos-4.jpg",
+        "nombre": "Professional Studio Monitor Headphones",
+        "marca": "Gibson",
+        "cantidad": 50,
+        "precio": 4000,
+        "descuento": 0,
+        "categoria": "Accesorios"
+    },
+    {
+        "id": 8,
+        "imagen": "../../img/productos/accesorios/audifonos-5.jpg",
+        "nombre": "audifonos-5",
+        "marca": "Gibson",
+        "cantidad": 50,
+        "precio": 4000,
+        "descuento": 0,
+        "categoria": "Accesorios"
+    },
+    {
+        "id": 9,
+        "imagen": "../../img/productos/efectos/mezcla-1.jpg",
+        "nombre": "mezcla-1",
+        "marca": "Gibson",
+        "cantidad": 50,
+        "precio": 4000,
+        "descuento": 0,
+        "categoria": "Efectos"
+    },
+    {
+        "id": 10,
+        "imagen": "../../img/productos/efectos/mezcla-2.jpg",
+        "nombre": "mezcla-2",
+        "marca": "Gibson",
+        "cantidad": 50,
+        "precio": 4000,
+        "descuento": 0,
+        "categoria": "Efectos"
+    },
+    {
+        "id": 11,
+        "imagen": "../../img/productos/efectos/mezcla-3.jpg",
+        "nombre": "USB DJ Controller with Trigger Pads",
+        "marca": "Gibson",
+        "cantidad": 5,
+        "precio": 4000,
+        "descuento": 0,
+        "categoria": "Efectos"
+    },
+    {
+        "id": 12,
+        "imagen": "../../img/productos/efectos/mezcla-4.jpg",
+        "nombre": "mezcla-4",
+        "marca": "Gibson",
+        "cantidad": 50,
+        "precio": 4000,
+        "descuento": 0,
+        "categoria": "Efectos"
+    },
+    {
+        "id": 13,
+        "imagen": "../../img/productos/efectos/mezcla-5.jpg",
+        "nombre": "mezcla-5",
+        "marca": "Gibson",
+        "cantidad": 50,
+        "precio": 4000,
+        "descuento": 0,
+        "categoria": "Efectos"
+    },
+    {
+        "id": 14,
+        "imagen": "../../img/productos/orquesta/orquesta-1.jpg",
+        "nombre": "orquesta-1",
+        "marca": "Gibson",
+        "cantidad": 50,
+        "precio": 4000,
+        "descuento": 0,
+        "categoria": "Orquesta"
+    },
+    {
+        "id": 15,
+        "imagen": "../../img/productos/orquesta/orquesta-2.jpg",
+        "nombre": "Handcrafted Wood Acoustic Violin",
+        "marca": "Gibson",
+        "cantidad": 9,
+        "precio": 4000,
+        "descuento": 0,
+        "categoria": "Orquesta"
+    },
+    {
+        "id": 16,
+        "imagen": "../../img/productos/orquesta/orquesta-3.jpg",
+        "nombre": "orquesta-3",
+        "marca": "Gibson",
+        "cantidad": 50,
+        "precio": 4000,
+        "descuento": 0,
+        "categoria": "Orquesta"
+    },
+    {
+        "id": 17,
+        "imagen": "../../img/productos/orquesta/orquesta-4.jpg",
+        "nombre": "orquesta-4",
+        "marca": "Gibson",
+        "cantidad": 50,
+        "precio": 4000,
+        "descuento": 0,
+        "categoria": "Orquesta"
+    },
+    {
+        "id": 18,
+        "imagen": "../../img/productos/grabacion/Microfono-1.jpg",
+        "nombre": "Microfono-1",
+        "marca": "Gibson",
+        "cantidad": 50,
+        "precio": 4000,
+        "descuento": 10,
+        "categoria": "Grabacion"
+    },
+    {
+        "id": 19,
+        "imagen": "../../img/productos/grabacion/Microfono-2.jpg",
+        "nombre": "Microfono-2",
+        "marca": "Gibson",
+        "cantidad": 50,
+        "precio": 4000,
+        "descuento": 0,
+        "categoria": "Grabacion"
+    },
+    {
+        "id": 20,
+        "imagen": "../../img/productos/grabacion/Microfono-3.jpg",
+        "nombre": "Microfono-3",
+        "marca": "Gibson",
+        "cantidad": 50,
+        "precio": 4000,
+        "descuento": 0,
+        "categoria": "Grabacion"
+    },
+    {
+        "id": 20,
+        "imagen": "../../img/productos/grabacion/Microfono-4.jpg",
+        "nombre": "Microfono-4",
+        "marca": "Gibson",
+        "cantidad": 50,
+        "precio": 4000,
+        "descuento": 0,
+        "categoria": "Grabacion"
     }
 ]
