@@ -18,6 +18,19 @@ app.use(express.static("public")); // para usar los archivos estaticos de la car
 app.set("view engine", "ejs")
 app.set('views', path.resolve(__dirname, "views"));
 
+
+//*****************************************************************************************************\\
+
+/************* Middlewares *************/
+
+// Para tomar los datos del body
+app.use(express.urlencoded({extended: false}));
+app.use(express.json) 
+
+// Para poder usar los metodos put y delete
+app.use(methodOverride('_method'));
+// app.use(logMiddleware);
+
 //*****************************************************************************************************\\
 
 // ** Rutas **
@@ -35,19 +48,6 @@ app.use("/products", productsRouter);
 app.use((req, res, next) => {
     res.status(404).render("not-found")
 });
-
-//*****************************************************************************************************\\
-
-/************* Middlewares *************/
-
-// Para tomar los datos del body
-app.use(express.urlencoded({extended: false}));
-app.use(express.json) 
-
-// Para poder usar los metodos put y delete
-app.use(methodOverride('_method'));
-// app.use(logMiddleware);
-
 
 //*****************************************************************************************************\\
 
