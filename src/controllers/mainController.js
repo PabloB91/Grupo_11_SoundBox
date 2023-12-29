@@ -51,7 +51,7 @@ const mainController = {
         const masVendidos = products.filter(product => product.cantidad <= 10 )
         //console.log("masvendidos: ", masVendidos);
         const ofertas =  products.filter(product => product.descuento != 0 ) 
-        console.log(ofertas);
+        // console.log(ofertas);
         res.render("index", {masVendidos :masVendidos}, 
         );
     
