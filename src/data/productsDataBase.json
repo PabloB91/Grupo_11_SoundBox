@@ -2,7 +2,7 @@
     {
         "id": 1,
         "imagen": "../../img/productos/guitarras/guitarra-1.jpg",
-        "nombre": "guitarra criolla",
+        "nombre": "Guitarra Criolla",
         "marca": "Gibson.",
         "cantidad": 50,
         "precio": 2000,
