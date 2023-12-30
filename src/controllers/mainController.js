@@ -9,12 +9,11 @@ const { log } = require("console");
 guardados en la carpeta Data como Json (un array de objetos literales) */
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 
-// Acá nos falta un objeto literal con las acciones para cada ruta
-
 const mainController = {
     
     index: (req, res) => {
-onst products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+        
+        const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
         const masVendidos = products.filter(product => product.cantidad <= 10 )
         //console.log("masvendidos: ", masVendidos);
         const ofertas =  products.filter(product => product.descuento != 0 ) 
