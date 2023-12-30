@@ -11,12 +11,6 @@ const methodOverride = require('method-override'); // requiriendo method para us
 
 app.use(express.static("public")); // para usar los archivos estaticos de la carpeta public
 
-//*****************************************************************************************************\\
-
-/************* Template engine (ejs) *************/
-
-app.set("view engine", "ejs")
-app.set('views', path.resolve(__dirname, "views"));
 
 //*****************************************************************************************************\\
 
@@ -48,11 +42,19 @@ app.use(express.json)
 app.use(methodOverride('_method'));
 // app.use(logMiddleware);
 
+//*****************************************************************************************************\\
+
+/************* Template engine (ejs) *************/
+
+app.set("view engine", "ejs")
+app.set('views', path.resolve(__dirname, "views"));
 
 //*****************************************************************************************************\\
 
 /************* LLAMANDO AL SERVIDOR *************/
+const port = process.env.PORT || 3050;
+
 app.listen(3050,()=> {
-    console.log ("Servidor funcionando en: http://localhost:3050/")
+    console.log (`Servidor funcionando en: http://localhost:${port}`)
 });
 //*****************************************************************************************************\\
