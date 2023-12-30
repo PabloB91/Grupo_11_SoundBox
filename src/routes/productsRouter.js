@@ -28,6 +28,7 @@ const storage = multer.diskStorage({
 const upload = multer({storage : storage});
 
  */
+
 // Devolver todos los productos  
 router.get('/', productsController.index);
 
@@ -36,6 +37,7 @@ router.get('/detail/:id/', productsController.detail);
 
 // Crear un producto
 router.get('/create', productsController.create);
+router.post('/create', productsController.processCreate)
 /* router.post('/create', upload.single('image'),productsController.processCreate); */
 
 // Editar un producto 
@@ -44,13 +46,5 @@ router.put('/edit/:id', productsController.processEdit);
 
 // Eliminar un producto 
 router.delete('/delete/:id', productsController.destroy);
-/* Quiten el comentario y editen según el enunciado
-
-
-
-
-
-
-*/
 
 module.exports = router;

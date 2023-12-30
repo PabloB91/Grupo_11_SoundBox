@@ -25,11 +25,34 @@
                     
                     <div class="form-creat-product">
 
-                        <form action="/index" method="POST" enctype="multipart/form-data">
+                        <form action="/products/create" method="POST" ><!-- enctype="multipart/form-data" -->
+                            <div class="imagenes">
+
+                                <div class="fieldset imagen-of-product">
+                                    <label for="image"></label>
+                                    <input placeholder="Imagen" type="file"  name="imagen" class="imagen-form">
+                                </div>
+    
+                                <div class="fieldset imagen-of-product">
+                                    <label for="imagenFrontal"></label>
+                                    <input placeholder="Imagen" type="file"  name="imagenFrontal" class="imagen-form">
+                                </div>
+    
+                                <div class="fieldset imagen-of-product">
+                                    <label for="imagenLateralIzquierdo"></label>
+                                    <input placeholder="Imagen" type="file"  name="imagenLateralIzquierdo" class="imagen-form">
+                                </div>
+    
+                                <div class="fieldset imagen-of-product">
+                                    <label for="imagenLateralDerecho"></label>
+                                    <input placeholder="Imagen" type="file"  name="imagenLateralDerecho" class="imagen-form">
+                                </div>
+
+                            </div>
                             
                             <div class="fieldset titulo-producto">
-                                <label for="nombre-del-producto">Nombre del producto</label>
-                                <input placeholder="Guitarra" type="text" name="nombre-del-producto" class="nombre-form">
+                                <label for="nombre">Nombre del producto</label>
+                                <input placeholder="Guitarra" type="text" name="nombre" class="nombre-form">
                             </div>
                             
                             <div class="fieldset precio">
@@ -39,7 +62,7 @@
 
                             <div class="fieldset descuento">
                                 <label for="descuento">Descuento</label>
-                                <input placeholder="Descuento" type="number"  name="descuento" min="5" max="100" class="descuento-form">
+                                <input placeholder="Descuento" type="number"  name="descuento" min="5" max="95" class="descuento-form">
                             </div>
 
                             <div class="fieldset descripcion">
@@ -53,19 +76,17 @@
                             </div>
 
                             <div class="fieldset cantidad-disponibles">
-                                <label for="cantidad-disponible">Cantidad disponibles</label>
-                                <input placeholder="Cantidad" type="number"  name="cantidad-disponible" min="1" max="99999" class="cantidad-disponible">
+                                <label for="disponibles">Cantidad disponibles</label>
+                                <input placeholder="Cantidad" type="number"  name="disponibles" min="1" max="99999" class="cantidad-disponible">
                             </div>
 
                             <div class="fieldset agregar-categoria">
-                                <label for="cantidad-disponible">Categorias</label>
-                                <input placeholder="Guitarras, Instrumentos de cuerda" type="text"  name="categoria" class="cantidad-disponible">
+                                <label for="categorias">Categorias</label>
+                                <input placeholder="Guitarras, Instrumentos de cuerda" type="text"  name="categorias" class="cantidad-disponible">
                             </div>
-                            <div class="imagen-of-product">
-                                <label for="image"></label>
-                                <input placeholder="Imagen" type="file"  name="image" class="imagen-form">
-                            </div>
-                                
+
+
+                            
                                 <div class="crear-carta-borrar-carta">
 
                                     <label for=""></label>
@@ -86,20 +107,20 @@
                                 <h1>Vista previa</h1>
                         </div>
 
-                        <div class="caja-general disappear">
+                        <div class="caja-general ">
                                 
                                 
                             <div class="caja-imagenes-general">
                                     
                                     <div class="imagen-producto-principal">
-                                        <img src="/img/productos/guitarras/guitarra-1.jpg" alt="guitarra1">
+                                        <img src="./img/products/IMG_DEFAULT.svg" alt="guitarra1">
                                         <a href="#"> <i class="fa-solid fa-heart"></i> </a>
                                     </div>
                                     
                                     <div class="imagenes-secundarias-inferior">
-                                        <img src="/img/productos/guitarras/guitarra-1.jpg" alt="guitarra1" class="imagen-producto-secundaria">
-                                        <img src="/img/productos/guitarras/guitarra-1.jpg" alt="guitarra1" class="imagen-producto-secundaria">
-                                        <img src="/img/productos/guitarras/guitarra-1.jpg" alt="guitarra1" class="imagen-producto-secundaria">
+                                        <img src="./img/products/IMG_DEFAULT.svg" alt="guitarra1" class="imagen-producto-secundaria">
+                                        <img src="./img/products/IMG_DEFAULT.svg" alt="guitarra1" class="imagen-producto-secundaria">
+                                        <img src="./img/products/IMG_DEFAULT.svg" alt="guitarra1" class="imagen-producto-secundaria">
                                     </div>
                             </div>
                     
@@ -109,36 +130,36 @@
                                 <div class="caja-primera">
                                     
                                     <div class="caja-titulo-producto">
-                                            
                                             <h2 class="titulo-producto">Nombre del producto</h2>
-                                        </div>
+                                    </div>
                                         
-                                        <div class="caja-precio-clasificacion">
+                                    <div class="caja-precio-clasificacion">
 
-                                            <div class="product-price">
-                                                <span class="precio-producto"> $Precio? </span>
-                                            </div>
+                                        <div class="product-price">
+                                                <span class="precio-producto"> $ Precio </span>
+                                                <span class="precio-producto"> Descuento % </span>
+                                        </div>
                                             
-                                            <form class="select-starts">
+                                        <form class="select-starts">
 
                                                 <div class="starts">
                                                     <p class="clasificacion">
-                                                        <input id="radio1" type="radio" name="estrellas" "><!--
+                                                        <input id="radio1" type="radio" name="estrellas"><!--
                                                         --><label for="radio1"><i class="fa-solid fa-star"></i></label><!--
-                                                        --><input id="radio2" type="radio" name="estrellas" "><!--
+                                                        --><input id="radio2" type="radio" name="estrellas"><!--
                                                         --><label for="radio2"><i class="fa-solid fa-star"></i></label><!--
-                                                        --><input id="radio3" type="radio" name="estrellas" "><!--
+                                                        --><input id="radio3" type="radio" name="estrellas" ><!--
                                                         --><label for="radio3"><i class="fa-solid fa-star"></i></label><!--
-                                                        --><input id="radio4" type="radio" name="estrellas" "><!--
+                                                        --><input id="radio4" type="radio" name="estrellas" ><!--
                                                         --><label for="radio4"><i class="fa-solid fa-star"></i></label><!--
-                                                        --><input id="radio5" type="radio" name="estrellas" "><!--
+                                                        --><input id="radio5" type="radio" name="estrellas" ><!--
                                                         --><label for="radio5"><i class="fa-solid fa-star"></i></label>
                                                     </p>
                                                 </div>
 
-                                            </form>
+                                        </form>
 
-                                        </div>
+                                    </div>
                         
                                     </div>
                         
@@ -147,23 +168,19 @@
                                         <div class="caja-descripcion-producto">
 
                                             <p class="descripcion-producto">
-                                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima ab voluptatem nisi, blanditiis iste harum perspiciatis nulla numquam recusandae fugiat perferendis labore tenetur laudantium culpa ipsam fugit corrupti quaerat sed quisquam minus, quasi pariatur, repellendus consequatur.
+                                                description...
                                             </p>
 
                                         </div>
                         
                                         <div class="caja-colores-producto">
 
-                                            <span class="texto-color">Color</span>
+                                            <span class="texto-cantidad">cantidad nombre</span>
                                             
                                             <div class="caja-seleccion-colores">
                                                 <form action="">
                                                    <select name="color" id="color">
-
-                                                    <%array.forEach(color => {%>
-                                                        <option value="color"><%= %></option>
-                                                    <%});%>
-
+                                                    <option value="">Color</option>
                                                    </select>
                                                 </form>
                                             </div>
@@ -175,7 +192,7 @@
                                     <div class="caja-cantidad-producto-carrito">
 
                                         <div class="caja-cantidad-producto">
-                                                <input type="number" id="cantidad-seleccion" min="1" max="100" ">
+                                                <input type="number" id="cantidad-seleccion" min="1" max="100">
                                         </div>
                         
                                         <div class="caja-botones-cantidad-producto">
@@ -226,17 +243,17 @@
                                 <a href="#">
 
                                     <div class="img-product-card">
-                                        <img src=<%= products[0].imagen %> alt="Trompeta" >
+                                        <img src="./img/products/IMG_DEFAULT.svg" alt="Trompeta" >
                                     </div>
 
                                     <div class="detalle-producto">
 
                                         <div class="container-detalle">
                                             <div class="descripciones">
-                                                <p><%= products[0].nombre %></p>
+                                                <p><%=  %></p>
                                             </div>
-                                            <span class="precios">$<%= products[0].precio %></span>
-                                            <span class="descuentos"><%= products[0].descuento %>% off</span>
+                                            <span class="precios">$</span>
+                                            <span class="descuentos">% off</span>
                                         </div>
 
                                     </div>

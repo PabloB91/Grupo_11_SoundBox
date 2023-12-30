@@ -3,8 +3,7 @@ const path = require('path');
 
 /* En la constante "products" ya tienen los productos que están 
 guardados en la carpeta Data como Json (un array de objetos literales) */
-const productsFilePath = path.join(__dirname, '/src/data/productDataBase.json');
-// const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 
 const controller = {
 	// (get) Root - Mostrar todos los productos
@@ -35,37 +34,40 @@ const controller = {
 
 	// (post) Create - Método para guardar la info
 	processCreate: (req, res) => {
-		// Do the magic
 
-		console.log(req.body.name);
+		// do the magic
+		// res.send("HEllO WORLD");	
+		
+		// req.body
+		console.log((req.body));
 
-		// Guardar el producto con la información del usuario
+		//Gusrdar el producto con la informacion del usuario
 
-		// Traer constante de productos
-		// Transformarlo en un array
 		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
-		// Tener la info del formulario
-		// Crear el objeto literal (producto) a sumar al array
 		const newProduct = {
 			id: products[products.length - 1].id + 1,
-			name: req.body.name,
-			price: req.body.price,
-			discount: req.body.discount,
-			category: req.body.category,
-			description: req.body.description,
-			image: "default-image.png"
+			imagen: "./img/products/IMG_DEFAULT.svg",
+			imagenFrontal: "./img/products/IMG_DEFAULT.svg",
+			imagenLateralIzquierdo: "./img/products/IMG_DEFAULT.svg",
+			imagenLateralDerecho: "./img/products/IMG_DEFAULT.svg",
+			nombre: req.body.nombre,
+			marca: req.body.marca,
+			precio: req.body.precio,
+			descuento: req.body.descuento,
+			descripcion: req.body.descripcion,
+			cantidad: req.body.cantidad,
+			coloresDisponibes: req.body.color,
+			categorias: req.body.categorias
 		}
 
-		// Pushear el objeto literal al array
 		products.push(newProduct);
 
-		// Transformar a json
-		// Sobreescribir el archivo JSON
 		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
 
-		// Mostrarle al usuario una vista (index)
-		res.redirect("/products/productDetail/" + newProduct.id);
+		// mostrar lo que se guardo en una vista
+
+		res.redirect("/products")
 	},
 
 	// (get) Update - Formulario para editar
