@@ -9,7 +9,7 @@
     <body>
             
         <!-- HEADER -->
-        <%- include("./partials/header") %>
+        <%- include("./partials/header")%>
         <!-- /HEADER -->
             
             
@@ -18,164 +18,252 @@
             <section class="admin-container">
                 
                 <div class="admin-containe_title">
-                        <h1> CREAR PRODUCTO </h1>
+                    <h1> CREAR PRODUCTO </h1>
                 </div>
-            
+                
                 <section class="contenedor-total">
-                        
-                        <div class="formulario-admin">
-                            <form action="/productsRouter/create" method="POST">
-                                
-                                <label for=""></label>
-                                <input placeholder="Imagen" type="file" value="" name="imagen" class="imagen-form"> <br>
-                                
-                                <label for=""></label>
-                                <input placeholder="Nombre" type="text" value="" name="nombre" class="nombre-form"> <br>
-                                
-                                <label for=""></label>
-                                <input placeholder="Marca" type="text" value="" name="marca" class="marca-form"> <br>
-                                
-                                <label for=""></label>
-                                <input placeholder="Descripcion" type="text" value="" name="descripcion" class="descripcion-form"> <br>
-                                
-                                <label for=""></label>
-                                <input placeholder="Cantidad" type="number" value="" name="cantidad" min="1" max="1000" class="cantidad-form"> <br>
-                                
-                                <label for=""></label>
-                                <input placeholder="Precio" type="number" value="" name="precio" min="1" max="9999999" class="precio-form"> <br>
-                                
-                                <label for=""></label>
-                                <input placeholder="Descuento" type="number" value="" name="descuento" min="1" max="100" class="descuento-form"> <br>
-                                
+                    
+                    <div class="form-creat-product">
+
+                        <form action="/products/create" method="POST" ><!-- enctype="multipart/form-data" -->
+                            <div class="imagenes">
+
+                                <div class="fieldset imagen-of-product">
+                                    <label for="image"></label>
+                                    <input placeholder="Imagen" type="file"  name="imagen" class="imagen-form">
+                                </div>
+    
+                                <div class="fieldset imagen-of-product">
+                                    <label for="imagenFrontal"></label>
+                                    <input placeholder="Imagen" type="file"  name="imagenFrontal" class="imagen-form">
+                                </div>
+    
+                                <div class="fieldset imagen-of-product">
+                                    <label for="imagenLateralIzquierdo"></label>
+                                    <input placeholder="Imagen" type="file"  name="imagenLateralIzquierdo" class="imagen-form">
+                                </div>
+    
+                                <div class="fieldset imagen-of-product">
+                                    <label for="imagenLateralDerecho"></label>
+                                    <input placeholder="Imagen" type="file"  name="imagenLateralDerecho" class="imagen-form">
+                                </div>
+
+                            </div>
+                            
+                            <div class="fieldset titulo-producto">
+                                <label for="nombre">Nombre del producto</label>
+                                <input placeholder="Guitarra" type="text" name="nombre" class="nombre-form">
+                            </div>
+                            
+                            <div class="fieldset precio">
+                                <label for="precio">Precio</label>
+                                <input placeholder="Precio" type="number"  name="precio" min="1000" max="9999999" class="precio-form">
+                            </div>
+
+                            <div class="fieldset descuento">
+                                <label for="descuento">Descuento</label>
+                                <input placeholder="Descuento" type="number"  name="descuento" min="5" max="95" class="descuento-form">
+                            </div>
+
+                            <div class="fieldset descripcion">
+                                <label for="descripcion">Descripcion</label>
+                                <textarea name="descripcion" id="" cols="30" rows="10" class="descripcion-form"></textarea>
+                            </div>
+
+                            <div class="fieldset colores-disponibles">
+                                <label for="colors">Colores disponibles</label>
+                                <input placeholder="Gris" type="text" name="colors" class="colors-form">
+                            </div>
+
+                            <div class="fieldset cantidad-disponibles">
+                                <label for="disponibles">Cantidad disponibles</label>
+                                <input placeholder="Cantidad" type="number"  name="disponibles" min="1" max="99999" class="cantidad-disponible">
+                            </div>
+
+                            <div class="fieldset agregar-categoria">
+                                <label for="categorias">Categorias</label>
+                                <input placeholder="Guitarras, Instrumentos de cuerda" type="text"  name="categorias" class="cantidad-disponible">
+                            </div>
+
+
+                            
                                 <div class="crear-carta-borrar-carta">
+
                                     <label for=""></label>
-                                    <input type="submit" value="Crear" class="enviar-form"> <br>
+                                    <input type="submit" value="Crear" class="enviar-form">
                                     
                                     <label for=""></label>
-                                    <input type="reset" value="Eliminar" class="borrar-form">
+                                    <input type="reset" value="Eeliminar" class="borrar-form">
+
                                 </div>
-                            </form>
+
+                        </form>
+
+                    </div>
+
+                    <div class="vista-previa">
+                            
+                        <div class="vista-previa-caja-genera_title">
+                                <h1>Vista previa</h1>
                         </div>
 
-                        <div class="creacion-carta">
-                            
-                            <div class="caja-general">
+                        <div class="caja-general ">
                                 
-                                <div class="creacion-carta-caja-genera_title">
-                                    <h1>Vista previa</h1>
-                                </div>
                                 
-                                <div class="caja-imagenes-general">
+                            <div class="caja-imagenes-general">
                                     
                                     <div class="imagen-producto-principal">
-                                        <img src="/img/productos/guitarras/guitarra-1.jpg" alt="guitarra1">
+                                        <img src="./img/products/IMG_DEFAULT.svg" alt="guitarra1">
                                         <a href="#"> <i class="fa-solid fa-heart"></i> </a>
                                     </div>
                                     
                                     <div class="imagenes-secundarias-inferior">
-                                        <img src="/img/productos/guitarras/guitarra-1.jpg" alt="guitarra1" class="imagen-producto-secundaria">
-                                        <img src="/img/productos/guitarras/guitarra-1.jpg" alt="guitarra1" class="imagen-producto-secundaria">
-                                        <img src="/img/productos/guitarras/guitarra-1.jpg" alt="guitarra1" class="imagen-producto-secundaria">
+                                        <img src="./img/products/IMG_DEFAULT.svg" alt="guitarra1" class="imagen-producto-secundaria">
+                                        <img src="./img/products/IMG_DEFAULT.svg" alt="guitarra1" class="imagen-producto-secundaria">
+                                        <img src="./img/products/IMG_DEFAULT.svg" alt="guitarra1" class="imagen-producto-secundaria">
                                     </div>
-                                </div>
+                            </div>
                     
-                                <div class="caja-sub-general-informacion">
+                            <div class="caja-sub-general-informacion">
+
+                                
                                 <div class="caja-primera">
-                                    <div class="caja-titulo-producto">
-                                        <h2 class="titulo-producto"> Titulo del producto</h2>
-                                    </div>
                                     
+                                    <div class="caja-titulo-producto">
+                                            <h2 class="titulo-producto">Nombre del producto</h2>
+                                    </div>
+                                        
                                     <div class="caja-precio-clasificacion">
 
-                                        <div>
-                                            <span class="precio-producto"> $Precio? </span>
+                                        <div class="product-price">
+                                                <span class="precio-producto"> $ Precio </span>
+                                                <span class="precio-producto"> Descuento % </span>
                                         </div>
-                                        
-                                        <form>
-                                            <div class="starts">
-                                                <p class="clasificacion">
-                                                    <input id="radio1" type="radio" name="estrellas" value="5"><!--
-                                                    --><label for="radio1"><i class="fa-solid fa-star"></i></label><!--
-                                                    --><input id="radio2" type="radio" name="estrellas" value="4"><!--
-                                                    --><label for="radio2"><i class="fa-solid fa-star"></i></label><!--
-                                                    --><input id="radio3" type="radio" name="estrellas" value="3"><!--
-                                                    --><label for="radio3"><i class="fa-solid fa-star"></i></label><!--
-                                                    --><input id="radio4" type="radio" name="estrellas" value="2"><!--
-                                                    --><label for="radio4"><i class="fa-solid fa-star"></i></label><!--
-                                                    --><input id="radio5" type="radio" name="estrellas" value="1"><!--
-                                                    --><label for="radio5"><i class="fa-solid fa-star"></i></label>
-                                                </p>
-                                            </div>
+                                            
+                                        <form class="select-starts">
+
+                                                <div class="starts">
+                                                    <p class="clasificacion">
+                                                        <input id="radio1" type="radio" name="estrellas"><!--
+                                                        --><label for="radio1"><i class="fa-solid fa-star"></i></label><!--
+                                                        --><input id="radio2" type="radio" name="estrellas"><!--
+                                                        --><label for="radio2"><i class="fa-solid fa-star"></i></label><!--
+                                                        --><input id="radio3" type="radio" name="estrellas" ><!--
+                                                        --><label for="radio3"><i class="fa-solid fa-star"></i></label><!--
+                                                        --><input id="radio4" type="radio" name="estrellas" ><!--
+                                                        --><label for="radio4"><i class="fa-solid fa-star"></i></label><!--
+                                                        --><input id="radio5" type="radio" name="estrellas" ><!--
+                                                        --><label for="radio5"><i class="fa-solid fa-star"></i></label>
+                                                    </p>
+                                                </div>
+
                                         </form>
 
                                     </div>
-                                </div>
-                    
-                                <div class="caja-segunda">
+                        
+                                    </div>
+                        
+                                    <div class="caja-segunda">
 
-                                    <div class="caja-descripcion-producto">
-                                        <p class="descripcion-producto">
-                                             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima ab voluptatem nisi, blanditiis iste harum perspiciatis nulla numquam recusandae fugiat perferendis labore tenetur laudantium culpa ipsam fugit corrupti quaerat sed quisquam minus, quasi pariatur, repellendus consequatur.
-                                        </p>
-                                    </div>
-                    
-                                    <div class="caja-colores-producto">
-                                        <span class="texto-color">Color</span>
-                                        
-                                        <div class="caja-seleccion-colores">
-                                            <form action="">
-                                                <select id="colores-seleccion" value>
-                                                    <option value="negro" selected>Negro</option>
-                                                    <option value="gris">Gris</option>
-                                                    <option value="blanco">Blanco</option>
-                                                    <option value="rojo">Rojo</option>
-                                                    <option value="amarillo">Amarilla</option>
-                                                </select>
-                                            </form>
+                                        <div class="caja-descripcion-producto">
+
+                                            <p class="descripcion-producto">
+                                                description...
+                                            </p>
+
                                         </div>
+                        
+                                        <div class="caja-colores-producto">
+
+                                            <span class="texto-cantidad">cantidad nombre</span>
+                                            
+                                            <div class="caja-seleccion-colores">
+                                                <form action="">
+                                                   <select name="color" id="color">
+                                                    <option value="">Color</option>
+                                                   </select>
+                                                </form>
+                                            </div>
+
+                                        </div>
+
                                     </div>
-                                </div>
-                    
-                                <div class="caja-cantidad-producto-carrito">
+                        
+                                    <div class="caja-cantidad-producto-carrito">
+
                                         <div class="caja-cantidad-producto">
-                                            <input type="number" id="cantidad-seleccion" min="1" max="100" value="1">
+                                                <input type="number" id="cantidad-seleccion" min="1" max="100">
                                         </div>
-                    
+                        
                                         <div class="caja-botones-cantidad-producto">
-                                            <i class="fa-solid fa-caret-up"></i>
-                                            <i class="fa-solid fa-caret-down"></i>
+                                                <i class="fa-solid fa-caret-up"></i>
+                                                <i class="fa-solid fa-caret-down"></i>
                                         </div>
-                    
+                        
                                         <div class="caja-agregar-carrito">
-                                            <form action="" class="formulario-boton-agregar-carrito">
-                                                <button type="submit" class="boton-agregar-carrito"><i class="fa-solid fa-cart-shopping"></i> <span class="texto-boton-agregar-carrito">ADD</span></button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    
-                                <div class="caja-links-extra-producto">
-                                    <div class="caja-categorias-producto">
-                                        <span class="links-categorias-producto">Categories:
-                                            <a href="#">Guitars</a>,
-                                            <a href="#">Band & Orchestra</a>,
-                                            <a href="#">Bass Guitar</a>,
-                                            <a href="#">Instruments</a>,
-                                            <a href="#">Orchestral Strings</a>
-                                        </span>
-                                    </div>
-                                    
-                                    <div class="caja-tags-producto">
-                                        <span class="links-tags-producto">Tags:
-                                            <a href="#">sale</a>,
-                                            <a href="#">company</a>,
-                                            <a href="#">electric guitars</a>
-                                        </span>
-                                    </div>
-                                </div>
-                                </div>
 
+                                                <form action="" class="formulario-boton-agregar-carrito">
+                                                    <button type="submit" class="boton-agregar-carrito"><i class="fa-solid fa-cart-shopping"></i> <span class="texto-boton-agregar-carrito">ADD</span></button>
+                                                </form>
+
+                                        </div>
+
+                                    </div>
+                                        
+                                    <div class="caja-links-extra-producto">
+
+                                        <div class="caja-categorias-producto">
+                                            <span class="links-categorias-producto">Categories:
+                                                <a href="#">Guitars</a>,
+                                                <a href="#">Band & Orchestra</a>,
+                                                <a href="#">Bass Guitar</a>,
+                                                <a href="#">Instruments</a>,
+                                                <a href="#">Orchestral Strings</a>
+                                            </span>
+                                        </div>
+                                        
+                                        <div class="caja-tags-producto">
+                                            <span class="links-tags-producto">Tags:
+                                                <a href="#">sale</a>,
+                                                <a href="#">company</a>,
+                                                <a href="#">electric guitars</a>
+                                            </span>
+                                        </div>
+
+                                    </div>
+                                
                             </div>
+
                         </div>
+
+                        <div class="vista-previa-de-la-card">
+
+                            <article class="producto">
+
+                                <a href="#">
+
+                                    <div class="img-product-card">
+                                        <img src="./img/products/IMG_DEFAULT.svg" alt="Trompeta" >
+                                    </div>
+
+                                    <div class="detalle-producto">
+
+                                        <div class="container-detalle">
+                                            <div class="descripciones">
+                                                <p><%=  %></p>
+                                            </div>
+                                            <span class="precios">$</span>
+                                            <span class="descuentos">% off</span>
+                                        </div>
+
+                                    </div>
+
+                                </a>
+
+                            </article>
+                        </div>
+
+                    </div>
 
                 </section>
 
