@@ -1,0 +1,5 @@
+se ingreso a la pagina:/
+se ingreso a la pagina:/register
+se ingreso a la pagina:/register
+se ingreso a la pagina:/login
+se ingreso a la pagina:/productCart

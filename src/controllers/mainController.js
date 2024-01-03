@@ -38,6 +38,22 @@ const todosLosInstrumentos = [
         precio: 4000,
         descuento: 35,
     },
+    {
+        id: 4,
+        imagen: "../img/productos/guitarras/guitarra-1.jpg",
+        nombre: "guitarra criolla",
+        marca: "Gibson.",
+        precio: 6000,
+        descuento: 15,
+    },
+    {
+        id: 4,
+        imagen: "../img/productos/guitarras/guitarra-1.jpg",
+        nombre: "guitarra criolla",
+        marca: "Gibson.",
+        precio: 6000,
+        descuento: 15,
+    },
 
 
 ];
@@ -57,14 +73,7 @@ const mainController = {
     
     },
 
-    categorias: (req, res) =>{
-        const products= JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-        //console.log(req.params.nombre);
-        
-        const productCategory= products.filter(product => product.categoria === req.params.nombre)
-        //console.log(productCategory)
-        res.render("categoria", {productos: productCategory})
-    },
+    
 
     // formularios
     login: (req, res) => {
@@ -80,11 +89,20 @@ const mainController = {
     },
     
     // aca ponemos los que necesitan los productos->
+
+    categorias: (req, res) =>{
+        const products= JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+        //console.log(req.params.nombre);
+        
+        const productCategory= products.filter(product => product.categoria === req.params.nombre)
+        //console.log(productCategory)
+        res.render("categoria", {productos: productCategory})
+        
+    },
     crear: (req, res) => {
         res.render("crearProducto", { instrumentos: todosLosInstrumentos })
         
     },
-    
     carrito: (req, res) => {
         
         res.render("productCart", { instrumentos: todosLosInstrumentos }
