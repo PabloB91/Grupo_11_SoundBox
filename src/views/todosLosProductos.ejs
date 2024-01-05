@@ -17,11 +17,14 @@
 
             <section class="ordenador">
                 <h4 class="titulo-ordenador">Filtrar: <br>
-                    <i class="fa-sharp fa-solid fa-arrow-right"></i></h4>
+                    <i class="fa-sharp fa-solid fa-arrow-right"></i>
+                </h4>
                 <section class="dropdown-ordenador">
 
                     <div class="filtrar-plata">
-                        <div class="filtro-presupuesto"> <h6>desde 0$ hasta 1.000.000$ </h6></div>
+                        <div class="filtro-presupuesto">
+                            <h6>desde 0$ hasta 1.000.000$ </h6>
+                        </div>
                         <div class="barra-filtro"></div>
                     </div>
 
@@ -74,69 +77,34 @@
 
             </section>
             <section class="seccion-general">
-                <div class="card">
-                    asdasd
-                </div>
+                <% products.forEach(product=> { %>
+                    <div class="card">
+                        <a  class="href-padding" href="/productDetail">
+                            <div class="imagen-producto"><img src="<%= product.imagen %>" alt=""></div>
+                            <div class="desplegable">
+                                <h5>
+                                    <%= product.nombre%>
+                                </h5>
+                            </div>
+                            <div class="descripcion-producto">
+                                <span>
+                                    $ <%= product.precio%>
+                                </span>
+                                <span class="descuento">
+                                    -<%= product.descuento%> %
+                                </span>
+                            </div>
+                            <div class="texto-descriptivo">
+                                <p>
+                                    <%= product.descripcion%>
+                                </p>
+                            </div>
+                        </a>
+                    </div>
 
-                <div class="card">
-                    asdasd
-                </div>
+                    <%})%>
 
-                <div class="card">
-                    asdasd
-                </div>
 
-                <div class="card">
-                    asdasd
-                </div>
-
-                <div class="card">
-                    asdasd
-                </div>
-
-                <div class="card">
-                    asdasd
-                </div>
-
-                <div class="card">
-                    asdasd
-                </div>
-
-                <div class="card">
-                    asdasd
-                </div>
-
-                <div class="card">
-                    asdasd
-                </div>
-
-                <div class="card">
-                    asdasd
-                </div>
-
-                <div class="card">
-                    asdasd
-                </div>
-
-                <div class="card">
-                    asdasd
-                </div>
-
-                <div class="card">
-                    asdasd
-                </div>
-
-                <div class="card">
-                    asdasd
-                </div>
-
-                <div class="card">
-                    asdasd
-                </div>
-
-                <div class="card">
-                    asdasd
-                </div>
             </section>
 
         </main>

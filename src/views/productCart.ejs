@@ -7,7 +7,12 @@
 
 <body>
     <%- include("./partials/header") %>
-        <main class="main-product-cart">
+        <main>
+            <div>
+                <h1 class="titulo-seccion">
+                    ¡Bienvenido al Carrito!
+                </h1>
+            </div>
             <section class="seccion-contenedora">
                 <section class="seccion-principal">
                     <div class="carrito">
@@ -25,36 +30,38 @@
                             </div>
                         </div>
                         <div class="desplegable">
-                            <% instrumentos.forEach(producto=> { %>
-                                <div class="card">
-                                    <input type="checkbox" name="#" id="#">
-                                    <img src=<%=producto.imagen %>
-                                    alt="">
-                                    <div class="nombre-marca">
-                                        <h6>
-                                            <%= producto.nombre %>
-                                        </h6>
-                                        <p>
-                                            <%= producto.marca %>
-                                        </p>
+                            <% products.forEach(product=> { %>
+                                <a href="/productDetail">
+                                    <div class="card">
+                                        <input type="checkbox" name="#" id="#">
+                                        <img src=<%=product.imagen %>
+                                        alt="">
+                                        <div class="nombre-marca">
+                                            <h6>
+                                                <%= product.nombre %>
+                                            </h6>
+                                            <p>
+                                                <%= product.marca %>
+                                            </p>
+                                        </div>
+                                        <!-- <p style="color: red; margin: auto;">sin stock</p> -->
+                                        <input type="number" min="1" max="1000" placeholder="Cantidad" required>
+                                        <div class="precio-descuento">
+                                            <span>
+                                                <%= product.precio + "$" %>
+                                            </span>
+                                            <span style="color: green;">
+                                                <%= "-" + product.descuento + " % OFF" %>
+                                            </span>
+                                        </div>
+                                        <div class="delete-card">
+                                            <span>eliminar</span>
+                                        </div>
                                     </div>
-                                    <!-- <p style="color: red; margin: auto;">sin stock</p> -->
-                                    <input type="number" min="1" max="1000" placeholder="Cantidad" required>
-                                    <div class="precio-descuento">
-                                        <span>
-                                            <%= producto.precio + "$" %>
-                                        </span>
-                                        <span style="color: green;">
-                                            <%= "-" + producto.descuento + " % OFF" %>
-                                        </span>
-                                    </div>
-                                    <div class="delete-card">
-                                        <span>eliminar</span>
-                                    </div>
-                                </div>
+                                </a>
+
                                 <% }); %>
                                     <div class="descripcion-card">
-                                        <p>check</p>
                                         <p>imagen</p>
                                         <p>producto</p>
                                         <p>cantidad</p>
@@ -81,36 +88,37 @@
                             </div>
                         </div>
                         <div class="desplegable">
-                            <% instrumentos.forEach(producto=> { %>
+                            <% products.forEach(product=> { %>
+                                <a href="/productDetail">
                                 <div class="card">
                                     <input type="checkbox" name="#" id="#">
-                                    <img src=<%=producto.imagen %>
+                                    <img src=<%=product.imagen %>
                                     alt="">
                                     <div class="nombre-marca">
                                         <h6>
-                                            <%= producto.nombre %>
+                                            <%= product.nombre %>
                                         </h6>
                                         <p>
-                                            <%= producto.marca %>
+                                            <%= product.marca %>
                                         </p>
                                     </div>
                                     <p style="color: red; margin: auto;">sin stock</p>
                                     <!-- <input type="number" min="1" max="1000" placeholder="Cantidad" required> -->
                                     <div class="precio-descuento">
                                         <span>
-                                            <%= producto.precio + "$" %>
+                                            <%= product.precio + "$" %>
                                         </span>
                                         <span style="color: green;">
-                                            <%= "-" + producto.descuento + " % OFF" %>
+                                            <%= "-" + product.descuento + " % OFF" %>
                                         </span>
                                     </div>
                                     <div class="delete-card">
                                         <span>eliminar</span>
                                     </div>
                                 </div>
+                                </a>
                                 <% }); %>
                                     <div class="descripcion-card">
-                                        <p>check</p>
                                         <p>imagen</p>
                                         <p>producto</p>
                                         <p>cantidad</p>
@@ -130,24 +138,26 @@
                     </div>
 
                     <div class="descripcion-pago-total">
-                        <div class="titulo-pago-total">
-                            <span>TOTAL</span>
-                        </div>
-                        <div class="separador-izquierda">
-                            <p>
-                                nombre
-                            </p>
-                        </div>
+                        <h6 class="titulo-desplegable-pago-total">TOTAL:</h6>
+                        <% products.forEach(product=> { %>
+                            <div class="separador-izquierda">
+                                <p>
+                                    <%= product.nombre %>
+                                </p>
+                            </div>
 
-                        <div class="separador-medio">
-                            <p style="color: green;">
-                                descuento
-                            </p>
-                        </div>
+                            <div class="separador-medio">
+                                <p style="color: green;">
+                                    -<%= product.descuento + "%" %>
+                                </p>
+                            </div>
 
-                        <div class="separador-derecha">
-                            <p>precio</p>
-                        </div>
+                            <div class="separador-derecha">
+                                <p>
+                                    <%= product.precio + "$" %>
+                                </p>
+                            </div>
+                            <% }); %>
                     </div>
 
                     <div class="metodos-pago">
@@ -174,55 +184,40 @@
                     </div>
                 </section>
             </section>
+            <div class="separador"></div>
+            <div class="separador-externo"></div>
+
+            <div class="titulo-seccion" style="background-color: white; color: black; margin-top: 5rem;">
+                <!-- seccion carrusel -->
+                <h1>Seguí navegando! </h1>
+            </div>
 
             <section class="carruseles-contenedor">
                 <div class="separador-externo"></div>
                 <div class="separador"></div>
                 <section class="seccion-carrusel">
                     <div class="corredor">
-                        <div class="image-related">
-                            <img src="https://artemusical.com.ar/wp/wp-content/uploads/2019/06/18174_medium.jpg" alt="">
-                        </div>
-                        <div class="image-related">
-                            <img src="https://artemusical.com.ar/wp/wp-content/uploads/2019/06/18174_medium.jpg" alt="">
-                        </div>
-                        <div class="image-related">
-                            <img src="https://artemusical.com.ar/wp/wp-content/uploads/2019/06/18174_medium.jpg" alt="">
-                        </div>
-                        <div class="image-related">
-                            <img src="https://artemusical.com.ar/wp/wp-content/uploads/2019/06/18174_medium.jpg" alt="">
-                        </div>
-                        <div class="image-related">
-                            <img src="https://artemusical.com.ar/wp/wp-content/uploads/2019/06/18174_medium.jpg" alt="">
-                        </div>
-                        <div class="image-related">
-                            <img src="https://artemusical.com.ar/wp/wp-content/uploads/2019/06/18174_medium.jpg" alt="">
-                        </div>
-                        <!-- fin del carrusel agregar a carrito -->
+                        <% products.forEach(product=> { %>
+                            <div class="image-related">
+                                <img src=<%=product.imagen %> alt="">
+                            </div>
+
+                            <!-- fin del carrusel agregar a carrito -->
+
+                            <% }); %>
                     </div>
                 </section>
 
                 <section class="seccion-carrusel">
                     <div class="corredor">
-                        <div class="image-related">
-                            <img src="https://artemusical.com.ar/wp/wp-content/uploads/2019/06/18174_medium.jpg" alt="">
-                        </div>
-                        <div class="image-related">
-                            <img src="https://artemusical.com.ar/wp/wp-content/uploads/2019/06/18174_medium.jpg" alt="">
-                        </div>
-                        <div class="image-related">
-                            <img src="https://artemusical.com.ar/wp/wp-content/uploads/2019/06/18174_medium.jpg" alt="">
-                        </div>
-                        <div class="image-related">
-                            <img src="https://artemusical.com.ar/wp/wp-content/uploads/2019/06/18174_medium.jpg" alt="">
-                        </div>
-                        <div class="image-related">
-                            <img src="https://artemusical.com.ar/wp/wp-content/uploads/2019/06/18174_medium.jpg" alt="">
-                        </div>
-                        <div class="image-related">
-                            <img src="https://artemusical.com.ar/wp/wp-content/uploads/2019/06/18174_medium.jpg" alt="">
-                        </div>
-                        <!-- fin del carrusel agregar a carrito 2 -->
+                        <% products.forEach(product=> { %>
+                            <div class="image-related">
+                                <img src="<%=product.imagen %>" alt="">
+                            </div>
+
+                            <!-- fin del carrusel agregar a carrito -->
+
+                            <% }); %>
                     </div>
                 </section>
                 <div class="separador"></div>

@@ -7,20 +7,24 @@
     border: none;
 }
 
-.main-product-cart {
-    margin: 2rem;
-
+main {
+    background-color: white;
+    
 }
 
 .seccion-contenedora {
     display: flex;
-
-
+    background-color: #B7B3A1;
+    
 }
 
 .seccion-principal {
-    width: 70vw;
+    width: 75vw;
+    
+}
 
+.seccion-secundaria {
+    width: 25vw;
 
 }
 
@@ -28,6 +32,7 @@
 .favoritos {
     background-color: #FF540A;
     /* background: linear-gradient(135deg, hsla(342, 100%, 88%, 1) 0%, hsla(0, 84%, 76%, 1) 17%, hsla(18, 100%, 52%, 1) 71%); */
+    border: 5px solid white;
     border-radius: 18px;
     padding: 0.5rem;
     margin: 1rem;
@@ -48,7 +53,7 @@
     flex-direction: column;
     position: relative;
     overflow-y: scroll;
-    max-height: 35rem;
+    max-height: 30rem;
 }
 
 
@@ -71,7 +76,7 @@
     width: 15%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    justify-content: center;
 }
 
 .nombre-marca h2 {
@@ -87,12 +92,12 @@
 
 .precio-descuento {
     display: flex;
-    margin: auto;
     flex-direction: column;
-    align-items: center;
+    justify-content: flex-end;
 }
 
 .precio-descuento span {
+    font-size: 25px;
     margin: 20px;
 
 }
@@ -148,10 +153,6 @@
 
 /* ----------------------------------------------------------------------------------------------------------------- */
 
-.seccion-secundaria {
-    width: 30vw;
-
-}
 
 .pago-total {
     display: flex;
@@ -183,25 +184,29 @@
 /* ----------------------------------------------------------------------------------------------------------------- */
 
 /* ----------------------------------------------------------------------------------------------------------------- */
+.titulo-desplegable-pago-total {
+    color: white;
+    background: black;
+    display: flex;
+    width: 100%;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+}
 
 .descripcion-pago-total {
     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
     background-color: #ebebeb;
-    height: auto;
-    max-height: 20rem;
+    max-height: 30rem;
     margin: 1rem;
     margin-bottom: 2rem;
-    padding: 0.5rem;
-    border: 3px solid black;
-    border-radius: 5px;
-    justify-content: space-evenly;
+    border: 17px solid black;
+    border-radius: 13%;
     box-shadow: 25px 25px 10px gray;
-}
-
-.titulo-pago-total {
-    display: flex;
-    position: absolute;
-
+    overflow-y: scroll;
 }
 
 .separador-izquierda {
@@ -265,6 +270,14 @@
 
 /* ----------------------------------------------------------------------------------------------------------------- */
 
+.titulo-seccion {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    color: white;
+
+}
+
 .carruseles-contenedor {
     display: flex;
     flex-direction: column;
@@ -272,18 +285,17 @@
     margin-top: 5rem;
 }
 
-.separador-externo {
-    width: 100vw;
-    height: 25px;
-    background-color: lightgray;
-
-}
-
 .separador {
     width: 100vw;
     height: 25px;
-    background-color: #FF540A;
+    background-color: gray;
 
+}
+
+.separador-externo {
+    width: 100vw;
+    height: 25px;
+    background-color: #FF540A;
 }
 
 .seccion-carrusel {
@@ -309,7 +321,7 @@
 
 .image-related {
     display: flex;
-
+    margin: 0.5rem;
     flex-wrap: nowrap;
     justify-content: space-around;
 }
