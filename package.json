@@ -1,7 +1,7 @@
 {
   "name": "grupo_11_ecommerce",
   "version": "1.0.0",
-  "description": "",
+  "description": "Temática del Market Place, Referentes y Perfil del grupo",
   "main": "app.js",
   "scripts": {
     "test": "node src/app.js",
