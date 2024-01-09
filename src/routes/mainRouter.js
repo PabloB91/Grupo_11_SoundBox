@@ -18,6 +18,6 @@ router.get("/productCart", mainController.carrito);
 
 router.get("/admin", mainController.admin)
 
-router.get("/todosLosProductos", mainController.allProducts);
+router.get("/products", mainController.allProducts);
 
 module.exports = router;

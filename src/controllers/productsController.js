@@ -19,7 +19,6 @@ const controller = {
 
 	// (get) Detail - Detalle de un producto
 	detail: (req, res) => {
-		// Do the magic
 
 		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 

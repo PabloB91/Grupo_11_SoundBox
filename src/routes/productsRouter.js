@@ -28,7 +28,7 @@ const storage = multer.diskStorage({
 const upload = multer({storage});
 
 // Devolver un producto 
-router.get('/detail/:id/', productsController.detail);
+router.get('/productDetail', productsController.detail);
 
 // Crear un producto
 router.get('/create', productsController.create);

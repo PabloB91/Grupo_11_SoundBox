@@ -70,7 +70,7 @@ const mainController = {
     allProducts: (req, res) => {
         const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
         console.log(products)
-        res.render("todosLosProductos", { products })
+        res.render("products", { products })
 
     }
 

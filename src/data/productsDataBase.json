@@ -1,13 +1,18 @@
 [
     {
         "id": 0,
-        "imagen": "./img/products/IMG_DEFAULT.svg",
-        "nombre": "Nombre del producto",
+        "imagen": "IMG_DEFAULT.svg",
+        "imagenFrontal": "IMG_DEFAULT.svg",
+        "imagenLateralDerecha": "IMG_DEFAULT.svg",
+        "imagenLateralIzquierda": "IMG_DEFAULT.svg",
         "marca": "Marca",
-        "precio": "Precio",
-        "descuento": "Descuento",
+        "nombre": "Nombre del producto",
+        "precio": 1000,
+        "descuento": 20,
         "descripcion": "Descripcion",
-        "cantidad": "cantidad",
-        "coloresDisponibes": "Color"
+        "cantidad": 10,
+        "coloresDisponibes": "Color",
+        "categoria": "Guitarra",
+        "tags": "Sale",
     }
 ]
