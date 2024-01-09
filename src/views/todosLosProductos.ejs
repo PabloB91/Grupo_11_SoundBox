@@ -79,7 +79,7 @@
             <section class="seccion-general">
                 <% products.forEach(product=> { %>
                     <div class="card">
-                        <a  class="href-padding" href="/productDetail">
+                        <a class="href-padding" href="/productDetail">
                             <div class="imagen-producto"><img src="<%= product.imagen %>" alt=""></div>
                             <div class="desplegable">
                                 <h5>
@@ -100,6 +100,11 @@
                                 </p>
                             </div>
                         </a>
+                        <form method="POST" action="/todosLosProductos/<%= singleProduct %>?_mothod=DELETE">
+                            <button type="submit">
+                                Delete
+                            </button>
+                        </form>
                     </div>
 
                     <%})%>

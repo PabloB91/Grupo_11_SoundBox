@@ -37,7 +37,7 @@ const controller = {
 
 		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
-        res.render("crearProducto.ejs", { products });
+        res.render("crearProducto", { products });
 
     },
 
@@ -122,14 +122,16 @@ const controller = {
 		// Do the magic
 		let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
-		// eliminar
-		products = products.filter(product => {
-			return product.id != req.params.id
-		})
+        // eliminar
+        products = products.filter(product =>{
 
-		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
+            return product.id != req.params.id;
 
-		res.redirect("/");
+        })
+
+        fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "))
+
+        res.redirect("/")
 	}
 };
 
