@@ -3,7 +3,7 @@
 
     <!-- head -->
     <%- include("./partials/head") %>
-    <link href="styles/crearProducto.css" rel="stylesheet">
+    <link href="/styles/crearProducto.css" rel="stylesheet">
     <!-- /head -->
         
     <body>
@@ -25,27 +25,28 @@
                     
                     <div class="form-creat-product">
 
-                        <form action="/products/create" method="POST" ><!-- enctype="multipart/form-data" -->
+                        <form action="/products/create" method="POST" enctype="multipart/form-data">
+
                             <div class="imagenes">
 
                                 <div class="fieldset imagen-of-product">
-                                    <label for="image"></label>
+                                    <label for="imagen"></label>
                                     <input placeholder="Imagen" type="file"  name="imagen" class="imagen-form">
                                 </div>
     
-                                <div class="fieldset imagen-of-product">
-                                    <label for="imagenFrontal"></label>
-                                    <input placeholder="Imagen" type="file"  name="imagenFrontal" class="imagen-form">
+                                <div class="fieldset imagen-of-product ">
+                                    <label for="imagen"></label>
+                                    <input placeholder="Imagen" type="file"  name="imagen" class="imagen-form">
                                 </div>
     
-                                <div class="fieldset imagen-of-product">
-                                    <label for="imagenLateralIzquierdo"></label>
-                                    <input placeholder="Imagen" type="file"  name="imagenLateralIzquierdo" class="imagen-form">
+                                <div class="fieldset imagen-of-product ">
+                                    <label for="imagen"></label>
+                                    <input placeholder="Imagen" type="file"  name="imagen" class="imagen-form">
                                 </div>
     
-                                <div class="fieldset imagen-of-product">
-                                    <label for="imagenLateralDerecho"></label>
-                                    <input placeholder="Imagen" type="file"  name="imagenLateralDerecho" class="imagen-form">
+                                <div class="fieldset imagen-of-product ">
+                                    <label for="imagen"></label>
+                                    <input placeholder="Imagen" type="file"  name="imagen" class="imagen-form">
                                 </div>
 
                             </div>
@@ -53,6 +54,11 @@
                             <div class="fieldset titulo-producto">
                                 <label for="nombre">Nombre del producto</label>
                                 <input placeholder="Guitarra" type="text" name="nombre" class="nombre-form">
+                            </div>
+
+                            <div class="fieldset marca-producto">
+                                <label for="marca">Marca</label>
+                                <input placeholder="Honda..." type="text" name="marca" class="marca-form">
                             </div>
                             
                             <div class="fieldset precio">
@@ -85,17 +91,15 @@
                                 <input placeholder="Guitarras, Instrumentos de cuerda" type="text"  name="categorias" class="cantidad-disponible">
                             </div>
 
+                            <div class="botones crear-carta-borrar-carta">
 
-                            
-                                <div class="crear-carta-borrar-carta">
-
-                                    <label for=""></label>
-                                    <input type="submit" value="Crear" class="enviar-form">
+                                <label for=""></label>
+                                <input type="submit" value="Crear" class="enviar-form">
                                     
-                                    <label for=""></label>
-                                    <input type="reset" value="Eeliminar" class="borrar-form">
+                                <label for=""></label>
+                                <input type="reset" value="Eeliminar" class="borrar-form">
 
-                                </div>
+                            </div>
 
                         </form>
 
@@ -104,23 +108,23 @@
                     <div class="vista-previa">
                             
                         <div class="vista-previa-caja-genera_title">
-                                <h1>Vista previa</h1>
+                                <h1>Vista previa</h1> <input type="button" value="o">
                         </div>
 
-                        <div class="caja-general ">
+                        <div class="caja-general detalle-del-producto ">
                                 
                                 
                             <div class="caja-imagenes-general">
                                     
                                     <div class="imagen-producto-principal">
-                                        <img src="./img/products/IMG_DEFAULT.svg" alt="guitarra1">
+                                        <img src="/img/products/IMG_DEFAULT.svg" alt="guitarra1">
                                         <a href="#"> <i class="fa-solid fa-heart"></i> </a>
                                     </div>
                                     
                                     <div class="imagenes-secundarias-inferior">
-                                        <img src="./img/products/IMG_DEFAULT.svg" alt="guitarra1" class="imagen-producto-secundaria">
-                                        <img src="./img/products/IMG_DEFAULT.svg" alt="guitarra1" class="imagen-producto-secundaria">
-                                        <img src="./img/products/IMG_DEFAULT.svg" alt="guitarra1" class="imagen-producto-secundaria">
+                                        <img src="/img/products/IMG_DEFAULT.svg" alt="guitarra1" class="imagen-producto-secundaria">
+                                        <img src="/img/products/IMG_DEFAULT.svg" alt="guitarra1" class="imagen-producto-secundaria">
+                                        <img src="/img/products/IMG_DEFAULT.svg" alt="guitarra1" class="imagen-producto-secundaria">
                                     </div>
                             </div>
                     
@@ -236,14 +240,14 @@
 
                         </div>
 
-                        <div class="vista-previa-de-la-card">
+                        <div class="vista-previa-de-la-card disappear">
 
                             <article class="producto">
 
                                 <a href="#">
 
                                     <div class="img-product-card">
-                                        <img src="./img/products/IMG_DEFAULT.svg" alt="Trompeta" >
+                                        <img src="/img/products/IMG_DEFAULT.svg" alt="Trompeta" >
                                     </div>
 
                                     <div class="detalle-producto">
