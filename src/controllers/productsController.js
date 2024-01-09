@@ -1,9 +1,13 @@
-const fs = require('fs');
-const path = require('path');
+const path = require("path")
+const express = require("express")
+const app = express();
+const fs = require("fs");
+const { log } = require("console");
 
 /* En la constante "products" ya tienen los productos que están 
 guardados en la carpeta Data como Json (un array de objetos literales) */
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
+
 
 const controller = {
 	// (get) Root - Mostrar todos los productos
@@ -28,18 +32,15 @@ const controller = {
 
 	// (get) Create - Formulario para crear
 	create: (req, res) => {
-		// Do the magic
-		res.render("crearProducto");
-	},
+
+		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
+        res.render("crearProducto.ejs", { products });
+
+    },
 
 	// (post) Create - Método para guardar la info
 	processCreate: (req, res) => {
-
-		// do the magic
-		// res.send("HEllO WORLD");	
-		
-		// req.body
-		console.log((req.body));
 
 		//Gusrdar el producto con la informacion del usuario
 
@@ -47,10 +48,10 @@ const controller = {
 
 		const newProduct = {
 			id: products[products.length - 1].id + 1,
-			imagen: "./img/products/IMG_DEFAULT.svg",
-			imagenFrontal: "./img/products/IMG_DEFAULT.svg",
-			imagenLateralIzquierdo: "./img/products/IMG_DEFAULT.svg",
-			imagenLateralDerecho: "./img/products/IMG_DEFAULT.svg",
+			imagen: req.file.filename,
+			imagen: req.file.filename + '1',
+			imagen: req.file.filename + '2',
+			imagen: req.file.filename + '3',
 			nombre: req.body.nombre,
 			marca: req.body.marca,
 			precio: req.body.precio,
@@ -63,11 +64,11 @@ const controller = {
 
 		products.push(newProduct);
 
-		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
+		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
 
 		// mostrar lo que se guardo en una vista
 
-		res.redirect("/products")
+		res.redirect('/products')
 	},
 
 	// (get) Update - Formulario para editar
