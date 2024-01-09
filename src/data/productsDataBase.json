@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "imagen": "./img/products/IMG_DEFAULT.svg",
+        "imagen": "./img/productos/orquesta/orquesta-1.jpg",
         "imagenFrontal": "./img/products/IMG_DEFAULT.svg",
         "imagenLateralIzquierdo": "./img/products/IMG_DEFAULT.svg",
         "imagenLateralDerecho": "./img/products/IMG_DEFAULT.svg",
@@ -9,68 +9,68 @@
         "marca": "Marca",
         "precio": 1000,
         "descuento": 5,
-        "descripcion": "este es un ejemplo basicon basicon",
+        "descripcion": "milesimo intento ",
         "cantidad": "cantidad",
         "coloresDisponibes": "Color",
         "categoria": "Orquesta"
     },
     {
         "id": 2,
-        "imagen": "./img/products/IMG_DEFAULT.svg",
+        "imagen": "./img/productos/guitarras/guitarra-2.jpg",
         "imagenFrontal": "./img/products/IMG_DEFAULT.svg",
         "imagenLateralIzquierdo": "./img/products/IMG_DEFAULT.svg",
         "imagenLateralDerecho": "./img/products/IMG_DEFAULT.svg",
-        "nombre": "criolla",
+        "nombre": "Guitarra Criolla",
         "precio": 2000,
         "descuento": 10,
-        "descripcion": "milesimo intento ",
+        "descripcion": "este es un ejemplo basicon basicon",
         "categoria": "Guitarras"
     },
     {
         "id": 3,
-        "imagen": "./img/products/IMG_DEFAULT.svg",
+        "imagen": "./img/productos/grabacion/Microfono-1.jpg",
         "imagenFrontal": "./img/products/IMG_DEFAULT.svg",
         "imagenLateralIzquierdo": "./img/products/IMG_DEFAULT.svg",
         "imagenLateralDerecho": "./img/products/IMG_DEFAULT.svg",
-        "nombre": "Nombre del producto",
+        "nombre": "Microfono",
         "marca": "Marca",
         "precio": 3000,
         "descuento": 15,
         "descripcion": "este es un ejemplo basicon de des ...",
         "cantidad": "cantidad",
         "coloresDisponibes": "Color",
-        "categoria": "Categorias"
+        "categoria": "grabacion"
     },
     {
         "id": 4,
-        "imagen": "./img/products/IMG_DEFAULT.svg",
+        "imagen": "./img/productos/grabacion/Microfono-2.jpg",
         "imagenFrontal": "./img/products/IMG_DEFAULT.svg",
         "imagenLateralIzquierdo": "./img/products/IMG_DEFAULT.svg",
         "imagenLateralDerecho": "./img/products/IMG_DEFAULT.svg",
-        "nombre": "Nombre del producto",
+        "nombre": "Microfono",
         "marca": "Marca",
         "precio": 4000,
         "descuento": 20,
         "descripcion": "este es un ejemplo basicon de descripcion de producto",
         "cantidad": "cantidad",
         "coloresDisponibes": "Color",
-        "categoria": "Orquesta"
+        "categoria": "grabacion"
     },
     {
         "id": 5,
-        "imagen": "./img/products/IMG_DEFAULT.svg",
+        "imagen": "./img/productos/grabacion/Microfono-3.jpg",
         "imagenFrontal": "./img/products/IMG_DEFAULT.svg",
         "imagenLateralIzquierdo": "./img/products/IMG_DEFAULT.svg",
         "imagenLateralDerecho": "./img/products/IMG_DEFAULT.svg",
-        "nombre": "guitarrona",
+        "nombre": "Microfono",
         "precio": "1000",
         "descuento": "15",
         "descripcion": "zarpada en maleducada",
-        "categoria": "guitarra"
+        "categoria": "grabacion"
     },
     {
         "id": 6,
-        "imagen": "./img/products/IMG_DEFAULT.svg",
+        "imagen": "./img/productos/grabacion/Microfono-4.jpg",
         "imagenFrontal": "./img/products/IMG_DEFAULT.svg",
         "imagenLateralIzquierdo": "./img/products/IMG_DEFAULT.svg",
         "imagenLateralDerecho": "./img/products/IMG_DEFAULT.svg",
@@ -81,7 +81,7 @@
         "descripcion": "este es un ejemplo basicon de descripcion de producto",
         "cantidad": "cantidad",
         "coloresDisponibes": "Color",
-        "categoria": "Categorias"
+        "categoria": "grabacion"
     },
     {
         "id": 7,
@@ -96,7 +96,7 @@
         "descripcion": "este es un ejemplo basicon de descripcion de producto",
         "cantidad": "cantidad",
         "coloresDisponibes": "Color",
-        "categoria": "Categorias"
+        "categoria": "Guitarras"
     },
     {
         "id": 8,
@@ -111,7 +111,7 @@
         "descripcion": "este es un ejemplo basicon de descripcion de producto",
         "cantidad": "cantidad",
         "coloresDisponibes": "Color",
-        "categoria": "Categorias"
+        "categoria": "Guitarras"
     },
     {
         "id": 9,
@@ -126,7 +126,7 @@
         "descripcion": "este es un ejemplo basicon de descripcion de producto",
         "cantidad": "cantidad",
         "coloresDisponibes": "Color",
-        "categoria": "Categorias"
+        "categoria": "Guitarras"
     },
     {
         "id": 10,
@@ -141,7 +141,7 @@
         "descripcion": "este es un ejemplo basicon de descripcion de producto",
         "cantidad": "cantidad",
         "coloresDisponibes": "Color",
-        "categoria": "Categorias"
+        "categoria": "Guitarras"
     },
     {
         "id": 11,
@@ -156,6 +156,6 @@
         "descripcion": "este es un ejemplo basicon de descripcion de producto",
         "cantidad": "cantidad",
         "coloresDisponibes": "Color",
-        "categoria": "Categorias"
+        "categoria": "Guitarras"
     }
 ]

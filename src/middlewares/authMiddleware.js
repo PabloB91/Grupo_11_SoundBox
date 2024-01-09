@@ -1,16 +1,15 @@
-const fs = require ("fs");
+// const fs = require ("fs");
 
 
-function logMiddleware (req, res, next) {
-    let admin = true
-    if(admin == true){
+// // function authMiddleware (req, res, next) {
+// //     // let admin = false
+// //     // if(admin == true){
+        
+// //     // }else{
 
-        next();
-    }else{
+// //     // }
+    
+// //     next();
+// // }
 
-
-    }
-
-}
-
-module.exports = logMiddleware;
+// module.exports = authMiddleware;

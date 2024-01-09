@@ -26,6 +26,8 @@ const controller = {
 		res.render("productDetail", { singleProduct });
 	},
 
+	
+
 	// (get) Create - Formulario para crear
 	create: (req, res) => {
 		// Do the magic
@@ -58,7 +60,7 @@ const controller = {
 			descripcion: req.body.descripcion,
 			cantidad: req.body.cantidad,
 			coloresDisponibes: req.body.color,
-			categorias: req.body.categorias
+			categoria: req.body.categoria
 		}
 
 		products.push(newProduct);

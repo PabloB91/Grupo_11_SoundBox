@@ -30,16 +30,17 @@
                             </div>
                         </div>
                         <div class="desplegable">
-                            <% products.forEach(product=> { %>
-                                <a href="/productDetail">
-                                    <div class="card">
-                                        <input type="checkbox" name="#" id="#">
-                                        <img src=<%=product.imagen %>
-                                        alt="">
-                                        <div class="nombre-marca">
+                            <% productos.forEach(product=> { %>
+                                <div class="card">
+                                    <input type="checkbox" name="#" id="#">
+                                    <img src=<%=product.imagen %>
+                                    alt="">
+                                    <div class="nombre-marca">
+                                        <a href="/productDetail">
                                             <h6>
                                                 <%= product.nombre %>
                                             </h6>
+                                        </a>
                                             <p>
                                                 <%= product.marca %>
                                             </p>
@@ -55,10 +56,9 @@
                                             </span>
                                         </div>
                                         <div class="delete-card">
-                                            <span>eliminar</span>
+                                            <span> eliminar </span>
                                         </div>
                                     </div>
-                                </a>
 
                                 <% }); %>
                                     <div class="descripcion-card">
@@ -88,16 +88,17 @@
                             </div>
                         </div>
                         <div class="desplegable">
-                            <% products.forEach(product=> { %>
-                                <a href="/productDetail">
+                            <% productos.forEach(product=> { %>
                                 <div class="card">
                                     <input type="checkbox" name="#" id="#">
                                     <img src=<%=product.imagen %>
                                     alt="">
                                     <div class="nombre-marca">
-                                        <h6>
-                                            <%= product.nombre %>
-                                        </h6>
+                                        <a href="/productDetail">
+                                            <h6>
+                                                <%= product.nombre %>
+                                            </h6>
+                                        </a>
                                         <p>
                                             <%= product.marca %>
                                         </p>
@@ -113,10 +114,9 @@
                                         </span>
                                     </div>
                                     <div class="delete-card">
-                                        <span>eliminar</span>
+                                        <span> eliminar </span>
                                     </div>
                                 </div>
-                                </a>
                                 <% }); %>
                                     <div class="descripcion-card">
                                         <p>imagen</p>
@@ -139,7 +139,7 @@
 
                     <div class="descripcion-pago-total">
                         <h6 class="titulo-desplegable-pago-total">TOTAL:</h6>
-                        <% products.forEach(product=> { %>
+                        <% productos.forEach(product=> { %>
                             <div class="separador-izquierda">
                                 <p>
                                     <%= product.nombre %>
@@ -157,6 +157,7 @@
                                     <%= product.precio + "$" %>
                                 </p>
                             </div>
+                            
                             <% }); %>
                     </div>
 
@@ -197,7 +198,7 @@
                 <div class="separador"></div>
                 <section class="seccion-carrusel">
                     <div class="corredor">
-                        <% products.forEach(product=> { %>
+                        <% productos.forEach(product=> { %>
                             <div class="image-related">
                                 <img src=<%=product.imagen %> alt="">
                             </div>
@@ -210,7 +211,7 @@
 
                 <section class="seccion-carrusel">
                     <div class="corredor">
-                        <% products.forEach(product=> { %>
+                        <% productos.forEach(product=> { %>
                             <div class="image-related">
                                 <img src="<%=product.imagen %>" alt="">
                             </div>

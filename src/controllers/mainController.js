@@ -5,6 +5,8 @@ const app = express();
 const fs = require("fs");
 const { log } = require("console");
 
+const authMiddleware = require("../middlewares/authMiddleware");
+
 /* En la constante "products" ya tienen los productos que están 
 guardados en la carpeta Data como Json (un array de objetos literales) */
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
@@ -68,10 +70,10 @@ const mainController = {
         const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
         //console.log(req.params.nombre);
 
-        const productCart = products.filter(product => product.categoria === req.params.nombre)
+        // const productCart = products.filter( !!! HACER EL FILTRO DE PRODUCTOS PARA EL CARRITO !!! );
 
-        // console.log(productCategory) 
-        res.render("productCart", { products: productCart })
+        // console.log(productCart) 
+        res.render("productCart", { productos: products });
 
     },
 

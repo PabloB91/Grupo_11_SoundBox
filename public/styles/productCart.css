@@ -1,4 +1,4 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -9,18 +9,18 @@
 
 main {
     background-color: white;
-    
+
 }
 
 .seccion-contenedora {
     display: flex;
     background-color: #B7B3A1;
-    
+
 }
 
 .seccion-principal {
     width: 75vw;
-    
+
 }
 
 .seccion-secundaria {
@@ -53,7 +53,7 @@ main {
     flex-direction: column;
     position: relative;
     overflow-y: scroll;
-    max-height: 30rem;
+    max-height: 39.5rem;
 }
 
 
@@ -103,7 +103,7 @@ main {
 }
 
 .delete-card {
-    display: none;
+    display: flex;
     margin-top: 10px;
     margin-right: 10px;
     height: 25px;
@@ -200,7 +200,7 @@ main {
     align-items: center;
     justify-content: space-evenly;
     background-color: #ebebeb;
-    max-height: 30rem;
+    max-height: 20rem;
     margin: 1rem;
     margin-bottom: 2rem;
     border: 17px solid black;
@@ -334,7 +334,19 @@ main {
 /* ----------------------------------------------------------------------------------------------------------------- */
 
 /* ----------------------------------------------------------------------------------------------------------------- */
+/* animaciones */
+.favoritos {
+    display: none;
+    /* animacion con js dissapear (alternar) entre el favoritos y el carrito */
 
+}
+
+.card:hover {
+    background-color: #f7f7f7;
+    transform: scale(0.95);
+    border: 5px solid white;
+    border-radius: 10px;
+}
 
 /* media queeries para pc */
 @media (min-width:1024px) {
@@ -347,9 +359,23 @@ main {
 
     }
 
-    .card:hover .delete-card {
-        display: flex;
+    .card {
+        border-radius: 0;
+        margin: 5px;
 
+    }
+
+    .delete-card {
+        color: #ebebeb;
+        border: none;
+        border-radius: none;
+    }
+
+    .card:hover .delete-card {
+        color: black;
+        transition: 7s;
+        border: 2px solid black;
+        border-radius: 15px;
     }
 
 }
@@ -365,6 +391,7 @@ main {
         display: flex;
 
     }
+
 
 }
 
@@ -389,9 +416,8 @@ main {
 }
 
 /* elimina las barras de los inputs-type:number */
-input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
-
