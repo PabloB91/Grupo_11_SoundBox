@@ -29,7 +29,7 @@ const mainController = {
         const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
         //console.log(req.params.nombre);
 
-        const productCategory = products.filter(product => product.categoria === req.params.nombre)
+        const productCategory = products.filter(product => product.categorias === req.params.nombre)
         //console.log(productCategory)
         res.render("categoria", { productos: productCategory })
 
@@ -48,23 +48,13 @@ const mainController = {
 
     },
 
-    // aca ponemos los que necesitan los productos->
-
-
-
-    crear: (req, res) => {
+    admin: (req, res) => {
         const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
-        res.render("crearProducto", { products });
+        res.render("administrador.ejs", { products });
 
     },
-
-    productDetail: (req, res) => {
-
-        res.render("productDetail",);
-
-    },
-
+    
     carrito: (req, res) => {
 
         const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -85,8 +75,6 @@ const mainController = {
     }
 
 }
-
-
 
 // Acá exportamos el resultado
 module.exports = mainController;

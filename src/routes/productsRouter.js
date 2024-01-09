@@ -7,37 +7,32 @@ const multer = require('multer');
 const productsController = require('../controllers/productsController');
 
 // *********** Multer ***********
-/* 
 const storage = multer.diskStorage({
 
-   destination: function(req, res, cb){
-
-      // donde gurdamos los archivos
-      cb(null, 'public/img/products');
-      
-    },
-    
-    
-    filename: function(req, res, cb){
-        
-        //nombre de los archivos
-        cb(null, '');
-    }
-});
-
-const upload = multer({storage : storage});
-
- */
-
-// Devolver todos los productos  
-router.get('/', productsController.index);
+    destination:(req, res, cb)=>{
+ 
+       // donde gurdamos los archivos
+       cb(null, 'public/img/products');
+       
+     },
+     
+     
+     filename:(req, file, cb)=>{
+     
+         console.log(file);
+         //nombre de los archivos
+         cb(null, 'SOUNDBOX_'+file.fieldname+'-'+Date.now()+path.extname(file.originalname));
+     }
+ });
+ 
+const upload = multer({storage});
 
 // Devolver un producto 
 router.get('/detail/:id/', productsController.detail);
 
 // Crear un producto
 router.get('/create', productsController.create);
-router.post('/create', productsController.processCreate)
+router.post('/create', upload.array('imagen'), productsController.processCreate);
 /* router.post('/create', upload.single('image'),productsController.processCreate); */
 
 // Editar un producto 
