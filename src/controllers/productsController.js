@@ -50,9 +50,9 @@ const controller = {
 		const newProduct = {
 			id: products[products.length - 1].id + 1,
 			imagen: req.file.filename,
-			imagen: req.file.filename + '1',
-			imagen: req.file.filename + '2',
-			imagen: req.file.filename + '3',
+			imagenimagenFrontal: req.file.filename,
+			imagenLateralDerecha: req.file.filename,
+			imagenLateralIzquierda: req.file.filename,
 			nombre: req.body.nombre,
 			marca: req.body.marca,
 			precio: req.body.precio,
@@ -69,7 +69,7 @@ const controller = {
 
 		// mostrar lo que se guardo en una vista
 
-		res.redirect('/products')
+		res.redirect('/admin')
 	},
 
 	// (get) Update - Formulario para editar
