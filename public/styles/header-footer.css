@@ -119,12 +119,12 @@ header a {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin-left: 2em;
+    margin-left: 3em;
     padding: 15px;
 }
 
 .nav-bar {
-    margin-right: 4em;
+    margin-right: 3em;
 }
 
 .nav-bar ul {
@@ -133,8 +133,8 @@ header a {
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: flex-end;
-    padding-right: 1rem;
-    margin-left: 2em;
+    padding-right: 1em;
+    padding-left: 3em;
     list-style: none;
 }
 
@@ -233,6 +233,7 @@ footer{
 .container-simbol {
     width: 8%;
     padding: 20px;
+    margin-left: 1rem;
 }
 
 #simbol-footer {
@@ -243,7 +244,6 @@ footer a, p, span {
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;   
     font-size: 14px;
-    color: white;
 }
 footer a:link,
 footer a:visited,
@@ -290,8 +290,8 @@ footer a:active{
 
 .copyright {
     color: white;
-    margin-top: 8px;
     background-color: black;
+    margin-left: 2.5rem;
 }
 
 .copyright span {
