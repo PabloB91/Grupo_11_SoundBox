@@ -139,18 +139,9 @@ h3 {
     color: black;
 }
 
-
-.nav-bar li {
-    padding-right: 3rem;
-}
-
-.fa-chevron-down, .fa-magnifying-glass, .fa-id-card, .fa-right-to-bracket, .fa-basket-shopping {
-    color: #FF540A;
-}
-
-.nav-bar li:hover {
+/*.nav-bar li:hover {
     border-bottom: solid 1px #FF540A;
-}
+}*/
 .mas-vendidos a {
     text-decoration: none;
     font-family: 'Montserrat' ;   
