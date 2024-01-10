@@ -3,72 +3,105 @@
 -------------------------------------------------*/
 
 header {
-    height: 30vh;
+    width: 100%;
 }
 
 header #logo {
     width: 10%;
 }
 
-
 header a {
     text-decoration: none;
     font-family: 'Montserrat' ;   
     font-size: 14px;
-    font-weight: 400;
-    
+    font-weight: 400;  
 }
  
-.header-superior{
+.header-superior {
+    width: 100%;
+    height: 2.5rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     background-color: black;
-    height: 8vh;
+    align-items: center;
 }
 
-.envíos-bar li{
+.envios-bar {
+    margin-left: 4em;
+}
+
+.envios-bar li {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.material-symbols-outlined{
+.material-symbols-outlined {
     color: #FF540A;
+    font-size: 18px;
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
 }
-#mi_cajita{
+
+.mi-cajita {
+    background-color: #FF540A;
+    padding: 11px;
+}
+
+#mi_cajita {
     color: white;
 }
 
-.envíos-bar p{
+.shopping-box {
+    width: 18px;
+}
+
+.envios-bar p {
     color: white;
     font-size: 14px;
     font-family: 'Montserrat';
+    padding-left: 8px;
 }
 
+.login-bar {
+    padding-right: 8em;
+}
 
 .login-bar ul {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    align-items: flex-end;
+    align-items: center;
     list-style: none;
 }
 
 .login-bar li {
-    margin-right: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     padding-right: 1rem;
     color: white;
 }
 .login-bar a {
     color: white;
 }
-.login-bar i{
+/* Sin identificar aplicación de este selector */
+/*.login-bar i{
     margin-left: 4px;
+}*/
+
+.login-bar p {
+    padding-right: 4px;
 }
-.mi-cajita {
-    background-color: #FF540A;
+
+.crear-p {
+    padding-left: 4px; /* selector específico de párrafo para dar espacio entre icono 'crear cuenta' y texto */
 }
 
 .header-superior a:link,
@@ -82,7 +115,8 @@ header a {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+    padding: 15px;
 }
 
 .nav-bar ul {
@@ -96,15 +130,20 @@ header a {
 }
 
 .nav-bar li {
-    padding-right: 3rem;
+    padding-right: 2rem;
 }
+
+/* Deshabilitado por el momento */
+/*.nav-bar li:hover {
+    border-bottom: solid 1px #FF540A;
+}*/
 
 .fa-chevron-down, .fa-magnifying-glass, .fa-id-card, .fa-right-to-bracket, .fa-basket-shopping {
     color: #FF540A;
 }
 
-.nav-bar li:hover {
-    border-bottom: solid 1px #FF540A;
+.fa-chevron-up {
+    color: black;
 }
 
 .header-inferior a:link, 
@@ -148,16 +187,22 @@ display: block;
 display: block;
 }
 
+
 .search-bar {
-margin-right: 0rem;
-border: solid 2px;
-border-radius: 3px;
-padding-right: 5px;
+    width: 30px;
+    height: 30px;
+    margin-left: 3rem;
+    /*background-color: #E6E6E6;*/
+    border-radius: 3px;
+    padding: 5px;
 }
-.search-bar input {
-width: 10rem;
-height: 1.5rem;
-border: none;
+
+#search {
+    color: white;
+    background-color: #FF540A;
+    border-radius: 3px;
+    padding: 5px;
+    margin-left: 1.3em;
 }
 
 /*-----------------------------------------------
@@ -192,7 +237,8 @@ footer{
 
 footer a, p, span {
     text-decoration: none;
-    font-family: 'Montserrat', sans-serif;   
+    font-family: 'Montserrat', sans-serif;
+    color: white;   
     font-size: 14px;
 }
 footer a:link,

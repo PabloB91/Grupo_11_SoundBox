@@ -1,6 +1,9 @@
 <header>
+    
+    <!-- 1) Sección optimizada / hoja de estilo header-footer actualizada -->
+
     <section class="header-superior">
-        <div class="envíos-bar">
+        <div class="envios-bar">
             <ul>
                 <li>
                     <span class="material-symbols-outlined">local_shipping</span>
@@ -11,17 +14,17 @@
         </div>
         <div class="login-bar">
             <ul>
-                <li><a href="/admin"><i class="fa-solid fa-user-tie" ></i></a></li>
-                <li><a href="/register">Crear cuenta</a></li>
-                <li><a href="/login">Ingresar</a><span class="material-symbols-outlined">login</span></li>
-                <li class="mi-cajita"><span id="mi_cajita" class="material-symbols-outlined">shopping_cart</span><a
-                    href="/productCart"
-                    >Mi Cajita</a></li>
+                <li><span class="material-symbols-outlined">person</span><a href="/register"><p class="crear-p">Crear cuenta</p></a></li>
+                <li><a href="/login"><p>Ingresar</p></a><span class="material-symbols-outlined">login</span></li>
+                <li class="mi-cajita"><img src="/img/svg/cajitaSBX.svg" class="shopping-box"><a href="/productCart">Mi Cajita</a></li>
             </ul>
         </div>
     </section>
+
+     <!-- 2) Sección optimizada / hoja de estilo header-footer actualizada -->
+
     <section class="header-inferior">
-        <img id="logo" src="/img/svg/estandar.svg" usemap="#workmap" alt="SoundBox" >
+        <img id="logo" src="/img/svg/estandar.svg" usemap="#workmap" alt="SoundBox">
         <map name="workmap"> <!-- Este 'map' es para definir un área clickeable sobre el logo, para usarlo de link al home -->
             <area shape="rect" coords="0,0,270,350" alt="Logo" href="/">
         </map> 
@@ -29,7 +32,7 @@
             <ul>
                 <div class="dropdown">
                     <li>
-                        <a href="/todosLosProductos">Instrumentos musicales</a><i class="fa-solid fa-chevron-down"></i>
+                        <a href="#">Instrumentos musicales</a><i class="fa-solid fa-chevron-down"></i>
                     </li>
                     <div class="dropdown-content">
                         <a href="categoria/Guitarras">Guitarras</a>
@@ -81,7 +84,6 @@
                         <a href="#">Ofertas</a><i class="fa-solid fa-chevron-down"></i>
                     </li>
                     <div class="dropdown-content">
-                        
                         <a href="#">Link 1</a>
                         <a href="#">Link 2</a>
                         <a href="#">Link 3</a>
@@ -99,13 +101,11 @@
                 </div>
                 <li>
                     <div class="search-bar">
-                        <form>
-                            <input type="text" placeholder="Buscar productos, marcas">
-                            <span class="material-symbols-outlined">search</span>
-                        </form>
+                        <span id="search" class="material-symbols-outlined">search</span>  
                     </div>
                 </li>
             </ul>
         </div>
     </section>
+
 </header>
