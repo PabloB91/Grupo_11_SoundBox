@@ -1,41 +1,60 @@
 <%- include('./partials/head.ejs') %>
-<link href="/styles/reset.css" rel="stylesheet">
-<link href="/styles/header-footer.css" rel="stylesheet">
+<!-- ¡OJO! se estaba repitiendo el llamado de las hojas de estilo 'reset' y 'header-footer' que ya están en el partial head.ejs. PUEDEN PRESENTARSE CONFLICTOS (revisar) -->
 <link href="/styles/home.css" rel="stylesheet">
 
 <body>
 
     <%- include('./partials/header.ejs') %>
 
-    <section class="carrusel"><!--Imagen momentánea solo por visualización: debe actualizarse (textos, botón, aplicación flex, etc.)-->
-        <div class="banner">
-            <img src="/img/banners/Banner-carrusel1.jpg" width= 100%; alt="Banner de ofertas">
-        </div>
-        <div class="player"></div><!--Pendiente ubicar botones controladores (play/stop/adelantar/retroceder)-->
-    </section>
-    <hr class="separador"><!-- Separador momentáneo para diferenciar secciones-->
     <main>
+
+        <!-- index.ejs optimizado -->
+
+        <section class="carrusel">
+            <div class="banner">
+                <div class="container-carrusel-1">
+                    <img src="/img/banners/carrusel_img1.jpg">
+                </div>
+                <div class="container-carrusel-2">
+                    <h2>LLEVA LA BUENA <span class="vibra">VIBRA</span> <span><img src="/img/svg/simbolequalizer.svg"></span></h2>
+                    <p class="bold-text">Instrumentos y accesorios musicales</p>
+                    <p class="light-text">En esta caja encontrarás gran variedad de instrumentos, accesorios y demás implementos para la producción musical</p>
+                    <div class="container-button-carrusel">
+                        <button class="button-carrusel">Ofertas</button>
+                    </div>
+                </div>
+            </div>
+            <div class="player">
+                <ul>
+                    <li><a href="#"><span id="skip-previous" class="material-symbols-rounded">skip_previous</span></a></li>
+                    <li><a href="#"><span id="play-arrow" class="material-symbols-rounded">play_arrow</span></a></li>
+                    <li><a href="#"><span id="stop" class="material-symbols-rounded">stop</span></a></li>
+                    <li><a href="#"><span id="skip-next" class="material-symbols-rounded">skip_next</span></a></li>
+                </ul>
+            </div>
+        </section>
+
         <section class="compra-por-categoria">
             <h3>COMPRA POR CATEGORÍA</h3>
             <div class="items-categorias">  <!-- <img src="/img/home/categoria-guitarras.jpg" alt="Guitarras"> -->
                 <article class="categoria">
-                    <p><a href="categoria/Guitarras">Guitarras</a></p>
+                    <p>Guitarras</p>
                     <img src="/img/home/categoria-guitarras.jpg" alt="Guitarras">
                 </article>
                 <article class="categoria">
-                    <p><a href="/categoria/Accesorios">Accesorios</a></p>
+                    <p>Accesorios</p>
                     <img src="/img/home/categoria-accesorios.jpg" alt="Accesorios">
                 </article>
                 <article class="categoria">
-                    <p><a href="categoria/Efectos">Efectos</a></p>
-                    <img src="/img/home/categoria-efectos.jpg" alt="Efectos"></a>
+                    <p>Efectos</p>
+                    <img src="/img/home/categoria-efectos.jpg" alt="Efectos">
                 </article>
                 <article class="categoria">
-                    <p>Teclados y Pianos</p>
+                    <p>Teclados & Pianos</p>
                     <img src="/img/home/categoria-pianos-teclados.jpg" alt="Teclados&Pianos">
                 </article>
                 <article class="categoria">
-                    <p><a href="categoria/Orquesta">Orquesta</a></p>
+                    <p>Orquesta</p>
                     <img src="/img/home/categoria-orquesta.jpg" alt="Orquesta">
                 </article>
                 <article class="categoria">
@@ -47,7 +66,7 @@
                     <img src="/img/home/categoria-segundamano.jpg" alt="Segunda Mano">
                 </article>
                 <article class="categoria">
-                    <p><a href="categoria/Grabacion">Grabación</a></p>
+                    <p>Grabación</p>
                     <img src="/img/home/categoria-grabacion.jpg" alt="Grabación">
                 </article>
             </div>
@@ -55,9 +74,9 @@
                 <button>VER TODAS LAS CATEGORÍAS</button>
             </div>
         </section>
-        <hr class="separador">
+        
         <section class="mas-vendidos">
-            <h3>Más vendidos</h3>
+            <h3>MÁS VENDIDOS</h3>
             <div class="nav-bar">
                 <ul>
                     <li>
@@ -75,32 +94,76 @@
                 </ul>  
             </div>
             <div class="items-mas-vendidos">  
-                <% masVendidos.forEach(product => { %>
+                <article class="producto">
+                    <img src="/img/productos/varios/trompeta.jpg" alt="Trompeta">
+                    <div class="detalle-producto">
+                        <p class="descripciones"><strong>Plastic Trumpet, White</strong></p>
+                        <div class="container-detalle">
+                            <p class="calificacion">Estrellas</p>
+                            <p class="precios">$6.770</p>
+                        </div>
+                    </div>
+                </article>
+                <article class="producto">
+                    <img src="/img/productos/percusion/percusion-2.jpg" alt="Percusion" >
+                    <div class="detalle-producto">
+                        <p class="descripciones"><strong>Mein Cymbals Arena Marching Cymbals Pair</strong></p>
+                        <div class="container-detalle">
+                            <p class="calificacion">Estrellas</p>
+                            <p class="precios">$6.770</p>
+                        </div>
+                    </div>
+                </article>
+                <article class="producto">
+                    <img src="/img/productos/orquesta/orquesta-1.jpg" alt="Orquesta" >
+                    <div class="detalle-producto">
+                        <p class="descripciones"><strong>Handcrafted Wood Aoustic Violin</strong></p>
+                        <div class="container-detalle">
+                            <p class="calificacion">Estrellas</p>
+                            <p class="descuentos">40% OFF</p>
+                        </div>
+                    </div>
+                </article>
+                <article class="producto">
+                    <img src="/img/productos/guitarras/guitarra-1.jpg" alt="Guitarra" >
+                    <div class="detalle-producto">
+                        <p class="descripciones"><strong>Gibson 2016 T Les Paul Studio 50'S Tribute</strong></p>
+                        <div class="container-detalle">
+                            <p class="calificacion">Estrellas</p>
+                            <p class="precios">$6.770</p>
+                        </div>
+                    </div>
+                </article>
+                </div>
+            </section>
+            <!-- se deja esta sección dinámica comentada para aplicarla sobre la actualizada
+            <div class="items-mas-vendidos">  
+                <% /*masVendidos.forEach(product => { */%>
          
                     <article class="producto">
-                        <a href="/productDetail">
-                        <img src=<%= product.imagen %> alt="Imagen">
+                        <a href="/products/productDetail">
+                        <img src=<%= /*product.imagen*/ %> alt="Imagen">
                         <div class="detalle-producto">
-                            <p class="descripciones"><strong><%= product.nombre %></strong></p>
+                            <p class="descripciones"><strong><%= /*product.nombre*/ %></strong></p>
                             <div class="container-detalle">
                                 <p class="calificacion">Estrellas</p>
-                                <p class="precios">$<%= product.precio %></p>
+                                <p class="precios">$<%= /*product.precio*/ %></p>
                             </div>
                         </div>
                         </a>
                     </article>
-                <% }) %>
+                <% /*})*/ %>-->
             </div>
         </section>
-        <hr class="separador">
-        <section class="marcas-banners"><!--ver sección añadida en archivo 'Guías-HTML-CSS.TXT'-->
+
+        <section class="marcas-banners">
             <div class="box-marcas">
                 <div>
                     <img src="/img/banners/bannerMarcas.jpg" width= 100%; alt="Marquesina marcas"><!--Imagen momentánea solo por visualización: debe actualizarse por div con lista de logos (svgs) de marcas, aplicar flex y generar la navegación / transición respectiva (botones adelantar y rebobinar)-->
                 </div>
             </div>
             <div class="box-promoBanners">
-                <div class="promoBanners"><!--Imágenes momentáneas solo por visualización: deben actualizarse en cada div con cada ícono svg respectivo, textos, aplicar flex, etc.-->
+                <div class="promoBanners">
                     <img src="/img/banners/bannerEnvio.jpg" width= 100%; alt="Envíos gratis">
                 </div>
                 <div class="promoBanners">
@@ -111,93 +174,88 @@
                 </div>
             </div>
         </section>
-        <hr class="separador">
-        <section class="complementos"><!--pendiente centrar esta sección con respecto al main-->
+
+        <section class="complementos">
             <div class="destacados">
-                <h4>Destacados</h4><!--cambio de h3 a h4-->
-                <article class="producto">
-                    <a href="/productDetail">
+                <div class="head-border">
+                    <h3>DESTACADOS</h3>
+                </div>
+                <article class="container-producto">
                     <img src="/img/productos/varios/trompeta.jpg" alt="Trompeta" >
                     <div class="detalle-producto">
-                        <div class="container-detalle">
+                        <div>
                             <p class="descripciones"><strong>Plastic Trumpet, White</strong></p>
-                            <p class="precios">$6.770</p>
-                            <p class="descuentos">40% OFF</p>
+                            <p class="precios">Estrellas</p>
+                            <p class="descuentos">$6.770</p>
                         </div>
                     </div>
-                    </a>
                 </article>
-                <article class="producto">
-                    <a href="/productDetail">
+                <article class="container-producto">
                     <img src="/img/productos/varios/trompeta.jpg" alt="Trompeta" >
                     <div class="detalle-producto">
-                        <div class="container-detalle">
+                        <div>
                             <p class="descripciones"><strong>Plastic Trumpet, White</strong></p>
-                            <p class="precios">$6.770</p>
-                            <p class="descuentos">40% OFF</p>
+                            <p class="precios">Estrellas</p>
+                            <p class="descuentos">$6.770</p>
                         </div>
                     </div>
-                    </a>
                 </article>
             </div>
             <div class="comentarios">
-                <h4>Comentarios</h4><!--cambio de h3 a h4-->
-                <article class="producto">
-                    <a href="/productDetail">
+                <div class="head-border">
+                    <h3>COMENTARIOS</h3>
+                </div>
+                <article class="container-producto">
                     <img src="/img/productos/orquesta/orquesta-1.jpg" alt="Orquesta" >
                     <div class="detalle-producto">
-                        <div class="container-detalle">
-                            <p class="descripciones"><strong>Handcrafted Wood Aoustic Violin</strong></p>
-                            <p class="precios">$6.770</p>
-                            <p class="descuentos">40% OFF</p>
+                        <div>
+                            <p class="descripciones"><strong>Handcrafted Wood Acustic Violin</strong></p>
+                            <p class="precios">Estrellas</p>
+                            <p class="descuentos">Por Juan Se</p>
                         </div>
                     </div>
-                    </a>
                 </article>
-                <article class="producto">
-                    <a href="/productDetail">
+                <article class="container-producto">
                     <img src="/img/productos/orquesta/orquesta-1.jpg" alt="Orquesta" >
                     <div class="detalle-producto">
-                        <div class="container-detalle">
-                            <p class="descripciones"><strong>Handcrafted Wood Aoustic Violin</strong></p>
-                            <p class="precios">$6.770</p>
-                            <p class="descuentos">40% OFF</p>
+                        <div>
+                            <p class="descripciones"><strong>Handcrafted Wood Acustic Violin</strong></p>
+                            <p class="precios">Estrellas</p>
+                            <p class="descuentos">Por Juan Se</p>
                         </div>
                     </div>
-                    </a>
                 </article>
             </div>
             <div class="novedades">
-                <h4>Novedades</h4><!--cambio de h3 a h4-->
-                <article class="producto">
-                    <a href="/productDetail">
-                    <img src="/img/productos/accesorios/audifonos-1.jpg" alt="Audifonos" >
+                <div class="head-border">
+                    <h3>NOVEDADES</h3>
+                </div>
+                <article class="container-producto">
+                    <img src="/img/productos/percusion/percusion-2.jpg" alt="Audifonos" >
                     <div class="detalle-producto">
-                        <div class="container-detalle">
-                            <p class="descripciones"><strong>Audifonos</strong></p>
+                        <div>
+                            <p class="descripciones"><strong>Nuevos audífonos</strong></p>
                             <p class="precios">$6.770</p>
                             <p class="descuentos">40% OFF</p>
                         </div>
                     </div>
-                    </a>
                 </article>
-                <article class="producto">
-                    <a href="/productDetail">
-                    <img src="/img/productos/accesorios/audifonos-1.jpg" alt="Audifonos" >
+                <article class="container-producto">
+                    <img src="/img/productos/percusion/percusion-2.jpg" alt="Audifonos" >
                     <div class="detalle-producto">
-                        <div class="container-detalle">
-                            <p class="descripciones"><strong>Audifonos</strong></p>
+                        <div>
+                            <p class="descripciones"><strong>Nuevos audífonos</strong></p>
                             <p class="precios">$6.770</p>
                             <p class="descuentos">40% OFF</p>
                         </div>
                     </div>
-                    </a>
                 </article>
             </div>
             <div class="espacio-publicitario">
                 <img src="/img/banners/banner_promo.jpg" alt="Publicidad">
             </div>
         </section>
+
     </main>
 
     <%- include('./partials/footer.ejs') %>

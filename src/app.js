@@ -55,3 +55,14 @@ app.listen(3050,()=> {
     console.log (`Servidor funcionando en: http://localhost:${port}`)
 });
 //*****************************************************************************************************\\
+
+
+
+/* 
+FALTA HACER EL DELETE
+FALTA ARREGLAR EL IMG DE CREATE
+FALTA HACER EL UPDATE
+
+FALTA ARREGLAR LA RUTA DE CATEGORIAS (SE DUPLICA EN EL HTTP)
+    REQ.PARAMS.ID DEL PRODUCT DETAIL
+*/

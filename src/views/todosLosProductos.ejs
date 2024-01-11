@@ -79,8 +79,8 @@
             <section class="seccion-general">
                 <% products.forEach(product=> { %>
                     <div class="card">
-                        <a class="href-padding" href="/productDetail">
-                            <div class="imagen-producto"><img src="<%= product.imagen %>" alt=""></div>
+                        <a  class="href-padding" href="/products/productDetail">
+                            <div class="imagen-producto"><img src="/img/products/<%= product.imagen %>" alt=""></div>
                             <div class="desplegable">
                                 <h5>
                                     <%= product.nombre%>
