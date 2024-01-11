@@ -1,11 +1,11 @@
 [
     {
-        "id": 0,
+        "id": 1,
         "imagen": "./img/products/IMG_DEFAULT.svg",
-        "nombre": "Nombre del producto",
-        "marca": "Marca",
-        "precio": "Precio",
-        "descuento": "Descuento",
+        "nombre": "guitarra",
+        "marca": "marshall",
+        "precio": 200,
+        "descuento": 15,
         "descripcion": "Descripcion",
         "cantidad": "cantidad",
         "coloresDisponibes": "Color"

@@ -15,14 +15,14 @@
             </div>
             <section class="seccion-contenedora">
                 <section class="seccion-principal">
-                    <div class="carrito">
+                    <div class="carrito" id="carrito">
                         <h1>Ordenar Mi Cajita</h1>
                         <div class="ordenador-container">
                             <div class="ordenador">
-                                <a href=""><i style="color: black;" class="fa-solid fa-circle-arrow-up"></i></a>
-                                <a href=""><i style="color: white;" class="fa-solid fa-arrow-down-a-z"></i></a>
-                                <a href=""><i style="color: white;" class="fa-solid fa-arrow-down-short-wide"></i></a>
-                                <a href=""><i style="color: white;" class="fa-solid fa-arrow-down-wide-short"></i></a>
+                                <button onclick="hide()"><i class="fa-solid fa-circle-arrow-up"></i></button>
+                                <button onclick="show()"><i style="color: white;" class="fa-solid fa-arrow-down-a-z"></i></button>
+                                <button><i style="color: white;" class="fa-solid fa-arrow-down-short-wide"></i></button>
+                                <button><i style="color: white;" class="fa-solid fa-arrow-down-wide-short"></i></button>
                             </div>
                             <div class="labels-ordenador">
                                 <label for="#"> Agregar a Favoritos </label>
@@ -73,14 +73,14 @@
                         </div>
                     </div>
 
-                    <div class="favoritos">
+                    <div class="favoritos" id="favoritos">
                         <h1>Ordenar Mis Favoritos</h1>
                         <div class="ordenador-container">
                             <div class="ordenador">
-                                <a href=""><i style="color: black;" class="fa-solid fa-circle-arrow-up"></i></a>
-                                <a href=""><i style="color: white;" class="fa-solid fa-arrow-down-a-z"></i></a>
-                                <a href=""><i style="color: white;" class="fa-solid fa-arrow-down-short-wide"></i></a>
-                                <a href=""><i style="color: white;" class="fa-solid fa-arrow-down-wide-short"></i></a>
+                                <button onclick="hide()"><i class="fa-solid fa-circle-arrow-up"></i></button>
+                                <button onclick="show()"><i style="color: white;" class="fa-solid fa-arrow-down-a-z"></i></button>
+                                <button><i style="color: white;" class="fa-solid fa-arrow-down-short-wide"></i></button>
+                                <button><i style="color: white;" class="fa-solid fa-arrow-down-wide-short"></i></button>
                             </div>
                             <div class="labels-ordenador">
                                 <label for="#"> Agregar al Carrito </label>
@@ -228,3 +228,20 @@
 
         <%- include("./partials/footer") %>
 </body>
+
+<script type="text/javascript">
+    function hide(){
+        document.getElementById("carrito").style.display = "none";
+        document.getElementById("favoritos").style.display = "block";
+
+    }
+
+    function show(){
+        document.getElementById("favoritos").style.display = "none";
+        document.getElementById("carrito").style.display = "block";
+
+    }
+
+</script>
+
+
