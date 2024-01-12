@@ -126,12 +126,14 @@ const controller = {
 
             return product.id != req.params.id;
 
-        })
+        });
 
-        fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "))
+        fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
 
-        res.redirect("/")
+        res.redirect("/");
+
 	}
+
 };
 
 module.exports = controller;

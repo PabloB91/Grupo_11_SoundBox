@@ -4,7 +4,7 @@ const express = require("express");
 const path = require("path")
 const fs = require("fs");
 const methodOverride = require('method-override'); // requiriendo method para usar put y delate
-// const logMiddleware = require("./middlewares/logMiddleware");
+const logMiddleware = require("./middlewares/logMiddleware");
 
 const app = express();
 
@@ -19,7 +19,10 @@ app.use(express.json())
 
 // Para poder usar los metodos put y delete
 app.use(methodOverride('_method'));
-// app.use(logMiddleware);
+
+//*****************************************************************************************************\\
+                                                // MIDDLEWARES
+app.use(logMiddleware);
 
 //*****************************************************************************************************\\
 

@@ -95,6 +95,11 @@
                             <button type="submit" class="boton-agregar-carrito"><i class="fa-solid fa-cart-shopping"></i> <span class="texto-boton-agregar-carrito">ADD TO CART</span></button>
                         </form>
                     </div>
+
+                    <div class="caja-agregar-carrito">
+                        <form action="/products/delete/<%= singleProduct.id %>?_method=DELETE" method="POST"></form>
+                        <button type="submit">DELETE</button>
+                    </div>
                 </div>
 
             <div class="caja-links-extra-producto">

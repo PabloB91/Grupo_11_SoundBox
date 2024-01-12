@@ -7,10 +7,6 @@
     border: none;
 }
 
-main {
-    background-color: white;
-
-}
 
 .seccion-contenedora {
     display: flex;
