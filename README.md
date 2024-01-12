@@ -39,16 +39,23 @@ Servicios:
 ### 6. DESCRIPCIÓN DE LOS INTEGRANTES DEL GRUPO
 ___________________________________________________________________________________________________________________________________
 
-  - ##### Miguel Ángel Vargas Navarro
+  - ##### ***Miguel Ángel Vargas Navarro***
     
+    - Tengo 19 años.
     - Soy estudiante de Digital House.
-    - Soy un apasionado por las nuevas tecnologías y me gusta estar en constante aprendizaje.
+    - Soy un colombiano apasionado por las nuevas tecnologías y me gusta estar en constante aprendizaje.
+    - Me gusta los deportes de velocidad como el ciclismo, carreras de motos, y carreras deautos.
+    - Me gusta la organizacion de las cosas y que todo este en su sitio.
 
-    - Tengo conocimientos básicos en las siguientes tecnologías de desarrollo:
+    - Tengo conocimientos básicos en las siguientes herramientas de desarrollo:
 
-      - <b>HTML</b> 🟠
-      - <b>Css</b> 🔵
-      - <b>JavaScript</b> 🟡 
+      - **HTML** 🟠
+      - **Css** 🔵
+      - **JavaScript** 🟡
+      - **Tambien se manejar motores de plantilas como (ejs🟣. pug, etc).**
+   
+    - En este proyecto soy el encargado del Creat del CRUD en su Font y Backend, tambien del loguin. Tambien trato de ayudar a mis
+      compañeros si tienen problemas en su parte del proyecto. 
 ___________________________________________________________________________________________________________________________________
 
   - ##### Pablo Ariel Bellotto
