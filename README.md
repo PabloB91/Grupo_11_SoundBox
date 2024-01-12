@@ -44,7 +44,7 @@ ________________________________________________________________________________
     - Tengo 19 años.
     - Soy estudiante de Digital House.
     - Soy un colombiano apasionado por las nuevas tecnologías y me gusta estar en constante aprendizaje.
-    - Me gusta dedspordes de velocidad como el ciclismo, carreras de motos, y carreras deautos.
+    - Me gusta los deportes de velocidad como el ciclismo, carreras de motos, y carreras deautos.
     - Me gusta la organizacion de las cosas y que todo este en su sitio.
 
     - Tengo conocimientos básicos en las siguientes herramientas de desarrollo:
