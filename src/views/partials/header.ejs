@@ -1,33 +1,50 @@
 <header>
-    
+
     <!-- 1) Sección optimizada / hoja de estilo header-footer actualizada -->
 
     <section class="header-superior">
-        <div class="envios-bar">
-            <ul>
-                <li>
-                    <span class="material-symbols-outlined">local_shipping</span>
-                    <span class="material-symbols-outlined">travel</span>
-                    <p>Envíos locales e internacionales inmediatos</p>
-                </li>
-            </ul>
-        </div>
-        <div class="login-bar">
-            <ul>
-                <li><span class="material-symbols-outlined">person</span><a href="/register"><p class="crear-p">Crear cuenta</p></a></li>
-                <li><a href="/login"><p>Ingresar</p></a><span class="material-symbols-outlined">login</span></li>
-                <li class="mi-cajita"><img src="/img/svg/cajitaSBX.svg" class="shopping-box"><a href="/productCart">Mi Cajita</a></li>
-            </ul>
+        <div class="container">
+            <nav>
+                <div class="envios-bar">
+                    <ul>
+                        <li>
+                            <span class="material-symbols-outlined">local_shipping</span>
+                            <span class="material-symbols-outlined">travel</span>
+                            <p>Envíos locales e internacionales inmediatos</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="login-bar">
+                    <ul>
+                        <li><span class="material-symbols-outlined">person</span><a href="/register">
+                                <p class="crear-p">Crear cuenta</p>
+                            </a></li>
+                        <li><a href="/login">
+                                <p>Ingresar</p>
+                            </a><span class="material-symbols-outlined">login</span></li>
+                        <li class="mi-cajita"><img src="/img/svg/cajitaSBX.svg" class="shopping-box"><a
+                                href="/productCart">Mi Cajita</a></li>
+                    </ul>
+                </div>
+                    <div class="usuario">
+                        <ul>
+                            <li>
+                                <a href=""><i class="fa-regular fa-circle-user"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+            </nav>
         </div>
     </section>
 
-     <!-- 2) Sección optimizada / hoja de estilo header-footer actualizada -->
+    <!-- 2) Sección optimizada / hoja de estilo header-footer actualizada -->
 
     <section class="header-inferior">
         <img id="logo" src="/img/svg/estandar.svg" usemap="#workmap" alt="SoundBox">
-        <map name="workmap"> <!-- Este 'map' es para definir un área clickeable sobre el logo, para usarlo de link al home -->
+        <map name="workmap">
+            <!-- Este 'map' es para definir un área clickeable sobre el logo, para usarlo de link al home -->
             <area shape="rect" coords="0,0,270,350" alt="Logo" href="/">
-        </map> 
+        </map>
         <div class="nav-bar">
             <ul>
                 <div class="dropdown">
@@ -90,21 +107,12 @@
                         <a href="#">Link 3</a>
                     </div>
                 </div>
-                <div class="dropdown">
+                <div class="search-bar">
                     <li>
-                        <a href="#">Marcas</a><i class="fa-solid fa-chevron-down"></i>
+                        <input type="search">
+                        <span id="search" class="material-symbols-outlined">search</span>
                     </li>
-                    <div class="dropdown-content">
-                        <a href="#">Link 1</a>
-                        <a href="#">Link 2</a>
-                        <a href="#">Link 3</a>
-                    </div>
                 </div>
-                <li>
-                    <div class="search-bar">
-                        <span id="search" class="material-symbols-outlined">search</span>  
-                    </div>
-                </li>
             </ul>
         </div>
     </section>

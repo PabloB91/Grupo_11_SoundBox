@@ -2,13 +2,14 @@ main {
     display: flex;
     margin-top: 60px;
     background-color: gray;
+    position: relative;
 
 }
 
 .ordenador {
     width: 10vw;
     background-color: #FF540A;
-
+    position: absolute;
 }
 
 .titulo-ordenador {
