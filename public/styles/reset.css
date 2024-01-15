@@ -1,27 +1,17 @@
 /* ETIQUETAS UNIVERSALES */
-
 * {
-    box-sizing: border-box;
-}
-
-/**{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     text-decoration: none;
     outline: none;
     border: none;
-}*/
+}
+
 
 /* ETIQUETAS DEL BODY */
 
-body {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-    font-size: 12px;
-    font-style: normal;
-    margin: auto;
-}
+
 
 /* ETIQUETAS DE TEXTO */
 

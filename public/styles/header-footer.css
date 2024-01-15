@@ -2,208 +2,128 @@
 --------------------HEADER-----------------------
 -------------------------------------------------*/
 
-header {
-    width: 100%;
+header{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+    ul{
+        list-style-type: none;
+    }
 }
 
-header #logo {
-    width: 10%;
-}
+.header-superior{
+    background-color: #000;
 
-header a {
-    text-decoration: none;
-    font-family: 'Montserrat' ;   
-    font-size: 14px;
-    font-weight: 400;  
-}
- 
-.header-superior {
-    width: 100%;
-    height: 2.5rem;
-    display: flex;
-    justify-content: space-between;
-    background-color: black;
-    align-items: center;
-}
+    .container {
+        width: 100%;
+        max-width: 1100px;
+    
+    }
 
-.envios-bar {
-    margin-left: 4em;
-}
+    ul{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
 
-.envios-bar li {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
+    }
 
-.material-symbols-outlined {
-    color: #FF540A;
-    font-size: 18px;
-    font-variation-settings:
-    'FILL' 0,
-    'wght' 400,
-    'GRAD' 0,
-    'opsz' 24
-}
+    .comment_envios-locales{
+        display: flex;
+        color: #ff540a;
 
-.mi-cajita {
-    background-color: #FF540A;
-    padding: 11px;
-}
+        p{
+            color: #fff;
+        }
+    }
 
-#mi_cajita {
-    color: white;
-}
+    .register-login{
+        display: flex;
 
-.shopping-box {
-    width: 18px;
-}
+        a {
+            color: #ff540a;
+        }
+    }
 
-.envios-bar p {
-    color: white;
-    font-size: 14px;
-    font-family: 'Montserrat';
-    padding-left: 8px;
-}
+    .btn-cajita{
 
-.login-bar {
-    width: 90vw;
+        width: 100px;
+        background-color: #ff540a ;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+
+        img{
+            width:25%;
+        }
+    }
+
+    .li_user{
+        font-size: 25px;
+    }
 
 }
-
-.login-bar ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    list-style: none;
-}
-
-.login-bar li {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-right: 1rem;
-    color: white;
-}
-.login-bar a {
-    color: white;
-}
-/* Sin identificar aplicación de este selector */
-/*.login-bar i{
-    margin-left: 4px;
-}*/
-
-.login-bar p {
-    padding-right: 4px;
-}
-
-/* selector específico de párrafo para dar espacio entre icono 'crear cuenta' y texto */
-.crear-p {
-    padding-left: 4px;
-}
-
-.header-superior a:link,
-.header-superior a:visited,
-.header-superior a:hover,
-.header-superior a:active{
-    color: white;
-}
-
-/* Selectores del header inferior */
 
 .header-inferior{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin-left: 3em;
-    padding: 15px;
-}
 
-.nav-bar {
-    margin-right: 3em;
-}
+    .header-inferior_nav_ul{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
 
-.nav-bar ul {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: flex-end;
-    padding-right: 1em;
-    padding-left: 3em;
-    list-style: none;
-}
+    #logo{
+        width: 100px;
+    }
 
-.nav-bar li {
-    padding-right: 2em;
-}
+    a:link, 
+    a:visited,
+    a:hover,
+    a:active{
+        color: black;
+    }
 
-/* Deshabilitado por el momento */
-/*.nav-bar li:hover {
-    border-bottom: solid 1px #FF540A;
-}*/
+    /*El contenedor <div> - necesario para posicionar el contenido desplegable */
+    .dropdown {
+    position: relative;
+    display: inline-block;
+    }
 
-.fa-chevron-down, .fa-magnifying-glass, .fa-id-card, .fa-right-to-bracket, .fa-basket-shopping {
-    color: #FF540A;
-}
+    /* Contenido desplegable (oculto de forma predeterminada) */
+    .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    }
 
-.fa-chevron-down {
-    font-size: 10px;
-    margin-left: 1px;
-}
-
-.fa-chevron-up {
+    /* Enlaces dentro del menú desplegable */
+    .dropdown-content a {
+    font-family: 'Montserrat';
+    font-size: 14px;
     color: black;
-}
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    }
 
-.header-inferior a:link, 
-.header-inferior a:visited,
-.header-inferior a:hover,
-.header-inferior a:active{
-    color: black;
-}
+    /* Cambiar el color de los enlaces desplegables al pasar el mouse */
+    .dropdown-content a:hover {background-color: #f1f1f1}
 
-/* El contenedor <div> - necesario para posicionar el contenido desplegable */
-.dropdown {
-position: relative;
-display: inline-block;
-}
+    /* Mostrar el menú desplegable al pasar el mouse */
+    .dropdown:hover .dropdown-content {
+    display: block;
+    }
 
-/* Contenido desplegable (oculto de forma predeterminada) */
-.dropdown-content {
-display: none;
-position: absolute;
-background-color: #f9f9f9;
-min-width: 160px;
-box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-z-index: 1;
-}
-
-/* Enlaces dentro del menú desplegable */
-.dropdown-content a {
-font-family: 'Montserrat';
-font-size: 14px;
-color: black;
-padding: 12px 16px;
-text-decoration: none;
-display: block;
-}
-
-/* Cambiar el color de los enlaces desplegables al pasar el mouse */
-.dropdown-content a:hover {background-color: #f1f1f1}
-
-/* Mostrar el menú desplegable al pasar el mouse */
-.dropdown:hover .dropdown-content {
-display: block;
-}
-
-#search {
-    color: white;
-    background-color: #FF540A;
-    border-radius: 3px;
-    padding: 5px;
+    .search{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 20px;
+        height: 20px;
+        background-color: #ff540a;
+    }
 }
 
 /*-----------------------------------------------
@@ -294,21 +214,4 @@ footer a:active{
 
 .copyright span {
     color: grey
-}
-
-nav {
-    display: flex;
-
-}
-
-.container {
-    display: flex;
-    max-width: 90%;
-}
-
-@media screen and (min-width: 1200px){
-.container {
-    max-width: 90%;
-    max-width: 1100px;
-}
 }
