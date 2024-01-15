@@ -14,15 +14,18 @@ const app = express();
 app.use(express.static("public")); // para usar los archivos estaticos de la carpeta public
 
 // Para tomar los datos del body
-app.use(express.urlencoded({extended: false}));
-app.use(express.json()) 
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json())
 
 // Para poder usar los metodos put y delete
 app.use(methodOverride('_method'));
 
 //*****************************************************************************************************\\
-                                                // MIDDLEWARES
-app.use(logMiddleware);
+
+                                // MIDDLEWARES ESCRITOS X NOSOTROS
+// quedan almacenadas en un log.txt las rutas donde accede el usuario
+
+// app.use(logMiddleware);
 
 //*****************************************************************************************************\\
 
@@ -38,7 +41,7 @@ app.set('views', path.resolve(__dirname, "views"));
 const mainRouter = require("./routes/mainRouter");
 
 // products
-const productsRouter = require('./routes/productsRouter'); 
+const productsRouter = require('./routes/productsRouter');
 
 app.use("/", mainRouter);
 app.use("/products", productsRouter);
@@ -54,8 +57,8 @@ app.use((req, res, next) => {
 /************* LLAMANDO AL SERVIDOR *************/
 const port = process.env.PORT || 3050;
 
-app.listen(3050,()=> {
-    console.log (`Servidor funcionando en: http://localhost:${port}`)
+app.listen(3050, () => {
+    console.log(`Servidor funcionando en: http://localhost:${port}`)
 });
 //*****************************************************************************************************\\
 

@@ -195,7 +195,6 @@
     justify-content: space-evenly;
     background-color: #ebebeb;
     max-height: 20rem;
-    margin: 1rem;
     margin-bottom: 2rem;
     border: 17px solid black;
     border-radius: 13%;
@@ -344,14 +343,6 @@
 
 /* media queeries para pc */
 @media (min-width:1024px) {
-
-    .carrito:hover .desplegable,
-    .carrito:hover .ordenador-container,
-    .favoritos:hover .desplegable,
-    .favoritos:hover .ordenador-container {
-        display: flex;
-
-    }
 
     .card {
         border-radius: 0;
