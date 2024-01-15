@@ -22,11 +22,18 @@ const controller = {
 
 		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
-		const singleProduct = products.find(product => {
-			return product.id == req.params.id
-		})
+		let idProducto = req.params.id
 
-		res.render("productDetail", { singleProduct });
+		let productoDefinido = products.find(producto => {
+			return producto.id == idProducto
+		})
+				if(productoDefinido){
+					res.render("productDetail", { singleProduct : productoDefinido })
+				} else{
+					res.send("ERROR")
+				}
+	
+
 	},
 
 	

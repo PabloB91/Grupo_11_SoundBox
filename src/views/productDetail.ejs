@@ -16,29 +16,32 @@
 
 <body>
 <section>
+    <div class="linea-superior">
+        <p style="color: white; font-size: 16px;"> Producto <%= singleProduct.nombre %> </p>
+    </div>
     <div class="caja-general">
             <div class="caja-objeto-favorito caja-me-gusta">
                 <a href="#"> <i class="fa-solid fa-heart"></i> </a>
             </div>
-            
+
             <div class="caja-imagenes-general">
-                <img src="/img/productos/guitarras/guitarra-1.jpg" alt="guitarra1" class="imagen-producto-principal">
+                <img src=" <%= singleProduct.imagen %> " alt="guitarra1" class="imagen-producto-principal">
                 
                 <div class="imagenes-secundarias-inferior">
-                    <img src="/img/productos/guitarras/guitarra-1.jpg" alt="guitarra1" class="imagen-producto-secundaria">
-                    <img src="/img/productos/guitarras/guitarra-1.jpg" alt="guitarra1" class="imagen-producto-secundaria">
-                    <img src="/img/productos/guitarras/guitarra-1.jpg" alt="guitarra1" class="imagen-producto-secundaria">
+                    <img src=" <%= singleProduct.imagenFrontal %> " alt="guitarra1" class="imagen-producto-secundaria">
+                    <img src=" <%= singleProduct.imagenLateralDerecha %> " alt="guitarra1" class="imagen-producto-secundaria">
+                    <img src=" <%= singleProduct.imagenLateralIzquierda %> " alt="guitarra1" class="imagen-producto-secundaria">
                 </div>
             </div>
 
         <div class="caja-sub-general-informacion">
             <div class="caja-primera">
                 <div class="caja-titulo-producto">
-                    <h2 class="titulo-producto"> Gibson 50Th</h2>
+                    <h2 class="titulo-producto"> <%= singleProduct.nombre %> </h2>
                 </div>
                     
                 <div class="caja-precio-clasificacion">
-                    <span class="precio-producto"> $900 - $1000 </span>
+                    <span class="precio-producto"> <%= singleProduct.precio %> </span>
 
                     <form>
                         <p class="clasificacion">
@@ -59,7 +62,7 @@
 
             <div class="caja-segunda">
                 <div class="caja-descripcion-producto">
-                    <p class="descripcion-producto"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima ab voluptatem nisi, blanditiis iste harum perspiciatis nulla numquam recusandae fugiat perferendis labore tenetur laudantium culpa ipsam fugit corrupti quaerat sed quisquam minus, quasi pariatur, repellendus consequatur.
+                    <p class="descripcion-producto"> <%= singleProduct.descripcion %>
                     </p>
                 </div>
 
@@ -82,7 +85,7 @@
 
                 <div class="caja-cantidad-producto-carrito">
                     <div class="caja-cantidad-producto">
-                        <input type="number" id="cantidad-seleccion" min="1" max="100" value="1">
+                        <input type="number" id="cantidad-seleccion" min="1" max="<%= singleProduct.cantidad %>" value="1">
                     </div>
 
                     <div class="caja-botones-cantidad-producto">
@@ -94,11 +97,6 @@
                         <form action="" class="formulario-boton-agregar-carrito">
                             <button type="submit" class="boton-agregar-carrito"><i class="fa-solid fa-cart-shopping"></i> <span class="texto-boton-agregar-carrito">ADD TO CART</span></button>
                         </form>
-                    </div>
-
-                    <div class="caja-agregar-carrito">
-                        <form action="/products/delete/<%= singleProduct.id %>?_method=DELETE" method="POST"></form>
-                        <button type="submit">DELETE</button>
                     </div>
                 </div>
 
@@ -121,41 +119,13 @@
                     </span>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <div class="caja-prefooter-informacion-extra-producto">
-        <div class="caja-secciones-secundarias-informacion">
-            <ul class="lista-menu-desplegable-producto" style="list-style: none;">
-                <li class="descripcion-secundaria-producto">
-                    <a href="#tab/description"> Description </a>
-                </li>
-                <li class="informacion-adicional-secundaria-producto">
-                    <a href="#tab/additional-information"> Additional Information </a>
-                </li>
-                <li class="review-secundaria-producto">
-                    <a href="#tab/reviews"> Reviews </a>
-                </li>
-            </ul>
-
-            <div class="caja-descripcion-secundaria-producto">
-                <p class="texto-descripcion-secundaria-producto">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Recusandae labore voluptas assumenda earum quo dolor ab nesciunt beatae magnam ea necessitatibus iusto aliquam, non molestiae at totam fuga eius magni, incidunt omnis. Debitis nam dolor nihil numquam voluptate odio omnis natus tenetur ducimus consectetur maiores ipsam sapiente illum ad nobis repellendus molestiae voluptas perspiciatis praesentium labore, fugit cupiditate! Accusamus odit aspernatur perferendis recusandae autem quos magni molestiae sapiente amet aliquam nihil repudiandae eligendi ipsam laudantium qui officiis et quas, vero, pariatur tempora hic id, excepturi impedit distinctio.
-                Sunt ullam eaque corporis repudiandae in cumque vero deserunt, laboriosam dicta ad, quidem quas excepturi molestias harum asperiores repellat dolorum, ipsam similique ipsum. Quidem voluptas velit, cumque, laboriosam perferendis placeat consequatur.
-                </p>
-            </div>
-
-            <div>
-                <h2></h2>
-
-                <div>
-                    <p>
-                        
-                    </p>
-
-                    <span></span>
-                </div>
+            <div class="caja-eliminar-producto">
+                <form action="/products/delete/<%= singleProduct.id %>?_method=DELETE" method="POST"></form>
+                <button type="submit">DELETE</button>
             </div>
         </div>
+
     </div>
 </section>
     <%- include ("./partials/footer") %>

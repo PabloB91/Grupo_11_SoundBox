@@ -161,11 +161,25 @@ input[type=number]::-webkit-outer-spin-button {
   margin: 0;
 }
 
+.linea-superior{
+    background-color: black;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 18px 0;
+    margin-bottom: 50px;
+
+}
+
+
+
 /* CAJAS */
 
 .caja-general{
     display: flex;
     padding: 0 50px 0 50px;
+    padding-bottom: 30%;
 }
 
 .caja-sub-general-informacion{
