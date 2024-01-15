@@ -17,7 +17,7 @@ const storage = multer.diskStorage({
 
     // que nombre tendra el archivo nuevo
     filename : function(req, file, cb){
-        cb(null, file.fieldname + " - " + Date.now() + path.extname(file.originalname));
+        cb(null, 'SOUNDBOX'+file.fieldname + " - " + Date.now() + path.extname(file.originalname));
     }
 
 });
@@ -28,7 +28,7 @@ router.get('/productDetail/:id', productsController.detail);
 
 // Crear un producto
 router.get('/create', productsController.create);
-router.post('/create', upload.array('form-imagen'), productsController.processCreate);
+router.post('/create', upload.array('form-imagen' ), productsController.processCreate);
 /* router.post('/create', upload.single('image'),productsController.processCreate); */
 
 // Editar un producto 
