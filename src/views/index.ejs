@@ -37,38 +37,60 @@
         <section class="compra-por-categoria" id="section-categorias">
             <h3>COMPRA POR CATEGORÍA</h3>
             <div class="items-categorias">  <!-- <img src="/img/home/categoria-guitarras.jpg" alt="Guitarras"> -->
+            
                 <article class="categoria">
                     <p>Guitarras</p>
                     <img src="/img/home/categoria-guitarras.jpg" alt="Guitarras">
                 </article>
+
+            <a href="categoria/Accesorios"></a>
                 <article class="categoria">
                     <p>Accesorios</p>
                     <img src="/img/home/categoria-accesorios.jpg" alt="Accesorios">
                 </article>
+            </a>
+
+            <a href="categoria/Efectos"></a>
                 <article class="categoria">
                     <p>Efectos</p>
                     <img src="/img/home/categoria-efectos.jpg" alt="Efectos">
                 </article>
+            </a>
+
+            <a href="categoria/Pianos"></a>
                 <article class="categoria">
                     <p>Teclados & Pianos</p>
                     <img src="/img/home/categoria-pianos-teclados.jpg" alt="Teclados&Pianos">
                 </article>
+            </a>
+            
+            <a href="categoria/Orquesta"></a>
                 <article class="categoria">
                     <p>Orquesta</p>
                     <img src="/img/home/categoria-orquesta.jpg" alt="Orquesta">
                 </article>
+            </a>
+
+            <a href="categoria/Amplificacion"></a>
                 <article class="categoria">
                     <p>Amplificación</p>
                     <img src="/img/home/categoria-amplificacion.jpg" alt="Amplificación">
                 </article>
+            </a>
+
+            <a href="categoria/Segunda-Mano"></a>
                 <article class="categoria">
                     <p>Segunda Mano</p>
                     <img src="/img/home/categoria-segundamano.jpg" alt="Segunda Mano">
                 </article>
+            </a>
+
+            <a href="categoria/Grabacion"></a>
                 <article class="categoria">
                     <p>Grabación</p>
                     <img src="/img/home/categoria-grabacion.jpg" alt="Grabación">
                 </article>
+            </a>
             </div>
             <div class="button">
                 <button>VER TODAS LAS CATEGORÍAS</button>
@@ -94,65 +116,43 @@
                 </ul>  
             </div>
             <div class="items-mas-vendidos">  
-                <article class="producto">
-                    <img src="/img/productos/varios/trompeta.jpg" alt="Trompeta">
-                    <div class="detalle-producto">
-                        <p class="descripciones"><strong>Plastic Trumpet, White</strong></p>
-                        <div class="container-detalle">
-                            <p class="calificacion">Estrellas</p>
-                            <p class="precios">$6.770</p>
-                        </div>
-                    </div>
-                </article>
-                <article class="producto">
-                    <img src="/img/productos/percusion/percusion-2.jpg" alt="Percusion" >
-                    <div class="detalle-producto">
-                        <p class="descripciones"><strong>Mein Cymbals Arena Marching Cymbals Pair</strong></p>
-                        <div class="container-detalle">
-                            <p class="calificacion">Estrellas</p>
-                            <p class="precios">$6.770</p>
-                        </div>
-                    </div>
-                </article>
-                <article class="producto">
-                    <img src="/img/productos/orquesta/orquesta-1.jpg" alt="Orquesta" >
-                    <div class="detalle-producto">
-                        <p class="descripciones"><strong>Handcrafted Wood Aoustic Violin</strong></p>
-                        <div class="container-detalle">
-                            <p class="calificacion">Estrellas</p>
-                            <p class="descuentos">40% OFF</p>
-                        </div>
-                    </div>
-                </article>
-                <article class="producto">
-                    <img src="/img/productos/guitarras/guitarra-1.jpg" alt="Guitarra" >
-                    <div class="detalle-producto">
-                        <p class="descripciones"><strong>Gibson 2016 T Les Paul Studio 50'S Tribute</strong></p>
-                        <div class="container-detalle">
-                            <p class="calificacion">Estrellas</p>
-                            <p class="precios">$6.770</p>
-                        </div>
-                    </div>
-                </article>
+
+                <% masVendidos.forEach(element => { %>
+                    <a href="/products/productDetail/<%= element.id %>">
+                        <article class="producto">
+                            <img src="/img/products/<%= element.imagen %>" alt="Trompeta">
+                            <div class="detalle-producto">
+                                <p class="descripciones"><strong>Plastic Trumpet, White</strong></p>
+                                <div class="container-detalle">
+                                    <p class="calificacion">
+
+                                        <form class="formulario-clasificacion">
+                                            <p class="clasificacion">
+                                            <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                                            --><label for="radio1"><i class="fa-solid fa-star"></i></label><!--
+                                            --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+                                            --><label for="radio2"><i class="fa-solid fa-star"></i></label><!--
+                                            --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+                                            --><label for="radio3"><i class="fa-solid fa-star"></i></label><!--
+                                            --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+                                            --><label for="radio4"><i class="fa-solid fa-star"></i></label><!--
+                                            --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+                                            --><label for="radio5"><i class="fa-solid fa-star"></i></label>
+                                            </p>
+                                        </form>
+
+
+                                    </p>
+                                    <p class="precios">$ <%= element.precio %></p>
+                                </div>
+                            </div>
+                        </article>
+                    </a>
+                
+                <% }); %>
+
                 </div>
             </section>
-            <!-- se deja esta sección dinámica comentada para aplicarla sobre la actualizada
-            <div class="items-mas-vendidos">  
-                <% /*masVendidos.forEach(product => { */%>
-         
-                    <article class="producto">
-                        <a href="/products/productDetail">
-                        <img src=<%= /*product.imagen*/ %> alt="Imagen">
-                        <div class="detalle-producto">
-                            <p class="descripciones"><strong><%= /*product.nombre*/ %></strong></p>
-                            <div class="container-detalle">
-                                <p class="calificacion">Estrellas</p>
-                                <p class="precios">$<%= /*product.precio*/ %></p>
-                            </div>
-                        </div>
-                        </a>
-                    </article>
-                <% /*})*/ %>-->
             </div>
         </section>
 
@@ -210,7 +210,7 @@
                     <div class="detalle-producto">
                         <div>
                             <p class="descripciones"><strong>Handcrafted Wood Acustic Violin</strong></p>
-                            <p class="precios">Estrellas</p>
+                            <p class="precios"></p>
                             <p class="descuentos">Por Juan Se</p>
                         </div>
                     </div>

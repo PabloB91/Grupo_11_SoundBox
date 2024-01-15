@@ -55,17 +55,20 @@ const controller = {
 
 		const newProduct = {
 			id: products[products.length - 1].id + 1,
-			imagen: req.file.filename,
+			imagen: req.files[0]["filename"],
+			imagenFrontal: req.files[1]["filename"],
+			imagenLateralDerecha: req.files[2]["filename"],
+			imagenLateralIzquierda: req.files[3]["filename"],
 			nombre: req.body.nombre,
 			marca: req.body.marca,
 			precio: req.body.precio,
 			descuento: req.body.descuento,
 			descripcion: req.body.descripcion,
 			cantidad: req.body.cantidad,
-			coloresDisponibes: req.body.color,
-			categoria: req.body.categoria
+			coloresDisponibes: req.body.coloresDisponibes,
+			categorias: req.body.categorias
 		}
-
+/
 		products.push(newProduct);
 
 		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
@@ -102,17 +105,21 @@ const controller = {
 		// Creamos el producto "nuevo" que va a reemplazar al anterior
 		productToEdit = {
 			id: productToEdit.id,
-			imagen:  req.file != undefined ? req.file.filename : productToEdit.imagen,
+			imagen: req.files == [] ? req.files[0]["filename"] : productToEdit.imagen,
+			imagenFrontal: req.files ==  []  ? req.files[1]["filename"] : productToEdit.imagenFrontal,
+			imagenLateralDerecha: req.files == [] ? req.files[2]["filename"] : productToEdit.imagenLateralDerecha,
+			imagenLateralIzquierda: req.files == [] ? req.files[3]["filename"] : productToEdit.imagenLateralIzquierda,
 			marca: req.body.marca,
 			nombre: req.body.nombre,
 			precio: req.body.precio,
 			descuento: req.body.descuento,
 			descripcion: req.body.descripcion,
-			cantidad: req.body.cantidad,
-			coloresDisponibles: req.body != undefined ? req.body.coloresDisponibles : productToEdit.coloresDisponibles,
+			cantidad: req.body.cantidad, /* NO FUNCIONA */
+			coloresDisponibles: req.body.cantidad, /* NO FUNCIONA */
 			categorias: req.body.categorias,
 			estado: req.body.estado
 		}
+		console.log(req.files)
 
 		// Buscamos la posicion del producto a editar
 		let indice = products.findIndex(product => {
