@@ -1,15 +1,11 @@
-const fs = require ("fs");
-
-
-function authMiddleware (req, res, next) {
-    let admin = false
-    if(admin == true){
-        res.redirect("administrador")
-    }else{
-
+function authMiddlewares (req, res, next) {
+    let admin = true;
+    if (admin) {
+        next();
+    } else {
+        res.render("no-admin");
     }
     
-    next();
-}
+};
 
-module.exports = authMiddleware;
+module.exports = authMiddlewares;
