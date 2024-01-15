@@ -28,12 +28,12 @@ router.get('/productDetail/:id', productsController.detail);
 
 // Crear un producto
 router.get('/create', productsController.create);
-router.post('/create', upload.array('form-imagen' ), productsController.processCreate);
+router.post('/create', upload.single('form-imagen'), productsController.processCreate);
 /* router.post('/create', upload.single('image'),productsController.processCreate); */
 
 // Editar un producto 
 router.get('/edit/:id', productsController.edit); 
-router.put('/edit/:id', productsController.processEdit);
+router.put('/edit/:id', upload.single('form-imagen'), productsController.processEdit);
 
 // Eliminar un producto 
 router.delete('/delete/:id', productsController.destroy);

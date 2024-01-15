@@ -5,33 +5,51 @@
     <section class="header-superior">
         <div class="container">
             <nav>
-                    <ul>
-                        <li>
+                <ul>
+
+                    <li class="li-comment">
+                        <div class="comment_envios-locales">
                             <span class="material-symbols-outlined">local_shipping</span>
                             <span class="material-symbols-outlined">travel</span>
                             <p>Envíos locales e internacionales inmediatos</p>
-                        </li>
-                    </ul>
-                </div>
-                <div class="login-bar">
-                    <ul>
-                        <li><span class="material-symbols-outlined">person</span><a href="/register">
-                                <p class="crear-p">Crear cuenta</p>
-                            </a></li>
-                        <li><a href="/login">
-                                <p>Ingresar</p>
-                            </a><span class="material-symbols-outlined">login</span></li>
-                        <li class="mi-cajita"><img src="/img/svg/cajitaSBX.svg" class="shopping-box"><a
-                                href="/productCart">Mi Cajita</a></li>
-                    </ul>
-                </div>
-                    <div class="usuario">
-                        <ul>
-                            <li>
-                                <a href=""><i class="fa-regular fa-circle-user"></i></a>
-                            </li>
-                        </ul>
-                    </div>
+                        </div>
+                    </li>
+                    
+                    <li class="li_login-register">
+                        <div class="register-login">
+
+                            <div class="login">
+                                <a href="/loin">
+                                    <span class="material-symbols-outlined">login</span> Ingresar
+                                </a>
+                            </div>
+
+                            <div class="register">
+                                <a href="/register">
+                                    <span class="material-symbols-outlined">person</span> Crear cuenta
+                                </a>
+                            </div>
+
+                        </div>
+                    </li>
+
+                    <li class="li-miCajita">
+                        <a href="/productCart">
+                            <div class="btn-cajita">
+                                <img src="/img/svg/cajitaSBX.svg" class="svg-miCajita">
+                                Mi cajita
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="li_user">
+                        <a href="/admin" class="acount">
+                            <i class="fa-sharp fa-solid fa-circle-user" style="color: #ff540a;"></i>
+                        </a>
+                    </li>
+                    
+                </ul>
+
             </nav>
         </div>
     </section>
@@ -39,81 +57,113 @@
     <!-- 2) Sección optimizada / hoja de estilo header-footer actualizada -->
 
     <section class="header-inferior">
-        <img id="logo" src="/img/svg/estandar.svg" usemap="#workmap" alt="SoundBox">
-        <map name="workmap">
-            <!-- Este 'map' es para definir un área clickeable sobre el logo, para usarlo de link al home -->
-            <area shape="rect" coords="0,0,270,350" alt="Logo" href="/">
-        </map>
-        <div class="nav-bar">
-            <ul>
-                <div class="dropdown">
-                    <li>
-                        <a href="#section-categorias">Todos los instrumentos</a><i class="fa-solid fa-chevron-down"></i>
-                    </li>
-                    <div class="dropdown-content">
-                        <a href="categoria/Guitarras">Guitarras</a>
-                        <a href="categoria/Orquesta">Orquesta</a>
-                        <a href="categoria/Grabacion">Grabacion</a>
+
+        <nav class="header-inferior_nav">
+            <ul class="header-inferior_nav_ul">
+
+                <li class="li_img-logoSBX">
+
+                    <div class="img-logoSBX">
+                        <a href="/">
+                            <img id="logo" src="/img/svg/estandar.svg" usemap="#workmap" alt="SoundBox">
+                        </a>
                     </div>
-                </div>
-                <div class="dropdown">
-                    <li>
+
+                </li>
+
+                <li class="dropdown">
+
+                    <div>
+                        <a href="#section-categorias">Todos los instrumentos</a><i class="fa-solid fa-chevron-down"></i>
+                    </div>
+
+                    <div class="dropdown-content">
+                        <a href="/categoria/Guitarras">Guitarras</a>
+                        <a href="/categoria/Orquesta">Orquesta</a>
+                        <a href="/categoria/Grabacion">Grabacion</a>
+                    </div>
+
+                </li>
+
+                <li class="dropdown">
+
+                    <div>
                         <a href="#section-mas-vendidos">Top Sellers</a><i class="fa-solid fa-chevron-down"></i>
-                    </li>
+                    </div>
+
                     <div class="dropdown-content">
                         <a href="#">Link 1</a>
                         <a href="#">Link 2</a>
                         <a href="#">Link 3</a>
                     </div>
-                </div>
-                <div class="dropdown">
-                    <li>
+
+                </li>
+
+                <li class="dropdown">
+
+                    <div>
                         <a href="#seccion-marcas-banners">Marcas</a><i class="fa-solid fa-chevron-down"></i>
-                    </li>
+                    </div>
+
                     <div class="dropdown-content">
                         <a href="#">Marshall</a>
                         <a href="#">Zildjian</a>
                         <a href="#">Gibson</a>
                     </div>
-                </div>
-                <div class="dropdown">
-                    <li>
+
+                </li>
+
+                <li class="dropdown">
+
+                    <div>
                         <a href="#">Accesorios</a><i class="fa-solid fa-chevron-down"></i>
-                    </li>
+                    </div>
+
                     <div class="dropdown-content">
                         <a href="#">Link 1</a>
                         <a href="#">Link 2</a>
                         <a href="#">Link 3</a>
                     </div>
-                </div>
-                <div class="dropdown">
-                    <li>
+
+                </li>
+
+                <li class="dropdown">
+
+                    <div>
                         <a href="#">Segunda mano</a><i class="fa-solid fa-chevron-down"></i>
-                    </li>
+                    </div>
+
                     <div class="dropdown-content">
                         <a href="#">Link 1</a>
                         <a href="#">Link 2</a>
                         <a href="#">Link 3</a>
                     </div>
-                </div>
-                <div class="dropdown">
-                    <li>
+
+                </li>
+
+                <li class="dropdown">
+
+                    <div>
                         <a href="#">Ofertas</a><i class="fa-solid fa-chevron-down"></i>
-                    </li>
+                    </div>
+
                     <div class="dropdown-content">
                         <a href="#">Link 1</a>
                         <a href="#">Link 2</a>
                         <a href="#">Link 3</a>
                     </div>
-                </div>
-                <div class="search-bar">
-                    <li>
-                        <input type="search">
-                        <span id="search" class="material-symbols-outlined">search</span>
-                    </li>
-                </div>
+
+                </li>
+
+                <li class="search-bar">
+                    <div class="search">
+                        <i class="fa-solid fa-magnifying-glass" style="color: #fff;"></i>
+                    </div>
+                </li>
+
             </ul>
-        </div>
+        </nav>
+
     </section>
 
 </header>
