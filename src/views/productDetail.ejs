@@ -17,7 +17,7 @@
 <body>
 <section>
     <div class="linea-superior">
-        <p style="color: white; font-size: 16px;"> Producto <%= singleProduct.nombre %> </p>
+        <p style="color: white; font-size: 16px;"> <%= singleProduct.nombre %> </p>
     </div>
     <div class="caja-general">
             <div class="caja-objeto-favorito caja-me-gusta">
@@ -42,8 +42,9 @@
                     
                 <div class="caja-precio-clasificacion">
                     <span class="precio-producto"> <%= singleProduct.precio %> </span>
+                    <span class="descuento-producto"><%= singleProduct.descuento %>% OFF</span>
 
-                    <form>
+                    <form class="formulario-clasificacion">
                         <p class="clasificacion">
                         <input id="radio1" type="radio" name="estrellas" value="5"><!--
                         --><label for="radio1"><i class="fa-solid fa-star"></i></label><!--
@@ -65,22 +66,20 @@
                     <p class="descripcion-producto"> <%= singleProduct.descripcion %>
                     </p>
                 </div>
-
+                
                 <div class="caja-colores-producto">
                     <span class="texto-color">Color</span>
                     
                     <div class="caja-seleccion-colores">
                         <form action="">
                             <select id="colores-seleccion" value>
-                                <option value="negro" selected>Negro</option>
-                                <option value="gris">Gris</option>
-                                <option value="blanco">Blanco</option>
-                                <option value="rojo">Rojo</option>
-                                <option value="amarillo">Amarilla</option>
+                                
+                                <option value="negro"><%= singleProduct.coloresDisponibles %></option>
                             </select>
                         </form>
                     </div>
                 </div>
+
             </div>
 
                 <div class="caja-cantidad-producto-carrito">
@@ -120,6 +119,7 @@
                 </div>
             </div>
 
+            <a href="/products/edit/<%= singleProduct.id %>" class="action-button edit"><button>EDITAR PRODUCTO</button></a>
             <div class="caja-eliminar-producto">
                 <form action="/products/delete/<%= singleProduct.id %>?_method=DELETE" method="POST"></form>
                 <button type="submit">DELETE</button>

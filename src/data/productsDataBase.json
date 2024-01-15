@@ -1,17 +1,17 @@
 [
  {
   "id": 1,
-  "imagen": "/img/productos/guitarras/guitarra-1.jpg",
-  "imagenFrontal": "/img/productos/guitarras/guitarra-1.jpg",
+  "imagen": "/img/productos/guitarras/guitarra-2.jpg",
+  "imagenFrontal": "/img/productos/guitarras/guitarra-2.jpg",
   "imagenLateralDerecha": "/img/productos/guitarras/guitarra-1.jpg",
   "imagenLateralIzquierda": "/img/productos/guitarras/guitarra-1.jpg",
   "marca": "Audifonos XDDADWWA",
   "nombre": "Audifonos 1000X m-4",
   "precio": 100000,
   "descuento": 20,
-  "descripcion": "lorem",
+  "descripcion": "Lorem ipsum tu mama en tanga",
   "cantidad": 10,
-  "coloresDisponibes": "Color",
+  "coloresDisponibles": ["Azul", "Negro", "Amarillo", "Marron"],
   "categorias": "Orquesta",
   "estado": "masVendido"
   
@@ -28,7 +28,7 @@
   "descuento": 20,
   "descripcion": "Descripcion",
   "cantidad": 10,
-  "coloresDisponibes": "Color",
+  "coloresDisponibles": "Color",
   "categorias": "Guitarras",
   "estado": "masVendido"
  },
@@ -44,7 +44,7 @@
   "descuento": 20,
   "descripcion": "Descripcion",
   "cantidad": 10,
-  "coloresDisponibes": "Color",
+  "coloresDisponibles": "Color",
   "categorias": "Guitarras",
   "estado": "masVendido"
  },
@@ -60,7 +60,7 @@
   "descuento": 20,
   "descripcion": "Descripcion",
   "cantidad": 10,
-  "coloresDisponibes": "Color",
+  "coloresDisponibles": "Color",
   "categorias": "Guitarras",
   "estado": "masVendido"
  },
@@ -76,7 +76,7 @@
   "descuento": 20,
   "descripcion": "Descripcion",
   "cantidad": 10,
-  "coloresDisponibes": "Color",
+  "coloresDisponibles": "Color",
   "categorias": "Guitarras",
   "estado": "masVendido"
  }

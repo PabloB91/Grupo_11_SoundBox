@@ -68,13 +68,15 @@ const controller = {
 	edit: (req, res) => {
 		// Do the magic
 
-		let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
-		const productToEdit = products.find(product => {
-			return product.id == req.params.id
-		})
+		const productToEdit = products.find((product) => {
 
-		res.render("product-edit-form", { productToEdit });
+			return product.id == req.params.id;
+
+		}) 
+
+		res.render("editarProducto", {productToEdit})
 	},
 	// (post) Update - Método para actualizar la info
 	processEdit: (req, res) => {
