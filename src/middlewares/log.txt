@@ -257,3 +257,9 @@ se ingreso a la pagina:/products/edit/5
 se ingreso a la pagina:/
 se ingreso a la pagina:/categoria/Guitarras
 se ingreso a la pagina:/products/productDetail
+se ingreso a la pagina:/products/productDetail
+se ingreso a la pagina:/products/productDetail/1
+se ingreso a la pagina:/products/productDetail/6
+se ingreso a la pagina:/products/edit/6
+se ingreso a la pagina:/products/delete/6?_method=DELETE
+se ingreso a la pagina:/
