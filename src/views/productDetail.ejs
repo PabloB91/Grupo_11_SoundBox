@@ -120,9 +120,8 @@
             </div>
 
             <a href="/products/edit/<%= singleProduct.id %>" class="action-button edit"><button>EDITAR PRODUCTO</button></a>
-            <div class="caja-eliminar-producto">
-                <form action="/products/delete/<%= singleProduct.id %>?_method=DELETE" method="POST"></form>
-                <button type="submit">DELETE</button>
+            <form action="/products/delete/<%= singleProduct.id %>?_method=DELETE" method="POST" style="display: inline-flex">
+                <button type="submit" class="action-button delete">ELIMINAR</button>
             </div>
         </div>
 

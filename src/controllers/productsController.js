@@ -53,7 +53,18 @@ const controller = {
 
 		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
-		const newProduct = require(path.join(__dirname, '/uploadCreate.js'));
+		const newProduct = {
+			id: products[products.length - 1].id + 1,
+			imagen: req.file.filename,
+			nombre: req.body.nombre,
+			marca: req.body.marca,
+			precio: req.body.precio,
+			descuento: req.body.descuento,
+			descripcion: req.body.descripcion,
+			cantidad: req.body.cantidad,
+			coloresDisponibes: req.body.color,
+			categoria: req.body.categoria
+		}
 
 		products.push(newProduct);
 
@@ -91,12 +102,16 @@ const controller = {
 		// Creamos el producto "nuevo" que va a reemplazar al anterior
 		productToEdit = {
 			id: productToEdit.id,
-			name: req.body.name,
-			price: req.body.price,
-			discount: req.body.discount,
-			category: req.body.category,
-			description: req.body.description,
-			image: productToEdit.image
+			imagen:  req.file != undefined ? req.file.filename : productToEdit.imagen,
+			marca: req.body.marca,
+			nombre: req.body.nombre,
+			precio: req.body.precio,
+			descuento: req.body.descuento,
+			descripcion: req.body.descripcion,
+			cantidad: req.body.cantidad,
+			coloresDisponibles: req.body != undefined ? req.body.coloresDisponibles : productToEdit.coloresDisponibles,
+			categorias: req.body.categorias,
+			estado: req.body.estado
 		}
 
 		// Buscamos la posicion del producto a editar
@@ -107,25 +122,24 @@ const controller = {
 		products[indice] = productToEdit;
 
 		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
-		res.redirect("/")
+		res.redirect("/products/productDetail/" + productToEdit.id)
 	},
 
 	// (delete) Delete - Eliminar un producto de la DB
 	destroy: (req, res) => {
-		// Do the magic
+
 		let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
-        // eliminar
-        products = products.filter(product =>{
+		// eliminar
+		products = products.filter(product =>{
+			
+			return product.id != req.params.id;
 
-            return product.id != req.params.id;
+		})
 
-        });
+		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "))
 
-        fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
-
-        res.redirect("/");
-
+		res.redirect("/")
 	}
 
 };

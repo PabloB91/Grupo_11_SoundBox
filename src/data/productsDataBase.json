@@ -1,43 +1,10 @@
 [
  {
-  "id": 1,
-  "imagen": "/img/productos/guitarras/guitarra-2.jpg",
-  "imagenFrontal": "/img/productos/guitarras/guitarra-2.jpg",
-  "imagenLateralDerecha": "/img/productos/guitarras/guitarra-1.jpg",
-  "imagenLateralIzquierda": "/img/productos/guitarras/guitarra-1.jpg",
-  "marca": "Audifonos XDDADWWA",
-  "nombre": "Audifonos 1000X m-4",
-  "precio": 100000,
-  "descuento": 20,
-  "descripcion": "Lorem ipsum tu mama en tanga",
-  "cantidad": 10,
-  "coloresDisponibles": ["Azul", "Negro", "Amarillo", "Marron"],
-  "categorias": "Orquesta",
-  "estado": "masVendido"
-  
- },
- {
-  "id": 2,
+  "id": 3,
   "imagen": "/img/products/IMG_DEFAULT.svg",
   "imagenFrontal": "/img/products/IMG_DEFAULT.svg",
   "imagenLateralDerecha": "/img/products/IMG_DEFAULT.svg",
   "imagenLateralIzquierda": "/img/products/IMG_DEFAULT.svg",
-  "marca": "Marca",
-  "nombre": "Nombre del producto",
-  "precio": 2000,
-  "descuento": 20,
-  "descripcion": "Descripcion",
-  "cantidad": 10,
-  "coloresDisponibles": "Color",
-  "categorias": "Guitarras",
-  "estado": "masVendido"
- },
- {
-  "id": 3,
-  "imagen": "/img/products/IMG_DEFAULT.svg",
-  "imagenFrontal": "guitarra-2.jpg",
-  "imagenLateralDerecha": "guitarra-3.jpg",
-  "imagenLateralIzquierda": "guitarra-4.jpg",
   "marca": "Marca",
   "nombre": "Nombre del producto",
   "precio": 10000,
@@ -79,5 +46,13 @@
   "coloresDisponibles": "Color",
   "categorias": "Guitarras",
   "estado": "masVendido"
+ },
+ {
+  "id": 6,
+  "nombre": "dwada",
+  "marca": "1421",
+  "precio": "212112",
+  "descuento": "20",
+  "descripcion": "dawdadadad"
  }
 ]
