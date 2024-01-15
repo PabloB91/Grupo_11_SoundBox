@@ -3,7 +3,6 @@ const express = require("express")
 const app = express();
 const fs = require("fs");
 const { log } = require("console");
-
 /* En la constante "products" ya tienen los productos que están 
 guardados en la carpeta Data como Json (un array de objetos literales) */
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
@@ -54,21 +53,7 @@ const controller = {
 
 		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
-		const newProduct = {
-			id: products[products.length - 1].id + 1,
-			imagen: req.file.filename,
-			imagenimagenFrontal: req.file.filename,
-			imagenLateralDerecha: req.file.filename,
-			imagenLateralIzquierda: req.file.filename,
-			nombre: req.body.nombre,
-			marca: req.body.marca,
-			precio: req.body.precio,
-			descuento: req.body.descuento,
-			descripcion: req.body.descripcion,
-			cantidad: req.body.cantidad,
-			coloresDisponibes: req.body.color,
-			categoria: req.body.categoria
-		}
+		const newProduct = require(path.join(__dirname, '/uploadCreate.js'));
 
 		products.push(newProduct);
 

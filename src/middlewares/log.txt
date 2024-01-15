@@ -39,6 +39,7 @@ se ingreso a la pagina:/
 se ingreso a la pagina:/
 se ingreso a la pagina:/
 se ingreso a la pagina:/
+<<<<<<< HEAD
 se ingreso a la pagina:/productCart
 se ingreso a la pagina:/productCart
 se ingreso a la pagina:/
@@ -262,3 +263,36 @@ se ingreso a la pagina:/products/productDetail/1
 se ingreso a la pagina:/img/productos/audifonos-1.jpg
 se ingreso a la pagina:/products/productDetail/1
 se ingreso a la pagina:/products/productDetail/1
+=======
+se ingreso a la pagina:/admin/create
+se ingreso a la pagina:/products/create
+se ingreso a la pagina:/products/create
+se ingreso a la pagina:/products/create
+se ingreso a la pagina:/products/create
+se ingreso a la pagina:/products/create
+se ingreso a la pagina:/products/create
+se ingreso a la pagina:/products/create
+se ingreso a la pagina:/products/create
+se ingreso a la pagina:/products/create
+se ingreso a la pagina:/img/products/IMG_DEFAULT.svg
+se ingreso a la pagina:/img/products/IMG_DEFAULT.svg
+se ingreso a la pagina:/products/create
+se ingreso a la pagina:/img/products/IMG_DEFAULT.svg
+se ingreso a la pagina:/products/create
+se ingreso a la pagina:/img/products/IMG_DEFAULT.svg
+se ingreso a la pagina:/products/create
+se ingreso a la pagina:/img/products/IMG_DEFAULT.svg
+se ingreso a la pagina:/products/create
+se ingreso a la pagina:/img/products/IMG_DEFAULT.svg
+se ingreso a la pagina:/products/create
+se ingreso a la pagina:/img/products/IMG_DEFAULT.svg
+se ingreso a la pagina:/products/create
+se ingreso a la pagina:/img/products/IMG_DEFAULT.svg
+se ingreso a la pagina:/products/create
+se ingreso a la pagina:/img/products/IMG_DEFAULT.svg
+se ingreso a la pagina:/products/create
+se ingreso a la pagina:/img/products/IMG_DEFAULT.svg
+se ingreso a la pagina:/products/create
+>>>>>>> 8afcfb8a1a2e3e173b4513d39a3abdf67bc8f868
+se ingreso a la pagina:/products/productDetail/1
+se ingreso a la pagina:/products/productDetail/2
