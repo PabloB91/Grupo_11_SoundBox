@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 se ingreso a la pagina:/products/productDetail/2
 se ingreso a la pagina:/
 se ingreso a la pagina:/categoria/Guitarras
@@ -129,4 +130,8 @@ se ingreso a la pagina:/products/edit/1
 se ingreso a la pagina:/products/edit/1
 se ingreso a la pagina:/products/edit/1
 se ingreso a la pagina:/products/edit/1
+=======
+>>>>>>> 9f0d9d843d6f1122e51eaf051f50895499a67c4a
+se ingreso a la pagina:/
+se ingreso a la pagina:/
 se ingreso a la pagina:/
