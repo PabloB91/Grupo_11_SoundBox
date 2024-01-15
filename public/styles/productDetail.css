@@ -15,13 +15,17 @@ a{
 }
 
 .precio-producto{
-    margin: 0 25px;
+    margin: 0 5px;
     color: #FF540A;
 }
 
-
 .descripcion-producto{
     margin: 0 0 15px 0;
+}
+
+.descuento-producto{
+    color: green;
+    -webkit-text-stroke: 0.1px;
 }
 
 #colores-seleccion{
@@ -130,6 +134,17 @@ a{
     top: 1.7px;
 }
 
+.linea-superior{
+    background-color: black;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 18px 0;
+    margin-bottom: 50px;
+
+}
+
 label{ 
     color:grey;
 }
@@ -161,17 +176,9 @@ input[type=number]::-webkit-outer-spin-button {
   margin: 0;
 }
 
-.linea-superior{
-    background-color: black;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin: 18px 0;
-    margin-bottom: 50px;
-
+.formulario-clasificacion{
+    margin-left: 100px;
 }
-
 
 
 /* CAJAS */
@@ -197,6 +204,7 @@ input[type=number]::-webkit-outer-spin-button {
     display: flex;
     justify-content: space-evenly;
     margin: 20px 0;
+    align-items: baseline;
 }
 
 .caja-colores-producto{
