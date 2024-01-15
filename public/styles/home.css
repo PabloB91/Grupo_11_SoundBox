@@ -2,6 +2,24 @@
 -----------------------MAIN-----------------------
 -------------------------------------------------*/
 
+
+
+/* ha1 te dejo tu body juanSe*/
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    font-style: normal;
+    margin: auto;
+}
+
+main{
+    margin-top: 50px;
+}
+
+/****************************************/
+
 /*----ETIQUETAS BANNER CARRUSEL----*/
 
 .carrusel {
