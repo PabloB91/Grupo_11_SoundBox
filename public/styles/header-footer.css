@@ -75,8 +75,11 @@ header{
 
             &:hover{
                 cursor: pointer;
-                color: #fff;
-                background: #550C18;
+
+                p{
+                    color: #ff540a;
+
+                }
             }
 
             p{
@@ -94,7 +97,7 @@ header{
 
         display: flex;
         width: 100px;
-        background-color: #ff540a ;
+        background-color: #ff540a;
         text-align: center;
         color: #fff;
         justify-content: center;
@@ -102,7 +105,7 @@ header{
 
         &:hover{
 			cursor: pointer;
-			background: #550C18;
+            background-color: #550C18;
 		}
 
         img{
@@ -115,11 +118,11 @@ header{
         
         .fa-circle-user{
             border-radius: 50%;
-            color: #ff540a;
-
+            color: #fff;
+            
             &:hover{
                 cursor: pointer;
-                color: #550C18;
+                color: #ff540a;
                 background-color: #FFF;
             }
             
@@ -200,14 +203,11 @@ header{
 }
 
 @keyframes stiky-efect{
-
-
     to{
 
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         background: #fff;
     }
-    
 }
 
 @keyframes of-hed-up {
