@@ -92,6 +92,11 @@ header{
         justify-content: center;
         align-items: center;
 
+        &:hover{
+			cursor: pointer;
+			background: #550C18;
+		}
+
         img{
             width:25%;
         }
@@ -165,6 +170,11 @@ header{
         width: 20px;
         height: 20px;
         background-color: #ff540a;
+
+        &:hover{
+			cursor: pointer;
+			background-color: #550C18;
+		}
     }
 
 }
