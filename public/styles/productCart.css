@@ -19,7 +19,6 @@
 .favoritos {
     background-color: #FF540A;
     /* background: linear-gradient(135deg, hsla(342, 100%, 88%, 1) 0%, hsla(0, 84%, 76%, 1) 17%, hsla(18, 100%, 52%, 1) 71%); */
-    border: 5px solid white;
     border-radius: 18px;
     padding: 0.5rem;
     margin: 1rem;
@@ -36,7 +35,7 @@
 }
 
 .desplegable {
-    display: none;
+    /* display: none; */
     flex-direction: column;
     position: relative;
     overflow-y: scroll;
