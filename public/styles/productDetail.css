@@ -49,7 +49,7 @@ a{
 
 .boton-agregar-carrito{
     border: none;
-    border-radius: 12px;
+    border-radius: 7px;
     background-color: #FF540A;
     color: white;
     width: 180px;
@@ -57,14 +57,14 @@ a{
 }
 
 .boton-agregar-carrito:hover{
-    background-color: #83462c;
+    background-color: #550C18;
 }
 
 .fa-heart{
     position: relative;
     left: 265px;
     top: 10px;
-    border-radius: 10px;
+    border-radius: 7px;
     font-size: 25px;
     stroke: black;
     stroke-width: 100;
@@ -86,31 +86,6 @@ a{
 .lista-menu-desplegable-producto{
     display: flex;
     justify-content: center; 
-}
-
-.descripcion-secundaria-producto,
-.informacion-adicional-secundaria-producto,
-.review-secundaria-producto{
-    margin: 0 60px 20px 60px;
-    font-size: 19px;
-}
-
-.descripcion-secundaria-producto:hover{
-    border-bottom: solid 2px black;
-    
-}
-
-.informacion-adicional-secundaria-producto:hover{
-    border-bottom: solid 2px black;
-}
-
-
-.review-secundaria-producto:hover{
-    border-bottom: solid 2px black;
-}
-
-.texto-descripcion-secundaria-producto{
-    padding: 0 0 80px 0;
 }
 
 .texto-color{
@@ -181,12 +156,43 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 
+.editar-borrar{
+    display: flex;
+    margin-top: 22px;
+    justify-content: space-around;
+}
+
+.boton-accion-borrar{
+    border-radius: 5px;
+    border: none;
+    background-color: #FF540A;
+    color: white;
+    height: 32px;
+}
+
+.boton-accion-editar{
+    border-radius: 7px;
+    border: none;
+    background-color: #FF540A;
+    color: white;
+    height: 32px;
+}
+
+.boton-accion-editar:hover{
+    background-color: #550C18;
+}
+
+.boton-accion-borrar:hover{
+    background-color: #550C18;
+}
+
+
 /* CAJAS */
 
 .caja-general{
     display: flex;
     padding: 0 50px 0 50px;
-    padding-bottom: 30%;
+    padding-bottom: 120px;
 }
 
 .caja-sub-general-informacion{
@@ -203,7 +209,7 @@ input[type=number]::-webkit-outer-spin-button {
 .caja-precio-clasificacion{
     display: flex;
     justify-content: space-evenly;
-    margin: 20px 0;
+    margin: 0 0 15px 0;
     align-items: baseline;
 }
 
@@ -255,3 +261,5 @@ input[type=number]::-webkit-outer-spin-button {
 .caja-secciones-secundarias-informacion{
     margin-top: 100px;
 }
+
+

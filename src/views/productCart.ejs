@@ -20,16 +20,16 @@
                         <div class="ordenador-container">
                             <div class="ordenador">
                                 <button onclick="hide()"><i class="fa-solid fa-circle-arrow-up"></i></button>
-                                <button onclick="show()"><i style="color: white;" class="fa-solid fa-arrow-down-a-z"></i></button>
-                                <button><i style="color: white;" class="fa-solid fa-arrow-down-short-wide"></i></button>
-                                <button><i style="color: white;" class="fa-solid fa-arrow-down-wide-short"></i></button>
+                                <button  onclick="show()"><i  class="fa-solid fa-arrow-down-a-z"></i></button>
+                                <button><i  class="fa-solid fa-arrow-down-short-wide"></i></button>
+                                <button><i  class="fa-solid fa-arrow-down-wide-short"></i></button>
                             </div>
                             <div class="labels-ordenador">
-                                <button> Agregar a Favoritos </button>
-                                <button> Eliminar Seleccionados </button>
+                                <span>Eliminar seleccionados</span>
+                                <span>agregar a favoritos</span>
                             </div>
                         </div>
-                        <div class="desplegable">
+                        <div class="desplegable" id="desplegable">
                             <% productos.forEach(product=> { %>
                                 <div class="card">
                                     <input type="checkbox" name="#" id="#">
@@ -69,7 +69,7 @@
                                     </div>
                         </div>
                         <div class="pie">
-                            <i class="fa-solid fa-cart-arrow-down"></i>
+                            <i  class="fa-solid fa-cart-arrow-down"></i>
                         </div>
                     </div>
 
@@ -78,16 +78,16 @@
                         <div class="ordenador-container">
                             <div class="ordenador">
                                 <button onclick="hide()"><i class="fa-solid fa-circle-arrow-up"></i></button>
-                                <button onclick="show()"><i style="color: white;" class="fa-solid fa-arrow-down-a-z"></i></button>
-                                <button><i style="color: white;" class="fa-solid fa-arrow-down-short-wide"></i></button>
-                                <button><i style="color: white;" class="fa-solid fa-arrow-down-wide-short"></i></button>
+                                <button onclick="show()"><i  class="fa-solid fa-arrow-down-a-z"></i></button>
+                                <button><i  class="fa-solid fa-arrow-down-short-wide"></i></button>
+                                <button><i  class="fa-solid fa-arrow-down-wide-short"></i></button>
                             </div>
                             <div class="labels-ordenador">
                                 <label for="#"> Agregar al Carrito </label>
                                 <label for="#"> Eliminar Seleccionados </label>
                             </div>
                         </div>
-                        <div class="desplegable">
+                        <div class="desplegable" id="desplegable">
                             <% productos.forEach(product=> { %>
                                 <div class="card">
                                     <input type="checkbox" name="#" id="#">
@@ -231,14 +231,14 @@
 
 <script type="text/javascript">
     function hide(){
-        document.getElementById("carrito").style.display = "none";
-        document.getElementById("favoritos").style.display = "block";
+        document.getElementById("desplegable").style.display = "none";
+        // document.getElementById("favoritos").style.display = "block";
 
     }
 
     function show(){
         document.getElementById("favoritos").style.display = "none";
-        document.getElementById("carrito").style.display = "block";
+        // document.getElementById("carrito").style.display = "block";
 
     }
 
