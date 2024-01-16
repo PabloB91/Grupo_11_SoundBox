@@ -69,7 +69,15 @@ header{
         a { 
             display: flex;
             align-items: center;
+            justify-content: center;
             color: #ff540a;
+            width: 135px;
+
+            &:hover{
+                cursor: pointer;
+                color: #fff;
+                background: #550C18;
+            }
 
             p{
                 font-size: 1rem;
@@ -104,6 +112,18 @@ header{
 
     .li_user{
         font-size: 25px;
+        
+        .fa-circle-user{
+            border-radius: 50%;
+            color: #ff540a;
+
+            &:hover{
+                cursor: pointer;
+                color: #550C18;
+                background-color: #FFF;
+            }
+            
+        }
     }
     
 }
