@@ -405,3 +405,39 @@ main{
     width: 100%;
     border-radius: 8px;
 }
+
+
+
+/* ESTRELLAS CALIFICACION/ CLASIFICACION */
+label{ 
+    color:grey;
+}
+
+input[type = "radio"]{ 
+    display:none;
+}
+
+.clasificacion{
+  direction: rtl;
+  unicode-bidi: bidi-override;
+}
+
+label:hover{
+    color:orange;
+}
+
+label:hover ~ label{
+    color:orange;
+}
+
+input[type = "radio"]:checked ~ label{
+    color:orange;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+

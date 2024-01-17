@@ -25,23 +25,23 @@
             </div>
 
             <div class="caja-imagenes-general">
-                <img src=" <%= singleProduct.imagen %> " alt="guitarra1" class="imagen-producto-principal">
+                <img src="/img/products/<%= singleProduct.imagen %> " alt="guitarra1" class="imagen-producto-principal">
                 
                 <div class="imagenes-secundarias-inferior">
-                    <img src=" <%= singleProduct.imagenFrontal %> " alt="guitarra1" class="imagen-producto-secundaria">
-                    <img src=" <%= singleProduct.imagenLateralDerecha %> " alt="guitarra1" class="imagen-producto-secundaria">
-                    <img src=" <%= singleProduct.imagenLateralIzquierda %> " alt="guitarra1" class="imagen-producto-secundaria">
+                    <img src="/img/products/<%= singleProduct.imagenFrontal %> " alt="guitarra1" class="imagen-producto-secundaria">
+                    <img src="/img/products/<%= singleProduct.imagenLateralDerecha %> " alt="guitarra1" class="imagen-producto-secundaria">
+                    <img src="/img/products/<%= singleProduct.imagenLateralIzquierda %> " alt="guitarra1" class="imagen-producto-secundaria">
                 </div>
             </div>
 
         <div class="caja-sub-general-informacion">
             <div class="caja-primera">
                 <div class="caja-titulo-producto">
-                    <h2 class="titulo-producto"> <%= singleProduct.nombre %> </h2>
+                    <h2 class="titulo-producto"> <%= singleProduct.marca + " " + singleProduct.nombre %> </h2>
                 </div>
                     
                 <div class="caja-precio-clasificacion">
-                    <span class="precio-producto"> <%= singleProduct.precio %> </span>
+                    <span class="precio-producto"> $ <%= singleProduct.precio %> </span>
                     <span class="descuento-producto"><%= singleProduct.descuento %>% OFF</span>
 
                     <form class="formulario-clasificacion">
@@ -69,15 +69,16 @@
                 
                 <div class="caja-colores-producto">
                     <span class="texto-color">Color</span>
-                    
-                    <div class="caja-seleccion-colores">
-                        <form action="">
-                            <select id="colores-seleccion" value>
-                                
-                                <option value="negro"><%= singleProduct.coloresDisponibles %></option>
-                            </select>
-                        </form>
-                    </div>
+                        
+                         <div class="caja-seleccion-colores">
+                            <form action="">
+                                <select id="colores-seleccion" >
+                    <% for (const iterator of singleProduct["coloresDisponibles"]) { %>
+                        <option value="negro"><%= iterator %></option>
+                        <% } %>
+                                </select>
+                            </form>
+                        </div>
                 </div>
 
             </div>
@@ -102,30 +103,33 @@
             <div class="caja-links-extra-producto">
                 <div class="caja-categorias-producto">
                     <span class="links-categorias-producto">Categories:
-                        <a href="#">Guitars</a>,
-                        <a href="#">Band & Orchestra</a>,
-                        <a href="#">Bass Guitar</a>,
-                        <a href="#">Instruments</a>,
-                        <a href="#">Orchestral Strings</a>
+
+                        <a href="#"> <%= iterator %></a>
                     </span>
                 </div>
 
                 <div class="caja-tags-producto">
-                    <span class="links-tags-producto">Tags:
-                        <a href="#">sale</a>,
-                        <a href="#">company</a>,
-                        <a href="#">electric guitars</a>
+                    <span class="links-tags-producto">Estado:
+                        <a href="#">sale</a>
                     </span>
                 </div>
             </div>
-
-            <a href="/products/edit/<%= singleProduct.id %>" class="action-button edit"><button>EDITAR PRODUCTO</button></a>
-            <form action="/products/delete/<%= singleProduct.id %>?_method=DELETE" method="POST" style="display: inline-flex">
-                <button type="submit" class="action-button delete">ELIMINAR</button>
+            
+            <div class="editar-borrar">
+                <a href="/products/edit/<%= singleProduct.id %>"><button class="boton-accion-editar">EDITAR PRODUCTO</button></a>
+                
+                <form action="/products/delete/<%= singleProduct.id %>?_method=DELETE" method="POST" style="display: inline-flex">
+                    <button type="submit" class="boton-accion-borrar">ELIMINAR</button>
             </div>
         </div>
-
+        
     </div>
+        <div class="caja-descripcion-secundaria-producto">
+            <h6 class="parrafo-descripcion-producto">Información Adicional</h6>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis error architecto similique cumque. Exercitationem iure qui possimus facilis iusto, beatae temporibus omnis. Aliquam eum voluptas ab exercitationem rem libero est!</p>
+        </div>
+        
 </section>
+</div>
     <%- include ("./partials/footer") %>
 </body>

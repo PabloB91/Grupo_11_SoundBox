@@ -3,7 +3,16 @@
 -------------------------------------------------*/
 
 header{
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    animation: stiky-efect linear both;
+    animation-timeline: scroll(root block);
+    animation-range: 0 80px;
+
 
     ul{
         list-style-type: none;
@@ -12,23 +21,36 @@ header{
 
 .header-superior{
     background-color: #000;
+    animation:of-hed-up linear both;
+    animation-timeline: scroll(root block);
+    animation-range: 0 60px;
+    
+    .container {
+        width: 100%;
+    
+    }
 
-    .tira-derecha {
+    .right{
         display: flex;
-        
+        justify-content: flex-start;
+        align-items: center;
 
     }
 
-    .container {
-        width: 100%;
-        max-width: 1100px;
-    
+    .left{
+        width: 50%;
+        display: flex;
+        justify-content: flex-end;
+
+        li{
+            padding-right: 5%;
+        }
     }
 
     ul{
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-evenly;
+        justify-content: space-around;
 
     }
 
@@ -44,18 +66,47 @@ header{
     .register-login{
         display: flex;
 
-        a {
+        a { 
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: #ff540a;
+            width: 135px;
+
+            &:hover{
+                cursor: pointer;
+
+                p{
+                    color: #ff540a;
+
+                }
+            }
+
+            p{
+                font-size: 1rem;
+                color: #fff;
+            }
         }
+    }
+
+    .register{
+        padding-right: 10px;
     }
 
     .btn-cajita{
 
+        display: flex;
         width: 100px;
-        background-color: #ff540a ;
+        background-color: #ff540a;
         text-align: center;
+        color: #fff;
         justify-content: center;
         align-items: center;
+
+        &:hover{
+			cursor: pointer;
+            background-color: #550C18;
+		}
 
         img{
             width:25%;
@@ -64,12 +115,24 @@ header{
 
     .li_user{
         font-size: 25px;
+        
+        .fa-circle-user{
+            border-radius: 50%;
+            color: #fff;
+            
+            &:hover{
+                cursor: pointer;
+                color: #ff540a;
+                background-color: #FFF;
+            }
+            
+        }
     }
-
+    
 }
 
 .header-inferior{
-
+    
     .header-inferior_nav_ul{
         display: flex;
         align-items: center;
@@ -122,6 +185,7 @@ header{
     }
 
     .search{
+        border-radius: 2px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -129,8 +193,30 @@ header{
         width: 20px;
         height: 20px;
         background-color: #ff540a;
+
+        &:hover{
+			cursor: pointer;
+			background-color: #550C18;
+		}
+    }
+
+}
+
+@keyframes stiky-efect{
+    to{
+
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        background: #fff;
     }
 }
+
+@keyframes of-hed-up {
+    
+    to{
+        display: none;
+    }
+}
+    
 
 /*-----------------------------------------------
 --------------------FOOTER-----------------------

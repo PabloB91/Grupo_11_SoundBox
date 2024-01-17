@@ -1,19 +1,26 @@
 /* ETIQUETAS UNIVERSALES */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
     text-decoration: none;
+    box-sizing: border-box;
     outline: none;
     border: none;
+    margin: 0;
+    padding: 0;
+    min-width: 0;
 }
 
 
 /* ETIQUETAS DEL BODY */
 
-
+body {
+    min-height: 100dvh; 
+}
 
 /* ETIQUETAS DE TEXTO */
+
+h1 h2 h3 h4 h5 h6{
+    text-wrap: balance;
+}
 
 
 h1 {
@@ -53,7 +60,8 @@ h6 {
     font-size: 18px;
 }
 
-/*p {
+p {
     font-family: 'Montserrat';
     font-size: 18px;
-}*/
+    text-wrap: pretty;
+}

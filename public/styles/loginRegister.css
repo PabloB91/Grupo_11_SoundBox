@@ -1,11 +1,19 @@
 /*===============================================================================================================*/
 header{
-    height: 8vh;
 
+	position: static;
+
+	animation: stiky-efect 1s linear infinite;
+
+	.header-superior{
+		animation: of-hed-up 1s linear infinite;
+	}
+	
     .header-inferior{
-        display: none;
+		display: none;
     }
 }
+
 /* LOGIN */
 .main-login {
 	background: #000;
@@ -15,7 +23,7 @@ header{
 	display: flex; /* para separar el titulo del form */
 	flex-wrap: wrap;
 	width: 100%;
-	height: 80vh;
+	height: 78.1vh;
 }
 
 .main-login_title {
@@ -152,7 +160,7 @@ header{
 	.img-link-soundBox{
 		width: 25%;
 
-		img{
+		a img{
 			width: 100%;
 		}
 	}
@@ -185,6 +193,7 @@ header{
 	width: 100%;
 	text-align: center;
 
+
 	input {
 		border: none;
 		background: #ff540a;
@@ -195,6 +204,11 @@ header{
 		font-family: "Montserrat";
 		font-size: 14px;
 		font-weight: 400;
+
+		&:hover{
+			cursor: pointer;
+			background: #550C18;
+		}
 	}
 }
 
@@ -202,15 +216,14 @@ header{
 	display: none;
 }
 
-footer{
-	height: 12vh;
-}
 /*----------------------------------------------------------------------------------------------------------------*/
 /* MEDIA QUERIES */
 
 @media screen and (min-width: 768px) {
 
-	
+	body{
+		overflow: auto;
+	}
 
 	.main-login_form {
 		width: 80%;
@@ -265,7 +278,13 @@ footer{
 		margin-bottom: 10px;
 
 		.img-link-soundBox{
+			
 			width: 50%;
+
+			a img{
+				width: 100%;
+			}
+			
 		}
 
 		.text{
@@ -278,7 +297,7 @@ footer{
 		font-size: 15px;
 	}
 
-	.two-login .paragraph a {
+	.two-login .paragraph .a-crear-cuenta {
 		display: none;
 	}
 
@@ -288,7 +307,7 @@ footer{
 		width: 100%;
 		justify-content: center;
 
-		& input {
+		input {
 			border: none;
 			background: #ff540a;
 			color: #fff;
@@ -298,6 +317,11 @@ footer{
 			font-family: "Montserrat";
 			font-size: 14px;
 			font-weight: 400;
+
+			&:hover{
+				cursor: pointer;
+				background: #550C18;
+			}
 		}
 	}
 }
