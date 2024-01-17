@@ -1,8 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
 
     <!-- head -->
     <%- include("./partials/head") %>
+    <link href="/styles/reset.css" rel="stylesheet">
     <link href="/styles/crearProducto.css" rel="stylesheet">
     <!-- /head -->
         
@@ -12,23 +11,15 @@
         <%- include("./partials/header")%>
         <!-- /HEADER -->
             
-            
         <main>
-
             <section class="admin-container">
-                
                 <div class="admin-containe_title">
                     <h1> CREAR PRODUCTO </h1>
                 </div>
-                
                 <section class="contenedor-total">
-                    
                     <div class="form-creat-product">
-
                         <form action="/products/create" method="POST" enctype="multipart/form-data">
-
                             <div class="imagenes">
-
                                 <div class="fieldset imagen-of-product">
                                     <label for="imagen"></label>
                                     <input placeholder="Imagen" type="file"  name="form-imagen" class="imagen-form">
@@ -68,7 +59,7 @@
 
                             <div class="fieldset descuento">
                                 <label for="descuento">Descuento</label>
-                                <input placeholder="Descuento" type="number"  name="descuento" min="5" max="99" class="descuento-form">
+                                <input placeholder="Descuento" type="number"  name="descuento"  max="99" class="descuento-form">
                             </div>
 
                             <div class="fieldset descripcion">
@@ -95,8 +86,8 @@
                                 <label for="categorias">Estado</label>
                                 <select name="estado" id="estado" class="estado-producto">
                                     <option value="choose">Elegir</option>
-                                    <option value="oferta">En oferta</option>
-                                    <option value="masVisitado">Últimos agregados</option>
+                                    <option value="Oferta">En oferta</option>
+                                    <option value="Últimos agregados">Últimos agregados</option>
                                 </select>
                             </div>
                             
@@ -290,5 +281,5 @@
 
     </body>
 
-</html>
+
 

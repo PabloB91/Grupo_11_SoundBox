@@ -12,9 +12,7 @@
   "descripcion": "Descripcion",
   "cantidad": "10",
   "coloresDisponibles": [
-   "AMARILLO",
-   "GRIS",
-   "VERDE"
+   ""
   ],
   "categorias": [
    "Guitarra",
@@ -120,5 +118,63 @@
   ],
   "categorias": "Guitarras",
   "estado": "masVendido"
+ },
+ {
+  "id": 7,
+  "imagen": "",
+  "imagenFrontal": "",
+  "imagenLateralDerecha": "",
+  "imagenLateralIzquierda": "",
+  "marca": "",
+  "nombre": "",
+  "precio": null,
+  "descuento": "",
+  "descripcion": "",
+  "cantidad": null,
+  "coloresDisponibles": "",
+  "categorias": [
+   "Accesorios, Guitarras"
+  ],
+  "estado": "choose"
+ },
+ {
+  "id": 8,
+  "imagen": "",
+  "imagenFrontal": "",
+  "imagenLateralDerecha": "",
+  "imagenLateralIzquierda": "",
+  "marca": "",
+  "nombre": "",
+  "precio": null,
+  "descuento": "",
+  "descripcion": "",
+  "cantidad": null,
+  "coloresDisponibles": [
+   "Negro"
+  ],
+  "categorias": [
+   ""
+  ],
+  "estado": "choose"
+ },
+ {
+  "id": 9,
+  "imagen": "SOUNDBOXform-imagen - 1705517208722.jpg",
+  "imagenFrontal": "SOUNDBOXform-imagen - 1705517208723.jpg",
+  "imagenLateralDerecha": "SOUNDBOXform-imagen - 1705517208724.jpg",
+  "imagenLateralIzquierda": "SOUNDBOXform-imagen - 1705517208724.jpg",
+  "marca": "Otra",
+  "nombre": "Audifonos",
+  "precio": 2500,
+  "descuento": "",
+  "descripcion": "Audifonos",
+  "cantidad": 12,
+  "coloresDisponibles": [
+   "Azul,Gris, Rojo"
+  ],
+  "categorias": [
+   "Accesorios"
+  ],
+  "estado": "Últimos agregados"
  }
 ]

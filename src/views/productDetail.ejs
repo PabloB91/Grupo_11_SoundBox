@@ -73,9 +73,9 @@
                          <div class="caja-seleccion-colores">
                             <form action="">
                                 <select id="colores-seleccion" >
-                         <% for (const iterator of singleProduct["coloresDisponibles"]) { %>
-                        <option value="negro"> <%= iterator %></option>
-                        <% } %>
+                                <% for (const iterator of singleProduct["coloresDisponibles"]) { %>
+                                    <option value="negro"> <%= iterator %></option>
+                                <% } %>
                                 </select>
                             </form>
                         </div>
@@ -110,8 +110,8 @@
                 </div>
 
                 <div class="caja-tags-producto">
-                    <span class="links-tags-producto">Estado:
-                        <a href="#">sale</a>
+                    <span class="links-tags-producto">State:
+                        <a href="#"><%= singleProduct.estado %></a>
                     </span>
                 </div>
             </div>
