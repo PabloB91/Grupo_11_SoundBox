@@ -7,7 +7,6 @@ const { log } = require("console");
 guardados en la carpeta Data como Json (un array de objetos literales) */
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 
-
 const controller = {
 	// (get) Root - Mostrar todos los productos
 	index: (req, res) => {
@@ -102,6 +101,8 @@ const controller = {
 		let productToEdit = products.find(product => product.id == id);
 
 		// Creamos el producto "nuevo" que va a reemplazar al anterior
+		
+
 		productToEdit = {
 			id: productToEdit.id,
 			imagen: req.files == [] ? req.files[0]["filename"] : productToEdit.imagen,
@@ -113,12 +114,11 @@ const controller = {
 			precio: req.body.precio,
 			descuento: req.body.descuento,
 			descripcion: req.body.descripcion,
-			cantidad: req.body.cantidad, /* NO FUNCIONA */
-			coloresDisponibles: req.body.cantidad, /* NO FUNCIONA */
-			categorias: req.body.categorias,
+			cantidad: req.body.cantidad,
+			coloresDisponibles: req.body.coloresDisponibles.split(',').map(color => color.trim()),
+			categorias: req.body.categorias.split(',').map(categoria => categoria.trim()),
 			estado: req.body.estado
 		}
-		console.log(req.files)
 
 		// Buscamos la posicion del producto a editar
 		let indice = products.findIndex(product => {

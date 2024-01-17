@@ -1,52 +1,34 @@
 [
  {
   "id": 1,
-  "imagen": "IMG_DEFAULT.svg",
-  "imagenFrontal": "IMG_DEFAULT.svg",
-  "imagenLateralDerecha": "IMG_DEFAULT.svg",
-  "imagenLateralIzquierda": "IMG_DEFAULT.svg",
+  "imagen": "/img/products/IMG_DEFAULT.svg",
+  "imagenFrontal": "/img/products/IMG_DEFAULT.svg",
+  "imagenLateralDerecha": "/img/products/IMG_DEFAULT.svg",
+  "imagenLateralIzquierda": "/img/products/IMG_DEFAULT.svg",
   "marca": "Marca",
   "nombre": "Nombre del producto",
   "precio": "1000",
   "descuento": "20",
   "descripcion": "Descripcion",
-  "categorias": "",
-  "estado": "oferta"
+  "cantidad": "10",
+  "coloresDisponibles": [
+   "AMARILLO",
+   "GRIS",
+   "VERDE"
+  ],
+  "categorias": [
+   "Guitarra",
+   "Pandereta",
+   "Saxopon"
+  ],
+  "estado": "choose"
  },
  {
   "id": 2,
-  "imagen": "IMG_DEFAULT.svg",
-  "imagenFrontal": "IMG_DEFAULT.svg",
-  "imagenLateralDerecha": "IMG_DEFAULT.svg",
-  "imagenLateralIzquierda": "IMG_DEFAULT.svg",
-  "marca": "Marca",
-  "nombre": "Nombre del producto",
-  "precio": "1000",
-  "descuento": "20",
-  "descripcion": "Descripcion",
-  "categorias": "",
-  "estado": "choose"
- },
- {
-  "id": 3,
-  "imagen": "IMG_DEFAULT.svg",
-  "imagenFrontal": "IMG_DEFAULT.svg",
-  "imagenLateralDerecha": "IMG_DEFAULT.svg",
-  "imagenLateralIzquierda": "IMG_DEFAULT.svg",
-  "marca": "Marca",
-  "nombre": "Nombre del producto",
-  "precio": "1000",
-  "descuento": "20",
-  "descripcion": "Descripcion",
-  "categorias": "",
-  "estado": "choose"
- },
- {
-  "id": 4,
-  "imagen": "IMG_DEFAULT.svg",
-  "imagenFrontal": "IMG_DEFAULT.svg",
-  "imagenLateralDerecha": "IMG_DEFAULT.svg",
-  "imagenLateralIzquierda": "IMG_DEFAULT.svg",
+  "imagen": "/img/products/IMG_DEFAULT.svg",
+  "imagenFrontal": "/img/products/IMG_DEFAULT.svg",
+  "imagenLateralDerecha": "/img/products/IMG_DEFAULT.svg",
+  "imagenLateralIzquierda": "/img/products/IMG_DEFAULT.svg",
   "marca": "Marca",
   "nombre": "Nombre del producto",
   "precio": 1000,
@@ -54,22 +36,56 @@
   "descripcion": "Descripcion",
   "cantidad": 10,
   "coloresDisponibles": [
-   "Rojo",
-   "Marron",
-   "Gris",
-   "Amarillo",
-   "Negro",
-   "Blanco"
+   "Azul",
+   "Amarillo"
+  ],
+  "categorias": "Guitarras",
+  "estado": "masVendido"
+ },
+ {
+  "id": 3,
+  "imagen": "/img/products/IMG_DEFAULT.svg",
+  "imagenFrontal": "/img/products/IMG_DEFAULT.svg",
+  "imagenLateralDerecha": "/img/products/IMG_DEFAULT.svg",
+  "imagenLateralIzquierda": "/img/products/IMG_DEFAULT.svg",
+  "marca": "Marca",
+  "nombre": "Nombre del producto",
+  "precio": 1000,
+  "descuento": 20,
+  "descripcion": "Descripcion",
+  "cantidad": 10,
+  "coloresDisponibles": [
+   "Azul",
+   "Amarillo"
+  ],
+  "categorias": "Guitarras",
+  "estado": "masVendido"
+ },
+ {
+  "id": 4,
+  "imagen": "/img/products/IMG_DEFAULT.svg",
+  "imagenFrontal": "/img/products/IMG_DEFAULT.svg",
+  "imagenLateralDerecha": "/img/products/IMG_DEFAULT.svg",
+  "imagenLateralIzquierda": "/img/products/IMG_DEFAULT.svg",
+  "marca": "Marca",
+  "nombre": "Nombre del producto",
+  "precio": 1000,
+  "descuento": 20,
+  "descripcion": "Descripcion",
+  "cantidad": 10,
+  "coloresDisponibles": [
+   "Azul",
+   "Amarillo"
   ],
   "categorias": "Guitarras",
   "estado": "masVendido"
  },
  {
   "id": 5,
-  "imagen": "IMG_DEFAULT.svg",
-  "imagenFrontal": "IMG_DEFAULT.svg",
-  "imagenLateralDerecha": "IMG_DEFAULT.svg",
-  "imagenLateralIzquierda": "IMG_DEFAULT.svg",
+  "imagen": "/img/products/IMG_DEFAULT.svg",
+  "imagenFrontal": "/img/products/IMG_DEFAULT.svg",
+  "imagenLateralDerecha": "/img/products/IMG_DEFAULT.svg",
+  "imagenLateralIzquierda": "/img/products/IMG_DEFAULT.svg",
   "marca": "Marca",
   "nombre": "Nombre del producto",
   "precio": 1000,
@@ -77,22 +93,18 @@
   "descripcion": "Descripcion",
   "cantidad": 10,
   "coloresDisponibles": [
-   "Rojo",
-   "Marron",
-   "Gris",
-   "Amarillo",
-   "Negro",
-   "Blanco"
+   "Azul",
+   "Amarillo"
   ],
   "categorias": "Guitarras",
   "estado": "masVendido"
  },
  {
   "id": 6,
-  "imagen": "IMG_DEFAULT.svg",
-  "imagenFrontal": "IMG_DEFAULT.svg",
-  "imagenLateralDerecha": "IMG_DEFAULT.svg",
-  "imagenLateralIzquierda": "IMG_DEFAULT.svg",
+  "imagen": "/img/products/IMG_DEFAULT.svg",
+  "imagenFrontal": "/img/products/IMG_DEFAULT.svg",
+  "imagenLateralDerecha": "/img/products/IMG_DEFAULT.svg",
+  "imagenLateralIzquierda": "/img/products/IMG_DEFAULT.svg",
   "marca": "Marca",
   "nombre": "Nombre del producto",
   "precio": 1000,
@@ -100,12 +112,8 @@
   "descripcion": "Descripcion",
   "cantidad": 10,
   "coloresDisponibles": [
-   "Rojo",
-   "Marron",
-   "Gris",
-   "Amarillo",
-   "Negro",
-   "Blanco"
+   "Azul",
+   "Amarillo"
   ],
   "categorias": "Guitarras",
   "estado": "masVendido"

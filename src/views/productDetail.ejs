@@ -103,8 +103,9 @@
             <div class="caja-links-extra-producto">
                 <div class="caja-categorias-producto">
                     <span class="links-categorias-producto">Categories:
-
-                        <a href="#"></a>
+                        <% for (const iterator of singleProduct["categorias"]) { %>
+                        <a href=""> <%= iterator %> </a>,
+                        <% } %>
                     </span>
                 </div>
 

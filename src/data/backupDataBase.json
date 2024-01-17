@@ -11,7 +11,7 @@
         "descuento": 20,
         "descripcion": "Descripcion",
         "cantidad": 10,
-        "coloresDisponibles": "Color",
+        "coloresDisponibles": ["Azul", "Amarillo"],
         "categorias": "Guitarras",
         "estado": "masVendido"
        },
@@ -27,7 +27,7 @@
         "descuento": 20,
         "descripcion": "Descripcion",
         "cantidad": 10,
-        "coloresDisponibles": "Color",
+        "coloresDisponibles": ["Azul", "Amarillo"],
         "categorias": "Guitarras",
         "estado": "masVendido"
        },
@@ -43,7 +43,7 @@
         "descuento": 20,
         "descripcion": "Descripcion",
         "cantidad": 10,
-        "coloresDisponibles": "Color",
+        "coloresDisponibles": ["Azul", "Amarillo"],
         "categorias": "Guitarras",
         "estado": "masVendido"
        },
@@ -59,7 +59,7 @@
         "descuento": 20,
         "descripcion": "Descripcion",
         "cantidad": 10,
-        "coloresDisponibles": "Color",
+        "coloresDisponibles": ["Azul", "Amarillo"],
         "categorias": "Guitarras",
         "estado": "masVendido"
        },
@@ -75,7 +75,7 @@
         "descuento": 20,
         "descripcion": "Descripcion",
         "cantidad": 10,
-        "coloresDisponibles": "Color",
+        "coloresDisponibles": ["Azul", "Amarillo"],
         "categorias": "Guitarras",
         "estado": "masVendido"
        },
@@ -91,7 +91,7 @@
         "descuento": 20,
         "descripcion": "Descripcion",
         "cantidad": 10,
-        "coloresDisponibles": "Color",
+        "coloresDisponibles": ["Azul", "Amarillo"],
         "categorias": "Guitarras",
         "estado": "masVendido"
        }
