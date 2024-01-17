@@ -11,7 +11,7 @@
   "descuento": "20",
   "descripcion": "Descripcion",
   "categorias": "",
-  "estado": "choose"
+  "estado": "oferta"
  },
  {
   "id": 2,
@@ -21,20 +21,11 @@
   "imagenLateralIzquierda": "IMG_DEFAULT.svg",
   "marca": "Marca",
   "nombre": "Nombre del producto",
-  "precio": 1000,
-  "descuento": 20,
+  "precio": "1000",
+  "descuento": "20",
   "descripcion": "Descripcion",
-  "cantidad": 10,
-  "coloresDisponibles": [
-   "Rojo",
-   "Marron",
-   "Gris",
-   "Amarillo",
-   "Negro",
-   "Blanco"
-  ],
-  "categorias": "Guitarras",
-  "estado": "masVendido"
+  "categorias": "",
+  "estado": "choose"
  },
  {
   "id": 3,
