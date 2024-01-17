@@ -91,6 +91,10 @@
 
                 </li>
 
+                <li>
+                    <strong><a id="link-all-products" href="/todosLosProductos">Todos los productos</a></strong>
+                </li>
+
                 <li class="dropdown">
 
                     <div>
@@ -180,10 +184,33 @@
                         <i class="fa-solid fa-magnifying-glass" style="color: #fff;"></i>
                     </div>
                 </li>
+                
+                <div class="menu-burguer">
+                    <div class="menu-line"></div>
+                    <div class="menu-line"></div>
+                    <div class="menu-line"></div>
+                </div>
 
             </ul>
+
+
         </nav>
 
     </section>
 
+
 </header>
+
+    <script>
+
+        var iconMenu = document.querySelector('.menu-burguer');
+
+        iconMenu.addEventListener('click', function() {
+        if (iconMenu.classList.contains('open')) {
+            iconMenu.classList.remove('open');
+        } else {
+            iconMenu.classList.add('open');
+        }
+        }, false);
+
+    </script>

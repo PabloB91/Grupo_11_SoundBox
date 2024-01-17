@@ -21,7 +21,14 @@ const mainController = {
         const ofertas = products.filter(product => product.descuento != 0)
         // console.log(ofertas);
         res.render("index", { masVendidos: masVendidos },
-        ); .0
+        ); 
+
+    },
+
+    allProducts: (req, res) => {
+        const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+        // console.log(products)
+        res.render("todosLosProductos", { products })
 
     },
 
@@ -66,15 +73,6 @@ const mainController = {
         res.render("productCart", { productos: products });
 
     },
-
-    allProducts: (req, res) => {
-        const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-        // console.log(products)
-        res.render("todosLosProductos", { products })
-
-    }
-
-    
 
 }
 

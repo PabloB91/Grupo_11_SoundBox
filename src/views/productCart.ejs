@@ -33,10 +33,10 @@
                             <% productos.forEach(product=> { %>
                                 <div class="card">
                                     <input type="checkbox" name="#" id="#">
-                                    <img src=<%=product.imagen %>
+                                    <img src="/img/products/<%= product.imagen %>"
                                     alt="">
                                     <div class="nombre-marca">
-                                        <a href="/products/productDetail">
+                                        <a href="/products/productDetail/<%= product.id %>">
                                             <h6>
                                                 <%= product.nombre %>
                                             </h6>
@@ -46,13 +46,13 @@
                                             </p>
                                         </div>
                                         <!-- <p style="color: red; margin: auto;">sin stock</p> -->
-                                        <input type="number" min="1" max="1000" placeholder="Cantidad" required>
+                                        <input type="number" min="1" max="<%= product.cantidad %>" placeholder="Cantidad" required>
                                         <div class="precio-descuento">
                                             <span>
-                                                <%= product.precio + "$" %>
+                                                <%= product.precio %> $
                                             </span>
                                             <span style="color: green;">
-                                                <%= "-" + product.descuento + " % OFF" %>
+                                                - <%= product.descuento %>% OFF
                                             </span>
                                         </div>
                                         <div class="delete-card">
@@ -200,7 +200,7 @@
                     <div class="corredor">
                         <% productos.forEach(product=> { %>
                             <div class="image-related">
-                                <img src=<%=product.imagen %> alt="">
+                                <img src=/img/products/<%= product.imagen %> alt="">
                             </div>
 
                             <!-- fin del carrusel agregar a carrito -->
@@ -213,7 +213,7 @@
                     <div class="corredor">
                         <% productos.forEach(product=> { %>
                             <div class="image-related">
-                                <img src="<%=product.imagen %>" alt="">
+                                <img src="/img/products/<%=product.imagen %>" alt="">
                             </div>
 
                             <!-- fin del carrusel agregar a carrito -->

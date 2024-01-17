@@ -78,7 +78,6 @@ header{
 
                 p{
                     color: #ff540a;
-
                 }
             }
 
@@ -153,7 +152,7 @@ header{
     /*El contenedor <div> - necesario para posicionar el contenido desplegable */
     .dropdown {
     position: relative;
-    display: inline-block;
+    display: none;
     }
 
     /* Contenido desplegable (oculto de forma predeterminada) */
@@ -216,6 +215,96 @@ header{
         display: none;
     }
 }
+
+/*menu burguer*/
+
+.menu-burguer {
+    width: 15px;
+    height: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+  
+  .menu-line {
+    height: 2px;
+    background-color: #ff540a;
+    border-radius: 3px;
+    transition: all 250ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  }
+  
+  .menu-line:first-child {
+    animation: firstLinetoClose 240ms cubic-bezier(0.23, 0.95, 0.58, 1.37);
+  }
+  
+  .open .menu-line:first-child {
+    animation: firstLinetoOpen 240ms cubic-bezier(0.5, 0.95, 0.58, 1.37);
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes firstLinetoOpen {
+    0%   {
+      transform: translateY(0);
+    }
+  
+    50% { 
+      transform: translateY(12px);
+    }
+  
+    100% {
+      transform: translateY(-5px) rotate(45deg);
+    }
+  }
+  
+  @keyframes firstLinetoClose {
+    0%   {
+      transform: translateY(17px) rotate(0);
+    }
+  
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  .open .menu-line:nth-child(2){
+    opacity: 0;
+  }
+  
+  .menu-line:last-child {
+    animation: lastLinetoClose 240ms cubic-bezier(0.23, 0.95, 0.58, 1.37);  
+  }
+  
+  .open .menu-line:last-child {
+    animation: lastLinetoOpen 240ms cubic-bezier(0.23, 0.95, 0.58, 1.37);
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes lastLinetoOpen {
+    0%   {
+      transform: translateY(0);
+    }
+  
+    50% {
+      transform: translateY(-12px);
+    }
+  
+    100% {
+      transform: translateY(-17px) rotate(-45deg);
+    }
+  }
+  
+  @keyframes lastLinetoClose {
+    0%   {
+      transform: translateY(-17px);
+    }
+  
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+/***************************************************/
     
 
 /*-----------------------------------------------
@@ -227,7 +316,7 @@ footer{
     background-color: black;
     align-items: center;
     justify-content: space-around;
-    padding: 1rem;
+    padding: 18px;
 }
 
 .info {
@@ -244,6 +333,10 @@ footer{
     width: 8%;
     padding: 20px;
     margin-left: 1rem;
+
+    img{
+        width: 100%;
+    }
 }
 
 #simbol-footer {
@@ -300,10 +393,26 @@ footer a:active{
 
 .copyright {
     color: white;
-    background-color: black;
+    
     margin-left: 2.5rem;
 }
 
 .copyright span {
     color: grey
+}
+
+
+
+/*media query header*/
+
+@media  screen and (min-width: 768px){
+
+    .header-inferior{
+        
+        .dropdown {
+        position: relative;
+        display: inline-block;
+        }
+    }
+
 }

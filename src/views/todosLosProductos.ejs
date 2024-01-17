@@ -1,19 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include('./partials/head.ejs') %>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles/todosLosProductos.css">
-    <%- include("./partials/head") %>
-        <title>Document</title>
-</head>
+<link href="/styles/reset.css" rel="stylesheet">
+<link rel="stylesheet" href="/styles/todosLosProductos.css">
 
 <body>
+
     <%- include("./partials/header") %>
         <main>
-
-            <h1 class="titulo">Todos Los Productos:</h1>
+            <div class="barra-titulo">
+            <h2 class="titulo">Todos Los Productos</h2>
 
             <section class="ordenador">
                 <h4 class="titulo-ordenador">Filtrar: <br>
@@ -113,32 +108,23 @@
                 </section>
 
             </section>
+            </div>
             <section class="seccion-general">
                 <% products.forEach(product=> { %>
-                    <div class="card">
-                        <a  class="href-padding" href="/productDetail">
-                            <div class="imagen-producto"><img src="/img/products/<%= product.imagen %>" alt=""></div>
-                            <div class="desplegable">
-                                <h5>
-                                    <%= product.nombre%>
-                                </h5>
+                    <article class="container-producto">
+                        <a href="/products/productDetail/<%= product.id %>">
+                        <img src="/img/products/<%= product.imagen %> " alt=<%= product.nombre %> >
+                        <div class="detalle-producto">
+                            <div>
+                                <p class="nombre"><strong><%= product.marca %></strong></p>
+                                <p class="descripciones"><strong><%= product.nombre%></strong></p>
+                                <p class="precios">$<%= product.precio %></p>
+                                <p class="descuentos"><%= product.descuento %>%</p>
                             </div>
-                            <div class="descripcion-producto">
-                                <span>
-                                    $ <%= product.precio%>
-                                </span>
-                                <span class="descuento">
-                                    -<%= product.descuento%> %
-                                </span>
-                            </div>
-                            <div class="texto-descriptivo">
-                                <p>
-                                    <%= product.descripcion%>
-                                </p>
-                            </div>
-                        </a>
-                    </div>
-
+                        </div>
+                    </a>
+                    </article>
+                    
                     <%})%>
 
 
@@ -148,4 +134,3 @@
         <%- include("./partials/footer") %>
 </body>
 
-</html>
