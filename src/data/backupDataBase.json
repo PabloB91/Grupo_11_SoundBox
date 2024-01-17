@@ -1,10 +1,10 @@
 [
     {
      "id": 1,
-     "imagen": "/img/products/IMG_DEFAULT.svg",
-     "imagenFrontal": "/img/products/IMG_DEFAULT.svg",
-     "imagenLateralDerecha": "/img/products/IMG_DEFAULT.svg",
-     "imagenLateralIzquierda": "/img/products/IMG_DEFAULT.svg",
+     "imagen": "IMG_DEFAULT.svg",
+     "imagenFrontal": "IMG_DEFAULT.svg",
+     "imagenLateralDerecha": "IMG_DEFAULT.svg",
+     "imagenLateralIzquierda": "IMG_DEFAULT.svg",
      "marca": "Marca",
      "nombre": "Nombre del producto",
      "precio": "1000",
@@ -25,10 +25,10 @@
     },
     {
      "id": 2,
-     "imagen": "/img/products/IMG_DEFAULT.svg",
-     "imagenFrontal": "/img/products/IMG_DEFAULT.svg",
-     "imagenLateralDerecha": "/img/products/IMG_DEFAULT.svg",
-     "imagenLateralIzquierda": "/img/products/IMG_DEFAULT.svg",
+     "imagen": "IMG_DEFAULT.svg",
+     "imagenFrontal": "IMG_DEFAULT.svg",
+     "imagenLateralDerecha": "IMG_DEFAULT.svg",
+     "imagenLateralIzquierda": "IMG_DEFAULT.svg",
      "marca": "Marca",
      "nombre": "Nombre del producto",
      "precio": "1000",
@@ -47,10 +47,10 @@
     },
     {
      "id": 3,
-     "imagen": "/img/products/IMG_DEFAULT.svg",
-     "imagenFrontal": "/img/products/IMG_DEFAULT.svg",
-     "imagenLateralDerecha": "/img/products/IMG_DEFAULT.svg",
-     "imagenLateralIzquierda": "/img/products/IMG_DEFAULT.svg",
+     "imagen": "IMG_DEFAULT.svg",
+     "imagenFrontal": "IMG_DEFAULT.svg",
+     "imagenLateralDerecha": "IMG_DEFAULT.svg",
+     "imagenLateralIzquierda": "IMG_DEFAULT.svg",
      "marca": "Marca",
      "nombre": "Nombre del producto",
      "precio": 1000,
@@ -61,15 +61,15 @@
       "Azul",
       "Amarillo"
      ],
-     "categorias": "Guitarras",
+     "categorias": ["Guitarras", "Orquesta"],
      "estado": "masVendido"
     },
     {
      "id": 4,
-     "imagen": "/img/products/IMG_DEFAULT.svg",
-     "imagenFrontal": "/img/products/IMG_DEFAULT.svg",
-     "imagenLateralDerecha": "/img/products/IMG_DEFAULT.svg",
-     "imagenLateralIzquierda": "/img/products/IMG_DEFAULT.svg",
+     "imagen": "IMG_DEFAULT.svg",
+     "imagenFrontal": "IMG_DEFAULT.svg",
+     "imagenLateralDerecha": "IMG_DEFAULT.svg",
+     "imagenLateralIzquierda": "IMG_DEFAULT.svg",
      "marca": "Marca",
      "nombre": "Nombre del producto",
      "precio": 1000,
@@ -80,15 +80,15 @@
       "Azul",
       "Amarillo"
      ],
-     "categorias": "Guitarras",
+     "categorias": ["Guitarras", "Orquesta"],
      "estado": "masVendido"
     },
     {
      "id": 5,
-     "imagen": "/img/products/IMG_DEFAULT.svg",
-     "imagenFrontal": "/img/products/IMG_DEFAULT.svg",
-     "imagenLateralDerecha": "/img/products/IMG_DEFAULT.svg",
-     "imagenLateralIzquierda": "/img/products/IMG_DEFAULT.svg",
+     "imagen": "IMG_DEFAULT.svg",
+     "imagenFrontal": "IMG_DEFAULT.svg",
+     "imagenLateralDerecha": "IMG_DEFAULT.svg",
+     "imagenLateralIzquierda": "IMG_DEFAULT.svg",
      "marca": "Marca",
      "nombre": "Nombre del producto",
      "precio": 1000,
@@ -99,15 +99,15 @@
       "Azul",
       "Amarillo"
      ],
-     "categorias": "Guitarras",
+     "categorias": ["Guitarras", "Orquesta"],
      "estado": "masVendido"
     },
     {
      "id": 6,
-     "imagen": "/img/products/IMG_DEFAULT.svg",
-     "imagenFrontal": "/img/products/IMG_DEFAULT.svg",
-     "imagenLateralDerecha": "/img/products/IMG_DEFAULT.svg",
-     "imagenLateralIzquierda": "/img/products/IMG_DEFAULT.svg",
+     "imagen": "IMG_DEFAULT.svg",
+     "imagenFrontal": "IMG_DEFAULT.svg",
+     "imagenLateralDerecha": "IMG_DEFAULT.svg",
+     "imagenLateralIzquierda": "IMG_DEFAULT.svg",
      "marca": "Marca",
      "nombre": "Nombre del producto",
      "precio": 1000,
@@ -118,7 +118,7 @@
       "Azul",
       "Amarillo"
      ],
-     "categorias": "Guitarras",
+     "categorias": ["Guitarras", "Orquesta"],
      "estado": "masVendido"
     }
    ]

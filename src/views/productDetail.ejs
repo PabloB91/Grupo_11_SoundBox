@@ -25,12 +25,12 @@
             </div>
 
             <div class="caja-imagenes-general">
-                <img src="/img/products/<%= singleProduct.imagen %> " alt="guitarra1" class="imagen-producto-principal">
+                <img src="/img/products/<%= singleProduct.imagen %> "  class="imagen-producto-principal">
                 
                 <div class="imagenes-secundarias-inferior">
-                    <img src="/img/products/<%= singleProduct.imagenFrontal %> " alt="guitarra1" class="imagen-producto-secundaria">
-                    <img src="/img/products/<%= singleProduct.imagenLateralDerecha %> " alt="guitarra1" class="imagen-producto-secundaria">
-                    <img src="/img/products/<%= singleProduct.imagenLateralIzquierda %> " alt="guitarra1" class="imagen-producto-secundaria">
+                    <img src="/img/products/<%= singleProduct.imagenFrontal %> "  class="imagen-producto-secundaria">
+                    <img src="/img/products/<%= singleProduct.imagenLateralDerecha %> "  class="imagen-producto-secundaria">
+                    <img src="/img/products/<%= singleProduct.imagenLateralIzquierda %> "  class="imagen-producto-secundaria">
                 </div>
             </div>
 
@@ -94,7 +94,7 @@
                     </div>
 
                     <div class="caja-agregar-carrito">
-                        <form action="" class="formulario-boton-agregar-carrito">
+                        <form action="/productCart" class="formulario-boton-agregar-carrito">
                             <button type="submit" class="boton-agregar-carrito"><i class="fa-solid fa-cart-shopping"></i> <span class="texto-boton-agregar-carrito">ADD TO CART</span></button>
                         </form>
                     </div>
@@ -102,7 +102,7 @@
 
             <div class="caja-links-extra-producto">
                 <div class="caja-categorias-producto">
-                    <span class="links-categorias-producto">Categories:
+                    <span class="links-categorias-producto">Categorías:
                         <% for (const iterator of singleProduct["categorias"]) { %>
                         <a href=""> <%= iterator %> </a>,
                         <% } %>
@@ -110,7 +110,7 @@
                 </div>
 
                 <div class="caja-tags-producto">
-                    <span class="links-tags-producto">State:
+                    <span class="links-tags-producto">Estado:
                         <a href="#"><%= singleProduct.estado %></a>
                     </span>
                 </div>

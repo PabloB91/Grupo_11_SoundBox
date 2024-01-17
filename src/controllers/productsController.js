@@ -58,18 +58,18 @@ const controller = {
 
 		const newProduct = {
 			id: products[products.length - 1].id + 1,
-			imagen: req.files[0] == undefined ? "": req.files[0]["filename"],
-			imagenFrontal: req.files[1] == undefined ? "": req.files[1]["filename"],
-			imagenLateralDerecha: req.files[2] == undefined ? "": req.files[2]["filename"],
-			imagenLateralIzquierda: req.files[3]== undefined ? "": req.files[3]["filename"],   
+			imagen: req.files[0] == undefined ? "IMG_DEFAULT.svg": req.files[0]["filename"],
+			imagenFrontal: req.files[1] == undefined ? "IMG_DEFAULT.svg": req.files[1]["filename"],
+			imagenLateralDerecha: req.files[2] == undefined ? "IMG_DEFAULT.svg": req.files[2]["filename"],
+			imagenLateralIzquierda: req.files[3]== undefined ? "IMG_DEFAULT.svg": req.files[3]["filename"],   
 			marca: req.body.marca == undefined ? "": req.body.marca,
 			nombre: req.body.nombre == undefined ? "": req.body.nombre,
 			precio: req.body.precio == undefined ? "": parseInt(req.body.precio),
-			descuento: req.body.descuento == undefined ? "": req.body.descuento,
+			descuento: req.body.descuento == undefined ? "": parseInt(req.body.descuento),
 			descripcion: req.body.descripcion == undefined ? "": req.body.descripcion,
 			cantidad: req.body.cantidad == undefined ? "": parseInt(req.body.cantidad),
-			coloresDisponibles: req.body.coloresDisponibles == undefined ? [""]: [req.body.coloresDisponibles],
-			categorias: req.body.categorias == undefined ? "": [req.body.categorias],
+			coloresDisponibles: req.body.coloresDisponibles == undefined ? [""]: req.body.coloresDisponibles.split(',').map(color => color.trim()),
+			categorias: req.body.categorias == undefined ? "": req.body.categorias.split(',').map(categoria => categoria.trim()),
 			estado: req.body.estado == undefined ? "": req.body.estado
 		}
 
@@ -150,7 +150,7 @@ const controller = {
 
 		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "))
 
-		res.redirect("/")
+		res.redirect("/todosLosProductos")
 	}
 
 };
