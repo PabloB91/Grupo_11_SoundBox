@@ -31,16 +31,19 @@
   "imagenLateralIzquierda": "/img/products/IMG_DEFAULT.svg",
   "marca": "Marca",
   "nombre": "Nombre del producto",
-  "precio": 1000,
-  "descuento": 20,
+  "precio": "1000",
+  "descuento": "20",
   "descripcion": "Descripcion",
-  "cantidad": 10,
+  "cantidad": "10",
   "coloresDisponibles": [
    "Azul",
-   "Amarillo"
+   "Gris",
+   "Rojo"
   ],
-  "categorias": "Guitarras",
-  "estado": "masVendido"
+  "categorias": [
+   ""
+  ],
+  "estado": "choose"
  },
  {
   "id": 3,
