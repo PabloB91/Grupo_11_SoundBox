@@ -11,7 +11,7 @@ const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 const controller = {
 	// (get) Root - Mostrar todos los productos
 	index: (req, res) => {
-		// Do the magic
+
 		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 		res.render("todosLosProductos", { products });
 	},
@@ -80,7 +80,6 @@ const controller = {
 
 	// (get) Update - Formulario para editar
 	edit: (req, res) => {
-		// Do the magic
 
 		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
@@ -94,7 +93,7 @@ const controller = {
 	},
 	// (post) Update - Método para actualizar la info
 	processEdit: (req, res) => {
-		// Do the magic
+
 		// Leemos el json
 		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
