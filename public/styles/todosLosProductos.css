@@ -1,9 +1,14 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    font-style: normal;
+    margin: auto;
+}
+
 main {
     display: flex;
-    margin-top: 60px;
-    background-color: gray;
-    position: relative;
-
+    flex-direction: column;
 }
 
 .ordenador {
@@ -13,7 +18,10 @@ main {
 }
 
 .titulo-ordenador {
-    margin: 1.2rem;
+    font-size: 20px;
+    color: white;
+    margin-left: 1.2vw;
+    margin-top: 0.2vw;
     position: fixed;
 }
 
@@ -63,21 +71,29 @@ main {
     width: 100vw;
     background-color: #B7B3A1;
     display: flex;
-    justify-content: space-around;
+    flex-direction: row;
+    justify-content: center;
     flex-wrap: wrap;
-    border-top: gray 1rem solid;
-    border-bottom: gray 1rem solid;
+}
+
+.barra-titulo{
+    display: flex;
+    width: 100vw;
+    background-color: black;
+    height: 7vh;
 }
 
 .titulo {
-    background-color: black;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 26px;
+    font-weight: 600;
     color: white;
     display: flex;
-    width: 100%;
-    position: absolute;
-    top: 150PX;
     justify-content: center;
-}
+    height: 7vh;
+    margin-left: 40vw;
+    margin-top: 1vh;
+} 
 
 .card {
     display: flex;
@@ -131,13 +147,13 @@ main {
 
 .ordenador:hover .dropdown-ordenador {
     display: flex;
-
     flex-direction: column;
 }
 
 .ordenador:hover .titulo-ordenador {
     margin-left: 1rem;
     position: sticky;
+    color: black;
 }
 
 
@@ -177,4 +193,34 @@ main {
 
     }
 
+}
+
+.container-producto {
+    width: 12vw;
+    margin-right: 3vw;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-producto img {
+    width: 12vw;
+    margin: auto;
+    border: solid 1px black;
+    border-radius: 4px;
+}
+
+.detalle-producto p {
+    font-family: 'Montserrat';
+    font-size: 14px;
+    padding-left: 5px;
+
+}
+
+a:link, 
+a:visited,
+a:hover,
+a:active{
+    color: black;
 }
