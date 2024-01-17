@@ -5,8 +5,9 @@
 "Apellido": "lastName",
 "Email": "email",
 "Contraseña": "password",
-"Categoría": "category",
-"Imagen": "image"
+"Cuenta": "user-admin_||user",
+"Imagen": "image",
+"register": "yyyy/mm/dd"
 },
 {
 
