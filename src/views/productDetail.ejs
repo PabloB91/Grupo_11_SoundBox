@@ -28,9 +28,9 @@
                 <img src="/img/products/<%= singleProduct.imagen %> "  class="imagen-producto-principal">
                 
                 <div class="imagenes-secundarias-inferior">
-                    <img src="/img/products/<%= singleProduct.imagenFrontal %> "  class="imagen-producto-secundaria">
-                    <img src="/img/products/<%= singleProduct.imagenLateralDerecha %> "  class="imagen-producto-secundaria">
-                    <img src="/img/products/<%= singleProduct.imagenLateralIzquierda %> "  class="imagen-producto-secundaria">
+                    <!-- <img src="/img/products/"  class="imagen-producto-secundaria">
+                    <img src="/img/products/"  class="imagen-producto-secundaria">
+                    <img src="/img/products/"  class="imagen-producto-secundaria"> -->
                 </div>
             </div>
 
@@ -42,7 +42,7 @@
                     
                 <div class="caja-precio-clasificacion">
                     <span class="precio-producto"> $ <%= singleProduct.precio %> </span>
-                    <span class="descuento-producto"><%= singleProduct.descuento %>% OFF</span>
+                    <span class="descuento-producto"><%= singleProduct.descuento %> % OFF</span>
 
                     <form class="formulario-clasificacion">
                         <p class="clasificacion">
@@ -125,11 +125,12 @@
         </div>
         
     </div>
-        <div class="caja-descripcion-secundaria-producto">
-            <h6 class="parrafo-descripcion-producto">Información Adicional</h6>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis error architecto similique cumque. Exercitationem iure qui possimus facilis iusto, beatae temporibus omnis. Aliquam eum voluptas ab exercitationem rem libero est!</p>
-        </div>
+    <div class="caja-descripcion-secundaria-producto">
+        <h6 class="parrafo-descripcion-producto">Información Adicional</h6>
         
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis error architecto similique cumque. Exercitationem iure qui possimus facilis iusto, beatae temporibus omnis. Aliquam eum voluptas ab exercitationem rem libero est!</p>
+    </div> 
+
 </section>
 </div>
     <%- include ("./partials/footer") %>
