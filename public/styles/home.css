@@ -20,6 +20,18 @@ main{
 
 /****************************************/
 
+body {
+    /* Propiedades de estilo para el modo claro */
+    background-color: white;
+    color: black;
+  }
+  
+  body.dark-theme {
+    /* Propiedades de estilo para el modo oscuro */
+    background-color: #333;
+    color: white;
+  }
+
 /*----ETIQUETAS BANNER CARRUSEL----*/
 
 .carrusel {

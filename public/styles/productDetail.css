@@ -71,6 +71,10 @@ a{
     color: #FF540A;
 }
 
+.fa-heart:hover{
+    color: red ;
+}
+
 .fa-cart-shopping{
     position: relative;
     right: 4px;
@@ -187,12 +191,25 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 
+.parrafo-descripcion-producto{
+    margin: 0 0 15px 0 ;
+}
+
+.parrafo-descripcion-producto:hover{
+    text-decoration: underline;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
 /* CAJAS */
 
 .caja-general{
     display: flex;
     padding: 0 50px 0 50px;
     padding-bottom: 120px;
+    justify-content: center;
 }
 
 .caja-sub-general-informacion{
@@ -256,6 +273,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .caja-descripcion-secundaria-producto{
     padding: 0 80px;
+    margin:  0 0 70px 0;
 }
 
 .caja-secciones-secundarias-informacion{

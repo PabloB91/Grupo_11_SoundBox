@@ -106,14 +106,13 @@ const controller = {
 		let productToEdit = products.find(product => product.id == id);
 
 		// Creamos el producto "nuevo" que va a reemplazar al anterior
-		
 
 		productToEdit = {
 			id: productToEdit.id,
-			imagen: req.files == [] ? req.files[0]["filename"] : productToEdit.imagen,
-			imagenFrontal: req.files ==  []  ? req.files[1]["filename"] : productToEdit.imagenFrontal,
-			imagenLateralDerecha: req.files == [] ? req.files[2]["filename"] : productToEdit.imagenLateralDerecha,
-			imagenLateralIzquierda: req.files == [] ? req.files[3]["filename"] : productToEdit.imagenLateralIzquierda,
+			imagen: req.files == [] ? productToEdit.imagen : req.files[0]["filename"],
+			//imagenFrontal: req.files == [] ? productToEdit.imagenFrontal : req.files[1]["filename"],
+			//imagenLateralDerecha: req.files == [] ? productToEdit.imagenLateralDerecha : req.files[2]["filename"],
+			//imagenLateralIzquierda: req.files == [] ? productToEdit.imagenLateralIzquierda : req.files[3]["filename"],
 			marca: req.body.marca,
 			nombre: req.body.nombre,
 			precio: req.body.precio,
