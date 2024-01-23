@@ -99,7 +99,7 @@
 }
 
 .ordenador-container {
-    display: none;
+    display: flex;
 
 }
 
@@ -107,7 +107,14 @@
     width: 50%;
     display: flex;
     justify-content: space-around;
+
+}
+
+.ordenador button {
+    background-color: inherit;
     font-size: 30px;
+    color: black;
+    margin-bottom: 5px;
 }
 
 .labels-ordenador {
@@ -127,11 +134,24 @@
 
 }
 
+.pie {
+    display: flex;
+    justify-content: center;
+
+}
+
 .pie i {
     display: flex;
     justify-content: center;
     margin: 1rem;
     font-size: 45px;
+    color: white;
+
+}
+
+.pie button {
+    background-color: inherit;
+    align-self: center;
 
 }
 
@@ -209,8 +229,8 @@ details p  {
     align-items: center;
     justify-content: space-evenly;
     background-color: #ebebeb;
-    max-height: 30rem;
-    margin-bottom: 2rem;
+    max-height: 49rem;
+    margin-bottom: 1rem;
     border: 17px solid black;
     border-radius: 13%;
     box-shadow: 25px 25px 10px gray;
@@ -419,14 +439,14 @@ details p  {
     background-color: #f7f7f7;
     transform: scale(0.95);
     border: 5px solid white;
-    border-radius: 10px;
-
+    border-radius: 18px;
     
 }
 
 .card:hover .delete-card{
     display: flex;
-    animation: 5s;
+    cursor: pointer;
+
 }
 
 /* media queeries para pc SMALL */
@@ -456,9 +476,8 @@ details p  {
 
     .card:hover .delete-card {
         color: black;
-        transition: 7s;
         border: 2px solid black;
-        border-radius: 15px;
+        border-radius: 8px;
     }
 
     .desplegable {
@@ -472,13 +491,7 @@ details p  {
 
 @media(max-width:1024px) {
 
-    .carrito .desplegable,
-    .carrito .ordenador-container,
-    .favoritos .desplegable,
-    .favoritos .ordenador-container {
-        display: flex;
 
-    }
 
 
 }

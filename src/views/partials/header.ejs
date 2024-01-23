@@ -68,134 +68,97 @@
     <!-- 2) Sección optimizada / hoja de estilo header-footer actualizada -->
 
     <section class="header-inferior">
-
-        <nav class="header-inferior_nav">
-            <ul class="header-inferior_nav_ul">
-
-                <li class="li_img-logoSBX">
-
-                    <div class="img-logoSBX">
-                        <a href="/">
-                            <img id="logo" src="/img/svg/estandar.svg" usemap="#workmap" alt="SoundBox">
-                        </a>
-                    </div>
-
-                </li>
-
-                <li>
-                    <strong><a id="link-all-products" href="/todosLosProductos">Todos los productos</a></strong>
-                </li>
-
-                <li class="dropdown">
-
-                    <div>
-                        <a href="#section-categorias">Categorias</a><i class="fa-solid fa-chevron-down"></i>
-                    </div>
-
-                    <div class="dropdown-content">
-                        <a href="/categoria/Guitarras">Guitarras</a>
-                        <a href="/categoria/Orquesta">Orquesta</a>
-                        <a href="/categoria/Grabacion">Grabacion</a>
-                    </div>
-
-                </li>
-
-                <li class="dropdown">
-
-                    <div>
-                        <a href="#section-mas-vendidos">Top Sellers</a><i class="fa-solid fa-chevron-down"></i>
-                    </div>
-
-                    <div class="dropdown-content">
-                        <a href="#">Link 1</a>
-                        <a href="#">Link 2</a>
-                        <a href="#">Link 3</a>
-                    </div>
-
-                </li>
-
-                <li class="dropdown">
-
-                    <div>
-                        <a href="#seccion-marcas-banners">Marcas</a><i class="fa-solid fa-chevron-down"></i>
-                    </div>
-
-                    <div class="dropdown-content">
-                        <a href="#">Marshall</a>
-                        <a href="#">Zildjian</a>
-                        <a href="#">Gibson</a>
-                    </div>
-
-                </li>
-
-                <li class="dropdown">
-
-                    <div>
-                        <a href="#">Accesorios</a><i class="fa-solid fa-chevron-down"></i>
-                    </div>
-
-                    <div class="dropdown-content">
-                        <a href="#">Link 1</a>
-                        <a href="#">Link 2</a>
-                        <a href="#">Link 3</a>
-                    </div>
-
-                </li>
-
-                <li class="dropdown">
-
-                    <div>
-                        <a href="#">Segunda mano</a><i class="fa-solid fa-chevron-down"></i>
-                    </div>
-
-                    <div class="dropdown-content">
-                        <a href="#">Link 1</a>
-                        <a href="#">Link 2</a>
-                        <a href="#">Link 3</a>
-                    </div>
-
-                </li>
-
-                <li class="dropdown">
-
-
-                    <div class="dropdown-content">
-                        <a href="#">Link 1</a>
-                        <a href="#">Link 2</a>
-                        <a href="#">Link 3</a>
-                    </div>
-
-                </li>
-
-                <div class="search-bar">
-                    <input type="text" placeholder="Buscar..">
-                    <div class="btn-search-bar">
-                        <i class="fa-solid fa-magnifying-glass" style="color: #fff;"></i>
-                    </div>
-                </div>
-                
-                <section class="container-menu-burguer">
-                    <div class="menu-burguer" onclick="hide()">
-                        <div class="menu-line" onclick="show()"></div>
-                        <div class="menu-line" onclick="show()"></div>
-                        <div class="menu-line" onclick="show()"></div>
-                    </div>
+        <div class="container-header">
+            <nav class="header-inferior_nav">
+                <ul class="header-inferior_nav_ul">
+                    <li class="li_img-logoSBX">
     
-                </section>
+                        <div class="img-logoSBX">
+                            <a href="/">
+                                <img id="logo" src="/img/svg/estandar.svg" usemap="#workmap" alt="SoundBox">
+                            </a>
+                        </div>
+    
+                    </li>
+    
+                    <li class="all-products-container">
+                        <strong><a id="link-all-products" href="/todosLosProductos">Todos los productos</a></strong>
+                    </li>
+    
+                    <li class="dropdown">
+    
+                        <div>
+                            <a href="#section-categorias">Categorias</a><i class="fa-solid fa-chevron-down"></i>
+                        </div>
+    
+                        <div class="dropdown-content">
+                            <a href="/categoria/Guitarras">Guitarras</a>
+                            <a href="/categoria/Orquesta">Orquesta</a>
+                            <a href="/categoria/Grabacion">Grabacion</a>
+                        </div>
+    
+                    </li>
+    
+                    <li class="dropdown">
+    
+                        <div>
+                            <a href="#section-mas-vendidos">Top Sellers</a><i class="fa-solid fa-chevron-down"></i>
+                        </div>
+    
+                        <div class="dropdown-content">
+                            <a href="#">Link 1</a>
+                            <a href="#">Link 2</a>
+                            <a href="#">Link 3</a>
+                        </div>
+    
+                    </li>
+    
+                    <li class="dropdown">
+    
+                        <div>
+                            <a href="#seccion-marcas-banners">Marcas</a><i class="fa-solid fa-chevron-down"></i>
+                        </div>
+    
+                        <div class="dropdown-content">
+                            <a href="#">Marshall</a>
+                            <a href="#">Zildjian</a>
+                            <a href="#">Gibson</a>
+                        </div>
+    
+                    </li>
+    
+                    <li class="dropdown">
+    
+    
+                        <div class="dropdown-content">
+                            <a href="#">Link 1</a>
+                            <a href="#">Link 2</a>
+                            <a href="#">Link 3</a>
+                        </div>
+    
+                    </li>
+    
+                    <div class="search-bar">
+                        <input type="text" placeholder=" Buscar..">
+                        <div class="btn-search-bar">
+                            <i class="fa-solid fa-magnifying-glass" style="color: #fff;"></i>
+                        </div>
+                    </div>
+                    
+                    <section class="container-menu-burguer">
+                        <div class="menu-burguer" onclick="hide()">
+                            <div class="menu-line" onclick="show()"></div>
+                            <div class="menu-line" onclick="show()"></div>
+                            <div class="menu-line" onclick="show()"></div>
+                        </div>
+        
+                    </section>
+                    
+                </ul>
                 
-            </ul>
-            
-            
-        </nav>
-        <div class="desplegable-header" id="desplegable">
-            <ul class="menu-desplegable">
-                <li>sdfsdfsdf</li>
-                <li>sdfsdfsdf</li>
-                <li>sdfsdfsdf</li>
-                <li>sfdsdfsdf</li>
-            </ul>
+                
+            </nav>
         </div>
-
     </section>
 
 
@@ -212,20 +175,5 @@
             iconMenu.classList.add('open');
         }
     }, false);
-
-</script>
-
-<script type="text/javascript">
-    function hide() {
-        document.getElementById("desplegable").style.display = "none";
-        // document.getElementById("favoritos").style.display = "block";
-
-    }
-
-    function show() {
-        document.getElementById("desplegable").style.display = "block";
-        // document.getElementById("carrito").style.display = "block";
-
-    }
 
 </script>

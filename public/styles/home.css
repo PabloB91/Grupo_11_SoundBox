@@ -90,8 +90,6 @@ body {
 }
 
 .bold-text {
-    margin-right: 8em;
-    margin-left: 8em;
     margin-top: -1em;
     color: white;
     font-weight: bold;
@@ -285,6 +283,7 @@ body {
 
 .items-mas-vendidos {
     display: flex;
+    width: 100%;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: center;
@@ -374,10 +373,6 @@ body {
     text-align: left;
     padding-bottom: 5px;
     border-bottom: solid 1px #FF540A;
-}
-
-.head-border {
-    width: 15rem;
 }
 
 .destacados,

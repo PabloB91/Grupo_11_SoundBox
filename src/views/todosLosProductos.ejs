@@ -1,136 +1,155 @@
 <%- include('./partials/head.ejs') %>
 
-<link href="/styles/reset.css" rel="stylesheet">
-<link rel="stylesheet" href="/styles/todosLosProductos.css">
+    <link href="/styles/reset.css" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/todosLosProductos.css">
 
-<body>
+    <body>
 
-    <%- include("./partials/header") %>
-        <main>
-            <div class="barra-titulo">
-            <h2 class="titulo">Todos Los Productos</h2>
+        <%- include("./partials/header") %>
+            <main>
+                <div class="barra-titulo">
+                    <h2 class="titulo">Todos Los Productos</h2>
 
-            <section class="ordenador">
-                <h4 class="titulo-ordenador">Filtrar: <br>
-                    <i class="fa-sharp fa-solid fa-arrow-right"></i>
-                </h4>
-                <section class="dropdown-ordenador">
+                    <section class="ordenador">
+                        <h4 class="titulo-ordenador">Filtrar: <br>
+                            <i class="fa-sharp fa-solid fa-arrow-right"></i>
+                        </h4>
+                        <section class="dropdown-ordenador">
 
-                    <div class="filtrar-plata">
-                        <div class="filtro-presupuesto">
-                            <h6>desde 0$ hasta 1.000.000$ </h6>
-                        </div>
-                        <div class="barra-filtro"></div>
-                    </div>
+                            <div class="filtrar-plata">
+                                <div class="filtro-presupuesto">
+                                    <h6>desde 0$ hasta 1.000.000$ </h6>
+                                </div>
+                                <div class="barra-filtro"></div>
+                            </div>
 
-                    <div class="primer-seccion">
-                        <span class="titulo-filtros">Filtros Populares:</span>
-                        <div class="populares-1">
-                            <label class="switch">
-                                <input class="switch__input" type="checkbox" role="switch">
-                                <span class="switch__base-outer"></span>
-                                <span class="switch__base-inner"></span>
-                                <svg class="switch__base-neon" viewBox="0 0 40 24" width="40px" height="24px">
-                                    <defs>
-                                        <filter id="switch-glow">
-                                            <feGaussianBlur result="coloredBlur" stddeviation="1"></feGaussianBlur>
-                                            <feMerge>
-                                                <feMergeNode in="coloredBlur"></feMergeNode>
-                                                <feMergeNode in="SourceGraphic"></feMergeNode>
-                                            </feMerge>
-                                        </filter>
-                                        <linearGradient id="switch-gradient1" x1="0" y1="0" x2="1" y2="0">
-                                            <stop offset="0%" stop-color="hsl(var(--on-hue1),90%,70%)" />
-                                            <stop offset="100%" stop-color="hsl(var(--on-hue2),90%,70%)" />
-                                        </linearGradient>
-                                        <linearGradient id="switch-gradient2" x1="0.7" y1="0" x2="0.3" y2="1">
-                                            <stop offset="25%" stop-color="hsla(var(--on-hue1),90%,70%,0)" />
-                                            <stop offset="50%" stop-color="hsla(var(--on-hue1),90%,70%,0.3)" />
-                                            <stop offset="100%" stop-color="hsla(var(--on-hue2),90%,70%,0.3)" />
-                                        </linearGradient>
-                                    </defs>
-                                    <path fill="none" filter="url(#switch-glow)" stroke="url(#switch-gradient1)" stroke-width="1" stroke-dasharray="0 104.26 0" stroke-dashoffset="0.01" stroke-linecap="round" d="m.5,12C.5,5.649,5.649.5,12,.5h16c6.351,0,11.5,5.149,11.5,11.5s-5.149,11.5-11.5,11.5H12C5.649,23.5.5,18.351.5,12Z"/>
-                                </svg>
-                                <span class="switch__knob-shadow"></span>
-                                <span class="switch__knob-container">
-                                    <span class="switch__knob">
-                                        <svg class="switch__knob-neon" viewBox="0 0 48 48" width="48px" height="48px">
-                                            <circle fill="none" stroke="url(#switch-gradient2)" stroke-dasharray="0 90.32 0 54.19" stroke-linecap="round" stroke-width="1" r="23" cx="24" cy="24" transform="rotate(-112.5,24,24)" />
-                                        </svg>	
-                                    </span>
-                                </span>
-                                <span class="switch__led"></span>
-                                <span class="switch__text">Power</span>
-                            </label>
-                            <span> Instrumentos
-                                Electricos</span><span>8</span>
-                        </div>
-                        <div class="populares-1"><input type="checkbox"><span> Instrumentos
-                                Criollos</span><span>8</span>
-                        </div>
-                        <div class="populares-1"><input type="checkbox"><span> Efectos</span><span>8</span></div>
-                        <div class="populares-1"><input type="checkbox"><span> Grabación</span><span>8</span></div>
-                        <div class="populares-1"><input type="checkbox"><span> amplificadores</span><span>8</span></div>
-                        <div class="populares-1"><input type="checkbox"><span> Accesorios</span><span>8</span></div>
-                    </div>
+                            <div class="primer-seccion">
+                                <span class="titulo-filtros">Filtros Populares:</span>
+                                <div class="populares-1">
+                                    <label class="switch">
+                                        <input class="switch__input" type="checkbox" role="switch">
+                                        <span class="switch__base-outer"></span>
+                                        <span class="switch__base-inner"></span>
+                                        <svg class="switch__base-neon" viewBox="0 0 40 24" width="40px" height="24px">
+                                            <defs>
+                                                <filter id="switch-glow">
+                                                    <feGaussianBlur result="coloredBlur" stddeviation="1">
+                                                    </feGaussianBlur>
+                                                    <feMerge>
+                                                        <feMergeNode in="coloredBlur"></feMergeNode>
+                                                        <feMergeNode in="SourceGraphic"></feMergeNode>
+                                                    </feMerge>
+                                                </filter>
+                                                <linearGradient id="switch-gradient1" x1="0" y1="0" x2="1" y2="0">
+                                                    <stop offset="0%" stop-color="hsl(var(--on-hue1),90%,70%)" />
+                                                    <stop offset="100%" stop-color="hsl(var(--on-hue2),90%,70%)" />
+                                                </linearGradient>
+                                                <linearGradient id="switch-gradient2" x1="0.7" y1="0" x2="0.3" y2="1">
+                                                    <stop offset="25%" stop-color="hsla(var(--on-hue1),90%,70%,0)" />
+                                                    <stop offset="50%" stop-color="hsla(var(--on-hue1),90%,70%,0.3)" />
+                                                    <stop offset="100%" stop-color="hsla(var(--on-hue2),90%,70%,0.3)" />
+                                                </linearGradient>
+                                            </defs>
+                                            <path fill="none" filter="url(#switch-glow)" stroke="url(#switch-gradient1)"
+                                                stroke-width="1" stroke-dasharray="0 104.26 0" stroke-dashoffset="0.01"
+                                                stroke-linecap="round"
+                                                d="m.5,12C.5,5.649,5.649.5,12,.5h16c6.351,0,11.5,5.149,11.5,11.5s-5.149,11.5-11.5,11.5H12C5.649,23.5.5,18.351.5,12Z" />
+                                        </svg>
+                                        <span class="switch__knob-shadow"></span>
+                                        <span class="switch__knob-container">
+                                            <span class="switch__knob">
+                                                <svg class="switch__knob-neon" viewBox="0 0 48 48" width="48px"
+                                                    height="48px">
+                                                    <circle fill="none" stroke="url(#switch-gradient2)"
+                                                        stroke-dasharray="0 90.32 0 54.19" stroke-linecap="round"
+                                                        stroke-width="1" r="23" cx="24" cy="24"
+                                                        transform="rotate(-112.5,24,24)" />
+                                                </svg>
+                                            </span>
+                                        </span>
+                                        <span class="switch__led"></span>
+                                        <span class="switch__text">Power</span>
+                                    </label>
+                                    <span> Instrumentos
+                                        Electricos</span><span>8</span>
+                                </div>
+                                <div class="populares-1"><input type="checkbox"><span> Instrumentos
+                                        Criollos</span><span>8</span>
+                                </div>
+                                <div class="populares-1"><input type="checkbox"><span> Efectos</span><span>8</span>
+                                </div>
+                                <div class="populares-1"><input type="checkbox"><span> Grabación</span><span>8</span>
+                                </div>
+                                <div class="populares-1"><input type="checkbox"><span>
+                                        amplificadores</span><span>8</span></div>
+                                <div class="populares-1"><input type="checkbox"><span> Accesorios</span><span>8</span>
+                                </div>
+                            </div>
 
-                    <div class="segunda-seccion">
-                        <span class="titulo-filtros">Condición del instrumento:</span>
-                        <div class="populares-1"><input type="checkbox"><span> Nuevo</span><span>8</span></div>
-                        <div class="populares-1"><input type="checkbox"><span> Segunda Mano</span><span>8</span></div>
-                    </div>
+                            <div class="segunda-seccion">
+                                <span class="titulo-filtros">Condición del instrumento:</span>
+                                <div class="populares-1"><input type="checkbox"><span> Nuevo</span><span>8</span></div>
+                                <div class="populares-1"><input type="checkbox"><span> Segunda Mano</span><span>8</span>
+                                </div>
+                            </div>
 
-                    <div class="tercer-seccion">
-                        <span class="titulo-filtros">Categorías:</span>
-                        <div class="populares-1"><input type="checkbox"><span> Instrumentos
-                                Electricos</span><span>8</span>
-                        </div>
-                        <div class="populares-1"><input type="checkbox"><span> Instrumentos
-                                Electricos</span><span>8</span>
-                        </div>
-                        <div class="populares-1"><input type="checkbox"><span> Instrumentos
-                                Electricos</span><span>8</span>
-                        </div>
-                        <div class="populares-1"><input type="checkbox"><span> Instrumentos
-                                Electricos</span><span>8</span>
-                        </div>
-                        <div class="populares-1"><input type="checkbox"><span> Instrumentos
-                                Electricos</span><span>8</span>
-                        </div>
-                    </div>
+                            <div class="tercer-seccion">
+                                <span class="titulo-filtros">Categorías:</span>
+                                <div class="populares-1"><input type="checkbox"><span> Instrumentos
+                                        Electricos</span><span>8</span>
+                                </div>
+                                <div class="populares-1"><input type="checkbox"><span> Instrumentos
+                                        Electricos</span><span>8</span>
+                                </div>
+                                <div class="populares-1"><input type="checkbox"><span> Instrumentos
+                                        Electricos</span><span>8</span>
+                                </div>
+                                <div class="populares-1"><input type="checkbox"><span> Instrumentos
+                                        Electricos</span><span>8</span>
+                                </div>
+                                <div class="populares-1"><input type="checkbox"><span> Instrumentos
+                                        Electricos</span><span>8</span>
+                                </div>
+                            </div>
 
-                    <div class="cuarta-seccion">
-                        <span class="titulo-filtros">Por Marca:</span>
-                        <div class="populares-1"><input type="checkbox"><span> Marshall</span><span>8</span></div>
-                        <div class="populares-1"><input type="checkbox"><span> Gibson</span><span>8</span></div>
-                        <div class="populares-1"><input type="checkbox"><span> Zildjian</span><span>8</span></div>
-                    </div>
+                            <div class="cuarta-seccion">
+                                <span class="titulo-filtros">Por Marca:</span>
+                                <div class="populares-1"><input type="checkbox"><span> Marshall</span><span>8</span>
+                                </div>
+                                <div class="populares-1"><input type="checkbox"><span> Gibson</span><span>8</span></div>
+                                <div class="populares-1"><input type="checkbox"><span> Zildjian</span><span>8</span>
+                                </div>
+                            </div>
+                        </section>
+
+                    </section>
+                </div>
+                <section class="seccion-general">
+                    <% products.forEach(product=> { %>
+                        <article class="container-producto">
+                            <a href="/products/productDetail/<%= product.id %>" class="card">
+                                <div class="face front">
+                                    <img src="/img/products/<%= product.imagen %> " alt=<%=product.nombre %> >
+                                    <h3><%= product.nombre%></h3>
+                                </div>
+                                <div class="face back">
+                                    <h3><%= product.nombre%></h3>
+                                    <p class="marca-descripcion"><%= product.marca %></p>
+                                    <p class="marca-descripcion"><%= product.descripcion %></p>
+                                    <p class="price">$<%= product.precio %></p>
+                                    <p><%= product.descuento %>%</p>
+                                    <!-- <p><a href="/products/productDetail/<%= product.id %>">detalle</a></p> -->
+                                </div>
+                            </a>
+                        </article>
+
+                        <%})%>
+
+                        
+
+
                 </section>
 
-            </section>
-            </div>
-            <section class="seccion-general">
-                <% products.forEach(product=> { %>
-                    <article class="container-producto">
-                        <a href="/products/productDetail/<%= product.id %>">
-                        <img src="/img/products/<%= product.imagen %> " alt=<%= product.nombre %> >
-                        <div class="detalle-producto">
-                            <div>
-                                <p class="nombre"><strong><%= product.marca %></strong></p>
-                                <p class="descripciones"><strong><%= product.nombre%></strong></p>
-                                <p class="precios">$<%= product.precio %></p>
-                                <p class="descuentos"><%= product.descuento %>%</p>
-                            </div>
-                        </div>
-                    </a>
-                    </article>
-                    
-                    <%})%>
-
-
-            </section>
-
-        </main>
-        <%- include("./partials/footer") %>
-</body>
-
+            </main>
+            <%- include("./partials/footer") %>
+    </body>

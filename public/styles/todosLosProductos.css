@@ -96,27 +96,13 @@ main {
 } 
 
 .card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    width: 14rem;
-    background-color: white;
-    height: 25rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-    padding: 0.5rem;
+    position: relative;
+    width: 250px;
+    height: 350px;
 }
 
-.imagen-producto {
-    display: flex;
-    width: 100%;
-    height: 50%;
-    justify-content: center;
 
-}
+
 
 .descripcion-producto {
     display: flex;
@@ -159,18 +145,106 @@ main {
 
 /* media queryes */
 /* animaciones carta*/
-@media (max-width:1024px) {
-    .card {
-        width: 45%;
-
+@media (min-width: 1440px) {
+    .card .face {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        border-radius: 10px;
+        overflow: hidden;
+        transition: .5s;
+    
+    }
+    
+    .card .front {
+        transform: perspective(600px) rotateY(0deg);
+        box-shadow: 0 5px 10px black;
+    
+    }
+    
+    .card .front img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    
+    }
+    
+    .card .front h3 {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        line-height: 45px;
+        color: white;
+        background-color: rgba(0, 0, 0, .4);;
+        text-align: center;
+    
+    }
+    
+    .card .back {
+        transform: perspective(600px) rotateY(180deg);
+        background-color: #FF540A;
+        padding: 15px;
+        color:  white;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+        border: 2px solid black;
+    
+    }
+    
+    .card .back h3 {
+        font-size: 30px;
+        margin-top: 20px;
+        letter-spacing: 2px;
+        color: white;
+        background-color: rgba(0, 0, 0, .4);
+        border: 2px solid black;
+        border-radius: 8px;
+        padding: 8px;
+    
+    }
+    
+    .card .back p {
+        letter-spacing: 1px;
+    
+    }
+    
+    .marca-descripcion {
+        color: black;
+    
+    }
+    
+    .price {
+        color: green;
+        font-size: 25px;
+    }
+    
+    .card:hover .front {
+        transform: perspective(600px) rotateY(180deg);
+    
     }
 
-    .card:hover .desplegable {
+    .card:hover {
+        transform: scale(1.1);
 
-        color: rgb(22, 15, 15);
-        transform: scale(0.95);
-        transition: 1s;
+    }
+    
+    .card:hover .back {
+        transform: perspective(600px) rotateY(360deg);
+    
+    }
 
+
+}
+
+@media (max-width:1440px) {
+    .card {
+        position: relative;
+        width: 200px;
+        height: 275px;
     }
 
     .href-padding {

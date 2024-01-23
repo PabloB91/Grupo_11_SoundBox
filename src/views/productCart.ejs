@@ -16,20 +16,20 @@
             <section class="seccion-contenedora">
                 <section class="seccion-principal">
                     <div class="carrito" id="carrito">
-                        <h1>Ordenar Mi Cajita</h1>
-                        <div class="ordenador-container">
-                            <div class="ordenador">
-                                <button onclick="hide()"><i class="fa-solid fa-circle-arrow-up"></i></button>
-                                <button onclick="show()"><i class="fa-solid fa-arrow-down-a-z"></i></button>
-                                <button><i class="fa-solid fa-arrow-down-short-wide"></i></button>
-                                <button><i class="fa-solid fa-arrow-down-wide-short"></i></button>
-                            </div>
-                            <div class="labels-ordenador">
-                                <span>Eliminar seleccionados</span>
-                                <span>agregar a favoritos</span>
-                            </div>
-                        </div>
+                        <h1>Mi Cajita</h1>
                         <div class="desplegable" id="desplegable">
+                            <div class="ordenador-container">
+                                <div class="ordenador">
+                                    <button onclick="hide()"><i class="fa-solid fa-circle-arrow-up"></i></button>
+                                    <button onclick="ordenarPalabras()"><i class="fa-solid fa-arrow-down-a-z"></i></button>
+                                    <button><i class="fa-solid fa-arrow-down-short-wide"></i></button>
+                                    <button><i class="fa-solid fa-arrow-down-wide-short"></i></button>
+                                </div>
+                                <div class="labels-ordenador">
+                                    <span>Eliminar seleccionados</span>
+                                    <span>agregar a favoritos</span>
+                                </div>
+                            </div>
                             <% productos.forEach(product=> { %>
                                 <div class="card">
                                     <!-- Rounded switch -->
@@ -40,7 +40,7 @@
                                     <img src="/img/products/<%= product.imagen %>" alt="">
                                     <div class="nombre-marca">
                                         <a href="/products/productDetail/<%= product.id %>">
-                                            <h6>
+                                            <h6 id="text1">
                                                 <%= product.nombre %>
                                             </h6>
                                         </a>
@@ -74,69 +74,7 @@
                                     </div>
                         </div>
                         <div class="pie">
-                            <i class="fa-solid fa-cart-arrow-down"></i>
-                        </div>
-                    </div>
-
-                    <div class="favoritos" id="favoritos">
-                        <h1>Ordenar Mis Favoritos</h1>
-                        <div class="ordenador-container">
-                            <div class="ordenador">
-                                <button onclick="hide()"><i class="fa-solid fa-circle-arrow-up"></i></button>
-                                <button onclick="show()"><i class="fa-solid fa-arrow-down-a-z"></i></button>
-                                <button><i class="fa-solid fa-arrow-down-short-wide"></i></button>
-                                <button><i class="fa-solid fa-arrow-down-wide-short"></i></button>
-                            </div>
-                            <div class="labels-ordenador">
-                                <label for="#"> Agregar al Carrito </label>
-                                <label for="#"> Eliminar Seleccionados </label>
-                            </div>
-                        </div>
-                        <div class="desplegable" id="desplegable">
-                            <% productos.forEach(product=> { %>
-                                <div class="card">
-                                    <!-- Rounded switch -->
-                                    <label class="switch">
-                                        <input type="checkbox">
-                                        <span class="slider round"></span>
-                                    </label>
-                                    <img src=<%=product.imagen %>
-                                    alt="">
-                                    <div class="nombre-marca">
-                                        <a href="/products/productDetail">
-                                            <h6>
-                                                <%= product.nombre %>
-                                            </h6>
-                                        </a>
-                                        <p>
-                                            <%= product.marca %>
-                                        </p>
-                                    </div>
-                                    <p style="color: red; margin: auto;">sin stock</p>
-                                    <!-- <input type="number" min="1" max="1000" placeholder="Cantidad" required> -->
-                                    <div class="precio-descuento">
-                                        <span>
-                                            <%= product.precio + "$" %>
-                                        </span>
-                                        <span style="color: green;">
-                                            <%= "-" + product.descuento + " % OFF" %>
-                                        </span>
-                                    </div>
-                                    <div class="delete-card">
-                                        <span> eliminar </span>
-                                    </div>
-                                </div>
-                                <% }); %>
-                                    <div class="descripcion-card">
-                                        <p>check</p>
-                                        <p>imagen</p>
-                                        <p>producto</p>
-                                        <p>cantidad</p>
-                                        <p>precio</p>
-                                    </div>
-                        </div>
-                        <div class="pie">
-                            <i class="fa-solid fa-heart"></i>
+                            <button onclick="show()"><i class="fa-solid fa-cart-arrow-down"></i></button>
                         </div>
                     </div>
                 </section>
@@ -291,5 +229,40 @@
         // document.getElementById("carrito").style.display = "block";
 
     }
+
+
+
+                                // ORDENAR POR ALFABETO
+    // const orderByAlphabetical = (products, getter, order ="asc") => {
+    //     products.sort((a, b) => {
+    //         const first = gatter(a);
+    //         const second = gatter(b);
+
+    //         const compare = first.localeCompare(second);
+    //         return order === "asc" ? compare : -compare;
+
+    //     });
+    //     return products;
+
+    // }
+
+    // const productsByAlphabetic = orderByAlphabetical (products, product => product.nombre)
+
+    // console.log(productsByAlphabetic)
+
+    // function ordenarPalabras() {
+    //     let ol = document.getElementById("desplegable");
+    //     ol.innerHTML = "";
+    //     let cadena = document.getElementById("text1").value;
+    //     let palabrasOrdenadas = cadena.trim();
+    //     palabrasOrdenadas.sort();
+
+    //     for(let i  = 0; i < palabrasOrdenadas.lenght; i++) {
+    //         const li = document.createElement("li");
+    //         li.innerHTML = palabrasOrdenadas[i];
+    //         ol.appendChild(li);
+    //     }
+    //     document.getElementById("text1").select();
+    // }
 
 </script>
