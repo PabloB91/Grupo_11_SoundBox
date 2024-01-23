@@ -20,9 +20,9 @@
                         <div class="ordenador-container">
                             <div class="ordenador">
                                 <button onclick="hide()"><i class="fa-solid fa-circle-arrow-up"></i></button>
-                                <button  onclick="show()"><i  class="fa-solid fa-arrow-down-a-z"></i></button>
-                                <button><i  class="fa-solid fa-arrow-down-short-wide"></i></button>
-                                <button><i  class="fa-solid fa-arrow-down-wide-short"></i></button>
+                                <button onclick="show()"><i class="fa-solid fa-arrow-down-a-z"></i></button>
+                                <button><i class="fa-solid fa-arrow-down-short-wide"></i></button>
+                                <button><i class="fa-solid fa-arrow-down-wide-short"></i></button>
                             </div>
                             <div class="labels-ordenador">
                                 <span>Eliminar seleccionados</span>
@@ -32,36 +32,41 @@
                         <div class="desplegable" id="desplegable">
                             <% productos.forEach(product=> { %>
                                 <div class="card">
-                                    <input type="checkbox" name="#" id="#">
-                                    <img src="/img/products/<%= product.imagen %>"
-                                    alt="">
+                                    <!-- Rounded switch -->
+                                    <label class="switch">
+                                        <input type="checkbox" required>
+                                        <span class="slider round"></span>
+                                    </label>
+                                    <img src="/img/products/<%= product.imagen %>" alt="">
                                     <div class="nombre-marca">
                                         <a href="/products/productDetail/<%= product.id %>">
                                             <h6>
                                                 <%= product.nombre %>
                                             </h6>
                                         </a>
-                                            <p>
-                                                <%= product.marca %>
-                                            </p>
-                                        </div>
-                                        <!-- <p style="color: red; margin: auto;">sin stock</p> -->
-                                        <input type="number" min="1" max="<%= product.cantidad %>" placeholder="Cantidad" required>
-                                        <div class="precio-descuento">
-                                            <span>
-                                                <%= product.precio %> $
-                                            </span>
-                                            <span style="color: green;">
-                                                - <%= product.descuento %>% OFF
-                                            </span>
-                                        </div>
-                                        <div class="delete-card">
-                                            <span> eliminar </span>
-                                        </div>
+                                        <p>
+                                            <%= product.marca %>
+                                        </p>
                                     </div>
+                                    <!-- <p style="color: red; margin: auto;">sin stock</p> -->
+                                    <input type="number" min="1" max="<%= product.cantidad %>" placeholder="Cantidad"
+                                        required>
+                                    <div class="precio-descuento">
+                                        <span>
+                                            <%= product.precio %> $
+                                        </span>
+                                        <span style="color: green;">
+                                            - <%= product.descuento %>% OFF
+                                        </span>
+                                    </div>
+                                    <div class="delete-card">
+                                        <span> eliminar </span>
+                                    </div>
+                                </div>
 
                                 <% }); %>
                                     <div class="descripcion-card">
+                                        <p>check</p>
                                         <p>imagen</p>
                                         <p>producto</p>
                                         <p>cantidad</p>
@@ -69,7 +74,7 @@
                                     </div>
                         </div>
                         <div class="pie">
-                            <i  class="fa-solid fa-cart-arrow-down"></i>
+                            <i class="fa-solid fa-cart-arrow-down"></i>
                         </div>
                     </div>
 
@@ -78,9 +83,9 @@
                         <div class="ordenador-container">
                             <div class="ordenador">
                                 <button onclick="hide()"><i class="fa-solid fa-circle-arrow-up"></i></button>
-                                <button onclick="show()"><i  class="fa-solid fa-arrow-down-a-z"></i></button>
-                                <button><i  class="fa-solid fa-arrow-down-short-wide"></i></button>
-                                <button><i  class="fa-solid fa-arrow-down-wide-short"></i></button>
+                                <button onclick="show()"><i class="fa-solid fa-arrow-down-a-z"></i></button>
+                                <button><i class="fa-solid fa-arrow-down-short-wide"></i></button>
+                                <button><i class="fa-solid fa-arrow-down-wide-short"></i></button>
                             </div>
                             <div class="labels-ordenador">
                                 <label for="#"> Agregar al Carrito </label>
@@ -90,7 +95,11 @@
                         <div class="desplegable" id="desplegable">
                             <% productos.forEach(product=> { %>
                                 <div class="card">
-                                    <input type="checkbox" name="#" id="#">
+                                    <!-- Rounded switch -->
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider round"></span>
+                                    </label>
                                     <img src=<%=product.imagen %>
                                     alt="">
                                     <div class="nombre-marca">
@@ -119,6 +128,7 @@
                                 </div>
                                 <% }); %>
                                     <div class="descripcion-card">
+                                        <p>check</p>
                                         <p>imagen</p>
                                         <p>producto</p>
                                         <p>cantidad</p>
@@ -157,33 +167,73 @@
                                     <%= product.precio + "$" %>
                                 </p>
                             </div>
-                            
+
                             <% }); %>
                     </div>
 
-                    <div class="metodos-pago">
-                        <div class="titulo-metodos-pago">
-                            <p>Metodos De Pago</p>
-                        </div>
-                        <div class="seccion-metodos-pago">
-                            <i class="fa-brands fa-cc-visa"></i>
-                            <i class="fa-brands fa-cc-mastercard"></i>
-                            <i class="fa-solid fa-credit-card"></i>
-                            <i class="fa-brands fa-cc-paypal"></i>
-                        </div>
-
-                        <div class="titulo-metodos-pago">
-                            <p>Efectivo en:</p>
-                        </div>
-
-                        <div class="seccion-metodos-pago">
-                            <i class="fa-brands fa-ioxhost"></i>
-                            <i class="fa-brands fa-ioxhost"></i>
-                            <i class="fa-brands fa-ioxhost"></i>
-                            <i class="fa-brands fa-ioxhost"></i>
-                        </div>
-                    </div>
                 </section>
+                <div class="summary-container">
+                    <details>
+                        <summary>detalles del envio</summary>
+                        <p>envio a colombia y argentina por medio de OCA </p>
+                    </details>
+
+                    <details>
+                        <summary>Lorem ipsum dolor ssad asdasdas d asdasdas</summary>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste,</p>
+                    </details>
+                    <details>
+                        <summary>Lorem ipsum dolor ssad asdasdas d asdasdas</summary>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste,</p>
+                    </details>
+                    <details>
+                        <summary>Lorem ipsum dolor ssad asdasdas d asdasdas</summary>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste,</p>
+                    </details>
+                </div>
+                <!--                          sumarios 1 y 2                         -->
+                <div class="summary-container">
+
+                    <details>
+                        <summary>detalles del envio</summary>
+                        <p>envio a colombia y argentina por medio de OCA </p>
+                    </details>
+
+                    <details>
+                        <summary>Lorem ipsum dolor ssad asdasdas d asdasdas</summary>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste,</p>
+                    </details>
+                    <details>
+                        <summary>Lorem ipsum dolor ssad asdasdas d asdasdas</summary>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste,</p>
+                    </details>
+                    <details>
+                        <summary>Lorem ipsum dolor ssad asdasdas d asdasdas</summary>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste,</p>
+                    </details>
+                </div>
+                <div class="metodos-pago">
+                    <div class="titulo-metodos-pago">
+                        <p>Metodos De Pago</p>
+                    </div>
+                    <div class="seccion-metodos-pago">
+                        <i class="fa-brands fa-cc-visa"></i>
+                        <i class="fa-brands fa-cc-mastercard"></i>
+                        <i class="fa-solid fa-credit-card"></i>
+                        <i class="fa-brands fa-cc-paypal"></i>
+                    </div>
+
+                    <div class="titulo-metodos-pago">
+                        <p>Efectivo en:</p>
+                    </div>
+
+                    <div class="seccion-metodos-pago">
+                        <i class="fa-brands fa-ioxhost"></i>
+                        <i class="fa-brands fa-ioxhost"></i>
+                        <i class="fa-brands fa-ioxhost"></i>
+                        <i class="fa-brands fa-ioxhost"></i>
+                    </div>
+                </div>
             </section>
             <div class="separador"></div>
             <div class="separador-externo"></div>
@@ -200,7 +250,7 @@
                     <div class="corredor">
                         <% productos.forEach(product=> { %>
                             <div class="image-related">
-                                <img src=/img/products/<%= product.imagen %> alt="">
+                                <img src=/img/products/<%=product.imagen %> alt="">
                             </div>
 
                             <!-- fin del carrusel agregar a carrito -->
@@ -230,18 +280,16 @@
 </body>
 
 <script type="text/javascript">
-    function hide(){
+    function hide() {
         document.getElementById("desplegable").style.display = "none";
         // document.getElementById("favoritos").style.display = "block";
 
     }
 
-    function show(){
-        document.getElementById("favoritos").style.display = "none";
+    function show() {
+        document.getElementById("desplegable").style.display = "block";
         // document.getElementById("carrito").style.display = "block";
 
     }
 
 </script>
-
-

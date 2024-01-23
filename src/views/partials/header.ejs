@@ -6,8 +6,8 @@
 
                 <ul>
 
-                    <div class="right">
-                        
+                    <div class="left">
+
                         <li class="li-comment">
                             <div class="comment_envios-locales">
                                 <span class="material-symbols-outlined">local_shipping</span>
@@ -15,30 +15,32 @@
                                 <p>Envíos locales e internacionales inmediatos</p>
                             </div>
                         </li>
-                        
+
                     </div>
 
-                    <div class="left">
+                    <div class="right">
 
                         <li class="li_login-register">
 
                             <div class="register-login">
-                                
+
                                 <div class="register">
                                     <a href="/register">
-                                        <span class="material-symbols-outlined">person</span><p>Crear cuenta</p>
+                                        <span class="material-symbols-outlined">person</span>
+                                        <p>Crear cuenta</p>
                                     </a>
                                 </div>
-    
+
                                 <div class="login">
                                     <a href="/login">
-                                        <span class="material-symbols-outlined">login</span><p>Ingresar</p>
+                                        <span class="material-symbols-outlined">login</span>
+                                        <p>Ingresar</p>
                                     </a>
                                 </div>
-    
+
                             </div>
                         </li>
-    
+
                         <li class="li-miCajita">
                             <a href="/productCart">
                                 <div class="btn-cajita">
@@ -47,18 +49,7 @@
                                 </div>
                             </a>
                         </li>
-<<<<<<< HEAD
 
-                        <li class="li_user">
-                            <a href="/admin" class="acount">
-                                <i class="fa-sharp fa-solid fa-circle-user" style="color: #ff540a;"></i>
-                            </a>
-                        </li>
-
-                    </div>
-
-=======
-    
                         <li class="li_user">
                             <a href="/admin" class="acount">
                                 <i class="fa-sharp fa-solid fa-circle-user"></i>
@@ -67,8 +58,7 @@
 
                     </div>
 
-                    
->>>>>>> bc61c3c324ad74a043637cca5b326a0cdc71bc58
+
                 </ul>
 
             </nav>
@@ -168,9 +158,6 @@
 
                 <li class="dropdown">
 
-                    <div>
-                        <a href="#">Ofertas</a><i class="fa-solid fa-chevron-down"></i>
-                    </div>
 
                     <div class="dropdown-content">
                         <a href="#">Link 1</a>
@@ -180,38 +167,65 @@
 
                 </li>
 
-                <li class="search-bar">
-                    <div class="search">
+                <div class="search-bar">
+                    <input type="text" placeholder="Buscar..">
+                    <div class="btn-search-bar">
                         <i class="fa-solid fa-magnifying-glass" style="color: #fff;"></i>
                     </div>
-                </li>
-                
-                <div class="menu-burguer">
-                    <div class="menu-line"></div>
-                    <div class="menu-line"></div>
-                    <div class="menu-line"></div>
                 </div>
-
+                
+                <section class="container-menu-burguer">
+                    <div class="menu-burguer" onclick="hide()">
+                        <div class="menu-line" onclick="show()"></div>
+                        <div class="menu-line" onclick="show()"></div>
+                        <div class="menu-line" onclick="show()"></div>
+                    </div>
+    
+                </section>
+                
             </ul>
-
-
+            
+            
         </nav>
+        <div class="desplegable-header" id="desplegable">
+            <ul class="menu-desplegable">
+                <li>sdfsdfsdf</li>
+                <li>sdfsdfsdf</li>
+                <li>sdfsdfsdf</li>
+                <li>sfdsdfsdf</li>
+            </ul>
+        </div>
 
     </section>
 
 
 </header>
 
-    <script>
+<script>
 
-        var iconMenu = document.querySelector('.menu-burguer');
+    var iconMenu = document.querySelector('.menu-burguer');
 
-        iconMenu.addEventListener('click', function() {
+    iconMenu.addEventListener('click', function () {
         if (iconMenu.classList.contains('open')) {
             iconMenu.classList.remove('open');
         } else {
             iconMenu.classList.add('open');
         }
-        }, false);
+    }, false);
 
-    </script>
+</script>
+
+<script type="text/javascript">
+    function hide() {
+        document.getElementById("desplegable").style.display = "none";
+        // document.getElementById("favoritos").style.display = "block";
+
+    }
+
+    function show() {
+        document.getElementById("desplegable").style.display = "block";
+        // document.getElementById("carrito").style.display = "block";
+
+    }
+
+</script>

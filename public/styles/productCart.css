@@ -2,25 +2,25 @@
 .seccion-contenedora {
     display: flex;
     background-color: #B7B3A1;
+    flex-wrap: wrap;
 
 }
 
 .seccion-principal {
-    width: 75vw;
+    width: 75%;
 
 }
 
 .seccion-secundaria {
-    width: 25vw;
+    width: 25%;
 
 }
 
 .carrito,
 .favoritos {
-    background-color: #FF540A;
-    /* background: linear-gradient(135deg, hsla(342, 100%, 88%, 1) 0%, hsla(0, 84%, 76%, 1) 17%, hsla(18, 100%, 52%, 1) 71%); */
+    /* background-color: #FF540A; */
+    background: linear-gradient(135deg, hsla(342, 100%, 88%, 1) 0%, hsla(0, 84%, 76%, 1) 17%, hsla(18, 100%, 52%, 1) 71%);
     border-radius: 18px;
-    padding: 0.5rem;
     margin: 1rem;
     box-shadow: 25px 25px 10px gray;
     margin-bottom: 2rem;
@@ -35,11 +35,11 @@
 }
 
 .desplegable {
-    /* display: none; */
+    display: flex;
     flex-direction: column;
     position: relative;
     overflow-y: scroll;
-    max-height: 39.5rem;
+    max-height: 40rem;
 }
 
 
@@ -53,7 +53,7 @@
 }
 
 .card img {
-    width: 150px;
+    width: 170px;
 }
 
 .nombre-marca {
@@ -85,14 +85,16 @@
     margin: 20px;
 
 }
-
 .delete-card {
-    display: flex;
+    display: none;
     margin-top: 10px;
     margin-right: 10px;
     height: 25px;
     border: 2px solid black;
     border-radius: 15px;
+    position: absolute;
+    top: 0;
+    right: 15px;
 
 }
 
@@ -165,9 +167,32 @@
     justify-content: center;
 }
 
+.summary-container {
+    display: flex;
+    background-color: #FF540A;
+    width: 34%;
+    margin-left: 1rem;
+    border-radius: 18px;
+    padding: 15px;
+    box-shadow: 25px 25px 10px gray;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    font-size: 25px;
+}
+
 /* ----------------------------------------------------------------------------------------------------------------- */
 
 /* ----------------------------------------------------------------------------------------------------------------- */
+
+details p  {
+    border: 3px solid white;
+    background: lightgray;
+    padding: 8px;
+    border-radius: 18px;
+}
+
 .titulo-desplegable-pago-total {
     color: white;
     background: black;
@@ -184,7 +209,7 @@
     align-items: center;
     justify-content: space-evenly;
     background-color: #ebebeb;
-    max-height: 20rem;
+    max-height: 30rem;
     margin-bottom: 2rem;
     border: 17px solid black;
     border-radius: 13%;
@@ -227,6 +252,7 @@
     margin: 1rem;
     padding: 0.5rem;
     box-shadow: 25px 25px 10px gray;
+    width: 28%;
 }
 
 .titulo-metodos-pago {
@@ -269,14 +295,14 @@
 }
 
 .separador {
-    width: 100vw;
+    width: 100%;
     height: 25px;
     background-color: gray;
 
 }
 
 .separador-externo {
-    width: 100vw;
+    width: 100%;
     height: 25px;
     background-color: #FF540A;
 }
@@ -284,7 +310,7 @@
 .seccion-carrusel {
     padding: 1.5rem;
     background-color: #B7B3A1;
-    width: 100vw;
+    width: 100%;
     display: flex;
     justify-content: center;
 }
@@ -317,6 +343,71 @@
 /* ----------------------------------------------------------------------------------------------------------------- */
 
 /* ----------------------------------------------------------------------------------------------------------------- */
+
+/*  INPUT SWITCHER DE CADA CARD */
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
 /* animaciones */
 .favoritos {
     display: none;
@@ -329,10 +420,27 @@
     transform: scale(0.95);
     border: 5px solid white;
     border-radius: 10px;
+
+    
 }
 
-/* media queeries para pc */
+.card:hover .delete-card{
+    display: flex;
+    animation: 5s;
+}
+
+/* media queeries para pc SMALL */
 @media (min-width:1024px) {
+
+    .seccion-principal {
+        width: 70%;
+
+    }
+
+    .seccion-secundaria {
+        width: 28%;
+
+    }
 
     .card {
         border-radius: 0;
@@ -351,6 +459,11 @@
         transition: 7s;
         border: 2px solid black;
         border-radius: 15px;
+    }
+
+    .desplegable {
+        max-height: 60rem;
+
     }
 
 }
@@ -384,15 +497,30 @@
     }
 
     .seccion-secundaria {
-        width: 60vw;
+        width: 70vw;
+
+    }
+
+    .summary-container {
+        width: 70vw;
+
+    }
+
+    .metodos-pago {
+        width: 70vw;
+
+    }
+
+    .summary-container {
+        margin-left: 0;
 
     }
 
 }
 
 /* elimina las barras de los inputs-type:number */
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
+input[type=scrollbar]::-webkit-inner-spin-button,
+input[type=scrollbar]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
