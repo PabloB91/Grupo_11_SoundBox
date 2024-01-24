@@ -1,146 +1,203 @@
-<%- include('./partials/head.ejs') %>
-<link href="/styles/loginRegister.css" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="en-es">
 
-<body>
+    <%- include('./partials/head.ejs') %>
+    <link href="/styles/loginRegister.css" rel="stylesheet">
 
-    <!-- =========================================================================================================== -->
-
-    <!-- -HEADER / ENCABEZADO- -->
-    <%- include('./partials/header.ejs') %>
-
-    <!-- =========================================================================================================== -->
-
-    <!-- ----LOGIN / ACCESO---- -->
-
-    <main class="main-login">
-
-        <section class="main-login_section">
-
-            <div class="main-login_title">
-                <h1>¡Comienza la buena vibra!</h1>
-            </div>
-    
-            <form action="/register" method="POST" class="main-login_form">
-    
-                <div class="main-login_form_box-container one-login">
-                    
-                    <div class="main-login-form-box-container_title">
-                            <h2>CREAR CUENTA</h2>
-                    </div>
-    
-                    <div class="fieldset nombres-apellidos">
-    
-                      <div class="label">
-                          <label for="Nombres y Apellidos"></label>
-                      </div>
-
-                      <div class="fa-onda fa-logo">
-                        <img src="/img/svg/simbolequalizer.svg" alt="">
-                        </div>
-    
-                      <div class="input">
-                          <input id="nombre y apellido" type="nombre y apellido" placeholder="Nombres y Apellidos" required>
-                        </div>
-    
-                    </div>
-    
-                      <div class="fieldset mail">
-    
-                        <div class="label">
-                            <label for="email"></label>
-                        </div>
-
-                        <div class="fa-onda fa-logo">
-                            <img src="/img/svg/simbolequalizer.svg" alt="">
-                        </div>
-    
-                        <div class="input">
-                            <input id="email" type="email" placeholder="Email" required>
-                        </div>
-    
-                    </div>
-    
-                    <div class="fieldset password">
-    
-                        <div class="label">
-                            <label for="password"></label>
-                        </div>
-
-                        <div class="fa-onda fa-logo">
-                            <img src="/img/svg/simbolequalizer.svg" alt="">
-                        </div>
-    
-                        <div class="input">
-                            <input id="password" type="password" placeholder="Contraseña" required>
-                        </div>
-
-                     </div>
-
-                    <div class="fieldset confirm-password">
-    
-                        <div class="label">
-                            <label for="confirm-password"></label>
-                        </div>
-    
-                        <div class="fa-onda fa-logo">
-                            <img src="/img/svg/simbolequalizer.svg" alt="">
-                        </div>
-    
-                        <div class="input">
-                          <input id="password" type="password" placeholder="Repetir contraseña" required>
-                        </div>
-
-                     </div>
-    
-                    <div class="button crear">
-                        <input type="submit" value="Crear">
-                    </div>
-    
-                </div>
-    
-                <div class="main-login_form_box-container two-login">
-    
-                    <article class="paragraph">
-
-                        <div class="img-link-soundBox">
-                            <a href="/">
-                                <img id="logo" src="/img/svg/estandar.svg" alt="SoundBox">
-                            </a>
-                        </div>
-
-                        <div class="text">
-
-                            <p>Ya eres parte de SoundBox?</p>
+    <body>
         
-                            <div class="a-crear-cuenta">
-                                <a href="/login">Ingresar</a>
+<!-- =========================================================================================================== -->
+        
+        <!-- -HEADER / ENCABEZADO- -->
+        <%- include('./partials/header.ejs') %>
+
+<!-- =========================================================================================================== -->
+
+        <!-- ----LOGIN / ACCESO---- -->
+
+        <main class="main-login">
+            
+            <section class="main-login_section">
+
+                <div class="main-login_title">
+                    <h1>¡Comienza la buena vibra!</h1>
+                </div>
+        
+                <form action="/register" method="POST" class="main-login_form" enctype="multipart/form-data">
+        
+                    <div class="main-login_form_box-container one-login">
+                        
+                        <div class="main-login-form-box-container_title">
+                            <h2>CREAR CUENTA</h2>
+                        </div>
+        
+                        <div class="fieldset names">
+        
+                        <div class="label">
+                            <label for="Nombres"></label>
+                            </div>
+                            
+                            <div class="fa-onda fa-logo">
+                            <img src="/img/svg/simbolequalizer.svg" alt="">
+                            </div>
+        
+                        <div class="input">
+                            <input id="nombre" type="nombre" placeholder="Nombres" required>
+                            </div>
+        
+                        </div>
+
+                        <div class="fieldset last-names">
+        
+                        <div class="label">
+                            <label for="Apellidos"></label>
+                            </div>
+                            
+                            <div class="fa-onda fa-logo">
+                            <img src="/img/svg/simbolequalizer.svg" alt="">
+                            </div>
+        
+                        <div class="input">
+                            <input id="last-names" type="last-names" placeholder="Apellidos" required>
+                            </div>
+        
+                        </div>
+        
+                        <div class="fieldset e-mail">
+        
+                            <div class="label">
+
+                                <label for="email"></label>
+                            </div>
+
+                            <div class="fa-onda fa-logo">
+                                    <img src="/img/svg/simbolequalizer.svg" alt="">
+                            </div>
+        
+                            <div class="input">
+                                <input id="e-mail" type="e-mail" placeholder="E-mail" required>
+                            </div>
+        
+                        </div>
+        
+                        <div class="fieldset password">
+        
+                            <div class="label">
+                                <label for="password"></label>
+                            </div>
+
+                            <div class="fa-onda fa-logo">
+                                <img src="/img/svg/simbolequalizer.svg" alt="">
+                            </div>
+        
+                            <div class="input">
+                                <input id="password" type="password" placeholder="Contraseña" required>
                             </div>
 
                         </div>
-    
-                    </article>
-    
-                    <div class="button">
-    
-                        <a href="/login">
-                            <input type="button" name="" id="" value="Ingresar">
-                        </a>
-    
+
+                        <div class="fieldset confirm-password">
+        
+                            <div class="label">
+                                <label for="Confirmar contraseña"></label>
+                            </div>
+        
+                            <div class="fa-onda fa-logo">
+                                <img src="/img/svg/simbolequalizer.svg" alt="">
+                            </div>
+        
+                            <div class="input">
+                            <input id="confirm-password" type="password" placeholder="Confirmar contraseña" required>
+                            </div>
+                            
+                        </div>
+
+                        <div class="fieldset categoria">
+        
+                            <div class="label">
+                                <label for="Categoria"></label>
+                            </div>
+        
+                            <div class="fa-onda fa-logo">
+                                <img src="/img/svg/simbolequalizer.svg" alt="">
+                            </div>
+        
+                            <div class="input">
+                            <select name="category-user-admin" id="categoory-create-user">
+                                <option value="choose"> Elegir categoria</option>
+                                <option value="choose"> Administrador</option>
+                                <option value="choose"> Comprador</option>
+                            </select>
+                            </div>
+                            
+                        </div>
+
+                        <div class="fieldset img-porfile">
+        
+                            <div class="label">
+                                <label for="Imagen de Perfil"></label>
+                            </div>
+        
+                            <div class="fa-onda fa-logo">
+                                <img src="/img/svg/simbolequalizer.svg" alt="">
+                            </div>
+        
+                            <div class="input">
+                                <input placeholder="Imgen de Perfil" type="file"  name="img-porfile" class="img-porfile">
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="button crear">
+                            <input type="submit" value="Crear">
+                        </div>
+                            
                     </div>
+        
+                    <div class="main-login_form_box-container two-login">
+                            
+                            <article class="paragraph">
+                                
+                            <div class="img-link-soundBox">
+                                <a href="/">
+                                    <img id="logo" src="/img/svg/estandar.svg" alt="SoundBox">
+                                </a>
+                            </div>
+                            
+                            <div class="text">
+                                
+                                <p>Ya eres parte de SoundBox?</p>
+                                
+                                <div class="a-crear-cuenta">
+                                    <a href="/login">Ingresar</a>
+                                </div>
+                                
+                            </div>
+        
+                        </article>
+                        
+                        <div class="button">
+        
+                            <a href="/login">
+                                <input type="button" name="" id="" value="Ingresar">
+                            </a>
+                            
+                        </div>
+        
+                    </div>
+                    
+                </form>
+
+            </section>
+            
+        </main>
+
+<!-- =========================================================================================================== -->
+        
+        <!-- FOOTER / PIE DE PAGINA -->
+        <%- include('./partials/footer.ejs') %>
+        
+<!-- =========================================================================================================== -->
+    </body>
     
-                </div>
-    
-            </form>
-
-        </section>
-
-
-    </main>
-
-    <!-- =========================================================================================================== -->
-
-    <!-- FOOTER / PIE DE PAGINA -->
-    <%- include('./partials/footer.ejs') %>
-
-    <!-- =========================================================================================================== -->
-</body>
+</html>
