@@ -1,0 +1,16 @@
+[
+{
+"Id": 1,
+"Nombre": "firstName",
+"Apellido": "lastName",
+"Email": "email",
+"Contraseña": "password",
+"Confirmar_contraseña": "confirm-password",
+"Tipo_de_Cuenta": "user-admin || user",
+"Imagen": "image",
+"Fecha_Registro": "yyyy/mm/dd"
+},
+{
+
+}
+]
