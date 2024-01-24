@@ -1,15 +1,11 @@
 [
-{
-"Identificador": "id",
-"Nombre": "firstName",
-"Apellido": "lastName",
-"Email": "email",
-"Contraseña": "password",
-"Cuenta": "user-admin_||user",
-"Imagen": "image",
-"register": "yyyy/mm/dd"
-},
-{
-
-}
+    {
+    "user-id": "id",
+    "name": "name",
+    "last-name": "lastName",
+    "e-mail": "email",
+    "password": "password",
+    "confirm-password": "confirm-password",
+    "img-porfile": "/img/"
+    }
 ]
