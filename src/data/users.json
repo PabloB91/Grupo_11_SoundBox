@@ -1,12 +1,11 @@
 [
     {
-    "Identificador": "id",
+    "user-id": "id",
     "name": "name",
     "last-name": "lastName",
     "e-mail": "email",
     "password": "password",
     "confirm-password": "confirm-password",
-    "category-user": "vendedor||comprador",
-    "img-porfil": "/img/"
+    "img-porfile": "/img/"
     }
 ]
