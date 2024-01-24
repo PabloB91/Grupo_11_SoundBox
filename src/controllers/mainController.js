@@ -55,10 +55,10 @@ const mainController = {
 
     },
 
-    admin: (req, res) => {
+    admin: (req, res) => {          //--> Sugiero adaptar esto a 'userProfile', y que dependiendo cuál esté logueado, que renderice vista de Admin o de Usuario común
         const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
-        res.render("administrador", authMiddleware, { products });
+        res.render("administrador", /* authMiddleware, */ { products });
 
     },
     
