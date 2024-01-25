@@ -21,16 +21,7 @@
                 <div class="main-login_title">
                     <h1>¡Comienza la buena vibra!</h1>
                 </div>
-                <% if(locals && locals.mensajesDeError) { %>
-
-                    <% for (let error in mensajesDeError) { %>
-
-                        <p> <%= mensajesDeError[error].msg %> </p>
-
-                    <% } 
-                }
-                    %>
-                <form action="/register" method="POST" class="main-login_form" enctype="multipart/form-data">
+                <form action="/users/register" method="POST" class="main-login_form" enctype="multipart/form-data">
 
                     <div class="main-login_form_box-container one-login">
                         

@@ -1,9 +1,33 @@
 [
     {
-    "userId": "id",
-    "name": "name",
-    "lastName": "lastName",
+    "userId": 1,
+    "name": "Nombre",
+    "lastName": "Apellido",
     "email": "email",
+    "password": "password",
+    "imgProfile": "/img/"
+    },
+    {
+    "userId": 2,
+    "name": "Nombre",
+    "lastName": "Apellido",
+    "email": "email", 
+    "password": "password",
+    "imgProfile": "/img/"
+    },
+    {
+    "userId": 3,
+    "name": "Nombre",
+    "lastName": "Apellido",
+    "email": "email",
+    "password": "password",
+    "imgProfile": "/img/"
+    },
+    {
+    "userId": 4,
+    "name": "Nombre",
+    "lastName": "Apellido",
+    "email": "email", 
     "password": "password",
     "imgProfile": "/img/"
     }
