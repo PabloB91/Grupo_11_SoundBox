@@ -52,8 +52,6 @@ const controller = {
 		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 		/* console.log(req.files[0]["filename"]);
 		console.log(req.files[1]); */
-		console.log(req.body.coloresDisponibes);
-
 		
 
 		const newProduct = {

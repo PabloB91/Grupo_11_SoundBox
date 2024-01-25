@@ -2,6 +2,7 @@ const path = require("path")
 const express = require("express")
 const app = express();
 const fs = require("fs");
+const bcrypt = require("bcryptjs")
 
 const { validationResult } = require("express-validator")
 
@@ -18,11 +19,11 @@ const usersControllers = {
 
     },
     detailUser: (req, res) => {
+        const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
-        const usersFilePath = path.join(__dirname, '../data/usersDataBase.json');
         const userId = req.params.id
-		const UserDefinido = usersFilePath.find(user => {
-            return user.id == userId
+		const UserDefinido = users.find(element => {
+            return element.id == userId
 		})
         
 		if(UserDefinido){
@@ -37,7 +38,7 @@ const usersControllers = {
     },
 
     processToLogin: (req, res) => {
-
+        const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
     },
 
     register: (req, res) => {
@@ -53,7 +54,24 @@ const usersControllers = {
     },
 
     processToCreate: (req, res) => {
+        const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
+        const passwordToValidate = req.body.password
+
+        newUser = {
+            userId: users[users.length - 1].id + 1,
+			name: req.boy.name,
+            lastName: req.body.lastName,
+            email: req.body.email,
+            password: bcrypt.hashSync(passwordToValidate, 10),
+            imgProfile: req.file.filename
+        }
+
+        products.push(newUser);
+
+		fs.writeFileSync(usersFilePath, JSON.stringify(users, null, ' '));
+
+		res.redirect('')
     }
     
 }

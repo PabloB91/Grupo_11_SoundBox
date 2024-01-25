@@ -6,11 +6,12 @@ const path = require("path")
 const usersController = require("../controllers/usersController")
 const { body } = require("express-validator")
 
+// validaciones
 const validacionesFinales = [
     body("name").notEmpty().withMessage('Este campo es necesario'),
-    body("last-name").notEmpty().withMessage('Este campo es necesario'),
-    body('e-mail').trim().not().isEmpty().withMessage('Este campo es necesario'),
-    body('e-mail').isEmail().withMessage('Ingresa una direccion valida'),
+    body("lastName").notEmpty().withMessage('Este campo es necesario'),
+    body('email').trim().not().isEmpty().withMessage('Este campo es necesario'),
+    body('email').isEmail().withMessage('Ingresa una direccion valida'),
     body("password").notEmpty().isLength({min: 8, max: 16 }),
     body("password").matches(/[A-Z]/).withMessage('La contraseña debe tener al menos una mayuscula'),
     body("password").matches(/[a-z]/).withMessage('La contraseña debe tener al menos una minuscula'),
@@ -23,6 +24,22 @@ const validacionesFinales = [
       }),
 ];
 
+// multer
+const storage = multer.diskStorage({
+
+    // donde guardamos los archivos
+    destination : function(req, file, cb){
+        cb(null, "public/img/products")
+    },
+
+    // que nombre tendra el archivo nuevo
+    filename : function(req, file, cb){
+        cb(null, 'USER-ICON'+file.fieldname + " - " + Date.now() + path.extname(file.originalname));
+    }
+
+});
+const upload = multer({storage});
+
 
 // Detalle del usuario
 router.get('/userProfile/:id', usersController.detailUser) 
@@ -34,7 +51,7 @@ Es decir, según el 'id' del usuario logueado, va a mostrar lo que corresponda a
 
 //Crear un usuario
 router.get('/register', usersController.register);
-router.post('/register', usersController.processToCreate);
+router.post('/register',upload.single("imgProfile"), usersController.processToCreate);
 
 // Editar un usuario
 /* router.get('/editUser/:id', userssController...;) --> A completar
