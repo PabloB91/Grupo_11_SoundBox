@@ -1,11 +1,11 @@
-// function authMiddlewares (req, res, next) {
-//     let admin = true;
-//     if (admin) {
-//         next();
-//     } else {
-//         res.render("no-admin");
-//     }
-    
-// };
+function authMiddlewares (req, res, next) {
+    if (req.session.userLogged) {
+        res.redirect("/login");
+    } else {
 
-// module.exports = authMiddlewares;
+    }
+    next();
+    
+};
+
+module.exports = authMiddlewares;

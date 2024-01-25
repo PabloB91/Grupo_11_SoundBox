@@ -1,6 +1,6 @@
 const router = require("./mainRouter");
 
-/* router.get('/userProfile/:id', usersController...); --> Esto es una sugerencia, de crear una página con el perfil del usuario común además de la de Admin 
+/* ; --> Esto es una sugerencia, de crear una página con el perfil del usuario común además de la de Admin 
 Es decir, según el 'id' del usuario logueado, va a mostrar lo que corresponda al Admin (crear y borrar productos) o al Usuario (perfil del usuario) */
 
 //Crear un usuario

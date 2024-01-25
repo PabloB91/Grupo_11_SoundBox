@@ -24,6 +24,10 @@
 
                             <div class="register-login">
 
+                                <div class="admin-container">
+                                    <a href="/admin"><i class="fa-solid fa-user-tie"></i></a>
+                                </div>
+
                                 <div class="register">
                                     <a href="/register">
                                         <span class="material-symbols-outlined">person</span>
@@ -51,7 +55,7 @@
                         </li>
 
                         <li class="li_user">
-                            <a href="/admin" class="acount">  <!-- Sugiero adaptar esto a "/userProfile" -->
+                            <a href="/users" class="acount">  <!-- Sugiero adaptar esto a "/userProfile" -->
                                 <i class="fa-sharp fa-solid fa-circle-user"></i>
                             </a>
                         </li>
@@ -166,7 +170,7 @@
 
 <script>
 
-    var iconMenu = document.querySelector('.menu-burguer');
+    var iconMenu = document.querySelector('.m+enu-burguer');
 
     iconMenu.addEventListener('click', function () {
         if (iconMenu.classList.contains('open')) {

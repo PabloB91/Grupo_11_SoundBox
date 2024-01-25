@@ -5,7 +5,7 @@ const app = express();
 const fs = require("fs");
 const { log } = require("console");
 
-const authMiddleware = require("../middlewares/authMiddleware");
+
 
 /* En la constante "products" ya tienen los productos que están 
 guardados en la carpeta Data como Json (un array de objetos literales) */
@@ -58,7 +58,7 @@ const mainController = {
     admin: (req, res) => {          //--> Sugiero adaptar esto a 'userProfile', y que dependiendo cuál esté logueado, que renderice vista de Admin o de Usuario común
         const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
-        res.render("administrador", /* authMiddleware, */ { products });
+        res.render("administrador", { products });
 
     },
     

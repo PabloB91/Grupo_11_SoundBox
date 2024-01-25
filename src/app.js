@@ -7,6 +7,7 @@ const methodOverride = require('method-override'); // requiriendo method para us
 const logMiddleware = require("./middlewares/logMiddleware");
 
 const app = express();
+const session = require("express-session")
 
 //*****************************************************************************************************\\
 
@@ -19,13 +20,13 @@ app.use(express.json())
 
 // Para poder usar los metodos put y delete
 app.use(methodOverride('_method'));
-
 //*****************************************************************************************************\\
 
-                                // MIDDLEWARES ESCRITOS X NOSOTROS
+// MIDDLEWARES ESCRITOS X NOSOTROS
 // quedan almacenadas en un log.txt las rutas donde accede el usuario
 
 // app.use(logMiddleware);
+app.use(session({secret: "es secreto pa!"}))
 
 //*****************************************************************************************************\\
 

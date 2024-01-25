@@ -30,6 +30,12 @@ header {
 
     }
 
+    .admin-container i {
+        font-size: 28px;
+        color: green;
+
+    }
+
     .left {
         display: flex;
         justify-content: flex-start;
