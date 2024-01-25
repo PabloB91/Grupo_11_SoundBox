@@ -4,6 +4,7 @@ const express = require("express")
 const app = express();
 const fs = require("fs");
 const { log } = require("console");
+const { validationResult } = require("express-validator")
 
 
 
@@ -39,19 +40,6 @@ const mainController = {
         const productCategory = products.filter(product => product.categorias === req.params.nombre)
         //console.log(productCategory)
         res.render("categoria", { productos: productCategory })
-
-    },
-
-    // formularios
-    login: (req, res) => {
-
-        res.render("login");
-
-    },
-
-    register: (req, res) => {
-
-        res.render("register");
 
     },
 

@@ -21,9 +21,17 @@
                 <div class="main-login_title">
                     <h1>¡Comienza la buena vibra!</h1>
                 </div>
-        
+                <% if(locals && locals.mensajesDeError) { %>
+
+                    <% for (let error in mensajesDeError) { %>
+
+                        <p> <%= mensajesDeError[error].msg %> </p>
+
+                    <% } 
+                }
+                    %>
                 <form action="/register" method="POST" class="main-login_form" enctype="multipart/form-data">
-        
+
                     <div class="main-login_form_box-container one-login">
                         
                         <div class="main-login-form-box-container_title">
@@ -41,7 +49,7 @@
                             </div>
         
                         <div class="input">
-                            <input id="user-name" name="user-name" type="name" placeholder="Nombres" required>
+                            <input id="user-name" name="name" type="text" placeholder="Nombres">
                             </div>
         
                         </div>
@@ -57,12 +65,12 @@
                             </div>
         
                         <div class="input">
-                            <input id="last-name" name="last-name" type="last-name" placeholder="Apellidos" required>
+                            <input id="last-name" name="lastName" type="text" placeholder="Apellidos">
                             </div>
         
                         </div>
         
-                        <div class="fieldset e-mail">
+                        <div class="fieldset email">
         
                             <div class="label">
                                 <label for="email"></label>
@@ -73,7 +81,7 @@
                             </div>
         
                             <div class="input">
-                                <input id="e-mail" name="e-mail" type="e-mail" placeholder="E-mail" required>
+                                <input id="e-mail" name="email" type="e-mail" placeholder="E-mail">
                             </div>
         
                         </div>
@@ -89,7 +97,7 @@
                             </div>
         
                             <div class="input">
-                                <input id="password" name="password" type="password" placeholder="Contraseña" required>
+                                <input id="password" name="password" type="password" placeholder="Contraseña">
                             </div>
 
                         </div>
@@ -105,7 +113,7 @@
                             </div>
         
                             <div class="input">
-                            <input id="confirm-password" name="confirm-password" type="password" placeholder="Confirmar contraseña" required>
+                            <input id="confirm-password" name="confirm-password" type="password" placeholder="Confirmar contraseña">
                             </div>
                             
                         </div>
@@ -121,7 +129,7 @@
                             </div>
         
                             <div class="input">
-                                <input placeholder="Imgen de Perfil" type="file"  name="img-porfile" class="img-porfile">
+                                <input placeholder="Imgen de Perfil" type="file"  name="imgProfile" class="img-porfile">
                             </div>
                             
                         </div>
@@ -156,7 +164,7 @@
                         
                         <div class="button">
         
-                            <a href="/login">
+                            <a href="/users/login">
                                 <input type="button" name="" id="" value="Ingresar">
                             </a>
                             
