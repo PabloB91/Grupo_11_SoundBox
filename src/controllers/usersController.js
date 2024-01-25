@@ -8,19 +8,25 @@ const { validationResult } = require("express-validator")
 
 /* En la constante "users" ya tienen los usuarios que están 
 guardados en la carpeta Data como Json (un array de objetos literales) */
-const usersFilePath = path.join(__dirname, '../data/usersDataBase.json');
+const usersFilePath = path.join(__dirname, "../data/usersDataBase.json");
 
 //const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 const usersControllers = {
-    index: (req, res) => {
-
-        res.render("index"); 
-
-    },
     detailUser: (req, res) => {
-        const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+        /* const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
+        let userId = req.params.id
+
+		let userDefinido = usersJson.find(element => {
+			return element.id == userId
+		})
+
+		if(userDefinido){
+			res.render("users", { singleProduct : userDefinido })
+		} else{
+            res.send("ERROR")
+		} */
         res.render("users")
     },
 
@@ -29,7 +35,7 @@ const usersControllers = {
     },
 
     processToLogin: (req, res) => {
-        const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+        const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
     },
 
     register: (req, res) => {
@@ -45,24 +51,24 @@ const usersControllers = {
     },
 
     processToCreate: (req, res) => {
-        const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+        const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
         const passwordToValidate = req.body.password
 
         newUser = {
-            userId: users[users.length - 1].id + 1,
-			name: req.boy.name,
+            userId: usersJson[usersJson.length - 1].id + 1,
+			name: req.body.name,
             lastName: req.body.lastName,
             email: req.body.email,
             password: bcrypt.hashSync(passwordToValidate, 10),
-            imgProfile: req.file.filename
+            imgProfile: req.file == undefined ? "usuario-al-azar.png" : req.file.filename
         }
 
-        products.push(newUser);
+        usersJson.push(newUser);
 
-		fs.writeFileSync(usersFilePath, JSON.stringify(users, null, ' '));
+		fs.writeFileSync(usersFilePath, JSON.stringify(usersJson, null, ' '));
 
-		res.redirect('')
+		res.redirect('/users/userProfile')
     }
     
 }

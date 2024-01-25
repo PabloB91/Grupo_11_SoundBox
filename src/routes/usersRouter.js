@@ -29,7 +29,7 @@ const storage = multer.diskStorage({
 
     // donde guardamos los archivos
     destination : function(req, file, cb){
-        cb(null, "public/img/usersIcons")
+        cb(null, "public/img/users")
     },
 
     // que nombre tendra el archivo nuevo

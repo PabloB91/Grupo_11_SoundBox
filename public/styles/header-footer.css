@@ -93,7 +93,7 @@ header {
             }
         }
     }
-
+    
     .register {
         padding-right: 10px;
     }
@@ -129,6 +129,13 @@ header {
                 cursor: pointer;
                 color: #ff540a;
                 background-color: #FFF;
+            }
+
+            .fa-circle-user:hover .users-dropdown {
+                display: flex;
+                position: absolute;
+                top: 15rem;
+
             }
 
         }

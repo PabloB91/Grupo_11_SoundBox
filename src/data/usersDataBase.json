@@ -1,16 +1,58 @@
 [
-{
-"Id": 1,
-"Nombre": "firstName",
-"Apellido": "lastName",
-"Email": "email",
-"Contraseña": "password",
-"Confirmar_contraseña": "confirm-password",
-"Tipo_de_Cuenta": "user-admin || user",
-"Imagen": "image",
-"Fecha_Registro": "yyyy/mm/dd"
-},
-{
-
-}
+ {
+  "userId": 1,
+  "name": "Nombre",
+  "lastName": "Apellido",
+  "email": "email",
+  "password": "password",
+  "imgProfile": "/img/"
+ },
+ {
+  "userId": 2,
+  "name": "Nombre",
+  "lastName": "Apellido",
+  "email": "email",
+  "password": "password",
+  "imgProfile": "/img/"
+ },
+ {
+  "userId": 3,
+  "name": "Nombre",
+  "lastName": "Apellido",
+  "email": "email",
+  "password": "password",
+  "imgProfile": "/img/"
+ },
+ {
+  "userId": 4,
+  "name": "Nombre",
+  "lastName": "Apellido",
+  "email": "email",
+  "password": "password",
+  "imgProfile": "/img/"
+ },
+ {
+  "userId": null,
+  "name": "Francisco",
+  "lastName": "Capitani",
+  "email": "ftcapitani@gmail.com",
+  "password": "$2a$10$A30Yv8BUSrVzPqiGEBh21.i2edS6YqtA0yj4xsTX8Tgdd1.OjAiOa",
+  "imgProfile": "usuario-al-azar.png"
+ },
+ {
+  "userId": null,
+  "name": "Francisco",
+  "lastName": "Capitani",
+  "email": "ftcapitani@gmail.com",
+  "password": "$2a$10$KcXEcHPn56e2HzyrjoAppOxnUEPWF68ozT1kRIiocaOjjjUivhwJ2",
+  "imgProfile": "usuario-al-azar.png"
+ },
+ {
+  "userId": null,
+  "name": "Francisco",
+  "lastName": "Capitani",
+  "email": "ftcapitani@gmail.com",
+  "password": "$2a$10$a/Fsc0iHbK9v.Pv/UfCRJeZ9kkP6/6h.P4sOw0t0bzoC6neLrUxGW",
+  "imgProfile": "usuario-al-azar.png"
+ }
 ]

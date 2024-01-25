@@ -31,7 +31,7 @@
                                 </div>
                             </div>
                             <% productos.forEach(product=> { %>
-                                <div class="card">
+                                <div class="card" id="card">
                                     <!-- Rounded switch -->
                                     <label class="switch">
                                         <input type="checkbox" required>
@@ -48,9 +48,21 @@
                                             <%= product.marca %>
                                         </p>
                                     </div>
-                                    <!-- <p style="color: red; margin: auto;">sin stock</p> -->
-                                    <input type="number" min="1" max="<%= product.cantidad %>" placeholder="Cantidad"
-                                        required>
+                                    <div class="addNumber_cont">
+                                        <button id="disabledBtn" onclick="addValueFunction(this)" value="decrease">
+                                            <i class="fa-solid fa-minus"></i>
+                                        </button>
+                            
+                                        <div class="value_cont">
+                                            <!-- <input type="number" id="amount" value="0"> -->
+                                            <h1 id="amount" value=""> 1 </h1>
+                                        </div>
+                            
+                                        <button onclick="addValueFunction(this)" value="increase">
+                                            <i class="fa-solid fa-plus"></i>
+                                        </button>
+                            
+                                    </div>
                                     <div class="precio-descuento">
                                         <span>
                                             <%= product.precio %> $
@@ -264,5 +276,30 @@
     //     }
     //     document.getElementById("text1").select();
     // }
+// ________________________________________________________________________________________________
+//                             incrementador de cantidad de cada producto
+// ________________________________________________________________________________________________
+
+let starValue = 0;
+let disabledBtn = document.getElementById("disabledBtn");
+disabledBtn.disabled = true;
+
+function addValueFunction(valuePar) {
+    document.getElementById("amount").value;
+
+    if (valuePar.value == 'increase') {
+        starValue++;
+    } else {
+        starValue--;
+    }
+    document.getElementById("amount").textContent = starValue;
+
+    if (starValue == 0) {
+        disabledBtn.disabled = true;
+    } else {
+        disabledBtn.disabled = false;
+    }
+}
+
 
 </script>
