@@ -4,6 +4,7 @@ const express = require("express")
 const app = express();
 const fs = require("fs");
 const { log } = require("console");
+const { validationResult } = require("express-validator")
 
 const authMiddleware = require("../middlewares/authMiddleware");
 
@@ -45,13 +46,24 @@ const mainController = {
     // formularios
     login: (req, res) => {
 
+
         res.render("login");
 
     },
 
     register: (req, res) => {
 
-        res.render("register");
+        let errores = validationResult(req);
+
+        if(errores.isEmpty()){
+        
+            res.render("register")
+        
+        }else{
+            
+            return res.render("register", { mensajesDeError: errores.mapped(), old: req.body})
+        
+        }
 
     },
 
