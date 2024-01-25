@@ -3,12 +3,14 @@
 .info-of-user{
     display: flex;
     border-bottom: 2px solid #000;
+    justify-content: space-around ;
+    align-items: center;
 }
 
 .profile-img{
     border: 2px solid #f00;
-    width: 100px;
-    height: 100px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
 
     img{
