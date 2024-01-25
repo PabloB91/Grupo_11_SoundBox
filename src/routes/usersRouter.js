@@ -29,7 +29,7 @@ const storage = multer.diskStorage({
 
     // donde guardamos los archivos
     destination : function(req, file, cb){
-        cb(null, "public/img/products")
+        cb(null, "public/img/usersIcons")
     },
 
     // que nombre tendra el archivo nuevo
@@ -42,7 +42,7 @@ const upload = multer({storage});
 
 
 // Detalle del usuario
-router.get('/userProfile/:id', usersController.detailUser) 
+router.get('/userProfile', usersController.detailUser) 
 
 router.get("/login", usersController.login)
  

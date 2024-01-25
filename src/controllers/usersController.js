@@ -21,16 +21,7 @@ const usersControllers = {
     detailUser: (req, res) => {
         const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
-        const userId = req.params.id
-		const UserDefinido = users.find(element => {
-            return element.id == userId
-		})
-        
-		if(UserDefinido){
-            res.render("users", { singleUsers : UserDefinido })
-		} else{
-            res.send("ERROR")
-		}
+        res.render("users")
     },
 
     login: (req, res) => {
