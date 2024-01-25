@@ -1,0 +1,71 @@
+/* CELULARES */
+.cards{
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: 24vw;
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+    width: 54vw;
+    border: solid 1px rgb(230, 230, 230);;
+    border-radius: 15px;
+    background-color: rgb(230, 230, 230);
+}
+.card-add{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+.card-add h4{
+    margin-bottom: 2vh;
+}
+
+#add-icon{
+    font-size: 100px;
+    color: #ff540a;
+}
+
+/* TABLET */
+@media only screen and (min-width: 376px) {
+
+    main{
+        height: 47vh;
+    }
+
+    .cards{
+        margin-left: 9vw;
+        width: 26vw;
+    }
+}
+
+
+/* LAPTOP */
+@media only screen and (min-width: 1024px) {
+main{
+    height: 51vh;
+}
+
+.cards{
+    margin-left: 9vw;
+    margin-top: 4vh;
+    width: 20vw;
+}
+
+.card-add{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+
+.card-add h4{
+    margin-bottom: 2vh;
+}
+
+#add-icon{
+    font-size: 100px;
+    color: #ff540a;
+}
+}
