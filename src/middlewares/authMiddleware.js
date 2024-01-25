@@ -1,4 +1,4 @@
-function authMiddlewares (req, res, next) {
+/* function authMiddlewares (req, res, next) {
     if () {
         res.redirect("/login");
     } else {
@@ -8,4 +8,4 @@ function authMiddlewares (req, res, next) {
     
 };
 
-module.exports = authMiddlewares;
+module.exports = authMiddlewares; */

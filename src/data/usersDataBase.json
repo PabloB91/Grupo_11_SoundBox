@@ -32,27 +32,59 @@
   "imgProfile": "/img/"
  },
  {
-  "userId": null,
-  "name": "Francisco",
-  "lastName": "Capitani",
-  "email": "ftcapitani@gmail.com",
-  "password": "$2a$10$A30Yv8BUSrVzPqiGEBh21.i2edS6YqtA0yj4xsTX8Tgdd1.OjAiOa",
+  "userId": 5,
+  "name": "",
+  "lastName": "",
+  "email": "",
+  "password": "$2a$10$K3NL81/eLJa80ddmYj51QeMpoACQtgPGcD.DmEH4aw1DxHGL6MHk2",
   "imgProfile": "usuario-al-azar.png"
  },
  {
-  "userId": null,
-  "name": "Francisco",
-  "lastName": "Capitani",
-  "email": "ftcapitani@gmail.com",
-  "password": "$2a$10$KcXEcHPn56e2HzyrjoAppOxnUEPWF68ozT1kRIiocaOjjjUivhwJ2",
+  "userId": 6,
+  "name": "",
+  "lastName": "",
+  "email": "",
+  "password": "$2a$10$3zSXpwCnydALTDg/Z7XjTOhePqfROZsEi3Cps9nIYPyhQs7DST8zO",
   "imgProfile": "usuario-al-azar.png"
  },
  {
-  "userId": null,
-  "name": "Francisco",
-  "lastName": "Capitani",
-  "email": "ftcapitani@gmail.com",
-  "password": "$2a$10$a/Fsc0iHbK9v.Pv/UfCRJeZ9kkP6/6h.P4sOw0t0bzoC6neLrUxGW",
+  "userId": 7,
+  "name": "",
+  "lastName": "",
+  "email": "",
+  "password": "$2a$10$lVMjNyxo8ZZfrAuv0N./Mua5r9VgdeqOiVo3gqwzsVTq7lUDd3Ngu",
+  "imgProfile": "usuario-al-azar.png"
+ },
+ {
+  "userId": 8,
+  "name": "Juan",
+  "lastName": "Fosch",
+  "email": "juan.fosch@gmail.com",
+  "password": "$2a$10$LkjnV/WVDjMFHsMrTpFWm.QYsT6.AUIz7hnotc4NBvPpqXwMnH6Ly",
+  "imgProfile": "usuario-al-azar.png"
+ },
+ {
+  "userId": 9,
+  "name": "Juan",
+  "lastName": "Fosch",
+  "email": "juan.fosch@gmail.com",
+  "password": "$2a$10$Nb.2N1YesqYEqe8PbpdAIOPH5tyXGLr/uS3tMpvnWzQ6y3oGRuXvO",
+  "imgProfile": "usuario-al-azar.png"
+ },
+ {
+  "userId": 10,
+  "name": "Pepe",
+  "lastName": "Honguito",
+  "email": "mail@gmail.com",
+  "password": "$2a$10$HTMW2okRKi9hTTJEsjAQbueWJciNTS6DAcuyMPVbhZr4aHxUayqxm",
+  "imgProfile": "usuario-al-azar.png"
+ },
+ {
+  "userId": 11,
+  "name": "Foo",
+  "lastName": "Bar",
+  "email": "baz@mail.com",
+  "password": "$2a$10$ju..tJKvHNfztqGJuDyxA.jXSlSkEiMecRha7nbwVwo4XK.iVCzKK",
   "imgProfile": "usuario-al-azar.png"
  }
 ]

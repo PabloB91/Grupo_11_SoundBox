@@ -216,6 +216,11 @@ header{
 	display: none;
 }
 
+.error{
+	color: white;
+	background-color: lightcoral;
+}
+
 /*----------------------------------------------------------------------------------------------------------------*/
 /* MEDIA QUERIES */
 

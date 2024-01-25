@@ -7,18 +7,18 @@ const usersController = require("../controllers/usersController")
 const { body } = require("express-validator")
 
 // validaciones
-const validacionesFinales = [
-    body("name").notEmpty().withMessage('Este campo es necesario'),
-    body("lastName").notEmpty().withMessage('Este campo es necesario'),
-    body('email').trim().not().isEmpty().withMessage('Este campo es necesario'),
-    body('email').isEmail().withMessage('Ingresa una direccion valida'),
-    body("password").notEmpty().isLength({min: 8, max: 16 }),
-    body("password").matches(/[A-Z]/).withMessage('La contraseña debe tener al menos una mayuscula'),
-    body("password").matches(/[a-z]/).withMessage('La contraseña debe tener al menos una minuscula'),
-    body("password").matches(/[!@#$%^&*]/).withMessage('La contraseña debe tener al menos un caracter especial'),
+const validacionesRegistro= [
+    body("name").notEmpty().withMessage('Tu nombre es necesario'),
+    body("lastName").notEmpty().withMessage('Tu apellido es necesario'),
+    body('email').trim().not().isEmpty().withMessage('Tu E-mail es necesario'),
+    body('email').isEmail().withMessage('Ingresa una dirección valida'),
+    body("password").notEmpty().isLength({min: 8, max: 16 }).withMessage('La contraseña debe tener entre 8 y 16 caracteres'),
+    body("password").matches(/[A-Z]/).withMessage('La contraseña debe tener al menos una mayúscula'),
+    body("password").matches(/[a-z]/).withMessage('La contraseña debe tener al menos una minúscula'),
+    body("password").matches(/[!@#$%^&*]/).withMessage('La contraseña debe tener al menos un carácter especial (!@#$%^&*)'),
     body('confirm-password').custom((validacionDePassword, { req }) => {
         if (validacionDePassword !== req.body.password) {
-          throw new Error("La contraseña no es la misma que se ingreso en el campo anterior");
+          throw new Error("La contraseña no es la misma que se ingresó en el campo anterior");
         }
         return true;
       }),
@@ -51,7 +51,8 @@ Es decir, según el 'id' del usuario logueado, va a mostrar lo que corresponda a
 
 //Crear un usuario
 router.get('/register', usersController.register);
-router.post('/register',upload.single("imgProfile"), usersController.processToCreate);
+
+router.post('/register',upload.single("imgProfile"),validacionesRegistro, usersController.processToCreate); //---> El orden de los parámetros es importante, porque si no las validaciones de error no se procesan correctamente. Primero se pasa el Multer y después las Validaciones
 
 // Editar un usuario
 /* router.get('/editUser/:id', userssController...;) --> A completar

@@ -4,7 +4,8 @@ const app = express();
 const fs = require("fs");
 const bcrypt = require("bcryptjs")
 
-const { validationResult } = require("express-validator")
+const { validationResult } = require("express-validator");
+const { log } = require("console");
 
 /* En la constante "users" ya tienen los usuarios que están 
 guardados en la carpeta Data como Json (un array de objetos literales) */
@@ -39,36 +40,39 @@ const usersControllers = {
     },
 
     register: (req, res) => {
-
-        let errores = validationResult(req);
-
-        if(errores.isEmpty()){
-            res.render("register")
-        }else{
-            return res.render("register", { mensajesDeError: errores.mapped(), old: req.body})
-        }
-
-    },
+        res.render("register")
+            },
 
     processToCreate: (req, res) => {
-        const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
-        const passwordToValidate = req.body.password
+        const errores = validationResult(req);  //--->Traemos las validaciones
+        console.log(errores);
 
-        newUser = {
-            userId: usersJson[usersJson.length - 1].id + 1,
+        if(!errores.isEmpty()){ //-->Si existen errores, se renderizan y además se renderizan los input de usuario que sean correctos en el objeto 'old' 
+            console.log("Errores: ",errores);
+            return res.render("register", { errores: errores.array(), old: req.body}) 
+        }else{
+            res.render("register")
+        } 
+
+        const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8')); //--> Se trae el JSON de usuarios
+
+        const passwordToValidate = req.body.password  //-->Se trae el password ingresado por el usuario, para su posterior hasheo
+        
+        newUser = {     //--> Se crea el objeto para un nuevo usuario
+            userId: usersJson[usersJson.length - 1].userId + 1, //--> Corregí la creación de id, porque los creaba con valores 'null'
 			name: req.body.name,
             lastName: req.body.lastName,
             email: req.body.email,
             password: bcrypt.hashSync(passwordToValidate, 10),
             imgProfile: req.file == undefined ? "usuario-al-azar.png" : req.file.filename
         }
+        
+        usersJson.push(newUser);  //--> Se agrega el nuevo usuario a la variable del JSON
 
-        usersJson.push(newUser);
+		fs.writeFileSync(usersFilePath, JSON.stringify(usersJson, null, ' '));  //--> Se escribe el archivo JSON con la variable modificada
 
-		fs.writeFileSync(usersFilePath, JSON.stringify(usersJson, null, ' '));
-
-		res.redirect('/users/userProfile')
+		res.redirect('/users/userProfile')  //--> Se redirige al perfil del usuario
     }
     
 }
