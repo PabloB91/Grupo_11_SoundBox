@@ -43,30 +43,6 @@ const mainController = {
 
     },
 
-    // formularios
-    login: (req, res) => {
-
-
-        res.render("login");
-
-    },
-
-    register: (req, res) => {
-
-        let errores = validationResult(req);
-
-        if(errores.isEmpty()){
-        
-            res.render("register")
-        
-        }else{
-            
-            return res.render("register", { mensajesDeError: errores.mapped(), old: req.body})
-        
-        }
-
-    },
-
     admin: (req, res) => {          //--> Sugiero adaptar esto a 'userProfile', y que dependiendo cuál esté logueado, que renderice vista de Admin o de Usuario común
         const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 

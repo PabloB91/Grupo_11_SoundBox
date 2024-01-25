@@ -1,6 +1,7 @@
-const express = require("express");
-const router = require("./mainRouter");
-const path = require("path");
+const express = require('express');
+const router = express.Router();
+const multer = require('multer');
+const path = require("path")
 
 const usersController = require("../controllers/usersController")
 const { body } = require("express-validator")
@@ -23,13 +24,17 @@ const validacionesFinales = [
 ];
 
 
+// Detalle del usuario
+router.get('/userProfile/:id', usersController.detailUser) 
 
- router.get('/userProfile/:id', usersController) /*--> Esto es una sugerencia, de crear una página con el perfil del usuario común además de la de Admin 
+router.get("/login", usersController.login)
+ 
+/*--> Esto es una sugerencia, de crear una página con el perfil del usuario común además de la de Admin 
 Es decir, según el 'id' del usuario logueado, va a mostrar lo que corresponda al Admin (crear y borrar productos) o al Usuario (perfil del usuario) */
 
 //Crear un usuario
-/* router.get('/register', usersController...) --> A completar
-router.post('/register', "(Acá subir imagen)", usersController...); --> A completar */
+router.get('/register', usersController.register);
+router.post('/register', usersController.processToCreate);
 
 // Editar un usuario
 /* router.get('/editUser/:id', userssController...;) --> A completar

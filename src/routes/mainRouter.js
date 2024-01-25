@@ -10,10 +10,6 @@ router.get("/", mainController.index);
 
 router.get("/categoria/:nombre", mainController.categorias)
 
-router.get("/login", mainController.login);
-
-router.get("/register", mainController.register);
-
 router.get("/productCart", mainController.carrito);
 
 router.get("/admin", mainController.admin) //--> Sugiero cambiar esto por "/userProfile", y que sirva para dirigir a una página de Admin o de usuario común,

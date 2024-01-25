@@ -43,8 +43,12 @@ const mainRouter = require("./routes/mainRouter");
 // products
 const productsRouter = require('./routes/productsRouter');
 
+// users
+const usersRouter = require("./routes/usersRouter");
+
 app.use("/", mainRouter);
 app.use("/products", productsRouter);
+app.use("/users", usersRouter)
 
 // 404, si no esta la ruta buscada arrojaria este error
 app.use((req, res, next) => {
