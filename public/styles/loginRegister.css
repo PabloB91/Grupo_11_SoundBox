@@ -200,34 +200,40 @@ header{
 	display: flex;
 	flex-direction: row;
 	align-items: center;
+		
+	&:hover{
+		color: #ff540a;
+	}
 }
 
 input#remember-me{
-	width: 17px;	
+	appearance: none;
+	width: 17px;
+	height: 17px;
+	border: 1px solid #000;
+	border-radius: 3px;
 
 	&:hover{
 		cursor: pointer;
-		label{
-			.remember-me{
-				color: #ff540a;
-			}
-		}
-			
+		border: 1px solid #ff540a;
+	}
+
+	&:checked{
+		background-color: #ff540a;
 	}
 }
 
 label{
 	.remember-me{
-	
+		margin-left: 5px;
 		&:hover{
 			cursor: pointer;
-			color: #ff540a;
 		}
 	}
 }
 
 .div_I-forgot-my-password a{
-	color: #b53b06;
+	color: #000;
 
 	&:hover{
 		color: #ff540a;
