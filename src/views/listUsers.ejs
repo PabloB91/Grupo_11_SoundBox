@@ -14,8 +14,9 @@
     <%- include('./partials/header.ejs') %>
     <!-- =========================================================================================================== -->
 
-    <main>
-        <div class="titel-page">
+    <main class="main__listUser">
+
+        <div class="title-of-page">
             <h1>Usuarios de soundbox</h1>
         </div>
 
@@ -27,7 +28,7 @@
                 <div class="img">
                     <img src="<%= user.imgProfile %>" alt="ft-profile soundBox">
                 </div>
-                    
+                
                 <div class="infoUser">
 
                     <div class="idUser">
@@ -35,22 +36,23 @@
                     </div>
 
                     <p>Nombres: <%= user.name %></p>
-                    <p>Apellidos: <%= user.lastname %></p>
+                    <p>Apellidos: <%= user.lastName %></p>
                     <span>Correo: <%= user.email%></span>
                     <span>Fecha de registro: 2000/11/15</span>
-                    <samp>Compras echas: 0</samp>
+                    <span>Compras echas: 0</span>
+
+                    <div class="butons">
+                        <div class="delete">
+                            <input type="button" value="Eliminar">
+                        </div>
+    
+                        <div class="ban">
+                            <input type="button" value="Banear">
+                        </div>
+                    </div>
 
                 </div>
 
-                <div class="butons">
-                    <div class="delete">
-                        <input type="button" value="Eliminar">
-                    </div>
-
-                    <div class="ban">
-                        <input type="button" value="Banear">
-                    </div>
-                </div>
 
             </div>
             <% }); %>

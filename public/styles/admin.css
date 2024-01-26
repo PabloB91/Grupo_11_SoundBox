@@ -62,7 +62,7 @@ main{
 
     &:hover{
         box-shadow: inset;
-        scale: 1.2;
+        scale: 1.1;
         transition-duration: .5s;
         a{
             color: #ff540a;

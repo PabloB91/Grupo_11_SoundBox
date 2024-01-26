@@ -1,22 +1,38 @@
+.main__listUser{
+    max-width: 1440px;
+    margin: auto;
+}
+
+.title-of-page{
+    display: flex;
+    justify-content: center ;
+}
+
 .users{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .user_card{
     display: flex;
     width: 35%;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
     border-radius: 10px;
     border: 2px solid #000;
+    align-items: center;
 }
 
 .img{
 
-    width: 200px;
+    width: 50%;
 
     img{
         width: 100%;
+        
     }
+}
+
+.infoUser{
+    width: 50%;
 }
