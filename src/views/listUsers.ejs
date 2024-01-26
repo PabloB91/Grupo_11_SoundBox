@@ -3,8 +3,7 @@
 <!-- -VISTA PARA ADMIN Y USUARIOS- -->
 
 <%- include('./partials/head.ejs') %>
-
-<link href="/styles/users.css" rel="stylesheet">
+<link href="/styles/list-users.css" rel="stylesheet">
 
 
 <body>
@@ -16,40 +15,27 @@
     <!-- =========================================================================================================== -->
 
     <main>
-        <h1>Personaliza tu usuario!</h1>
-        <section class="primary-section">
-            <section class="first-section">
-                <h3>name</h3>
-                <p>last-name</p>
-                <p>vivaperomV@gmail.com</p>
-                <p>Argentina</p>
+       <div class="titel-page">
+        <h1>Usuarios de soundbox</h1>
+       </div>
 
-                <div class="delete-user">
-                    <button>Eliminar usuario</button>
-                </div>
-                
-            </section>
-            <section class="second-section">
-                <div class="img-container">
-                    <img src="/img/products/IMG_DEFAULT.svg" alt="">
-                </div>
-                <div class="img-buttons">
-                    <input type="file">
-                    <input type="submit">
-                </div>
-            </section>
-        </section>
-
-        <section class="registered-purchases">
-            <h3>Compras anteriores</h3>
-            <div class="lastest-purchases">
-                <img src="/img/products/IMG_DEFAULT.svg" alt="">
-                <img src="/img/products/IMG_DEFAULT.svg" alt="">
-                <img src="/img/products/IMG_DEFAULT.svg" alt="">
-                <img src="/img/products/IMG_DEFAULT.svg" alt="">
+       <section class="users">
+        <div class="user_card">
+            <div class="img">
+                <img src="" alt="">
             </div>
 
-        </section>
+            <div class="infoUser">
+                <div class="idUser">
+                    <p>#</p>
+                </div>
+                <p>Nombre: Alvaro</p>
+                <span>Correo: alvaro90@gmail.com</span>
+                <span>Fecha de registro: 2000/11/15</span>
+                <samp>Compras echas: 0</samp>
+            </div>
+        </div>
+       </section>
     </main>
 
 <!-- =========================================================================================================== -->

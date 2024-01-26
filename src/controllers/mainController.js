@@ -26,6 +26,11 @@ const mainController = {
 
     },
 
+    admin: (req, res) => {
+
+        res.render("admin.ejs");
+    },
+
     allProducts: (req, res) => {
         const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
         // console.log(products)
@@ -43,11 +48,9 @@ const mainController = {
 
     },
 
-    admin: (req, res) => {          //--> Sugiero adaptar esto a 'userProfile', y que dependiendo cuál esté logueado, que renderice vista de Admin o de Usuario común
-        const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
-        res.render("administrador", { products });
-
+    listUsers: (req, res) => {
+        res.render("listUsers.ejs")
     },
     
     carrito: (req, res) => {

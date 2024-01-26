@@ -143,6 +143,19 @@ main {
 }
 
 
+/*tageta add*/
+
+.img_card-add{
+
+    #add-icon{
+        font-size: 100px;
+        color: #fff ;
+    }
+}
+
+/****************************/
+
+
 /* media queryes */
 /* animaciones carta*/
 @media (min-width: 1440px) {

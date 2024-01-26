@@ -13,8 +13,8 @@ router.get("/categoria/:nombre", mainController.categorias)
 
 router.get("/productCart", mainController.carrito);
 
-router.get("/admin",/*  authMiddleware, */ mainController.admin) //--> Sugiero cambiar esto por "/userProfile", y que sirva para dirigir a una página de Admin o de usuario común,
-                                           //-- según cuál esté logueado.
+router.get("/admin", mainController.admin);
+
 router.get("/todosLosProductos", mainController.allProducts);
 
 module.exports = router;

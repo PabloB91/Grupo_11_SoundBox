@@ -14,7 +14,7 @@ const usersFilePath = path.join(__dirname, "../data/usersDataBase.json");
 //const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 const usersControllers = {
-    detailUser: (req, res) => {
+    user: (req, res) => {
         /* const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
         let userId = req.params.id
@@ -76,6 +76,5 @@ const usersControllers = {
     }
     
 }
-
 
 module.exports = usersControllers;
