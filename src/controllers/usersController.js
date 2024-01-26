@@ -28,11 +28,11 @@ const usersControllers = {
 		} else{
             res.send("ERROR")
 		} */
-        res.render("users")
+        res.render("user.ejs")
     },
 
     login: (req, res) => {
-        res.render("login");
+        res.render("login.ejs");
     },
 
     processToLogin: (req, res) => {
