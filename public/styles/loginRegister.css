@@ -200,7 +200,7 @@ header{
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-		
+
 	&:hover{
 		color: #ff540a;
 	}
@@ -281,6 +281,10 @@ label{
 
 	body{
 		overflow: auto;
+	}
+
+	main.main-login{
+		height: 80vh;
 	}
 
 	.main-login_form {
