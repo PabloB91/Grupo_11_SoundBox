@@ -15,27 +15,36 @@
     <!-- =========================================================================================================== -->
 
     <main>
-       <div class="titel-page">
-        <h1>Usuarios de soundbox</h1>
-       </div>
-
-       <section class="users">
-        <div class="user_card">
-            <div class="img">
-                <img src="" alt="">
-            </div>
-
-            <div class="infoUser">
-                <div class="idUser">
-                    <p>#</p>
-                </div>
-                <p>Nombre: Alvaro</p>
-                <span>Correo: alvaro90@gmail.com</span>
-                <span>Fecha de registro: 2000/11/15</span>
-                <samp>Compras echas: 0</samp>
-            </div>
+        <div class="titel-page">
+            <h1>Usuarios de soundbox</h1>
         </div>
-       </section>
+
+        <section class="users">
+            <div class="user_card">
+
+            <% users.forEach(user => { %>
+                
+                <div class="img">
+                    <img src="<%= user.imgProfile %>" alt="ft-profile soundBox">
+                </div>
+                    
+                <div class="infoUser">
+
+                    <div class="idUser">
+                        <p>#<%= user.userId%></p>
+                    </div>
+
+                    <p>Nombres: <%= user.name %></p>
+                    <p>Apellidos: <%= user.lastname %></p>
+                    <span>Correo: <%= user.email%></span>
+                    <span>Fecha de registro: 2000/11/15</span>
+                    <samp>Compras echas: 0</samp>
+
+                </div>
+
+            <% }); %>
+            </div>
+        </section>
     </main>
 
 <!-- =========================================================================================================== -->

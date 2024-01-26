@@ -1,0 +1,12 @@
+.user_card{
+    display: flex;
+}
+
+.img{
+
+    width: 200px;
+
+    img{
+        width: 100%;
+    }
+}

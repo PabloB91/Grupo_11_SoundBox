@@ -5,7 +5,7 @@
     "lastName": "Apellido",
     "email": "email",
     "password": "password",
-    "imgProfile": "/img/"
+    "imgProfile": "/img/users/alvaro.jpg"
     },
     {
     "userId": 2,
