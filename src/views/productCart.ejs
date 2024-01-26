@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
     <%- include("./partials/head") %>
         <link rel="stylesheet" href="styles/productCart.css">
@@ -21,7 +24,8 @@
                             <div class="ordenador-container">
                                 <div class="ordenador">
                                     <button onclick="hide()"><i class="fa-solid fa-circle-arrow-up"></i></button>
-                                    <button onclick="ordenarPalabras()"><i class="fa-solid fa-arrow-down-a-z"></i></button>
+                                    <button onclick="ordenarPalabras()"><i
+                                            class="fa-solid fa-arrow-down-a-z"></i></button>
                                     <button><i class="fa-solid fa-arrow-down-short-wide"></i></button>
                                     <button><i class="fa-solid fa-arrow-down-wide-short"></i></button>
                                 </div>
@@ -31,7 +35,7 @@
                                 </div>
                             </div>
                             <% productos.forEach(product=> { %>
-                                <div class="card" id="card">
+                                <div class="card">
                                     <!-- Rounded switch -->
                                     <label class="switch">
                                         <input type="checkbox" required>
@@ -49,19 +53,20 @@
                                         </p>
                                     </div>
                                     <div class="addNumber_cont">
-                                        <button id="disabledBtn" onclick="addValueFunction(this)" value="decrease">
+                                        <button id="disabledBtn" onclick="decrementar('<%= product.id %>')">
                                             <i class="fa-solid fa-minus"></i>
                                         </button>
-                            
+
                                         <div class="value_cont">
                                             <!-- <input type="number" id="amount" value="0"> -->
-                                            <h1 id="amount" value=""> 1 </h1>
+                                           
+                                            <h1 id="cantidad-<%= product.id %>" value=""> 1 </h1>
                                         </div>
-                            
-                                        <button onclick="addValueFunction(this)" value="increase">
+
+                                        <button onclick="incrementar('<%= product.id %>','<%= product.cantidad %>')">
                                             <i class="fa-solid fa-plus"></i>
                                         </button>
-                            
+
                                     </div>
                                     <div class="precio-descuento">
                                         <span>
@@ -227,79 +232,8 @@
         </main>
 
         <%- include("./partials/footer") %>
+
+            <script src="scripts/productCart.js"></script>
 </body>
 
-<script type="text/javascript">
-    function hide() {
-        document.getElementById("desplegable").style.display = "none";
-        // document.getElementById("favoritos").style.display = "block";
-
-    }
-
-    function show() {
-        document.getElementById("desplegable").style.display = "block";
-        // document.getElementById("carrito").style.display = "block";
-
-    }
-
-
-
-                                // ORDENAR POR ALFABETO
-    // const orderByAlphabetical = (products, getter, order ="asc") => {
-    //     products.sort((a, b) => {
-    //         const first = gatter(a);
-    //         const second = gatter(b);
-
-    //         const compare = first.localeCompare(second);
-    //         return order === "asc" ? compare : -compare;
-
-    //     });
-    //     return products;
-
-    // }
-
-    // const productsByAlphabetic = orderByAlphabetical (products, product => product.nombre)
-
-    // console.log(productsByAlphabetic)
-
-    // function ordenarPalabras() {
-    //     let ol = document.getElementById("desplegable");
-    //     ol.innerHTML = "";
-    //     let cadena = document.getElementById("text1").value;
-    //     let palabrasOrdenadas = cadena.trim();
-    //     palabrasOrdenadas.sort();
-
-    //     for(let i  = 0; i < palabrasOrdenadas.lenght; i++) {
-    //         const li = document.createElement("li");
-    //         li.innerHTML = palabrasOrdenadas[i];
-    //         ol.appendChild(li);
-    //     }
-    //     document.getElementById("text1").select();
-    // }
-// ________________________________________________________________________________________________
-//                             incrementador de cantidad de cada producto
-// ________________________________________________________________________________________________
-
-let starValue = 0;
-let disabledBtn = document.getElementById("disabledBtn");
-disabledBtn.disabled = true;
-
-function addValueFunction(valuePar) {
-    document.getElementById("amount").value;
-
-    if (valuePar.value == 'increase') {
-        starValue++;
-    } else {
-        starValue--;
-    }
-    document.getElementById("amount").textContent = starValue;
-
-    if (starValue == 0) {
-        disabledBtn.disabled = true;
-    } else {
-        disabledBtn.disabled = false;
-    }
-}
-
-
-</script>
+</html>

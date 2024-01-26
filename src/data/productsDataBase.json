@@ -10,7 +10,7 @@
   "precio": "1000",
   "descuento": "20",
   "descripcion": "Descripcion",
-  "cantidad": "10",
+  "cantidad": 10,
   "coloresDisponibles": [
    "AMARILLO",
    "GRIS",
@@ -34,7 +34,7 @@
   "precio": "1000",
   "descuento": "20",
   "descripcion": "Descripcion",
-  "cantidad": "10",
+  "cantidad": 20,
   "coloresDisponibles": [
    "Azul",
    "Gris",
@@ -78,7 +78,7 @@
   "precio": 1000,
   "descuento": 20,
   "descripcion": "Descripcion",
-  "cantidad": 10,
+  "cantidad": 80,
   "coloresDisponibles": [
    "Azul",
    "Amarillo"
@@ -100,7 +100,7 @@
   "precio": 1000,
   "descuento": 20,
   "descripcion": "Descripcion",
-  "cantidad": 10,
+  "cantidad": 90,
   "coloresDisponibles": [
    "Azul",
    "Amarillo"
@@ -122,7 +122,7 @@
   "precio": 1000,
   "descuento": 20,
   "descripcion": "lorem ipsum dolorum aguante river plate joraca",
-  "cantidad": 10,
+  "cantidad": 100,
   "coloresDisponibles": [
    "Azul",
    "Amarillo"
