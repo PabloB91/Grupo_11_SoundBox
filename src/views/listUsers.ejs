@@ -20,9 +20,9 @@
         </div>
 
         <section class="users">
+            <% users.forEach(user => { %>
             <div class="user_card">
 
-            <% users.forEach(user => { %>
                 
                 <div class="img">
                     <img src="<%= user.imgProfile %>" alt="ft-profile soundBox">
@@ -42,8 +42,18 @@
 
                 </div>
 
-            <% }); %>
+                <div class="butons">
+                    <div class="delete">
+                        <input type="button" value="Eliminar">
+                    </div>
+
+                    <div class="ban">
+                        <input type="button" value="Banear">
+                    </div>
+                </div>
+
             </div>
+            <% }); %>
         </section>
     </main>
 
