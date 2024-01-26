@@ -11,24 +11,28 @@ const { log } = require("console");
 guardados en la carpeta Data como Json (un array de objetos literales) */
 const usersFilePath = path.join(__dirname, "../data/usersDataBase.json");
 
-//const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-
 const usersControllers = {
+    
     user: (req, res) => {
-        /* const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+        const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+        // console.log(usersJson)
+        let userId = req.params.userId
 
-        let userId = req.params.id
+		let userDefinido = usersJson.find(user => {
+			return user.userId == userId;
 
-		let userDefinido = usersJson.find(element => {
-			return element.id == userId
 		})
 
 		if(userDefinido){
-			res.render("users", { singleProduct : userDefinido })
-		} else{
-            res.send("ERROR")
-		} */
-        res.render("user.ejs")
+			res.render("user", { user : userDefinido });
+
+		} else {
+            res.render("register");
+
+		}
+
+        res.render("user");
+
     },
 
     login: (req, res) => {

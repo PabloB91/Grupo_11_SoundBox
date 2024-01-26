@@ -46,7 +46,7 @@ const upload = multer({storage});
 
 
 // Detalle del usuario
-router.get('/userProfile', usersController.user) 
+router.get('/userProfile/:userId', usersController.user) 
 
 router.get('/login', usersController.login)
  

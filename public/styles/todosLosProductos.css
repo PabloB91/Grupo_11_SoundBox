@@ -15,6 +15,8 @@ main {
     width: 10vw;
     background-color: #FF540A;
     position: absolute;
+    left: 1px;
+    z-index: 9999;
 }
 
 .titulo-ordenador {
@@ -23,6 +25,18 @@ main {
     margin-left: 1.2vw;
     margin-top: 0.2vw;
     position: fixed;
+}
+
+.filtro-presupuesto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    input {
+        width: 80%;
+
+    }
+
 }
 
 .filtrar-plata {
@@ -80,19 +94,16 @@ main {
     display: flex;
     width: 100vw;
     background-color: black;
-    height: 7vh;
+    height: auto;
+    display: flex;
+    justify-content: center;
 }
 
 .titulo {
     font-family: 'Montserrat', sans-serif;
     font-size: 26px;
-    font-weight: 600;
-    color: white;
-    display: flex;
-    justify-content: center;
-    height: 7vh;
-    margin-left: 40vw;
-    margin-top: 1vh;
+    color: wheat;
+
 } 
 
 .card {

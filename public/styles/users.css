@@ -12,6 +12,30 @@ h1 {
     color: wheat;
 }
 
+#edit-user-form {
+    display: none;
+    
+    form {
+        display: flex;
+        flex-direction: column;
+        label {
+            p {
+                font-size: 18px;
+
+            }
+            
+            input {
+                margin: 15px;
+    
+            }
+
+        }
+        
+
+    }
+
+}
+
 .first-section {
     width: 50%;
     display: flex;
