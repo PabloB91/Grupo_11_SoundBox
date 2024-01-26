@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-es">
+<!-- -VISTA PARA ADMIN Y USUARIOS- -->
+
+<%- include('./partials/head.ejs') %>
+
+<link href="/styles/users.css" rel="stylesheet">
+
+
+<body>
+
+    <!-- =========================================================================================================== -->
+
+    <!-- -HEADER / ENCABEZADO- -->
+    <%- include('./partials/header.ejs') %>
+    <!-- =========================================================================================================== -->
+
+    <main>
+        <h1>Personaliza tu usuario!</h1>
+        <section class="primary-section">
+            <section class="first-section">
+                <h3>name</h3>
+                <p>last-name</p>
+                <p>vivaperomV@gmail.com</p>
+                <p>Argentina</p>
+
+                <div class="delete-user">
+                    <button>Eliminar usuario</button>
+                </div>
+                
+            </section>
+            <section class="second-section">
+                <div class="img-container">
+                    <img src="/img/products/IMG_DEFAULT.svg" alt="">
+                </div>
+                <div class="img-buttons">
+                    <input type="file">
+                    <input type="submit">
+                </div>
+            </section>
+        </section>
+
+        <section class="registered-purchases">
+            <h3>Compras anteriores</h3>
+            <div class="lastest-purchases">
+                <img src="/img/products/IMG_DEFAULT.svg" alt="">
+                <img src="/img/products/IMG_DEFAULT.svg" alt="">
+                <img src="/img/products/IMG_DEFAULT.svg" alt="">
+                <img src="/img/products/IMG_DEFAULT.svg" alt="">
+            </div>
+
+        </section>
+    </main>
+
+<!-- =========================================================================================================== -->
+
+    <!-- FOOTER / PIE DE PAGINA -->
+    <%- include('./partials/footer.ejs') %>
+
+<!-- =========================================================================================================== -->
+</body>
+
+</html>
