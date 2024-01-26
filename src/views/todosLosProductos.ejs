@@ -7,6 +7,7 @@
 
         <%- include("./partials/header") %>
             <main>
+
                 <div class="barra-titulo">
                     <h2 class="titulo">Todos Los Productos</h2>
 
@@ -124,6 +125,7 @@
 
                     </section>
                 </div>
+
                 <section class="seccion-general">
                     <% products.forEach(product=> { %>
                         <article class="container-producto">
@@ -144,8 +146,12 @@
 
                         <%})%>
 
-                        
-
+                        <div class="card-add">
+                            <h4>Crear Producto</h4>
+                            <a href="/products/create">
+                                <i id="add-icon" class="fa-solid fa-plus"></i>
+                            </a> 
+                        </div>                    
 
                 </section>
 
