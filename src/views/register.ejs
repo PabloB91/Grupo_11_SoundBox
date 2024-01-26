@@ -28,101 +28,85 @@
                         <div class="main-login-form-box-container_title">
                             <h2>CREAR CUENTA</h2>
                         </div>
-        
+                        
+                        <% if (locals.errores) {  
+
+                            errores.forEach(error => { %>
+                                <p class="error"> <%= error.msg %> </p>
+                            <%  }); 
+                        }%>
+                        
                         <div class="fieldset names">
-        
-                        <div class="label">
-                            <label for="Nombres"></label>
+                            <div class="label">
+                                <label for="Nombres"></label>
                             </div>
-                            
-                            <div class="fa-onda fa-logo">
-                            <img src="/img/svg/simbolequalizer.svg" alt="">
+                                <div class="fa-onda fa-logo">
+                                    <img src="/img/svg/simbolequalizer.svg" alt="">
+                                </div>
+                            <div class="input">                                 <!-- Condición para el manejo de errores en el input. Si el input es correcto se lo recupera con 'old' -->
+                                <input id="user-name" name="name" type="text" placeholder="Nombres" value="<%= locals.old && old.name ? old.name : '' %>">
                             </div>
-        
-                        <div class="input">
-                            <input id="user-name" name="name" type="text" placeholder="Nombres">
-                            </div>
-        
                         </div>
 
                         <div class="fieldset last-names">
-        
-                        <div class="label">
-                            <label for="Apellidos"></label>
-                            </div>
-                            
-                            <div class="fa-onda fa-logo">
-                            <img src="/img/svg/simbolequalizer.svg" alt="">
-                            </div>
-        
-                        <div class="input">
-                            <input id="last-name" name="lastName" type="text" placeholder="Apellidos">
-                            </div>
-        
-                        </div>
-        
-                        <div class="fieldset email">
-        
                             <div class="label">
-                                <label for="email"></label>
+                                <label for="Apellidos"></label>
                             </div>
-
-                            <div class="fa-onda fa-logo">
-                                    <img src="/img/svg/simbolequalizer.svg" alt="">
-                            </div>
-        
-                            <div class="input">
-                                <input id="e-mail" name="email" type="e-mail" placeholder="E-mail">
-                            </div>
-        
-                        </div>
-        
-                        <div class="fieldset password">
-        
-                            <div class="label">
-                                <label for="password"></label>
-                            </div>
-
                             <div class="fa-onda fa-logo">
                                 <img src="/img/svg/simbolequalizer.svg" alt="">
                             </div>
-        
                             <div class="input">
-                                <input id="password" name="password" type="password" placeholder="Contraseña">
+                                <input id="last-name" name="lastName" type="text" placeholder="Apellidos" value="<%= locals.old && old.lastName ? old.lastName : '' %>">
+                            </div>
+                        </div>
+        
+                        <div class="fieldset email">    
+                            <div class="label">
+                                <label for="email"></label>
+                            </div>
+                            <div class="fa-onda fa-logo">
+                                <img src="/img/svg/simbolequalizer.svg" alt="">
+                            </div>
+                            <div class="input">
+                                <input id="e-mail" name="email" type="e-mail" placeholder="E-mail" value="<%= locals.old && old.email ? old.email : '' %>">
+                            </div>
+                        </div>
+        
+                        <div class="fieldset password">
+                            <div class="label">
+                                <label for="password"></label>
+                            </div>
+                            <div class="fa-onda fa-logo">
+                                <img src="/img/svg/simbolequalizer.svg" alt="">
+                            </div>
+                            <div class="input">
+                                <input id="password" name="password" type="password" placeholder="Contraseña" value="<%= locals.old && old.password ? old.password : '' %>">
                             </div>
 
                         </div>
 
                         <div class="fieldset confirm-password">
-        
                             <div class="label">
                                 <label for="Confirmar contraseña"></label>
                             </div>
-        
                             <div class="fa-onda fa-logo">
                                 <img src="/img/svg/simbolequalizer.svg" alt="">
                             </div>
-        
                             <div class="input">
                             <input id="confirm-password" name="confirm-password" type="password" placeholder="Confirmar contraseña">
                             </div>
-                            
                         </div>
 
                         <div class="fieldset img-porfile">
-        
                             <div class="label">
                                 <label for="Imagen de Perfil"></label>
                             </div>
-        
                             <div class="fa-onda fa-logo">
                                 <img src="/img/svg/simbolequalizer.svg" alt="">
                             </div>
-        
                             <div class="input">
                                 <input placeholder="Imgen de Perfil" type="file"  name="imgProfile" class="img-porfile">
                             </div>
-                            
                         </div>
                         
                         <div class="button crear">
