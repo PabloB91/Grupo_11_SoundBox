@@ -1,90 +1,50 @@
 [
- {
-  "userId": 1,
-  "name": "Nombre",
-  "lastName": "Apellido",
-  "email": "email",
-  "password": "password",
-  "imgProfile": "/img/"
- },
- {
-  "userId": 2,
-  "name": "Nombre",
-  "lastName": "Apellido",
-  "email": "email",
-  "password": "password",
-  "imgProfile": "/img/"
- },
- {
-  "userId": 3,
-  "name": "Nombre",
-  "lastName": "Apellido",
-  "email": "email",
-  "password": "password",
-  "imgProfile": "/img/"
- },
- {
-  "userId": 4,
-  "name": "Nombre",
-  "lastName": "Apellido",
-  "email": "email",
-  "password": "password",
-  "imgProfile": "/img/"
- },
- {
-  "userId": 5,
-  "name": "",
-  "lastName": "",
-  "email": "",
-  "password": "$2a$10$K3NL81/eLJa80ddmYj51QeMpoACQtgPGcD.DmEH4aw1DxHGL6MHk2",
-  "imgProfile": "usuario-al-azar.png"
- },
- {
-  "userId": 6,
-  "name": "",
-  "lastName": "",
-  "email": "",
-  "password": "$2a$10$3zSXpwCnydALTDg/Z7XjTOhePqfROZsEi3Cps9nIYPyhQs7DST8zO",
-  "imgProfile": "usuario-al-azar.png"
- },
- {
-  "userId": 7,
-  "name": "",
-  "lastName": "",
-  "email": "",
-  "password": "$2a$10$lVMjNyxo8ZZfrAuv0N./Mua5r9VgdeqOiVo3gqwzsVTq7lUDd3Ngu",
-  "imgProfile": "usuario-al-azar.png"
- },
- {
-  "userId": 8,
-  "name": "Juan",
-  "lastName": "Fosch",
-  "email": "juan.fosch@gmail.com",
-  "password": "$2a$10$LkjnV/WVDjMFHsMrTpFWm.QYsT6.AUIz7hnotc4NBvPpqXwMnH6Ly",
-  "imgProfile": "usuario-al-azar.png"
- },
- {
-  "userId": 9,
-  "name": "Juan",
-  "lastName": "Fosch",
-  "email": "juan.fosch@gmail.com",
-  "password": "$2a$10$Nb.2N1YesqYEqe8PbpdAIOPH5tyXGLr/uS3tMpvnWzQ6y3oGRuXvO",
-  "imgProfile": "usuario-al-azar.png"
- },
- {
-  "userId": 10,
-  "name": "Pepe",
-  "lastName": "Honguito",
-  "email": "mail@gmail.com",
-  "password": "$2a$10$HTMW2okRKi9hTTJEsjAQbueWJciNTS6DAcuyMPVbhZr4aHxUayqxm",
-  "imgProfile": "usuario-al-azar.png"
- },
- {
-  "userId": 11,
-  "name": "Foo",
-  "lastName": "Bar",
-  "email": "baz@mail.com",
-  "password": "$2a$10$ju..tJKvHNfztqGJuDyxA.jXSlSkEiMecRha7nbwVwo4XK.iVCzKK",
-  "imgProfile": "usuario-al-azar.png"
- }
+    {
+    "userId": 1,
+    "name": "Alvaro",
+    "lastName": "Zuarez",
+    "email": "email",
+    "password": "password",
+    "imgProfile": "/img/users/alvaro.jpg"
+    },
+    {
+    "userId": 2,
+    "name": "Camila",
+    "lastName": "Armamdo",
+    "email": "email", 
+    "password": "password",
+    "imgProfile": "/img/users/camila.jpg"
+    },
+    {
+    "userId": 3,
+    "name": "Javier",
+    "lastName": "Salazar",
+    "email": "email",
+    "password": "password",
+    "imgProfile": "/img/users/javier.jpg"
+    },
+    {
+    "userId": 4,
+    "name": "Mateo",
+    "lastName": "Espejo",
+    "email": "email",
+    "password": "password",
+    "imgProfile": "/img/users/mateo.jpg"
+    },
+    {
+    "userId": 5,
+    "name": "Melena",
+    "lastName": "Perez",
+    "email": "email",
+    "password": "password",
+    "imgProfile": "/img/users/melena.jpg"
+    },
+    {
+    "userId": 6,
+    "name": "Phonix",
+    "lastName": "Galindo",
+    "email": "email", 
+    "password": "password",
+    "imgProfile": "/img/users/phonix.jpg"
+    }
 ]
