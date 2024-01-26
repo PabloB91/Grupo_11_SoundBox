@@ -1,8 +1,8 @@
-const express = require('express')
-const path = require("path")
-const fs = require('fs')
+const express = require('express');
+const path = require("path");
+const fs = require('fs');
 
-const usersFilePath = path.join(__dirname, '../data/users.json')
+const usersFilePath = path.join(__dirname, '../data/users.json');
 
 const aController = {
     
@@ -10,7 +10,7 @@ const aController = {
 
         const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
-        res.render("listUsers.ejs", {users})
+        res.render("listUsers.ejs", {users});
     }
 }
 module.exports = aController;
