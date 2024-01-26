@@ -185,9 +185,56 @@ header{
 	font-family: "Montserrat";
 	color: #ff540a;
 	font-size: 16px;
-
+	
 	margin: 0px auto;
 }
+
+.contLink{
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	
+}
+
+.div_remember-me{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+input#remember-me{
+	width: 17px;	
+
+	&:hover{
+		cursor: pointer;
+		label{
+			.remember-me{
+				color: #ff540a;
+			}
+		}
+			
+	}
+}
+
+label{
+	.remember-me{
+	
+		&:hover{
+			cursor: pointer;
+			color: #ff540a;
+		}
+	}
+}
+
+.div_I-forgot-my-password a{
+	color: #b53b06;
+
+	&:hover{
+		color: #ff540a;
+	}
+
+}
+
 
 .one-login .button {
 	width: 100%;
@@ -336,6 +383,7 @@ header{
 		width: 70%;
 		height: 360px;
 		margin: 30px auto;
+		max-width: 1000px;
 	}
 
 	.one-login{
