@@ -1,34 +1,50 @@
 [
     {
     "userId": 1,
-    "name": "Nombre",
-    "lastName": "Apellido",
+    "name": "Alvaro",
+    "lastName": "Zuarez",
     "email": "email",
     "password": "password",
     "imgProfile": "/img/users/alvaro.jpg"
     },
     {
     "userId": 2,
-    "name": "Nombre",
-    "lastName": "Apellido",
+    "name": "Camila",
+    "lastName": "Armamdo",
     "email": "email", 
     "password": "password",
-    "imgProfile": "/img/"
+    "imgProfile": "/img/users/camila.jpg"
     },
     {
     "userId": 3,
-    "name": "Nombre",
-    "lastName": "Apellido",
+    "name": "Javier",
+    "lastName": "Salazar",
     "email": "email",
     "password": "password",
-    "imgProfile": "/img/"
+    "imgProfile": "/img/users/javier.jpg"
     },
     {
     "userId": 4,
-    "name": "Nombre",
-    "lastName": "Apellido",
+    "name": "Mateo",
+    "lastName": "Espejo",
+    "email": "email",
+    "password": "password",
+    "imgProfile": "/img/users/mateo.jpg"
+    },
+    {
+    "userId": 5,
+    "name": "Melena",
+    "lastName": "Perez",
+    "email": "email",
+    "password": "password",
+    "imgProfile": "/img/users/melena.jpg"
+    },
+    {
+    "userId": 6,
+    "name": "Phonix",
+    "lastName": "Galindo",
     "email": "email", 
     "password": "password",
-    "imgProfile": "/img/"
+    "imgProfile": "/img/users/phonix.jpg"
     }
 ]
