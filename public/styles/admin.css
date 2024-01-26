@@ -1,15 +1,15 @@
-/* CELULARES */
-.cards{
+.main{
     display: flex;
-    justify-content: space-evenly;
-    margin-left: 24vw;
-    margin-top: 4vh;
-    margin-bottom: 4vh;
-    width: 54vw;
-    border: solid 1px rgb(230, 230, 230);;
-    border-radius: 15px;
-    background-color: rgb(230, 230, 230);
+    justify-content: space-around;
 }
+
+.all-products-container{
+    width: 35%;
+    height: 225px;
+    background: #f5eaea;
+    border-radius: 10px;
+}
+
 .card-add{
     display: flex;
     flex-direction: column;
