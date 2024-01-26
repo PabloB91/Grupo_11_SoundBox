@@ -3,9 +3,7 @@
 
     <%- include("./partials/head") %>
     <link href="styles/admin.css" rel="stylesheet">
-    <link href="/styles/reset.css" rel="stylesheet">
-    <link href="/styles/header-footer.css" rel="stylesheet">
-    <link href="/styles/home.css" rel="stylesheet">
+
         
 <body>
                 
@@ -14,14 +12,25 @@
         <!-- /Header -->
 
         <main>
-            <section class="cards">
-                    <div class="card-add">
-                        <h4>Crear Producto</h4>
-                        <a href="/products/create">
-                            <i id="add-icon" class="fa-solid fa-plus"></i>
-                        </a> 
-                    </div>
-            </section>
+            <div class="main">
+
+                <div class="all-products-container">
+                    <h2>
+                        <a id="link-all-products" href="/todosLosProductos">
+                            Todos los productos
+                        </a>
+                    </h2>
+                </div>
+    
+                <div class="all-products-container">
+                    <h2>
+                        <a id="link-all-products" href="/todosLosProductos">
+                            Todos los productos
+                        </a>
+                    </h2>
+                </div>
+                
+            </div>
         </main>
         
         <!-- Footer -->
