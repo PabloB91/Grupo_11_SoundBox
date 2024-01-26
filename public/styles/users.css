@@ -91,7 +91,7 @@ h1 {
 
 .img-container img:hover {
     border: 1px solid black;
-    border-radius: 0;
+    border-radius: 8px;
     transform: scale(1.2);
     transition: all .5s ease;
     

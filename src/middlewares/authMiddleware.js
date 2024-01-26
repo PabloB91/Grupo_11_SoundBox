@@ -1,5 +1,5 @@
 function authMiddlewares (req, res, next) {
-    if () {
+    if (!req.session.userLogged) {
         res.redirect("/login");
     } else {
 
