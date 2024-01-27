@@ -61,12 +61,12 @@ const upload = multer({storage});
 
 // Preferencias de usuario
 
-router.get('/userProfile/:userId', usersController.user) 
+router.get('/userProfile/:userId', usersController.user);
 
 // Login
 
-router.get('/login', usersController.login)
-router.get('/post', valLogin, usersController.login)
+router.get('/login', usersController.login);
+router.post('/login', valLogin, usersController.processToRegister);
 /*--> Esto es una sugerencia, de crear una página con el perfil del usuario común además de la de Admin 
 Es decir, según el 'id' del usuario logueado, va a mostrar lo que corresponda al Admin (crear y borrar productos) o al Usuario (perfil del usuario) */
 

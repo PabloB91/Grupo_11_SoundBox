@@ -8,6 +8,7 @@ const bcrypt = require("bcryptjs")
 
 const { validationResult } = require("express-validator");
 const { log } = require("console");
+const e = require("method-override");
 
 
 
@@ -42,7 +43,29 @@ const usersControllers = {
 
     // (GET) Login Estatico
     login: (req, res) => {
-        res.render("login.ejs");
+
+      res.render("login.ejs");
+    },
+
+    processToRegister: (req, res) => {
+
+
+        let errors = validationResult(req);
+        res.send(errors);
+
+        if(errors.isEmpty()){
+            let user = req.body
+
+            userId = userModel.login(user);
+
+            res.redirect('/users/userProfile/:userId');
+            
+        }else{
+            res.render("login.ejs");
+        }
+
+
+       /*  res.render("login.ejs"); */
     },
 
     // (POST) Proceso Login
