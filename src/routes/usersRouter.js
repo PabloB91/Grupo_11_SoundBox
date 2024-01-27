@@ -23,10 +23,10 @@ const validacionesRegistro= [
       }),
 ];
 
-/* const validateLoginForm = [
+const valLogin = [
     body('email').isEmail().notEmpty().withMessage('Ingresa tu E-meil'),
     body('password').notEmpty().withMessage('Ingresar contrasena'),
-]; */
+];
 
 // multer
 const storage = multer.diskStorage({
@@ -48,7 +48,11 @@ const upload = multer({storage});
 // Detalle del usuario
 router.get('/userProfile/:userId', usersController.user) 
 
+/*Logeo del usuario*/ */
+
 router.get('/login', usersController.login)
+
+router.post('/login', valLogin, usersController.login)
  
 /*--> Esto es una sugerencia, de crear una página con el perfil del usuario común además de la de Admin 
 Es decir, según el 'id' del usuario logueado, va a mostrar lo que corresponda al Admin (crear y borrar productos) o al Usuario (perfil del usuario) */
