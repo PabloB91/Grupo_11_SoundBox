@@ -1,11 +1,11 @@
-/* function authMiddlewares (req, res, next) {
-    if () {
-        res.redirect("/login");
+function authMiddlewares (req, res, next) {
+    if (req.sessions.LogguedUser != undefined) {
+        next();
     } else {
-
+        
+        res.redirect("/login");
     }
-    next();
     
 };
 
-module.exports = authMiddlewares; */
+module.exports = authMiddlewares;

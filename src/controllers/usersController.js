@@ -50,13 +50,14 @@ const usersControllers = {
     processToCreate: (req, res) => {
 
         const errores = validationResult(req);  //--->Traemos las validaciones
-        console.log(errores);
+        // console.log(errores);
 
         if(!errores.isEmpty()){ //-->Si existen errores, se renderizan y además se renderizan los input de usuario que sean correctos en el objeto 'old' 
-            console.log("Errores: ",errores);
+            console.log("Errores: ", errores);
             return res.render("register", { errores: errores.array(), old: req.body}) 
         }else{
             res.render("register")
+            
         } 
 
         const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8')); //--> Se trae el JSON de usuarios
@@ -77,8 +78,16 @@ const usersControllers = {
 		fs.writeFileSync(usersFilePath, JSON.stringify(usersJson, null, ' '));  //--> Se escribe el archivo JSON con la variable modificada
 
 		res.redirect('/users/userProfile')  //--> Se redirige al perfil del usuario
-    }
+
+    },
     
+    store: function( req, res ) {
+        const errores = validationResult(req);  //--->Traemos las validaciones
+        // console.log(errores);
+
+
+    }
+
 }
 
 module.exports = usersControllers;

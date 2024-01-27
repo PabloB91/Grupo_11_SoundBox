@@ -6,7 +6,7 @@ const path = require("path");
 const usersController = require('../controllers/usersController');
 const { body } = require('express-validator');
 // validaciones
-const validacionesRegistro= [
+const validacionesRegistro = [
     body('name').notEmpty().withMessage('Tu nombre es necesario'),
     body('lastName').notEmpty().withMessage('Tu apellido es necesario'),
     body('email').trim().not().isEmpty().withMessage('Tu E-mail es necesario'),
@@ -23,10 +23,11 @@ const validacionesRegistro= [
       }),
 ];
 
-/* const validateLoginForm = [
+const validateLoginForm = [
     body('email').isEmail().notEmpty().withMessage('Ingresa tu E-meil'),
     body('password').notEmpty().withMessage('Ingresar contrasena'),
-]; */
+    
+];
 
 // multer
 const storage = multer.diskStorage({
