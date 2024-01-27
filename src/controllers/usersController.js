@@ -1,3 +1,5 @@
+// Requerimientos
+
 const path = require("path")
 const express = require("express")
 const app = express();
@@ -7,15 +9,18 @@ const bcrypt = require("bcryptjs")
 const { validationResult } = require("express-validator");
 const { log } = require("console");
 
-/* En la constante "users" ya tienen los usuarios que están 
-guardados en la carpeta Data como Json (un array de objetos literales) */
+
+
+// Path y direcciones
+
 const usersFilePath = path.join(__dirname, "../data/usersDataBase.json");
 
 const usersControllers = {
     
+    // (GET) Dinamismo de los Usuarios
     user: (req, res) => {
         const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-        // console.log(usersJson)
+
         let userId = req.params.userId
 
 		let userDefinido = usersJson.find(user => {
@@ -35,18 +40,22 @@ const usersControllers = {
 
     },
 
+    // (GET) Login Estatico
     login: (req, res) => {
         res.render("login.ejs");
     },
 
+    // (POST) Proceso Login
     processToLogin: (req, res) => {
         const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
     },
 
+    // (GET) Registro Estatico
     register: (req, res) => {
         res.render("register")
-            },
+    },
 
+    // (POST) Proceso Registro
     processToCreate: (req, res) => {
 
         const errores = validationResult(req);  //--->Traemos las validaciones
@@ -78,14 +87,44 @@ const usersControllers = {
 		fs.writeFileSync(usersFilePath, JSON.stringify(usersJson, null, ' '));  //--> Se escribe el archivo JSON con la variable modificada
 
 		res.redirect('/users/userProfile')  //--> Se redirige al perfil del usuario
-
     },
-    
-    store: function( req, res ) {
-        const errores = validationResult(req);  //--->Traemos las validaciones
-        // console.log(errores);
 
+    // (GET) Editar Estatico
+    preference: (req, res) => {
+        const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
+		const usersToEdit = usersJson.find((users) => {
+
+			return users.id == req.params.id;
+
+		}) 
+
+		res.render("editarUsuario", {usersToEdit})
+    },
+
+    // (PUT) Editar Usuario
+    editProferences: (req, res) => {
+        const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+
+		const id = req.params.id;
+		let usersToEdit = usersJson.find(users => users.id == id);
+
+		usersToEdit = {
+			userId: usersToEdit.id,
+			name: req.body.name,
+            lastName: req.body.lastName,
+            email: req.body.email,
+            imgProfile: req.file == undefined ? "usuario-al-azar.png" : req.file.filename
+		}
+
+		let indice = usersJson.findIndex(users => {
+			return users.id == id
+		})
+
+		usersJson[indice] = usersToEdit;
+
+		fs.writeFileSync(usersFilePath, JSON.stringify(usersJson, null, " "));
+		res.redirect("/users/userProfile/" + usersToEdit.id)
     }
 
 }

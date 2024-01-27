@@ -215,7 +215,7 @@ input#remember-me{
 	display: none;
 
 	&:checked~span{
-		box-shadow: 0px 0px 10px 0px #ff540a;
+		box-shadow: 0px 0px 5px 0px #ff540a;
 	}
 }
 
@@ -224,14 +224,15 @@ span#check{
 	position: relative;
 	height: 18px;
 	width: 18px;
-	background: #ff540a;
+	background: none;
+	border: 1px solid #000;
 	border-radius: 3px;
 	transition-duration: all 0.7s;
 
 	&:after{
 		content: " ";
 		position: absolute;
-		border: solid #fff;
+		border: solid #ff540a;
 		border-width: 0 0.20em 0.20em 0;
 		transform: rotate(45deg);
 		width: 0.25em;
@@ -249,6 +250,7 @@ label#label_checkBox input#remember-me:checked ~ span#check{
 		opacity: 1;
 	}
 }
+
 
 label{
 	.remember-me{

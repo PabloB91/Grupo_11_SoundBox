@@ -38,13 +38,13 @@
                         <section id="edit-user-form">
                             <form action="">
                                 <label for=""><p>Name</p>
-                                    <input type="text">
+                                    <input type="text" value="<%= user.name %>" >
                                 </label>
                                 <label for=""><p>Last name</p>
-                                    <input type="text">
+                                    <input type="text" value="<%= user.lastName %>">
                                 </label>
                                 <label for=""><p>Email</p>
-                                    <input type="text">
+                                    <input type="text" value="<%= user.email %>" >
                                 </label>
 
                                 <div>
@@ -59,7 +59,7 @@
                     </section>
                     <section class="second-section">
                         <div class="img-container">
-                            <img src="<%= user.imgProfile %>" alt="">
+                            <img src="/img/users/<%= user.imgProfile %>" alt="">
                         </div>
                         <div class="img-buttons">
                             <input type="file">
