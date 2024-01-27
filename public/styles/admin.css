@@ -12,20 +12,19 @@ main{
 
 .img-admin{
     width: 250px;
+    overflow: hidden;
+    border-radius: 50%;
+    transition-duration:.5s;
 
     img{
         width: 100%;
-        border-radius: 50%;
-        transition-duration:.5s;
 
     }
 
     &:hover{
         
-        img{
-            border-radius: 15%;
-            transition-duration:.8s;
-        }  
+        border-radius: 15%;
+        transition-duration:.8s;
     }
 
 }
