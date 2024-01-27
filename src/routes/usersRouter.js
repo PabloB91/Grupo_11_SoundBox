@@ -24,8 +24,8 @@ const validacionesRegistro= [
 ];
 
 const valLogin = [
-    body('email').isEmail().notEmpty().withMessage('Ingresa tu E-meil'),
     body('password').notEmpty().withMessage('Ingresar contrasena'),
+    body('email').isEmail().withMessage('Ingresa tu E-mail'),
 ];
 
 // multer
