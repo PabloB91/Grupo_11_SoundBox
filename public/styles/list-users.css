@@ -21,15 +21,18 @@
     border-radius: 10px;
     border: 2px solid #000;
     align-items: center;
+    overflow: hidden;
+
 }
 
 .img{
 
     width: 50%;
+    height: 100%;
 
     img{
         width: 100%;
-        
+        height: 100%;
     }
 }
 

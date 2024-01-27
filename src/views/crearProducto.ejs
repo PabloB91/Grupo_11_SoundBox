@@ -1,285 +1,333 @@
-
-    <!-- head -->
-    <%- include("./partials/head") %>
+<!-- head -->
+<%- include("./partials/head") %>
     <link href="/styles/reset.css" rel="stylesheet">
     <link href="/styles/crearProducto.css" rel="stylesheet">
     <!-- /head -->
-        
+
     <body>
-            
+
         <!-- HEADER -->
         <%- include("./partials/header")%>
-        <!-- /HEADER -->
-            
-        <main>
-            <section class="admin-container">
-                <div class="admin-containe_title">
-                    <h1> CREAR PRODUCTO </h1>
-                </div>
-                <section class="contenedor-total">
-                    <div class="form-creat-product">
-                        <form action="/products/create" method="POST" enctype="multipart/form-data">
-                            <div class="imagenes">
-                                <div class="fieldset imagen-of-product">
-                                    <label for="imagen"></label>
-                                    <input placeholder="Imagen" type="file"  name="form-imagen" class="imagen-form">
-                                </div>
-    
-                                <div class="fieldset imagen-of-product ">
-                                    <label for="imagen"></label>
-                                    <input placeholder="Imagen" type="file"  name="form-imagen" class="imagen-form">
-                                </div>
-    
-                                <div class="fieldset imagen-of-product ">
-                                    <label for="imagen"></label>
-                                    <input placeholder="Imagen" type="file"  name="form-imagen" class="imagen-form">
-                                </div>
-    
-                                <div class="fieldset imagen-of-product ">
-                                    <label for="imagen"></label>
-                                    <input placeholder="Imagen" type="file"  name="form-imagen" class="imagen-form">
-                                </div>
+            <!-- /HEADER -->
 
-                            </div>
-                            
-                            <div class="fieldset titulo-producto">
-                                <label for="nombre">Nombre del producto</label>
-                                <input placeholder="Guitarra" type="text" name="nombre" class="nombre-form">
-                            </div>
+            <main>
 
-                            <div class="fieldset marca-producto">
-                                <label for="marca">Marca</label>
-                                <input placeholder="Honda..." type="text" name="marca" class="marca-form">
-                            </div>
-                            
-                            <div class="fieldset precio">
-                                <label for="precio">Precio</label>
-                                <input placeholder="Precio" type="number"  name="precio" min="1" max="9999999" class="precio-form">
-                            </div>
+                <section class="admin-container">
 
-                            <div class="fieldset descuento">
-                                <label for="descuento">Descuento</label>
-                                <input placeholder="Descuento" type="number"  name="descuento"  max="99" class="descuento-form">
-                            </div>
-
-                            <div class="fieldset descripcion">
-                                <label for="descripcion">Descripcion</label>
-                                <textarea name="descripcion" id="" cols="30" rows="10" class="descripcion-form"></textarea>
-                            </div>
-
-                            <div class="fieldset colores-disponibles">
-                                <label for="colors">Colores disponibles</label>
-                                <input placeholder="Gris" type="text" name="coloresDisponibles" class="colors-form">
-                            </div>
-
-                            <div class="fieldset cantidad-disponibles">
-                                <label for="disponibles">Cantidad disponibles</label>
-                                <input placeholder="Cantidad" type="number"  name="cantidad" min="1" max="1000" class="cantidad-disponible">
-                            </div>
-
-                            <div class="fieldset agregar-categoria">
-                                <label for="categorias">Categorias</label>
-                                <input placeholder="Guitarras, Instrumentos de cuerda" type="text"  name="categorias" class="cantidad-disponible">
-                            </div>
-
-                            <div class="fieldset estado">
-                                <label for="categorias">Estado</label>
-                                <select name="estado" id="estado" class="estado-producto">
-                                    <option value="choose">Elegir</option>
-                                    <option value="Oferta">En oferta</option>
-                                    <option value="Últimos agregados">Últimos agregados</option>
-                                </select>
-                            </div>
-                            
-                            <div class="botones crear-carta-borrar-carta">
-
-                                <label for=""></label>
-                                <input type="submit" value="Crear" class="enviar-form">
-                                    
-                                <label for=""></label>
-                                <input type="reset" value="Eliminar" class="borrar-form">
-
-                            </div>
-
-                        </form>
-
+                    <div class="admin-container_title">
+                        <h1> CREAR PRODUCTO </h1>
                     </div>
 
-                    <div class="vista-previa">
-                            
-                        <div class="vista-previa-caja-genera_title">
-                                <h1>Vista previa</h1> <input type="button" value="o">
-                        </div>
+                    <section class="contenedor-total">
 
-                        <div class="caja-general detalle-del-producto ">
-                                
-                                
-                            <div class="caja-imagenes-general">
-                                    
-                                    <div class="imagen-producto-principal">
-                                        <img src="/img/products/IMG_DEFAULT.svg" alt="guitarra1">
-                                        <a href="#"> <i class="fa-solid fa-heart"></i> </a>
-                                    </div>
-                                    
-                                    <div class="imagenes-secundarias-inferior">
-                                        <img src="/img/products/IMG_DEFAULT.svg" alt="guitarra1" class="imagen-producto-secundaria">
-                                        <img src="/img/products/IMG_DEFAULT.svg" alt="guitarra1" class="imagen-producto-secundaria">
-                                        <img src="/img/products/IMG_DEFAULT.svg" alt="guitarra1" class="imagen-producto-secundaria">
-                                    </div>
-                            </div>
-                    
-                            <div class="caja-sub-general-informacion">
+                        <div class="form-creat-product">
 
-                                
-                                <div class="caja-primera">
-                                    
-                                    <div class="caja-titulo-producto">
-                                            <h2 class="titulo-producto">Nombre del producto</h2>
-                                    </div>
-                                        
-                                    <div class="caja-precio-clasificacion">
+                            <form action="/products/create" method="POST" enctype="multipart/form-data">
 
-                                        <div class="product-price">
-                                                <span class="precio-producto"> $ Precio </span>
-                                                <span class="precio-producto"> Descuento % </span>
+                                <div class="fieldset product-name">
+                                    
+                                    <input type="text" name="nombre" class="fieldset-input nombre-form">
+
+                                    <label for="nombre" class="fieldset-lbl lbl-productName">
+                                        <span class="lbl-text">
+                                            Nombre del producto
+                                        </span>
+                                    </label>
+                                    
+                                </div>
+
+                                <div class="fieldset product-brand">
+
+                                    <input type="text" name="marca" class="fieldset-input marca-form">
+                                    
+                                    <label for="marca" class="fieldset-lbl lbl-productBrand">
+                                        <span class="lbl-text">
+                                            Marca        
+                                        </span> 
+                                    </label class="lbl-text">
+
+                                </div>
+
+                                <div class="fieldset price">
+
+                                    <input type="number" name="precio" min="1" max="9999999" class="fieldset-input precio-form">
+
+                                    <label for="precio" class="fieldset-lbl lbl-productPrice">
+                                        <span class="lbl-text">
+                                            Precio
+                                        </span>
+                                    </label>
+
+                                </div>
+
+                                <div class="fieldset descuento">
+
+                                    <input type="number" name="descuento" max="99" class="fieldset-input descuento-form">
+                                   
+                                    <label for="descuento" class="fieldset-lbl lbl-productDiscount">
+                                        <span class="lbl-text">
+                                            Descuento
+                                        </span>
+                                    </label>
+                                
+                                </div>
+
+                                <div class="fieldset descripcion">
+
+                                    <textarea name="descripcion" id="" cols="30" rows="10" class="fieldset-input descripcion-form"></textarea>
+                                    
+                                    <label for="descripcion" class="fieldset-lbl lbl-productDescription">
+                                        <span class="lbl-text">
+                                            Descripcion
+                                        </span>
+                                    </label>
+                                    
+                                </div>
+
+                                <div class="fieldset colores-disponibles">
+
+                                    <input type="text" name="coloresDisponibles" class="fieldset-input colors-form">
+
+                                    <label for="colors" class="fieldset-lbl lbl-productColor">
+                                        <span class="lbl-text">
+                                            Colores disponibles
+                                        </span>
+                                    </label>
+                                    
+                                </div>
+
+                                <div class="fieldset cantidad-disponibles">
+
+                                    <input type="number" name="cantidad" min="1" max="1000" class="fieldset-input cantidad-disponible">
+
+                                    <label for="disponibles" class="fieldset-lbl lbl-productAvailable">
+                                        <span class="lbl-text">
+                                            Cantidad disponibles 
+                                        </span>
+                                    </label>
+
+                                </div>
+
+                                <div class="fieldset agregar-categoria">
+
+                                    <input type="text" name="categorias" class="fieldset-input categorias">
+
+                                    <label for="categorias" class="fieldset-lbl lbl-productCaategory">
+                                        <span class="lbl-text">
+                                            Categorias
+                                        </span>
+                                    </label>
+
+                                </div>
+
+                                <div class="fieldset estado">
+                                    <label for="categorias" class="estado">
+                                        <!-- Estado -->
+                                    </label>
+                                    <select name="estado" id="estado" class="fieldset-input estado-producto">
+                                        <option value="choose">Elegir estado</option>
+                                        <option value="Oferta">En oferta</option>
+                                        <option value="Últimos agregados">Últimos agregados</option>
+                                    </select>
+                                </div>
+
+                                <div class="botones crear-carta-borrar-carta">
+
+                                    <label for="send-form"></label>
+                                    <input type="submit" value="Crear" class="send-form" name="send-form">
+
+                                    <label for="restar-form"></label>
+                                    <input type="reset" value="Reiniciar" class="restar-form" name="restar-form">
+
+                                </div>
+
+                                <div class="vista-previa">
+
+                                    <div class="vista-previa-caja-genera_title">
+                                        <h1>Vista previa</h1> <input type="button" value="o">
+                                    </div>
+
+                                    <div class="caja-general detalle-del-producto ">
+
+                                        <div class="imagenes">
+                                            <div class="fieldset imagen-of-product">
+                                                <label for="imagen"></label>
+                                                <input placeholder="Imagen" type="file" name="form-imagen" class="imagen-form">
+                                            </div>
+        
+                                            <div class="fieldset imagen-of-product ">
+                                                <label for="imagen"></label>
+                                                <input placeholder="Imagen" type="file" name="form-imagen" class="imagen-form">
+                                            </div>
+        
+                                            <div class="fieldset imagen-of-product ">
+                                                <label for="imagen"></label>
+                                                <input placeholder="Imagen" type="file" name="form-imagen" class="imagen-form">
+                                            </div>
+        
+                                            <div class="fieldset imagen-of-product ">
+                                                <label for="imagen"></label>
+                                                <input placeholder="Imagen" type="file" name="form-imagen" class="imagen-form">
+                                            </div>
                                         </div>
-                                            
-                                        <form class="select-starts">
 
-                                                <div class="starts">
-                                                    <p class="clasificacion">
-                                                        <input id="radio1" type="radio" name="estrellas"><!--
+                                        <div class="caja-sub-general-informacion">
+
+
+                                            <div class="caja-primera">
+
+                                                <div class="caja-titulo-producto">
+                                                    <h2 class="titulo-producto">Nombre del producto</h2>
+                                                </div>
+
+                                                <div class="caja-precio-clasificacion">
+
+                                                    <div class="product-price">
+                                                        <span class="precio-producto"> $ Precio </span>
+                                                        <span class="precio-producto"> Descuento % </span>
+                                                    </div>
+
+                                                    <form class="select-starts">
+
+                                                        <div class="starts">
+                                                            <p class="clasificacion">
+                                                                <input id="radio1" type="radio" name="estrellas"><!--
                                                         --><label for="radio1"><i class="fa-solid fa-star"></i></label><!--
                                                         --><input id="radio2" type="radio" name="estrellas"><!--
                                                         --><label for="radio2"><i class="fa-solid fa-star"></i></label><!--
-                                                        --><input id="radio3" type="radio" name="estrellas" ><!--
+                                                        --><input id="radio3" type="radio" name="estrellas"><!--
                                                         --><label for="radio3"><i class="fa-solid fa-star"></i></label><!--
-                                                        --><input id="radio4" type="radio" name="estrellas" ><!--
+                                                        --><input id="radio4" type="radio" name="estrellas"><!--
                                                         --><label for="radio4"><i class="fa-solid fa-star"></i></label><!--
-                                                        --><input id="radio5" type="radio" name="estrellas" ><!--
+                                                        --><input id="radio5" type="radio" name="estrellas"><!--
                                                         --><label for="radio5"><i class="fa-solid fa-star"></i></label>
-                                                    </p>
+                                                            </p>
+                                                        </div>
+
+                                                    </form>
+
                                                 </div>
 
-                                        </form>
+                                            </div>
 
-                                    </div>
-                        
-                                    </div>
-                        
-                                    <div class="caja-segunda">
+                                            <div class="caja-segunda">
 
-                                        <div class="caja-descripcion-producto">
+                                                <div class="caja-descripcion-producto">
 
-                                            <p class="descripcion-producto">
-                                                description...
-                                            </p>
+                                                    <p class="descripcion-producto">
+                                                        description...
+                                                    </p>
 
-                                        </div>
-                        
-                                        <div class="caja-colores-producto">
+                                                </div>
 
-                                            <span class="texto-cantidad">cantidad nombre</span>
-                                            
-                                            <div class="caja-seleccion-colores">
-                                                <form action="">
-                                                   <select name="color" id="color">
-                                                    <option value="">Color</option>
-                                                   </select>
-                                                </form>
+                                                <div class="caja-colores-producto">
+
+                                                    <span class="texto-cantidad">cantidad nombre</span>
+
+                                                    <div class="caja-seleccion-colores">
+                                                        <form action="">
+                                                            <select name="color" id="color">
+                                                                <option value="">Color</option>
+                                                            </select>
+                                                        </form>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                            <div class="caja-cantidad-producto-carrito">
+
+                                                <div class="caja-cantidad-producto">
+                                                    <input type="number" id="cantidad-seleccion" min="1" max="100">
+                                                </div>
+
+                                                <div class="caja-botones-cantidad-producto">
+                                                    <i class="fa-solid fa-caret-up"></i>
+                                                    <i class="fa-solid fa-caret-down"></i>
+                                                </div>
+
+                                                <div class="caja-agregar-carrito">
+
+                                                    <form action="" class="formulario-boton-agregar-carrito">
+                                                        <button type="submit" class="boton-agregar-carrito"><i
+                                                                class="fa-solid fa-cart-shopping"></i> <span
+                                                                class="texto-boton-agregar-carrito">ADD</span></button>
+                                                    </form>
+
+                                                </div>
+
+                                            </div>
+
+                                            <div class="caja-links-extra-producto">
+
+                                                <div class="caja-categorias-producto">
+                                                    <span class="links-categorias-producto">Categories:
+                                                        <a href="#">Guitars</a>,
+                                                        <a href="#">Band & Orchestra</a>,
+                                                        <a href="#">Bass Guitar</a>,
+                                                        <a href="#">Instruments</a>,
+                                                        <a href="#">Orchestral Strings</a>
+                                                    </span>
+                                                </div>
+
+                                                <div class="caja-tags-producto">
+                                                    <span class="links-tags-producto">Tags:
+                                                        <a href="#">sale</a>,
+                                                        <a href="#">company</a>,
+                                                        <a href="#">electric guitars</a>
+                                                    </span>
+                                                </div>
+
                                             </div>
 
                                         </div>
 
                                     </div>
-                        
-                                    <div class="caja-cantidad-producto-carrito">
 
-                                        <div class="caja-cantidad-producto">
-                                                <input type="number" id="cantidad-seleccion" min="1" max="100">
-                                        </div>
-                        
-                                        <div class="caja-botones-cantidad-producto">
-                                                <i class="fa-solid fa-caret-up"></i>
-                                                <i class="fa-solid fa-caret-down"></i>
-                                        </div>
-                        
-                                        <div class="caja-agregar-carrito">
+                                    <div class="vista-previa-de-la-card disappear">
 
-                                                <form action="" class="formulario-boton-agregar-carrito">
-                                                    <button type="submit" class="boton-agregar-carrito"><i class="fa-solid fa-cart-shopping"></i> <span class="texto-boton-agregar-carrito">ADD</span></button>
-                                                </form>
+                                        <article class="producto">
 
-                                        </div>
+                                            <a href="#">
 
+                                                <div class="img-product-card">
+                                                    <img src="/img/products/IMG_DEFAULT.svg" alt="Trompeta">
+                                                </div>
+
+                                                <div class="detalle-producto">
+
+                                                    <div class="container-detalle">
+                                                        <div class="descripciones">
+                                                            <p>
+                                                                <%= %>
+                                                            </p>
+                                                        </div>
+                                                        <span class="precios">$</span>
+                                                        <span class="descuentos">% off</span>
+                                                    </div>
+
+                                                </div>
+
+                                            </a>
+
+                                        </article>
                                     </div>
-                                        
-                                    <div class="caja-links-extra-producto">
+                                    
+                                </div>
 
-                                        <div class="caja-categorias-producto">
-                                            <span class="links-categorias-producto">Categories:
-                                                <a href="#">Guitars</a>,
-                                                <a href="#">Band & Orchestra</a>,
-                                                <a href="#">Bass Guitar</a>,
-                                                <a href="#">Instruments</a>,
-                                                <a href="#">Orchestral Strings</a>
-                                            </span>
-                                        </div>
-                                        
-                                        <div class="caja-tags-producto">
-                                            <span class="links-tags-producto">Tags:
-                                                <a href="#">sale</a>,
-                                                <a href="#">company</a>,
-                                                <a href="#">electric guitars</a>
-                                            </span>
-                                        </div>
-
-                                    </div>
-                                
-                            </div>
+                            </form>
 
                         </div>
 
-                        <div class="vista-previa-de-la-card disappear">
-
-                            <article class="producto">
-
-                                <a href="#">
-
-                                    <div class="img-product-card">
-                                        <img src="/img/products/IMG_DEFAULT.svg" alt="Trompeta" >
-                                    </div>
-
-                                    <div class="detalle-producto">
-
-                                        <div class="container-detalle">
-                                            <div class="descripciones">
-                                                <p><%=  %></p>
-                                            </div>
-                                            <span class="precios">$</span>
-                                            <span class="descuentos">% off</span>
-                                        </div>
-
-                                    </div>
-
-                                </a>
-
-                            </article>
-                        </div>
-
-                    </div>
+                    </section>
 
                 </section>
 
-            </section>
+            </main>
 
-        </main>
-            
-        <!-- Footer -->
-        <%- include("./partials/footer") %>
-        <!-- /Footer -->
+            <!-- Footer -->
+            <%- include("./partials/footer") %>
+                <!-- /Footer -->
 
     </body>
-
-
-
