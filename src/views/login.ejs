@@ -23,13 +23,20 @@
                     <h1>¡Lleva la buena vibra!</h1>
                 </div>
         
-                <form action="/users/userProfile/" method="POST" class="main-login_form"><!-- /userProfile/:userId -->
+                <form action="/users/login" method="POST" class="main-login_form"><!-- /userProfile/:userId -->
         
                     <div class="main-login_form_box-container one-login">
                         
                         <div class="main-login-form-box-container_title">
                                 <h2>INGRESAR</h2>
                         </div>
+
+                        <% if (locals.errores) {  %>
+
+                            <%errors.forEach(error => { %>
+                                <p class="error"> <%= error.msg %> </p>
+                            <%  }); %>
+                        <%}%>
         
                         <div class="fieldset mail">
         

@@ -10,8 +10,6 @@ const { validationResult } = require("express-validator");
 const { log } = require("console");
 const e = require("method-override");
 
-
-
 // Path y direcciones
 
 const usersFilePath = path.join(__dirname, "../data/usersDataBase.json");
@@ -49,20 +47,53 @@ const usersControllers = {
 
     // (POST) Proceso Login
     processToLogin: (req, res) => {
-        const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-
-        let errors = validationResult(req);
-        res.send(errors);
-
+        
+        const errors = validationResult(req);
+        
         if(errors.isEmpty()){
-            let user = req.body
 
-            userId = userModel.login(user);
+            /* userId = userModel.login(user);
 
-            res.redirect('/users/userProfile/:userId');
+            res.redirect('/users/userProfile/:userId'); */
+
+            /* let userWhenLoggingIn; */
+            const  usersJSON = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+
+            console.log(usersJSON);
+
+            let users;
+
+            if (usersJSON = ""){
+                users = [];
+            }else {
+                users = JSON.parse(usersJSON);
+            }
+            
+            for(let user = 0; 1<users.length; i++ ) {
+
+                if (users[user].email == req.body.email) {
+
+                    if (bcrypt.compareSync(req.body.password, users[user].password)){
+                        let userWhenLoggingIn = users[user];
+                        break;
+                    }
+                }
+            }
+            
+            if (userWhenLoggingIn == undefined){
+            
+            res.render("login.ejs", { errors : [
+           
+                       {msg: 'La contraseña o el correo no coinciden'}
+                    ]
+                });
+            }
+            
+            req.session.userLoggedIn = userWhenLoggingIn;
+            res.render('/users/userProfile/'+ users.userId)
             
         }else{
-            res.render("login.ejs");
+            res.render("login.ejs", { errors: errors.errors });
         }
 
        /*  res.render("login.ejs"); */
