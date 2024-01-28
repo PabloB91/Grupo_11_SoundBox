@@ -31,7 +31,7 @@
                                 <h2>INGRESAR</h2>
                         </div>
 
-                        <% if (errors && errors.length > 0) { %>
+                        <% if (typeof errors === undefined  ) { %>
                             <% for (let error = 0; error < errors.length; error++) { %>
                                 <p class="error"> <%= errors[error].msg %> </p>
                             <% } %>

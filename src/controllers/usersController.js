@@ -52,14 +52,9 @@ const usersControllers = {
         
         if(errors.isEmpty()){
 
-            /* userId = userModel.login(user);
+            const usersJSON = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
-            res.redirect('/users/userProfile/:userId'); */
-
-            /* let userWhenLoggingIn; */
-            const  usersJSON = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-
-            console.log(usersJSON);
+            /* console.log(usersJSON); */
 
             let users;
 
@@ -69,7 +64,8 @@ const usersControllers = {
                 users = usersJSON;
             }
             
-            let userWhenLoggingIn;
+            /* let userWhenLoggingIn = users.find(user => user.email === req.body.email); */
+            let userWhenLoggingIn; 
 
             for(let user = 0; user<users.length; user++ ) {
 
@@ -92,13 +88,14 @@ const usersControllers = {
             }
             
             req.session.userLoggedIn = userWhenLoggingIn;
-            res.render('userProfile', { user: userWhenLoggingIn });
+            res.render(`user`, { user: userWhenLoggingIn });
             
+
+            /* console.log(req.session.userLoggedIn) */
         }else{
-            res.render("login.ejs", { errors: errors.errors });
+            return res.render("login.ejs", { errors });
         }
 
-       /*  res.render("login.ejs"); */
     },
 
     // (GET) Registro Estatico

@@ -46,5 +46,13 @@
   "email": "PhoenixGalindo@gmail.com",
   "password": "password",
   "imgProfile": "/img/users/phonix.jpg"
+ },
+ {
+  "userId": 7,
+  "name": "juan",
+  "lastName": "nose",
+  "email": "algo@gmail.com",
+  "password": "$2a$10$pJRvIVlN9UoeLs2A80eX0uCaKnq7CiiiYTStZ3XqRTfFd41mJ5Yke",
+  "imgProfile": "USER-ICONimgProfile - 1706480320217.jpg"
  }
 ]
