@@ -50,16 +50,6 @@ const usersControllers = {
     // (POST) Proceso Login
     processToLogin: (req, res) => {
         const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-    },
-
-    // (GET) Registro Estatico
-    register: (req, res) => {
-        res.render("register")
-    },
-    
-    // (POST) Proceso Registro
-    processToRegister: (req, res) => {
-
 
         let errors = validationResult(req);
         res.send(errors);
@@ -75,11 +65,16 @@ const usersControllers = {
             res.render("login.ejs");
         }
 
-
        /*  res.render("login.ejs"); */
     },
 
-    processToCreate: (req, res) => {
+    // (GET) Registro Estatico
+    register: (req, res) => {
+        res.render("register")
+    },
+    
+    // (POST) Proceso Registro
+    processToRegister: (req, res) => {
 
         const errores = validationResult(req);  //--->Traemos las validaciones
         console.log(errores);
