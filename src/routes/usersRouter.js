@@ -8,8 +8,6 @@ const path = require("path");
 const usersController = require('../controllers/usersController');
 const { body } = require('express-validator');
 
-
-
 // Validacion de Registro
 
 const registerValidations = [
@@ -29,19 +27,24 @@ const registerValidations = [
       }),
 ];
 
-
-
 // Validacion de Login
-
+/**
+ * En esta constaten estamos haciendo la validacion de emain y de password las cuales deben de cumplir
+ * con los requerimientos 
+ */
 const valLogin = [
     body('email').isEmail().notEmpty().withMessage('Ingresa tu E-meil'),
     body('password').notEmpty().withMessage('Ingresar contrasena'),
 ];
 
-
-
 // Multer
-
+/** 
+ * En este bloque de codigo estamos creando la memoria donde se gusrdaran las imagenes y con el nombre 
+ * que se guardaran, estamos diciendo que dentro de la carpeta users que esta dentro de la carpeta img 
+ * la cual esta dentro de public vamos a guardar una imagen con el nombre:
+ * USER-ICONnombreDelArchivo-numeroDelDate.now.extencionDeLaImagen.
+ * ↓
+ */
 const storage = multer.diskStorage({
 
     // donde guardamos los archivos
@@ -57,35 +60,38 @@ const storage = multer.diskStorage({
 });
 const upload = multer({storage});
 
-
-
-// Preferencias de usuario
-
+// Perfil del usuario
+/**
+ * en esta linea de codigo estamos diciendo que al entrar en la ruta /userProfile/:userId nos va a
+ * decolver la vista de user que esta en el usersConreoller
+ */
 router.get('/userProfile/:userId', usersController.user);
 
 // Login
-
+/**
+ * en esta dos lineas de codigo lo que estamos diciendo es que al entrar en la ruta por get de /login
+ * vamos a usar del usersController le objeto login y en el router que viaja por post estamo diciendo
+ * que vamos a usar la validacion y por ultimo vamos a ingresar al processToRegister que esta en el 
+ * usersController
+ */
 router.get('/login', usersController.login);
 router.post('/login', valLogin, usersController.processToRegister);
-/*--> Esto es una sugerencia, de crear una página con el perfil del usuario común además de la de Admin 
-Es decir, según el 'id' del usuario logueado, va a mostrar lo que corresponda al Admin (crear y borrar productos) o al Usuario (perfil del usuario) */
-
-
 
 // Register
-
+/**
+ * en esta dos lineas de codigo lo que estamos diciendo es que al entrar en la ruta por get de /regiter
+ * vamos a usar del usersController le objeto register y en el router que viaja por post estamo diciendo
+ * que vamos a cargar una sola imagen en el input con el name imgProfile luego vamos a usar la validacion
+ * y por ultimo vamos a ingresar al processToCreate que esta en el usersController
+ */
 router.get('/register', usersController.register);
 router.post('/register', upload.single('imgProfile'), registerValidations, usersController.processToCreate); 
 //---> El orden de los parámetros es importante, porque si no las validaciones de error no se procesan correctamente. Primero se pasa el Multer y después las Validaciones
-
-
 
 // Editar Preferencias
 
 router.get('/userProfile/:id/preference', usersController.preference) 
 router.put('/editUser/:id/preference', upload.single("imgProfile"), usersController.editProferences);
-
-
 
 // Eliminar usuario 
 /* router.delete('/deleteUser/:id', usersController...); --> A completar */
