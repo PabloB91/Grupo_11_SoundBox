@@ -63,18 +63,20 @@ const usersControllers = {
 
             let users;
 
-            if (usersJSON = ""){
+            if (usersJSON === ""){
                 users = [];
             }else {
-                users = JSON.parse(usersJSON);
+                users = usersJSON;
             }
             
-            for(let user = 0; 1<users.length; i++ ) {
+            let userWhenLoggingIn;
+
+            for(let user = 0; user<users.length; user++ ) {
 
                 if (users[user].email == req.body.email) {
 
                     if (bcrypt.compareSync(req.body.password, users[user].password)){
-                        let userWhenLoggingIn = users[user];
+                        userWhenLoggingIn = users[user];
                         break;
                     }
                 }
@@ -90,7 +92,7 @@ const usersControllers = {
             }
             
             req.session.userLoggedIn = userWhenLoggingIn;
-            res.render('/users/userProfile/'+ users.userId)
+            res.render('userProfile', { user: userWhenLoggingIn });
             
         }else{
             res.render("login.ejs", { errors: errors.errors });

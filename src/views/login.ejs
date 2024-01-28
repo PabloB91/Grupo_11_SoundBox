@@ -31,12 +31,12 @@
                                 <h2>INGRESAR</h2>
                         </div>
 
-                        <% if (locals.errores) {  %>
-
-                            <%errors.forEach(error => { %>
-                                <p class="error"> <%= error.msg %> </p>
-                            <%  }); %>
-                        <%}%>
+                        <% if (errors && errors.length > 0) { %>
+                            <% for (let error = 0; error < errors.length; error++) { %>
+                                <p class="error"> <%= errors[error].msg %> </p>
+                            <% } %>
+                        <% } %>
+        
         
                         <div class="fieldset mail">
         
