@@ -59,7 +59,7 @@
 
                                         <div class="value_cont">
                                             <!-- <input type="number" id="amount" value="0"> -->
-                                           
+
                                             <h1 id="cantidad-<%= product.id %>" value=""> 1 </h1>
                                         </div>
 
@@ -127,68 +127,8 @@
                     </div>
 
                 </section>
-                <div class="summary-container">
-                    <details>
-                        <summary>detalles del envio</summary>
-                        <p>envio a colombia y argentina por medio de OCA </p>
-                    </details>
 
-                    <details>
-                        <summary>Lorem ipsum dolor ssad asdasdas d asdasdas</summary>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste,</p>
-                    </details>
-                    <details>
-                        <summary>Lorem ipsum dolor ssad asdasdas d asdasdas</summary>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste,</p>
-                    </details>
-                    <details>
-                        <summary>Lorem ipsum dolor ssad asdasdas d asdasdas</summary>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste,</p>
-                    </details>
-                </div>
-                <!--                          sumarios 1 y 2                         -->
-                <div class="summary-container">
 
-                    <details>
-                        <summary>detalles del envio</summary>
-                        <p>envio a colombia y argentina por medio de OCA </p>
-                    </details>
-
-                    <details>
-                        <summary>Lorem ipsum dolor ssad asdasdas d asdasdas</summary>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste,</p>
-                    </details>
-                    <details>
-                        <summary>Lorem ipsum dolor ssad asdasdas d asdasdas</summary>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste,</p>
-                    </details>
-                    <details>
-                        <summary>Lorem ipsum dolor ssad asdasdas d asdasdas</summary>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste,</p>
-                    </details>
-                </div>
-                <div class="metodos-pago">
-                    <div class="titulo-metodos-pago">
-                        <p>Metodos De Pago</p>
-                    </div>
-                    <div class="seccion-metodos-pago">
-                        <i class="fa-brands fa-cc-visa"></i>
-                        <i class="fa-brands fa-cc-mastercard"></i>
-                        <i class="fa-solid fa-credit-card"></i>
-                        <i class="fa-brands fa-cc-paypal"></i>
-                    </div>
-
-                    <div class="titulo-metodos-pago">
-                        <p>Efectivo en:</p>
-                    </div>
-
-                    <div class="seccion-metodos-pago">
-                        <i class="fa-brands fa-ioxhost"></i>
-                        <i class="fa-brands fa-ioxhost"></i>
-                        <i class="fa-brands fa-ioxhost"></i>
-                        <i class="fa-brands fa-ioxhost"></i>
-                    </div>
-                </div>
             </section>
             <div class="separador"></div>
             <div class="separador-externo"></div>
@@ -200,7 +140,6 @@
 
             <section class="carruseles-contenedor">
                 <div class="separador-externo"></div>
-                <div class="separador"></div>
                 <section class="seccion-carrusel">
                     <div class="corredor">
                         <% productos.forEach(product=> { %>
@@ -212,9 +151,9 @@
 
                             <% }); %>
                     </div>
-                </section>
 
-                <section class="seccion-carrusel">
+
+
                     <div class="corredor">
                         <% productos.forEach(product=> { %>
                             <div class="image-related">
@@ -226,9 +165,52 @@
                             <% }); %>
                     </div>
                 </section>
-                <div class="separador"></div>
                 <div class="separador-externo"></div>
             </section>
+
+
+            <div class="summary-container">
+                <h1>Metodos De Pago</h1>
+                <div class="total-summary">
+
+                    <details>
+                        <summary>
+                            <h5>detalles del envio </h5>
+                        </summary>
+                        <p>envio a colombia y argentina por medio de OCA </p>
+                    </details>
+
+                    <details>
+                        <summary>
+                            <h5>Pagon con tarjeta:</h5>
+                        </summary>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste,</p>
+                    </details>
+                    <details>
+                        <summary>
+                            <h5>Pagon con tarjeta:</h5>
+                        </summary>
+                        <p>
+                            <i class="fa-brands fa-cc-visa"></i>
+                            <i class="fa-brands fa-cc-mastercard"></i>
+                            <i class="fa-solid fa-credit-card"></i>
+                            <i class="fa-brands fa-cc-paypal"></i>
+                        </p>
+                    </details>
+                    <details>
+                        <summary>
+                            <h5>Pagos en efectivo:</h5>
+                        </summary>
+                        <p>
+                            <i class="fa-brands fa-ioxhost"></i>
+                            <i class="fa-brands fa-ioxhost"></i>
+                            <i class="fa-brands fa-ioxhost"></i>
+                            <i class="fa-brands fa-ioxhost"></i>
+                        </p>
+                    </details>
+                </div>
+            </div>
+            <!--                          sumario                         -->
         </main>
 
         <%- include("./partials/footer") %>

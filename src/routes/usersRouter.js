@@ -10,6 +10,8 @@ const { body } = require('express-validator');
 
 
 
+
+
 // Validacion de Registro
 
 const registerValidations = [
@@ -27,6 +29,8 @@ const registerValidations = [
         }
         return true;
       }),
+
+
 ];
 
 

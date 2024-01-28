@@ -43,11 +43,76 @@ const usersControllers = {
     // (GET) Login Estatico
     login: (req, res) => {
         res.render("login.ejs");
+        const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+
+        for(let i = 0; i < users.length; i++) {
+            if (users[i].email == req.body.email) {
+                if (bcrypt.compareSync(req.body.password)){
+                    let userToLog = users[i];
+                    break;
+
+                }
+
+
+            }
+
+        }
     },
 
-    // (POST) Proceso Login
-    processToLogin: (req, res) => {
+    // // (POST) Proceso Login
+    // processToLogin: (req, res) => {
+    //     const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+    // },
+
+
+       // (POST) Proceso Login
+       processToLogin: (req, res) => {
         const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+
+        if(!errores.isEmpty()){ //-->Si existen errores, se renderizan y además se renderizan los input de usuario que sean correctos en el objeto 'old' 
+            // console.log("Errores: ", errores);
+            return res.render("login", { errores: errores.array(), old: req.body}) 
+        }else{
+            res.render("login")
+            
+        } 
+
+        if( errores.isEmpty()) {
+            const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+            let users;
+            if(usersJson == "" ){
+                users = [];
+
+            } else {
+                users = JSON.parse(usersJson);
+
+            }
+
+            for(let i = 0; i < users.length; i++) {
+                if (users[i].email == req.body.email) {
+                    if (bcrypt.compareSync(req.body.password)){
+                        let userToLog = users[i];
+                        break;
+
+                    }
+
+
+                }
+
+            }
+
+            if(usuarioALoguearse == undefined) {
+                return res.render("login", {
+                    errores : { msg: "credenciales invalidas"}
+                })
+
+            }
+
+            req.session.usuarioLogueado = usuarioALoguearse
+
+        }
+
+
     },
 
     // (GET) Registro Estatico
@@ -125,7 +190,8 @@ const usersControllers = {
 
 		fs.writeFileSync(usersFilePath, JSON.stringify(usersJson, null, " "));
 		res.redirect("/users/userProfile/" + usersToEdit.id)
-    }
+    },
+
 
 }
 

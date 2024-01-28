@@ -22,7 +22,7 @@ app.use(express.json())
 app.use(methodOverride('_method'));
 //*****************************************************************************************************\\
 
-// MIDDLEWARES ESCRITOS X NOSOTROS
+// MIDDLEWARES ESCRITOS POR NOSOTROS
 // quedan almacenadas en un log.txt las rutas donde accede el usuario
 
 // app.use(logMiddleware);
