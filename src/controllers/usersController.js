@@ -47,6 +47,17 @@ const usersControllers = {
       res.render("login.ejs");
     },
 
+    // (POST) Proceso Login
+    processToLogin: (req, res) => {
+        const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+    },
+
+    // (GET) Registro Estatico
+    register: (req, res) => {
+        res.render("register")
+    },
+    
+    // (POST) Proceso Registro
     processToRegister: (req, res) => {
 
 
@@ -68,17 +79,6 @@ const usersControllers = {
        /*  res.render("login.ejs"); */
     },
 
-    // (POST) Proceso Login
-    processToLogin: (req, res) => {
-        const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-    },
-
-    // (GET) Registro Estatico
-    register: (req, res) => {
-        res.render("register")
-    },
-
-    // (POST) Proceso Registro
     processToCreate: (req, res) => {
 
         const errores = validationResult(req);  //--->Traemos las validaciones
