@@ -17,4 +17,22 @@ router.get("/admin", mainController.admin);
 
 router.get("/todosLosProductos", mainController.allProducts);
 
+/**
+ * El siguente codigo solo es una prueba para session a recargar la pagina nos mostarar el numero en 
+ * aumento, numero el cual queda guardado en el servidor.
+ */
+router.get('/pruebaSession', (req, res) => {
+
+    if (req.session.visitas == undefined){
+        req.session.visitas = 0;
+    }
+    req.session.visitas++;
+
+    res.send('session tiene el numero = '+req.session.visitas)
+});
+
+router.get('/mostarNumeroSession', (req, res) => {
+    res.send('session tiene el numero = '+req.session.visitas)
+});
+
 module.exports = router;

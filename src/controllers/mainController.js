@@ -11,6 +11,7 @@ const { validationResult } = require("express-validator")
 /* En la constante "products" ya tienen los productos que están 
 guardados en la carpeta Data como Json (un array de objetos literales) */
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
+const usersFilePath = path.join(__dirname, '../data/usersDataBase.json');
 
 const mainController = {
 
@@ -27,8 +28,10 @@ const mainController = {
     },
 
     admin: (req, res) => {
+        const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+        const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
-        res.render("admin.ejs");
+        res.render("admin.ejs", {users, products});
     },
 
     allProducts: (req, res) => {

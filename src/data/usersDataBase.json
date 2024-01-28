@@ -1,50 +1,58 @@
 [
-    {
-    "userId": 1,
-    "name": "Alvaro",
-    "lastName": "Zuarez",
-    "email": "AlvaroZuarez@gmail.com",
-    "password": "password",
-    "imgProfile": "/img/users/alvaro.jpg"
-    },
-    {
-    "userId": 2,
-    "name": "Camila",
-    "lastName": "Armamdo",
-    "email": "camilaArmamdo@gmail.com", 
-    "password": "password",
-    "imgProfile": "/img/users/camila.jpg"
-    },
-    {
-    "userId": 3,
-    "name": "Javier",
-    "lastName": "Salazar",
-    "email": "JavierSalazar@gmail.com",
-    "password": "password",
-    "imgProfile": "/img/users/javier.jpg"
-    },
-    {
-    "userId": 4,
-    "name": "Mateo",
-    "lastName": "Espejo",
-    "email": "MateoEspejo@gmail.com",
-    "password": "password",
-    "imgProfile": "/img/users/mateo.jpg"
-    },
-    {
-    "userId": 5,
-    "name": "Melena",
-    "lastName": "Perez",
-    "email": "MelenaPerez@gmail.com",
-    "password": "password",
-    "imgProfile": "/img/users/melena.jpg"
-    },
-    {
-    "userId": 6,
-    "name": "Phoenix",
-    "lastName": "Galindo",
-    "email": "PhoenixGalindo@gmail.com", 
-    "password": "password",
-    "imgProfile": "/img/users/phonix.jpg"
-    }
+ {
+  "userId": 1,
+  "name": "Alvaro",
+  "lastName": "Zuarez",
+  "email": "AlvaroZuarez@gmail.com",
+  "password": "password",
+  "imgProfile": "/img/users/alvaro.jpg"
+ },
+ {
+  "userId": 2,
+  "name": "Camila",
+  "lastName": "Armamdo",
+  "email": "camilaArmamdo@gmail.com",
+  "password": "password",
+  "imgProfile": "/img/users/camila.jpg"
+ },
+ {
+  "userId": 3,
+  "name": "Javier",
+  "lastName": "Salazar",
+  "email": "JavierSalazar@gmail.com",
+  "password": "password",
+  "imgProfile": "/img/users/javier.jpg"
+ },
+ {
+  "userId": 4,
+  "name": "Mateo",
+  "lastName": "Espejo",
+  "email": "MateoEspejo@gmail.com",
+  "password": "password",
+  "imgProfile": "/img/users/mateo.jpg"
+ },
+ {
+  "userId": 5,
+  "name": "Melena",
+  "lastName": "Perez",
+  "email": "MelenaPerez@gmail.com",
+  "password": "password",
+  "imgProfile": "/img/users/melena.jpg"
+ },
+ {
+  "userId": 6,
+  "name": "Phoenix",
+  "lastName": "Galindo",
+  "email": "PhoenixGalindo@gmail.com",
+  "password": "password",
+  "imgProfile": "/img/users/phonix.jpg"
+ },
+ {
+  "userId": 7,
+  "name": "juan",
+  "lastName": "nose",
+  "email": "algo@gmail.com",
+  "password": "$2a$10$pJRvIVlN9UoeLs2A80eX0uCaKnq7CiiiYTStZ3XqRTfFd41mJ5Yke",
+  "imgProfile": "USER-ICONimgProfile - 1706480320217.jpg"
+ }
 ]

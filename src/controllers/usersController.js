@@ -8,8 +8,7 @@ const bcrypt = require("bcryptjs")
 
 const { validationResult } = require("express-validator");
 const { log } = require("console");
-
-
+const e = require("method-override");
 
 // Path y direcciones
 
@@ -42,76 +41,60 @@ const usersControllers = {
 
     // (GET) Login Estatico
     login: (req, res) => {
-        res.render("login.ejs");
-        const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
-        for(let i = 0; i < users.length; i++) {
-            if (users[i].email == req.body.email) {
-                if (bcrypt.compareSync(req.body.password)){
-                    let userToLog = users[i];
-                    break;
-
-                }
-
-
-            }
-
-        }
+      res.render("login.ejs");
     },
 
-    // // (POST) Proceso Login
-    // processToLogin: (req, res) => {
-    //     const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-    // },
+    // (POST) Proceso Login
+    processToLogin: (req, res) => {
+        
+        const errors = validationResult(req);
+        
+        if(errors.isEmpty()){
 
+            const usersJSON = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
-       // (POST) Proceso Login
-       processToLogin: (req, res) => {
-        const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+            /* console.log(usersJSON); */
 
-        if(!errores.isEmpty()){ //-->Si existen errores, se renderizan y además se renderizan los input de usuario que sean correctos en el objeto 'old' 
-            // console.log("Errores: ", errores);
-            return res.render("login", { errores: errores.array(), old: req.body}) 
-        }else{
-            res.render("login")
-            
-        } 
-
-        if( errores.isEmpty()) {
-            const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
             let users;
-            if(usersJson == "" ){
+
+            if (usersJSON === ""){
                 users = [];
-
-            } else {
-                users = JSON.parse(usersJson);
-
+            }else {
+                users = usersJSON;
             }
+            
+            /* let userWhenLoggingIn = users.find(user => user.email === req.body.email); */
+            let userWhenLoggingIn; 
 
-            for(let i = 0; i < users.length; i++) {
-                if (users[i].email == req.body.email) {
-                    if (bcrypt.compareSync(req.body.password)){
-                        let userToLog = users[i];
+            for(let user = 0; user<users.length; user++ ) {
+
+                if (users[user].email == req.body.email) {
+
+                    if (bcrypt.compareSync(req.body.password, users[user].password)){
+                        userWhenLoggingIn = users[user];
                         break;
-
                     }
-
-
                 }
-
             }
-
-            if(usuarioALoguearse == undefined) {
-                return res.render("login", {
-                    errores : { msg: "credenciales invalidas"}
-                })
-
+            
+            if (userWhenLoggingIn == undefined){
+            
+            res.render("login.ejs", { errors : [
+           
+                       {msg: 'La contraseña o el correo no coinciden'}
+                    ]
+                });
             }
+            
+            req.session.userLoggedIn = userWhenLoggingIn;
+            res.render(`user`, { user: userWhenLoggingIn });
+            
 
-            req.session.usuarioLogueado = usuarioALoguearse
-
+            /* console.log(req.session.userLoggedIn) */
+        }else{
+            return res.render("login.ejs", { errors });
         }
-
 
     },
 
@@ -119,9 +102,9 @@ const usersControllers = {
     register: (req, res) => {
         res.render("register")
     },
-
+    
     // (POST) Proceso Registro
-    processToCreate: (req, res) => {
+    processToRegister: (req, res) => {
 
         const errores = validationResult(req);  //--->Traemos las validaciones
         // console.log(errores);

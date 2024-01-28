@@ -22,24 +22,32 @@
 
         <section class="users">
             <% users.forEach(user => { %>
-            <div class="user_card">
+                <div class="user-card">
+                    
+                    <a href="/users/userProfile/<%= user.userId%>">
 
-                
-                <div class="img">
-                    <img src="<%= user.imgProfile %>" alt="ft-profile soundBox">
-                </div>
-                
-                <div class="infoUser">
-
-                    <div class="idUser">
-                        <p>#<%= user.userId%></p>
-                    </div>
-
-                    <p>Nombres: <%= user.name %></p>
-                    <p>Apellidos: <%= user.lastName %></p>
-                    <span>Correo: <%= user.email%></span>
-                    <span>Fecha de registro: 2000/11/15</span>
-                    <span>Compras echas: 0</span>
+                        <div class="a-user_card">
+                            
+                            <div class="img">
+                                <img src="<%= user.imgProfile %>" alt="ft-profile soundBox">
+                            </div>
+                            
+                            <div class="infoUser">
+    
+                        <div class="idUser">
+                            <p>#<%= user.userId%></p>
+                        </div>
+    
+                        <p>Nombres: <%= user.name %></p>
+                        <p>Apellidos: <%= user.lastName %></p>
+                        <span>Correo: <%= user.email%></span>
+                        <span>Fecha de registro: 2000/11/15</span>
+                        <span>Compras echas: 0</span>
+    
+                            </div>
+                        </div>
+    
+                    </a>
 
                     <div class="butons">
                         <div class="delete">
@@ -52,9 +60,6 @@
                     </div>
 
                 </div>
-
-
-            </div>
             <% }); %>
         </section>
     </main>

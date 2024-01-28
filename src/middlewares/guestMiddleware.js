@@ -1,8 +1,9 @@
-/*function guestMiddleware (req, res, next){
-    if(variable){
-        return res.redirect('/user')
+function gestMiddleware(req, res, next){
+    if(req.session.userWhenLoggingIn == undefined){
+        next();
+    }else{
+        
     }
-    next();
 }
 
-module.exports = guestMiddleware;*/
+module.exports = gestMiddleware;
