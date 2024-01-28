@@ -13,12 +13,12 @@ const { body } = require('express-validator');
 const registerValidations = [
     body('name').notEmpty().withMessage('Tu nombre es necesario'),
     body('lastName').notEmpty().withMessage('Tu apellido es necesario'),
-    body('email').trim().notEmpty().isEmpty().withMessage('Tu E-mail es necesario'),
+   /*  body('email').trim().notEmpty().isEmpty().withMessage('Tu E-mail es necesario'), */
     body('email').isEmail().withMessage('Ingresa una dirección valida'),
     body('password').notEmpty().isLength({min: 8, max: 16 }).withMessage('La contraseña debe tener entre 8 y 16 caracteres'),
     body('password').matches(/[A-Z]/).withMessage('La contraseña debe tener al menos una mayúscula'),
     body('password').matches(/[a-z]/).withMessage('La contraseña debe tener al menos una minúscula'),
-    body('password').matches(/[!@#$%^&*]/).withMessage('La contraseña debe tener al menos un carácter especial (!@#$%^&*)'),
+    body('password').matches(/[!@#$%^&/_*]/).withMessage('La contraseña debe tener al menos un carácter especial (!@#$%^&*)'),
     body('confirm-password').custom((validationPassword, { req }) => {
         if (validationPassword !== req.body.password) {
           throw new Error('La contraseña no es la misma que se ingresó en el campo anterior');
@@ -75,7 +75,7 @@ router.get('/userProfile/:userId', usersController.user);
  * usersController
  */
 router.get('/login', usersController.login);
-router.post('/login', valLogin, usersController.processToRegister);
+router.post('/login', valLogin, usersController.processToLogin);
 
 // Register
 /**
@@ -85,7 +85,7 @@ router.post('/login', valLogin, usersController.processToRegister);
  * y por ultimo vamos a ingresar al processToCreate que esta en el usersController
  */
 router.get('/register', usersController.register);
-router.post('/register', upload.single('imgProfile'), registerValidations, usersController.processToCreate); 
+router.post('/register', upload.single('imgProfile'), registerValidations, usersController.processToRegister); 
 //---> El orden de los parámetros es importante, porque si no las validaciones de error no se procesan correctamente. Primero se pasa el Multer y después las Validaciones
 
 // Editar Preferencias
