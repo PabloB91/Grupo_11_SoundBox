@@ -5,7 +5,7 @@
   "lastName": "Zuarez",
   "email": "AlvaroZuarez@gmail.com",
   "password": "password",
-  "imgProfile": "/img/users/alvaro.jpg"
+  "imgProfile": "alvaro.jpg"
  },
  {
   "userId": 2,
@@ -13,7 +13,7 @@
   "lastName": "Armamdo",
   "email": "camilaArmamdo@gmail.com",
   "password": "password",
-  "imgProfile": "/img/users/camila.jpg"
+  "imgProfile": "camila.jpg"
  },
  {
   "userId": 3,
@@ -21,7 +21,7 @@
   "lastName": "Salazar",
   "email": "JavierSalazar@gmail.com",
   "password": "password",
-  "imgProfile": "/img/users/javier.jpg"
+  "imgProfile": "javier.jpg"
  },
  {
   "userId": 4,
@@ -29,7 +29,7 @@
   "lastName": "Espejo",
   "email": "MateoEspejo@gmail.com",
   "password": "password",
-  "imgProfile": "/img/users/mateo.jpg"
+  "imgProfile": "mateo.jpg"
  },
  {
   "userId": 5,
@@ -37,7 +37,7 @@
   "lastName": "Perez",
   "email": "MelenaPerez@gmail.com",
   "password": "password",
-  "imgProfile": "/img/users/melena.jpg"
+  "imgProfile": "melena.jpg"
  },
  {
   "userId": 6,
@@ -45,7 +45,7 @@
   "lastName": "Galindo",
   "email": "PhoenixGalindo@gmail.com",
   "password": "password",
-  "imgProfile": "/img/users/phonix.jpg"
+  "imgProfile": "phonix.jpg"
  },
  {
   "userId": 7,
@@ -54,5 +54,21 @@
   "email": "algo@gmail.com",
   "password": "$2a$10$pJRvIVlN9UoeLs2A80eX0uCaKnq7CiiiYTStZ3XqRTfFd41mJ5Yke",
   "imgProfile": "USER-ICONimgProfile - 1706480320217.jpg"
+ },
+ {
+  "userId": 8,
+  "name": "Francisco",
+  "lastName": "Capitani",
+  "email": "ftcapitani@gmail.com",
+  "password": "$2a$10$HaQK4JJUw2lViPhnqulnY.1pJlQNpwSza8v4GWj/2rjeyWLnFE5WO",
+  "imgProfile": "USER-ICONimgProfile - 1706488013520.jpg"
+ },
+ {
+  "userId": 9,
+  "name": "Francisco",
+  "lastName": "Capitani",
+  "email": "ftcapitani@gmail.com",
+  "password": "$2a$10$lKAnWQfSOJ3gWQVLo85Zs.Yepjk0Essg8SLZqc5yzZ1qXHC9LzijG",
+  "imgProfile": "usuario-al-azar.png"
  }
 ]

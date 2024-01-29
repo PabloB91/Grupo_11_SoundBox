@@ -33,16 +33,6 @@ const registerValidations = [
 ];
 
 // Validacion de Login
-<<<<<<< HEAD
-
- const validateLoginForm = [
-    body('email').isEmail().notEmpty().withMessage('Ingresa tu E-meil'),
-    body('password').notEmpty().withMessage('Ingresar contrasena'),
-    
-];
-
-
-=======
 /**
  * En esta constaten estamos haciendo la validacion de emain y de password las cuales deben de cumplir
  * con los requerimientos 
@@ -52,9 +42,8 @@ const loginValidations = [
     check('password').notEmpty().withMessage('Ingresar contrasena'),
     check('password').isLength({min: 8}).notEmpty().withMessage('Ingresar contrasena'),
 ];
->>>>>>> 2ed9ea387abe103661734c327b347c1a7ec342b5
 
-// Multer
+// Mu-lter
 /** 
  * En este bloque de codigo estamos creando la memoria donde se gusrdaran las imagenes y con el nombre 
  * que se guardaran, estamos diciendo que dentro de la carpeta users que esta dentro de la carpeta img 

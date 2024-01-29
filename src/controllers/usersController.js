@@ -127,14 +127,14 @@ const usersControllers = {
             lastName: req.body.lastName,
             email: req.body.email,
             password: bcrypt.hashSync(passwordToValidate, 10),
-            imgProfile: req.file == undefined ? "usuario-al-azar.png" : req.file.filename
+            imgProfile: req.file == undefined ? "alvaro.jpg" : req.file.filename
         }
         
         usersJson.push(newUser);  //--> Se agrega el nuevo usuario a la variable del JSON
 
 		fs.writeFileSync(usersFilePath, JSON.stringify(usersJson, null, ' '));  //--> Se escribe el archivo JSON con la variable modificada
 
-		res.redirect('/users/userProfile')  //--> Se redirige al perfil del usuario
+		res.redirect('/users/userProfile/')  //--> Se redirige al perfil del usuario
     },
 
     // (GET) Editar Estatico
@@ -162,7 +162,7 @@ const usersControllers = {
 			name: req.body.name,
             lastName: req.body.lastName,
             email: req.body.email,
-            imgProfile: req.file == undefined ? "usuario-al-azar.png" : req.file.filename
+            imgProfile: req.file == undefined ? "alvaro.jpg" : req.file.filename
 		}
 
 		let indice = usersJson.findIndex(users => {
@@ -173,8 +173,7 @@ const usersControllers = {
 
 		fs.writeFileSync(usersFilePath, JSON.stringify(usersJson, null, " "));
 		res.redirect("/users/userProfile/" + usersToEdit.id)
-    },
-
+    }
 
 }
 
