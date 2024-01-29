@@ -5,7 +5,7 @@ const router = express.Router();
 const multer = require('multer');
 const path = require("path");
 const guestMiddleware = require('../middlewares/guestMiddleware');
-/* const authMiddleware = require('../middlewares/authMiddleware'); */
+const authMiddleware = require('../middlewares/authMiddleware');
 const usersController = require('../controllers/usersController');
 const { body, check } = require('express-validator');
 
@@ -38,9 +38,8 @@ const registerValidations = [
  * con los requerimientos 
  */
 const loginValidations = [
-    check('email').isEmail().notEmpty().withMessage('Ingresa tu E-meil'),
-    check('password').notEmpty().withMessage('Ingresar contrasena'),
-    check('password').isLength({min: 8}).notEmpty().withMessage('Ingresar contrasena'),
+    check('email').notEmpty().withMessage('Ingresa tu E-mail').isEmail().withMessage('Ingresa un correo electrónico válido'),
+    check('password').notEmpty().withMessage('Ingresa tu contraseña').isLength({ min: 8 }).withMessage('La contraseña debe tener al menos 8 caracteres'),
 ];
 
 // Mu-lter
@@ -81,9 +80,7 @@ router.get('/userProfile/:userId', usersController.userProfile);
  * usersController
  */
 router.get('/login', guestMiddleware, usersController.login);
-router.post('/login', loginValidations, usersController.processToLogin);
-
-router.get('/estaLog')
+router.post('/login', guestMiddleware, loginValidations, usersController.processToLogin);
 
 // Register
 /**

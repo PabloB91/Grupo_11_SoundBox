@@ -1,5 +1,5 @@
 function gestMiddleware(req, res, next){
-    if(req.session.userWhenLoggingIn == undefined){
+    if(req.session.userToLogIn == undefined){
         next();
     }else{
         

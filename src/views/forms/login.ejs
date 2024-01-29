@@ -27,13 +27,15 @@
                                 <h2>INGRESAR</h2>
                         </div>
 
-                        <% if (typeof errors === undefined  ) { %>
+                        <!-- Verificar si errors está definido antes de acceder a su contenido -->
+                        <% if (typeof errors !== 'undefined' && errors.length > 0) { %>
+                            <!-- Iterar sobre los errores y mostrar mensajes -->
                             <% for (let error = 0; error < errors.length; error++) { %>
                                 <p class="error"> <%= errors[error].msg %> </p>
                             <% } %>
                         <% } %>
-        
-        
+
+                        <!-- typeof errors === undefined -->
                         <div class="fieldset mail">
         
                             <div class="label">
@@ -45,7 +47,7 @@
                             </div>
 
                             <div class="input">
-                                <input id="email" type="email"  placeholder="E-mail" name="email">
+                                <input id="email" type="text"  placeholder="E-mail" name="email">
                             </div>
         
                         </div>
