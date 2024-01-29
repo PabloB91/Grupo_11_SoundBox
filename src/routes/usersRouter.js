@@ -71,7 +71,7 @@ const upload = multer({storage});
  * en esta linea de codigo estamos diciendo que al entrar en la ruta /userProfile/:userId nos va a
  * decolver la vista de user que esta en el usersConreoller
  */
-router.get('/userProfile/:userId', usersController.user);
+router.get('/userProfile/:userId', usersController.userProfile);
 
 // Login
 /**

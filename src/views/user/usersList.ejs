@@ -1,18 +1,15 @@
-<!DOCTYPE html>
-<html lang="en-es">
-<!-- -VISTA PARA ADMIN Y USUARIOS- -->
 
-<%- include('./partials/head.ejs') %>
+<!-- -USER LIST- -->
+
+<%- include('../partials/head.ejs') %>
 <link href="/styles/list-users.css" rel="stylesheet">
 
-
-<body>
-
-    <!-- =========================================================================================================== -->
+<!-- =========================================================================================================== -->
 
     <!-- -HEADER / ENCABEZADO- -->
-    <%- include('./partials/header.ejs') %>
-    <!-- =========================================================================================================== -->
+    <%- include('../partials/header.ejs') %>
+
+<!-- =========================================================================================================== -->
 
     <main class="main__listUser">
 
@@ -29,7 +26,7 @@
                         <div class="a-user_card">
                             
                             <div class="img">
-                                <img src="<%= user.imgProfile %>" alt="ft-profile soundBox">
+                                <img src="/img/users/default-image/<%= user.imgProfile %>" alt="ft-profile soundBox">
                             </div>
                             
                             <div class="infoUser">
@@ -62,14 +59,13 @@
                 </div>
             <% }); %>
         </section>
+        
     </main>
 
 <!-- =========================================================================================================== -->
 
     <!-- FOOTER / PIE DE PAGINA -->
-    <%- include('./partials/footer.ejs') %>
+    <%- include('../partials/footer.ejs') %>
 
 <!-- =========================================================================================================== -->
-</body>
 
-</html>

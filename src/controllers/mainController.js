@@ -37,23 +37,18 @@ const mainController = {
     allProducts: (req, res) => {
         const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
         // console.log(products)
-        res.render("todosLosProductos", { products })
+        res.render("product/allTheProducts.ejs", { products })
 
     },
 
-    categorias: (req, res) => {
+    categories: (req, res) => {
         const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
         //console.log(req.params.nombre);
 
-        const productCategory = products.filter(product => product.categorias === req.params.nombre)
+        const productCategory = products.filter(product => product.categories === req.params.nombre)
         //console.log(productCategory)
-        res.render("categoria", { productos: productCategory })
+        res.render("product/categories.ejs", { productos: productCategory })
 
-    },
-
-
-    listUsers: (req, res) => {
-        res.render("listUsers.ejs")
     },
     
     carrito: (req, res) => {
@@ -64,7 +59,7 @@ const mainController = {
         // const productCart = products.filter( !!! HACER EL FILTRO DE PRODUCTOS PARA EL CARRITO !!! );
 
         // console.log(productCart) 
-        res.render("productCart", { productos: products });
+        res.render("product/productCart.ejs", { productos: products });
 
     },
 

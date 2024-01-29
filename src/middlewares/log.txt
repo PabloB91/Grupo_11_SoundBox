@@ -2,7 +2,7 @@ se ingreso a la pagina:/
 se ingreso a la pagina:/
 se ingreso a la pagina:/
 se ingreso a la pagina:/
-se ingreso a la pagina:/categoria/Guitarras
+se ingreso a la pagina:/category/Guitarras
 se ingreso a la pagina:/products/productDetail
 se ingreso a la pagina:/products/productDetail/1
 se ingreso a la pagina:/products/edit/1
@@ -10,7 +10,7 @@ se ingreso a la pagina:/products/productDetail/2
 se ingreso a la pagina:/products/edit/2
 se ingreso a la pagina:/products/edit/%202?_method=PUT
 se ingreso a la pagina:/
-se ingreso a la pagina:/categoria/Guitarras
+se ingreso a la pagina:/category/Guitarras
 se ingreso a la pagina:/products/productDetail
 se ingreso a la pagina:/products/productDetail/2
 se ingreso a la pagina:/products/edit/2
@@ -121,7 +121,7 @@ se ingreso a la pagina:/products/productDetail/1
 se ingreso a la pagina:/products/productDetail/5
 se ingreso a la pagina:/products/edit/5
 se ingreso a la pagina:/
-se ingreso a la pagina:/categoria/Guitarras
+se ingreso a la pagina:/category/Guitarras
 se ingreso a la pagina:/products/productDetail
 se ingreso a la pagina:/products/productDetail
 se ingreso a la pagina:/products/productDetail/1
@@ -368,12 +368,12 @@ se ingreso a la pagina:/img/products/
 se ingreso a la pagina:/products/delete/6?_method=DELETE
 se ingreso a la pagina:/
 se ingreso a la pagina:/img/products/
-se ingreso a la pagina:/categoria/Guitarras
-se ingreso a la pagina:/categoria/IMG_DEFAULT.svg
-se ingreso a la pagina:/categoria/alt=%22Imagen%22
-se ingreso a la pagina:/categoria/Guitarras
-se ingreso a la pagina:/categoria/IMG_DEFAULT.svg
-se ingreso a la pagina:/categoria/alt=%22Imagen%22
+se ingreso a la pagina:/category/Guitarras
+se ingreso a la pagina:/category/IMG_DEFAULT.svg
+se ingreso a la pagina:/category/alt=%22Imagen%22
+se ingreso a la pagina:/category/Guitarras
+se ingreso a la pagina:/category/IMG_DEFAULT.svg
+se ingreso a la pagina:/category/alt=%22Imagen%22
 se ingreso a la pagina:/products/productDetail/8
 se ingreso a la pagina:/img/products/
 se ingreso a la pagina:/img/products/

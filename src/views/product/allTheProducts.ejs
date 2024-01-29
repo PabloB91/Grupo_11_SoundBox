@@ -1,12 +1,10 @@
-<%- include('./partials/head.ejs') %>
 
-    <link href="/styles/reset.css" rel="stylesheet">
+    <%- include('../partials/head.ejs') %>
     <link rel="stylesheet" href="/styles/todosLosProductos.css">
 
-    <body>
+     <%- include("../partials/header") %>
 
-        <%- include("./partials/header") %>
-            <main>
+    <main>
 
                 <div class="barra-titulo">
                     <h2 class="titulo">Todos Los Productos</h2>
@@ -163,6 +161,6 @@
 
                 </section>
 
-            </main>
-            <%- include("./partials/footer") %>
-    </body>
+    </main>
+
+    <%- include("../partials/footer") %>

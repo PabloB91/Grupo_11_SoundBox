@@ -10,7 +10,7 @@ const aController = {
 
         const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
-        res.render("listUsers.ejs", {users});
+        res.render("user/usersList.ejs", {users});
     }
 }
 module.exports = aController;

@@ -1,182 +1,195 @@
-<header>
+<body>
 
-    <section class="header-superior">
-        <div class="container">
-            <nav class="header-superior_nav">
+    <header>
 
-                <ul>
+        <section class="header-superior">
+            <div class="container">
+                <nav class="header-superior_nav">
 
-                    <div class="left">
+                    <ul>
 
-                        <li class="li-comment">
-                            <div class="comment_envios-locales">
-                                <span class="material-symbols-outlined">local_shipping</span>
-                                <span class="material-symbols-outlined">travel</span>
-                                <p>Envíos locales e internacionales inmediatos</p>
-                            </div>
-                        </li>
+                        <div class="left">
 
-                    </div>
+                            <li class="li-comment">
 
-                    <div class="right">
+                                <div class="comment_envios-locales">
 
-                        <li class="li_login-register">
+                                    <span class="material-symbols-outlined">
+                                        local_shipping
+                                    </span>
 
-                            <div class="register-login">
+                                    <span class="material-symbols-outlined">
+                                        travel
+                                    </span>
 
-                                <div class="admin-container">
-                                    <a href="/admin"><i class="fa-solid fa-user-tie"></i></a>
+                                    <p>
+                                        Envíos locales e internacionales inmediatos
+                                    </p>
+
                                 </div>
 
-                                <div class="register">
-                                    <a href="/users/register">
-                                        <span class="material-symbols-outlined">person</span>
-                                        <p>Crear cuenta</p>
+                            </li>
+
+                        </div>
+
+                        <div class="right">
+
+                            <li class="li_login-register">
+
+                                <div class="register-login">
+
+                                    <div class="admin-container">
+                                        <a href="/admin">
+                                            <i class="fa-solid fa-user-tie"></i>
+                                        </a>
+                                    </div>
+
+                                    <div class="register">
+                                        <a href="/users/register">
+                                            <span class="material-symbols-outlined">person</span>
+                                            <p>Crear cuenta</p>
+                                        </a>
+                                    </div>
+
+                                    <div class="login">
+                                        <a href="/users/login">
+                                            <span class="material-symbols-outlined">login</span>
+                                            <p>Ingresar</p>
+                                        </a>
+                                    </div>
+
+                                </div>
+
+                            </li>
+
+                            <li class="li-miCajita">
+                                <a href="/productCart">
+                                    <div class="btn-cajita">
+                                        <img src="/img/svg/cajitaSBX.svg" class="svg-miCajita">
+                                        Mi cajita
+                                    </div>
+                                </a>
+                            </li>
+
+                            <li class="li_user dropdown">
+
+                                <div>
+                                    <a href="/users/userProfile/" class="acount">
+                                        <i class="fa-sharp fa-solid fa-circle-user"></i>
                                     </a>
                                 </div>
 
-                                <div class="login">
-                                    <a href="/users/login">
-                                        <span class="material-symbols-outlined">login</span>
-                                        <p>Ingresar</p>
-                                    </a>
+                                <div class="dropdown-content">
+                                    <a href="#"></a>
+                                    <a href="#"></a>
+                                    <a href="#"></a>
                                 </div>
 
+                            </li>
+
+                        </div>
+
+                    </ul>
+
+                </nav>
+            </div>
+        </section>
+
+        <!-- 2) Sección optimizada / hoja de estilo header-footer actualizada -->
+
+        <section class="header-inferior">
+
+            <div class="container-header">
+
+                <nav class="header-inferior_nav">
+
+                    <ul class="header-inferior_nav_ul">
+
+                        <li class="li_img-logoSBX">
+
+                            <div class="img-logoSBX">
+                                <a href="/">
+                                    <img id="logo" src="/img/svg/estandar.svg" usemap="#workmap" alt="SoundBox">
+                                </a>
                             </div>
+
                         </li>
 
-                        <li class="li-miCajita">
-                            <a href="/productCart">
-                                <div class="btn-cajita">
-                                    <img src="/img/svg/cajitaSBX.svg" class="svg-miCajita">
-                                    Mi cajita
-                                </div>
-                            </a>
+                        <li class="dropdown">
+
+                            <div>
+                                <a href="#section-categorías">Categorías</a><i class="fa-solid fa-chevron-down"></i>
+                            </div>
+
+                            <div class="dropdown-content">
+                                <a href="/category/Guitarras">Guitarras</a>
+                                <a href="/category/Orquesta">Orquesta</a>
+                                <a href="/category/Grabacion">Grabacion</a>
+                            </div>
+
                         </li>
-                        <li class="li_user">
-                            <a href="/users/userProfile/" class="acount">  
-                                <i class="fa-sharp fa-solid fa-circle-user"></i>
-                            </a>
+
+                        <li class="dropdown">
+
+                            <div>
+                                <a href="#section-mas-vendidos">Top Sellers</a><i class="fa-solid fa-chevron-down"></i>
+                            </div>
+
+                            <div class="dropdown-content">
+                                <a href="#">Link 1</a>
+                                <a href="#">Link 2</a>
+                                <a href="#">Link 3</a>
+                            </div>
+
                         </li>
 
-                        <div class="users-dropdown">
-                            a
+                        <li class="dropdown">
+
+                            <div>
+                                <a href="#seccion-marcas-banners">Marcas</a><i class="fa-solid fa-chevron-down"></i>
+                            </div>
+
+                            <div class="dropdown-content">
+                                <a href="#">Marshall</a>
+                                <a href="#">Zildjian</a>
+                                <a href="#">Gibson</a>
+                            </div>
+
+                        </li>
+
+                        <li class="dropdown">
+
+                            <div class="dropdown-content">
+                                <a href="#">Link 1</a>
+                                <a href="#">Link 2</a>
+                                <a href="#">Link 3</a>
+                            </div>
+
+                        </li>
+
+                        <div class="search-bar">
+                            <input type="text" placeholder=" Buscar..">
+                            <div class="btn-search-bar">
+                                <i class="fa-solid fa-magnifying-glass" style="color: #fff;"></i>
+                            </div>
                         </div>
 
-                    </div>
+                        <section class="container-menu-burguer">
 
+                            <div class="menu-burguer" onclick="hide()">
+                                <div class="menu-line" onclick="show()"></div>
+                                <div class="menu-line" onclick="show()"></div>
+                                <div class="menu-line" onclick="show()"></div>
+                            </div>
 
-                </ul>
+                        </section>
 
-            </nav>
-        </div>
-    </section>
+                    </ul>
 
-    <!-- 2) Sección optimizada / hoja de estilo header-footer actualizada -->
+                </nav>
 
-    <section class="header-inferior">
-        <div class="container-header">
-            <nav class="header-inferior_nav">
-                <ul class="header-inferior_nav_ul">
-                    <li class="li_img-logoSBX">
-    
-                        <div class="img-logoSBX">
-                            <a href="/">
-                                <img id="logo" src="/img/svg/estandar.svg" usemap="#workmap" alt="SoundBox">
-                            </a>
-                        </div>
-    
-                    </li>
-    
-                    <li class="dropdown">
-    
-                        <div>
-                            <a href="#section-categorias">Categorias</a><i class="fa-solid fa-chevron-down"></i>
-                        </div>
-    
-                        <div class="dropdown-content">
-                            <a href="/categoria/Guitarras">Guitarras</a>
-                            <a href="/categoria/Orquesta">Orquesta</a>
-                            <a href="/categoria/Grabacion">Grabacion</a>
-                        </div>
-    
-                    </li>
-    
-                    <li class="dropdown">
-    
-                        <div>
-                            <a href="#section-mas-vendidos">Top Sellers</a><i class="fa-solid fa-chevron-down"></i>
-                        </div>
-    
-                        <div class="dropdown-content">
-                            <a href="#">Link 1</a>
-                            <a href="#">Link 2</a>
-                            <a href="#">Link 3</a>
-                        </div>
-    
-                    </li>
-    
-                    <li class="dropdown">
-    
-                        <div>
-                            <a href="#seccion-marcas-banners">Marcas</a><i class="fa-solid fa-chevron-down"></i>
-                        </div>
-    
-                        <div class="dropdown-content">
-                            <a href="#">Marshall</a>
-                            <a href="#">Zildjian</a>
-                            <a href="#">Gibson</a>
-                        </div>
-    
-                    </li>
-    
-                    <li class="dropdown">
-    
-    
-                        <div class="dropdown-content">
-                            <a href="#">Link 1</a>
-                            <a href="#">Link 2</a>
-                            <a href="#">Link 3</a>
-                        </div>
-    
-                    </li>
-    
-                    <div class="search-bar">
-                        <input type="text" placeholder=" Buscar..">
-                        <div class="btn-search-bar">
-                            <i class="fa-solid fa-magnifying-glass" style="color: #fff;"></i>
-                        </div>
-                    </div>
-                    
-                    <section class="container-menu-burguer">
-                        <div class="menu-burguer" onclick="hide()">
-                            <div class="menu-line" onclick="show()"></div>
-                            <div class="menu-line" onclick="show()"></div>
-                            <div class="menu-line" onclick="show()"></div>
-                        </div>
-        
-                    </section>
-                    
-                </ul>
-                
-                
-            </nav>
-        </div>
-    </section>
+            </div>
 
+        </section>
 
-</header>
-
-<script>
-
-    var iconMenu = document.querySelector('.m+enu-burguer');
-
-    iconMenu.addEventListener('click', function () {
-        if (iconMenu.classList.contains('open')) {
-            iconMenu.classList.remove('open');
-        } else {
-            iconMenu.classList.add('open');
-        }
-    }, false);
-
-</script>
+    </header>

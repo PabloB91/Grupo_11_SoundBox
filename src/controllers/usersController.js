@@ -17,7 +17,7 @@ const usersFilePath = path.join(__dirname, "../data/usersDataBase.json");
 const usersControllers = {
     
     // (GET) Dinamismo de los Usuarios
-    user: (req, res) => {
+    userProfile: (req, res) => {
         const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
         let userId = req.params.userId
@@ -28,21 +28,21 @@ const usersControllers = {
 		})
 
 		if(userDefinido){
-			res.render("user", { user : userDefinido });
+			res.render("user/userProfile.ejs", { user : userDefinido });
 
 		} else {
-            res.render("register");
+            res.render("forms/register.ejs");
 
 		}
 
-        res.render("user");
+        res.render("user/userProfile.ejs");
 
     },
 
     // (GET) Login Estatico
     login: (req, res) => {
 
-      res.render("login.ejs");
+      res.render("forms/login.ejs");
     },
 
     // (POST) Proceso Login
@@ -88,19 +88,19 @@ const usersControllers = {
             }
             
             req.session.userLoggedIn = userWhenLoggingIn;
-            res.render(`user`, { user: userWhenLoggingIn });
+            res.render(`user/userProfile.ejs`, { user: userWhenLoggingIn });
             
 
             /* console.log(req.session.userLoggedIn) */
         }else{
-            return res.render("login.ejs", { errors });
+            return res.render("forms/login.ejs", { errors });
         }
 
     },
 
     // (GET) Registro Estatico
     register: (req, res) => {
-        res.render("register")
+        res.render("forms/register")
     },
     
     // (POST) Proceso Registro
@@ -111,9 +111,9 @@ const usersControllers = {
 
         if(!errores.isEmpty()){ //-->Si existen errores, se renderizan y además se renderizan los input de usuario que sean correctos en el objeto 'old' 
             console.log("Errores: ", errores);
-            return res.render("register", { errores: errores.array(), old: req.body}) 
+            return res.render("forms/register.ejs", { errores: errores.array(), old: req.body}) 
         }else{
-            res.render("register")
+            res.render("forms/register.ejs")
             
         } 
 
@@ -134,7 +134,7 @@ const usersControllers = {
 
 		fs.writeFileSync(usersFilePath, JSON.stringify(usersJson, null, ' '));  //--> Se escribe el archivo JSON con la variable modificada
 
-		res.redirect('/users/userProfile/')  //--> Se redirige al perfil del usuario
+		res.redirect('users/userProfile/')  //--> Se redirige al perfil del usuario
     },
 
     // (GET) Editar Estatico
@@ -147,7 +147,7 @@ const usersControllers = {
 
 		}) 
 
-		res.render("editarUsuario", {usersToEdit})
+		res.render("user/userEdit.ejs", {usersToEdit})
     },
 
     // (PUT) Editar Usuario
@@ -172,7 +172,7 @@ const usersControllers = {
 		usersJson[indice] = usersToEdit;
 
 		fs.writeFileSync(usersFilePath, JSON.stringify(usersJson, null, " "));
-		res.redirect("/users/userProfile/" + usersToEdit.id)
+		res.redirect("users/userProfile/" + usersToEdit.id)
     }
 
 }
