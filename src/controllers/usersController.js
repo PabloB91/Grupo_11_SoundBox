@@ -52,10 +52,16 @@ const usersControllers = {
         
         if(errors.isEmpty()){
 
+            /* aca estamos trayensdo la lista de usuarios y la estamos convirtiendo a array */
             const usersJSON = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
-            /* console.log(usersJSON); */
-
+            console.log(usersJSON)
+            
+            /**
+             * en las siguientes lineas de codigo estamos leyendon el array pasado anteriormente
+             * y si usersJSON es estrictamente igual a "" 
+             */
+            
             let users;
 
             if (usersJSON === ""){
@@ -64,38 +70,36 @@ const usersControllers = {
                 users = usersJSON;
             }
             
-            /* let userWhenLoggingIn = users.find(user => user.email === req.body.email); */
-            let userWhenLoggingIn; 
+            let userToLogIn; 
 
             for(let user = 0; user<users.length; user++ ) {
 
                 if (users[user].email == req.body.email) {
 
                     if (bcrypt.compareSync(req.body.password, users[user].password)){
-                        userWhenLoggingIn = users[user];
+                        userToLogIn = users[user];
                         break;
                     }
                 }
             }
             
-            if (userWhenLoggingIn == undefined){
+            if (userToLogIn == undefined){
             
-            res.render("login.ejs", { errors : [
+            res.render("forms/login.ejs", { errors : [
            
                        {msg: 'La contraseña o el correo no coinciden'}
                     ]
                 });
             }
             
-            req.session.userLoggedIn = userWhenLoggingIn;
-            res.render(`user/userProfile.ejs`, { user: userWhenLoggingIn });
-            
-
-            /* console.log(req.session.userLoggedIn) */
+            req.session.userLoggedIn = userToLogIn;
+            /* res.redirect(`/user/userProfile`, { user:userToLogIn}); */
+            res.redirect(`/users/userProfile/:id`);
         }else{
-            return res.render("forms/login.ejs", { errors });
-        }
 
+            return res.render("forms/login.ejs", { errors: errors.array() });
+            r/* eturn res.render("forms/login.ejs", { errors }); */
+        }
     },
 
     // (GET) Registro Estatico
