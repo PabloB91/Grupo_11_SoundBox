@@ -113,7 +113,7 @@ const usersControllers = {
             req.session.userLoggedIn = userToLogIn;
  
             /* este redict actua solo si el usuario exixte en el db */
-            res.redirect(`/users/userProfile/:id`);
+            res.redirect(`/users/userProfile/${userToLogIn.userId}`);
         }else{
 
             return res.render("forms/login.ejs", { errors: errors.array(), old: req.body });
