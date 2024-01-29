@@ -72,9 +72,16 @@ const usersControllers = {
             
             let userToLogIn; 
 
-            for(let user = 0; user<users.length; user++ ) {
+            /**
+             * si existe el usuario en la db en tonces vamos a renderizar
+             *  `/users/userProfile/:id`con el siguiente codigo
+            */
 
-                if (users[user].email == req.body.email) {
+            for(let user = 0; user<users.length; user++ ) {
+                /* en el siguiente if estamos diciendo si dentro de usuarios hay un
+                usuario con correo y el correo es estrctamente igual al que se esta
+                pasando por body y adema si la contrasena macheada y la contrasena y el email coinsiden vamos a guardar de usuarios un usuario y break */
+                if (users[user].email === req.body.email) {
 
                     if (bcrypt.compareSync(req.body.password, users[user].password)){
                         userToLogIn = users[user];
@@ -82,23 +89,35 @@ const usersControllers = {
                     }
                 }
             }
-            
-            if (userToLogIn == undefined){
+
+            /**
+             * en la siguiente sentencia de codigo estamos diciendo que si el usuario
+             * logueado tiene algun campo que no coincida que la contrasena o el 
+             * email no coinsidan con los registrados en la db entonces vamos a 
+             * enviar un error
+            */
+            if (userToLogIn === undefined){
             
             res.render("forms/login.ejs", { errors : [
            
                        {msg: 'La contraseña o el correo no coinciden'}
-                    ]
+                    ], 
+                    old: req.body
                 });
             }
             
+            /**
+             * sie l usuario ingreso satisfactoriamente vamos a guardar sus datos en 
+             * userTologIn
+             */
             req.session.userLoggedIn = userToLogIn;
-            /* res.redirect(`/user/userProfile`, { user:userToLogIn}); */
+ 
+            /* este redict actua solo si el usuario exixte en el db */
             res.redirect(`/users/userProfile/:id`);
         }else{
 
-            return res.render("forms/login.ejs", { errors: errors.array() });
-            r/* eturn res.render("forms/login.ejs", { errors }); */
+            return res.render("forms/login.ejs", { errors: errors.array(), old: req.body });
+        
         }
     },
 
