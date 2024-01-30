@@ -600,7 +600,7 @@ input[type=number]::-webkit-outer-spin-button {
 
     }
 
-    .left-list, .right-list {
+    .left-list,.right-list {
         flex-direction: column;
         margin-top: 0;
     }
