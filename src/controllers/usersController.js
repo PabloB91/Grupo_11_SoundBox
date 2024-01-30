@@ -153,10 +153,9 @@ const usersControllers = {
 
 		} else {
             res.render("forms/register.ejs");
-
 		}
 
-        res.render("user/userProfile.ejs");
+        /* res.render("user/userProfile.ejs"); */
 
     },
 
@@ -215,6 +214,8 @@ const usersControllers = {
 	},
  */
     // (delete) Delete - Eliminar un producto de la DB
+
+
 	delete: (req, res) => {
         /**
          * la siguiente linea lee el contenido del archivo JSON que contiene los
@@ -230,13 +231,13 @@ const usersControllers = {
          * de la lista de usuarios.
          */
 		
-		users = users.filter(user =>{
-			
-			return user.userId != req.session.user.userId;
+		user = users.filter(user =>{
+                                /* params-session */
+			return user.userId != req.params.userId;
 
 		})
 
-		fs.writeFileSync(usersFilePath, JSON.stringify(users, null, " "))
+		fs.writeFileSync(usersFilePath, JSON.stringify(user, null, " "))
 
 		res.redirect("/")
 	}

@@ -48,9 +48,16 @@
 
                     <div class="butons">
     
-                        <div class="ban">
-                            <input type="button" value="Banear">
+                        <div class="delete">
+                            <form action="/users/delete/<%= user.userId %>?_method=DELETE" method="POST">
+                                <button type="submit" class="boton-accion-borrar">ELIMINAR</button>
+                            </form>
                         </div>
+
+                        <div class="ban">
+                            <button type="submit" class="boton-accion-borrar">EANEAR</button>
+                        </div>
+
                     </div>
 
                 </div>
