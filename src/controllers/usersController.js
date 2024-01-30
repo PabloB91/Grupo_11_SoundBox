@@ -26,16 +26,15 @@ const usersControllers = {
 			return user.userId == userId;
 
 		})
-
+        console.log(userDefinido);
 		if(userDefinido){
 			res.render("user/userProfile.ejs", { user : userDefinido });
-
+        
 		} else {
             res.render("forms/register.ejs");
 
 		}
-
-        res.render("user/userProfile.ejs");
+        /* res.render("user/userProfile.ejs"); */
 
     },
 
@@ -199,19 +198,16 @@ const usersControllers = {
     },
 
     destroy: (req, res) => {
-
-        const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-
+        
+        const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8')); //--> Tomamos el json de usuarios
 		// eliminar
-		user = usersJson.filter(product =>{
-			
-			return product.userId != req.params.id;
-
+		users = usersJson.filter(user =>{           //--> Buscamos el usuario seleccionado dentro del json
+			return user.userId != req.params.id;    //--> Se devuelven todos los usuarios excepto el seleccionado
 		})
 
-		fs.writeFileSync(usersFilePath, JSON.stringify(usersJson, null, " "))
+		fs.writeFileSync(usersFilePath, JSON.stringify(users, null, " "))  //--> Se modifica el json sin el usuario eliminado
 
-		res.redirect("/")
+		res.redirect("/admin/usersList")
 	}
 
 }

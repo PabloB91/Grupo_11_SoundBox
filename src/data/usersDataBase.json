@@ -1,13 +1,5 @@
 [
  {
-  "userId": 1,
-  "name": "Alvaro",
-  "lastName": "Zuarez",
-  "email": "AlvaroZuarez@gmail.com",
-  "password": "password",
-  "imgProfile": "alvaro.jpg"
- },
- {
   "userId": 2,
   "name": "Camila",
   "lastName": "Armamdo",
@@ -70,5 +62,13 @@
   "email": "ftcapitani@gmail.com",
   "password": "$2a$10$lKAnWQfSOJ3gWQVLo85Zs.Yepjk0Essg8SLZqc5yzZ1qXHC9LzijG",
   "imgProfile": "usuario-al-azar.png"
+ },
+ {
+  "userId": 10,
+  "name": "Juan",
+  "lastName": "Fosch",
+  "email": "baz@mail.com",
+  "password": "$2a$10$DNqXEy9mjS4BE98jCKFpmOrGeywI69GRQRNXmBn.VHVQOu3a5oAQW",
+  "imgProfile": "alvaro.jpg"
  }
 ]
