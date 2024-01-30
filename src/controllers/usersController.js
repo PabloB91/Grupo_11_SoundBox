@@ -15,29 +15,45 @@ const e = require("method-override");
 const usersFilePath = path.join(__dirname, "../data/usersDataBase.json");
 
 const usersControllers = {
-    
-    // (GET) Dinamismo de los Usuarios
-    userProfile: (req, res) => {
-        const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
-        let userId = req.params.userId
-
-		let userDefinido = usersJson.find(user => {
-			return user.userId == userId;
-
-		})
-        console.log(userDefinido);
-		if(userDefinido){
-			res.render("user/userProfile.ejs", { user : userDefinido });
-        
-		} else {
-            res.render("forms/register.ejs");
-
-		}
-        /* res.render("user/userProfile.ejs"); */
-
+    // (GET) Registro Estatico
+    register: (req, res) => {
+        res.render("forms/register")
     },
+    
+    // (POST) Proceso Registro
+    processToRegister: (req, res) => {
 
+        const errores = validationResult(req);  //--->Traemos las validaciones
+        // console.log(errores);
+
+        if(!errores.isEmpty()){ //-->Si existen errores, se renderizan y además se renderizan los input de usuario que sean correctos en el objeto 'old' 
+            console.log("Errores: ", errores);
+            return res.render("forms/register.ejs", { errores: errores.array(), old: req.body}) 
+        }else{
+            res.render("forms/register.ejs")
+            
+        } 
+        console.log(userDefinido);
+        const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8')); //--> Se trae el JSON de usuarios
+        
+        const passwordToValidate = req.body.password  //-->Se trae el password ingresado por el usuario, para su posterior hasheo
+        
+        newUser = {     //--> Se crea el objeto para un nuevo usuario
+            userId: usersJson[usersJson.length - 1].userId + 1, //--> Corregí la creación de id, porque los creaba con valores 'null'
+			name: req.body.name,
+            lastName: req.body.lastName,
+            email: req.body.email,
+            password: bcrypt.hashSync(passwordToValidate, 10),
+            imgProfile: req.file == undefined ? "alvaro.jpg" : req.file.filename
+        }
+                /* usersJson.push(newUser);  //--> Se agrega el nuevo usuario a la variable del JSON
+
+		fs.writeFileSync(usersFilePath, JSON.stringify(usersJson, null, ' '));  //--> Se escribe el archivo JSON con la variable modificada */
+
+		res.redirect('users/userProfile/')  //--> Se redirige al perfil del usuario
+    },
+       
     // (GET) Login Estatico
     login: (req, res) => {
 
@@ -120,43 +136,26 @@ const usersControllers = {
         }
     },
 
-    // (GET) Registro Estatico
-    register: (req, res) => {
-        res.render("forms/register")
-    },
-    
-    // (POST) Proceso Registro
-    processToRegister: (req, res) => {
+    // (GET) Dinamismo de los Usuarios
+    userProfile: (req, res) => {
+        const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
-        const errores = validationResult(req);  //--->Traemos las validaciones
-        // console.log(errores);
+        let userId = req.params.userId
 
-        if(!errores.isEmpty()){ //-->Si existen errores, se renderizan y además se renderizan los input de usuario que sean correctos en el objeto 'old' 
-            console.log("Errores: ", errores);
-            return res.render("forms/register.ejs", { errores: errores.array(), old: req.body}) 
-        }else{
-            res.render("forms/register.ejs")
-            
-        } 
+		let userDefinido = usersJson.find(user => {
+			return user.userId == userId;
 
-        const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8')); //--> Se trae el JSON de usuarios
+		})
 
-        const passwordToValidate = req.body.password  //-->Se trae el password ingresado por el usuario, para su posterior hasheo
-        
-        newUser = {     //--> Se crea el objeto para un nuevo usuario
-            userId: usersJson[usersJson.length - 1].userId + 1, //--> Corregí la creación de id, porque los creaba con valores 'null'
-			name: req.body.name,
-            lastName: req.body.lastName,
-            email: req.body.email,
-            password: bcrypt.hashSync(passwordToValidate, 10),
-            imgProfile: req.file == undefined ? "alvaro.jpg" : req.file.filename
-        }
-        
-        usersJson.push(newUser);  //--> Se agrega el nuevo usuario a la variable del JSON
+		if(userDefinido){
+			res.render("user/userProfile.ejs", { user : userDefinido });
 
-		fs.writeFileSync(usersFilePath, JSON.stringify(usersJson, null, ' '));  //--> Se escribe el archivo JSON con la variable modificada
+		} else {
+            res.render("forms/register.ejs");
+		}
 
-		res.redirect('users/userProfile/')  //--> Se redirige al perfil del usuario
+        /* res.render("user/userProfile.ejs"); */
+
     },
 
     // (GET) Editar Estatico
@@ -198,18 +197,18 @@ const usersControllers = {
     },
 
     destroy: (req, res) => {
-        
-        const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8')); //--> Tomamos el json de usuarios
+
+        const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+
 		// eliminar
 		users = usersJson.filter(user =>{           //--> Buscamos el usuario seleccionado dentro del json
 			return user.userId != req.params.id;    //--> Se devuelven todos los usuarios excepto el seleccionado
 		})
 
-		fs.writeFileSync(usersFilePath, JSON.stringify(users, null, " "))  //--> Se modifica el json sin el usuario eliminado
+		fs.writeFileSync(usersFilePath, JSON.stringify(usersJson, null, " "))
 
-		res.redirect("/admin/usersList")
+		res.redirect("/")
 	}
-
 }
 
 module.exports = usersControllers;

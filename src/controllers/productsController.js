@@ -33,8 +33,6 @@ const controller = {
 		}
 	},
 
-	
-
 	// (get) Create - Formulario para crear
 	create: (req, res) => {
 

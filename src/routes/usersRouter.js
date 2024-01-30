@@ -103,6 +103,6 @@ router.put('/editUser/:id/preference', upload.single("imgProfile"), usersControl
 
 
 // Eliminar usuario 
-router.delete('/delete/:id', usersController.destroy);
+router.delete('/delete/:id', usersController.delete);
 
 module.exports = router;
