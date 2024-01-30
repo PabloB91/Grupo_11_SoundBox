@@ -198,6 +198,22 @@ const usersControllers = {
 		res.redirect("users/userProfile/" + usersToEdit.id)
     },
 
+   /*  destroy: (req, res) => {
+
+        const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+
+		// eliminar
+		user = usersJson.filter(product =>{
+			
+			return product.userId != req.params.id;
+
+		})
+
+		fs.writeFileSync(usersFilePath, JSON.stringify(usersJson, null, " "))
+
+		res.redirect("/")
+	},
+ */
     // (delete) Delete - Eliminar un producto de la DB
 	delete: (req, res) => {
         /**

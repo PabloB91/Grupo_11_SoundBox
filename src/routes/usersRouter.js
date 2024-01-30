@@ -1,18 +1,16 @@
 // Requerimientos 
-
 const express = require('express');
 const router = express.Router();
 const multer = require('multer');
 const path = require("path");
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
-const usersController = require('../controllers/usersController');
 const { body, check } = require('express-validator');
 
+const usersController = require('../controllers/usersController');
 
 
 // Validacion de Registro
-
 const registerValidations = [
     body('name').notEmpty().withMessage('Tu nombre es necesario'),
     body('lastName').notEmpty().withMessage('Tu apellido es necesario'),
@@ -32,6 +30,7 @@ const registerValidations = [
 
 ];
 
+
 // Validacion de Login
 /**
  * En esta constaten estamos haciendo la validacion de emain y de password las cuales deben de cumplir
@@ -41,6 +40,7 @@ const loginValidations = [
     check('email').notEmpty().withMessage('Ingresa tu E-mail').isEmail().withMessage('Ingresa un correo electrónico válido'),
     check('password').notEmpty().withMessage('Ingresa tu contraseña').isLength({ min: 8 }).withMessage('La contraseña debe tener al menos 8 caracteres'),
 ];
+
 
 // Mu-lter
 /** 
@@ -65,12 +65,14 @@ const storage = multer.diskStorage({
 });
 const upload = multer({storage});
 
+
 // Perfil del usuario
 /**
  * en esta linea de codigo estamos diciendo que al entrar en la ruta /userProfile/:userId nos va a
  * decolver la vista de user que esta en el usersConreoller
  */
 router.get('/userProfile/:userId', usersController.userProfile);
+
 
 // Login
 /**
@@ -81,6 +83,7 @@ router.get('/userProfile/:userId', usersController.userProfile);
  */
 router.get('/login', guestMiddleware, usersController.login);
 router.post('/login', guestMiddleware, loginValidations, usersController.processToLogin);
+
 
 // Register
 /**
@@ -93,12 +96,13 @@ router.get('/register', usersController.register);
 router.post('/register', upload.single('imgProfile'), registerValidations, usersController.processToRegister); 
 //---> El orden de los parámetros es importante, porque si no las validaciones de error no se procesan correctamente. Primero se pasa el Multer y después las Validaciones
 
-// Editar Preferencias
 
-router.get('/userProfile/:id/preference', usersController.preference) 
+// Editar Preferencias
+router.get('/editUser/:id/preference', usersController.preference) 
 router.put('/editUser/:id/preference', upload.single("imgProfile"), usersController.editProferences);
 
+
 // Eliminar usuario 
-/* router.delete('/deleteUser/:id', usersController...); --> A completar */
+router.delete('/delete/:id', usersController.destroy);
 
 module.exports = router;
