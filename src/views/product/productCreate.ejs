@@ -1,147 +1,150 @@
-<!-- head -->
-<%- include("./partials/head") %>
-    <link href="/styles/reset.css" rel="stylesheet">
+    <!-- head -->
+    <%- include("../partials/head") %>
     <link href="/styles/crearProducto.css" rel="stylesheet">
     <!-- /head -->
 
-    <body>
+    <!-- HEADER -->
+    <%- include("../partials/header")%>
+    <!-- /HEADER -->
 
-        <!-- HEADER -->
-        <%- include("./partials/header")%>
-            <!-- /HEADER -->
+    <main>
 
-            <main>
+        <section class="admin-container">
 
-                <section class="admin-container">
+            <div class="admin-container_title">
+                <h1> CREAR PRODUCTO </h1>
+            </div>
 
-                    <div class="admin-container_title">
-                        <h1> CREAR PRODUCTO </h1>
-                    </div>
+            <section class="contenedor-total">
 
-                    <section class="contenedor-total">
+                <div class="form-creat-product">
 
-                        <div class="form-creat-product">
+                    <form action="/products/create" method="POST" enctype="multipart/form-data">
 
-                            <form action="/products/create" method="POST" enctype="multipart/form-data">
+                        <div class="fieldset product-name">
 
-                                <div class="fieldset product-name">
-                                    
-                                    <input type="text" name="nombre" class="fieldset-input nombre-form">
+                            <input type="text" name="nombre" class="fieldset-input nombre-form">
 
-                                    <label for="nombre" class="fieldset-lbl lbl-productName">
-                                        <span class="lbl-text">
-                                            Nombre del producto
-                                        </span>
-                                    </label>
-                                    
-                                </div>
+                            <label for="nombre" class="fieldset-lbl lbl-productName">
+                                <span class="lbl-text">
+                                    Nombre del producto
+                                </span>
+                            </label>
 
-                                <div class="fieldset product-brand">
+                        </div>
 
-                                    <input type="text" name="marca" class="fieldset-input marca-form">
-                                    
-                                    <label for="marca" class="fieldset-lbl lbl-productBrand">
-                                        <span class="lbl-text">
-                                            Marca        
-                                        </span> 
-                                    </label class="lbl-text">
+                        <div class="fieldset product-brand">
 
-                                </div>
+                            <input type="text" name="marca" class="fieldset-input marca-form">
 
-                                <div class="fieldset price">
+                            <label for="marca" class="fieldset-lbl lbl-productBrand">
+                                <span class="lbl-text">
+                                    Marca
+                                </span>
+                            </label>
 
-                                    <input type="number" name="precio" min="1" max="9999999" class="fieldset-input precio-form">
+                        </div>
 
-                                    <label for="precio" class="fieldset-lbl lbl-productPrice">
-                                        <span class="lbl-text">
-                                            Precio
-                                        </span>
-                                    </label>
+                        <div class="fieldset price">
 
-                                </div>
+                            <input type="number" name="precio" min="1" max="9999999"
+                                class="fieldset-input precio-form">
 
-                                <div class="fieldset descuento">
+                            <label for="precio" class="fieldset-lbl lbl-productPrice">
+                                <span class="lbl-text">
+                                    Precio
+                                </span>
+                            </label>
 
-                                    <input type="number" name="descuento" max="99" class="fieldset-input descuento-form">
-                                   
-                                    <label for="descuento" class="fieldset-lbl lbl-productDiscount">
-                                        <span class="lbl-text">
-                                            Descuento
-                                        </span>
-                                    </label>
-                                
-                                </div>
+                        </div>
 
-                                <div class="fieldset descripcion">
+                        <div class="fieldset descuento">
 
-                                    <textarea name="descripcion" id="" cols="30" rows="10" class="fieldset-input descripcion-form"></textarea>
-                                    
-                                    <label for="descripcion" class="fieldset-lbl lbl-productDescription">
-                                        <span class="lbl-text">
-                                            Descripcion
-                                        </span>
-                                    </label>
-                                    
-                                </div>
+                            <input type="number" name="descuento" max="99" class="fieldset-input descuento-form">
 
-                                <div class="fieldset colores-disponibles">
+                            <label for="descuento" class="fieldset-lbl lbl-productDiscount">
+                                <span class="lbl-text">
+                                    Descuento
+                                </span>
+                            </label>
 
-                                    <input type="text" name="coloresDisponibles" class="fieldset-input colors-form">
+                        </div>
 
-                                    <label for="colors" class="fieldset-lbl lbl-productColor">
-                                        <span class="lbl-text">
-                                            Colores disponibles
-                                        </span>
-                                    </label>
-                                    
-                                </div>
+                        <div class="fieldset descripcion">
 
-                                <div class="fieldset cantidad-disponibles">
+                            <textarea name="descripcion" id="" cols="30" rows="10" class="fieldset-input descripcion-form"></textarea>
 
-                                    <input type="number" name="cantidad" min="1" max="1000" class="fieldset-input cantidad-disponible">
+                            <label for="descripcion" class="fieldset-lbl lbl-productDescription">
+                                <span class="lbl-text">
+                                    Descripcion
+                                </span>
+                            </label>
 
-                                    <label for="disponibles" class="fieldset-lbl lbl-productAvailable">
-                                        <span class="lbl-text">
-                                            Cantidad disponibles 
-                                        </span>
-                                    </label>
+                        </div>
 
-                                </div>
+                        <div class="fieldset colores-disponibles">
 
-                                <div class="fieldset agregar-categoria">
+                            <input type="text" name="coloresDisponibles" class="fieldset-input colors-form">
 
-                                    <input type="text" name="categorias" class="fieldset-input categorias">
+                            <label for="colors" class="fieldset-lbl lbl-productColor">
+                                <span class="lbl-text">
+                                    Colores disponibles
+                                </span>
+                            </label>
 
-                                    <label for="categorias" class="fieldset-lbl lbl-productCaategory">
-                                        <span class="lbl-text">
-                                            Categorias
-                                        </span>
-                                    </label>
+                        </div>
 
-                                </div>
+                        <div class="fieldset cantidad-disponibles">
 
-                                <div class="fieldset estado">
-                                    <label for="categorias" class="estado">
+                            <input type="number" name="cantidad" min="1" max="1000" class="fieldset-input cantidad-disponible">
+
+                            <label for="disponibles" class="fieldset-lbl lbl-productAvailable">
+                                <span class="lbl-text">
+                                    Cantidad disponibles
+                                </span>
+                            </label>
+
+                        </div>
+
+                        <div class="fieldset agregar-category">
+
+                            <input type="text" name="categories" class="fieldset-input categories">
+
+                            <label for="categories" class="fieldset-lbl lbl-productCaategory">
+                                <span class="lbl-text">
+                                    categories
+                                </span>
+                            </label>
+
+                        </div>
+
+                        <div class="fieldset estado">
+
+                            <label for="categories" class="estado">
                                         <!-- Estado -->
-                                    </label>
-                                    <select name="estado" id="estado" class="fieldset-input estado-producto">
-                                        <option value="choose">Elegir estado</option>
-                                        <option value="Oferta">En oferta</option>
-                                        <option value="Últimos agregados">Últimos agregados</option>
-                                    </select>
-                                </div>
+                            </label>
 
-                                <div class="botones crear-carta-borrar-carta">
+                            <select name="estado" id="estado" class="fieldset-input estado-producto">
 
-                                    <label for="send-form"></label>
-                                    <input type="submit" value="Crear" class="send-form" name="send-form">
+                                <option value="choose">Elegir estado</option>
+                                <option value="Oferta">En oferta</option>
+                                <option value="Últimos agregados">Últimos agregados</option>
 
-                                    <label for="restar-form"></label>
-                                    <input type="reset" value="Reiniciar" class="restar-form" name="restar-form">
+                            </select>
 
-                                </div>
+                        </div>
 
-                                <div class="vista-previa">
+                        <div class="botones crear-carta-borrar-carta">
+
+                            <label for="send-form"></label>
+                            <input type="submit" value="Crear" class="send-form" name="send-form">
+
+                            <label for="restar-form"></label>
+                            <input type="reset" value="Reiniciar" class="restar-form" name="restar-form">
+
+                        </div>
+
+                        <div class="vista-previa">
 
                                     <div class="vista-previa-caja-genera_title">
                                         <h1>Vista previa</h1> <input type="button" value="o">
@@ -152,22 +155,26 @@
                                         <div class="imagenes">
                                             <div class="fieldset imagen-of-product">
                                                 <label for="imagen"></label>
-                                                <input placeholder="Imagen" type="file" name="form-imagen" class="imagen-form">
+                                                <input placeholder="Imagen" type="file" name="form-imagen"
+                                                    class="imagen-form">
                                             </div>
-        
+
                                             <div class="fieldset imagen-of-product ">
                                                 <label for="imagen"></label>
-                                                <input placeholder="Imagen" type="file" name="form-imagen" class="imagen-form">
+                                                <input placeholder="Imagen" type="file" name="form-imagen"
+                                                    class="imagen-form">
                                             </div>
-        
+
                                             <div class="fieldset imagen-of-product ">
                                                 <label for="imagen"></label>
-                                                <input placeholder="Imagen" type="file" name="form-imagen" class="imagen-form">
+                                                <input placeholder="Imagen" type="file" name="form-imagen"
+                                                    class="imagen-form">
                                             </div>
-        
+
                                             <div class="fieldset imagen-of-product ">
                                                 <label for="imagen"></label>
-                                                <input placeholder="Imagen" type="file" name="form-imagen" class="imagen-form">
+                                                <input placeholder="Imagen" type="file" name="form-imagen"
+                                                    class="imagen-form">
                                             </div>
                                         </div>
 
@@ -261,8 +268,8 @@
 
                                             <div class="caja-links-extra-producto">
 
-                                                <div class="caja-categorias-producto">
-                                                    <span class="links-categorias-producto">Categories:
+                                                <div class="caja-categories-producto">
+                                                    <span class="links-categories-producto">Categories:
                                                         <a href="#">Guitars</a>,
                                                         <a href="#">Band & Orchestra</a>,
                                                         <a href="#">Bass Guitar</a>,
@@ -313,21 +320,19 @@
 
                                         </article>
                                     </div>
-                                    
-                                </div>
-
-                            </form>
 
                         </div>
 
-                    </section>
+                    </form>
 
-                </section>
+                </div>
 
-            </main>
+            </section>
 
-            <!-- Footer -->
-            <%- include("./partials/footer") %>
-                <!-- /Footer -->
+        </section>
 
-    </body>
+    </main>
+
+    <!-- Footer -->
+    <%- include("../partials/footer") %>
+    <!-- /Footer -->

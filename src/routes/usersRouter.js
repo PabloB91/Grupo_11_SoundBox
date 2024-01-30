@@ -38,12 +38,11 @@ const registerValidations = [
  * con los requerimientos 
  */
 const loginValidations = [
-    check('email').isEmail().notEmpty().withMessage('Ingresa tu E-meil'),
-    check('password').notEmpty().withMessage('Ingresar contrasena'),
-    check('password').isLength({min: 8}).notEmpty().withMessage('Ingresar contrasena'),
+    check('email').notEmpty().withMessage('Ingresa tu E-mail').isEmail().withMessage('Ingresa un correo electrónico válido'),
+    check('password').notEmpty().withMessage('Ingresa tu contraseña').isLength({ min: 8 }).withMessage('La contraseña debe tener al menos 8 caracteres'),
 ];
 
-// Multer
+// Mu-lter
 /** 
  * En este bloque de codigo estamos creando la memoria donde se gusrdaran las imagenes y con el nombre 
  * que se guardaran, estamos diciendo que dentro de la carpeta users que esta dentro de la carpeta img 
@@ -71,7 +70,7 @@ const upload = multer({storage});
  * en esta linea de codigo estamos diciendo que al entrar en la ruta /userProfile/:userId nos va a
  * decolver la vista de user que esta en el usersConreoller
  */
-router.get('/userProfile/:userId', usersController.user);
+router.get('/userProfile/:userId', usersController.userProfile);
 
 // Login
 /**
@@ -80,10 +79,15 @@ router.get('/userProfile/:userId', usersController.user);
  * que vamos a usar la validacion y por ultimo vamos a ingresar al processToRegister que esta en el 
  * usersController
  */
+<<<<<<< HEAD
 router.get('/login', authMiddleware, usersController.login);
 router.post('/login', loginValidations, usersController.processToLogin);
 
 router.get('/estaLog')
+=======
+router.get('/login', guestMiddleware, usersController.login);
+router.post('/login', guestMiddleware, loginValidations, usersController.processToLogin);
+>>>>>>> 7e7cdb526a73da95dc41165bf1d9413cbbe069ce
 
 // Register
 /**

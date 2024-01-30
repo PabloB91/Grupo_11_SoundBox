@@ -1,7 +1,5 @@
 function authMiddleware(req, res, next){
-    if(!req.session.userLogged) {
-        return res.redirect("/users/login")
-    } else {
+    if(req.session.userToLogIn != undefined){
         next();
         // res.send("debe registrarse antes de inscribirse")
     }

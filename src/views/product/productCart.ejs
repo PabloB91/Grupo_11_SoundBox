@@ -1,3 +1,4 @@
+<<<<<<< HEAD:src/views/productCart.ejs
 <!DOCTYPE html>
 <html lang="en">
 
@@ -219,3 +220,221 @@
 </body>
 
 </html>
+=======
+
+    <%- include("../partials/head") %>
+    <link rel="stylesheet" href="styles/productCart.css">
+    <script src="https://kit.fontawesome.com/d5c465f7b6.js" crossorigin="anonymous"></script>
+    <title>Product Cart</title>
+
+    <%- include("../partials/header") %>
+
+    <main>
+            <div>
+                <h1 class="titulo-seccion">
+                    ¡Bienvenido al Carrito!
+                </h1>
+            </div>
+            <section class="seccion-contenedora">
+                <section class="seccion-principal">
+                    <div class="carrito" id="carrito">
+                        <h1>Mi Cajita</h1>
+                        <div class="desplegable" id="desplegable">
+                            <div class="ordenador-container">
+                                <div class="ordenador">
+                                    <button onclick="hide()"><i class="fa-solid fa-circle-arrow-up"></i></button>
+                                    <button onclick="ordenarPalabras()"><i
+                                            class="fa-solid fa-arrow-down-a-z"></i></button>
+                                    <button><i class="fa-solid fa-arrow-down-short-wide"></i></button>
+                                    <button><i class="fa-solid fa-arrow-down-wide-short"></i></button>
+                                </div>
+                                <div class="labels-ordenador">
+                                    <span>Eliminar seleccionados</span>
+                                    <span>agregar a favoritos</span>
+                                </div>
+                            </div>
+                            <% productos.forEach(product=> { %>
+                                <div class="card">
+                                    <!-- Rounded switch -->
+                                    <label class="switch">
+                                        <input type="checkbox" required>
+                                        <span class="slider round"></span>
+                                    </label>
+                                    <img src="/img/products/<%= product.imagen %>" alt="">
+                                    <div class="nombre-marca">
+                                        <a href="/products/productDetail/<%= product.id %>">
+                                            <h6 id="text1">
+                                                <%= product.nombre %>
+                                            </h6>
+                                        </a>
+                                        <p>
+                                            <%= product.marca %>
+                                        </p>
+                                    </div>
+                                    <div class="addNumber_cont">
+                                        <button id="disabledBtn" onclick="decrementar('<%= product.id %>')">
+                                            <i class="fa-solid fa-minus"></i>
+                                        </button>
+
+                                        <div class="value_cont">
+                                            <!-- <input type="number" id="amount" value="0"> -->
+
+                                            <h1 id="cantidad-<%= product.id %>" value=""> 1 </h1>
+                                        </div>
+
+                                        <button onclick="incrementar('<%= product.id %>','<%= product.cantidad %>')">
+                                            <i class="fa-solid fa-plus"></i>
+                                        </button>
+
+                                    </div>
+                                    <div class="precio-descuento">
+                                        <span>
+                                            <%= product.precio %> $
+                                        </span>
+                                        <span style="color: green;">
+                                            - <%= product.descuento %>% OFF
+                                        </span>
+                                    </div>
+                                    <div class="delete-card">
+                                        <span> eliminar </span>
+                                    </div>
+                                </div>
+
+                                <% }); %>
+                                    <div class="descripcion-card">
+                                        <p>check</p>
+                                        <p>imagen</p>
+                                        <p>producto</p>
+                                        <p>cantidad</p>
+                                        <p>precio</p>
+                                    </div>
+                        </div>
+                        <div class="pie">
+                            <button onclick="show()"><i class="fa-solid fa-cart-arrow-down"></i></button>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="seccion-secundaria">
+                    <div class="pago-total">
+                        <span>200.000 $</span>
+                        <input type="submit">
+                    </div>
+
+                    <div class="descripcion-pago-total">
+                        <h6 class="titulo-desplegable-pago-total">TOTAL:</h6>
+                        <% productos.forEach(product=> { %>
+                            <div class="separador-izquierda">
+                                <p>
+                                    <%= product.nombre %>
+                                </p>
+                            </div>
+
+                            <div class="separador-medio">
+                                <p style="color: green;">
+                                    -<%= product.descuento + "%" %>
+                                </p>
+                            </div>
+
+                            <div class="separador-derecha">
+                                <p>
+                                    <%= product.precio + "$" %>
+                                </p>
+                            </div>
+
+                            <% }); %>
+                    </div>
+
+                </section>
+
+
+            </section>
+            <div class="separador"></div>
+            <div class="separador-externo"></div>
+
+            <div class="titulo-seccion" style="background-color: white; color: black; margin-top: 5rem;">
+                <!-- seccion carrusel -->
+                <h1>Seguí navegando! </h1>
+            </div>
+
+            <section class="carruseles-contenedor">
+                <div class="separador-externo"></div>
+                <section class="seccion-carrusel">
+                    <div class="corredor">
+                        <% productos.forEach(product=> { %>
+                            <div class="image-related">
+                                <img src=/img/products/<%=product.imagen %> alt="">
+                            </div>
+
+                            <!-- fin del carrusel agregar a carrito -->
+
+                            <% }); %>
+                    </div>
+
+
+
+                    <div class="corredor">
+                        <% productos.forEach(product=> { %>
+                            <div class="image-related">
+                                <img src="/img/products/<%=product.imagen %>" alt="">
+                            </div>
+
+                            <!-- fin del carrusel agregar a carrito -->
+
+                            <% }); %>
+                    </div>
+                </section>
+                <div class="separador-externo"></div>
+            </section>
+
+
+            <div class="summary-container">
+                <h1>Metodos De Pago</h1>
+                <div class="total-summary">
+
+                    <details>
+                        <summary>
+                            <h5>detalles del envio </h5>
+                        </summary>
+                        <p>envio a colombia y argentina por medio de OCA </p>
+                    </details>
+
+                    <details>
+                        <summary>
+                            <h5>Pagon con tarjeta:</h5>
+                        </summary>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste,</p>
+                    </details>
+                    <details>
+                        <summary>
+                            <h5>Pagon con tarjeta:</h5>
+                        </summary>
+                        <p>
+                            <i class="fa-brands fa-cc-visa"></i>
+                            <i class="fa-brands fa-cc-mastercard"></i>
+                            <i class="fa-solid fa-credit-card"></i>
+                            <i class="fa-brands fa-cc-paypal"></i>
+                        </p>
+                    </details>
+                    <details>
+                        <summary>
+                            <h5>Pagos en efectivo:</h5>
+                        </summary>
+                        <p>
+                            <i class="fa-brands fa-ioxhost"></i>
+                            <i class="fa-brands fa-ioxhost"></i>
+                            <i class="fa-brands fa-ioxhost"></i>
+                            <i class="fa-brands fa-ioxhost"></i>
+                        </p>
+                    </details>
+                </div>
+            </div>
+            <!--                          sumario                         -->
+    </main>
+
+    <%- include("../partials/footer") %>
+
+    <!-- los script va a ir en nuestros archivos ejs hasta que 
+    aprendamos DOM, luego los activamos en el partial del foter-->
+    <script src="/scripts/productCart.js"></script>
+>>>>>>> 7e7cdb526a73da95dc41165bf1d9413cbbe069ce:src/views/product/productCart.ejs

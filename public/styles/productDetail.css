@@ -1,0 +1,277 @@
+/* GENERAL */
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+.imagen-producto-principal {
+	width: 280px;
+	margin: 0 0 8px 0;
+}
+
+.imagen-producto-secundaria {
+	width: 90px;
+}
+
+.precio-producto {
+	margin: 0 5px;
+	color: #ff540a;
+}
+
+.descripcion-producto {
+	margin: 0 0 15px 0;
+}
+
+.descuento-producto {
+	color: green;
+	-webkit-text-stroke: 0.1px;
+}
+
+#colores-seleccion {
+	border: none;
+	background-color: rgb(235, 235, 235);
+	border-radius: 4px;
+	width: 140px;
+	height: 25px;
+	font-size: 11px;
+	text-align: center;
+}
+
+#cantidad-seleccion {
+	width: 80px;
+	height: 23px;
+	text-align: center;
+	outline: none;
+	background-color: rgb(235, 235, 235);
+	border: none;
+}
+
+.boton-agregar-carrito {
+	border: none;
+	border-radius: 7px;
+	background-color: #ff540a;
+	color: white;
+	width: 180px;
+	height: 30px;
+}
+
+.boton-agregar-carrito:hover {
+	background-color: #550c18;
+}
+
+.fa-heart {
+	position: relative;
+	left: 265px;
+	top: 10px;
+	border-radius: 7px;
+	font-size: 25px;
+	stroke: black;
+	stroke-width: 100;
+	color: #ff540a;
+}
+
+.fa-heart:hover {
+	color: red;
+}
+
+.fa-cart-shopping {
+	position: relative;
+	right: 4px;
+	font-size: 15px;
+	bottom: 1px;
+}
+
+.texto-boton-agregar-carrito {
+	position: relative;
+	left: 2px;
+}
+
+.lista-menu-desplegable-producto {
+	display: flex;
+	justify-content: center;
+}
+
+.texto-color {
+	margin: 0 60px 0 0;
+}
+
+.fa-caret-up {
+	background-color: rgb(43, 42, 42);
+	color: white;
+	padding: 2.2px;
+	text-align: center;
+	position: relative;
+	top: 1.7px;
+}
+.fa-caret-down {
+	background-color: rgb(43, 42, 42);
+	color: white;
+	padding: 2.2px;
+	text-align: center;
+	position: relative;
+	top: 1.7px;
+}
+
+.linea-superior {
+	background-color: black;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	margin: 18px 0;
+	margin-bottom: 50px;
+}
+
+label {
+	color: grey;
+}
+
+input[type="radio"] {
+	display: none;
+}
+
+.clasificacion {
+	direction: rtl;
+	unicode-bidi: bidi-override;
+}
+
+label:hover {
+	color: orange;
+}
+
+label:hover ~ label {
+	color: orange;
+}
+
+input[type="radio"]:checked ~ label {
+	color: orange;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+.formulario-clasificacion {
+	margin-left: 100px;
+}
+
+.editar-borrar {
+	display: flex;
+	margin-top: 22px;
+	justify-content: space-around;
+}
+
+.boton-accion-borrar {
+	border-radius: 5px;
+	border: none;
+	background-color: #ff540a;
+	color: white;
+	height: 32px;
+}
+
+.boton-accion-editar {
+	border-radius: 7px;
+	border: none;
+	background-color: #ff540a;
+	color: white;
+	height: 32px;
+}
+
+.boton-accion-editar:hover {
+	background-color: #550c18;
+}
+
+.boton-accion-borrar:hover {
+	background-color: #550c18;
+}
+
+.parrafo-descripcion-producto {
+	margin: 0 0 15px 0;
+}
+
+.parrafo-descripcion-producto:hover {
+	text-decoration: underline;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+/* CAJAS */
+
+.caja-general {
+	display: flex;
+	padding: 0 50px 0 50px;
+	padding-bottom: 120px;
+	justify-content: center;
+}
+
+.caja-sub-general-informacion {
+	display: flex;
+	flex-direction: column;
+	padding: 0 35px;
+}
+
+.caja-imagenes-general {
+	display: flex;
+	flex-direction: column;
+}
+
+.caja-precio-clasificacion {
+	display: flex;
+	justify-content: space-evenly;
+	margin: 0 0 15px 0;
+	align-items: baseline;
+}
+
+.caja-colores-producto {
+	display: flex;
+	margin: 10px 0;
+}
+
+.caja-cantidad-producto-carrito {
+	display: flex;
+	margin: 15px 0 20px 0;
+}
+
+.formulario-boton-agregar-carrito {
+	margin: 0 0 0 50px;
+}
+
+.caja-primera {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.caja-segunda {
+	display: flex;
+	flex-direction: column;
+}
+
+.caja-tercera {
+	display: flex;
+}
+
+.caja-links-extra-producto {
+	display: flex;
+	flex-direction: column;
+}
+
+.caja-categories-producto {
+	border-top: solid 1px rgb(172, 172, 172);
+	margin: 7px 0 10px 0;
+	padding: 11px 0 0 0;
+}
+
+.caja-descripcion-secundaria-producto {
+	padding: 0 80px;
+	margin: 0 0 70px 0;
+}
+
+.caja-secciones-secundarias-informacion {
+	margin-top: 100px;
+}

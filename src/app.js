@@ -32,8 +32,8 @@ app.use(session({secret: "es secreto pa!"}))
 
 /************* Template engine (ejs) *************/
 
-app.set("view engine", "ejs")
-app.set('views', path.resolve(__dirname, "views"));
+app.set("view engine", "ejs");
+app.set("views", path.resolve(__dirname, "views/"));
 
 //*****************************************************************************************************\\
 // ** Rutas **
@@ -42,18 +42,18 @@ app.set('views', path.resolve(__dirname, "views"));
 const mainRouter = require("./routes/mainRouter");
 
 // products
-const productsRouter = require('./routes/productsRouter');
+const productsRouter = require("./routes/productsRouter");
 
 // user
 const usersRouter = require("./routes/usersRouter");
 
 // admin
-const aRouter = require("./routes/adminRouter");
+const adminRouter = require("./routes/adminRouter");
 
 app.use("/", mainRouter);
 app.use("/products", productsRouter);
 app.use("/users", usersRouter);
-app.use("/admin", aRouter);
+app.use("/admin", adminRouter);
 
 // 404, si no esta la ruta buscada arrojaria este error
 app.use((req, res, next) => {

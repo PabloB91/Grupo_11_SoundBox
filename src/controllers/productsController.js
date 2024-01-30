@@ -12,7 +12,7 @@ const controller = {
 	index: (req, res) => {
 
 		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-		res.render("todosLosProductos", { products });
+		res.render("product/allTheProducts.ejs", { products });
 	},
 
 	// (get) Detail - Detalle de un producto
@@ -27,7 +27,7 @@ const controller = {
 		})
 
 		if(productoDefinido){
-			res.render("productDetail", { singleProduct : productoDefinido })
+			res.render("product/productDetail", { singleProduct : productoDefinido })
 		} else{
 			res.send("ERROR")
 		}
@@ -40,7 +40,7 @@ const controller = {
 
 		const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
-        res.render("crearProducto", { products });
+        res.render("product/productCreate", { products });
 
     },
 
@@ -67,7 +67,7 @@ const controller = {
 			descripcion: req.body.descripcion == undefined ? "": req.body.descripcion,
 			cantidad: req.body.cantidad == undefined ? "": parseInt(req.body.cantidad),
 			coloresDisponibles: req.body.coloresDisponibles == undefined ? [""]: req.body.coloresDisponibles.split(',').map(color => color.trim()),
-			categorias: req.body.categorias == undefined ? "": req.body.categorias.split(',').map(categoria => categoria.trim()),
+			categories: req.body.categories == undefined ? "": req.body.categories.split(',').map(category => category.trim()),
 			estado: req.body.estado == undefined ? "": req.body.estado
 		}
 
@@ -77,7 +77,7 @@ const controller = {
 
 		// mostrar lo que se guardo en una vista
 
-		res.redirect('/todosLosProductos')
+		res.redirect('product/allTheProducts.ejs')
 	},
 
 	// (get) Update - Formulario para editar
@@ -91,7 +91,7 @@ const controller = {
 
 		}) 
 
-		res.render("editarProducto", {productToEdit})
+		res.render("product/productEdit.ejs", {productToEdit})
 	},
 	// (post) Update - Método para actualizar la info
 	processEdit: (req, res) => {
@@ -118,7 +118,7 @@ const controller = {
 			descripcion: req.body.descripcion,
 			cantidad: req.body.cantidad,
 			coloresDisponibles: req.body.coloresDisponibles.split(',').map(color => color.trim()),
-			categorias: req.body.categorias.split(',').map(categoria => categoria.trim()),
+			categories: req.body.categories.split(',').map(category => category.trim()),
 			estado: req.body.estado
 		}
 
@@ -130,7 +130,7 @@ const controller = {
 		products[indice] = productToEdit;
 
 		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
-		res.redirect("/products/productDetail/" + productToEdit.id)
+		res.redirect("product/productDetail.ejs" + productToEdit.id)
 	},
 
 	// (delete) Delete - Eliminar un producto de la DB
@@ -147,7 +147,7 @@ const controller = {
 
 		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "))
 
-		res.redirect("/todosLosProductos")
+		res.redirect("product/allTheProducts.ejs")
 	}
 
 };

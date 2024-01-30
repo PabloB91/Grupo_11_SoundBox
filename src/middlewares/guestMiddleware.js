@@ -1,5 +1,5 @@
 function gestMiddleware(req, res, next){
-    if(req.session.userLogged){
+    if(req.session.userToLogIn == undefined){
         next();
     }else{
         return res.redirect("/users/register")

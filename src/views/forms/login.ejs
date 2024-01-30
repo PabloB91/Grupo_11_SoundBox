@@ -1,0 +1,140 @@
+
+    <%- include('../partials/head.ejs') %>
+    <link href="/styles/loginRegister.css" rel="stylesheet">
+
+        <!-- =========================================================================================================== -->
+
+        <!-- -HEADER / ENCABEZADO- -->
+        <%- include('../partials/header.ejs') %>
+
+        <!-- =========================================================================================================== -->
+
+        <!-- ----LOGIN / ACCESO---- -->
+
+        <main class="main-login">
+
+            <section class="main-login_section">
+
+                <div class="main-login_title">
+                    <h1>¡Lleva la buena vibra!</h1>
+                </div>
+        
+                <form action="/users/login" method="POST" class="main-login_form"><!-- /userProfile/:userId -->
+        
+                    <div class="main-login_form_box-container one-login">
+                        
+                        <div class="main-login-form-box-container_title">
+                                <h2>INGRESAR</h2>
+                        </div>
+
+                        <!-- Verificar si errors está definido antes de acceder a su contenido -->
+                        <% if (typeof errors !== 'undefined' && errors.length > 0) { %>
+                            <!-- Iterar sobre los errores y mostrar mensajes -->
+                            <% for (let error = 0; error < errors.length; error++) { %>
+                                <p class="error"> <%= errors[error].msg %> </p>
+                            <% } %>
+                        <% } %>
+
+                        <!-- typeof errors === undefined -->
+                        <div class="fieldset mail">
+        
+                            <div class="label">
+                                <label for="email"><!-- Email --></label>
+                            </div>
+        
+                            <div class="fa-onda fa-logo">
+                                <img src="/img/svg/simbolequalizer.svg" alt="SOUNDBOX soundBox regitro musica">
+                            </div>
+
+                            <div class="input">
+                                <input id="email" type="text"  placeholder="E-mail" name="email" value="<%= locals.old && old.email ? old.email : '' %>">
+                            </div>
+        
+                        </div>
+
+                        <div class="fieldset password">
+        
+                            <div class="label">
+                                <label for="password"><!-- Contraseña --></label>
+                            </div>
+
+                            <div class="fa-onda fa-logo">
+                                <img src="/img/svg/simbolequalizer.svg" alt="">
+                            </div>
+        
+                            <div class="input">
+                                <input id="password" type="password" placeholder="Contraseña" name="password">
+                            </div>
+        
+                        </div>
+                        
+                        <div class="contLink div_I-forgot-my-password_and_remember-me">
+                            <div class="div_remember-me">
+
+                                <label for="remember-me" id="label_checkBox">
+                                    <input type="checkbox" name="remember-me" id="remember-me" class="remember-me">
+                                    <span class="check" id="check"></span>
+                                </label>
+
+                                <label for="remember-me">
+                                    <span class="remember-me">
+                                        Recuerdame
+                                    </span>
+                                </label>
+                            </div>
+    
+                            <div class="div_I-forgot-my-password">
+                                <a href="#"><span>Olvide mi Contraseña</span></a>   
+                            </div>
+                        </div>
+        
+                        <div class="button button-ingresar">
+                            <input type="submit" value="Ingresar">
+                        </div>
+        
+                    </div>
+        
+                    <div class="main-login_form_box-container two-login">
+        
+                        <article class="paragraph">
+
+                            <div class="img-link-soundBox">
+                                <a href="/">
+                                    <img id="logo" src="/img/svg/estandar.svg" alt="SoundBox">
+                                </a>
+                            </div>
+
+                            <div class="text">
+                                <p>Si aun no eres parte de SoundBox</p>
+            
+                                <div class="a-crear-cuenta">
+                                    <a class="a-crear-cuenta" href="/register">Crear cuenta</a>
+                                </div>
+
+                            </div>
+
+        
+                        </article>
+        
+                        <div class="button">
+        
+                            <a href="/users/register">
+                                <input type="button" name="" id="" value="Crear cuenta">
+                            </a>
+        
+                        </div>
+        
+                    </div>
+        
+                </form>
+
+            </section>
+
+        </main>
+
+        <!-- =========================================================================================================== -->
+
+        <!-- FOOTER / PIE DE PAGINA -->
+        <%- include('../partials/footer.ejs') %>
+
+        <!-- =========================================================================================================== -->

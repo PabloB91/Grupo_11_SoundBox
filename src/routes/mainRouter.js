@@ -9,13 +9,13 @@ const mainController = require("../controllers/mainController");
 
 router.get("/", mainController.index);
 
-router.get("/categoria/:nombre", mainController.categorias)
+router.get("/category/:nombre", mainController.categories)
 
 router.get("/productCart", mainController.carrito);
 
 router.get("/admin", mainController.admin);
 
-router.get("/todosLosProductos", mainController.allProducts);
+router.get("/allTheProducts", mainController.allProducts);
 
 /**
  * El siguente codigo solo es una prueba para session a recargar la pagina nos mostarar el numero en 
