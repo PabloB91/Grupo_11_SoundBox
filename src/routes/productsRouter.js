@@ -38,6 +38,6 @@ router.get('/edit/:id', productsController.edit);
 router.put('/edit/:id', upload.array('form-imagen'), productsController.processEdit);
 
 // Eliminar un producto 
-router.delete('/delete/:id', productsController.destroy);
+router.delete('/delete/:userId', productsController.destroy);
 
 module.exports = router;

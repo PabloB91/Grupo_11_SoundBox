@@ -196,7 +196,23 @@ const usersControllers = {
 
 		fs.writeFileSync(usersFilePath, JSON.stringify(usersJson, null, " "));
 		res.redirect("users/userProfile/" + usersToEdit.id)
-    }
+    },
+
+    destroy: (req, res) => {
+
+        const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+
+		// eliminar
+		user = usersJson.filter(product =>{
+			
+			return product.userId != req.params.id;
+
+		})
+
+		fs.writeFileSync(usersFilePath, JSON.stringify(usersJson, null, " "))
+
+		res.redirect("/")
+	}
 
 }
 
