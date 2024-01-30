@@ -196,7 +196,7 @@ const usersControllers = {
 		res.redirect("users/userProfile/" + usersToEdit.id)
     },
 
-    destroy: (req, res) => {
+    delete: (req, res) => {
 
         const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
@@ -205,9 +205,9 @@ const usersControllers = {
 			return user.userId != req.params.id;    //--> Se devuelven todos los usuarios excepto el seleccionado
 		})
 
-		fs.writeFileSync(usersFilePath, JSON.stringify(usersJson, null, " "))
+		fs.writeFileSync(usersFilePath, JSON.stringify(users, null, " "))
 
-		res.redirect("/")
+		res.redirect("/admin/usersList")
 	}
 }
 

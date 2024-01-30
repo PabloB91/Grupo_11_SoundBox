@@ -8,22 +8,6 @@
   "imgProfile": "camila.jpg"
  },
  {
-  "userId": 3,
-  "name": "Javier",
-  "lastName": "Salazar",
-  "email": "JavierSalazar@gmail.com",
-  "password": "password",
-  "imgProfile": "javier.jpg"
- },
- {
-  "userId": 4,
-  "name": "Mateo",
-  "lastName": "Espejo",
-  "email": "MateoEspejo@gmail.com",
-  "password": "password",
-  "imgProfile": "mateo.jpg"
- },
- {
   "userId": 5,
   "name": "Melena",
   "lastName": "Perez",
