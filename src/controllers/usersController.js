@@ -20,7 +20,7 @@ const usersControllers = {
     userProfile: (req, res) => {
         const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
-        let userId = req.session.userId
+        let userId = req.params.userId
 
 		let userDefinido = usersJson.find(user => {
 			return user.userId == userId;
@@ -28,22 +28,14 @@ const usersControllers = {
 		})
 
 		if(userDefinido){
-<<<<<<< HEAD
-			res.render("user");
-=======
 			res.render("user/userProfile.ejs", { user : userDefinido });
->>>>>>> 7e7cdb526a73da95dc41165bf1d9413cbbe069ce
 
 		} else {
             res.render("forms/register.ejs");
 
 		}
 
-<<<<<<< HEAD
-        res.render("user", { user : userDefinido });
-=======
         res.render("user/userProfile.ejs");
->>>>>>> 7e7cdb526a73da95dc41165bf1d9413cbbe069ce
 
     },
 
@@ -58,13 +50,11 @@ const usersControllers = {
         
         const errors = validationResult(req);
         
-        if (errors.isEmpty()) {
+        if(errors.isEmpty()){
 
             /* aca estamos trayensdo la lista de usuarios y la estamos convirtiendo a array */
             const usersJSON = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
-<<<<<<< HEAD
-=======
             console.log(usersJSON)
             
             /**
@@ -72,7 +62,6 @@ const usersControllers = {
              * y si usersJSON es estrictamente igual a "" 
              */
             
->>>>>>> 7e7cdb526a73da95dc41165bf1d9413cbbe069ce
             let users;
 
             if (usersJSON === ""){
@@ -82,14 +71,11 @@ const usersControllers = {
             }
             
             let userToLogIn; 
-<<<<<<< HEAD
-=======
 
             /**
              * si existe el usuario en la db en tonces vamos a renderizar
              *  `/users/userProfile/:id`con el siguiente codigo
             */
->>>>>>> 7e7cdb526a73da95dc41165bf1d9413cbbe069ce
 
             for(let user = 0; user<users.length; user++ ) {
                 /* en el siguiente if estamos diciendo si dentro de usuarios hay un
@@ -112,13 +98,7 @@ const usersControllers = {
             */
             if (userToLogIn === undefined){
             
-<<<<<<< HEAD
-            if (userToLogIn == undefined) {
-            
-            res.render("form/login.ejs", { errors : [
-=======
             res.render("forms/login.ejs", { errors : [
->>>>>>> 7e7cdb526a73da95dc41165bf1d9413cbbe069ce
            
                        {msg: 'La contraseña o el correo no coinciden'}
                     ], 
@@ -126,15 +106,6 @@ const usersControllers = {
                 });
             }
             
-<<<<<<< HEAD
-            req.session.userLogged = userToLogIn;
-
-            res.render(`user`, { user: userToLogIn });
-
-        }else{
-            return res.render("/login.ejs", { errors });
-        }
-=======
             /**
              * sie l usuario ingreso satisfactoriamente vamos a guardar sus datos en 
              * userTologIn
@@ -144,7 +115,6 @@ const usersControllers = {
             /* este redict actua solo si el usuario exixte en el db */
             res.redirect(`/users/userProfile/${userToLogIn.userId}`);
         }else{
->>>>>>> 7e7cdb526a73da95dc41165bf1d9413cbbe069ce
 
             return res.render("forms/login.ejs", { errors: errors.array(), old: req.body });
         

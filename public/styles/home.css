@@ -1,0 +1,608 @@
+/*------------------------------------------------
+-----------------------MAIN-----------------------
+-------------------------------------------------*/
+
+
+
+/* ha1 te dejo tu body juanSe*/
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    font-style: normal;
+    margin: auto;
+}
+
+main{
+    margin-top: 50px;
+}
+
+
+
+body {
+    /* Propiedades de estilo para el modo claro */
+    background-color: white;
+    color: black;
+  }
+  
+  body.dark-theme {
+    /* Propiedades de estilo para el modo oscuro */
+    background-color: #333;
+    color: white;
+  }
+
+/*----ETIQUETAS BANNER CARRUSEL----*/
+
+.carrusel {
+    width: 85%;
+    margin: auto;
+    display: block;
+}
+
+.banner {
+    background-color: #545643;
+    border-radius: 15px 15px 0px 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container-carrusel-1 {
+    width: 40%;
+    margin: auto;
+    display: block;
+    flex-grow: 0.25;
+}
+
+.container-carrusel-1 img {
+    width: 100%;
+    border-radius: 15px 0px 0px;
+}
+
+.container-carrusel-2 {
+    width: 60%;
+    margin-left: 2em;
+    margin-right: 2em;
+    display: block;
+    flex-grow: 0.75;
+}
+
+.container-carrusel-2 h2 {
+    color: white;
+    text-align: center;
+    font-size: 40px;
+}
+
+.container-carrusel-2 img {
+    width: 10%;
+    margin-bottom: -15px;
+}
+
+.vibra {
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+    color: #FF540A;
+}
+
+.bold-text {
+    margin-top: -1em;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+}
+
+.light-text {
+    margin-left: 13em;
+    margin-right: 13em;
+    color: white;
+    font-size: 12px;
+    text-align: center;
+}
+
+.container-button-carrusel {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.button-carrusel {
+    font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 12px;
+    color: black;
+    background-color: #E6E6E6;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    border-style: hidden;
+    cursor: pointer;
+}
+
+.player {
+    background-color: #FF540A;
+    width: 100%;
+    height: 60px;
+    display: flex;
+}
+
+.player ul {
+    margin: auto;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#skip-previous,
+#play-arrow,
+#stop,
+#skip-next {
+    color: white;
+    font-size: 3em;
+}
+
+#skip-previous {
+    padding-right: 3em;
+}
+
+#skip-next {
+    padding-left: 3em;
+}
+
+/*-----COMPRA POR CATEGORÍA-----*/
+
+.compra-por-categoria {
+    background-color: #B7B3A1;
+    width: 85%;
+    margin-top: 1rem;
+    margin: auto;
+    padding: 0.5rem;
+    border-radius: 0px 0px 15px 15px;
+}
+
+.compra-por-categoria h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    text-align: center;
+    margin: auto;
+    padding: 0px 25px 25px;
+}
+
+.items-categorias {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.left-list {
+    display: flex;
+    justify-content: center;
+
+}
+
+.right-list {
+    display: flex;
+    justify-content: center;
+
+}
+
+.categoria {
+    width: 25%;
+    border: solid 2px white;
+    border-radius: 8px;
+    position: relative;
+    margin: 15px;
+
+}
+
+.categoria a {
+    text-decoration: none;
+}
+.categoria img {
+    width: 100%;
+    border-radius: 8px;
+    margin: auto;
+    bottom: 0px;
+    z-index: 2;
+}
+.categoria p {
+    padding: 5px;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background-color: rgba(0,0,0,0.4);
+    color: white;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    cursor: pointer;
+}
+
+.compra-por-categoria .button {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+
+}
+.compra-por-categoria button {
+    font-family: 'Montserrat';
+    font-weight: bold;
+    font-size: 10px;
+    color: white;
+    background-color: black;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    border-style: hidden;
+    cursor: pointer;
+}
+
+/*-----MÁS VENDIDOS-----*/
+
+.mas-vendidos {
+    width: 85%;
+    margin: auto;
+    display: block;
+}
+
+.mas-vendidos h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    text-align: center;
+    margin: auto;
+    padding: 60px 25px 5px;
+}
+
+.mas-vendidos .nav-bar{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-end;
+    list-style: none;
+}
+
+.mas-vendidos a {
+    text-decoration: none;
+    font-family: 'Montserrat' ;   
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.mas-vendidos a:link, 
+.mas-vendidos a:visited,
+.mas-vendidos a:hover,
+.mas-vendidos a:active{
+    color: black;
+}
+
+.items-mas-vendidos {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    margin-right: -3.5rem; /* Medida negativa no adecuada para justificar esta caja. Se debe identificar la forma adecuada de organizar*/
+}
+
+.producto img {
+    border: solid 1px black;
+    width: 80%;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.producto p {
+    font-family: 'Montserrat';
+    font-size: 12px;
+}
+
+.detalle-producto {
+    width: 80%;
+}
+
+.container-detalle{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/*-----MARCAS Y PROMO BANNERS-----*/
+
+.marcas-banners {
+    width: 88%;
+    margin: auto;
+    display: block;
+}
+
+.box-marcas {
+    width: 100%;
+    margin: auto;
+    padding: 30px 18px;
+    border-radius: 10px;
+}
+
+.box-marcas img {
+    border-radius: 10px;
+}
+
+.box-promoBanners {
+    width: 100%;
+    margin: auto;
+    padding: 10px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-radius: 10px;
+}
+
+.box-promoBanners img {
+    border-radius: 10px;
+}
+
+.promoBanners {
+    width: 30%;
+    margin: auto;
+    padding: 10px 0px;
+}
+
+/*----COMPLEMENTOS-----*/
+
+.complementos {
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    /*border: dotted 1px red;*/
+}
+.complementos h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    text-align: left;
+    padding-bottom: 5px;
+    border-bottom: solid 1px #FF540A;
+}
+
+.destacados,
+.comentarios,
+.novedades {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /*border: dotted 1px red;*/
+}
+
+.container-producto {
+    width: 100%;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: row;
+}
+
+.container-producto img {
+    width: 22%;
+    margin: auto;
+    border: solid 1px black;
+    border-radius: 4px;
+}
+
+.complementos .detalle-producto p {
+    font-size: 11px;
+    padding-left: 5px;
+    line-height: 5px;
+}
+
+.espacio-publicitario {
+    width: 50%;
+}
+
+.espacio-publicitario img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+
+
+/* ESTRELLAS CALIFICACION/ CLASIFICACION */
+label{ 
+    color:grey;
+}
+
+input[type = "radio"]{ 
+    display:none;
+}
+
+.clasificacion{
+  direction: rtl;
+  unicode-bidi: bidi-override;
+}
+
+label:hover{
+    color:orange;
+}
+
+label:hover ~ label{
+    color:orange;
+}
+
+input[type = "radio"]:checked ~ label{
+    color:orange;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.last-section {
+    display: flex;
+    justify-content: space-evenly;
+    width: 90%;
+}
+
+.img-container {
+    width: 33%;
+    height: auto;
+
+    img {
+        width: 100%;
+
+    }
+
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.titles-last-section{
+
+    h1 {
+        font-size: 28px;
+
+    }
+
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+
+
+
+
+
+.slider-frame {
+    width: 85%;
+    border: 1rem solid #FF540A;
+    border-radius: 28px 28px 0 0;
+    height: auto;
+    margin: auto;
+
+
+    overflow: hidden;
+    
+    
+    ul {
+        display: flex;
+        width: 400%;
+        animation: slide 25s infinite linear normal;
+
+    }
+
+    li {
+        list-style: none;
+        width: 400%;
+
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+
+    }
+
+}
+
+
+@keyframes slide {
+    0% {margin-left: 0%;}
+    20% {margin-left: 0%;}
+
+    25% {margin-left: -100%;}
+    45% {margin-left: -100%;}
+
+    50% {margin-left: -200%;}
+    70% {margin-left: -200%;}
+
+    75% {margin-left: -300%;}
+    95% {margin-left: -300%;}
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width:1024px) {
+    
+}
+
+@media (max-width:768px) {
+
+    .categoria {
+        margin: auto;
+
+    }
+
+    .left-list, .right-list {
+
+        margin-top: 15px;
+    }
+    
+}
+
+@media (max-width:425px) {
+
+    .last-section {
+        flex-direction: column;
+
+    }
+
+    .slider-frame {
+        border: 3px solid #FF540A;
+
+    }
+
+    .items-categorias {
+        flex-wrap: nowrap;
+        flex-direction: row;
+
+    }
+
+    .categoria {
+        width: 70%;
+        margin: 5px auto;
+
+    }
+
+    .left-list, .right-list {
+        flex-direction: column;
+        margin-top: 0;
+    }
+
+}

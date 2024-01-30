@@ -79,15 +79,8 @@ router.get('/userProfile/:userId', usersController.userProfile);
  * que vamos a usar la validacion y por ultimo vamos a ingresar al processToRegister que esta en el 
  * usersController
  */
-<<<<<<< HEAD
-router.get('/login', authMiddleware, usersController.login);
-router.post('/login', loginValidations, usersController.processToLogin);
-
-router.get('/estaLog')
-=======
 router.get('/login', guestMiddleware, usersController.login);
 router.post('/login', guestMiddleware, loginValidations, usersController.processToLogin);
->>>>>>> 7e7cdb526a73da95dc41165bf1d9413cbbe069ce
 
 // Register
 /**

@@ -1,0 +1,324 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    font-style: normal;
+    margin: auto;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+.ordenador {
+    width: 10vw;
+    background-color: #FF540A;
+    position: absolute;
+    left: 1px;
+    z-index: 9999;
+}
+
+.titulo-ordenador {
+    font-size: 20px;
+    color: white;
+    margin-left: 1.2vw;
+    margin-top: 0.2vw;
+    position: fixed;
+}
+
+.filtro-presupuesto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    input {
+        width: 80%;
+
+    }
+
+}
+
+.filtrar-plata {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    padding: 0.5rem;
+}
+
+.primer-seccion {
+    margin: 1rem;
+    padding: 0.5rem;
+
+}
+
+.segunda-seccion {
+    margin: 1rem;
+    padding: 0.5rem;
+}
+
+.tercer-seccion {
+    margin: 1rem;
+    padding: 0.5rem;
+
+}
+
+.cuarta-seccion {
+    margin: 1rem;
+    padding: 0.5rem;
+
+}
+
+.titulo-filtros {
+    display: flex;
+    justify-content: center;
+
+}
+
+.populares-1 {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem;
+}
+
+.seccion-general {
+    width: 100vw;
+    background-color: #B7B3A1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.barra-titulo{
+    display: flex;
+    width: 100vw;
+    background-color: black;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.titulo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 26px;
+    color: wheat;
+
+} 
+
+.card {
+    position: relative;
+    width: 250px;
+    height: 350px;
+}
+
+
+
+
+.descripcion-producto {
+    display: flex;
+    width: 90%;
+    height: auto;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.descuento {
+    color: green;
+
+}
+
+/* animaciones */
+
+.dropdown-ordenador {
+    display: none;
+
+}
+
+.ordenador:hover {
+    width: 30vw;
+    border-radius: 0px 25px 25px 0px;
+    transition: 0.5s;
+}
+
+.ordenador:hover .dropdown-ordenador {
+    display: flex;
+    flex-direction: column;
+}
+
+.ordenador:hover .titulo-ordenador {
+    margin-left: 1rem;
+    position: sticky;
+    color: black;
+}
+
+
+/*tageta add*/
+
+.img_card-add{
+
+    #add-icon{
+        font-size: 100px;
+        color: #fff ;
+    }
+}
+
+/****************************/
+
+
+/* media queryes */
+/* animaciones carta*/
+@media (min-width: 1440px) {
+    .card .face {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        border-radius: 10px;
+        overflow: hidden;
+        transition: .5s;
+    
+    }
+    
+    .card .front {
+        transform: perspective(600px) rotateY(0deg);
+        box-shadow: 0 5px 10px black;
+    
+    }
+    
+    .card .front img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    
+    }
+    
+    .card .front h3 {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        line-height: 45px;
+        color: white;
+        background-color: rgba(0, 0, 0, .4);;
+        text-align: center;
+    
+    }
+    
+    .card .back {
+        transform: perspective(600px) rotateY(180deg);
+        background-color: #FF540A;
+        padding: 15px;
+        color:  white;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+        border: 2px solid black;
+    
+    }
+    
+    .card .back h3 {
+        font-size: 30px;
+        margin-top: 20px;
+        letter-spacing: 2px;
+        color: white;
+        background-color: rgba(0, 0, 0, .4);
+        border: 2px solid black;
+        border-radius: 8px;
+        padding: 8px;
+    
+    }
+    
+    .card .back p {
+        letter-spacing: 1px;
+    
+    }
+    
+    .marca-descripcion {
+        color: black;
+    
+    }
+    
+    .price {
+        color: green;
+        font-size: 25px;
+    }
+    
+    .card:hover .front {
+        transform: perspective(600px) rotateY(180deg);
+    
+    }
+
+    .card:hover {
+        transform: scale(1.1);
+
+    }
+    
+    .card:hover .back {
+        transform: perspective(600px) rotateY(360deg);
+    
+    }
+
+
+}
+
+@media (max-width:1440px) {
+    .card {
+        position: relative;
+        width: 200px;
+        height: 275px;
+    }
+
+    .href-padding {
+        width: 90%;
+
+    }
+}
+
+@media (max-width:769px) {
+    .card {
+        width: 45%;
+
+    }
+
+}
+
+@media (max-width:500px) {
+    .card {
+        width: 90%;
+
+    }
+
+}
+
+.container-producto {
+    width: 12vw;
+    margin-right: 3vw;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-producto img {
+    width: 12vw;
+    margin: auto;
+    border: solid 1px black;
+    border-radius: 4px;
+}
+
+.detalle-producto p {
+    font-family: 'Montserrat';
+    font-size: 14px;
+    padding-left: 5px;
+
+}
+
+a:link, 
+a:visited,
+a:hover,
+a:active{
+    color: black;
+}

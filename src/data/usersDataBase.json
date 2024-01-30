@@ -57,12 +57,6 @@
  },
  {
   "userId": 8,
-<<<<<<< HEAD
-  "name": "Bautista",
-  "lastName": "Merentiel",
-  "email": "Bautista.garcia.oliver@gmail.com",
-  "password": "$2a$10$BbiCsZEnCRTnsDwylpnfw.5/1EBJI57oaWzNdo2tNfoBNKnnTQptm",
-=======
   "name": "Francisco",
   "lastName": "Capitani",
   "email": "ftcapitani@gmail.com",
@@ -75,7 +69,6 @@
   "lastName": "Capitani",
   "email": "ftcapitani@gmail.com",
   "password": "$2a$10$lKAnWQfSOJ3gWQVLo85Zs.Yepjk0Essg8SLZqc5yzZ1qXHC9LzijG",
->>>>>>> 7e7cdb526a73da95dc41165bf1d9413cbbe069ce
   "imgProfile": "usuario-al-azar.png"
  }
 ]

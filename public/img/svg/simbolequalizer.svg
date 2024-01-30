@@ -1,0 +1,10 @@
+<svg width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<rect width="150" height="150" fill="rgba(30,30,30,0)"/>
+	<g id="lineofSound">
+	<line id="Line 5" x1="135" y1="52" x2="135" y2="98" stroke="#FF540A" stroke-width="16" stroke-linecap="round"/>
+	<line id="Line 4" x1="105" y1="28" x2="105" y2="122" stroke="#FF540A" stroke-width="16" stroke-linecap="round"/>
+	<line id="Line 3" x1="75" y1="42" x2="75" y2="108" stroke="#FF540A" stroke-width="16" stroke-linecap="round"/>
+	<line id="Line 2" x1="45" y1="28" x2="45" y2="122" stroke="#FF540A" stroke-width="16" stroke-linecap="round"/>
+	<line id="Line 1" x1="15" y1="52" x2="15" y2="98" stroke="#FF540A" stroke-width="16" stroke-linecap="round"/>
+	</g>
+</svg>
