@@ -32,39 +32,17 @@
                             <p>Argentina</p>
 
                             <div class="delete-user">
-                                <button onclick="show()"> Editar usuario </button>
+                                <a href="/userProfile/:id/preference">Editar</a>
                             </div>
                         </div>
-                        <section id="edit-user-form">
-                            <form action="">
-                                <label for=""><p>Name</p>
-                                    <input type="text" value="<%= user.name %>" >
-                                </label>
-                                <label for=""><p>Last name</p>
-                                    <input type="text" value="<%= user.lastName %>">
-                                </label>
-                                <label for=""><p>Email</p>
-                                    <input type="text" value="<%= user.email %>" >
-                                </label>
-
-                                <div>
-                                    <input type="submit">
-                                </div>
-                                <div>
-                                    <button onclick="hide()">volver</button>
-                                </div>
-                            </form>
-                        </section>
+                        
 
                     </section>
                     <section class="second-section">
                         <div class="img-container">
-                            <img src="/img/users/<%= user.imgProfile %>" alt="">
+                            <img src="<%= user.imgProfile %>" alt="">
                         </div>
-                        <div class="img-buttons">
-                            <input type="file">
-                            <input type="submit">
-                        </div>
+                        
                     </section>
                 </section>
 

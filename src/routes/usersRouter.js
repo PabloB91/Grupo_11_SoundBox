@@ -5,7 +5,7 @@ const router = express.Router();
 const multer = require('multer');
 const path = require("path");
 const guestMiddleware = require('../middlewares/guestMiddleware');
-/* const authMiddleware = require('../middlewares/authMiddleware'); */
+const authMiddleware = require('../middlewares/authMiddleware');
 const usersController = require('../controllers/usersController');
 const { body, check } = require('express-validator');
 
@@ -33,16 +33,6 @@ const registerValidations = [
 ];
 
 // Validacion de Login
-<<<<<<< HEAD
-
- const validateLoginForm = [
-    body('email').isEmail().notEmpty().withMessage('Ingresa tu E-meil'),
-    body('password').notEmpty().withMessage('Ingresar contrasena'),
-    
-];
-
-
-=======
 /**
  * En esta constaten estamos haciendo la validacion de emain y de password las cuales deben de cumplir
  * con los requerimientos 
@@ -52,7 +42,6 @@ const loginValidations = [
     check('password').notEmpty().withMessage('Ingresar contrasena'),
     check('password').isLength({min: 8}).notEmpty().withMessage('Ingresar contrasena'),
 ];
->>>>>>> 2ed9ea387abe103661734c327b347c1a7ec342b5
 
 // Multer
 /** 
@@ -91,7 +80,7 @@ router.get('/userProfile/:userId', usersController.user);
  * que vamos a usar la validacion y por ultimo vamos a ingresar al processToRegister que esta en el 
  * usersController
  */
-router.get('/login', guestMiddleware, usersController.login);
+router.get('/login', authMiddleware, usersController.login);
 router.post('/login', loginValidations, usersController.processToLogin);
 
 router.get('/estaLog')

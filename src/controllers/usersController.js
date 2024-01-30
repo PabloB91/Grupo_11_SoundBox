@@ -20,7 +20,7 @@ const usersControllers = {
     user: (req, res) => {
         const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
-        let userId = req.params.userId
+        let userId = req.session.userId
 
 		let userDefinido = usersJson.find(user => {
 			return user.userId == userId;
@@ -28,14 +28,14 @@ const usersControllers = {
 		})
 
 		if(userDefinido){
-			res.render("user", { user : userDefinido });
+			res.render("user");
 
 		} else {
             res.render("register");
 
 		}
 
-        res.render("user");
+        res.render("user", { user : userDefinido });
 
     },
 
@@ -50,11 +50,9 @@ const usersControllers = {
         
         const errors = validationResult(req);
         
-        if(errors.isEmpty()){
+        if (errors.isEmpty()) {
 
             const usersJSON = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-
-            /* console.log(usersJSON); */
 
             let users;
 
@@ -64,36 +62,34 @@ const usersControllers = {
                 users = usersJSON;
             }
             
-            /* let userWhenLoggingIn = users.find(user => user.email === req.body.email); */
-            let userWhenLoggingIn; 
+            let userToLogIn; 
 
             for(let user = 0; user<users.length; user++ ) {
 
                 if (users[user].email == req.body.email) {
 
                     if (bcrypt.compareSync(req.body.password, users[user].password)){
-                        userWhenLoggingIn = users[user];
+                        userToLogIn = users[user];
                         break;
                     }
                 }
             }
             
-            if (userWhenLoggingIn == undefined){
+            if (userToLogIn == undefined) {
             
-            res.render("login.ejs", { errors : [
+            res.render("form/login.ejs", { errors : [
            
                        {msg: 'La contraseña o el correo no coinciden'}
                     ]
                 });
             }
             
-            req.session.userLoggedIn = userWhenLoggingIn;
-            res.render(`user`, { user: userWhenLoggingIn });
-            
+            req.session.userLogged = userToLogIn;
 
-            /* console.log(req.session.userLoggedIn) */
+            res.render(`user`, { user: userToLogIn });
+
         }else{
-            return res.render("login.ejs", { errors });
+            return res.render("/login.ejs", { errors });
         }
 
     },

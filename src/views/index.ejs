@@ -1,16 +1,46 @@
 <%- include('./partials/head.ejs') %>
-<!-- ¡OJO! se estaba repitiendo el llamado de las hojas de estilo 'reset' y 'header-footer' que ya están en el partial head.ejs. PUEDEN PRESENTARSE CONFLICTOS (revisar) -->
-<link href="/styles/home.css" rel="stylesheet">
+    <!-- ¡OJO! se estaba repitiendo el llamado de las hojas de estilo 'reset' y 'header-footer' que ya están en el partial head.ejs. PUEDEN PRESENTARSE CONFLICTOS (revisar) -->
+    <link href="/styles/home.css" rel="stylesheet">
 
-<body>
+    <body>
 
-    <%- include('./partials/header.ejs') %>
+        <%- include('./partials/header.ejs') %>
 
-    <main>
+            <main>
 
-        <!-- index.ejs optimizado -->
+                <!-- index.ejs optimizado -->
 
-        <section class="carrusel">
+
+
+
+
+
+
+                <section class="slider-frame">
+                    <ul>
+                        <li><img src="/img/banners/Banner-carrusel1.jpg" alt=""></li>
+                        <li><img src="/img/banners/Banner-carrusel2.jpg" alt=""></li>
+                        <li><img src="/img/banners/Banner-carrusel1.jpg" alt=""></li>
+                        <li><img src="/img/banners/Banner-carrusel2.jpg" alt=""></li>
+                    </ul>
+
+                </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <!-- <section class="carrusel">
             <div class="banner">
                 <div class="container-carrusel-1">
                     <img src="/img/banners/carrusel_img1.jpg">
@@ -32,74 +62,80 @@
                     <li><a href="#"><span id="skip-next" class="material-symbols-rounded">skip_next</span></a></li>
                 </ul>
             </div>
-        </section>
+        </section> -->
 
-        <section class="compra-por-categoria" id="section-categorias">
-            <h3>COMPRA POR CATEGORÍA</h3>
-            <div class="items-categorias">  <!-- <img src="/img/home/categoria-guitarras.jpg" alt="Guitarras"> -->
-                
-                <article class="categoria">
-                    <p>Guitarras</p>
-                    <img src="/img/home/categoria-guitarras.jpg" alt="Guitarras">
-                </article>
+                <section class="compra-por-categoria" id="section-categorias">
+                    <h3>COMPRA POR CATEGORÍA</h3>
+                    <div class="items-categorias">
+                        <!-- <img src="/img/home/categoria-guitarras.jpg" alt="Guitarras"> -->
+                        <section class="left-list">
 
-            <a href="categoria/Accesorios"></a>
-                <article class="categoria">
-                    <p>Accesorios</p>
-                    <img src="/img/home/categoria-accesorios.jpg" alt="Accesorios">
-                </article>
-            </a>
+                            <article class="categoria">
+                                <p>Guitarras</p>
+                                <img src="/img/home/categoria-guitarras.jpg" alt="Guitarras">
+                            </article>
 
-            <a href="categoria/Efectos"></a>
-                <article class="categoria">
-                    <p>Efectos</p>
-                    <img src="/img/home/categoria-efectos.jpg" alt="Efectos">
-                </article>
-            </a>
+                            <a href="categoria/Accesorios"></a>
+                            <article class="categoria">
+                                <p>Accesorios</p>
+                                <img src="/img/home/categoria-accesorios.jpg" alt="Accesorios">
+                            </article>
+                            </a>
 
-            <a href="categoria/Pianos"></a>
-                <article class="categoria">
-                    <p>Teclados & Pianos</p>
-                    <img src="/img/home/categoria-pianos-teclados.jpg" alt="Teclados&Pianos">
-                </article>
-            </a>
-            
-            <a href="categoria/Orquesta"></a>
-                <article class="categoria">
-                    <p>Orquesta</p>
-                    <img src="/img/home/categoria-orquesta.jpg" alt="Orquesta">
-                </article>
-            </a>
+                            <a href="categoria/Efectos"></a>
+                            <article class="categoria">
+                                <p>Efectos</p>
+                                <img src="/img/home/categoria-efectos.jpg" alt="Efectos">
+                            </article>
+                            </a>
 
-            <a href="categoria/Amplificacion"></a>
-                <article class="categoria">
-                    <p>Amplificación</p>
-                    <img src="/img/home/categoria-amplificacion.jpg" alt="Amplificación">
-                </article>
-            </a>
+                            <a href="categoria/Pianos"></a>
+                            <article class="categoria">
+                                <p>Teclados & Pianos</p>
+                                <img src="/img/home/categoria-pianos-teclados.jpg" alt="Teclados&Pianos">
+                            </article>
+                            </a>
+                        </section>
 
-            <a href="categoria/Segunda-Mano"></a>
-                <article class="categoria">
-                    <p>Segunda Mano</p>
-                    <img src="/img/home/categoria-segundamano.jpg" alt="Segunda Mano">
-                </article>
-            </a>
+                        <section class="right-list">
 
-            <a href="categoria/Grabacion"></a>
-                <article class="categoria">
-                    <p>Grabación</p>
-                    <img src="/img/home/categoria-grabacion.jpg" alt="Grabación">
-                </article>
-            </a>
-            </div>
-            <div class="button">
-                <button>VER TODAS LAS CATEGORÍAS</button>
-            </div>
-        </section>
-        
-        <section class="mas-vendidos" id="section-mas-vendidos">
-            <h3>MÁS VENDIDOS</h3>
-            <!-- <div class="nav-bar">
+                            <a href="categoria/Orquesta"></a>
+                            <article class="categoria">
+                                <p>Orquesta</p>
+                                <img src="/img/home/categoria-orquesta.jpg" alt="Orquesta">
+                            </article>
+                            </a>
+
+                            <a href="categoria/Amplificacion"></a>
+                            <article class="categoria">
+                                <p>Amplificación</p>
+                                <img src="/img/home/categoria-amplificacion.jpg" alt="Amplificación">
+                            </article>
+                            </a>
+
+                            <a href="categoria/Segunda-Mano"></a>
+                            <article class="categoria">
+                                <p>Segunda Mano</p>
+                                <img src="/img/home/categoria-segundamano.jpg" alt="Segunda Mano">
+                            </article>
+                            </a>
+
+                            <a href="categoria/Grabacion"></a>
+                            <article class="categoria">
+                                <p>Grabación</p>
+                                <img src="/img/home/categoria-grabacion.jpg" alt="Grabación">
+                            </article>
+                            </a>
+                        </section>
+                    </div>
+                    <div class="button">
+                        <button>VER TODAS LAS CATEGORÍAS</button>
+                    </div>
+                </section>
+
+                <section class="mas-vendidos" id="section-mas-vendidos">
+                    <h3>MÁS VENDIDOS</h3>
+                    <!-- <div class="nav-bar">
                 <ul>
                     <li>
                         <a href="#">Filtro</a>
@@ -115,20 +151,20 @@
                     </li>
                 </ul>  
             </div> -->
-            <div class="items-mas-vendidos">  
+                    <div class="items-mas-vendidos">
 
-                <% masVendidos.forEach(element => { %>
-                    <a href="/products/productDetail/<%= element.id %>">
-                        <article class="producto">
-                            <img src="/img/products/<%= element.imagen %>" alt="Trompeta">
-                            <div class="detalle-producto">
-                                <p class="descripciones"><strong>Plastic Trumpet, White</strong></p>
-                                <div class="container-detalle">
-                                    <p class="calificacion">
+                        <% masVendidos.forEach(element=> { %>
+                            <a href="/products/productDetail/<%= element.id %>">
+                                <article class="producto">
+                                    <img src="/img/products/<%= element.imagen %>" alt="Trompeta">
+                                    <div class="detalle-producto">
+                                        <p class="descripciones"><strong>Plastic Trumpet, White</strong></p>
+                                        <div class="container-detalle">
+                                            <p class="calificacion">
 
-                                        <form class="formulario-clasificacion">
-                                            <p class="clasificacion">
-                                            <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                                            <form class="formulario-clasificacion">
+                                                <p class="clasificacion">
+                                                    <input id="radio1" type="radio" name="estrellas" value="5"><!--
                                             --><label for="radio1"><i class="fa-solid fa-star"></i></label><!--
                                             --><input id="radio2" type="radio" name="estrellas" value="4"><!--
                                             --><label for="radio2"><i class="fa-solid fa-star"></i></label><!--
@@ -138,126 +174,100 @@
                                             --><label for="radio4"><i class="fa-solid fa-star"></i></label><!--
                                             --><input id="radio5" type="radio" name="estrellas" value="1"><!--
                                             --><label for="radio5"><i class="fa-solid fa-star"></i></label>
+                                                </p>
+                                            </form>
+
+
                                             </p>
-                                        </form>
+                                            <p class="precios">$ <%= element.precio %>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </article>
+                            </a>
 
+                            <% }); %>
 
-                                    </p>
-                                    <p class="precios">$ <%= element.precio %></p>
-                                </div>
-                            </div>
-                        </article>
-                    </a>
-                
-                <% }); %>
+                    </div>
+                </section>
+                </div>
+                </section>
 
-                </div>
-            </section>
-            </div>
-        </section>
-
-        <section class="marcas-banners" id="seccion-marcas-banners">
-            <div class="box-marcas">
-                <div>
-                    <img src="/img/banners/bannerMarcas.jpg" width= 100%; alt="Marquesina marcas"><!--Imagen momentánea solo por visualización: debe actualizarse por div con lista de logos (svgs) de marcas, aplicar flex y generar la navegación / transición respectiva (botones adelantar y rebobinar)-->
-                </div>
-            </div>
-            <div class="box-promoBanners">
-                <div class="promoBanners">
-                    <img src="/img/banners/bannerEnvio.jpg" width= 100%; alt="Envíos gratis">
-                </div>
-                <div class="promoBanners">
-                    <img src="/img/banners/bannerCajita.jpg" width= 100%; alt="Envíos gratis">
-                </div>
-                <div class="promoBanners">
-                    <img src="/img/banners/bannerMasPromos.jpg" width= 100%; alt="Envíos gratis">
-                </div>
-            </div>
-        </section>
-
-        <section class="complementos">
-            <div class="destacados">
-                <div class="head-border">
-                    <h3>DESTACADOS</h3>
-                </div>
-                <article class="container-producto">
-                    <img src="/img/productos/varios/trompeta.jpg" alt="Trompeta" >
-                    <div class="detalle-producto">
+                <section class="marcas-banners" id="seccion-marcas-banners">
+                    <div class="box-marcas">
                         <div>
-                            <p class="descripciones"><strong>Plastic Trumpet, White</strong></p>
-                            <p class="precios">Estrellas</p>
-                            <p class="descuentos">$6.770</p>
+                            <img src="/img/banners/bannerMarcas.jpg" width=100%;
+                                alt="Marquesina marcas"><!--Imagen momentánea solo por visualización: debe actualizarse por div con lista de logos (svgs) de marcas, aplicar flex y generar la navegación / transición respectiva (botones adelantar y rebobinar)-->
                         </div>
                     </div>
-                </article>
-                <article class="container-producto">
-                    <img src="/img/productos/varios/trompeta.jpg" alt="Trompeta" >
-                    <div class="detalle-producto">
-                        <div>
-                            <p class="descripciones"><strong>Plastic Trumpet, White</strong></p>
-                            <p class="precios">Estrellas</p>
-                            <p class="descuentos">$6.770</p>
+                    <div class="box-promoBanners">
+                        <div class="promoBanners">
+                            <img src="/img/banners/bannerEnvio.jpg" width=100%; alt="Envíos gratis">
+                        </div>
+                        <div class="promoBanners">
+                            <img src="/img/banners/bannerCajita.jpg" width=100%; alt="Envíos gratis">
+                        </div>
+                        <div class="promoBanners">
+                            <img src="/img/banners/bannerMasPromos.jpg" width=100%; alt="Envíos gratis">
                         </div>
                     </div>
-                </article>
-            </div>
-            <div class="comentarios">
-                <div class="head-border">
-                    <h3>COMENTARIOS</h3>
+                </section>
+                <div class="titles-last-section">
+                    <h1>novedades</h1>
+                    <h1>comentados</h1>
+                    <h1>destacados</h1>
+                    
                 </div>
-                <article class="container-producto">
-                    <img src="/img/productos/orquesta/orquesta-1.jpg" alt="Orquesta" >
-                    <div class="detalle-producto">
-                        <div>
-                            <p class="descripciones"><strong>Handcrafted Wood Acustic Violin</strong></p>
-                            <p class="precios"></p>
-                            <p class="descuentos">Por Juan Se</p>
+                <div class="last-section">
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="/img/productos/Orquesta/Orquesta-1.jpg" alt="">
                         </div>
-                    </div>
-                </article>
-                <article class="container-producto">
-                    <img src="/img/productos/orquesta/orquesta-1.jpg" alt="Orquesta" >
-                    <div class="detalle-producto">
-                        <div>
-                            <p class="descripciones"><strong>Handcrafted Wood Acustic Violin</strong></p>
-                            <p class="precios">Estrellas</p>
-                            <p class="descuentos">Por Juan Se</p>
+                        <div class="card-text">
+
+                            <p>asdasdasd</p>
+                            <p>asdasd</p>
+                            <p>asdasdasd</p>
                         </div>
+
                     </div>
-                </article>
-            </div>
-            <div class="novedades">
-                <div class="head-border">
-                    <h3>NOVEDADES</h3>
+
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="/img/productos/Orquesta/Orquesta-1.jpg" alt="">
+                        </div>
+                        <div class="card-text">
+
+                            <p>asdasdasd</p>
+                            <p>asdasd</p>
+                            <p>asdasdasd</p>
+                        </div>
+
+                    </div>
+
+                    <div class="card">
+                        <div class="img-container">
+                            <img src="/img/productos/Orquesta/Orquesta-1.jpg" alt="">
+                        </div>
+                        <div class="card-text">
+
+                            <p>asdasdasd</p>
+                            <p>asdasd</p>
+                            <p>asdasdasd</p>
+                        </div>
+
+                    </div>
+
+
                 </div>
-                <article class="container-producto">
-                    <img src="/img/productos/percusion/percusion-2.jpg" alt="Audifonos" >
-                    <div class="detalle-producto">
-                        <div>
-                            <p class="descripciones"><strong>Nuevos audífonos</strong></p>
-                            <p class="precios">$6.770</p>
-                            <p class="descuentos">40% OFF</p>
-                        </div>
-                    </div>
-                </article>
-                <article class="container-producto">
-                    <img src="/img/productos/percusion/percusion-2.jpg" alt="Audifonos" >
-                    <div class="detalle-producto">
-                        <div>
-                            <p class="descripciones"><strong>Nuevos audífonos</strong></p>
-                            <p class="precios">$6.770</p>
-                            <p class="descuentos">40% OFF</p>
-                        </div>
-                    </div>
-                </article>
-            </div>
-            <div class="espacio-publicitario">
-                <img src="/img/banners/banner_promo.jpg" alt="Publicidad">
-            </div>
-        </section>
 
-    </main>
+                <!-- <div class="espacio-publicitario">
+                        <img src="/img/banners/banner_promo.jpg" alt="Publicidad">
+                    </div> -->
 
-    <%- include('./partials/footer.ejs') %>
 
-</body>
+            </main>
+
+            <%- include('./partials/footer.ejs') %>
+
+    </body>

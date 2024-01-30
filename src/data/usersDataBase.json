@@ -54,5 +54,13 @@
   "email": "algo@gmail.com",
   "password": "$2a$10$pJRvIVlN9UoeLs2A80eX0uCaKnq7CiiiYTStZ3XqRTfFd41mJ5Yke",
   "imgProfile": "USER-ICONimgProfile - 1706480320217.jpg"
+ },
+ {
+  "userId": 8,
+  "name": "Bautista",
+  "lastName": "Merentiel",
+  "email": "Bautista.garcia.oliver@gmail.com",
+  "password": "$2a$10$BbiCsZEnCRTnsDwylpnfw.5/1EBJI57oaWzNdo2tNfoBNKnnTQptm",
+  "imgProfile": "usuario-al-azar.png"
  }
 ]
