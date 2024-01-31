@@ -26,7 +26,7 @@ app.use(methodOverride('_method'));
 // quedan almacenadas en un log.txt las rutas donde accede el usuario
 
 // app.use(logMiddleware);
-app.use(session({secret: "es secreto pa!"}))
+app.use(session({secret: "es secreto pa!", resave: false, saveUninitialized: false}))
 
 //*****************************************************************************************************\\
 

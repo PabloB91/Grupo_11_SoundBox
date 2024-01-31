@@ -16,12 +16,12 @@ const usersFilePath = path.join(__dirname, "../data/usersDataBase.json");
 
 const usersControllers = {
 
-    // (GET) Registro Estatico
+    // (GET) Formulario de Registro
     register: (req, res) => {
         res.render("forms/register")
     },
     
-    // (POST) Proceso Registro
+    // (POST) Proceso de Registro
     processToRegister: (req, res) => {
 
         const errores = validationResult(req);  //--->Traemos las validaciones
@@ -34,7 +34,7 @@ const usersControllers = {
             res.render("forms/register.ejs")
             
         } 
-        console.log(userDefinido);
+        console.log("userDefinido: ",userDefinido);
         const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8')); //--> Se trae el JSON de usuarios
         
         const passwordToValidate = req.body.password  //-->Se trae el password ingresado por el usuario, para su posterior hasheo
@@ -54,29 +54,26 @@ const usersControllers = {
 		res.redirect('users/userProfile/')  //--> Se redirige al perfil del usuario
     },
        
-    // (GET) Login Estatico
+    // (GET) Formulario de Login
     login: (req, res) => {
-
+        console.log("user controller login Session");
+      console.log(req.session);  
       res.render("forms/login.ejs");
     },
 
-    // (POST) Proceso Login
+    // (POST) Proceso de Login
     processToLogin: (req, res) => {
         
         const errors = validationResult(req);
         
         if(errors.isEmpty()){
-
-            /* aca estamos trayensdo la lista de usuarios y la estamos convirtiendo a array */
+            /* aca estamos trayendo la lista de usuarios y la estamos convirtiendo a array */
             const usersJSON = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-
-            console.log(usersJSON)
             
             /**
-             * en las siguientes lineas de codigo estamos leyendon el array pasado anteriormente
+             * en las siguientes lineas de codigo estamos leyendo el array pasado anteriormente
              * y si usersJSON es estrictamente igual a "" 
              */
-            
             let users;
 
             if (usersJSON === ""){
@@ -86,18 +83,15 @@ const usersControllers = {
             }
             
             let userToLogIn; 
-
             /**
              * si existe el usuario en la db en tonces vamos a renderizar
              *  `/users/userProfile/:id`con el siguiente codigo
             */
-
             for(let user = 0; user<users.length; user++ ) {
                 /* en el siguiente if estamos diciendo si dentro de usuarios hay un
-                usuario con correo y el correo es estrctamente igual al que se esta
-                pasando por body y adema si la contrasena macheada y la contrasena y el email coinsiden vamos a guardar de usuarios un usuario y break */
+                usuario con correo y el correo es estrictamente igual al que se esta
+                pasando por body y además si la contraseña matcheada y la contraseña y el email coinciden vamos a guardar de usuarios un usuario y break */
                 if (users[user].email === req.body.email) {
-
                     if (bcrypt.compareSync(req.body.password, users[user].password)){
                         userToLogIn = users[user];
                         break;
@@ -113,30 +107,27 @@ const usersControllers = {
             */
             if (userToLogIn === undefined){
             
-            res.render("forms/login.ejs", { errors : [
-           
+                res.render("forms/login.ejs", { errors : [
                        {msg: 'La contraseña o el correo no coinciden'}
                     ], 
                     old: req.body
                 });
             }
-            
             /**
-             * sie l usuario ingreso satisfactoriamente vamos a guardar sus datos en 
-             * userTologIn
+             * si el usuario ingresó satisfactoriamente vamos a guardar sus datos en 
+             * session --> userTologIn
              */
-            req.session.userLoggedIn = userToLogIn;
- 
-            /* este redict actua solo si el usuario exixte en el db */
+            console.log(userToLogIn);
+            delete userToLogIn.password  //--> Borramos el password de la variable guardada en session, por seguridad
+            req.session.userLoggedIn = userToLogIn;  
+            /* este redirect actúa solo si el usuario exixte en el db */
             res.redirect(`/users/userProfile/${userToLogIn.userId}`);
         }else{
-
             return res.render("forms/login.ejs", { errors: errors.array(), old: req.body });
-        
         }
     },
 
-    // (GET) Dinamismo de los Usuarios
+    // (GET) Perfil del Usuario
     userProfile: (req, res) => {
         const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
@@ -144,35 +135,32 @@ const usersControllers = {
 
 		let userDefinido = usersJson.find(user => {
 			return user.userId == userId;
-
 		})
-
+        
 		if(userDefinido){
 			res.render("user/userProfile.ejs", { user : userDefinido });
-
 		} else {
             res.render("forms/register.ejs");
 		}
 
-        /* res.render("user/userProfile.ejs"); */
+        console.log("user Profile");
+        console.log(req.session);
 
     },
 
-    // (GET) Editar Estatico
+    // (GET) Edición de Usuario
     preference: (req, res) => {
         const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 		const usersToEdit = usersJson.find((users) => {
-
 			return users.id == req.params.id;
-
 		}) 
 
 		res.render("user/userEdit.ejs", {usersToEdit})
     },
 
     // (PUT) Editar Usuario
-    editProferences: (req, res) => {
+    editPreferences: (req, res) => {
         const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 		const id = req.params.id;
