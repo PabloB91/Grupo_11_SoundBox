@@ -16,8 +16,6 @@ const usersFilePath = path.join(__dirname, '../data/usersDataBase.json');
 const mainController = {
 
     index: (req, res) => {
-        console.log("session en el main controller");
-        console.log(req.session);
         const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
         const masVendidos = products.filter(product => product.precio <= 2500)
         //console.log("masvendidos: ", masVendidos);
