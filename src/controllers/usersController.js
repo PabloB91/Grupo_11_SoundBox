@@ -28,13 +28,13 @@ const usersControllers = {
         // console.log(errores);
 
         if(!errores.isEmpty()){ //-->Si existen errores, se renderizan y además se renderizan los input de usuario que sean correctos en el objeto 'old' 
-            console.log("Errores: ", errores);
+            //console.log("Errores: ", errores);
             return res.render("forms/register.ejs", { errores: errores.array(), old: req.body}) 
         }else{
             res.render("forms/register.ejs")
             
         } 
-        console.log("userDefinido: ",userDefinido);
+        //console.log("userDefinido: ",userDefinido);
         const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8')); //--> Se trae el JSON de usuarios
         
         const passwordToValidate = req.body.password  //-->Se trae el password ingresado por el usuario, para su posterior hasheo
@@ -56,8 +56,6 @@ const usersControllers = {
        
     // (GET) Formulario de Login
     login: (req, res) => {
-        console.log("user controller login Session");
-      console.log(req.session);  
       res.render("forms/login.ejs");
     },
 
@@ -69,7 +67,6 @@ const usersControllers = {
         if(errors.isEmpty()){
             /* aca estamos trayendo la lista de usuarios y la estamos convirtiendo a array */
             const usersJSON = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-            
             /**
              * en las siguientes lineas de codigo estamos leyendo el array pasado anteriormente
              * y si usersJSON es estrictamente igual a "" 
@@ -95,6 +92,12 @@ const usersControllers = {
                     if (bcrypt.compareSync(req.body.password, users[user].password)){
                         userToLogIn = users[user];
                         break;
+                    }else {
+                        res.render("forms/login.ejs", { errors : [
+                            {msg: 'La contraseña no concide'}
+                         ], 
+                         old: req.body
+                     });
                     }
                 }
             }
@@ -106,9 +109,8 @@ const usersControllers = {
              * enviar un error
             */
             if (userToLogIn === undefined){
-            
                 res.render("forms/login.ejs", { errors : [
-                       {msg: 'La contraseña o el correo no coinciden'}
+                       {msg: 'EL correo y la contraseña no coinciden <br> o este usuarion aun no es parte de sounbox'}
                     ], 
                     old: req.body
                 });
@@ -117,10 +119,19 @@ const usersControllers = {
              * si el usuario ingresó satisfactoriamente vamos a guardar sus datos en 
              * session --> userTologIn
              */
-            console.log(userToLogIn);
+            //console.log(userToLogIn);
             delete userToLogIn.password  //--> Borramos el password de la variable guardada en session, por seguridad
+
             req.session.userLoggedIn = userToLogIn;  
-            /* este redirect actúa solo si el usuario exixte en el db */
+
+            if (req.body.remember != undefined){        //--> Creación de cookie con el email del usuario, para poder recuperar la sesión 
+                                                        //--> Si el usuario clickea el checkbox, se crea la cookie. 'req.body.remember' es el elemento HTML del checkbox
+                                                        //--> Entonces si ese elemento NO es indefinido (al clickearse, toma el valor de 'on'), se crea la cookie.
+                //console.log(req.body.remember);/* (verificar el valor del checkbox) */         
+                res.cookie('remember', userToLogIn.email, {maxAge: 60000})
+            }
+
+            /* este redirect actúa solo si el usuario existe en el db */
             res.redirect(`/users/userProfile/${userToLogIn.userId}`);
         }else{
             return res.render("forms/login.ejs", { errors: errors.array(), old: req.body });
@@ -143,8 +154,8 @@ const usersControllers = {
             res.render("forms/register.ejs");
 		}
 
-        console.log("user Profile");
-        console.log(req.session);
+        //console.log("user Profile");
+        //console.log(req.session);
 
     },
 
