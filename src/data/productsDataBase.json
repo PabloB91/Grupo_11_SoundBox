@@ -42,5 +42,25 @@
    "Orquesta"
   ],
   "estado": "masVendido"
+ },
+ {
+  "id": 4,
+  "imagen": "SOUNDBOXform-imagen - 1706671195635.jpg",
+  "imagenFrontal": "IMG_DEFAULT.svg",
+  "imagenLateralDerecha": "IMG_DEFAULT.svg",
+  "imagenLateralIzquierda": "IMG_DEFAULT.svg",
+  "marca": "yamaha",
+  "nombre": "guitarra",
+  "precio": 2000000,
+  "descuento": 0,
+  "descripcion": "guitarra electrica de yamaha",
+  "cantidad": 1,
+  "coloresDisponibles": [
+   "negro"
+  ],
+  "categories": [
+   "Guitarra"
+  ],
+  "estado": "Últimos agregados"
  }
 ]
