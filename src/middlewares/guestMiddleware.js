@@ -5,11 +5,11 @@
 
 function guestMiddleware(req, res, next){
     if(req.session.userLoggedIn){
-        console.log("middleware userLoggedIn");
-        console.log(req.session.userLoggedIn); 
+        //console.log("middleware userLoggedIn");
+        //console.log(req.session.userLoggedIn); 
         return res.redirect(`/users/userProfile/${req.session.userLoggedIn.userId}`)
     }else{
-        console.log("guest middleware else"); 
+        //console.log("guest middleware else"); 
         next()
     }
 }

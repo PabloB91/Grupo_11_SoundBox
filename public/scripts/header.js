@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     let link_usuario= document.querySelector('.account')
-    console.log(link_usuario.href);
+    //console.log(link_usuario.href);
 })
 
 
