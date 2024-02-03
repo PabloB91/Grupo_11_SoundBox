@@ -6,13 +6,17 @@ const router = express.Router();
 const mainController = require("../controllers/mainController");
 // ********************************************
 
+// ************ Middlewares ************
+const authMiddleware = require('../middlewares/authMiddleware'); //--> Requerimos el 'authMiddleware'
+// ********************************************
+
 router.get("/",mainController.index);
 
 router.get("/category/:nombre", mainController.categories)
 
-router.get("/productCart", mainController.carrito);
-
-router.get("/admin", mainController.admin);
+router.get("/productCart", authMiddleware ,mainController.carrito); /* --> Se aplica el 'authMiddleware' (si el usuario está logueado, continúa con el controlador,
+                                                                    * si no, lo redirige al login) */
+router.get("/admin", authMiddleware,mainController.admin);
 
 router.get("/allTheProducts", mainController.allProducts);
 

@@ -47,11 +47,12 @@ const usersControllers = {
             password: bcrypt.hashSync(passwordToValidate, 10),
             imgProfile: req.file == undefined ? "alvaro.jpg" : req.file.filename
         }
-                /* usersJson.push(newUser);  //--> Se agrega el nuevo usuario a la variable del JSON
+        
+        usersJson.push(newUser);  //--> Se agrega el nuevo usuario a la variable del JSON
 
 		fs.writeFileSync(usersFilePath, JSON.stringify(usersJson, null, ' '));  //--> Se escribe el archivo JSON con la variable modificada */
 
-		res.redirect('users/userProfile/')  //--> Se redirige al perfil del usuario
+		res.redirect('users/login')  //--> Se redirige al perfil del usuario
     },
        
     // (GET) Formulario de Login
@@ -110,7 +111,7 @@ const usersControllers = {
             */
             if (userToLogIn === undefined){
                 res.render("forms/login.ejs", { errors : [
-                       {msg: 'EL correo y la contraseña no coinciden <br> o este usuarion aun no es parte de sounbox'}
+                       {msg: 'EL correo o la contraseña no coinciden o este usuario aún no es parte de SoundBox'}
                     ], 
                     old: req.body
                 });
