@@ -3,12 +3,14 @@ const express = require('express');
 const router = express.Router();
 const multer = require('multer');
 const path = require("path");
-const guestMiddleware = require('../middlewares/guestMiddleware');
-const authMiddleware = require('../middlewares/authMiddleware');
 const { body, check } = require('express-validator');
 
+// Controlador de usuarios
 const usersController = require('../controllers/usersController');
 
+// Middlewares
+const guestMiddleware = require('../middlewares/guestMiddleware');
+const authMiddleware = require('../middlewares/authMiddleware');
 
 // Validacion de Registro
 const registerValidations = [
@@ -26,8 +28,6 @@ const registerValidations = [
         }
         return true;
       }),
-
-
 ];
 
 
@@ -71,7 +71,8 @@ const upload = multer({storage});
  * en esta linea de codigo estamos diciendo que al entrar en la ruta /userProfile/:userId nos va a
  * decolver la vista de user que esta en el usersConreoller
  */
-router.get('/userProfile/:userId', usersController.userProfile);
+router.get('/userProfile/:userId',  authMiddleware,usersController.userProfile);
+
 
 
 // Login
@@ -82,7 +83,7 @@ router.get('/userProfile/:userId', usersController.userProfile);
  * usersController
  */
 router.get('/login', guestMiddleware, usersController.login);
-router.post('/login', guestMiddleware, loginValidations, usersController.processToLogin);
+router.post('/login', loginValidations, usersController.processToLogin);
 
 
 // Register
@@ -92,14 +93,14 @@ router.post('/login', guestMiddleware, loginValidations, usersController.process
  * que vamos a cargar una sola imagen en el input con el name imgProfile luego vamos a usar la validacion
  * y por ultimo vamos a ingresar al processToCreate que esta en el usersController
  */
-router.get('/register', usersController.register);
+router.get('/register', guestMiddleware,usersController.register);
 router.post('/register', upload.single('imgProfile'), registerValidations, usersController.processToRegister); 
 //---> El orden de los parámetros es importante, porque si no las validaciones de error no se procesan correctamente. Primero se pasa el Multer y después las Validaciones
 
 
 // Editar Preferencias
 router.get('/editUser/:id/preference', usersController.preference) 
-router.put('/editUser/:id/preference', upload.single("imgProfile"), usersController.editProferences);
+router.put('/editUser/:id/preference', upload.single("imgProfile"), usersController.editPreferences);
 
 
 // Eliminar usuario 

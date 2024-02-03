@@ -16,27 +16,27 @@ const usersFilePath = path.join(__dirname, "../data/usersDataBase.json");
 
 const usersControllers = {
 
-    // (GET) Registro Estatico
+    // (GET) Formulario de Registro
     register: (req, res) => {
         res.render("forms/register")
     },
     
-    // (POST) Proceso Registro
+    // (POST) Proceso de Registro
     processToRegister: (req, res) => {
 
         const errores = validationResult(req);  //--->Traemos las validaciones
         // console.log(errores);
 
         if(!errores.isEmpty()){ //-->Si existen errores, se renderizan y además se renderizan los input de usuario que sean correctos en el objeto 'old' 
-            console.log("Errores: ", errores);
+            //console.log("Errores: ", errores);
             return res.render("forms/register.ejs", { errores: errores.array(), old: req.body}) 
         }else{
             res.render("forms/register.ejs")
             
         } 
-
+        //console.log("userDefinido: ",userDefinido);
         const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8')); //--> Se trae el JSON de usuarios
-
+        
         const passwordToValidate = req.body.password  //-->Se trae el password ingresado por el usuario, para su posterior hasheo
         
         newUser = {     //--> Se crea el objeto para un nuevo usuario
@@ -47,37 +47,30 @@ const usersControllers = {
             password: bcrypt.hashSync(passwordToValidate, 10),
             imgProfile: req.file == undefined ? "alvaro.jpg" : req.file.filename
         }
-        
-        usersJson.push(newUser);  //--> Se agrega el nuevo usuario a la variable del JSON
+                /* usersJson.push(newUser);  //--> Se agrega el nuevo usuario a la variable del JSON
 
-		fs.writeFileSync(usersFilePath, JSON.stringify(usersJson, null, ' '));  //--> Se escribe el archivo JSON con la variable modificada
+		fs.writeFileSync(usersFilePath, JSON.stringify(usersJson, null, ' '));  //--> Se escribe el archivo JSON con la variable modificada */
 
 		res.redirect('users/userProfile/')  //--> Se redirige al perfil del usuario
     },
        
-    // (GET) Login Estatico
+    // (GET) Formulario de Login
     login: (req, res) => {
-
       res.render("forms/login.ejs");
     },
 
-    // (POST) Proceso Login
+    // (POST) Proceso de Login
     processToLogin: (req, res) => {
         
         const errors = validationResult(req);
         
         if(errors.isEmpty()){
-
-            /* aca estamos trayensdo la lista de usuarios y la estamos convirtiendo a array */
+            /* aca estamos trayendo la lista de usuarios y la estamos convirtiendo a array */
             const usersJSON = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-
-            console.log(usersJSON)
-            
             /**
-             * en las siguientes lineas de codigo estamos leyendon el array pasado anteriormente
+             * en las siguientes lineas de codigo estamos leyendo el array pasado anteriormente
              * y si usersJSON es estrictamente igual a "" 
              */
-            
             let users;
 
             if (usersJSON === ""){
@@ -87,21 +80,24 @@ const usersControllers = {
             }
             
             let userToLogIn; 
-
             /**
              * si existe el usuario en la db en tonces vamos a renderizar
              *  `/users/userProfile/:id`con el siguiente codigo
             */
-
             for(let user = 0; user<users.length; user++ ) {
                 /* en el siguiente if estamos diciendo si dentro de usuarios hay un
-                usuario con correo y el correo es estrctamente igual al que se esta
-                pasando por body y adema si la contrasena macheada y la contrasena y el email coinsiden vamos a guardar de usuarios un usuario y break */
+                usuario con correo y el correo es estrictamente igual al que se esta
+                pasando por body y además si la contraseña matcheada y la contraseña y el email coinciden vamos a guardar de usuarios un usuario y break */
                 if (users[user].email === req.body.email) {
-
                     if (bcrypt.compareSync(req.body.password, users[user].password)){
                         userToLogIn = users[user];
                         break;
+                    }else {
+                        res.render("forms/login.ejs", { errors : [
+                            {msg: 'La contraseña no concide'}
+                         ], 
+                         old: req.body
+                     });
                     }
                 }
             }
@@ -113,31 +109,36 @@ const usersControllers = {
              * enviar un error
             */
             if (userToLogIn === undefined){
-            
-            res.render("forms/login.ejs", { errors : [
-           
-                       {msg: 'La contraseña o el correo no coinciden'}
+                res.render("forms/login.ejs", { errors : [
+                       {msg: 'EL correo y la contraseña no coinciden <br> o este usuarion aun no es parte de sounbox'}
                     ], 
                     old: req.body
                 });
             }
-            
             /**
-             * sie l usuario ingreso satisfactoriamente vamos a guardar sus datos en 
-             * userTologIn
+             * si el usuario ingresó satisfactoriamente vamos a guardar sus datos en 
+             * session --> userTologIn
              */
-            req.session.userLoggedIn = userToLogIn;
- 
-            /* este redict actua solo si el usuario exixte en el db */
+            //console.log(userToLogIn);
+            delete userToLogIn.password  //--> Borramos el password de la variable guardada en session, por seguridad
+
+            req.session.userLoggedIn = userToLogIn;  
+
+            if (req.body.remember != undefined){        //--> Creación de cookie con el email del usuario, para poder recuperar la sesión 
+                                                        //--> Si el usuario clickea el checkbox, se crea la cookie. 'req.body.remember' es el elemento HTML del checkbox
+                                                        //--> Entonces si ese elemento NO es indefinido (al clickearse, toma el valor de 'on'), se crea la cookie.
+                //console.log(req.body.remember);/* (verificar el valor del checkbox) */         
+                res.cookie('remember', userToLogIn.email, {maxAge: 60000})
+            }
+
+            /* este redirect actúa solo si el usuario existe en el db */
             res.redirect(`/users/userProfile/${userToLogIn.userId}`);
         }else{
-
             return res.render("forms/login.ejs", { errors: errors.array(), old: req.body });
-        
         }
     },
 
-    // (GET) Dinamismo de los Usuarios
+    // (GET) Perfil del Usuario
     userProfile: (req, res) => {
         const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
@@ -145,35 +146,32 @@ const usersControllers = {
 
 		let userDefinido = usersJson.find(user => {
 			return user.userId == userId;
-
 		})
-
+        
 		if(userDefinido){
 			res.render("user/userProfile.ejs", { user : userDefinido });
-
 		} else {
             res.render("forms/register.ejs");
 		}
 
-        /* res.render("user/userProfile.ejs"); */
+        //console.log("user Profile");
+        //console.log(req.session);
 
     },
 
-    // (GET) Editar Estatico
+    // (GET) Edición de Usuario
     preference: (req, res) => {
         const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 		const usersToEdit = usersJson.find((users) => {
-
 			return users.id == req.params.id;
-
 		}) 
 
 		res.render("user/userEdit.ejs", {usersToEdit})
     },
 
     // (PUT) Editar Usuario
-    editProferences: (req, res) => {
+    editPreferences: (req, res) => {
         const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 		const id = req.params.id;
@@ -197,49 +195,18 @@ const usersControllers = {
 		res.redirect("users/userProfile/" + usersToEdit.id)
     },
 
-   /*  destroy: (req, res) => {
+    delete: (req, res) => {
 
         const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 		// eliminar
-		user = usersJson.filter(product =>{
-			
-			return product.userId != req.params.id;
-
+		users = usersJson.filter(user =>{           //--> Buscamos el usuario seleccionado dentro del json
+			return user.userId != req.params.id;    //--> Se devuelven todos los usuarios excepto el seleccionado
 		})
 
-		fs.writeFileSync(usersFilePath, JSON.stringify(usersJson, null, " "))
+		fs.writeFileSync(usersFilePath, JSON.stringify(users, null, " "))
 
-		res.redirect("/")
-	},
- */
-    // (delete) Delete - Eliminar un producto de la DB
-
-
-	delete: (req, res) => {
-        /**
-         * la siguiente linea lee el contenido del archivo JSON que contiene los
-         * datos de los usuarios y lo convierte en un objeto JavaScript utilizando
-         */
-        const usersJSON = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-
-        // eliminar
-        /**
-         * Filtra el arreglo de usuarios para eliminar aquellos cuyo userId 
-         * no coincide con el Id almacenado en la sesión del usuario que está 
-         * realizando la solicitud. Esto efectivamente elimina al usuario actual 
-         * de la lista de usuarios.
-         */
-		
-		user = users.filter(user =>{
-                                /* params-session */
-			return user.userId != req.params.userId;
-
-		})
-
-		fs.writeFileSync(usersFilePath, JSON.stringify(user, null, " "))
-
-		res.redirect("/")
+		res.redirect("/admin/usersList")
 	}
 }
 

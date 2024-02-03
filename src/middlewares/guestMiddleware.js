@@ -1,9 +1,17 @@
-function gestMiddleware(req, res, next){
-    if(req.session.userToLogIn == undefined){
-        next();
+//--Middleware de la ruta '/login'.--//
+
+//--> Si el usuario está logueado, y accede a la ruta '/login' lo envía a su página de perfil, si no, continúa la ejecución del controlador, 
+//-- que lo envía al formulario de login--//
+
+function guestMiddleware(req, res, next){
+    if(req.session.userLoggedIn){
+        //console.log("middleware userLoggedIn");
+        //console.log(req.session.userLoggedIn); 
+        return res.redirect(`/users/userProfile/${req.session.userLoggedIn.userId}`)
     }else{
-         res.redirect("/users/login")
+        //console.log("guest middleware else"); 
+        next()
     }
 }
 
-module.exports = gestMiddleware;
+module.exports = guestMiddleware;

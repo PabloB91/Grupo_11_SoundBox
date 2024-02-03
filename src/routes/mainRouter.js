@@ -3,11 +3,10 @@ const express = require("express");
 const router = express.Router();
 
 // ************ Controller Require ************
-const authMiddleware = require("../middlewares/authMiddleware");
 const mainController = require("../controllers/mainController");
 // ********************************************
 
-router.get("/", mainController.index);
+router.get("/",mainController.index);
 
 router.get("/category/:nombre", mainController.categories)
 

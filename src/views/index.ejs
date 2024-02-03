@@ -16,16 +16,46 @@
 
             <section class="slider-frame">
                 <ul>
-                    <li><img src="/img/banners/Banner-carrusel1.jpg" alt=""></li>
-                    <li><img src="/img/banners/Banner-carrusel2.jpg" alt=""></li>
-                    <li><img src="/img/banners/Banner-carrusel1.jpg" alt=""></li>
-                    <li><img src="/img/banners/Banner-carrusel2.jpg" alt=""></li>
+                    <li>
+                            <img src="/img/banners/Banner-carrusel1.jpg" alt="">
+                    </li>
+                    <li>
+                            <img src="/img/banners/Banner-carrusel2.jpg" alt="">
+                    </li>
+                    <li>
+                            <img src="/img/banners/Banner-carrusel1.jpg" alt="">
+                    </li>
+                    <li>
+                            <img src="/img/banners/Banner-carrusel2.jpg" alt="">
+                    </li>
                 </ul>
-
             </section>
 
+            <section class="right-menu-container">
+                <section class="right-menu">
+                    <div class="right-icons">
+                        <img src="/img/svg/cajitaSBX.svg" alt="">
+                    </div>
+                    <div class="right-icons-text">
+                        <p>asdasdasd</p>
+                    </div>
+                </section>
 
+                <section class="right-menu">
+                    <div class="right-icons">
+                        <i class="fa-regular fa-heart"></i>
+                    </div>
+                    <div class="right-icons-text">
+                        <p>asdasdasd</p>
+                    </div>
+                </section>
 
+                <section class="right-menu go-top-container">
+                    <div class="right-icons">
+                        <i class="fa-solid fa-arrow-up"></i>
+                    </div>
+                </section>
+            </section>
 
 
 
@@ -153,15 +183,15 @@
 
                     <% masVendidos.forEach(element=> { %>
                         <a href="/products/productDetail/<%= element.id %>" class="product">
-                                <img src="/img/products/<%= element.imagen %>" alt="Trompeta">
-                                <div class="detalle-producto">
-                                    <p class="descripciones"><strong>Plastic Trumpet, White</strong></p>
-                                    <div class="container-detalle">
-                                        <p class="calificacion">
+                            <img src="/img/products/<%= element.imagen %>" alt="Trompeta">
+                            <div class="detalle-producto">
+                                <p class="descripciones"><strong>Plastic Trumpet, White</strong></p>
+                                <div class="container-detalle">
+                                    <p class="calificacion">
 
-                                        <form class="formulario-clasificacion">
-                                            <p class="clasificacion">
-                                                <input id="radio1" type="radio" name="estrellas" value="5"><!--
+                                    <form class="formulario-clasificacion">
+                                        <p class="clasificacion">
+                                            <input id="radio1" type="radio" name="estrellas" value="5"><!--
                                             --><label for="radio1"><i class="fa-solid fa-star"></i></label><!--
                                             --><input id="radio2" type="radio" name="estrellas" value="4"><!--
                                             --><label for="radio2"><i class="fa-solid fa-star"></i></label><!--
@@ -171,15 +201,15 @@
                                             --><label for="radio4"><i class="fa-solid fa-star"></i></label><!--
                                             --><input id="radio5" type="radio" name="estrellas" value="1"><!--
                                             --><label for="radio5"><i class="fa-solid fa-star"></i></label>
-                                            </p>
-                                        </form>
+                                        </p>
+                                    </form>
 
 
-                                        </p>
-                                        <p class="precios">$ <%= element.precio %>
-                                        </p>
-                                    </div>
+                                    </p>
+                                    <p class="precios">$ <%= element.precio %>
+                                    </p>
                                 </div>
+                            </div>
                         </a>
 
                         <% }); %>
@@ -221,12 +251,18 @@
                             <img src="/img/productos/Orquesta/Orquesta-1.jpg" alt="">
                         </div>
                         <div class="card-text">
-                            <span><%= element.nombre %></span>
-                            <p><%= element.marca %></p>
-                            <p><%= element.precio %></p>
+                            <span>
+                                <%= element.nombre %>
+                            </span>
+                            <p>
+                                <%= element.marca %>
+                            </p>
+                            <p>
+                                <%= element.precio %>
+                            </p>
                         </div>
                     </a>
-                <% }); %>
+                    <% }); %>
             </div>
 
             <!-- <div class="espacio-publicitario">

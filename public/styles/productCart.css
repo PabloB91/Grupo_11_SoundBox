@@ -80,8 +80,8 @@
 }
 
 .precio-descuento span {
-    font-size: 25px;
-    margin: 20px;
+    font-size: 20px;
+    margin: 10px;
 
 }
 
@@ -262,10 +262,12 @@ details p {
     align-items: center;
     justify-content: space-evenly;
     background-color: #ebebeb;
-    max-height: 49rem;
-    margin-bottom: 1rem;
-    border: 17px solid black;
-    border-radius: 13%;
+    max-height: 20rem;
+    max-width: 100%;
+    margin-bottom: 2rem;
+    padding: 0 0 15px ;
+    border: 5px solid black;
+    border-radius: 18px;
     box-shadow: 25px 25px 50px gray;
     overflow-y: scroll;
 }
@@ -312,12 +314,6 @@ details p {
     display: flex;
     color: white;
     justify-content: center;
-}
-
-p {
-    display: flex;
-    justify-content: space-around;
-    text-align: center;
 }
 
 p i {
@@ -477,22 +473,7 @@ input:checked+.slider:before {
 }
 
 
-/* animaciones */
 
-.card:hover {
-    background-color: #f7f7f7;
-    transform: scale(0.95);
-    border: 5px solid white;
-    border-radius: 8px;
-    transition: all .5s ease;
-
-}
-
-.card:hover .delete-card {
-    display: flex;
-    cursor: pointer;
-
-}
 
 /* media queeries para pc SMALL */
 @media (min-width:1024px) {
@@ -503,7 +484,7 @@ input:checked+.slider:before {
     }
 
     .seccion-secundaria {
-        width: 28%;
+        width: 30%;
 
     }
 
@@ -531,6 +512,23 @@ input:checked+.slider:before {
 
     }
 
+    /* animaciones */
+
+    .card:hover {
+        background-color: #f7f7f7;
+        transform: scale(0.98);
+        border: 5px solid white;
+        border-radius: 8px;
+        transition: all .3s ease-in-out;
+
+    }
+
+    .card:hover .delete-card {
+        display: flex;
+        cursor: pointer;
+
+    }
+
 }
 
 /* MEDIA QUERIES PARA TABLET */
@@ -543,10 +541,6 @@ input:checked+.slider:before {
 
     }
 
-}
-
-/* MEDIA QUERIES PARA TELEFONO */
-@media(max-width:750px) {
     .seccion-contenedora {
         display: flex;
         flex-direction: column;
@@ -559,7 +553,7 @@ input:checked+.slider:before {
     }
 
     .seccion-secundaria {
-        width: 70vw;
+        width: 85vw;
 
     }
 
@@ -574,7 +568,57 @@ input:checked+.slider:before {
     }
 
     .total-summary {
-       border-radius: 0px;
+        border-radius: 0px;
+
+    }
+
+    .card {
+        margin: 5px;
+
+    }
+}
+
+/* MEDIA QUERIES PARA TELEFONO */
+@media(max-width:425px) {
+
+    .card {
+        flex-direction: column;
+        height: auto;
+        margin: 0.5rem;
+
+    }
+
+    .descripcion-card {
+        display: none;
+
+    }
+
+    .precio-descuento {
+        flex-direction: row;
+
+    }
+
+    .carrito,
+    .favoritos {
+        margin: 0;
+        margin-top: 1rem;
+
+    }
+
+    .nombre-marca {
+        width: 90%;
+        display: flex;
+        align-items: center;
+
+    }
+
+    .switch {
+        margin: 15px;
+
+    }
+
+    .card img {
+        width: 85%;
 
     }
 

@@ -38,7 +38,7 @@
                 //     let palabrasOrdenadas = cadena.trim();
                 //     palabrasOrdenadas.sort();
 
-                //     for(let i  = 0; i < palabrasOrdenadas.lenght; i++) {
+                //     for(let i  = 0; i < palabrasOrdenadas.length; i++) {
                 //         const li = document.createElement("li");
                 //         li.innerHTML = palabrasOrdenadas[i];
                 //         ol.appendChild(li);
