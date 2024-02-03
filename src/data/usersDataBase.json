@@ -46,5 +46,13 @@
   "email": "ftcapitani@gmail.com",
   "password": "$2a$10$lKAnWQfSOJ3gWQVLo85Zs.Yepjk0Essg8SLZqc5yzZ1qXHC9LzijG",
   "imgProfile": "usuario-al-azar.png"
+ },
+ {
+  "userId": 10,
+  "name": "Juan",
+  "lastName": "Fosch",
+  "email": "baz@mail.com",
+  "password": "$2a$10$3S9Bq3dqUC9Za6JejEsryOWp.O3.St6baw8OnuDbTGlTIjLs68YEC",
+  "imgProfile": "alvaro.jpg"
  }
 ]

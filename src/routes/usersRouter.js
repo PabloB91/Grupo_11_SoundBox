@@ -69,18 +69,18 @@ const upload = multer({storage});
 // Perfil del usuario
 /**
  * en esta linea de codigo estamos diciendo que al entrar en la ruta /userProfile/:userId nos va a
- * decolver la vista de user que esta en el usersConreoller
+ * devolver la vista de user que esta en el usersConreoller. Además, se aplica el 'authMiddleware' (si el usuario está logueado, continúa con el controlador,
+ * si no, lo redirige al login)
  */
-router.get('/userProfile/:userId',  authMiddleware,usersController.userProfile);
-
-
+router.get('/userProfile/:userId', authMiddleware,usersController.userProfile);
 
 // Login
 /**
- * en esta dos lineas de codigo lo que estamos diciendo es que al entrar en la ruta por get de /login
- * vamos a usar del usersController le objeto login y en el router que viaja por post estamo diciendo
- * que vamos a usar la validacion y por ultimo vamos a ingresar al processToRegister que esta en el 
- * usersController
+ * en esta dos lineas de código lo que estamos diciendo es que al entrar en la ruta por get de /login
+ * vamos a usar del usersController le objeto login y en el router que viaja por post estamos diciendo
+ * que vamos a usar la validación y por último vamos a ingresar al processToRegister que esta en el 
+ * usersController. Además, se aplica el 'guestMiddleware' (Si el usuario está logueado, lo redirige a su página de perfil, si no, continúa 
+ * al formulario de login)
  */
 router.get('/login', guestMiddleware, usersController.login);
 router.post('/login', loginValidations, usersController.processToLogin);
@@ -91,7 +91,9 @@ router.post('/login', loginValidations, usersController.processToLogin);
  * en esta dos lineas de codigo lo que estamos diciendo es que al entrar en la ruta por get de /regiter
  * vamos a usar del usersController le objeto register y en el router que viaja por post estamo diciendo
  * que vamos a cargar una sola imagen en el input con el name imgProfile luego vamos a usar la validacion
- * y por ultimo vamos a ingresar al processToCreate que esta en el usersController
+ * y por ultimo vamos a ingresar al processToCreate que esta en el usersController.
+ * Además, se aplica el 'guestMiddleware' (Si el usuario está logueado, lo redirige a su página de perfil, si no, continúa 
+ * al formulario de login)
  */
 router.get('/register', guestMiddleware,usersController.register);
 router.post('/register', upload.single('imgProfile'), registerValidations, usersController.processToRegister); 
@@ -99,11 +101,13 @@ router.post('/register', upload.single('imgProfile'), registerValidations, users
 
 
 // Editar Preferencias
-router.get('/editUser/:id/preference', usersController.preference) 
+router.get('/editUser/:id/preference', authMiddleware,usersController.preference)  /*--> se aplica el 'authMiddleware' (si el usuario está logueado, continúa con el controlador,
+                                                                                     * si no, lo redirige al login) */
 router.put('/editUser/:id/preference', upload.single("imgProfile"), usersController.editPreferences);
 
 
 // Eliminar usuario 
-router.delete('/delete/:id', usersController.delete);
+router.delete('/delete/:id', authMiddleware,usersController.delete); /* se aplica el 'authMiddleware' (si el usuario está logueado, continúa con el controlador,
+                                                        * si no, lo redirige al login) */
 
 module.exports = router;
