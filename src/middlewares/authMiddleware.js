@@ -1,7 +1,7 @@
-//--Middleware de ruta '/userProfile/:userId'.--//
+//--Middleware de ruta para usuarios logueados.--//
 
-//--> Si el usuario está logueado, y accede a la ruta '/userProfile/:userId'  continúa la ejecución del controlador que 
-//-- lo envía a su página de perfil, si no, lo redirige al formulario de login.--//
+//--> Si el usuario está logueado, y accede a la ruta seleccionada, continúa la ejecución del controlador de esa ruta, 
+//-- si no, lo redirige al formulario de login.--//
 
 function authMiddleware(req, res, next){
     if(req.session.userLoggedIn != undefined){

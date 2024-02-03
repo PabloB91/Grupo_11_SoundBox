@@ -8,7 +8,7 @@ const path = require("path")
 const productsController = require('../controllers/productsController');
 
 // *********** Middlewares Especificos ***********
-
+const authMiddleware = require('../middlewares/authMiddleware'); //--> Requerimos el 'authMiddleware'
 // *********** Multer ***********
 const storage = multer.diskStorage({
 
@@ -29,15 +29,18 @@ const upload = multer({storage});
 router.get('/productDetail/:id', productsController.detail);
 
 // Crear un producto
-router.get('/create', productsController.create);
+router.get('/create', authMiddleware ,productsController.create);/* --> Se aplica el 'authMiddleware' (si el usuario está logueado, continúa con el controlador,
+                                                                * si no, lo redirige al login) */
 router.post('/create', upload.array('form-imagen'), productsController.processCreate);
 /* router.post('/create', upload.single('image'),productsController.processCreate); */
 
 // Editar un producto 
-router.get('/edit/:id', productsController.edit); 
+router.get('/edit/:id',authMiddleware, productsController.edit); /* --> Se aplica el 'authMiddleware' (si el usuario está logueado, continúa con el controlador,
+                                                * si no, lo redirige al login) */
 router.put('/edit/:id', upload.array('form-imagen'), productsController.processEdit);
 
 // Eliminar un producto 
-router.delete('/delete/:userId', productsController.destroy);
+router.delete('/delete/:userId', authMiddleware,productsController.destroy); /* --> Se aplica el 'authMiddleware' (si el usuario está logueado, continúa con el controlador,
+                                                                             * si no, lo redirige al login) */
 
 module.exports = router;
