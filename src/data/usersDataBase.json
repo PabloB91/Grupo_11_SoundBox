@@ -54,5 +54,13 @@
   "email": "baz@mail.com",
   "password": "$2a$10$3S9Bq3dqUC9Za6JejEsryOWp.O3.St6baw8OnuDbTGlTIjLs68YEC",
   "imgProfile": "alvaro.jpg"
+ },
+ {
+  "userId": 11,
+  "name": "Bautista",
+  "lastName": "Garcia",
+  "email": "bautista.garcia.oliver@gmail.com",
+  "password": "$2a$10$X8BEzZAw2NNn2xU/g9Db5OTvjpwc5hZ54cGGF4ZrujZo1VIGnlFg2",
+  "imgProfile": "alvaro.jpg"
  }
 ]

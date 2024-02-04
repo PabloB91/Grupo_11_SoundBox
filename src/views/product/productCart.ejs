@@ -16,22 +16,22 @@
                 <section class="seccion-principal">
                     <div class="carrito" id="carrito">
                         <h1>Mi Cajita</h1>
-                        <div class="desplegable" id="desplegable">
-                            <div class="ordenador-container">
-                                <div class="ordenador">
-                                    <button onclick="hide()"><i class="fa-solid fa-circle-arrow-up"></i></button>
-                                    <button onclick="ordenarPalabras()"><i
-                                            class="fa-solid fa-arrow-down-a-z"></i></button>
-                                    <button><i class="fa-solid fa-arrow-down-short-wide"></i></button>
-                                    <button><i class="fa-solid fa-arrow-down-wide-short"></i></button>
-                                </div>
-                                <div class="labels-ordenador">
-                                    <span>Eliminar seleccionados</span>
-                                    <span>agregar a favoritos</span>
-                                </div>
+                        <div class="ordenador-container">
+                            <div class="ordenador">
+                                <button onclick="hide()"><i class="fa-solid fa-circle-arrow-up"></i></button>
+                                <button onclick="ordenarAlfabeticamente()"><i
+                                        class="fa-solid fa-arrow-down-a-z"></i></button>
+                                <button><i class="fa-solid fa-arrow-down-short-wide"></i></button>
+                                <button><i class="fa-solid fa-arrow-down-wide-short"></i></button>
                             </div>
+                            <div class="labels-ordenador">
+                                <span>Eliminar seleccionados</span>
+                                <span>agregar a favoritos</span>
+                            </div>
+                        </div>
+                        <div class="desplegable" id="desplegable">
                             <% productos.forEach(product=> { %>
-                                <div class="card">
+                                <div class="card" data-order="<%= product.id %>">
                                     <!-- Rounded switch -->
                                     <label class="switch">
                                         <input type="checkbox" required>
@@ -40,9 +40,9 @@
                                     <img src="/img/products/<%= product.imagen %>" alt="">
                                     <div class="nombre-marca">
                                         <a href="/products/productDetail/<%= product.id %>">
-                                            <h6 id="text1">
+                                            <h5>
                                                 <%= product.nombre %>
-                                            </h6>
+                                            </h5>
                                         </a>
                                         <p>
                                             <%= product.marca %>
