@@ -187,7 +187,6 @@ header {
 	/*El contenedor <div> - necesario para posicionar el contenido desplegable */
 	.dropdown {
 		position: relative;
-		display: none;
 	}
 
 	/* Contenido desplegable (oculto de forma predeterminada) */
@@ -334,7 +333,7 @@ header {
 
 .menu-burguer {
 	display: none;
-	/* animacion en media queryes */
+
 	width: 15px;
 	height: 14px;
 	flex-direction: column;
@@ -499,10 +498,11 @@ footer {
 	background: #000;
 	color: #fff;
 	width: 100%;
-	height: 30vh;
 	display: flex;
 	align-items: center;
 	justify-content: stretch;
+	position: relative;
+	padding: 30px;
 
 	.footer-center {
 		max-width: 1440px;
@@ -513,6 +513,7 @@ footer {
 
 	.container-simbol {
 		width: 20%;
+		max-width: 80px;
 
 		img {
 			width: 100%;
@@ -523,6 +524,7 @@ footer {
 	.info {
 		width: 90%;
 		display: flex;
+		justify-content: center;
 
 		ul {
 			display: flex;
@@ -547,7 +549,7 @@ footer {
 		justify-content: space-between;
 
 		.redes_img {
-			width: 30px;
+			width: 20%;
 			height: 30px;
 			margin: 10px 0px 10px;
 		}
@@ -573,17 +575,21 @@ footer {
 @media screen and (min-width: 768px) {
 	footer {
 		align-items: center;
+
 		.container-simbol {
+			position: absolute;
+			left: 5%;
 			width: 10%;
 		}
 
 		.info {
-			width: 60%;
+			width: 100%;
 		}
 	}
 }
 @media screen and (min-width: 1024px) {
 	footer {
+		justify-content: center;
 		align-items: center;
 		.container-simbol {
 			width: 10%;
@@ -592,12 +598,21 @@ footer {
 		.info {
 			width: 87%;
 			justify-content: center;
+			align-items: center;
 		}
 
 		.redes {
-			width: 3%;
 			display: flex;
 			flex-wrap: wrap;
+		}
+
+		.copyright {
+			text-align: center;
+			width: 100%;
+
+			p {
+				font-size: 1.3em;
+			}
 		}
 	}
 }
