@@ -12,8 +12,16 @@ body {
 	margin: auto;
 }
 
-main {
+.main {
 	margin-top: 50px;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.main-center {
+	max-width: 1440px;
 }
 
 body {
@@ -149,98 +157,6 @@ body.dark-theme {
 
 #skip-next {
 	padding-left: 3em;
-}
-
-/*-----COMPRA POR CATEGORÍA-----*/
-
-.compra-por-categoria {
-	background-color: #b7b3a1;
-	width: 85%;
-	margin-top: 1rem;
-	margin: auto;
-	padding: 0.5rem;
-	border-radius: 0px 0px 15px 15px;
-}
-
-.compra-por-categoria h3 {
-	font-family: "Montserrat", sans-serif;
-	font-weight: 600;
-	font-size: 20px;
-	text-align: center;
-	margin: auto;
-	padding: 0px 25px 25px;
-}
-
-.items-categorias {
-	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-	justify-content: center;
-}
-
-.left-list {
-	display: flex;
-	justify-content: center;
-}
-
-.right-list {
-	display: flex;
-	justify-content: center;
-}
-
-.categoria {
-	width: 25%;
-	border: solid 2px white;
-	border-radius: 8px;
-	position: relative;
-	margin: 15px;
-}
-
-.categoria a {
-	text-decoration: none;
-}
-
-.categoria img {
-	width: 100%;
-	border-radius: 8px;
-	margin: auto;
-	bottom: 0px;
-	z-index: 2;
-}
-
-.categoria p {
-	padding: 5px;
-	width: 100%;
-	height: 100%;
-	border-radius: 8px;
-	background-color: rgba(0, 0, 0, 0.4);
-	color: white;
-	font-family: "Bebas Neue", sans-serif;
-	font-size: 18px;
-	position: absolute;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	z-index: 3;
-	cursor: pointer;
-}
-
-.compra-por-categoria .button {
-	display: flex;
-	justify-content: center;
-	margin-top: 1.5rem;
-}
-
-.compra-por-categoria button {
-	font-family: "Montserrat";
-	font-weight: bold;
-	font-size: 10px;
-	color: white;
-	background-color: black;
-	padding: 1rem 2rem;
-	border-radius: 8px;
-	border-style: hidden;
-	cursor: pointer;
 }
 
 /*-----MÁS VENDIDOS-----*/
@@ -494,6 +410,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .slider-frame {
 	width: 84vw;
+	max-width: 1400px;
 	border-radius: 28px 28px 0 0;
 	height: auto;
 	margin: auto;
