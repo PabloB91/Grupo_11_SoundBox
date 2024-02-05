@@ -13,12 +13,13 @@ main{
 .img-admin{
     width: 250px;
     overflow: hidden;
+    margin-bottom: 5px;
     border-radius: 50%;
     transition-duration:.5s;
 
     img{
         width: 100%;
-
+        height: 100%;
     }
 
     &:hover{
