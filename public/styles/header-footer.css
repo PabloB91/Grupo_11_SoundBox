@@ -3,7 +3,10 @@
 -------------------------------------------------*/
 
 header {
+	background-color: #000;
 	position: sticky;
+	display: flex;
+	justify-content: center;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -17,9 +20,13 @@ header {
 	}
 }
 
+.header-center {
+	width: 100%;
+}
+
 .header-superior {
-	background-color: #000;
 	animation: of-hed-up linear both;
+	width: 100%;
 	animation-timeline: scroll(root block);
 	animation-range: 0 60px;
 
@@ -134,7 +141,15 @@ header {
 }
 
 .header-inferior {
+	width: 100%;
+	background: #ffffff;
+
+	.header-inferior_nav {
+		width: 100%;
+	}
 	.header-inferior_nav_ul {
+		width: 100%;
+		position: relative;
 		display: flex;
 		align-items: center;
 		justify-content: space-around;
@@ -284,8 +299,9 @@ header {
 	}
 
 	.container-header {
-		max-width: 90%;
-		margin: auto;
+		display: flex;
+		justify-content: center;
+		max-width: 1440px;
 	}
 }
 
@@ -392,25 +408,23 @@ header {
 }
 
 .search-bar {
-	position: absolute;
-	top: 45%;
-	left: 85%;
+    position: absolute;
+    top: 45%;
+    right: 7%;
+	display: flex;
 	transform: translate(-50%, -50%);
-	padding: 0 20px;
 }
 
 .search-bar input {
+	position: absolute;
+	right: 0px;
 	outline: none;
-	box-sizing: border-box;
-	height: 35px;
-	/* está oculto dentro de la animacion search-bar*/
+	height: 46px;
 	width: 0;
-	padding: 0;
 	color: black;
 	border-radius: 50px;
 	font-size: 20px;
-	border: 1px solid #ff540a;
-	transition: all 0.7s ease;
+	transition: all 0.7s cubic-bezier(0.55, 0.06, 0.68, 0.19);;
 }
 
 ::placeholder {
@@ -418,20 +432,21 @@ header {
 }
 
 .btn-search-bar {
-	position: absolute;
-	right: 0;
-	top: 0;
 	width: 45px;
 	height: 45px;
 	background-color: #ff540a;
+	box-shadow: 12px 0px 0px 5px #ffffff;
 	line-height: 80px;
 	border-radius: 50%;
 	text-align: center;
 	cursor: pointer;
 	transition: 0.5s;
+	z-index: 500;
 }
 
 .btn-search-bar i {
+	position: absolute;
+	right: 10px;
 	font-size: 25px;
 	color: lightgray;
 	line-height: 45px;
@@ -440,6 +455,7 @@ header {
 
 .search-bar:hover input {
 	width: 150px;
+	border: 2px solid #ff540a;
 }
 
 .search-bar:hover i {
