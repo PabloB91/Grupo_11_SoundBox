@@ -237,7 +237,7 @@ a:active {
         margin: auto;
         width: 100%;
         display: grid;
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         grid-auto-rows: minmax(100px, auto);
     
     }
@@ -363,9 +363,6 @@ a:active {
     }
 }
 
-
-
-
 @media (max-width:1024px) {
     .todasLasCards {
         margin: auto;
@@ -384,18 +381,6 @@ a:active {
         width: 90%;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        grid-auto-rows: minmax(100px, auto);
-    
-    }
-
-}
-
-@media (max-width:645px) {
-    .todasLasCards {
-        margin: auto;
-        width: 90%;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
         grid-auto-rows: minmax(100px, auto);
     
     }

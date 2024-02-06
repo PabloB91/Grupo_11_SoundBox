@@ -17,8 +17,8 @@
 
 .carrito,
 .favoritos {
-    /* background-color: #FF540A; */
-    background: linear-gradient(135deg, hsla(342, 100%, 88%, 1) 0%, hsla(0, 84%, 76%, 1) 17%, hsla(18, 100%, 52%, 1) 71%);
+    background-color: #FF540A;
+    /* background: linear-gradient(135deg, hsla(342, 100%, 88%, 1) 0%, hsla(0, 84%, 76%, 1) 17%, hsla(18, 100%, 52%, 1) 71%); */
     border-radius: 18px;
     margin: 1rem;
     box-shadow: 25px 25px 50px gray;

@@ -3,6 +3,7 @@
 -------------------------------------------------*/
 
 header {
+	
 	background-color: #000;
 	position: sticky;
 	display: flex;
@@ -595,6 +596,7 @@ footer {
 /*media query header*/
 
 @media screen and (min-width: 768px) {
+
 	footer {
 		align-items: center;
 
@@ -610,8 +612,7 @@ footer {
 	}
 }
 @media screen and (min-width: 1024px) {
-	header {
-	}
+
 
 	footer {
 		justify-content: center;
