@@ -38,11 +38,11 @@ module.exports = (sequelize, dataTypes) => {
 
     Usuario.associate = function(models){
         Usuario.belongsTo(models.User-Type, {
-            as: "Tipo_de_Usuario",
+            as: "user-type",
             foreignKey: "user_type_id"
         })
         Usuario.belongsTo(models.Country, {
-            as: "Pais",
+            as: "country",
             foreignKey: "country_id"
         })
     }
