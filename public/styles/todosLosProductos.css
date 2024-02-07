@@ -1,420 +1,371 @@
 body {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-    font-size: 12px;
-    font-style: normal;
-    margin: auto;
+	font-family: "Montserrat", sans-serif;
+	font-weight: 400;
+	font-size: 12px;
+	font-style: normal;
+	margin: auto;
 }
 
 main {
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 .ordenador {
-    width: 10vw;
-    background-color: #FF540A;
-    position: absolute;
-    left: 1px;
-    z-index: 9999;
+	width: 10vw;
+	background-color: #ff540a;
+	color: #fff;
+	position: absolute;
+	left: 1px;
+	z-index: 888;
 }
 
 .titulo-ordenador {
-    font-size: 20px;
-    color: white;
-    margin-left: 1.2vw;
-    margin-top: 0.2vw;
-    position: fixed;
+	font-size: 20px;
+	color: white;
+	margin-left: 1.2vw;
+	margin-top: 0.2vw;
+	position: fixed;
 }
 
 .filtro-presupuesto {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 
-    input {
-        width: 80%;
-
-    }
-
+	input {
+		width: 80%;
+	}
 }
 
 .filtrar-plata {
-    display: flex;
-    flex-direction: column;
-    margin: 1rem;
-    padding: 0.5rem;
+	display: flex;
+	flex-direction: column;
+	margin: 1rem;
+	padding: 0.5rem;
 }
 
 .primer-seccion {
-    margin: 1rem;
-    padding: 0.5rem;
-
+	margin: 1rem;
+	padding: 0.5rem;
 }
 
 .segunda-seccion {
-    margin: 1rem;
-    padding: 0.5rem;
+	margin: 1rem;
+	padding: 0.5rem;
 }
 
 .tercer-seccion {
-    margin: 1rem;
-    padding: 0.5rem;
-
+	margin: 1rem;
+	padding: 0.5rem;
 }
 
 .cuarta-seccion {
-    margin: 1rem;
-    padding: 0.5rem;
-
+	margin: 1rem;
+	padding: 0.5rem;
 }
 
 .titulo-filtros {
-    display: flex;
-    justify-content: center;
-
+	display: flex;
+	justify-content: center;
 }
 
 .populares-1 {
-    display: flex;
-    justify-content: space-between;
-    margin: 1rem;
+	display: flex;
+	justify-content: space-between;
+	margin: 1rem;
 }
 
 .seccion-general {
-    width: 100vw;
-    padding-top: 20px;
-    background-color: #B7B3A1;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
+	width: 100vw;
+	padding-top: 20px;
+	background-color: #b7b3a1;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
 }
 
 .barra-titulo {
-    display: flex;
-    width: 100vw;
-    background-color: black;
-    height: auto;
-    display: flex;
-    justify-content: center;
+	display: flex;
+	width: 100vw;
+	background-color: black;
+	height: auto;
+	display: flex;
+	justify-content: center;
 }
 
 .titulo {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 26px;
-    color: wheat;
-
+	font-family: "Montserrat", sans-serif;
+	font-size: 26px;
+	color: wheat;
 }
 
-
-
-
-
-
 .descripcion-producto {
-    display: flex;
-    width: 90%;
-    height: auto;
-    justify-content: space-between;
-    margin-top: 10px;
-    margin-bottom: 10px;
+	display: flex;
+	width: 90%;
+	height: auto;
+	justify-content: space-between;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 .descuento {
-    color: green;
-
+	color: green;
 }
 
 /* animaciones */
 
 .dropdown-ordenador {
-    display: none;
-
+	display: none;
 }
 
 .ordenador:hover {
-    width: 30vw;
-    border-radius: 0px 25px 25px 0px;
-    transition: 0.5s;
+	width: 30vw;
+	border-radius: 0px 25px 25px 0px;
+	transition: 0.5s;
 }
 
 .ordenador:hover .dropdown-ordenador {
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 .ordenador:hover .titulo-ordenador {
-    align-self: center;
-    animation: titleAnimation .9s;
-    margin-left: 40%;
-    position: sticky;
-    color: black;
-
+	align-self: center;
+	animation: titleAnimation 0.9s;
+	margin-left: 40%;
+	position: sticky;
+	color: black;
 }
 
 @keyframes titleAnimation {
-    0% {
-        transform: translateX(-40%);
-        margin-left: 0;
-        opacity: 100%;
-    }
+	0% {
+		transform: translateX(-40%);
+		margin-left: 0;
+		opacity: 100%;
+	}
 
-    25% {
-        opacity: 50%;
-    }
+	25% {
+		opacity: 50%;
+	}
 
-    50% {
-        transform: translateX(50%);
-        opacity: 25%;
-    }
+	50% {
+		transform: translateX(50%);
+		opacity: 25%;
+	}
 
-    100% {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-
+	100% {
+		transform: translateX(100%);
+		opacity: 0;
+	}
 }
-
 
 /*tageta add*/
 
 .img_card-add {
-
-    #add-icon {
-        font-size: 100px;
-        color: #fff;
-    }
+	#add-icon {
+		font-size: 100px;
+		color: #fff;
+	}
 }
 
 /* animaciones carta*/
 
 .todasLasCards {
-    width: 90%;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-auto-rows: minmax(100px, auto);
-
+	width: 90%;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-auto-rows: minmax(100px, auto);
 }
 
 /* la verdadera card */
 .container-producto {
-    margin: auto;
-    width: 20vw;
-    margin-bottom: 2vh;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+	margin: auto;
+	width: 20vw;
+	margin-bottom: 2vh;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
 }
 
 .container-producto img {
-    width: 12vw;
-    margin: auto;
-    border: solid 1px black;
-    border-radius: 4px;
+	width: 12vw;
+	margin: auto;
+	border: solid 1px black;
+	border-radius: 4px;
 }
 
 .detalle-producto p {
-    font-family: 'Montserrat';
-    font-size: 14px;
-    padding-left: 5px;
-
+	font-family: "Montserrat";
+	font-size: 14px;
+	padding-left: 5px;
 }
 
 a:link,
 a:visited,
 a:hover,
 a:active {
-    color: black;
+	color: black;
 }
-
 
 /****************************/
 /*      media queryes */
 /****************************/
 
-@media (max-width:4000px) {
-    .todasLasCards {
-        margin: auto;
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        grid-auto-rows: minmax(100px, auto);
-    
-    }
+@media (max-width: 4000px) {
+	.todasLasCards {
+		margin: auto;
+		width: 100%;
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		grid-auto-rows: minmax(100px, auto);
+	}
 
-    .cardPlusIcon {
-        color: #008000ab;
-        transform: translateX(-5px);
-        text-align: center;
-        justify-content: center;
-        width: 100%;
-        font-size: 175px;
-        position: absolute;
-        z-index: 999;
-        /* luego quiero eliminar 
+	.cardPlusIcon {
+		color: #008000ab;
+		transform: translateX(-5px);
+		text-align: center;
+		justify-content: center;
+		width: 100%;
+		font-size: 175px;
+		position: absolute;
+		z-index: 999;
+		/* luego quiero eliminar 
         la foto del Sounbox y dejar 
         solo el texto con el más arriba */
-    }
+	}
 
-    .card .face {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        backface-visibility: hidden;
-        border-radius: 10px;
-        overflow: hidden;
-        transition: .5s;
+	.card .face {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		backface-visibility: hidden;
+		border-radius: 10px;
+		overflow: hidden;
+		transition: 0.5s;
+	}
 
-    }
+	.card .front {
+		transform: perspective(600px) rotateY(0deg);
+		box-shadow: 0 5px 10px black;
+	}
 
-    .card .front {
-        transform: perspective(600px) rotateY(0deg);
-        box-shadow: 0 5px 10px black;
+	.card .front img {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
 
-    }
+	.card .front h3 {
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+		line-height: 45px;
+		color: white;
+		background-color: rgba(0, 0, 0, 0.4);
+		text-align: center;
+	}
 
-    .card .front img {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+	.card .back {
+		transform: perspective(600px) rotateY(180deg);
+		background-color: #ff540a;
+		padding: 15px;
+		color: white;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		text-align: center;
+		border: 2px solid black;
+	}
 
-    }
+	.card .back h3 {
+		font-size: 30px;
+		margin-top: 20px;
+		letter-spacing: 2px;
+		color: white;
+		background-color: rgba(0, 0, 0, 0.4);
+		border: 2px solid black;
+		border-radius: 8px;
+		padding: 8px;
+	}
 
-    .card .front h3 {
-        width: 100%;
-        position: absolute;
-        bottom: 0;
-        line-height: 45px;
-        color: white;
-        background-color: rgba(0, 0, 0, .4);
-        ;
-        text-align: center;
+	.card .back p {
+		letter-spacing: 1px;
+	}
 
-    }
+	.marca-descripcion {
+		color: black;
+	}
 
-    .card .back {
-        transform: perspective(600px) rotateY(180deg);
-        background-color: #FF540A;
-        padding: 15px;
-        color: white;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        text-align: center;
-        border: 2px solid black;
+	.price {
+		color: green;
+		font-size: 25px;
+	}
 
-    }
+	.card:hover .front {
+		transform: perspective(600px) rotateY(180deg);
+	}
 
-    .card .back h3 {
-        font-size: 30px;
-        margin-top: 20px;
-        letter-spacing: 2px;
-        color: white;
-        background-color: rgba(0, 0, 0, .4);
-        border: 2px solid black;
-        border-radius: 8px;
-        padding: 8px;
+	.card:hover {
+		transform: scale(1.1);
+	}
 
-    }
+	.card:hover .back {
+		transform: perspective(600px) rotateY(360deg);
+	}
 
-    .card .back p {
-        letter-spacing: 1px;
+	.card {
+		position: relative;
+		width: 200px;
+		height: 275px;
+	}
 
-    }
-
-    .marca-descripcion {
-        color: black;
-
-    }
-
-    .price {
-        color: green;
-        font-size: 25px;
-    }
-
-    .card:hover .front {
-        transform: perspective(600px) rotateY(180deg);
-
-    }
-
-    .card:hover {
-        transform: scale(1.1);
-
-    }
-
-    .card:hover .back {
-        transform: perspective(600px) rotateY(360deg);
-
-    }
-
-
-
-
-    .card {
-        position: relative;
-        width: 200px;
-        height: 275px;
-    }
-
-    .href-padding {
-        width: 90%;
-
-    }
+	.href-padding {
+		width: 90%;
+	}
 }
 
-
-
-
-@media (max-width:1024px) {
-    .todasLasCards {
-        margin: auto;
-        width: 90%;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-auto-rows: minmax(100px, auto);
-    
-    }
-
+@media (max-width: 1024px) {
+	.todasLasCards {
+		margin: auto;
+		width: 90%;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-auto-rows: minmax(100px, auto);
+	}
 }
 
-@media (max-width:768px) {
-    .todasLasCards {
-        margin: auto;
-        width: 90%;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-auto-rows: minmax(100px, auto);
-    
-    }
-
+@media (max-width: 768px) {
+	.todasLasCards {
+		margin: auto;
+		width: 90%;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-auto-rows: minmax(100px, auto);
+	}
 }
 
-@media (max-width:645px) {
-    .todasLasCards {
-        margin: auto;
-        width: 90%;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-auto-rows: minmax(100px, auto);
-    
-    }
-
+@media (max-width: 645px) {
+	.todasLasCards {
+		margin: auto;
+		width: 90%;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-auto-rows: minmax(100px, auto);
+	}
 }
 
-@media (max-width:425px) {
-    .todasLasCards {
-        margin: auto;
-        width: 90%;
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        grid-auto-rows: minmax(100px, auto);
-    
-    }
+@media (max-width: 425px) {
+	.todasLasCards {
+		margin: auto;
+		width: 90%;
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+		grid-auto-rows: minmax(100px, auto);
+	}
 
-    .ordenador:hover {
-        width: 75vw;
-
-    }
-
+	.ordenador:hover {
+		width: 75vw;
+	}
 }
