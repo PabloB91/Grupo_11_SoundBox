@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    const TipoUsuario = sequelize.define("Tipo_de_usuario", {
+    const Estado = sequelize.define("Estado", {
         id:{
             type: dataTypes.INTEGER,
             primaryKey : true,
@@ -7,23 +7,21 @@ module.exports = (sequelize, dataTypes) => {
             unique: true,
             allowNull: false,
         },
-        country_name: {
+        state_name: {
             type: dataTypes.STRING(50),
-            unique: true,
             allowNull: false
         }
     },
     {
-        tableName: "user_type",
+        tableName: "state",
         timestamps: false
     })
 
-    TipoUsuario.associate = function(models){
-        TipoUsuario.hasMany(models.User, {
-            as: "user",
-            foreignKey: "user-type_id"
+    Estado.associate = function(models){
+        Estado.hasMany(models.Product, {
+            as: "products",
+            foreignKey: "state_id"
         })
     }
-
-    return TipoUsuario
+    return Estado
 }

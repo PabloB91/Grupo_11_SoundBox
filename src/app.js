@@ -24,7 +24,8 @@ app.use(express.json())
 app.use(methodOverride('_method'));
 
 // Para guardar cookies en el cliente
-app.use(cookieParser())
+app.use(cookieParser()) 
+
 //*****************************************************************************************************\\
 
 // MIDDLEWARES ESCRITOS POR NOSOTROS

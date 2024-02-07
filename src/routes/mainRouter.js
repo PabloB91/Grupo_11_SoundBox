@@ -20,6 +20,8 @@ router.get("/admin", authMiddleware,mainController.admin);
 
 router.get("/allTheProducts", mainController.allProducts);
 
+router.get("/contactUs", mainController.contactUs);
+
 /**
  * El siguente codigo solo es una prueba para session a recargar la pagina nos mostarar el numero en 
  * aumento, numero el cual queda guardado en el servidor.

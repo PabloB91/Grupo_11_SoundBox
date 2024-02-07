@@ -21,7 +21,7 @@ const mainController = {
         //console.log("masvendidos: ", masVendidos);
         const ofertas = products.filter(product => product.descuento != 0)
         // console.log(ofertas);
-        res.render("index", { masVendidos: masVendidos},
+        res.render("index", { masVendidos: masVendidos, products : products},
         ); 
 
     },
@@ -59,6 +59,16 @@ const mainController = {
 
         // console.log(productCart) 
         res.render("product/productCart.ejs", { productos: products });
+
+    },
+
+    contactUs: (req, res) => {
+        const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+        //console.log(req.params.nombre);
+
+        const productCategory = products.filter(product => product.categories === req.params.nombre)
+        //console.log(productCategory)
+        res.render("contactUs.ejs", { productos: productCategory })
 
     },
 

@@ -18,11 +18,11 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false
     })
 
-    Marca.associate = function(models){
+    Marca.associate = function(models) {
         Marca.hasMany(models.Product, {
-            as: "Producto",
-            foreignKey: "brand_id"
-        })
-    }
+            as: 'products',
+            foreignKey: 'brand_id'
+        });
+      };
     return Marca
 }

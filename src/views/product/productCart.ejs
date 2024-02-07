@@ -1,12 +1,11 @@
-
-    <%- include("../partials/head") %>
+<%- include("../partials/head") %>
     <link rel="stylesheet" href="styles/productCart.css">
     <script src="https://kit.fontawesome.com/d5c465f7b6.js" crossorigin="anonymous"></script>
     <title>Product Cart</title>
 
     <%- include("../partials/header") %>
 
-    <main>
+        <main>
             <div>
                 <h1 class="titulo-seccion">
                     ¡Bienvenido al Carrito!
@@ -25,8 +24,16 @@
                                 <button><i class="fa-solid fa-arrow-down-wide-short"></i></button>
                             </div>
                             <div class="labels-ordenador">
-                                <span>Eliminar seleccionados</span>
-                                <span>agregar a favoritos</span>
+                                <form method="POST" action="/">
+                                    <select id="send-to">Eliminar seleccionados</select>
+                                    <!-- <option value="valueA">a</option>
+                                    <option value="valueA">b</option>
+                                    <option value="valueA">c</option> -->
+                                    <select id="send-to">agregar a favoritos</select>
+                                    <!-- <option value="valueB">a</option>
+                                    <option value="valueB">b</option>
+                                    <option value="valueB">c</option> -->
+                                </form>
                             </div>
                         </div>
                         <div class="desplegable" id="desplegable">
@@ -37,7 +44,9 @@
                                         <input type="checkbox" required>
                                         <span class="slider round"></span>
                                     </label>
-                                    <img src="/img/products/<%= product.imagen %>" alt="">
+                                    <div class="card-image-container">
+                                        <img src="/img/products/<%= product.imagen %>" alt="">
+                                    </div>
                                     <div class="nombre-marca">
                                         <a href="/products/productDetail/<%= product.id %>">
                                             <h5>
@@ -98,6 +107,16 @@
                         <input type="submit">
                     </div>
 
+                    <section class="google-maps-container">
+
+                        <!-- google maps div -->
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31814.088114193386!2d-74.170368!3d4.636672!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9dcb9ac15e93%3A0xc6bf5b05b9a52c99!2sParque%20Dindalito%20Bella%20Vista!5e0!3m2!1ses-419!2sco!4v1707265372189!5m2!1ses-419!2sco"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <!-- google maps fin -->
+                    </section>
+
                     <div class="descripcion-pago-total">
                         <h6 class="titulo-desplegable-pago-total">TOTAL:</h6>
                         <% productos.forEach(product=> { %>
@@ -134,83 +153,50 @@
                 <h1>Seguí navegando! </h1>
             </div>
 
-            <section class="carruseles-contenedor">
-                <div class="separador-externo"></div>
-                <section class="seccion-carrusel">
-                    <div class="corredor">
-                        <% productos.forEach(product=> { %>
-                            <div class="image-related">
-                                <img src=/img/products/<%=product.imagen %> alt="">
-                            </div>
-
-                            <!-- fin del carrusel agregar a carrito -->
-
-                            <% }); %>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <img src="image1.jpg" alt="Image 1">
+                    <div class="price-discount">
+                        <p class="price">$100</p>
+                        <p class="discount">20% off</p>
                     </div>
-
-
-
-                    <div class="corredor">
-                        <% productos.forEach(product=> { %>
-                            <div class="image-related">
-                                <img src="/img/products/<%=product.imagen %>" alt="">
-                            </div>
-
-                            <!-- fin del carrusel agregar a carrito -->
-
-                            <% }); %>
+                </div>
+                <div class="grid-item">
+                    <img src="image2.jpg" alt="Image 2">
+                    <div class="price-discount">
+                        <p class="price">$150</p>
+                        <p class="discount">10% off</p>
                     </div>
-                </section>
-                <div class="separador-externo"></div>
-            </section>
-
-
-            <div class="summary-container">
-                <h1>Metodos De Pago</h1>
-                <div class="total-summary">
-
-                    <details>
-                        <summary>
-                            <h5>detalles del envio </h5>
-                        </summary>
-                        <p>envio a colombia y argentina por medio de OCA </p>
-                    </details>
-
-                    <details>
-                        <summary>
-                            <h5>Pagon con tarjeta:</h5>
-                        </summary>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste,</p>
-                    </details>
-                    <details>
-                        <summary>
-                            <h5>Pagon con tarjeta:</h5>
-                        </summary>
-                        <p>
-                            <i class="fa-brands fa-cc-visa"></i>
-                            <i class="fa-brands fa-cc-mastercard"></i>
-                            <i class="fa-solid fa-credit-card"></i>
-                            <i class="fa-brands fa-cc-paypal"></i>
-                        </p>
-                    </details>
-                    <details>
-                        <summary>
-                            <h5>Pagos en efectivo:</h5>
-                        </summary>
-                        <p>
-                            <i class="fa-brands fa-ioxhost"></i>
-                            <i class="fa-brands fa-ioxhost"></i>
-                            <i class="fa-brands fa-ioxhost"></i>
-                            <i class="fa-brands fa-ioxhost"></i>
-                        </p>
-                    </details>
+                </div>
+                <div class="grid-item">
+                    <img src="image3.jpg" alt="Image 3">
+                    <div class="price-discount">
+                        <p class="price">$75</p>
+                        <p class="discount">30% off</p>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <img src="image4.jpg" alt="Image 4">
+                    <div class="price-discount">
+                        <p class="price">$200</p>
+                        <p class="discount">5% off</p>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <img src="image5.jpg" alt="Image 5">
+                    <div class="price-discount">
+                        <p class="price">$50</p>
+                        <p class="discount">40% off</p>
+                    </div>
                 </div>
             </div>
-            <!--                          sumario                         -->
-    </main>
 
-    <%- include("../partials/footer") %>
 
-    <!-- los script va a ir en nuestros archivos ejs hasta que 
+
+        </main>
+
+        <%- include("../partials/footer") %>
+
+            <!-- los script va a ir en nuestros archivos ejs hasta que 
     aprendamos DOM, luego los activamos en el partial del foter-->
-    <script src="/scripts/productCart.js"></script>
+            <script src="/scripts/productCart.js"></script>

@@ -374,9 +374,18 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .last-section {
-	display: flex;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
 	justify-content: space-evenly;
-	width: 90%;
+	width: 100%;
+
+	.promo-container {
+		img {
+			width: 100%;
+
+		}
+
+	}
 }
 
 .img-container {
@@ -399,28 +408,40 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .titles-last-section {
-	h1 {
+	span {
 		font-size: 28px;
 	}
 
 	width: 100%;
 	display: flex;
-	justify-content: space-evenly;
+	justify-content: space-around;
 }
 
 .slider-frame {
-	width: 84vw;
-	max-width: 1400px;
-	border-radius: 28px 28px 0 0;
-	height: auto;
-	margin: auto;
-
-	overflow: hidden;
+    box-shadow: 0px 0px 48px 11px #ab8adbad;
+    width: 84vw;
+    max-width: 1400px;
+    border-radius: 28px;
+    height: auto;
+    margin: auto;
+    overflow: hidden;
 
 	ul {
 		display: flex;
 		width: 500%;
-		animation: slide 15s infinite;
+		/* animation: slide 15s infinite; */
+
+		.yt-iframe-container {
+
+			iframe {
+				border: 3px solid black;
+
+				width: 100%;
+				height: 100%;
+
+			}
+
+		}
 	}
 
 	li {
@@ -491,9 +512,25 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .slider-buttons {
-	background: #ff540a;
-	width: 100%;
-	height: 60px;
+    border-radius: 0px 0px 28px 28px;
+    background: #ff540a;
+    width: 100%;
+    height: 60px;
+	display: flex;
+	justify-content: center;
+	.grid-items-slider {
+		width: 25px;
+		margin: 5px;
+
+		a {
+			width: 25px;
+			background-color: white;
+			color: white;
+			border-radius: 50%;
+
+		}
+
+	}
 }
 .right-menu-container {
 	position: fixed;
@@ -506,26 +543,28 @@ input[type="number"]::-webkit-outer-spin-button {
 		display: none;
 	}
 
-	background-color: black;
-	margin: 5px;
+	background-color: rgba(167, 167, 167, 0.8);
+	margin-bottom: 5px;
+	border-radius: 8px;
+
+	&:hover right-icons-text{
+		.right-icons-text {
+			display: flex;
+		}
+	}
 
 	.right-icons {
+
 		display: flex;
 		height: 50px;
 		width: 50px;
 		align-items: center;
 		justify-content: center;
 
-		&:hover {
-			.right-icons-text {
-				display: flex;
-			}
-		}
-
 		img,
 		i {
 			font-size: 25px;
-			color: white;
+			color: black;
 		}
 	}
 }
@@ -534,6 +573,11 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 @media (max-width: 768px) {
+	.slider-frame {
+		width: 95%;
+
+	}
+
 	.categoria {
 		margin: auto;
 	}
