@@ -354,19 +354,23 @@
                         </div>
 
                         <li class="search-bar">
-                            <div class="search-bar_input">
-                                <input type="search" placeholder=" Buscar..">
-                            </div>
-                            <div class="btn-search-bar">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                            </div>
+                            <form action="/search" method="GET">
+
+                                <div class="search-bar_input">
+                                    <input name="search" type="search" placeholder="Guitarra electrica">
+                                </div>
+                                <button type="submit" name="search" class="btn-search-bar">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </button>
+
+                            </form>
                         </li>
 
                     </nav>
                 </div>
 
                 <div class="menuBurger fireldGeaderBottom">
-
+                    <i class="fa-solid fa-bars"></i>
                 </div>
 
             </section>

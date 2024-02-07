@@ -359,14 +359,6 @@ p i {
 
 /* ----------------------------------------------------------------------------------------------------------------- */
 
-.titulo-seccion {
-    display: flex;
-    justify-content: center;
-    background-color: black;
-    color: wheat;
-
-}
-
 .carruseles-contenedor {
     display: flex;
     flex-direction: column;
