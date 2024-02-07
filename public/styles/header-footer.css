@@ -162,6 +162,7 @@ header {
 		display: flex;
 		width: 100%;
 		padding: 5px;
+		justify-content: space-evenly;
 
 		.logoSbx {
 			width: 50px;
@@ -216,6 +217,7 @@ header {
 			.search-bar {
 				position: relative;
 				overflow: hidden;
+				width: 200px;
 				display: flex;
 				flex-wrap: wrap;
 				border: 1px solid #ff540a;
@@ -279,6 +281,21 @@ header {
 					left: 2px;
 					top: 2px;
 				}
+			}
+		}
+
+		.menuBurger.fireldGeaderBottom {
+			display: flex;
+			align-items: center;
+			cursor: pointer;
+
+			i {
+				color: #ff540a;
+				font-size: 1.2rem;
+			}
+
+			&:hover i {
+				color: #550c18;
 			}
 		}
 
