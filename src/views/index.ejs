@@ -81,7 +81,6 @@
                     <h3>MÁS VENDIDOS</h3>
 
                     <div class="items-mas-vendidos">
-
                         <% masVendidos.forEach(element=> { %>
                             <a href="/products/productDetail/<%= element.id %>" class="product">
                                 <img src="/img/products/<%= element.imagen %>" alt="Trompeta">
@@ -119,6 +118,74 @@
                 </section>
 
                 <section class="marcas-banners" id="seccion-marcas-banners">
+                    <h5>Compra Por categoria</h5>
+                    <div class="dropdown-content-categoria">
+
+                        <section class="compra-por-categoria" id="section-categorias">
+                            <div class="items-categorias">
+
+                                <article class="categoria fade-diagonal ">
+                                    <a href="/category/Guitarras">
+                                        <p>Guitarras</p>
+                                        <img src="/img/home/categoria-guitarras.jpg" alt="Guitarras">
+                                    </a>
+                                </article>
+
+                                <article class="categoria fade-diagonal ">
+                                    <a href="categoria/Accesorios">
+                                        <p>Accesorios</p>
+                                        <img src="/img/home/categoria-accesorios.jpg" alt="Accesorios">
+                                    </a>
+                                </article>
+
+                                <article class="categoria fade-diagonal ">
+                                    <a href="categoria/Efectos">
+                                        <p>Efectos</p>
+                                        <img src="/img/home/categoria-efectos.jpg" alt="Efectos">
+                                    </a>
+                                </article>
+
+                                <article class="categoria fade-diagonal ">
+                                    <a href="categoria/Pianos">
+                                        <p>Teclados & Pianos</p>
+                                        <img src="/img/home/categoria-pianos-teclados.jpg"
+                                            alt="Teclados&Pianos">
+                                    </a>
+                                </article>
+
+                                <article class="categoria fade-diagonal ">
+                                    <a href="categoria/Orquesta">
+                                        <p>Orquesta</p>
+                                        <img src="/img/home/categoria-orquesta.jpg" alt="Orquesta">
+                                    </a>
+                                </article>
+
+                                <article class="categoria fade-diagonal ">
+                                    <a href="categoria/Amplificacion">
+                                        <p>Amplificación</p>
+                                        <img src="/img/home/categoria-amplificacion.jpg"
+                                            alt="Amplificación">
+                                    </a>
+                                </article>
+
+                                <article class="categoria fade-diagonal ">
+                                    <a href="categoria/Segunda-Mano">
+                                        <p>Segunda Mano</p>
+                                        <img src="/img/home/categoria-segundamano.jpg" alt="Segunda Mano">
+                                    </a>
+                                </article>
+
+                                <article class="categoria fade-diagonal ">
+                                    <a href="categoria/Grabacion">
+                                        <p>Grabación</p>
+                                        <img src="/img/home/categoria-grabacion.jpg" alt="Grabación">
+                                    </a>
+                                </article>
+
+                            </div>
+                        </section>
+
+                    </div>
                     <div class="box-marcas">
                         <div>
                             <img src="/img/banners/bannerMarcas.jpg" width=100%; alt="Marquesina marcas">

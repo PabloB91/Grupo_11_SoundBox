@@ -30,7 +30,7 @@
   "marca": "Marca",
   "nombre": "Nombre del producto",
   "precio": 1000,
-  "descuento": 20,
+  "descuento": 2000,
   "descripcion": "Descripcion",
   "cantidad": 10,
   "coloresDisponibles": [
@@ -51,10 +51,10 @@
   "imagenLateralIzquierda": "IMG_DEFAULT.svg",
   "marca": "yamaha",
   "nombre": "guitarra",
-  "precio": 2000000,
+  "precio": 2000,
   "descuento": 0,
   "descripcion": "guitarra electrica de yamaha",
-  "cantidad": 1,
+  "cantidad": 10,
   "coloresDisponibles": [
    "negro"
   ],
@@ -71,10 +71,10 @@
     "imagenLateralIzquierda": "IMG_DEFAULT.svg",
     "marca": "yamaha",
     "nombre": "guitarra",
-    "precio": 2000000,
+    "precio": 2000,
     "descuento": 0,
     "descripcion": "guitarra electrica de yamaha",
-    "cantidad": 1,
+    "cantidad": 20,
     "coloresDisponibles": [
      "negro"
     ],
