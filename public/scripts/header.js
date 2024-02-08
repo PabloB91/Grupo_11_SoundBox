@@ -19,14 +19,17 @@ function disappear () {
 let boxMusicSBX  = document.querySelector('.box-img');
 boxMusicSBX.classList.toggle('disappear', window.scrollY>1);
 };
+
 function grow () {
 let textMusicSBX  = document.querySelector('.tex-soundbox');
 textMusicSBX.classList.toggle('grow', window.scrollY>1);
 };
+
 function flatten () {
 let containerMusicSBX  = document.querySelector('.logoSbx');
 containerMusicSBX.classList.toggle('flatten', window.scrollY>1);
 };
+
 function fixed () {
 let headerBottomAnimation  = document.querySelector('.headerBottom');
 headerBottomAnimation.classList.toggle('fixed', window.scrollY);
