@@ -10,35 +10,54 @@
 
                 <section class="slider-frame">
                     <ul>
-                        <li>
-                            <img src="/img/banners/Banner-carrusel1.jpg" alt="">
+                        <!-- <li>
+                            <img src="/img/banners/Banner-carrusel1.jpg" id="Banner-image1" alt="">
+                        </li> -->
+                        <li class="yt-iframe-container">
+                            <!-- quiero entre banner y banner se vea un video de cada instrumento
+                                 con la api de youtube usando:-->
+                            <iframe width="560" height="315"
+                                src="https://www.youtube.com/embed/3uneA-cstZs?si=4yaoLe7hZo7IzrNw&start=10&autoplay=1&controls=0"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen></iframe>
+                            <!-- iframe de yt -->
                         </li>
                         <li>
-                            <img src="/img/banners/Banner-carrusel2.jpg" alt="">
+                            <img src="/img/banners/Banner-carrusel2.jpg" id="Banner-image2" alt="">
+                        </li>
+
+                        <li>
+                            <img src="/img/banners/Banner-carrusel3.jpg" id="Banner-image3" alt="">
                         </li>
                         <li>
-                            <img src="/img/banners/Banner-carrusel1.jpg" alt="">
+                            <img src="/img/banners/Banner-carrusel4.jpg" id="Banner-image4" alt="">
                         </li>
                         <li>
-                            <img src="/img/banners/Banner-carrusel2.jpg" alt="">
-                        </li>
-                        <li>
-                            <img src="/img/banners/Banner-carrusel1.jpg" alt="">
+                            <img src="/img/banners/Banner-carrusel1.jpg" id="Banner-image5" alt="">
                         </li>
                     </ul>
 
                     <div class="slider-buttons">
-
+                        <div class="grid-items-slider">
+                            <a href="#Banner-image1">a</a>
+                        </div>
+                        <div class="grid-items-slider">
+                            <a href="#Banner-image2">a</a>
+                        </div>
+                        <div class="grid-items-slider">
+                            <a href="#Banner-image3">a</a>
+                        </div>
                     </div>
                 </section>
 
                 <section class="right-menu-container">
                     <section class="right-menu">
-                        <div class="right-icons">
-                            <img src="/img/svg/cajitaSBX.svg" alt="">
-                        </div>
                         <div class="right-icons-text">
                             <p>asdasdasd</p>
+                        </div>
+                        <div class="right-icons">
+                            <img src="/img/svg/cajitaSBX.svg" alt="">
                         </div>
                     </section>
 
@@ -62,7 +81,6 @@
                     <h3>MÁS VENDIDOS</h3>
 
                     <div class="items-mas-vendidos">
-
                         <% masVendidos.forEach(element=> { %>
                             <a href="/products/productDetail/<%= element.id %>" class="product">
                                 <img src="/img/products/<%= element.imagen %>" alt="Trompeta">
@@ -100,6 +118,74 @@
                 </section>
 
                 <section class="marcas-banners" id="seccion-marcas-banners">
+                    <h5>Compra Por categoria</h5>
+                    <div class="dropdown-content-categoria">
+
+                        <section class="compra-por-categoria" id="section-categorias">
+                            <div class="items-categorias">
+
+                                <article class="categoria fade-diagonal ">
+                                    <a href="/category/Guitarras">
+                                        <p>Guitarras</p>
+                                        <img src="/img/home/categoria-guitarras.jpg" alt="Guitarras">
+                                    </a>
+                                </article>
+
+                                <article class="categoria fade-diagonal ">
+                                    <a href="categoria/Accesorios">
+                                        <p>Accesorios</p>
+                                        <img src="/img/home/categoria-accesorios.jpg" alt="Accesorios">
+                                    </a>
+                                </article>
+
+                                <article class="categoria fade-diagonal ">
+                                    <a href="categoria/Efectos">
+                                        <p>Efectos</p>
+                                        <img src="/img/home/categoria-efectos.jpg" alt="Efectos">
+                                    </a>
+                                </article>
+
+                                <article class="categoria fade-diagonal ">
+                                    <a href="categoria/Pianos">
+                                        <p>Teclados & Pianos</p>
+                                        <img src="/img/home/categoria-pianos-teclados.jpg"
+                                            alt="Teclados&Pianos">
+                                    </a>
+                                </article>
+
+                                <article class="categoria fade-diagonal ">
+                                    <a href="categoria/Orquesta">
+                                        <p>Orquesta</p>
+                                        <img src="/img/home/categoria-orquesta.jpg" alt="Orquesta">
+                                    </a>
+                                </article>
+
+                                <article class="categoria fade-diagonal ">
+                                    <a href="categoria/Amplificacion">
+                                        <p>Amplificación</p>
+                                        <img src="/img/home/categoria-amplificacion.jpg"
+                                            alt="Amplificación">
+                                    </a>
+                                </article>
+
+                                <article class="categoria fade-diagonal ">
+                                    <a href="categoria/Segunda-Mano">
+                                        <p>Segunda Mano</p>
+                                        <img src="/img/home/categoria-segundamano.jpg" alt="Segunda Mano">
+                                    </a>
+                                </article>
+
+                                <article class="categoria fade-diagonal ">
+                                    <a href="categoria/Grabacion">
+                                        <p>Grabación</p>
+                                        <img src="/img/home/categoria-grabacion.jpg" alt="Grabación">
+                                    </a>
+                                </article>
+
+                            </div>
+                        </section>
+
+                    </div>
                     <div class="box-marcas">
                         <div>
                             <img src="/img/banners/bannerMarcas.jpg" width=100%; alt="Marquesina marcas">
@@ -118,13 +204,13 @@
                     </div>
                 </section>
 
+
                 <div class="titles-last-section">
-                    <h1>novedades</h1>
-                    <h1>comentados</h1>
-                    <h1>destacados</h1>
+                    <span>novedades</span>
+                    <span>comentados</span>
+                    <span>destacados</span>
 
                 </div>
-
                 <div class="last-section">
                     <% masVendidos.forEach(element=> { %>
                         <a href="/products/productDetail/<%= element.id %>" class="card">
@@ -144,6 +230,45 @@
                             </div>
                         </a>
                         <% }); %>
+                            <% masVendidos.forEach(element=> { %>
+                                <a href="/products/productDetail/<%= element.id %>" class="card">
+                                    <div class="img-container">
+                                        <img src="/img/productos/Orquesta/Orquesta-1.jpg" alt="">
+                                    </div>
+                                    <div class="card-text">
+                                        <span>
+                                            <%= element.nombre %>
+                                        </span>
+                                        <p>
+                                            <%= element.marca %>
+                                        </p>
+                                        <p>
+                                            <%= element.precio %>
+                                        </p>
+                                    </div>
+                                </a>
+                                <% }); %>
+                                    <% products.forEach(element=> { %>
+                                        <a href="/products/productDetail/<%= element.id %>" class="card">
+                                            <div class="img-container">
+                                                <img src="/img/productos/Orquesta/Orquesta-1.jpg" alt="">
+                                            </div>
+                                            <div class="card-text">
+                                                <span>
+                                                    <%= element.nombre %>
+                                                </span>
+                                                <p>
+                                                    <%= element.marca %>
+                                                </p>
+                                                <p>
+                                                    <%= element.precio %>
+                                                </p>
+                                            </div>
+                                        </a>
+                                        <% }); %>
+                                        <div class="promo-container">
+                                            <img src="img/banners/banner_promo.jpg" alt="">
+                                        </div>
                 </div>
 
             </div>

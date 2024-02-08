@@ -11,49 +11,9 @@
 
     <!-- =========================================================================================================== -->
 
-    <main>       
-            <p><%= user.userId %></p>       
-                <h1>Bienvenido/a <%= user.name %>!</h1>
+    <main>             
                 <section class="primary-section">
-                    <section class="first-section">
-                        <div class="user-description" id="user-description">
-                            <h3>
-                                <%= user.name %>
-                            </h3>
-                            <h3>
-                                <%= user.lastName %>
-                            </h3>
-                            <h3>
-                                <%= user.email %>
-                            </h3>
-                            <p>Argentina</p>
-
-                            <div class="delete-user">
-                                <button onclick="show()"> Editar usuario </button>
-                            </div>
-                        </div>
-                        <section id="edit-user-form">
-                            <form action="">
-                                <label for=""><p>Name</p>
-                                    <input type="text" value="<%= user.name %>" >
-                                </label>
-                                <label for=""><p>Last name</p>
-                                    <input type="text" value="<%= user.lastName %>">
-                                </label>
-                                <label for=""><p>Email</p>
-                                    <input type="text" value="<%= user.email %>" >
-                                </label>
-
-                                <div>
-                                    <input type="submit">
-                                </div>
-                                <div>
-                                    <button onclick="hide()">volver</button>
-                                </div>
-                            </form>
-                        </section>
-
-                    </section>
+                    
                     <section class="second-section">
                         <div class="img-container">
                             <img src="/img/users/<%= user.imgProfile %>" alt="">
@@ -62,7 +22,7 @@
                             <input type="file">
                             <input type="submit">
                         </div>
-
+                        
                         <div class="editar-borrar">
                             <form action="/users/delete/<%= user.userId %>?_method=DELETE" method="POST"
                                 style="display: inline-flex">
@@ -70,9 +30,53 @@
                             </form>
                         </div>
                     </section>
+                    <!-- google maps div -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31814.088114193386!2d-74.170368!3d4.636672!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9dcb9ac15e93%3A0xc6bf5b05b9a52c99!2sParque%20Dindalito%20Bella%20Vista!5e0!3m2!1ses-419!2sco!4v1707265372189!5m2!1ses-419!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <!-- google maps fin -->
                 </section>
+                <section class="first-section">
+                    <div class="user-description" id="user-description">
+                        <h3>
+                            <strong> Bienvenido/a a Sound-Box </strong>
+                            <%= user.name %>
+                            !!
+                        </h3>
+                        <h3>
+                            <%= user.lastName %>
+                        </h3>
+                        <h3>
+                            <%= user.email %>
+                        </h3>
+                        <p>Argentina</p>
 
-
+                        <div class="delete-user">
+                            <button onclick="show()"> Editar usuario </button>
+                        </div>
+                    </div>
+                    <section id="edit-user-form">
+                        <form action="">
+                            <label for=""><p>Name</p>
+                                <input type="text" value="<%= user.name %>" >
+                            </label>
+                            <label for=""><p>Last name</p>
+                                <input type="text" value="<%= user.lastName %>">
+                            </label>
+                            <label for=""><p>Email</p>
+                                <input type="text" value="<%= user.email %>" >
+                            </label>
+                            
+                            <div>
+                                <input type="submit">
+                            </div>
+                            <div>
+                                <button onclick="hide()">volver</button>
+                            </div>
+                        </form>
+                    </section>
+                    
+                </section>
+                
+                
                 <section class="registered-purchases">
                     <h3>Compras anteriores</h3>
                     <div class="lastest-purchases">

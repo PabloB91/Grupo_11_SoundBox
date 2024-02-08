@@ -30,7 +30,7 @@
   "marca": "Marca",
   "nombre": "Nombre del producto",
   "precio": 1000,
-  "descuento": 20,
+  "descuento": 2000,
   "descripcion": "Descripcion",
   "cantidad": 10,
   "coloresDisponibles": [
@@ -51,10 +51,10 @@
   "imagenLateralIzquierda": "IMG_DEFAULT.svg",
   "marca": "yamaha",
   "nombre": "guitarra",
-  "precio": 2000000,
+  "precio": 2000,
   "descuento": 0,
   "descripcion": "guitarra electrica de yamaha",
-  "cantidad": 1,
+  "cantidad": 10,
   "coloresDisponibles": [
    "negro"
   ],
@@ -64,17 +64,17 @@
   "estado": "Últimos agregados"
  },
  {
-    "id": 4,
+    "id": 5,
     "imagen": "SOUNDBOXform-imagen - 1706671195635.jpg",
     "imagenFrontal": "IMG_DEFAULT.svg",
     "imagenLateralDerecha": "IMG_DEFAULT.svg",
     "imagenLateralIzquierda": "IMG_DEFAULT.svg",
     "marca": "yamaha",
     "nombre": "guitarra",
-    "precio": 2000000,
+    "precio": 2000,
     "descuento": 0,
     "descripcion": "guitarra electrica de yamaha",
-    "cantidad": 1,
+    "cantidad": 20,
     "coloresDisponibles": [
      "negro"
     ],
@@ -84,14 +84,14 @@
     "estado": "Últimos agregados"
    },
    {
-    "id": 4,
+    "id": 6,
     "imagen": "SOUNDBOXform-imagen - 1706671195635.jpg",
     "imagenFrontal": "IMG_DEFAULT.svg",
     "imagenLateralDerecha": "IMG_DEFAULT.svg",
     "imagenLateralIzquierda": "IMG_DEFAULT.svg",
     "marca": "yamaha",
     "nombre": "guitarra",
-    "precio": 2000000,
+    "precio": 2000,
     "descuento": 0,
     "descripcion": "guitarra electrica de yamaha",
     "cantidad": 1,
