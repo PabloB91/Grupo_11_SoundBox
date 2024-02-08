@@ -3,7 +3,6 @@
 -------------------------------------------------*/
 
 header {
-	
 	background-color: #000;
 	width: 100%;
 	z-index: 999;
@@ -286,7 +285,7 @@ header {
 				.fa-solid {
 					position: absolute;
 					color: #fff;
-					left: 2px;
+					left: 3px;
 					top: 2px;
 				}
 			}
@@ -476,7 +475,7 @@ footer {
 @media screen and (min-width: 768px) {
 	header {
 		.headerTop {
-			width: 645px;
+			width: 85%;
 
 			.comment {
 				width: 50%;
@@ -485,6 +484,14 @@ footer {
 
 			.top-navigation-bar {
 				width: 50%;
+
+				.register-login {
+					a {
+						p {
+							display: flex;
+						}
+					}
+				}
 			}
 		}
 
@@ -492,8 +499,16 @@ footer {
 			.navContainer {
 				width: 55%;
 
+				nav {
+					width: 100%;
+				}
+
 				.search-bar {
 					width: 100%;
+
+					.search-bar_input {
+						width: 200%;
+					}
 				}
 			}
 		}
@@ -504,7 +519,7 @@ footer {
 
 		.container-simbol {
 			position: absolute;
-			left: -7%;
+			left: 0%;
 			width: 10%;
 		}
 
@@ -553,7 +568,8 @@ footer {
 
 				.dropdowns {
 					display: flex;
-					width: 80%;
+					/* width: 80%; */
+					width: 96%;
 					justify-content: space-evenly;
 					font-family: "Montserrat", sans-serif;
 					font-weight: 600;
@@ -603,19 +619,24 @@ footer {
 				}
 
 				.search-bar {
-					width: 20%;
+					width: 3%;
+					/* width: 20%; */
 					height: 35px;
+
+					.search-bar_input {
+						width: 0;
+					}
 
 					input {
 						font-size: 1rem;
 					}
 
 					.btn-search-bar {
-						width: 30%;
+						width: 100%;
 					}
 
 					.fa-solid {
-						left: 21%;
+						left: 10%;
 						top: 17%;
 						font-size: 20px;
 					}
@@ -654,6 +675,12 @@ footer {
 					font-size: 1.3em;
 				}
 			}
+		}
+	}
+
+	footer {
+		.container-simbol {
+			left: -7%;
 		}
 	}
 }
