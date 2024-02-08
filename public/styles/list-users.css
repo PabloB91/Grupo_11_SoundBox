@@ -1,5 +1,5 @@
 .main__listUser {
-	max-width: 1440px;
+	max-width: 1555px;
 	margin: auto;
 }
 
@@ -17,33 +17,29 @@
 .user-card {
 	width: 35%;
 	margin-bottom: 50px;
-    transition-duration:.5s;
-    border-radius: 10px;
+	transition-duration: 0.5s;
+	border-radius: 10px;
 
-    
 	a {
-        width: 100%;
-		height: 100%;
-        color: #000;
-        
-	}
-    
-	.a-user_card {
-        border: 2px solid #000;
-        border-radius: 10px;
-    	overflow: hidden;
 		width: 100%;
-        height: 90%;
+		height: 100%;
+		color: #000;
+	}
+
+	.a-user_card {
+		border: 2px solid #000;
+		border-radius: 10px;
+		overflow: hidden;
+		width: 100%;
+		height: 90%;
 		display: flex;
 		align-items: center;
 
-        &:hover{
-            background: #ffd4c2;
-            scale: 1.1;
-
-        }
+		&:hover {
+			background: #ffd4c2;
+			scale: 1.1;
+		}
 	}
-
 }
 
 .img {
