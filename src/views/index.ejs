@@ -10,14 +10,14 @@
 
                 <section class="slider-frame">
                     <ul>
-                        <!-- <li>
+                        <li>
                             <img src="/img/banners/Banner-carrusel1.jpg" id="Banner-image1" alt="">
-                        </li> -->
-                        <li class="yt-iframe-container">
+                        </li>
+                        <li class="yt-iframe-container" id="yt-iframe-container">
                             <!-- quiero entre banner y banner se vea un video de cada instrumento
                                  con la api de youtube usando:-->
                             <iframe width="560" height="315"
-                                src="https://www.youtube.com/embed/3uneA-cstZs?si=4yaoLe7hZo7IzrNw&start=10&autoplay=1&controls=0"
+                                src="https://www.youtube.com/embed/3uneA-cstZs?si=4yaoLe7hZo7IzrNw&start=10&autoplay=1&control=0"
                                 title="YouTube video player" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 allowfullscreen></iframe>
@@ -26,7 +26,16 @@
                         <li>
                             <img src="/img/banners/Banner-carrusel2.jpg" id="Banner-image2" alt="">
                         </li>
-
+                        <li class="yt-iframe-container" id="yt-iframe-container">
+                            <!-- quiero entre banner y banner se vea un video de cada instrumento
+                                 con la api de youtube usando:-->
+                            <iframe width="560" height="315"
+                                src="https://www.youtube.com/embed/3uneA-cstZs?si=4yaoLe7hZo7IzrNw&start=10&autoplay=1&control=0"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen></iframe>
+                            <!-- iframe de yt -->
+                        </li>
                         <li>
                             <img src="/img/banners/Banner-carrusel3.jpg" id="Banner-image3" alt="">
                         </li>
@@ -40,13 +49,22 @@
 
                     <div class="slider-buttons">
                         <div class="grid-items-slider">
-                            <a href="#Banner-image1">a</a>
+                            <a href="#Banner-image1">.</a>
                         </div>
                         <div class="grid-items-slider">
-                            <a href="#Banner-image2">a</a>
+                            <a href="#yt-iframe-container1">.</a>
                         </div>
                         <div class="grid-items-slider">
-                            <a href="#Banner-image3">a</a>
+                            <a href="#Banner-image2">.</a>
+                        </div>
+                        <div class="grid-items-slider"><!-- pongo un punto pq si no desaparecen xd -->
+                            <a href="#yt-iframe-container2">.</a>
+                        </div>
+                        <div class="grid-items-slider">
+                            <a href="#Banner-image3">.</a>
+                        </div>
+                        <div class="grid-items-slider">
+                            <a href="#yt-iframe-container3">.</a>
                         </div>
                     </div>
                 </section>

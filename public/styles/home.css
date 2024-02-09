@@ -205,6 +205,7 @@ body.dark-theme {
 	display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 	overflow: hidden;
+	overflow-y: scroll;
 	
 	.product img {
 		border: solid 1px black;
@@ -520,14 +521,15 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .slider-buttons {
 	border-radius: 0px 0px 28px 28px;
+	position: absolute;
 	background: #ff540a;
-	width: 100%;
-	height: 60px;
+	width: 85vw;
+	height: 50px;
 	display: flex;
 	justify-content: center;
 
 	.grid-items-slider {
-		width: 25px;
+		width: 50px;
 		margin: 5px;
 
 		a {

@@ -46,62 +46,23 @@ function ordenarAlfabeticamente() {
 
 
 // ________________________________________________________________________________________________
-// const orderByAlphabetical = (card, getter, order ="asc") => {
-//     card.sort((a, b) => {
-//         const first = gatter(a);
-//         const second = gatter(b);
-
-//         const compare = first.localeCompare(second);
-//         return order === "asc" ? compare : -compare;
-
-//     });
-//     return card;
-
-// }
-
-// const productsByAlphabetic = orderByAlphabetical (card, product => product.nombre)
-
-// console.log(productsByAlphabetic)
-
-// function ordenarPalabras() {
-//     let ol = document.getElementById("desplegable");
-//     ol.innerHTML = "";
-//     let cadena = document.getElementById("text1").value;
-//     let palabrasOrdenadas = cadena.trim();
-//     palabrasOrdenadas.sort();
-
-//     for(let i  = 0; i < palabrasOrdenadas.length; i++) {
-//         const li = document.createElement("li");
-//         li.innerHTML = palabrasOrdenadas[i];
-//         ol.appendChild(li);
+// function openWindow(id) {
+//     const windows = document.getElementsByClassName('window');
+//     for (let i = 0; i < windows.length; i++) {
+//       if (windows[i].id === id) {
+//         windows[i].style.display = 'flex';
+//       } else {
+//         windows[i].style.display = 'none';
+//       }
 //     }
-//     document.getElementById("text1").select();
-// }
-// ________________________________________________________________________________________________
-//                             incrementador de cantidad de cada producto
-// ________________________________________________________________________________________________
-
-// let starValue = 1;
-// let disabledBtn = document.getElementById("disabledBtn");
-// disabledBtn.disabled = true;
-
-// function addValueFunction(valuePar) {
-//     document.getElementById("amount").value;
-
-//     if (valuePar.value == 'increase') {
-//         starValue++;
-//     } else {
-//         starValue--;
+//   }
+  
+//   function closeWindow(id) {
+//     const windowToClose = document.getElementById(id);
+//     if (windowToClose) {
+//       windowToClose.style.display = 'none';
 //     }
-//     document.getElementById("amount").textContent = starValue;
-
-//     if (starValue == 1) {
-//         disabledBtn.disabled = true;
-//     } else {
-//         disabledBtn.disabled = false;
-//     }
-// }
-
+//   }
 // _______________________________________________________________________________________________
 
 function decrementar(id) {
