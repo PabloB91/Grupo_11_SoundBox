@@ -1,6 +1,4 @@
-/*-----------------------------------------------
---------------------HEADER-----------------------
--------------------------------------------------*/
+/* HEADER */
 
 header {
 	background-color: #000;
@@ -256,23 +254,6 @@ header {
 
 					height: 100%;
 					width: 100%;
-
-					/* 	
-					font-style: ;
-					font-variant-ligatures: ;
-					font-variant-caps: ;
-					font-variant-numeric: ;
-					font-variant-east-asian: ;
-					font-variant-alternates: ;
-					font-variant-position: ;
-					font-weight: ;
-					font-stretch: ;
-					font-family: ;
-					font-optical-sizing: ;
-					font-kerning: ;
-					font-feature-settings: ;
-					font-variation-settings: ; 
-					*/
 				}
 
 				.btn-search-bar {
@@ -288,6 +269,14 @@ header {
 					left: 3px;
 					top: 2px;
 				}
+			}
+
+			.btnSearchOpenModal {
+				display: none;
+			}
+
+			.search-modal_window {
+				display: none;
 			}
 		}
 
@@ -332,65 +321,12 @@ header {
 			width: 75px;
 			height: 30px;
 		}
-
-		/*
-		//KEYFRAMES
-
-		@keyframes firstLinetoOpen {
-			0% {
-				transform: translateY(0);
-			}
-
-			50% {
-				transform: translateY(12px);
-			}
-
-			100% {
-				transform: translateY(-5px) rotate(45deg);
-			}
-		}
-
-		@keyframes firstLinetoClose {
-			0% {
-				transform: translateY(17px) rotate(0);
-			}
-
-			100% {
-				transform: translateY(0);
-			}
-		}
-
-		@keyframes lastLinetoOpen {
-			0% {
-				transform: translateY(0);
-			}
-
-			50% {
-				transform: translateY(-12px);
-			}
-
-			100% {
-				transform: translateY(-17px) rotate(-45deg);
-			}
-		}
-
-		@keyframes lastLinetoClose {
-			0% {
-				transform: translateY(-17px);
-			}
-
-			100% {
-				transform: translateY(0);
-			}
-		} */
 	}
 }
 
-/***************************************************/
+/************************************************************************************/
 
-/*-----------------------------------------------
---------------------FOOTER-----------------------
--------------------------------------------------*/
+/* FOOTER */
 
 footer {
 	background: #000;
@@ -470,26 +406,60 @@ footer {
 	}
 }
 
-/*media query header*/
+/************************************************************************************/
+
+/* MEDIA */
 
 @media screen and (min-width: 768px) {
 	header {
 		.headerTop {
+			padding: 2px 0px;
 			width: 85%;
 
 			.comment {
 				width: 50%;
 				justify-content: start;
+				align-items: center;
 			}
 
 			.top-navigation-bar {
 				width: 50%;
+
+				ul {
+					justify-content: end;
+
+					.li_user {
+						margin: 0;
+						padding: 0;
+					}
+
+					.admin {
+						padding-right: 5%;
+					}
+				}
 
 				.register-login {
 					a {
 						p {
 							display: flex;
 						}
+					}
+				}
+
+				.li-miCajita {
+					width: 114px;
+				}
+				.btn-cajita {
+					width: 100%;
+
+					img {
+						width: 30%;
+					}
+
+					p {
+						display: inline;
+						font-size: 0.9rem;
+						font-family: "sans-serif";
 					}
 				}
 			}
@@ -528,6 +498,7 @@ footer {
 		}
 	}
 }
+
 @media screen and (min-width: 1024px) {
 	header {
 		.fixed {
@@ -538,6 +509,7 @@ footer {
 
 		.headerBottom {
 			justify-content: center;
+
 			.logoSbx {
 				width: 100px;
 				height: 126px;
@@ -568,7 +540,6 @@ footer {
 
 				.dropdowns {
 					display: flex;
-					/* width: 80%; */
 					width: 96%;
 					justify-content: space-evenly;
 					font-family: "Montserrat", sans-serif;
@@ -619,27 +590,130 @@ footer {
 				}
 
 				.search-bar {
-					width: 3%;
-					/* width: 20%; */
-					height: 35px;
+					display: none;
+				}
+
+				.btnSearchOpenModal {
+					display: flex;
+					position: relative;
+					width: 30px;
+					height: 30px;
+					background: #ff540a;
+					border-radius: 4px;
+
+					.fa-solid {
+						position: absolute;
+						color: #fff;
+						font-size: 1.5rem;
+						top: 2px;
+						left: 3px;
+					}
+				}
+
+				.search-modal_window {
+					display: block;
+					z-index: 999;
+					position: fixed;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					background-color: #1115;
+					backdrop-filter: blur(3px);
+					display: flex;
+					justify-content: center;
+					flex-wrap: wrap;
+					border-radius: 8px;
+					opacity: 0;
+					pointer-events: none;
+
+					.close-window {
+						cursor: pointer;
+						color: #ff540a;
+						position: absolute;
+						right: 48px;
+						top: 13px;
+					}
+
+					.title-Wmodal {
+						h2 {
+							text-shadow: 2px 2px 4px #ff540a;
+							color: #f9f9f9;
+							font-size: 2.5rem;
+						}
+					}
+
+					form {
+						border-radius: 8px;
+						overflow: hidden;
+						border: 1px solid #ff540a;
+						background: #ff540a;
+						display: flex;
+						width: 90%;
+						height: 32px;
+					}
 
 					.search-bar_input {
-						width: 0;
+						width: 335%;
 					}
 
 					input {
+						font-family: "Montserrat", sans-serif;
 						font-size: 1rem;
-					}
-
-					.btn-search-bar {
+						color: #000;
+						text-indent: 0px;
+						display: inline-block;
+						text-align: start;
+						-webkit-rtl-ordering: logical;
+						cursor: text;
+						margin: 0em;
+						padding: 1px 0px;
+						border-image: initial;
+						padding-block: 1px;
+						padding-inline: 2px;
+						height: 100%;
 						width: 100%;
 					}
 
-					.fa-solid {
-						left: 10%;
-						top: 17%;
-						font-size: 20px;
+					.btn-search-bar {
+						position: relative;
+						cursor: pointer;
+						width: 10%;
+						background: #ff540a;
+
+						.fa-solid {
+							position: absolute;
+							color: #fff;
+							left: 6px;
+							top: 4px;
+							font-size: 1.3rem;
+						}
 					}
+
+					.search {
+						width: 90%;
+						height: 80%;
+						background: #fff;
+						padding: 30px;
+						border-radius: 10px;
+						overflow: hidden;
+						overflow-y: auto;
+						display: grid;
+						grid-template-columns: repeat(6, 1fr);
+						grid-template-rows: repeat(auto, 1fr);
+						grid-gap: 32px 15px; /*para separar sin margin*/
+					}
+
+					.card {
+						background: #ff540a;
+						width: 100%;
+						height: 230px;
+					}
+				}
+
+				.modal__show {
+					opacity: 1;
+					pointer-events: unset;
 				}
 			}
 
@@ -647,40 +721,34 @@ footer {
 				display: none;
 			}
 		}
-
-		footer {
-			justify-content: center;
-			align-items: center;
-
-			.container-simbol {
-				width: 10%;
-			}
-
-			.info {
-				width: 87%;
-				justify-content: center;
-				align-items: center;
-			}
-
-			.redes {
-				display: flex;
-				flex-wrap: wrap;
-			}
-
-			.copyright {
-				text-align: center;
-				width: 100%;
-
-				p {
-					font-size: 1.3em;
-				}
-			}
-		}
 	}
 
 	footer {
+		justify-content: center;
+		align-items: center;
+
 		.container-simbol {
 			left: -7%;
+		}
+
+		.info {
+			width: 87%;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.redes {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		.copyright {
+			text-align: center;
+			width: 100%;
+
+			p {
+				font-size: 1.3em;
+			}
 		}
 	}
 }
