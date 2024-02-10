@@ -8,24 +8,29 @@ body {
 
 main {
 	display: flex;
+	align-items: center;
 	flex-direction: column;
 }
 
 .ordenador {
-	width: 10vw;
-	background-color: #ff540a;
+	margin-top: 50px;
+	background-color: rgba(0, 0, 0, 0.4);
 	color: #fff;
 	position: absolute;
 	left: 1px;
-	z-index: 888;
+	z-index: 50;
+	border-radius: 18px;
 }
 
 .titulo-ordenador {
-	font-size: 20px;
-	color: white;
-	margin-left: 1.2vw;
-	margin-top: 0.2vw;
+	font-size: 22px;
+	background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 18px;
+	border: 2px solid white;
+	padding: 15px;
 	position: fixed;
+	color: white;
+
 }
 
 .filtro-presupuesto {
@@ -78,26 +83,30 @@ main {
 
 .seccion-general {
 	width: 100vw;
+	margin-top: 50px;
 	padding-top: 20px;
-	background-color: #b7b3a1;
+	background-color: #cbcbcb;
 	flex-direction: row;
 	justify-content: center;
 	flex-wrap: wrap;
 }
 
 .barra-titulo {
-	display: flex;
-	width: 100vw;
-	background-color: black;
-	height: auto;
-	display: flex;
-	justify-content: center;
+    box-shadow: 18px 48px 100px -13px black;
+    position: absolute;
+    border-radius: 18px;
+    width: 85vw;
+    background-color: #ff540a;
+    height: 3.5rem;
+    display: flex;
+    justify-content: center;
+	align-items: center;
 }
 
 .titulo {
 	font-family: "Montserrat", sans-serif;
 	font-size: 26px;
-	color: wheat;
+
 }
 
 .descripcion-producto {
@@ -120,8 +129,8 @@ main {
 }
 
 .ordenador:hover {
-	width: 30vw;
-	border-radius: 0px 25px 25px 0px;
+	width: 35vw;
+	backdrop-filter: blur(4px);
 	transition: 0.5s;
 }
 
@@ -132,10 +141,15 @@ main {
 
 .ordenador:hover .titulo-ordenador {
 	align-self: center;
-	animation: titleAnimation 0.9s;
+	width: 100px;
+	margin-top: 15px;
+	border: 0;
+	background-color: rgba(0, 0, 0, 0.2);
 	margin-left: 40%;
 	position: sticky;
-	color: black;
+	font-size: 24px;
+	color: #ff540a;
+	transition: all .7s ease;
 }
 
 @keyframes titleAnimation {
@@ -172,6 +186,7 @@ main {
 /* animaciones carta*/
 
 .todasLasCards {
+
 	width: 90%;
 	display: grid;
 	grid-template-columns: repeat(5, 1fr);
@@ -181,8 +196,7 @@ main {
 /* la verdadera card */
 .container-producto {
 	margin: auto;
-	width: 20vw;
-	margin-bottom: 2vh;
+	box-shadow: 1px 22px 129px -60px rgb(255, 255, 0);
 	display: flex;
 	align-items: center;
 	flex-direction: column;
@@ -347,6 +361,17 @@ a:active {
 }
 
 @media (max-width: 645px) {
+
+	.ordenador:hover {
+		width: 100vw;
+
+	}
+	.titulo-ordenador {
+		margin-top: 55px;
+
+
+	}
+
 	.todasLasCards {
 		margin: auto;
 		width: 90%;
@@ -365,7 +390,5 @@ a:active {
 		grid-auto-rows: minmax(100px, auto);
 	}
 
-	.ordenador:hover {
-		width: 75vw;
-	}
+
 }

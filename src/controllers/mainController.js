@@ -76,3 +76,104 @@ const mainController = {
 
 // Acá exportamos el resultado
 module.exports = mainController;
+
+
+/* 
+const path = require("path");
+const express = require("express");
+const app = express();
+const fs = require("fs");
+const db = require("../database/models");
+const { Op } = require("sequelize");
+
+const { log } = require("console");
+const { validationResult } = require("express-validator")
+
+
+const mainController = {
+    index: async (req, res) => {
+        try {
+            let topSeller = db.Productos.findAll({
+                where: {
+                   price: {
+                    [Op.gt]: 2500
+                   } 
+                }
+            })
+            let  offerts = await db.Productos.findAll({
+                where: {
+                    descuento: {
+                        [Op.ne]: 0 
+                    }
+                }
+            })
+            res.render("index", { topSeller : topSeller})
+        }
+        catch(err) {
+            res.render("not-found")
+        }
+
+    },
+
+    admin: async (req, res) => {
+        try {
+            let users = await db.Usuarios.findAll();
+            let products = await db.Productos.findAll();
+
+            res.render("admin.ejs", {users, products})
+        }
+        catch(err) {
+			res.render("not-found")
+		}
+
+    },
+
+    allProducts: async (req, res) => {
+        try {
+            let products = await db.Productos.findAll({
+                include: [
+					{association: "brand"}, 
+					{association: "category"},
+					{association: "color"},
+					{association: "state"}
+				]
+            });
+
+            res.render("product/allTheProducts.ejs", { products })
+        }
+        catch(err) {
+			res.render("not-found")
+		}
+
+    },
+
+    categories: async (req, res) => {
+        try {
+            let products = await db.Productos.findByPk({
+                include: [{association: "category"}],
+                where: {
+                    name: req.params.nombre
+                }
+            })
+            res.render("product/categories.ejs", { products })
+        }
+        catch(err) {
+			res.render("not-found")
+		}
+
+    },
+    
+    carrito: async (req, res) => {
+        try {
+            let products = await db.Productos.findAll();
+
+            res.render("product/productCart.ejs", { products });
+        }
+        catch(err) {
+			res.render("not-found")
+		}
+    }
+
+}
+module.exports = mainController;
+*/
