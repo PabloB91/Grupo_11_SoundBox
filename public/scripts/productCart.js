@@ -1,14 +1,15 @@
 
 function hide() {
     document.getElementById("desplegable").style.display = "none";
-    // document.getElementById("favoritos").style.display = "block";
 
 }
 
 function show() {
     document.getElementById("desplegable").style.display = "block";
-    // document.getElementById("carrito").style.display = "block";
 
+
+    // var desplegable = document.getElementById("desplegable");
+    // desplegable.addClass('productCart-open')
 }
 
 
