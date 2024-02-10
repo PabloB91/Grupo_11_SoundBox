@@ -17,23 +17,37 @@
     
 function disappear () {
 let boxMusicSBX  = document.querySelector('.box-img');
-boxMusicSBX.classList.toggle('disappear', window.scrollY>1);
+boxMusicSBX.classList.toggle('disappear', window.scrollY);
 };
 
 function grow () {
 let textMusicSBX  = document.querySelector('.tex-soundbox');
-textMusicSBX.classList.toggle('grow', window.scrollY>1);
+textMusicSBX.classList.toggle('grow', window.scrollY);
 };
 
 function flatten () {
 let containerMusicSBX  = document.querySelector('.logoSbx');
-containerMusicSBX.classList.toggle('flatten', window.scrollY>1);
+containerMusicSBX.classList.toggle('flatten', window.scrollY);
 };
 
 function fixed () {
 let headerBottomAnimation  = document.querySelector('.headerBottom');
 headerBottomAnimation.classList.toggle('fixed', window.scrollY);
 };
+
+const openModal = document.querySelector('.btnSearchOpenModal');
+const modal = document.querySelector('.search-modal_window');
+const closeModal = document.querySelector('.close-window')
+
+openModal.addEventListener('click', (e)=> {
+    e.preventDefault();
+    modal.classList.add('modal__show');
+});
+
+closeModal.addEventListener('click', (e)=> {
+    e.preventDefault();
+    modal.classList.remove('modal__show');
+})
 
 window.addEventListener('scroll', disappear );
 window.addEventListener('scroll', grow );

@@ -20,20 +20,32 @@
                             </div>
                             <div class="labels-ordenador">
                                 <form method="POST" action="/">
-                                    <select id="send-to">Eliminar seleccionados</select>
-                                    <!-- <option value="valueA">a</option>
-                                    <option value="valueA">b</option>
-                                    <option value="valueA">c</option> -->
-                                    <select id="send-to">agregar a favoritos</select>
-                                    <!-- <option value="valueB">a</option>
-                                    <option value="valueB">b</option>
-                                    <option value="valueB">c</option> -->
+                                    <details>
+                                        <summary>filtrar por:</summary>
+                                        <p>Este es el contenido detallado del bloque de detalles 1.</p>
+                                    </details>
+                                    <details>
+                                        <summary>enviar a:</summary>
+                                        <section class="google-maps-container">
+
+                                            <!-- google maps div -->
+                                            <iframe
+                                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31814.088114193386!2d-74.170368!3d4.636672!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9dcb9ac15e93%3A0xc6bf5b05b9a52c99!2sParque%20Dindalito%20Bella%20Vista!5e0!3m2!1ses-419!2sco!4v1707265372189!5m2!1ses-419!2sco"
+                                                width="600" height="450" style="border:0;" allowfullscreen=""
+                                                loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                                            </iframe>
+                                            <!-- google maps fin -->
+                                        </section>
+                                    </details>
+                                    <div class="payment-container">
+                                        <input type="submit" value="payment">
+                                    </div>
                                 </form>
                             </div>
                         </div>
                         <div class="desplegable" id="desplegable">
                             <% productos.forEach(product=> { %>
-                                <div class="card" data-order="<%= product.id %>">
+                                <div class="card" id="card" data-order="<%= product.id %>">
                                     <!-- Rounded switch -->
                                     <label class="switch">
                                         <input type="checkbox" required>
@@ -95,23 +107,7 @@
                         </div>
                     </div>
                 </section>
-
-                <section class="seccion-secundaria">
-                    <div class="pago-total">
-                        <span>200.000 $</span>
-                        <input type="submit">
-                    </div>
-
-                    <section class="google-maps-container">
-
-                        <!-- google maps div -->
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31814.088114193386!2d-74.170368!3d4.636672!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9dcb9ac15e93%3A0xc6bf5b05b9a52c99!2sParque%20Dindalito%20Bella%20Vista!5e0!3m2!1ses-419!2sco!4v1707265372189!5m2!1ses-419!2sco"
-                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        <!-- google maps fin -->
-                    </section>
-
+                <section class="segunda-seccion">
                     <div class="descripcion-pago-total">
                         <h6 class="titulo-desplegable-pago-total">TOTAL:</h6>
                         <% productos.forEach(product=> { %>
@@ -136,54 +132,40 @@
                             <% }); %>
                     </div>
 
+                    <div class="titulo-seccion">
+                        <!-- seccion carrusel -->
+                        <span>
+                            <h3>Seguí navegando!</h3>
+                        </span>
+                    </div>
                 </section>
-
-
             </section>
-            <div class="separador"></div>
-            <div class="separador-externo"></div>
+            </section>
 
-            <div class="titulo-seccion" style="background-color: white; color: black; margin-top: 5rem;">
-                <!-- seccion carrusel -->
-                <h1>Seguí navegando! </h1>
-            </div>
 
             <div class="grid-container">
-                <div class="grid-item">
-                    <img src="image1.jpg" alt="Image 1">
-                    <div class="price-discount">
-                        <p class="price">$100</p>
-                        <p class="discount">20% off</p>
+                <% productos.forEach(product=> { %>
+                    <div class="grid-item">
+                        <div class="image-related-container">
+                            <img src="/img/products/<%= product.imagen %>" alt="">
+                        </div>
+                        <section class="name-related-card">
+                            <p>
+                                <%=product.nombre%>
+                            </p>
+                        </section>
+                        <section class="description-related-card">
+                            <p>
+                                <%=product.precio + "$" %>
+                            </p>
+                            <p>
+                                -<%= product.descuento + "%" %>
+                            </p>
+
+                        </section>
                     </div>
-                </div>
-                <div class="grid-item">
-                    <img src="image2.jpg" alt="Image 2">
-                    <div class="price-discount">
-                        <p class="price">$150</p>
-                        <p class="discount">10% off</p>
-                    </div>
-                </div>
-                <div class="grid-item">
-                    <img src="image3.jpg" alt="Image 3">
-                    <div class="price-discount">
-                        <p class="price">$75</p>
-                        <p class="discount">30% off</p>
-                    </div>
-                </div>
-                <div class="grid-item">
-                    <img src="image4.jpg" alt="Image 4">
-                    <div class="price-discount">
-                        <p class="price">$200</p>
-                        <p class="discount">5% off</p>
-                    </div>
-                </div>
-                <div class="grid-item">
-                    <img src="image5.jpg" alt="Image 5">
-                    <div class="price-discount">
-                        <p class="price">$50</p>
-                        <p class="discount">40% off</p>
-                    </div>
-                </div>
+
+                    <% }); %>
             </div>
 
 
