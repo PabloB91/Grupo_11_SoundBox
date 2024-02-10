@@ -19,9 +19,9 @@
                             <iframe width="560" height="315"
                                 src="https://www.youtube.com/embed/3uneA-cstZs?si=4yaoLe7hZo7IzrNw&start=10&autoplay=1&controls=0"
                                 title="YouTube video player" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  
                                 allowfullscreen></iframe>
-                            <!-- iframe de yt -->
+                            <!-- iframe de yt -- Le saqué el autoplay por el momento -->
                         </li>
                         <li>
                             <img src="/img/banners/Banner-carrusel2.jpg" id="Banner-image2" alt="">
@@ -205,32 +205,53 @@
                 </section>
 
 
-                <div class="titles-last-section">
-                    <span>novedades</span>
-                    <span>comentados</span>
-                    <span>destacados</span>
-
-                </div>
+                <!-- <div class="titles-last-section">
+                    <h3>Novedades</h3>
+                    <h3>Comentados</h3>
+                    <h3>Destacados</h3>
+                </div> -->
+                <div class="last-section-flex">
                 <div class="last-section">
+                    <h3>Novedades</h3>
+                    <h3>Comentados</h3>
+                    <h3>Destacados</h3>
                     <% masVendidos.forEach(element=> { %>
                         <a href="/products/productDetail/<%= element.id %>" class="card">
                             <div class="img-container">
                                 <img src="/img/productos/Orquesta/Orquesta-1.jpg" alt="">
                             </div>
                             <div class="card-text">
-                                <span>
+                                <span class="descripciones">
                                     <%= element.nombre %>
                                 </span>
-                                <p>
+                                <span>
                                     <%= element.marca %>
-                                </p>
-                                <p>
+                                </span>
+                                <span>
                                     <%= element.precio %>
-                                </p>
+                                </span>
                             </div>
                         </a>
                         <% }); %>
-                            <% masVendidos.forEach(element=> { %>
+                        <% masVendidos.forEach(element=> { %>
+                            <a href="/products/productDetail/<%= element.id %>" class="card">
+                                <div class="img-container">
+                                    <img src="/img/productos/Orquesta/Orquesta-1.jpg" alt="">
+                                </div>
+                                <div class="card-text">
+                                    <span>
+                                        <%= element.nombre %>
+                                    </span>
+                                    <span>
+                                        <%= element.marca %>
+                                    </span>
+                                    <span>
+                                        <%= element.precio %>
+                                    </span>
+                                </div>
+                            </a>
+                            <% }); %>
+                            <% products.forEach(element=> { %>
                                 <a href="/products/productDetail/<%= element.id %>" class="card">
                                     <div class="img-container">
                                         <img src="/img/productos/Orquesta/Orquesta-1.jpg" alt="">
@@ -239,38 +260,21 @@
                                         <span>
                                             <%= element.nombre %>
                                         </span>
-                                        <p>
+                                        <span>
                                             <%= element.marca %>
-                                        </p>
-                                        <p>
+                                        </span>
+                                        <span>
                                             <%= element.precio %>
-                                        </p>
+                                        </span>
                                     </div>
                                 </a>
                                 <% }); %>
-                                    <% products.forEach(element=> { %>
-                                        <a href="/products/productDetail/<%= element.id %>" class="card">
-                                            <div class="img-container">
-                                                <img src="/img/productos/Orquesta/Orquesta-1.jpg" alt="">
-                                            </div>
-                                            <div class="card-text">
-                                                <span>
-                                                    <%= element.nombre %>
-                                                </span>
-                                                <p>
-                                                    <%= element.marca %>
-                                                </p>
-                                                <p>
-                                                    <%= element.precio %>
-                                                </p>
-                                            </div>
-                                        </a>
-                                        <% }); %>
-                                        <div class="promo-container">
-                                            <img src="img/banners/banner_promo.jpg" alt="">
-                                        </div>
+                        
                 </div>
-
+                <div class="promo-container">
+                    <img src="img/banners/banner_promo.jpg" alt="">
+                </div>
+            </div>
             </div>
 
         </main>
