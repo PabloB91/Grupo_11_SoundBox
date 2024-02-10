@@ -14,3 +14,25 @@ const aController = {
     }
 }
 module.exports = aController;
+
+
+/* 
+const express = require('express');
+const path = require("path");
+const fs = require('fs');
+const db = require("../database/models")
+
+const aController = {
+    listUsers: async (req, res) => {
+        try {
+            let users = await db.Usuarios.findAll()
+
+            res.render("user/usersList.ejs", { users });
+        }
+        catch(err) {
+			res.render("not-found")
+		}
+    }
+}
+module.exports = aController;
+*/
