@@ -688,10 +688,16 @@ input[type="number"]::-webkit-outer-spin-button {
 
 	.items-mas-vendidos {
 		height: 700px;
-		grid-template-columns: 1fr;
+		grid-template-columns: 1fr 1fr 1fr;
 		grid-template-rows: 1fr 1fr;
 	}
+	.detalle-producto{
+		width: 100%;
+	}
 
+	.detalle-producto p {
+		font-size: 16px;
+	}
 	.slider-frame,
 	.slider-buttons {
 		width: 95%;
@@ -745,9 +751,15 @@ input[type="number"]::-webkit-outer-spin-button {
 	.items-mas-vendidos{
 		height: 100%;
 	}
+	.items-mas-vendidos .product{
+		padding-right: 5px;
+	}
+	.detalle-producto{
+		width: 100%;
+	}
 
 	.detalle-producto p{
-		font-size: 12px;
+		font-size: 10px;
 	}
 
 	.box-marcas{
@@ -809,7 +821,7 @@ input[type="number"]::-webkit-outer-spin-button {
 	}
 
 	.items-mas-vendidos .product img {
-		height: 100%;
+		height: 95%;
 	}
 
 	.categoria {
