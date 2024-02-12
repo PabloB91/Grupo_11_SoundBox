@@ -16,8 +16,7 @@ const authMiddleware = require('../middlewares/authMiddleware');
 const registerValidations = [
     body('name').notEmpty().withMessage('Tu nombre es necesario'),
     body('lastName').notEmpty().withMessage('Tu apellido es necesario'),
-   /*  body('email').trim().notEmpty().isEmpty().withMessage('Tu E-mail es necesario'), */
-    body('email').isEmail().withMessage('Ingresa una dirección valida'),
+    body('email').trim().notEmpty().isEmail().withMessage('Tu E-mail es necesario'),
     body('password').notEmpty().isLength({min: 8, max: 16 }).withMessage('La contraseña debe tener entre 8 y 16 caracteres'),
     body('password').matches(/[A-Z]/).withMessage('La contraseña debe tener al menos una mayúscula'),
     body('password').matches(/[a-z]/).withMessage('La contraseña debe tener al menos una minúscula'),

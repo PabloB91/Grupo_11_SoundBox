@@ -5,10 +5,12 @@ const express = require("express")
 const app = express();
 const fs = require("fs");
 const bcrypt = require("bcryptjs")
+const e = require("method-override");
+const db = require("../database/models")
 
 const { validationResult } = require("express-validator");
 const { log } = require("console");
-const e = require("method-override");
+
 
 // Path y direcciones
 
@@ -20,41 +22,57 @@ const usersControllers = {
     register: (req, res) => {
         res.render("forms/register")
     },
-    
-    // (POST) Proceso de Registro
-    processToRegister: (req, res) => {
-
-        const errores = validationResult(req);  //--->Traemos las validaciones
-        // console.log(errores);
-
-        if(!errores.isEmpty()){ //-->Si existen errores, se renderizan y además se renderizan los input de usuario que sean correctos en el objeto 'old' 
-            //console.log("Errores: ", errores);
-            return res.render("forms/register.ejs", { errores: errores.array(), old: req.body}) 
-        }else{
-            res.render("forms/register.ejs")
-            
-        } 
-        //console.log("userDefinido: ",userDefinido);
-        const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8')); //--> Se trae el JSON de usuarios
-        
-        const passwordToValidate = req.body.password  //-->Se trae el password ingresado por el usuario, para su posterior hasheo
-        
-        newUser = {     //--> Se crea el objeto para un nuevo usuario
-            userId: usersJson[usersJson.length - 1].userId + 1, //--> Corregí la creación de id, porque los creaba con valores 'null'
-			name: req.body.name,
-            lastName: req.body.lastName,
-            email: req.body.email,
-            password: bcrypt.hashSync(passwordToValidate, 10),
-            imgProfile: req.file == undefined ? "alvaro.jpg" : req.file.filename
+    /* async (req, res) => {
+        try{
+            let user= await db.Usuario.findByPk({
+                where: { id: req.params.id}
+            })
+            res.render('user/userProfile.ejs', {user})
         }
+        catch(err) {
+            res.render("not-found")
+        } */
+    // (POST) Proceso de Registro
+    processToRegister: async (req, res) => {
+        try{
+            const errores = validationResult(req);  //--->Traemos las validaciones
+        // console.log(errores);
+            if(!errores.isEmpty()){ //-->Si existen errores, se renderizan y además se renderizan los input de usuario que sean correctos en el objeto 'old' 
+                //console.log("Errores: ", errores);
+                return res.render("forms/register.ejs", { errores: errores.array(), old: req.body}) 
+            }else{
+                res.render("forms/register.ejs")
+            }
+
+            const passwordToValidate = req.body.password  //-->Se trae el password ingresado por el usuario, para su posterior hasheo
+            //--> Se llama al método de Sequelize 'create' para crear un registro en la DB 
+            let CreateUser= await db.Usuario.create({
+                first_name: req.body.name,      //-->Los nombres de los campos son iguales a los nombres del modelo 'Usuario' de DB
+                last_name: req.body.lastName,
+                e_mail: req.body.email,
+                password: bcrypt.hashSync(passwordToValidate, 10),
+                image: req.file == undefined ? "alvaro.jpg" : req.file.filename
+            })
+            console.log("usuario a crear: ",CreateUser);
+            res.redirect('users/login')  //--> Una vez creado el registro en la DB. se redirige al perfil del usuario
+        }
+        catch(err) {
+            res.render("not-found")
+        }
+    },
+    /* const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8')); //--> Se trae el JSON de usuarios 
+        newUser = {     //--> Se crea el objeto para un nuevo usuario
+        userId: usersJson[usersJson.length - 1].userId + 1, //--> Corregí la creación de id, porque los creaba con valores 'null'
+        name: req.body.name,
+        lastName: req.body.lastName,
+        email: req.body.email,
+        password: bcrypt.hashSync(passwordToValidate, 10),
+        imgProfile: req.file == undefined ? "alvaro.jpg" : req.file.filename
+        } 
         
         usersJson.push(newUser);  //--> Se agrega el nuevo usuario a la variable del JSON
 
-		fs.writeFileSync(usersFilePath, JSON.stringify(usersJson, null, ' '));  //--> Se escribe el archivo JSON con la variable modificada */
-
-		res.redirect('users/login')  //--> Se redirige al perfil del usuario
-    },
-       
+		fs.writeFileSync(usersFilePath, JSON.stringify(usersJson, null, ' '));  //--> Se escribe el archivo JSON con la variable modificada */ 
     // (GET) Formulario de Login
     login: (req, res) => {
       res.render("forms/login.ejs");
@@ -140,24 +158,29 @@ const usersControllers = {
     },
 
     // (GET) Perfil del Usuario
-    userProfile: (req, res) => {
-        const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-
-        let userId = req.params.userId
-
+    userProfile: async (req, res) => {
+            try{
+                let user= await db.Usuario.findByPk({
+                    where: { id: req.params.id}
+                })
+                console.log("usuario :", user);
+                res.render('user/userProfile.ejs', {user})
+            }
+            catch(err) {
+                res.render("not-found")
+            }
+        /* let userId = req.params.userId */
+        /* const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 		let userDefinido = usersJson.find(user => {
 			return user.userId == userId;
 		})
-        
 		if(userDefinido){
 			res.render("user/userProfile.ejs", { user : userDefinido });
 		} else {
             res.render("forms/register.ejs");
-		}
-
+		} */
         //console.log("user Profile");
         //console.log(req.session);
-
     },
 
     // (GET) Edición de Usuario
