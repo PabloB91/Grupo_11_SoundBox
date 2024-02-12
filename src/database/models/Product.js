@@ -38,19 +38,19 @@ module.exports = (sequelize, dataTypes) => {
     });
     
     Producto.associate = function(models){
-        Producto.belongsTo(models.Brand, {
+        Producto.belongsTo(models.Marcas, {
             as: "brand",
             foreignKey: "brand_id"
         })
-        Producto.hasMany(models.Category, {
+        Producto.hasMany(models.Categorias, {
             as: "category",
             foreignKey: "category_id"
         })
-        Producto.hasMany(models.Color, {
+        Producto.hasMany(models.Colores, {
             as: "color",
             foreignKey: "color_id"
         })
-        Producto.belongsTo(models.State, {
+        Producto.belongsTo(models.Estado, {
             as: "state",
             foreignKey: "state_id"
         })

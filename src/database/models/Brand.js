@@ -19,10 +19,10 @@ module.exports = (sequelize, dataTypes) => {
     })
 
     Marca.associate = function(models) {
-        Marca.hasMany(models.Product, {
+        Marca.hasMany(models.Productos, {
             as: 'products',
             foreignKey: 'brand_id'
-        });
-      };
+        })
+      }
     return Marca
 }
