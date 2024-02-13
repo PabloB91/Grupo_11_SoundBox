@@ -293,33 +293,6 @@ header {
 		}
 	}
 
-	.headerBottom .menuBurger.fireldGeaderBottom {
-		display: flex;
-		align-items: center;
-		cursor: pointer;
-
-		i {
-			color: #ff540a;
-			font-size: 1.2rem;
-		}
-
-		&:hover i {
-			color: #550c18;
-		}
-	}
-
-	/* MENU DESPLEGABLE */
-
-	.headerBottom .menu-desplegable {
-		height: 63%;
-		z-index: 999;
-		margin: 15px;
-		display: none;
-		justify-content: center;
-		flex-direction: column;
-		align-items: center;
-	}
-
 	/*ANIMATION*/
 
 	.disappear {
@@ -741,10 +714,6 @@ footer {
 					opacity: 1;
 					pointer-events: unset;
 				}
-			}
-
-			.menuBurger.fireldGeaderBottom {
-				display: none;
 			}
 		}
 	}

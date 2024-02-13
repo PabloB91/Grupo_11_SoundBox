@@ -1,16 +1,17 @@
 
-function hide() {
-    document.getElementById("desplegable").style.display = "none";
+// function hide() {
+//     document.getElementById("desplegable").style.display = "none";
+//     document.getElementById("labels-ordenador").style.display = "none";
+// }
 
-}
-
-function show() {
-    document.getElementById("desplegable").style.display = "block";
+// function show() {
+//     document.getElementById("desplegable").style.display = "block";
+//     document.getElementById("labels-ordenador").style.display = "flex";
 
 
     // var desplegable = document.getElementById("desplegable");
     // desplegable.addClass('productCart-open')
-}
+// }
 
 
 // ________________________________________________________________________________________________
@@ -47,23 +48,22 @@ function ordenarAlfabeticamente() {
 
 
 // ________________________________________________________________________________________________
-// function openWindow(id) {
-//     const windows = document.getElementsByClassName('window');
-//     for (let i = 0; i < windows.length; i++) {
-//       if (windows[i].id === id) {
-//         windows[i].style.display = 'flex';
-//       } else {
-//         windows[i].style.display = 'none';
-//       }
-//     }
-//   }
-  
-//   function closeWindow(id) {
-//     const windowToClose = document.getElementById(id);
-//     if (windowToClose) {
-//       windowToClose.style.display = 'none';
-//     }
-//   }
+const showCart = document.querySelector('.showCart');
+const desplegable = document.querySelector('.desplegable');
+const hideCart = document.querySelector('.hideCart');
+const ordenadorContainer = document.querySelector('ordenador-container')
+
+showCart.addEventListener('click', (e)=> {
+    e.preventDefault();
+    desplegable.classList.add('modal__show');
+});
+
+hideCart.addEventListener('click', (e)=> {
+    e.preventDefault();
+    desplegable.classList.remove('modal__show');
+    // ordenadorContainer.style.width = "0";
+})
+
 // _______________________________________________________________________________________________
 
 function decrementar(id) {

@@ -7,106 +7,110 @@
 
         <main>
             <section class="seccion-contenedora">
-                <section class="seccion-principal">
-                    <div class="carrito" id="carrito">
-                        <h1>Mi Cajita</h1>
-                        <div class="ordenador-container">
+                <div class="carrito" id="carrito">
+                    <h1>Mi Cajita</h1>
+                    <div class="ordenador-container">
+                        <div class="labels-ordenador" id="labels-ordenador">
                             <div class="ordenador">
-                                <button onclick="hide()"><i class="fa-solid fa-circle-arrow-up"></i></button>
-                                <button onclick="ordenarAlfabeticamente()"><i
-                                        class="fa-solid fa-arrow-down-a-z"></i></button>
-                                <button><i class="fa-solid fa-arrow-down-short-wide"></i></button>
-                                <button><i class="fa-solid fa-arrow-down-wide-short"></i></button>
+                                <button class="hideCart"><i class="fa-solid fa-circle-arrow-up"></i></button>
                             </div>
-                            <div class="labels-ordenador">
-                                <form method="POST" action="/">
-                                    <details>
-                                        <summary>filtrar por:</summary>
-                                        <p>Este es el contenido detallado del bloque de detalles 1.</p>
-                                    </details>
-                                    <details>
-                                        <summary>enviar a:</summary>
-                                        <section class="google-maps-container">
+                            <form method="POST" action="/">
+                                <button onclick="ordenarAlfabeticamente()">
+                                    <i class="fa-solid fa-arrow-down-a-z">
+                                    </i>
+                                </button>
+                                <details>
+                                    <summary>Filtrar por:</summary>
+                                    <div class="filterBy-container">
+                                        <button>Precio</button>
+                                        <button>Descuento</button>
+                                        <button>Marca</button>
+                                        <button>Cantidad</button>
+                                        <button>favoritos</button>
+                                    </div>
+                                </details>
+                                <details>
+                                    <summary>enviar a:</summary>
+                                    <section class="google-maps-container">
 
-                                            <!-- google maps div -->
-                                            <iframe
-                                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31814.088114193386!2d-74.170368!3d4.636672!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9dcb9ac15e93%3A0xc6bf5b05b9a52c99!2sParque%20Dindalito%20Bella%20Vista!5e0!3m2!1ses-419!2sco!4v1707265372189!5m2!1ses-419!2sco"
-                                                width="600" height="450" style="border:0;" allowfullscreen=""
-                                                loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                                            </iframe>
-                                            <!-- google maps fin -->
-                                        </section>
-                                    </details>
-                                    <div class="payment-container">
-                                        <input type="submit" value="payment">
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="desplegable" id="desplegable">
-                            <% productos.forEach(product=> { %>
-                                <div class="card" id="card" data-order="<%= product.id %>">
-                                    <!-- Rounded switch -->
-                                    <label class="switch">
-                                        <input type="checkbox" required>
-                                        <span class="slider round"></span>
-                                    </label>
-                                    <div class="card-image-container">
-                                        <img class="card-img" src="/img/products/<%= product.imagen %>" alt="">
-                                    </div>
-                                    <div class="nombre-marca">
-                                        <a href="/products/productDetail/<%= product.id %>">
-                                            <h5>
-                                                <%= product.nombre %>
-                                            </h5>
-                                        </a>
-                                        <p>
-                                            <%= product.marca %>
-                                        </p>
-                                    </div>
-                                    <div class="addNumber_cont">
-                                        <button id="disabledBtn" onclick="decrementar('<%= product.id %>')">
-                                            <i class="fa-solid fa-minus"></i>
-                                        </button>
-
-                                        <div class="value_cont">
-                                            <!-- <input type="number" id="amount" value="0"> -->
-
-                                            <h1 id="cantidad-<%= product.id %>" value=""> 1 </h1>
-                                        </div>
-
-                                        <button onclick="incrementar('<%= product.id %>','<%= product.cantidad %>')">
-                                            <i class="fa-solid fa-plus"></i>
-                                        </button>
-
-                                    </div>
-                                    <div class="precio-descuento">
-                                        <span>
-                                            <%= product.precio %> $
-                                        </span>
-                                        <span style="color: green;">
-                                            - <%= product.descuento %>% OFF
-                                        </span>
-                                    </div>
-                                    <div class="delete-card">
-                                        <span> eliminar </span>
-                                    </div>
+                                        <!-- google maps div -->
+                                        <iframe
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31814.088114193386!2d-74.170368!3d4.636672!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9dcb9ac15e93%3A0xc6bf5b05b9a52c99!2sParque%20Dindalito%20Bella%20Vista!5e0!3m2!1ses-419!2sco!4v1707265372189!5m2!1ses-419!2sco"
+                                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                            referrerpolicy="no-referrer-when-downgrade">
+                                        </iframe>
+                                        <!-- google maps fin -->
+                                    </section>
+                                </details>
+                                <div class="payment-container">
+                                    <input type="submit" value="payment">
                                 </div>
-
-                                <% }); %>
-                                    <div class="descripcion-card">
-                                        <p>check</p>
-                                        <p>imagen</p>
-                                        <p>producto</p>
-                                        <p>cantidad</p>
-                                        <p>precio</p>
-                                    </div>
-                        </div>
-                        <div class="pie">
-                            <button onclick="show()"><i class="fa-solid fa-cart-arrow-down"></i></button>
+                            </form>
                         </div>
                     </div>
-                </section>
+                    <div class="desplegable show__modal" id="desplegable">
+                        <% productos.forEach(product=> { %>
+                            <div class="card" id="card" data-order="<%= product.id %>">
+                                <!-- Rounded switch -->
+                                <label class="switch">
+                                    <input type="checkbox" required>
+                                    <span class="slider round"></span>
+                                </label>
+                                <div class="card-image-container">
+                                    <img class="card-img" src="/img/products/<%= product.imagen %>" alt="">
+                                </div>
+                                <div class="nombre-marca">
+                                    <a href="/products/productDetail/<%= product.id %>">
+                                        <h5>
+                                            <%= product.nombre %>
+                                        </h5>
+                                    </a>
+                                    <p>
+                                        <%= product.marca %>
+                                    </p>
+                                </div>
+                                <div class="addNumber_cont">
+                                    <button id="disabledBtn" onclick="decrementar('<%= product.id %>')">
+                                        <i class="fa-solid fa-minus"></i>
+                                    </button>
+
+                                    <div class="value_cont">
+                                        <!-- <input type="number" id="amount" value="0"> -->
+
+                                        <h1 id="cantidad-<%= product.id %>" value=""> 1 </h1>
+                                    </div>
+
+                                    <button onclick="incrementar('<%= product.id %>','<%= product.cantidad %>')">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </button>
+
+                                </div>
+                                <div class="precio-descuento">
+                                    <span>
+                                        <%= product.precio %> $
+                                    </span>
+                                    <span style="color: green;">
+                                        - <%= product.descuento %>% OFF
+                                    </span>
+                                </div>
+                                <div class="delete-card">
+                                    <span> eliminar </span>
+                                </div>
+                            </div>
+
+                            <% }); %>
+                                <div class="descripcion-card">
+                                    <p>check</p>
+                                    <p>imagen</p>
+                                    <p>producto</p>
+                                    <p>cantidad</p>
+                                    <p>precio</p>
+                                </div>
+                    </div>
+                    <div class="pie">
+                        <button class="showCart"><i class="fa-solid fa-cart-arrow-down"></i></button>
+                    </div>
+                </div>
                 <section class="segunda-seccion">
                     <div class="descripcion-pago-total">
                         <h6 class="titulo-desplegable-pago-total">TOTAL:</h6>
