@@ -64,43 +64,69 @@
   "estado": "Últimos agregados"
  },
  {
-    "id": 5,
-    "imagen": "SOUNDBOXform-imagen - 1706671195635.jpg",
-    "imagenFrontal": "IMG_DEFAULT.svg",
-    "imagenLateralDerecha": "IMG_DEFAULT.svg",
-    "imagenLateralIzquierda": "IMG_DEFAULT.svg",
-    "marca": "yamaha",
-    "nombre": "guitarra",
-    "precio": 2000,
-    "descuento": 0,
-    "descripcion": "guitarra electrica de yamaha",
-    "cantidad": 20,
-    "coloresDisponibles": [
-     "negro"
-    ],
-    "categories": [
-     "Guitarra"
-    ],
-    "estado": "Últimos agregados"
-   },
-   {
-    "id": 6,
-    "imagen": "SOUNDBOXform-imagen - 1706671195635.jpg",
-    "imagenFrontal": "IMG_DEFAULT.svg",
-    "imagenLateralDerecha": "IMG_DEFAULT.svg",
-    "imagenLateralIzquierda": "IMG_DEFAULT.svg",
-    "marca": "yamaha",
-    "nombre": "guitarra",
-    "precio": 2000,
-    "descuento": 0,
-    "descripcion": "guitarra electrica de yamaha",
-    "cantidad": 1,
-    "coloresDisponibles": [
-     "negro"
-    ],
-    "categories": [
-     "Guitarra"
-    ],
-    "estado": "Últimos agregados"
-   }
+  "id": 5,
+  "imagen": "SOUNDBOXform-imagen - 1706671195635.jpg",
+  "imagenFrontal": "IMG_DEFAULT.svg",
+  "imagenLateralDerecha": "IMG_DEFAULT.svg",
+  "imagenLateralIzquierda": "IMG_DEFAULT.svg",
+  "marca": "yamaha",
+  "nombre": "guitarra",
+  "precio": 2000,
+  "descuento": 0,
+  "descripcion": "guitarra electrica de yamaha",
+  "cantidad": 20,
+  "coloresDisponibles": [
+   "negro"
+  ],
+  "categories": [
+   "Guitarra"
+  ],
+  "estado": "Últimos agregados"
+ },
+ {
+  "id": 6,
+  "imagen": "SOUNDBOXform-imagen - 1706671195635.jpg",
+  "imagenFrontal": "IMG_DEFAULT.svg",
+  "imagenLateralDerecha": "IMG_DEFAULT.svg",
+  "imagenLateralIzquierda": "IMG_DEFAULT.svg",
+  "marca": "yamaha",
+  "nombre": "guitarra",
+  "precio": 2000,
+  "descuento": 0,
+  "descripcion": "guitarra electrica de yamaha",
+  "cantidad": 1,
+  "coloresDisponibles": [
+   "negro"
+  ],
+  "categories": [
+   "Guitarra"
+  ],
+  "estado": "Últimos agregados"
+ },
+ {
+  "id": 7,
+  "imagen": "IMG_DEFAULT.svg",
+  "imagenFrontal": "IMG_DEFAULT.svg",
+  "imagenLateralDerecha": "IMG_DEFAULT.svg",
+  "imagenLateralIzquierda": "IMG_DEFAULT.svg",
+  "marca": "Motorola",
+  "nombre": "League Of Legends",
+  "precio": 10000,
+  "descuento": null,
+  "descripcion": "LOL EL PUTISIMO MEJOR JUEGO",
+  "cantidad": 15,
+  "coloresDisponibles": [
+   "Amarillo",
+   "Gris",
+   "Verde",
+   "Azul",
+   "Rojo"
+  ],
+  "categories": [
+   "Lol",
+   "Valorant",
+   "Riot"
+  ],
+  "estado": "choose"
+ }
 ]

@@ -16,7 +16,7 @@
                     
                     <section class="second-section">
                         <div class="img-container">
-                            <img src="/img/users/<%= user.imgProfile %>" alt="">
+                            <img src="/img/users/<%= user.image %>" alt="">
                         </div>
                         <div class="img-buttons">
                             <input type="file">
@@ -24,7 +24,7 @@
                         </div>
                         
                         <div class="editar-borrar">
-                            <form action="/users/delete/<%= user.userId %>?_method=DELETE" method="POST"
+                            <form action="/users/delete/<%= user.Id %>?_method=DELETE" method="POST"
                                 style="display: inline-flex">
                                 <button type="submit" class="boton-accion-borrar">ELIMINAR</button>
                             </form>
@@ -38,14 +38,14 @@
                     <div class="user-description" id="user-description">
                         <h3>
                             <strong> Bienvenido/a a Sound-Box </strong>
-                            <%= user.name %>
+                            <%= user.first_name %>
                             !!
                         </h3>
                         <h3>
-                            <%= user.lastName %>
+                            <%= user.last_name %>
                         </h3>
                         <h3>
-                            <%= user.email %>
+                            <%= user.e_mail %>
                         </h3>
                         <p>Argentina</p>
 
@@ -56,13 +56,13 @@
                     <section id="edit-user-form">
                         <form action="">
                             <label for=""><p>Name</p>
-                                <input type="text" value="<%= user.name %>" >
+                                <input type="text" value="<%= user.first_name %>" >
                             </label>
                             <label for=""><p>Last name</p>
-                                <input type="text" value="<%= user.lastName %>">
+                                <input type="text" value="<%= user.last_name %>">
                             </label>
                             <label for=""><p>Email</p>
-                                <input type="text" value="<%= user.email %>" >
+                                <input type="text" value="<%= user.e_mail %>" >
                             </label>
                             
                             <div>

@@ -13,14 +13,20 @@
 
 
 
-    .google-maps-container {
+.google-maps-container {
+    width: 25vw;
+    position: absolute;
+    z-index: 80;
+    margin: 20px;
+    right: 14%;
 
-        iframe {
-            width: 100%;
 
-        }
+    iframe {
+        width: 100%;
 
     }
+
+}
 
 
 
@@ -143,9 +149,6 @@
     width: 50%;
     display: flex;
     justify-content: space-around;
-
-
-
 }
 
 .ordenador button {
@@ -166,7 +169,12 @@
         justify-content: space-around;
         font-size: 20px;
         align-items: center;
-        
+        .payment-container {
+
+
+
+        }
+
         summary {
 
             details {
@@ -180,7 +188,7 @@
 
         }
 
-        input{
+        input {
             width: 100px;
             height: 50px;
             font-size: 18px;
@@ -491,6 +499,7 @@ input:checked+.slider:before {
 
 
 .grid-container {
+    background-color: #cbcbcb;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 1rem;
@@ -503,6 +512,51 @@ input:checked+.slider:before {
     width: 100%;
     height: 0;
     padding-bottom: 100%;
+
+    .image-related-container {
+        width: 250px;
+
+
+    }
+    .name-related-card {
+        width: 100%;
+        height: 50px;
+        background-color: rgba(0, 0, 0, 0.3);
+        border-radius: 0 0 18px 18px;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        top: 0px;
+        flex-direction: column;
+        align-items: center;
+        p{
+            font-size:20px;
+            color: white;
+
+        }
+    }
+    .description-related-card {
+        display: none;
+        width: 100%;
+        background-color: #ff530a82;
+        position: absolute;
+        justify-content: center;
+        bottom: 0px;
+        flex-direction: column;
+        align-items: center;
+
+        p {
+            font-size: 14px;
+            color: white;
+
+        }
+
+    }
+
+    &:hover .description-related-card {
+        display: flex;
+
+    }
 }
 
 .grid-item img {
@@ -529,26 +583,24 @@ input:checked+.slider:before {
     margin-bottom: 5px;
 }
 
-.custom-class-1 {
-    transform: scaleY(80rem);
-    transition: all .7s ease-in-out;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.productCart-open {
+    animation: all productCartAnimation .7s;
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* KEYFRAMES */
@@ -566,6 +618,26 @@ input:checked+.slider:before {
         box-shadow: 0px 0px 100px rgb(255, 255, 215);
         border-radius: 60px;
 
+    }
+}
+
+@keyframes productCartAnimation {
+
+    0% {
+        transform: scaleY(0rem);
+
+    }
+
+    25% {}
+
+    50% {
+        transform: scaleY(25rem);
+    }
+
+    75% {}
+
+    100% {
+        transform: scaleY(60rem);
     }
 }
 
@@ -735,6 +807,7 @@ input:checked+.slider:before {
 @media(max-width:630px) {
 
     .seccion-principal {
+        margin-bottom: 2rem;
         max-height: 80rem;
         display: flex;
         justify-content: center;
@@ -792,7 +865,7 @@ input:checked+.slider:before {
     }
 
     .card img {
-        width: 85%;
+        width: 100%;
 
     }
 

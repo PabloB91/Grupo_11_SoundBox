@@ -70,10 +70,10 @@ app.use((req, res, next) => {
 //*****************************************************************************************************\\
 
 /************* LLAMANDO AL SERVIDOR *************/
-const port = process.env.PORT || 3050;
+const port = process.env.PORT || 3020;
 
-app.listen(`${port}`, () => {
-    console.log(`Servidor funcionando en: http://localhost:${port}`)
+app.listen(3020, () => {
+    console.log(`Servidor funcionando en: http://localhost:${port}`);
 });
 //*****************************************************************************************************\\
 

@@ -19,7 +19,7 @@ module.exports = (sequelize, dataTypes) => {
     })
 
     Pais.associate = function(models){
-        Pais.hasMany(models.User, {
+        Pais.hasMany(models.Usuarios, {
             as: "user",
             foreignKey: "country_id"
         })

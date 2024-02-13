@@ -62,5 +62,13 @@
   "email": "bautista.garcia.oliver@gmail.com",
   "password": "$2a$10$X8BEzZAw2NNn2xU/g9Db5OTvjpwc5hZ54cGGF4ZrujZo1VIGnlFg2",
   "imgProfile": "alvaro.jpg"
+ },
+ {
+  "userId": 12,
+  "name": "Francisco",
+  "lastName": "Capitani",
+  "email": "codigoxcapixyt@gmail.com",
+  "password": "$2a$10$CwYCqCFSZrRR55K8/Nydlu/YUCdRR6FrSHRvZ5rCSK8iIyArLk3ea",
+  "imgProfile": "alvaro.jpg"
  }
 ]
