@@ -1,6 +1,7 @@
 <%- include('./partials/head.ejs') %>
-    <!-- ¡OJO! se estaba repitiendo el llamado de las hojas de estilo 'reset' y 'header-footer' que ya están en el partial head.ejs. PUEDEN PRESENTARSE CONFLICTOS (revisar) -->
-    <link href="/styles/home.css" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link href="/styles/index.css" rel="stylesheet">
 
     <%- include('./partials/header.ejs') %>
 
@@ -8,105 +9,111 @@
 
             <div class="main-center">
 
-                <section class="slider-frame">
-                    <ul>
-                        <li>
-                            <img src="/img/banners/Banner-carrusel1.jpg" id="Banner-image1" alt="">
-                        </li>
-                        <li class="yt-iframe-container" id="yt-iframe-container1">
-                            <!-- quiero entre banner y banner se vea un video de cada instrumento
-                                 con la api de youtube usando:-->
-                            <iframe width="560" height="315"
-                                src="https://www.youtube.com/embed/3uneA-cstZs?si=4yaoLe7hZo7IzrNw&start=10&
-                                control=0"
+                <section class="slider">
+
+                    <div class="slider--inner" id="slider--inner">
+
+                        <div class="img_sliderSection">
+                            <img src="/img/banners/Banner-carrusel1.jpg" class="slider--img" id="Banner-image1" alt="">
+                        </div>
+
+                        <div class="img_sliderSection">
+                            <iframe class="slider--img iframe" src="https://www.youtube.com/embed/3uneA-cstZs?si=4yaoLe7hZo7IzrNw&start=10&
+                            control=0" title="YouTube video player" frameborder="0"
+                                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+
+                        <div class="img_sliderSection">
+                            <img src="/img/banners/Banner-carrusel2.jpg" class="slider--img" id="Banner-image2" alt="">
+                        </div>
+
+                        <div class="img_sliderSection">
+                            <iframe class="slider--img iframe" id="yt-iframe-container2"
+                                src="https://www.youtube.com/embed/cAOfUZUiZhM?si=OsX654CAnGZhtgkb"
                                 title="YouTube video player" frameborder="0"
-                                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  
-                                allowfullscreen></iframe>
-                            <!-- iframe de yt -->
-                            <!-- si sumamos autoplay=1& al final del link se autoreproduce solo el video-->
-                        </li>
-                        <li>
-                            <img src="/img/banners/Banner-carrusel2.jpg" id="Banner-image2" alt="">
-                        </li>
-                        <li class="yt-iframe-container" id="yt-iframe-container">
-                            <!-- quiero entre banner y banner se vea un video de cada instrumento
-                                 con la api de youtube usando:-->
-                                 <iframe width="560" height="315" id="yt-iframe-container2" src="https://www.youtube.com/embed/cAOfUZUiZhM?si=OsX654CAnGZhtgkb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                            <!-- iframe de yt -->
-                        </li>
-                        <li>
-                            <img src="/img/banners/Banner-carrusel3.jpg" id="Banner-image3" alt="">
-                        </li>
-                        <li>
-                            <img src="/img/banners/Banner-carrusel4.jpg" id="Banner-image4" alt="">
-                        </li>
-                        <li>
-                            <img src="/img/banners/Banner-carrusel1.jpg" id="Banner-image5" alt="">
-                        </li>
-                    </ul>
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+
+                        <div class="img_sliderSection">
+                            <img src="/img/banners/Banner-carrusel3.jpg" class="slider--img" id="Banner-image3" alt="">
+                        </div>
+
+                        <div class="img_sliderSection">
+                            <img src="/img/banners/Banner-carrusel4.jpg" class="slider--img" id="Banner-image4" alt="">
+                        </div>
+
+                    </div>
+
 
                     <div class="slider-buttons">
-                        <div class="grid-items-slider">
-                            <a href="#Banner-image1">.</a>
+
+                        <div class="slider--btns slider--bts-left" id="btn-left">
+                            <span class="material-symbols-outlined">
+                                skip_previous
+                            </span>
                         </div>
-                        <div class="grid-items-slider">
-                            <a href="#yt-iframe-container1">.</a>
-                        </div>
-                        <div class="grid-items-slider">
-                            <a href="#Banner-image2">.</a>
-                        </div>
-                        <div class="grid-items-slider"><!-- pongo un punto pq si no desaparecen xd -->
-                            <a href="#yt-iframe-container2">.</a>
-                        </div>
-                        <div class="grid-items-slider">
-                            <a href="#Banner-image3">.</a>
-                        </div>
-                        <div class="grid-items-slider">
-                            <a href="#yt-iframe-container3">.</a>
-                        </div>
-                        <div class="grid-items-slider">
-                            <a href="#yt-iframe-container4">.</a>
+                        <div class="slider--btns slider--bts-rigth" id="btn-rigth">
+                            <span class="material-symbols-outlined">
+                                skip_next
+                            </span>
                         </div>
                     </div>
-                </section>
-                <section class="mas-vendidos" id="section-mas-vendidos">
-                    <h3>MÁS VENDIDOS</h3>
 
-                    <div class="items-mas-vendidos">
+                </section>
+
+                <section class="cards ultimos-vistos" id="section-ultimos vistos">
+
+                    <title>
+                        <h3>Ultimos Vistos</h3>
+                    </title>
+
+                    <article class="items-mas-vendidos ">
                         <% masVendidos.forEach(element=> { %>
                             <a href="/products/productDetail/<%= element.id %>" class="product">
-                                <img src="/img/products/<%= element.imagen %>" alt="Trompeta">
-                                <div class="detalle-producto">
-                                    <p class="descripciones"><strong>Plastic Trumpet, White</strong></p>
-                                    <div class="container-detalle">
-                                        <p class="calificacion">
 
-                                        <form class="formulario-clasificacion">
-                                            <p class="clasificacion">
-                                                <input id="radio1" type="radio" name="estrellas" value="5"><!--
-                                                --><label for="radio1"><i class="fa-solid fa-star"></i></label><!--
-                                                --><input id="radio2" type="radio" name="estrellas" value="4"><!--
-                                                --><label for="radio2"><i class="fa-solid fa-star"></i></label><!--
-                                                --><input id="radio3" type="radio" name="estrellas" value="3"><!--
-                                                --><label for="radio3"><i class="fa-solid fa-star"></i></label><!--
-                                                --><input id="radio4" type="radio" name="estrellas" value="2"><!--
-                                                --><label for="radio4"><i class="fa-solid fa-star"></i></label><!--
-                                                --><input id="radio5" type="radio" name="estrellas" value="1"><!--
-                                                --><label for="radio5"><i class="fa-solid fa-star"></i></label>
-                                            </p>
-                                        </form>
+                                <picture>
+                                    <img src="/img/products/<%= element.imagen %>" alt="Trompeta">
+                                </picture>
 
+                                <section class="detalle-producto">
 
+                                    <p class="descripciones">
+                                        <%= element.description %>
+                                    </p>
+
+                                    <p class="calificacion">
+
+                                    <form class="formulario-clasificacion stars">
+                                        <p class="clasificacion">
+                                            <input id="radio1" type="radio" name="estrellas" value="5">
+                                            <label for="radio1"><i class="fa-solid fa-star"></i></label>
+                                            <input id="radio2" type="radio" name="estrellas" value="4">
+                                            <label for="radio2"><i class="fa-solid fa-star"></i></label>
+                                            <input id="radio3" type="radio" name="estrellas" value="3">
+                                            <label for="radio3"><i class="fa-solid fa-star"></i></label>
+                                            <input id="radio4" type="radio" name="estrellas" value="2">
+                                            <label for="radio4"><i class="fa-solid fa-star"></i></label>
+                                            <input id="radio5" type="radio" name="estrellas" value="1">
+                                            <label for="radio5"><i class="fa-solid fa-star"></i></label>
                                         </p>
-                                        <p class="precios">$ <%= element.precio %>
-                                        </p>
-                                    </div>
-                                </div>
+                                    </form>
+
+                                    </p>
+
+                                    <p class="precios">$ <%= element.precio %>
+                                    </p>
+
+                                </section>
                             </a>
 
                             <% }); %>
 
-                    </div>
+                    </article>
+
                 </section>
 
                 <section class="marcas-banners" id="seccion-marcas-banners">
@@ -140,8 +147,7 @@
                                 <article class="categoria fade-diagonal ">
                                     <a href="categoria/Pianos">
                                         <p>Teclados & Pianos</p>
-                                        <img src="/img/home/categoria-pianos-teclados.jpg"
-                                            alt="Teclados&Pianos">
+                                        <img src="/img/home/categoria-pianos-teclados.jpg" alt="Teclados&Pianos">
                                     </a>
                                 </article>
 
@@ -155,8 +161,7 @@
                                 <article class="categoria fade-diagonal ">
                                     <a href="categoria/Amplificacion">
                                         <p>Amplificación</p>
-                                        <img src="/img/home/categoria-amplificacion.jpg"
-                                            alt="Amplificación">
+                                        <img src="/img/home/categoria-amplificacion.jpg" alt="Amplificación">
                                     </a>
                                 </article>
 
@@ -196,76 +201,10 @@
                     </div>
                 </section>
 
-
-                <!-- <div class="titles-last-section">
-                    <h3>Novedades</h3>
-                    <h3>Comentados</h3>
-                    <h3>Destacados</h3>
-                </div> -->
-                <div class="last-section-flex">
-                <div class="last-section">
-                    <h3>Novedades</h3>
-                    <h3>Comentados</h3>
-                    <h3>Destacados</h3>
-                    <% masVendidos.forEach(element=> { %>
-                        <a href="/products/productDetail/<%= element.id %>" class="card">
-                            <div class="img-container">
-                                <img src="/img/productos/Orquesta/Orquesta-1.jpg" alt="">
-                            </div>
-                            <div class="card-text">
-                                <span class="descripciones">
-                                    <%= element.nombre %>
-                                </span>
-                                <span>
-                                    <%= element.marca %>
-                                </span>
-                                <span>
-                                    <%= element.precio %>
-                                </span>
-                            </div>
-                        </a>
-                        <% }); %>
-                        <% masVendidos.forEach(element=> { %>
-                            <a href="/products/productDetail/<%= element.id %>" class="card">
-                                <div class="img-container">
-                                    <img src="/img/productos/Orquesta/Orquesta-1.jpg" alt="">
-                                </div>
-                                <div class="card-text">
-                                    <span>
-                                        <%= element.nombre %>
-                                    </span>
-                                    <span>
-                                        <%= element.marca %>
-                                    </span>
-                                    <span>
-                                        <%= element.precio %>
-                                    </span>
-                                </div>
-                            </a>
-                            <% }); %>
-                            <% products.forEach(element=> { %>
-                                <a href="/products/productDetail/<%= element.id %>" class="card">
-                                    <div class="img-container">
-                                        <img src="/img/productos/Orquesta/Orquesta-1.jpg" alt="">
-                                    </div>
-                                    <div class="card-text">
-                                        <span>
-                                            <%= element.nombre %>
-                                        </span>
-                                        <span>
-                                            <%= element.marca %>
-                                        </span>
-                                        <span>
-                                            <%= element.precio %>
-                                        </span>
-                                    </div>
-                                </a>
-                                <% }); %>
-                        
-                </div>
                 <div class="promo-container">
                     <img src="img/banners/banner_promo.jpg" alt="">
                 </div>
+
             </div>
             </div>
 

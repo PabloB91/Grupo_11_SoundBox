@@ -71,7 +71,7 @@ const upload = multer({storage});
  * devolver la vista de user que esta en el usersConreoller. Además, se aplica el 'authMiddleware' (si el usuario está logueado, continúa con el controlador,
  * si no, lo redirige al login)
  */
-router.get('/userProfile/:userId', authMiddleware,usersController.userProfile);
+router.get('/userProfile/:id', authMiddleware,usersController.userProfile);
 
 // Login
 /**

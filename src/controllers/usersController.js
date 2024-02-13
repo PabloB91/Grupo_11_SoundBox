@@ -11,10 +11,8 @@ const db = require("../database/models")
 const { validationResult } = require("express-validator");
 const { log } = require("console");
 
-
-// Path y direcciones
-
 const usersFilePath = path.join(__dirname, "../data/usersDataBase.json");
+
 
 const usersControllers = {
 
@@ -22,57 +20,45 @@ const usersControllers = {
     register: (req, res) => {
         res.render("forms/register")
     },
-    /* async (req, res) => {
-        try{
-            let user= await db.Usuario.findByPk({
-                where: { id: req.params.id}
-            })
-            res.render('user/userProfile.ejs', {user})
-        }
-        catch(err) {
-            res.render("not-found")
-        } */
     // (POST) Proceso de Registro
     processToRegister: async (req, res) => {
         try{
             const errores = validationResult(req);  //--->Traemos las validaciones
-        // console.log(errores);
+            // console.log(errores);
+
+            let country_registro;  //--> Esto es para tomar el valor de país del input de usuario y guardarlo con el Id correspondiente
+            if (req.body.pais == 'Argentina'){
+                country_registro= 1
+            }else if(req.body.pais == 'Colombia'){
+                country_registro= 2
+            }
+        
             if(!errores.isEmpty()){ //-->Si existen errores, se renderizan y además se renderizan los input de usuario que sean correctos en el objeto 'old' 
                 //console.log("Errores: ", errores);
                 return res.render("forms/register.ejs", { errores: errores.array(), old: req.body}) 
             }else{
-                res.render("forms/register.ejs")
-            }
+                const passwordToValidate = req.body.password  //-->Se trae el password ingresado por el usuario, para su posterior hasheo
+                //--> Se llama al método de Sequelize 'create' para crear un registro en la DB 
+                let CreateUser= await db.Usuarios.create({
+                    first_name: req.body.name,      //-->Los nombres de los campos tienen que ser iguales a los nombres del modelo 'Usuario' de DB
+                    last_name: req.body.lastName,
+                    e_mail: req.body.email,
+                    password: bcrypt.hashSync(passwordToValidate, 10),
+                    image: req.file == undefined ? "alvaro.jpg" : req.file.filename,
+                    registered_date: Date.now(),    //--> Esta función trae la fecha actual
 
-            const passwordToValidate = req.body.password  //-->Se trae el password ingresado por el usuario, para su posterior hasheo
-            //--> Se llama al método de Sequelize 'create' para crear un registro en la DB 
-            let CreateUser= await db.Usuario.create({
-                first_name: req.body.name,      //-->Los nombres de los campos son iguales a los nombres del modelo 'Usuario' de DB
-                last_name: req.body.lastName,
-                e_mail: req.body.email,
-                password: bcrypt.hashSync(passwordToValidate, 10),
-                image: req.file == undefined ? "alvaro.jpg" : req.file.filename
-            })
-            console.log("usuario a crear: ",CreateUser);
-            res.redirect('users/login')  //--> Una vez creado el registro en la DB. se redirige al perfil del usuario
-        }
+                    user_type_id: 2,    //--> En este caso el Id debería ser siempre '2', porque es el que corresponde a 'common_user'
+                                        //--Definir cómo vamos a crear el usuario 'admin', que debería ser creado una sola vez.
+                    country_id: 2 /* country_registro */       //--> Actualizar el formulario de registro para incluir esto, 
+                })               //  una vez esté listo el formulario, descomentar
+                console.log("usuario a crear: ",CreateUser);  //--> Muestra por consola cómo quedó el registro que se inserta en la BD
+                return res.redirect('login')  //--> Una vez creado el registro en la DB. se redirige a la página de logueo
+            }
+        }   //--Hay que usar 'return' para evitar el error de '[ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client'
         catch(err) {
-            res.render("not-found")
+            return console.log(err); //--> Esto nos muestra en la consola si es que hubo algún error en el proceso
         }
     },
-    /* const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8')); //--> Se trae el JSON de usuarios 
-        newUser = {     //--> Se crea el objeto para un nuevo usuario
-        userId: usersJson[usersJson.length - 1].userId + 1, //--> Corregí la creación de id, porque los creaba con valores 'null'
-        name: req.body.name,
-        lastName: req.body.lastName,
-        email: req.body.email,
-        password: bcrypt.hashSync(passwordToValidate, 10),
-        imgProfile: req.file == undefined ? "alvaro.jpg" : req.file.filename
-        } 
-        
-        usersJson.push(newUser);  //--> Se agrega el nuevo usuario a la variable del JSON
-
-		fs.writeFileSync(usersFilePath, JSON.stringify(usersJson, null, ' '));  //--> Se escribe el archivo JSON con la variable modificada */ 
     // (GET) Formulario de Login
     login: (req, res) => {
       res.render("forms/login.ejs");
@@ -159,26 +145,14 @@ const usersControllers = {
 
     // (GET) Perfil del Usuario
     userProfile: async (req, res) => {
-            try{
-                let user= await db.Usuario.findByPk({
-                    where: { id: req.params.id}
-                })
-                console.log("usuario :", user);
-                res.render('user/userProfile.ejs', {user})
-            }
-            catch(err) {
-                res.render("not-found")
-            }
-        /* let userId = req.params.userId */
-        /* const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-		let userDefinido = usersJson.find(user => {
-			return user.userId == userId;
-		})
-		if(userDefinido){
-			res.render("user/userProfile.ejs", { user : userDefinido });
-		} else {
-            res.render("forms/register.ejs");
-		} */
+        try{
+            let user= await db.Usuarios.findByPk(req.params.id) //--> Busca el usuario en la BD según su Id
+            return res.render('user/userProfile.ejs', {user})
+        }   //--Hay que usar 'return' para evitar el error de '[ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client'
+        catch(err) {
+            console.log(err);
+            return res.render("not-found")
+        } 
         //console.log("user Profile");
         //console.log(req.session);
     },

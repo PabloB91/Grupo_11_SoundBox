@@ -21,25 +21,26 @@
             <% users.forEach(user => { %>
                 <div class="user-card">
                     
-                    <a href="/users/userProfile/<%= user.userId%>">
+                    <a href="/users/userProfile/<%= user.id%>">
 
                         <div class="a-user_card">
                             
                             <div class="img">
-                                <img src="/img/users/default-image/<%= user.imgProfile %>" alt="ft-profile soundBox">
+                                <img src="/img/users/default-image/<%= user.image %>" alt="ft-profile soundBox">
                             </div>
                             
                             <div class="infoUser">
     
                         <div class="idUser">
-                            <p>#<%= user.userId%></p>
+                            <p>#<%= user.id%></p>
                         </div>
     
-                        <p>Nombres: <%= user.name %></p>
-                        <p>Apellidos: <%= user.lastName %></p>
-                        <span>Correo: <%= user.email%></span>
-                        <span>Fecha de registro: 2000/11/15</span>
-                        <span>Compras echas: 0</span>
+                        <p>Nombres: <%= user.first_name %></p>
+                        <p>Apellidos: <%= user.last_name %></p>
+                        <p>Correo: <%= user.e_mail%></p>
+                        <p>País: <%= user.country_id%></p>  <!-- Acá habría que ver cómo poner que se vea el nombre del país -->
+                        <p>Fecha de registro: <%= user.registered_date%></p>
+                        <p>Compras hechas: 0</p>
     
                             </div>
                         </div>
@@ -49,7 +50,7 @@
                     <div class="butons">
     
                         <div class="delete">
-                            <form action="/users/delete/<%= user.userId %>?_method=DELETE" method="POST">
+                            <form action="/users/delete/<%= user.id %>?_method=DELETE" method="POST">
                                 <button type="submit" class="boton-accion-borrar">ELIMINAR</button>
                             </form>
                         </div>
