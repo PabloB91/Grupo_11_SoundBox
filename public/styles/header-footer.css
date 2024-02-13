@@ -144,6 +144,13 @@ header {
 				transition: 1s;
 			}
 
+			.user-dropdown .fa-solid,
+			.fa-regular {
+				color: #ff540a;
+				margin: 0px 4px;
+				font-size: 1rem;
+			}
+
 			.user-dropdown a {
 				color: #000;
 			}
@@ -406,6 +413,7 @@ footer {
 		.fa-regular {
 			color: #ff540a;
 			margin: 0px 4px;
+			font-size: 1.5rem;
 		}
 
 		.headerTop .comment {
