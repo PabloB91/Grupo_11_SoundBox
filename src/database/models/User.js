@@ -29,6 +29,16 @@ module.exports = (sequelize, dataTypes) => {
         registered_date: {
             type: dataTypes.DATEONLY,
             allowNull: false
+        },
+        user_type_id: {
+            type: dataTypes.INTEGER,
+            allowNull: false,
+            foreignKey: true
+        },
+        country_id: {
+            type: dataTypes.INTEGER,
+            allowNull: false,
+            foreignKey: true
         }
     }, 
     {
@@ -38,7 +48,7 @@ module.exports = (sequelize, dataTypes) => {
 
     Usuario.associate = function(models){
         Usuario.belongsTo(models.Tipo_de_usuario, {
-            as: "user-type",
+            as: "user_type",
             foreignKey: "user_type_id"
         })
         Usuario.belongsTo(models.Paises, {

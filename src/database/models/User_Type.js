@@ -21,7 +21,7 @@ module.exports = (sequelize, dataTypes) => {
     TipoUsuario.associate = function(models){
         TipoUsuario.hasMany(models.Usuarios, {
             as: "user",
-            foreignKey: "user-type_id"
+            foreignKey: "user_type_id"
         })
     }
 

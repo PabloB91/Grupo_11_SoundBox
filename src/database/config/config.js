@@ -2,7 +2,7 @@ module.exports = {
   "development": {
     "username": "root",
     "password": null,
-    "database": "SoundBox_Grupo:11",
+    "database": "soundbox",  //--> Este nombre debe ser igual a cómo lo tiene configurado cada uno en su compu
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
