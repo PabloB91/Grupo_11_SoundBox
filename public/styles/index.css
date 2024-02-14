@@ -66,41 +66,30 @@ div#btn-rigth {
 /* ------------------------------------------------------------------ */
 
 /*cards*/
-
-.all-cards {
-	display: flex;
-	flex-wrap: wrap;
-	width: 100%;
-}
-
-.title {
-	width: 100%;
-}
-
 .container-cards {
-	/* display: flex; */
-	/* flex-wrap: wrap; */
 	width: 100%;
-	height: 35%;
 }
 
-.cards {
-	display: flex;
-	/* width: 80%; */
-	margin: auto;
-	/* overflow: hidden; */
-	overflow-x: auto;
+.color-card {
+	background: #fff;
+	border-radius: 7px;
+	overflow: hidden;
+}
+
+.margin-card {
+	margin-bottom: 5px;
+}
+
+.width-height-card {
+	width: 100%;
+}
+
+.title-section {
+	width: 100%;
 }
 
 .card {
-	width: 200px;
-	height: 100%;
-	margin-right: 20px;
-}
-
-.card a {
-	width: 100%;
-	height: 100%;
+	display: flex;
 }
 
 .img-product {
@@ -108,8 +97,8 @@ div#btn-rigth {
 	border: 1px solid #000;
 	overflow: hidden;
 	border-radius: 7px;
-	width: 200px;
-	height: 280px;
+	width: 20%;
+	/* 	height: 280px; */
 
 	img {
 		width: 100%;
@@ -120,25 +109,30 @@ div#btn-rigth {
 .product-info {
 	display: flex;
 	flex-wrap: wrap;
-	width: 100%;
+	width: 80%;
 
 	p {
 		display: block;
 	}
 
-	nameProduct {
+	.nameProduct {
 		width: 100%;
 	}
 
 	.qualification {
 		width: 50%;
 	}
-	.dicount {
+	.discount {
+		display: flex;
+		align-items: center;
 		width: 50%;
 	}
 }
 
 .form-qualification {
+	display: flex;
+	align-items: center;
+	width: 100%;
 	input[type="radio"] {
 		display: none;
 	}
@@ -247,6 +241,45 @@ div#btn-rigth {
 }
 
 /*---MEDIA QUERIES---*/
+
+@media screen and (min-width: 740px) {
+	.container-cards {
+		display: flex;
+		flex-wrap: wrap;
+		width: 85%;
+	}
+
+	.cards {
+		display: flex;
+		flex-wrap: nowrap;
+		overflow-x: scroll;
+
+		scrollbar-color: #ff540a;
+	}
+
+	.letter-from-outside {
+		flex: 1 0 auto;
+		margin: 0px 35px;
+	}
+
+	.width-height-card {
+		width: 200px;
+	}
+
+	.card {
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	.img-product {
+		width: 200px;
+	}
+
+	.product-info {
+		width: 100%;
+	}
+}
 
 /* @media (max-width: 1024px) {
 	.items-mas-vendidos {
