@@ -3,213 +3,239 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link href="/styles/index.css" rel="stylesheet">
 
-    <%- include('./partials/header.ejs') %>
+    <section><%- include('./partials/header.ejs') %>
 
-        <main class="main">
+            <main class="main">
 
-            <div class="main-center">
+                <div class="main-center">
 
-                <section class="slider">
+                    <section class="slider">
 
-                    <div class="slider--inner" id="slider--inner">
+                        <div class="slider--inner" id="slider--inner">
 
-                        <div class="img_sliderSection">
-                            <img src="/img/banners/Banner-carrusel1.jpg" class="slider--img" id="Banner-image1" alt="">
-                        </div>
+                            <div class="img_sliderSection">
+                                <img src="/img/banners/Banner-carrusel1.jpg" class="slider--img" id="Banner-image1"
+                                    alt="">
+                            </div>
 
-                        <div class="img_sliderSection">
-                            <iframe class="slider--img iframe" src="https://www.youtube.com/embed/3uneA-cstZs?si=4yaoLe7hZo7IzrNw&start=10&
+                            <div class="img_sliderSection">
+                                <iframe class="slider--img iframe" src="https://www.youtube.com/embed/3uneA-cstZs?si=4yaoLe7hZo7IzrNw&start=10&
                             control=0" title="YouTube video player" frameborder="0"
-                                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen>
-                            </iframe>
+                                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+
+                            <div class="img_sliderSection">
+                                <img src="/img/banners/Banner-carrusel2.jpg" class="slider--img" id="Banner-image2"
+                                    alt="">
+                            </div>
+
+                            <div class="img_sliderSection">
+                                <iframe class="slider--img iframe" id="yt-iframe-container2"
+                                    src="https://www.youtube.com/embed/cAOfUZUiZhM?si=OsX654CAnGZhtgkb"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+
+                            <div class="img_sliderSection">
+                                <img src="/img/banners/Banner-carrusel3.jpg" class="slider--img" id="Banner-image3"
+                                    alt="">
+                            </div>
+
+                            <div class="img_sliderSection">
+                                <img src="/img/banners/Banner-carrusel4.jpg" class="slider--img" id="Banner-image4"
+                                    alt="">
+                            </div>
+
                         </div>
 
-                        <div class="img_sliderSection">
-                            <img src="/img/banners/Banner-carrusel2.jpg" class="slider--img" id="Banner-image2" alt="">
+
+                        <div class="slider-buttons">
+
+                            <div class="slider--btns slider--bts-left" id="btn-left">
+                                <span class="material-symbols-outlined">
+                                    skip_previous
+                                </span>
+                            </div>
+                            <div class="slider--btns slider--bts-rigth" id="btn-rigth">
+                                <span class="material-symbols-outlined">
+                                    skip_next
+                                </span>
+                            </div>
                         </div>
 
-                        <div class="img_sliderSection">
-                            <iframe class="slider--img iframe" id="yt-iframe-container2"
-                                src="https://www.youtube.com/embed/cAOfUZUiZhM?si=OsX654CAnGZhtgkb"
-                                title="YouTube video player" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen>
-                            </iframe>
+                    </section>
+
+                    <section class="container-cards last-seen">
+
+                        <div class="last-seen_title title-section">
+                            <h3>Ultimos vistos</h3>
                         </div>
 
-                        <div class="img_sliderSection">
-                            <img src="/img/banners/Banner-carrusel3.jpg" class="slider--img" id="Banner-image3" alt="">
-                        </div>
+                        <div class="cards">
 
-                        <div class="img_sliderSection">
-                            <img src="/img/banners/Banner-carrusel4.jpg" class="slider--img" id="Banner-image4" alt="">
-                        </div>
+                            <% lastSeen.forEach(product=> { %>
+                                <div
+                                    class="last-seen_card color-card letter-from-outside width-height-card margin-card">
+                                    <a href="/products/productDetail/<%= product.id %>" class="product">
+                                        <div class="card">
+                                            <picture class="img-product">
+                                                <img src="/img/products/<%= product.imagen %>"
+                                                    alt="<%= product.categories, product.name, product.brands %>">
+                                            </picture>
 
-                    </div>
+                                            <section class="product-info">
 
+                                                <div class="nameProduct">
+                                                    <p class="nameProduct">Nombre del producto <%= product.name%>
+                                                    </p>
+                                                </div>
 
-                    <div class="slider-buttons">
+                                                <form class="form-qualification qualification stars">
+                                                    <p class="qualification">
+                                                        <input id="radio1" type="radio" name="stars" value="5">
+                                                        <label for="radio1"><i class="fa-solid fa-star"></i></label>
+                                                        <input id="radio2" type="radio" name="stars" value="4">
+                                                        <label for="radio2"><i class="fa-solid fa-star"></i></label>
+                                                        <input id="radio3" type="radio" name="stars" value="3">
+                                                        <label for="radio3"><i class="fa-solid fa-star"></i></label>
+                                                        <input id="radio4" type="radio" name="stars" value="2">
+                                                        <label for="radio4"><i class="fa-solid fa-star"></i></label>
+                                                        <input id="radio5" type="radio" name="stars" value="1">
+                                                        <label for="radio5"><i class="fa-solid fa-star"></i></label>
+                                                    </p>
+                                                </form>
 
-                        <div class="slider--btns slider--bts-left" id="btn-left">
-                            <span class="material-symbols-outlined">
-                                skip_previous
-                            </span>
-                        </div>
-                        <div class="slider--btns slider--bts-rigth" id="btn-rigth">
-                            <span class="material-symbols-outlined">
-                                skip_next
-                            </span>
-                        </div>
-                    </div>
+                                                <div class="discount">
+                                                    <p>$ <%= product.price %>
+                                                    </p>
+                                                </div>
 
-                </section>
-
-                <section class="last-seen container-cards">
-
-                    <div class="last-seen_title title-section">
-                        <h3>Ultimos vistos</h3>
-                    </div>
-
-                    <div class="cards">
-
-                        <% lastSeen.forEach(product=> { %>
-                            <div class="last-seen_card color-card letter-from-outside width-height-card margin-card">
-                                <a href="/products/productDetail/<%= product.id %>" class="product">
-                                    <div class="card">
-                                        <div class="img-product">
-                                            <img src="/img/products/<%= product.imagen %>"
-                                                alt="<%= product.categories, product.name, product.brands %>">
+                                            </section>
                                         </div>
+                                    </a>
+                                </div>
+                                <% }); %>
+                        </div>
 
-                                        <section class="product-info">
+                    </section>
 
-                                            <div class="nameProduct">
-                                                <p class="nameProduct">Nombre del producto <%= product.name%>
-                                                </p>
-                                            </div>
-
-                                            <form class="form-qualification qualification stars">
-                                                <p class="qualification">
-                                                    <input id="radio1" type="radio" name="stars" value="5">
-                                                    <label for="radio1"><i class="fa-solid fa-star"></i></label>
-                                                    <input id="radio2" type="radio" name="stars" value="4">
-                                                    <label for="radio2"><i class="fa-solid fa-star"></i></label>
-                                                    <input id="radio3" type="radio" name="stars" value="3">
-                                                    <label for="radio3"><i class="fa-solid fa-star"></i></label>
-                                                    <input id="radio4" type="radio" name="stars" value="2">
-                                                    <label for="radio4"><i class="fa-solid fa-star"></i></label>
-                                                    <input id="radio5" type="radio" name="stars" value="1">
-                                                    <label for="radio5"><i class="fa-solid fa-star"></i></label>
-                                                </p>
-                                            </form>
-
-                                            <div class="discount">
-                                                <p>$ <%= product.price %>
-                                                </p>
-                                            </div>
-
-                                        </section>
-                                    </div>
-                                </a>
+                    <section class="cards-prom">
+                        <div class="center_cards-prom">
+                            <div class="cardProm card1 free-shipping">
+                                <picture>
+                                    <i class="fa-regular fa-truck"></i>
+                                </picture>
                             </div>
-                            <% }); %>
-                    </div>
-
-                </section>
-
-                <section class="brands-banners" id="seccion-brands-banners">
-                    <h5>Compra Por categoria</h5>
-                    <div class="dropdown-content-categoria">
-
-                        <section class="compra-por-categoria" id="section-categorias">
-                            <div class="items-categorias">
-
-                                <article class="categoria fade-diagonal ">
-                                    <a href="/category/Guitarras">
-                                        <p>Guitarras</p>
-                                        <img src="/img/home/categoria-guitarras.jpg" alt="Guitarras">
-                                    </a>
-                                </article>
-
-                                <article class="categoria fade-diagonal ">
-                                    <a href="categoria/Accesorios">
-                                        <p>Accesorios</p>
-                                        <img src="/img/home/categoria-accesorios.jpg" alt="Accesorios">
-                                    </a>
-                                </article>
-
-                                <article class="categoria fade-diagonal ">
-                                    <a href="categoria/Efectos">
-                                        <p>Efectos</p>
-                                        <img src="/img/home/categoria-efectos.jpg" alt="Efectos">
-                                    </a>
-                                </article>
-
-                                <article class="categoria fade-diagonal ">
-                                    <a href="categoria/Pianos">
-                                        <p>Teclados & Pianos</p>
-                                        <img src="/img/home/categoria-pianos-teclados.jpg" alt="Teclados&Pianos">
-                                    </a>
-                                </article>
-
-                                <article class="categoria fade-diagonal ">
-                                    <a href="categoria/Orquesta">
-                                        <p>Orquesta</p>
-                                        <img src="/img/home/categoria-orquesta.jpg" alt="Orquesta">
-                                    </a>
-                                </article>
-
-                                <article class="categoria fade-diagonal ">
-                                    <a href="categoria/Amplificacion">
-                                        <p>Amplificación</p>
-                                        <img src="/img/home/categoria-amplificacion.jpg" alt="Amplificación">
-                                    </a>
-                                </article>
-
-                                <article class="categoria fade-diagonal ">
-                                    <a href="categoria/Segunda-Mano">
-                                        <p>Segunda Mano</p>
-                                        <img src="/img/home/categoria-segundamano.jpg" alt="Segunda Mano">
-                                    </a>
-                                </article>
-
-                                <article class="categoria fade-diagonal ">
-                                    <a href="categoria/Grabacion">
-                                        <p>Grabación</p>
-                                        <img src="/img/home/categoria-grabacion.jpg" alt="Grabación">
-                                    </a>
-                                </article>
-
+                            <div class="cardProm card2 card-saving">
+                                <picture>
+                                    <img src="/img/svg/cajitaSBX_negra.svg" alt="">
+                                </picture>
                             </div>
-                        </section>
+                            <div class="cardProm card3 card-other-promotions">
+                                <picture>
+                                    <span class="material-symbols-outlined">
+                                        attach_money
+                                        </span>
+                                </picture>
+                            </div>
+                        </div>
+                    </section>
 
-                    </div>
-                    <div class="box-marcas">
-                        <div>
-                            <img src="/img/banners/bannerMarcas.jpg" width=100%; alt="Marquesina marcas">
-                        </div>
-                    </div>
-                    <div class="box-promoBanners">
-                        <div class="promoBanners">
-                            <img src="/img/banners/bannerEnvio.jpg" width=100%; alt="Envíos gratis">
-                        </div>
-                        <div class="promoBanners">
-                            <img src="/img/banners/bannerCajita.jpg" width=100%; alt="Envíos gratis">
-                        </div>
-                        <div class="promoBanners">
-                            <img src="/img/banners/bannerMasPromos.jpg" width=100%; alt="Envíos gratis">
-                        </div>
-                    </div>
-                </section>
+                    <section class="dropdown-content-category">
 
-                <div class="promo-container">
-                    <img src="img/banners/banner_promo.jpg" alt="">
+                        <div class="center-category">
+
+                            <div class="dropdown-content-category_title">
+                                <h5>Categorias</h5><a href="#">todas las categorias</a>
+                            </div>
+
+                            <section class="shop-by-category" id="section-categories">
+
+                                <div class="items-categories">
+
+                                    <article class="categoria fade-diagonal ">
+                                        <a href="/category/Guitarras">
+                                            <p>Guitarras</p>
+                                            <img src="/img/home/categoria-guitarras.jpg" alt="Guitarras">
+                                        </a>
+                                    </article>
+
+                                    <article class="categoria fade-diagonal ">
+                                        <a href="categoria/Accesorios">
+                                            <p>Accesorios</p>
+                                            <img src="/img/home/categoria-accesorios.jpg" alt="Accesorios">
+                                        </a>
+                                    </article>
+
+                                    <article class="categoria fade-diagonal ">
+                                        <a href="categoria/Efectos">
+                                            <p>Efectos</p>
+                                            <img src="/img/home/categoria-efectos.jpg" alt="Efectos">
+                                        </a>
+                                    </article>
+
+                                    <article class="categoria fade-diagonal ">
+                                        <a href="categoria/Pianos">
+                                            <p>Teclados & Pianos</p>
+                                            <img src="/img/home/categoria-pianos-teclados.jpg" alt="Teclados&Pianos">
+                                        </a>
+                                    </article>
+
+                                    <article class="categoria fade-diagonal ">
+                                        <a href="categoria/Orquesta">
+                                            <p>Orquesta</p>
+                                            <img src="/img/home/categoria-orquesta.jpg" alt="Orquesta">
+                                        </a>
+                                    </article>
+
+                                    <article class="categoria fade-diagonal ">
+                                        <a href="categoria/Amplificacion">
+                                            <p>Amplificación</p>
+                                            <img src="/img/home/categoria-amplificacion.jpg" alt="Amplificación">
+                                        </a>
+                                    </article>
+
+                                    <article class="categoria fade-diagonal ">
+                                        <a href="categoria/Segunda-Mano">
+                                            <p>Segunda Mano</p>
+                                            <img src="/img/home/categoria-segundamano.jpg" alt="Segunda Mano">
+                                        </a>
+                                    </article>
+
+                                    <article class="categoria fade-diagonal ">
+                                        <a href="categoria/Grabacion">
+                                            <p>Grabación</p>
+                                            <img src="/img/home/categoria-grabacion.jpg" alt="Grabación">
+                                        </a>
+                                    </article>
+
+                                </div>
+
+                            </section>
+
+                        </div>
+
+                    </section>
+
+                    <section class="brands-banners" id="seccion-brands-banners">
+                        <div class="box-marcas">
+                            <div>
+                                <img src="/img/banners/bannerMarcas.jpg" width=100%; alt="Marquesina marcas">
+                            </div>
+                        </div>
+                    </section>
+
+                    <div class="promo-container">
+                        <img src="img/banners/banner_promo.jpg" alt="">
+                    </div>
+
+                </div>
                 </div>
 
-            </div>
-            </div>
+            </main>
 
-        </main>
-
-        <%- include('./partials/footer.ejs') %>
+            <%- include('./partials/footer.ejs') %>

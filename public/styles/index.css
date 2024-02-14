@@ -20,7 +20,6 @@ body {
 
 .slider {
 	border-radius: 18px;
-	margin: 95px;
 	overflow: hidden;
 	width: 85%;
 }
@@ -68,12 +67,19 @@ div#btn-rigth {
 /*cards*/
 .container-cards {
 	width: 100%;
+	background: #fff;
+	border-radius: 8px;
+	overflow: hidden;
+	margin-bottom: 50px;
 }
 
 .color-card {
-	background: #fff;
 	border-radius: 7px;
 	overflow: hidden;
+
+	&:hover {
+		box-shadow: 0px 8px 8px 0px #554b4b69;
+	}
 }
 
 .margin-card {
@@ -173,21 +179,55 @@ div#btn-rigth {
 }
 
 /* ------------------------------------------------------------------ */
+/*CARDS PROM*/
+.cards-prom {
+	width: 100%;
+	height: 30%;
+	background: #fff;
+}
 
-/*-----COMPRA POR CATEGORÍA-----*/
+.center_cards-prom {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 30px;
+}
 
-.compra-por-categoria {
-	background-color: #b7b3a14f;
+.cardProm {
+	background: #e6e6e6;
+	border-radius: 15px;
+	color: #ff540a;
+	fill: #ff540a;
+}
+/* ------------------------------------------------------------------ */
+
+/*-----CATEGORY-----*/
+
+.dropdown-content-category {
+	width: 85%;
+	background: #fff;
+	border-radius: 8px;
+}
+
+.dropdown-content-category_title {
+	width: 100%;
+	display: flex;
+	align-items: center;
+
+	a {
+		color: #ff540a;
+		padding-left: 15px;
+	}
+}
+
+.shop-by-category {
 	width: 100%;
 }
 
-.items-categorias {
-	padding: 15px;
-
-	/* background-color: rgba(0, 0, 0, 0.2); */
+.items-categories {
+	padding: 15px 15px 30px 15px;
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
-	gap: 25px;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 25px;
 }
 
 .categoria {
@@ -196,10 +236,11 @@ div#btn-rigth {
 	position: relative;
 
 	&:hover img {
-		box-shadow: 0px 0px 15px 5px black;
+		box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.45);
 		border: #ff540a;
 		transform: translateY(15px);
 		transform: scale(1.1);
+		transition: 0.5s;
 	}
 }
 
@@ -243,6 +284,10 @@ div#btn-rigth {
 /*---MEDIA QUERIES---*/
 
 @media screen and (min-width: 740px) {
+	.slider {
+		margin: 60px;
+	}
+
 	.container-cards {
 		display: flex;
 		flex-wrap: wrap;
@@ -278,6 +323,12 @@ div#btn-rigth {
 
 	.product-info {
 		width: 100%;
+	}
+
+	/*Catecories*/
+
+	.items-categories {
+		grid-template-columns: repeat(4, 1fr);
 	}
 }
 
