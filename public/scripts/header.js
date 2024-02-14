@@ -59,8 +59,35 @@ window.addEventListener('scroll', fixed );
 
 
 //  _________________________________________________________________________________________________________
-                                                // menu hamburguesa de aqui para bajo
+
+                                                // menu hamburguesa de aqui para abajo.
 //  _________________________________________________________________________________________________________
 
+let menuContainer = document.querySelector('#menu-burguer');
+let menuBurguerDesplegable = document.querySelector('#menuBurguerDesplegable');
+
+menuContainer.addEventListener('click', (e) => {
+    e.preventDefault();
+    // alternamos estilos para el menu 
+    menuBurguerDesplegable.style.display= "flex";
+    
+})
+
+closeMenu.addEventListener('click', (e) => {
+    e.preventDefault();
+    // alternamos estilos para el menu 
+    menuBurguerDesplegable.style.display= "none";
+    
+})
 
 
+
+
+// function hide() {
+//     document.getElementById("desplegable").style.display = "none";
+//     document.getElementById("labels-ordenador").style.display = "none";
+// }
+
+// function show() {
+//     document.getElementById("menuBurguerDesplegable").style.display.toggle('flex')
+// }

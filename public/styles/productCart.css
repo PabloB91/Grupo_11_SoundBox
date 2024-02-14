@@ -79,7 +79,7 @@
 }
 
 .card-image-container {
-    width: 15%;
+    width: 13%;
 
 }
 
@@ -170,7 +170,7 @@
     }
 
     form {
-        width: 100%;
+        width: 72%;
         display: flex;
         justify-content: space-around;
         font-size: 20px;
@@ -823,7 +823,6 @@ input:checked+.slider:before {
 
     .carrito,
     .favoritos {
-        margin: 0;
         margin-top: 1rem;
         width: 88%;
         max-height: 80rem;

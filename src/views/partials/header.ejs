@@ -273,7 +273,8 @@
                             <li class="dropdown">
 
                                 <div>
-                                    <a href="#seccion-marcas-banners">Accesorios</a><i class="fa-solid fa-chevron-down"></i>
+                                    <a href="#seccion-marcas-banners">Accesorios</a><i
+                                        class="fa-solid fa-chevron-down"></i>
                                 </div>
 
                                 <div class="dropdown-content">
@@ -379,10 +380,20 @@
                 </div>
 
                 <!-- menu burguer -->
-                <div class="menu-burguer">
-                    <i class="fa-sharp fa-light fa-ellipsis-vertical"></i>
+                <div class="menu-burguer" id="menu-burguer">
+                    <i class="fa-solid fa-bars"></i>
                 </div>
                 <!-- desplegable del menu burguer -->
+                <section class="menu-burguer-desplegable" id="menuBurguerDesplegable" onclick="show()">
+                    <li class="closeMenu">
+                        <i class="fa-solid fa-xmark" aria-hidden="true" id="closeMenu" onclick="hide()"></i>
+                    </li>
+                    <li><a href="/">Inicio</a></li>
+                    <li><a href="/productCart">Carrito</a></li>
+                    <li><a href="">Favoritos</a></li>
+                    <li><a href="//#seccion-marcas-banners">Categorías</a></li>
+                    <li><a href="/contactUs">Quienes somos?</a></li>
+                </section>
 
             </section>
 

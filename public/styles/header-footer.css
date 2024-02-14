@@ -21,7 +21,8 @@ header {
 	}
 
 	.headerTop .comment {
-		/* width: 50%; */ /* 50 de 700 px up */
+		/* width: 50%; */
+		/* 50 de 700 px up */
 		width: 100%;
 		display: flex;
 		justify-content: center;
@@ -58,6 +59,7 @@ header {
 		.register-login {
 			display: flex;
 			width: 100%;
+
 			a {
 				display: flex;
 				align-items: center;
@@ -84,6 +86,7 @@ header {
 			margin-right: 10px;
 			width: 50%;
 		}
+
 		.login {
 			width: 50%;
 		}
@@ -100,9 +103,11 @@ header {
 			img {
 				width: 100%;
 			}
+
 			P {
 				display: none;
 			}
+
 			&:hover {
 				cursor: pointer;
 				background: #550c18;
@@ -168,7 +173,7 @@ header {
 
 	.fixed {
 		position: fixed;
-		z-index: 999;
+		z-index: 990;
 	}
 
 	.headerBottom {
@@ -177,6 +182,56 @@ header {
 		width: 100%;
 		padding: 5px;
 		justify-content: space-evenly;
+
+		.menu-burguer {
+			width: 0px;
+			display: flex;
+			align-items: center;
+
+			i {
+				width: 50px;
+				margin: auto;
+			}
+
+		}
+
+		.menu-burguer-desplegable {
+			position: fixed;
+			right: 0;
+			background: rgba(0, 0, 0, 0.4);
+			backdrop-filter: blur(2px);
+			width: 100vw;
+			height: 100vh;
+			z-index: 999;
+			display: none;
+			flex-direction: column;
+			justify-content: center;
+
+			.closeMenu {
+				width: 45px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				position: absolute;
+				right: 5px;
+				top: 0;
+				border-radius: 50%;
+			}
+
+			li {
+				list-style: none;
+				margin: 15px;
+				background: rgba(0, 0, 0, 0.1);
+				text-align: center;
+				padding: 15px;
+				box-shadow: 0 0 28px 0;
+
+				a {
+					font-size: 18px;
+					color: white;
+				}
+			}
+		}
 	}
 
 	.logoSbx {
@@ -300,6 +355,7 @@ header {
 		}
 	}
 
+
 	/*ANIMATION*/
 
 	.disappear {
@@ -329,7 +385,7 @@ footer {
 	justify-content: center;
 	position: relative;
 	padding: 30px;
-	z-index: 999;
+	z-index: 99;
 
 	.footer-center {
 		position: relative;
@@ -487,6 +543,12 @@ footer {
 			.navContainer .search-bar .search-bar_input {
 				width: 200%;
 			}
+
+			.menu-burguer-desplegable {
+				width: 50vw;
+
+			}
+
 		}
 	}
 
@@ -583,6 +645,7 @@ footer {
 							padding: 12px 16px;
 							text-decoration: none;
 							display: block;
+
 							/* Cambiar el color de los enlaces desplegables al pasar el mouse */
 							&:hover {
 								background-color: #f1f1f1;
@@ -708,7 +771,8 @@ footer {
 						display: grid;
 						grid-template-columns: repeat(6, 1fr);
 						grid-template-rows: repeat(auto, 1fr);
-						grid-gap: 32px 15px; /*para separar sin margin*/
+						grid-gap: 32px 15px;
+						/*para separar sin margin*/
 					}
 
 					.card {
@@ -723,6 +787,21 @@ footer {
 					pointer-events: unset;
 				}
 			}
+
+			.menu-burguer {
+				display: none;
+
+			}
+		}
+
+		.menu-burguer {
+			display: none;
+
+		}
+
+		.menu-burguer-desplegable {
+			display: none;
+
 		}
 	}
 
@@ -753,5 +832,38 @@ footer {
 				font-size: 1.3em;
 			}
 		}
+	}
+
+}
+
+.right-menu-container {
+	position: fixed;
+	top: 50vh;
+	right: 5px;
+	z-index: 998;
+	color: black;
+
+	.right-menu {
+		display: flex;
+		width: 50px;
+		background: #005773;
+		padding: 5px;
+		border-radius: 15px;
+		margin: 5px;
+		font-size: 28px;
+
+		&:hover {
+			width: auto;
+
+		}
+
+		&:hover .right-icons-text{
+			display: flex;
+
+		}
+	}
+	.right-icons-text {
+		display: none;
+
 	}
 }
