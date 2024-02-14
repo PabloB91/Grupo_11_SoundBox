@@ -65,58 +65,157 @@
 
                 </section>
 
-                <section class="cards ultimos-vistos" id="section-ultimos vistos">
+                <section class="all-cards">
 
-                    <title>
-                        <h3>Ultimos Vistos</h3>
-                    </title>
+                    <section class="last-seen container-cards">
 
-                    <article class="items-mas-vendidos ">
-                        <% masVendidos.forEach(element=> { %>
-                            <a href="/products/productDetail/<%= element.id %>" class="product">
+                        <div class="last-seen_title title">
+                            <h3>Ultimos Vistos</h3>
+                        </div>
+                        <div class="cards">
+                            <% lastSeen.forEach(product=> { %>
+                                <article class="last-seen_card card">
+                                    <a href="/products/productDetail/<%= product.id %>" class="product">
 
-                                <picture>
-                                    <img src="/img/products/<%= element.imagen %>" alt="Trompeta">
-                                </picture>
+                                        <picture class="img-product">
+                                            <img src="/img/products/<%= product.imagen %>"
+                                                alt="<%= product.categories, product.name, product.brands %>">
+                                        </picture>
 
-                                <section class="detalle-producto">
+                                        <section class="product-info">
 
-                                    <p class="descripciones">
-                                        <%= element.description %>
-                                    </p>
+                                            <p class="nameProduct">
+                                                <%= product.name%>
+                                            </p>
 
-                                    <p class="calificacion">
+                                            <p class="qualification">
+                                            <form class="form-qualification stars">
+                                                <p class="qualification">
+                                                    <input id="radio1" type="radio" name="stars" value="5">
+                                                    <label for="radio1"><i class="fa-solid fa-star"></i></label>
+                                                    <input id="radio2" type="radio" name="stars" value="4">
+                                                    <label for="radio2"><i class="fa-solid fa-star"></i></label>
+                                                    <input id="radio3" type="radio" name="stars" value="3">
+                                                    <label for="radio3"><i class="fa-solid fa-star"></i></label>
+                                                    <input id="radio4" type="radio" name="stars" value="2">
+                                                    <label for="radio4"><i class="fa-solid fa-star"></i></label>
+                                                    <input id="radio5" type="radio" name="stars" value="1">
+                                                    <label for="radio5"><i class="fa-solid fa-star"></i></label>
+                                                </p>
+                                            </form>
+                                            </p>
 
-                                    <form class="formulario-clasificacion stars">
-                                        <p class="clasificacion">
-                                            <input id="radio1" type="radio" name="estrellas" value="5">
-                                            <label for="radio1"><i class="fa-solid fa-star"></i></label>
-                                            <input id="radio2" type="radio" name="estrellas" value="4">
-                                            <label for="radio2"><i class="fa-solid fa-star"></i></label>
-                                            <input id="radio3" type="radio" name="estrellas" value="3">
-                                            <label for="radio3"><i class="fa-solid fa-star"></i></label>
-                                            <input id="radio4" type="radio" name="estrellas" value="2">
-                                            <label for="radio4"><i class="fa-solid fa-star"></i></label>
-                                            <input id="radio5" type="radio" name="estrellas" value="1">
-                                            <label for="radio5"><i class="fa-solid fa-star"></i></label>
-                                        </p>
-                                    </form>
+                                            <p class="dicount">$ <%= product.price %>
+                                            </p>
 
-                                    </p>
+                                        </section>
+                                    </a>
+                                </article>
+                                <% }); %>
 
-                                    <p class="precios">$ <%= element.precio %>
-                                    </p>
+                        </div>
 
-                                </section>
-                            </a>
+                    </section>
 
-                            <% }); %>
+                    <section class="last-seen container-cards">
 
-                    </article>
+                        <div class="last-seen_title title">
+                            <h3>Top Ventas</h3>
+                        </div>
+
+                        <div class="cards">
+                            <% lastSeen.forEach(product=> { %>
+                                <article class="last-seen_card card">
+                                    <a href="/products/productDetail/<%= product.id %>" class="product">
+
+                                        <picture class="img-product">
+                                            <img src="/img/products/<%= product.imagen %>"
+                                                alt="<%= product.categories, product.name, product.brands %>">
+                                        </picture>
+
+                                        <section class="product-info">
+
+                                            <p class="nameProduct">
+                                                <%= product.name%>
+                                            </p>
+
+                                            <p class="qualification">
+                                            <form class="form-qualification stars">
+                                                <p class="qualification">
+                                                    <input id="radio1" type="radio" name="stars" value="5">
+                                                    <label for="radio1"><i class="fa-solid fa-star"></i></label>
+                                                    <input id="radio2" type="radio" name="stars" value="4">
+                                                    <label for="radio2"><i class="fa-solid fa-star"></i></label>
+                                                    <input id="radio3" type="radio" name="stars" value="3">
+                                                    <label for="radio3"><i class="fa-solid fa-star"></i></label>
+                                                    <input id="radio4" type="radio" name="stars" value="2">
+                                                    <label for="radio4"><i class="fa-solid fa-star"></i></label>
+                                                    <input id="radio5" type="radio" name="stars" value="1">
+                                                    <label for="radio5"><i class="fa-solid fa-star"></i></label>
+                                                </p>
+                                            </form>
+                                            </p>
+
+                                            <p class="dicount">$ <%= product.price %>
+                                            </p>
+
+                                        </section>
+                                    </a>
+                                </article>
+                                <% }); %>
+
+                        </div>
+
+                    </section>
+
+                    <section class="last-seen container-cards">
+
+                        <div class="last-seen_title title">
+                            <h3>Ofertas</h3>
+                        </div>
+                        <div class="cards">
+
+                            <% lastSeen.forEach(product=> { %>
+                                <article class="last-seen_card card">
+                                    <a href="/products/productDetail/<%= product.id %>" class="product">
+
+                                        <picture class="img-product">
+                                            <img src="/img/products/<%= product.imagen %>"
+                                                alt="<%= product.categories, product.name, product.brands %>">
+                                        </picture>
+
+                                        <section class="product-info">
+
+                                            <p class="nameProduct">Nombre del producto <%= product.name%></p>
+
+                                            <form class="form-qualification qualification stars">
+                                                <p class="qualification">
+                                                    <input id="radio1" type="radio" name="stars" value="5">
+                                                    <label for="radio1"><i class="fa-solid fa-star"></i></label>
+                                                    <input id="radio2" type="radio" name="stars" value="4">
+                                                    <label for="radio2"><i class="fa-solid fa-star"></i></label>
+                                                    <input id="radio3" type="radio" name="stars" value="3">
+                                                    <label for="radio3"><i class="fa-solid fa-star"></i></label>
+                                                    <input id="radio4" type="radio" name="stars" value="2">
+                                                    <label for="radio4"><i class="fa-solid fa-star"></i></label>
+                                                    <input id="radio5" type="radio" name="stars" value="1">
+                                                    <label for="radio5"><i class="fa-solid fa-star"></i></label>
+                                                </p>
+                                            </form>
+
+                                            <p class="dicount">$ <%= product.price %></p>
+
+                                        </section>
+                                    </a>
+                                </article>
+                                <% }); %>
+                        </div>
+
+                    </section>
 
                 </section>
 
-                <section class="marcas-banners" id="seccion-marcas-banners">
+                <section class="brands-banners" id="seccion-brands-banners">
                     <h5>Compra Por categoria</h5>
                     <div class="dropdown-content-categoria">
 
