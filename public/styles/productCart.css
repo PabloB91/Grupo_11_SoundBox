@@ -1,17 +1,11 @@
 .seccion-contenedora {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     background-color: #cbcbcb;
     flex-wrap: wrap;
 
 }
-
-.seccion-principal {
-    width: 75%;
-
-}
-
-
 
 .google-maps-container {
     width: 25vw;
@@ -32,9 +26,11 @@
 
 .carrito,
 .favoritos {
+    width: 85vw;
     background-color: #FF540A;
     border-radius: 18px;
     box-shadow: 25px 25px 50px black;
+    margin: auto;
     margin-bottom: 2rem;
     margin-top: 2rem;
 
@@ -48,11 +44,12 @@
 }
 
 .desplegable {
-    display: flex;
+    height: 0px;
     flex-direction: column;
     position: relative;
     overflow-y: scroll;
     max-height: 40rem;
+    transition: all .5s ease;
 }
 
 
@@ -82,7 +79,7 @@
 }
 
 .card-image-container {
-    width: 15%;
+    width: 13%;
 
 }
 
@@ -146,7 +143,7 @@
 }
 
 .ordenador {
-    width: 50%;
+    width: 25%;
     display: flex;
     justify-content: space-around;
 }
@@ -160,41 +157,68 @@
 }
 
 .labels-ordenador {
-    width: 50%;
+    width: 100%;
     display: flex;
 
+    button {
+        background-color: inherit;
+        font-size: 30px;
+        color: black;
+        background-color: inherit;
+        margin-bottom: 5px;
+
+    }
+
     form {
-        width: 100%;
+        width: 72%;
         display: flex;
         justify-content: space-around;
         font-size: 20px;
         align-items: center;
+
         .payment-container {
-
-
-
-        }
-
-        summary {
-
-            details {
-                p {
-
-                    position: absolute;
-
-                }
+            input {
+                background-color: rgba(0, 0, 0, 0.4);
+                width: 100px;
+                height: 50px;
+                font-size: 24px;
+                color: white;
+                margin-bottom: 5px;
 
             }
+        }
+
+
+        details {
+            summary {
+                list-style: none;
+            }
+
+            .filterBy-container {
+                margin-top: 18px;
+                background: #ff530a65;
+                height: 16rem;
+                width: 38vw;
+                z-index: 80;
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: center;
+
+                button {
+                    width: 90%;
+                    padding: 5px;
+                    font-size: 18px;
+
+                }
+            }
+
+
 
         }
 
-        input {
-            width: 100px;
-            height: 50px;
-            font-size: 18px;
-            margin: 5px;
 
-        }
 
     }
 
@@ -484,19 +508,14 @@ input:checked+.slider:before {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-auto-rows: minmax(100px, auto);
+    gap: 30px;
 
 }
 
-
-
-
-
-
-
-
-
-
-
+.modal__show {
+    height: 80rem;
+    transition: all 2s ease-in;
+}
 
 .grid-container {
     background-color: #cbcbcb;
@@ -518,6 +537,7 @@ input:checked+.slider:before {
 
 
     }
+
     .name-related-card {
         width: 100%;
         height: 50px;
@@ -529,12 +549,14 @@ input:checked+.slider:before {
         top: 0px;
         flex-direction: column;
         align-items: center;
-        p{
-            font-size:20px;
+
+        p {
+            font-size: 20px;
             color: white;
 
         }
     }
+
     .description-related-card {
         display: none;
         width: 100%;
@@ -665,13 +687,16 @@ input:checked+.slider:before {
 
     25% {}
 
-    50% {}
+    50% {
+        border-radius: 8px;
+    }
 
     75% {}
 
     100% {
         transform: translateY(-10px);
         background-color: rgb(224, 223, 223);
+        border-radius: 18px;
     }
 }
 
@@ -679,11 +704,6 @@ input:checked+.slider:before {
 
 /* media queeries para pc SMALL */
 @media (min-width:1024px) {
-
-    .seccion-principal {
-        width: 70%;
-
-    }
 
     .seccion-secundaria {
         width: 30%;
@@ -754,11 +774,6 @@ input:checked+.slider:before {
         align-items: center;
     }
 
-    .seccion-principal {
-        width: 90vw;
-
-    }
-
     .seccion-secundaria {
         width: 85vw;
 
@@ -806,25 +821,18 @@ input:checked+.slider:before {
 /* MEDIA QUERIES PARA TELEFONO */
 @media(max-width:630px) {
 
-    .seccion-principal {
-        margin-bottom: 2rem;
+    .carrito,
+    .favoritos {
+        margin-top: 1rem;
+        width: 88%;
         max-height: 80rem;
-        display: flex;
-        justify-content: center;
 
-        .carrito,
-        .favoritos {
-            margin: 0;
-            margin-top: 1rem;
-            width: 88%;
-            max-height: 80rem;
+        .desplegable {
+            max-height: 66rem;
 
-            .desplegable {
-                max-height: 66rem;
-
-            }
         }
     }
+
 
     .card {
         flex-direction: column;
