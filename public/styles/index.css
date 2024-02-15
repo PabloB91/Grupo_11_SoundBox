@@ -183,20 +183,73 @@ div#btn-rigth {
 .cards-prom {
 	width: 100%;
 	height: 30%;
-	background: #fff;
+	display: flex;
+	justify-content: center;
 }
 
 .center_cards-prom {
+	width: 85%;
+	background: #fff;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	gap: 30px;
+	padding: 30px;
+	border-radius: 8px;
 }
 
 .cardProm {
 	background: #e6e6e6;
 	border-radius: 15px;
 	color: #ff540a;
-	fill: #ff540a;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	h2 {
+		color: #000;
+		padding: 0;
+	}
+
+	p {
+		color: #000;
+	}
+
+	a {
+		color: #fff;
+		height: 100%;
+		width: 100%;
+	}
+}
+
+.picture-prom {
+	display: block;
+	width: 50px;
+	height: 50px;
+	position: relative;
+
+	img {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.box-black-click {
+	background: #000;
+}
+
+.picture-prom span {
+	display: block;
+	width: 100%;
+	height: 100%;
+	font-size: 3rem;
+	position: absolute;
+}
+
+.border-orange {
+	border: 3px solid #ff540a;
+	border-radius: 4px;
+	width: 100%;
+	height: 100%;
 }
 /* ------------------------------------------------------------------ */
 
