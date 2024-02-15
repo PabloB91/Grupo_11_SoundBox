@@ -65,6 +65,7 @@ div#btn-rigth {
 /* ------------------------------------------------------------------ */
 
 /*cards*/
+
 .container-cards {
 	width: 100%;
 	background: #fff;
@@ -209,10 +210,12 @@ div#btn-rigth {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	text-align: center;
 
 	h2 {
 		color: #000;
 		font-size: 1.5rem;
+		height: 32px;
 	}
 
 	p {
@@ -224,13 +227,21 @@ div#btn-rigth {
 		color: #fff;
 		height: 100%;
 		width: 100%;
+		font-size: 0.5rem;
+	}
+}
+
+.card1 {
+	h2 {
+		font-size: 2rem;
 	}
 }
 
 .picture-prom {
+	margin-right: 10px;
 	display: block;
-	width: 50px;
-	height: 50px;
+	width: 60px;
+	height: 60px;
 	position: relative;
 
 	img {
@@ -247,19 +258,35 @@ div#btn-rigth {
 	display: block;
 	width: 100%;
 	height: 100%;
-	font-size: 3rem;
+	font-size: 4rem;
 	position: absolute;
+	left: -1%;
+	top: -2%;
 }
 
+.picture-prom svg {
+	width: 100%;
+	height: 100%;
+
+	g {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.picture-prom.svg {
+	width: 60px;
+	height: 60px;
+}
 .border-orange {
-	border: 3px solid #ff540a;
+	border: 4px solid #ff540a;
 	border-radius: 4px;
 	width: 100%;
 	height: 100%;
 }
 /* ------------------------------------------------------------------ */
 
-/*-----CATEGORY-----*/
+/*-----CATEGORIES-----*/
 
 .dropdown-content-category {
 	width: 85%;
@@ -347,6 +374,8 @@ div#btn-rigth {
 		margin: 60px;
 	}
 
+	/*cards*/
+
 	.container-cards {
 		display: flex;
 		flex-wrap: wrap;
@@ -384,174 +413,36 @@ div#btn-rigth {
 		width: 100%;
 	}
 
-	/*Catecories*/
+	/*CATEGORIES*/
 
 	.items-categories {
 		grid-template-columns: repeat(4, 1fr);
 	}
-}
 
-/* @media (max-width: 1024px) {
-	.items-mas-vendidos {
-		height: 350px;
-		grid-template-columns: 1fr 1fr 1fr 1fr;
-	}
-
-	.slider-buttons {
-		width: 85vw;
-	}
-}
-
-@media (max-width: 768px) {
-	.items-mas-vendidos {
-		height: 700px;
-		grid-template-columns: 1fr 1fr 1fr;
-		grid-template-rows: 1fr 1fr;
-	}
-	.detalle-producto {
-		width: 100%;
+	.slider-brands {
+		display: flex;
+		justify-content: center;
+		width: 85%;
+		height: 200px;
+		overflow: hidden;
 	}
 
-	.detalle-producto p {
-		font-size: 16px;
-	}
-	.slider-frame,
-	.slider-buttons {
-		width: 95%;
-	}
-
-	.categoria {
-		margin: auto;
+	.box-brands {
+		width: 300%;
+		border-radius: 8px;
+		background: #000;
+		padding: 30px;
+		display: flex;
+		overflow: hidden;
 	}
 
-	.left-list,
-	.right-list {
-		margin-top: 15px;
-	}
+	.brand {
+		width: 169px;
 
-	.last-section h3 {
-		font-size: 14px;
-		margin-left: 4.3vw;
-	}
-
-	.last-section {
-		margin-left: 13.5vw;
-	}
-
-	.card {
-		width: 22.5vw;
-	}
-	.last-section span {
-		font-size: 12px;
-	}
-	.img-container {
-		width: 60%;
-	}
-	.promo-container {
-		width: 45%;
-		margin-left: 10vw;
-	}
-
-	.promo-container img {
-		width: 60%;
-		margin-left: 2vw;
+		img {
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
 	}
 }
-
-@media (max-width: 426px) {
-	.mas-vendidos h3 {
-		font-size: 16px;
-	}
-
-	.items-mas-vendidos {
-		height: 100%;
-	}
-	.items-mas-vendidos .product {
-		padding-right: 5px;
-	}
-	.detalle-producto {
-		width: 100%;
-	}
-
-	.detalle-producto p {
-		font-size: 10px;
-	}
-
-	.box-marcas {
-		padding: 10px 18px;
-		height: 9vh;
-	}
-
-	.marcas-banners h5 {
-		font-size: 16px;
-	}
-
-	.box-promoBanners {
-		padding: 5px;
-	}
-
-	.last-section-flex {
-		flex-direction: column;
-		align-items: center;
-	}
-
-	.last-section {
-		width: 90%;
-		margin-left: 0vw;
-	}
-
-	.card {
-		margin-left: 4.5vw;
-		justify-content: flex-start;
-	}
-
-	.img-container {
-		width: 50%;
-	}
-	.last-section h3 {
-		font-size: 14px;
-		margin-left: 4.7vw;
-	}
-	.last-section span {
-		font-size: 12px;
-	}
-	.promo-container {
-		width: 45%;
-		margin-left: 10vw;
-	}
-
-	.promo-container img {
-		width: 80%;
-	}
-
-	.slider-frame {
-		border: 3px solid #ff540a;
-	}
-
-	.items-categorias {
-		flex-wrap: nowrap;
-		flex-direction: row;
-		position: relative;
-		margin-right: 2vw;
-	}
-
-	.items-mas-vendidos .product img {
-		height: 95%;
-	}
-
-	.categoria {
-		width: 120%;
-		margin: 5px auto;
-	}
-
-	.categoria p {
-		font-size: 14px;
-	}
-
-	.left-list,
-	.right-list {
-		flex-direction: column;
-		margin-top: 0;
-	}
-}
- */

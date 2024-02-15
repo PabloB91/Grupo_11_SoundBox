@@ -1,300 +1,369 @@
 <%- include('./partials/head.ejs') %>
     <link href="/styles/index.css" rel="stylesheet">
 
-    <section><%- include('./partials/header.ejs') %>
+    <%- include('./partials/header.ejs') %>
 
-            <main class="main">
+        <main class="main">
 
-                <div class="main-center">
+            <div class="main-center">
 
-                    <section class="slider">
+                <section class="slider">
 
-                        <div class="slider--inner" id="slider--inner">
+                    <div class="slider--inner" id="slider--inner">
 
-                            <div class="img_sliderSection">
-                                <img src="/img/banners/Banner-carrusel1.jpg" class="slider--img" id="Banner-image1"
-                                    alt="">
-                            </div>
+                        <div class="img_sliderSection">
+                            <img src="/img/banners/Banner-carrusel1.jpg" class="slider--img" id="Banner-image1" alt="">
+                        </div>
 
-                            <div class="img_sliderSection">
-                                <iframe class="slider--img iframe" src="https://www.youtube.com/embed/3uneA-cstZs?si=4yaoLe7hZo7IzrNw&start=10&
+                        <div class="img_sliderSection">
+                            <iframe class="slider--img iframe" src="https://www.youtube.com/embed/3uneA-cstZs?si=4yaoLe7hZo7IzrNw&start=10&
                             control=0" title="YouTube video player" frameborder="0"
-                                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    allowfullscreen>
-                                </iframe>
-                            </div>
-
-                            <div class="img_sliderSection">
-                                <img src="/img/banners/Banner-carrusel2.jpg" class="slider--img" id="Banner-image2"
-                                    alt="">
-                            </div>
-
-                            <div class="img_sliderSection">
-                                <iframe class="slider--img iframe" id="yt-iframe-container2"
-                                    src="https://www.youtube.com/embed/cAOfUZUiZhM?si=OsX654CAnGZhtgkb"
-                                    title="YouTube video player" frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    allowfullscreen>
-                                </iframe>
-                            </div>
-
-                            <div class="img_sliderSection">
-                                <img src="/img/banners/Banner-carrusel3.jpg" class="slider--img" id="Banner-image3"
-                                    alt="">
-                            </div>
-
-                            <div class="img_sliderSection">
-                                <img src="/img/banners/Banner-carrusel4.jpg" class="slider--img" id="Banner-image4"
-                                    alt="">
-                            </div>
-
+                                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
                         </div>
 
-
-                        <div class="slider-buttons">
-
-                            <div class="slider--btns slider--bts-left" id="btn-left">
-                                <span class="material-symbols-outlined">
-                                    skip_previous
-                                </span>
-                            </div>
-                            <div class="slider--btns slider--bts-rigth" id="btn-rigth">
-                                <span class="material-symbols-outlined">
-                                    skip_next
-                                </span>
-                            </div>
+                        <div class="img_sliderSection">
+                            <img src="/img/banners/Banner-carrusel2.jpg" class="slider--img" id="Banner-image2" alt="">
                         </div>
 
-                    </section>
-
-                    <section class="container-cards last-seen">
-
-                        <div class="last-seen_title title-section">
-                            <h3>Ultimos vistos</h3>
+                        <div class="img_sliderSection">
+                            <iframe class="slider--img iframe" id="yt-iframe-container2"
+                                src="https://www.youtube.com/embed/cAOfUZUiZhM?si=OsX654CAnGZhtgkb"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen>
+                            </iframe>
                         </div>
 
-                        <div class="cards">
-
-                            <% lastSeen.forEach(product=> { %>
-                                <div
-                                    class="last-seen_card color-card letter-from-outside width-height-card margin-card">
-                                    <a href="/products/productDetail/<%= product.id %>" class="product">
-                                        <div class="card">
-                                            <picture class="img-product">
-                                                <img src="/img/products/<%= product.imagen %>"
-                                                    alt="<%= product.categories, product.name, product.brands %>">
-                                            </picture>
-
-                                            <section class="product-info">
-
-                                                <div class="nameProduct">
-                                                    <p class="nameProduct">Nombre del producto <%= product.name%>
-                                                    </p>
-                                                </div>
-
-                                                <form class="form-qualification qualification stars">
-                                                    <p class="qualification">
-                                                        <input id="radio1" type="radio" name="stars" value="5">
-                                                        <label for="radio1"><i class="fa-solid fa-star"></i></label>
-                                                        <input id="radio2" type="radio" name="stars" value="4">
-                                                        <label for="radio2"><i class="fa-solid fa-star"></i></label>
-                                                        <input id="radio3" type="radio" name="stars" value="3">
-                                                        <label for="radio3"><i class="fa-solid fa-star"></i></label>
-                                                        <input id="radio4" type="radio" name="stars" value="2">
-                                                        <label for="radio4"><i class="fa-solid fa-star"></i></label>
-                                                        <input id="radio5" type="radio" name="stars" value="1">
-                                                        <label for="radio5"><i class="fa-solid fa-star"></i></label>
-                                                    </p>
-                                                </form>
-
-                                                <div class="discount">
-                                                    <p>$ <%= product.price %>
-                                                    </p>
-                                                </div>
-
-                                            </section>
-                                        </div>
-                                    </a>
-                                </div>
-                                <% }); %>
+                        <div class="img_sliderSection">
+                            <img src="/img/banners/Banner-carrusel3.jpg" class="slider--img" id="Banner-image3" alt="">
                         </div>
 
-                    </section>
+                        <div class="img_sliderSection">
+                            <img src="/img/banners/Banner-carrusel4.jpg" class="slider--img" id="Banner-image4" alt="">
+                        </div>
 
-                    <section class="cards-prom">
-                        <div class="center_cards-prom">
+                    </div>
 
-                            <div class="cardProm card1 free-shipping">
 
-                                <picture class="picture-prom">
-                                    <span class="material-symbols-outlined">
-                                        local_shipping
-                                    </span>
-                                </picture>
+                    <div class="slider-buttons">
 
-                                <article>
-                                    <h2>ENVIOS GRATIS</h2>
-                                    <p>En Argentina y en Colombia</p>
-                                    <div class="box-black-click">
-                                        <a href="#">HASTA EL 30 DE DICIEMBRE</a>
+                        <div class="slider--btns slider--bts-left" id="btn-left">
+                            <span class="material-symbols-outlined">
+                                skip_previous
+                            </span>
+                        </div>
+                        <div class="slider--btns slider--bts-rigth" id="btn-rigth">
+                            <span class="material-symbols-outlined">
+                                skip_next
+                            </span>
+                        </div>
+                    </div>
+
+                </section>
+
+                <section class="container-cards last-seen">
+
+                    <div class="last-seen_title title-section">
+                        <h3>Ultimos vistos</h3>
+                    </div>
+
+                    <div class="cards">
+
+                        <% lastSeen.forEach(product=> { %>
+                            <div class="last-seen_card color-card letter-from-outside width-height-card margin-card">
+                                <a href="/products/productDetail/<%= product.id %>" class="product">
+                                    <div class="card">
+                                        <picture class="img-product">
+                                            <img src="/img/products/<%= product.imagen %>"
+                                                alt="<%= product.categories, product.name, product.brands %>">
+                                        </picture>
+
+                                        <section class="product-info">
+
+                                            <div class="nameProduct">
+                                                <p class="nameProduct">Nombre del producto <%= product.name%>
+                                                </p>
+                                            </div>
+
+                                            <form class="form-qualification qualification stars">
+                                                <p class="qualification">
+                                                    <input id="radio1" type="radio" name="stars" value="5">
+                                                    <label for="radio1"><i class="fa-solid fa-star"></i></label>
+                                                    <input id="radio2" type="radio" name="stars" value="4">
+                                                    <label for="radio2"><i class="fa-solid fa-star"></i></label>
+                                                    <input id="radio3" type="radio" name="stars" value="3">
+                                                    <label for="radio3"><i class="fa-solid fa-star"></i></label>
+                                                    <input id="radio4" type="radio" name="stars" value="2">
+                                                    <label for="radio4"><i class="fa-solid fa-star"></i></label>
+                                                    <input id="radio5" type="radio" name="stars" value="1">
+                                                    <label for="radio5"><i class="fa-solid fa-star"></i></label>
+                                                </p>
+                                            </form>
+
+                                            <div class="discount">
+                                                <p>$ <%= product.price %>
+                                                </p>
+                                            </div>
+
+                                        </section>
                                     </div>
-                                </article>
-
+                                </a>
                             </div>
+                            <% }); %>
+                    </div>
 
-                            <div class="cardProm card2 card-saving">
+                </section>
 
-                                <picture class="picture-prom">
+                <section class="cards-prom">
+                    <div class="center_cards-prom">
 
-                                    <svg version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 24 24"
-                                        style="enable-background:new 0 0 24 24;" xml:space="preserve">
+                        <div class="cardProm card1 free-shipping">
+
+                            <picture class="picture-prom">
+                                <span class="material-symbols-outlined">
+                                    local_shipping
+                                </span>
+                            </picture>
+
+                            <article>
+                                <h2>ENVIOS GRATIS</h2>
+                                <p>En Argentina y en Colombia</p>
+                                <div class="box-black-click">
+                                    <a href="#">HASTA EL 30 DE DICIEMBRE</a>
+                                </div>
+                            </article>
+
+                        </div>
+
+                        <div class="cardProm card2 card-saving">
+
+                            <picture class="picture-prom svg">
+
+                                <svg version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 24 24"
+                                    style="enable-background:new 0 0 24 24;" xml:space="preserve">
+                                    <g>
                                         <g>
-                                            <g>
-                                                <path d="M9.8,18.3L9.8,18.3c-0.3,0-0.5-0.2-0.5-0.5V11c0-0.3,0.2-0.5,0.5-0.5h0c0.3,0,0.5,0.2,0.5,0.5v6.8
+                                            <path d="M9.8,18.3L9.8,18.3c-0.3,0-0.5-0.2-0.5-0.5V11c0-0.3,0.2-0.5,0.5-0.5h0c0.3,0,0.5,0.2,0.5,0.5v6.8
                                                     C10.4,18.1,10.1,18.3,9.8,18.3z" />
-                                                <path d="M14.2,18.3L14.2,18.3c-0.3,0-0.5-0.2-0.5-0.5V11c0-0.3,0.2-0.5,0.5-0.5h0c0.3,0,0.5,0.2,0.5,0.5v6.8
+                                            <path d="M14.2,18.3L14.2,18.3c-0.3,0-0.5-0.2-0.5-0.5V11c0-0.3,0.2-0.5,0.5-0.5h0c0.3,0,0.5,0.2,0.5,0.5v6.8
                                                     C14.7,18.1,14.5,18.3,14.2,18.3z" />
-                                                <path d="M12,17.3L12,17.3c-0.3,0-0.5-0.2-0.5-0.5V12c0-0.3,0.2-0.5,0.5-0.5h0c0.3,0,0.5,0.2,0.5,0.5v4.8
+                                            <path d="M12,17.3L12,17.3c-0.3,0-0.5-0.2-0.5-0.5V12c0-0.3,0.2-0.5,0.5-0.5h0c0.3,0,0.5,0.2,0.5,0.5v4.8
                                                     C12.5,17.1,12.3,17.3,12,17.3z" />
-                                                <path d="M7.6,16.6L7.6,16.6c-0.3,0-0.5-0.2-0.5-0.5v-3.3c0-0.3,0.2-0.5,0.5-0.5h0c0.3,0,0.5,0.2,0.5,0.5v3.3
+                                            <path d="M7.6,16.6L7.6,16.6c-0.3,0-0.5-0.2-0.5-0.5v-3.3c0-0.3,0.2-0.5,0.5-0.5h0c0.3,0,0.5,0.2,0.5,0.5v3.3
                                                     C8.2,16.4,7.9,16.6,7.6,16.6z" />
-                                                <path d="M16.4,16.6L16.4,16.6c-0.3,0-0.5-0.2-0.5-0.5v-3.3c0-0.3,0.2-0.5,0.5-0.5h0c0.3,0,0.5,0.2,0.5,0.5v3.3
+                                            <path d="M16.4,16.6L16.4,16.6c-0.3,0-0.5-0.2-0.5-0.5v-3.3c0-0.3,0.2-0.5,0.5-0.5h0c0.3,0,0.5,0.2,0.5,0.5v3.3
                                                     C16.9,16.4,16.7,16.6,16.4,16.6z" />
-                                            </g>
+                                        </g>
 
-                                            <path d="M18.7,6.4h-0.4V2.9c0-0.7-0.6-1.3-1.3-1.3H7.1c-0.7,0-1.3,0.6-1.3,1.3v3.5H5.3C4.6,6.4,4,7,4,7.7v13.3
+                                        <path d="M18.7,6.4h-0.4V2.9c0-0.7-0.6-1.3-1.3-1.3H7.1c-0.7,0-1.3,0.6-1.3,1.3v3.5H5.3C4.6,6.4,4,7,4,7.7v13.3
                                                 c0,0.7,0.6,1.3,1.3,1.3h13.3c0.7,0,1.3-0.6,1.3-1.3V7.7C20,7,19.4,6.4,18.7,6.4z M6.7,3.4c0-0.5,0.4-0.9,0.9-0.9h8.9
                                                 c0.5,0,0.9,0.4,0.9,0.9v3H6.7V3.4z M18.8,20.3c0,0.5-0.4,0.9-0.9,0.9H6.1c-0.5,0-0.9-0.4-0.9-0.9V8.5c0-0.5,0.4-0.9,0.9-0.9h11.8
                                                 c0.5,0,0.9,0.4,0.9,0.9V20.3z" />
-                                        </g>
-                                    </svg>
+                                    </g>
+                                </svg>
 
-                                </picture>
+                            </picture>
 
-                                <article>
-                                    <h2>AHORRA HASTA EL 50%</h2>
-                                    <p>sobre tus pedidos de $100.000</p>
-                                    <div class="box-black-click">
-                                        <a href="#">HASTA EL 30 DE DICIEMBRE</a>
-                                    </div>
-                                </article>
-
-                            </div>
-
-                            <div class="cardProm card3 card-other-promotions">
-
-                                <picture class="picture-prom">
-                                    <div class="border-orange">
-                                        <span class="material-symbols-outlined">
-                                            attach_money
-                                        </span>
-                                    </div>
-                                </picture>
-
-                                <article>
-                                    <h2>CONOCE OTRAS PROMOS</h2>
-                                    <p>segui llevando la buena vibra</p>
-                                    <div class="box-black-click">
-                                        <a href="#">CLICK AQUI</a>
-                                    </div>
-                                </article>
-
-                            </div>
-
-                        </div>
-                    </section>
-
-                    <section class="dropdown-content-category">
-
-                        <div class="center-category">
-
-                            <div class="dropdown-content-category_title">
-                                <h5>Categorias</h5><a href="#">todas las categorias</a>
-                            </div>
-
-                            <section class="shop-by-category" id="section-categories">
-
-                                <div class="items-categories">
-
-                                    <article class="categoria fade-diagonal ">
-                                        <a href="/category/Guitarras">
-                                            <p>Guitarras</p>
-                                            <img src="/img/home/categoria-guitarras.jpg" alt="Guitarras">
-                                        </a>
-                                    </article>
-
-                                    <article class="categoria fade-diagonal ">
-                                        <a href="categoria/Accesorios">
-                                            <p>Accesorios</p>
-                                            <img src="/img/home/categoria-accesorios.jpg" alt="Accesorios">
-                                        </a>
-                                    </article>
-
-                                    <article class="categoria fade-diagonal ">
-                                        <a href="categoria/Efectos">
-                                            <p>Efectos</p>
-                                            <img src="/img/home/categoria-efectos.jpg" alt="Efectos">
-                                        </a>
-                                    </article>
-
-                                    <article class="categoria fade-diagonal ">
-                                        <a href="categoria/Pianos">
-                                            <p>Teclados & Pianos</p>
-                                            <img src="/img/home/categoria-pianos-teclados.jpg" alt="Teclados&Pianos">
-                                        </a>
-                                    </article>
-
-                                    <article class="categoria fade-diagonal ">
-                                        <a href="categoria/Orquesta">
-                                            <p>Orquesta</p>
-                                            <img src="/img/home/categoria-orquesta.jpg" alt="Orquesta">
-                                        </a>
-                                    </article>
-
-                                    <article class="categoria fade-diagonal ">
-                                        <a href="categoria/Amplificacion">
-                                            <p>Amplificación</p>
-                                            <img src="/img/home/categoria-amplificacion.jpg" alt="Amplificación">
-                                        </a>
-                                    </article>
-
-                                    <article class="categoria fade-diagonal ">
-                                        <a href="categoria/Segunda-Mano">
-                                            <p>Segunda Mano</p>
-                                            <img src="/img/home/categoria-segundamano.jpg" alt="Segunda Mano">
-                                        </a>
-                                    </article>
-
-                                    <article class="categoria fade-diagonal ">
-                                        <a href="categoria/Grabacion">
-                                            <p>Grabación</p>
-                                            <img src="/img/home/categoria-grabacion.jpg" alt="Grabación">
-                                        </a>
-                                    </article>
-
+                            <article>
+                                <h2>AHORRA HASTA EL 50%</h2>
+                                <p>sobre tus pedidos de $100.000</p>
+                                <div class="box-black-click">
+                                    <a href="#">HASTA EL 30 DE DICIEMBRE</a>
                                 </div>
-
-                            </section>
+                            </article>
 
                         </div>
 
-                    </section>
+                        <div class="cardProm card3 card-other-promotions">
 
-                    <section class="brands-banners" id="seccion-brands-banners">
-                        <div class="box-marcas">
-                            <div>
-                                <img src="/img/banners/bannerMarcas.jpg" width=100%; alt="Marquesina marcas">
-                            </div>
+                            <picture class="picture-prom">
+                                <div class="border-orange">
+                                    <span class="material-symbols-outlined">
+                                        attach_money
+                                    </span>
+                                </div>
+                            </picture>
+
+                            <article>
+                                <h2>CONOCE OTRAS PROMOS</h2>
+                                <p>segui llevando la buena vibra</p>
+                                <div class="box-black-click">
+                                    <a href="#">CLICK AQUI</a>
+                                </div>
+                            </article>
+
                         </div>
-                    </section>
 
-                    <div class="promo-container">
-                        <img src="img/banners/banner_promo.jpg" alt="">
+                    </div>
+                </section>
+
+                <section class="container-cards last-seen">
+
+                    <div class="last-seen_title title-section">
+                        <h3>Ofertas</h3>
                     </div>
 
-                </div>
+                    <div class="cards">
+
+                        <% lastSeen.forEach(product=> { %>
+                            <div class="last-seen_card color-card letter-from-outside width-height-card margin-card">
+                                <a href="/products/productDetail/<%= product.id %>" class="product">
+                                    <div class="card">
+                                        <picture class="img-product">
+                                            <img src="/img/products/<%= product.imagen %>"
+                                                alt="<%= product.categories, product.name, product.brands %>">
+                                        </picture>
+
+                                        <section class="product-info">
+
+                                            <div class="nameProduct">
+                                                <p class="nameProduct">Nombre del producto <%= product.name%>
+                                                </p>
+                                            </div>
+
+                                            <form class="form-qualification qualification stars">
+                                                <p class="qualification">
+                                                    <input id="radio1" type="radio" name="stars" value="5">
+                                                    <label for="radio1"><i class="fa-solid fa-star"></i></label>
+                                                    <input id="radio2" type="radio" name="stars" value="4">
+                                                    <label for="radio2"><i class="fa-solid fa-star"></i></label>
+                                                    <input id="radio3" type="radio" name="stars" value="3">
+                                                    <label for="radio3"><i class="fa-solid fa-star"></i></label>
+                                                    <input id="radio4" type="radio" name="stars" value="2">
+                                                    <label for="radio4"><i class="fa-solid fa-star"></i></label>
+                                                    <input id="radio5" type="radio" name="stars" value="1">
+                                                    <label for="radio5"><i class="fa-solid fa-star"></i></label>
+                                                </p>
+                                            </form>
+
+                                            <div class="discount">
+                                                <p>$ <%= product.price %>
+                                                </p>
+                                            </div>
+
+                                        </section>
+                                    </div>
+                                </a>
+                            </div>
+                            <% }); %>
+                    </div>
+
+                </section>
+
+                <section class="slider-brands" id="seccion-brands-banners">
+                    <div class="box-brands">
+
+                        <div class="brand">
+                            <img src="/img/banners/SliderBrands/boss.svg" alt="">
+                        </div>
+
+                        <div class="brand">
+                            <img src="/img/banners/SliderBrands/epiphone.svg" alt="">
+                        </div>
+
+                        <div class="brand">
+                            <img src="/img/banners/SliderBrands/gibson.svg" alt="">
+                        </div>
+
+                        <div class="brand">
+                            <img src="/img/banners/SliderBrands/marshall.svg" alt="">
+                        </div>
+
+                        <div class="brand">
+                            <img src="/img/banners/SliderBrands/yamaha.svg" alt="">
+                        </div>
+
+                        <div class="brand">
+                            <img src="/img/banners/SliderBrands/zildjian.svg" alt="">
+                        </div>
+                    </div>
+                </section>
+
+                <section class="dropdown-content-category">
+
+                    <div class="center-category">
+
+                        <div class="dropdown-content-category_title">
+                            <h5>Categorias</h5><a href="#">todas las categorias</a>
+                        </div>
+
+                        <section class="shop-by-category" id="section-categories">
+
+                            <div class="items-categories">
+
+                                <article class="categoria fade-diagonal ">
+                                    <a href="/category/Guitarras">
+                                        <p>Guitarras</p>
+                                        <img src="/img/home/categoria-guitarras.jpg" alt="Guitarras">
+                                    </a>
+                                </article>
+
+                                <article class="categoria fade-diagonal ">
+                                    <a href="categoria/Accesorios">
+                                        <p>Accesorios</p>
+                                        <img src="/img/home/categoria-accesorios.jpg" alt="Accesorios">
+                                    </a>
+                                </article>
+
+                                <article class="categoria fade-diagonal ">
+                                    <a href="categoria/Efectos">
+                                        <p>Efectos</p>
+                                        <img src="/img/home/categoria-efectos.jpg" alt="Efectos">
+                                    </a>
+                                </article>
+
+                                <article class="categoria fade-diagonal ">
+                                    <a href="categoria/Pianos">
+                                        <p>Teclados & Pianos</p>
+                                        <img src="/img/home/categoria-pianos-teclados.jpg" alt="Teclados&Pianos">
+                                    </a>
+                                </article>
+
+                                <article class="categoria fade-diagonal ">
+                                    <a href="categoria/Orquesta">
+                                        <p>Orquesta</p>
+                                        <img src="/img/home/categoria-orquesta.jpg" alt="Orquesta">
+                                    </a>
+                                </article>
+
+                                <article class="categoria fade-diagonal ">
+                                    <a href="categoria/Amplificacion">
+                                        <p>Amplificación</p>
+                                        <img src="/img/home/categoria-amplificacion.jpg" alt="Amplificación">
+                                    </a>
+                                </article>
+
+                                <article class="categoria fade-diagonal ">
+                                    <a href="categoria/Segunda-Mano">
+                                        <p>Segunda Mano</p>
+                                        <img src="/img/home/categoria-segundamano.jpg" alt="Segunda Mano">
+                                    </a>
+                                </article>
+
+                                <article class="categoria fade-diagonal ">
+                                    <a href="categoria/Grabacion">
+                                        <p>Grabación</p>
+                                        <img src="/img/home/categoria-grabacion.jpg" alt="Grabación">
+                                    </a>
+                                </article>
+
+                            </div>
+
+                        </section>
+
+                    </div>
+
+                </section>
+
+                <div class="promo-container">
+                    <img src="img/banners/banner_promo.jpg" alt="">
                 </div>
 
-            </main>
+            </div>
+            </div>
 
-            <%- include('./partials/footer.ejs') %>
+        </main>
+
+        <%- include('./partials/footer.ejs') %>
