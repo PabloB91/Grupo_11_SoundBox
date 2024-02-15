@@ -36,7 +36,8 @@ function nextRight(){
         slider.insertAdjacentElement("beforeend", sliderSectionFirst);
         slider.style.marginLeft = "-100%";
     }, 500)
-}
+};
+
 function nextLeft(){
     let sliderSection = document.querySelectorAll(".img_sliderSection");
     let sliderSectionLast = sliderSection[sliderSection.length -1]
@@ -47,7 +48,7 @@ function nextLeft(){
         slider.insertAdjacentElement("afterbegin", sliderSectionLast);
         slider.style.marginLeft = "-100%";
     }, 500)
-}
+};
 
 btnLeft.addEventListener("click", function(){
     nextLeft();
@@ -57,6 +58,6 @@ btnRight.addEventListener("click", function(){
     nextRight();
 });
 
-setInterval(function(){
+/* setInterval(function(){
     nextRight();
-}, 5000)
+}, 10000) */
