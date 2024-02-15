@@ -132,6 +132,8 @@ main {
 	width: 35vw;
 	backdrop-filter: blur(4px);
 	transition: 0.5s;
+	display: flex;
+	flex-direction: column;
 }
 
 .ordenador:hover .dropdown-ordenador {
@@ -145,7 +147,6 @@ main {
 	margin-top: 15px;
 	border: 0;
 	background-color: rgba(0, 0, 0, 0.2);
-	margin-left: 40%;
 	position: sticky;
 	font-size: 24px;
 	color: #ff540a;
