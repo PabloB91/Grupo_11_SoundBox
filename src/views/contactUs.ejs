@@ -1,25 +1,43 @@
-<%- include('./partials/head.ejs') %>
-    <!-- ¡OJO! se estaba repitiendo el llamado de las hojas de estilo 'reset' y 'header-footer' que ya están en el partial head.ejs. PUEDEN PRESENTARSE CONFLICTOS (revisar) -->
-    <link href="/styles/contactUs.css" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="en">
 
-    <%- include('./partials/header.ejs') %>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de correo electrónico</title>
+</head>
 
-        <main class="main">
+<body>
+    <form id="contactForm">
+        <label for="email">Ingresa tu correo electrónico:</label>
+        <input type="email" id="email" name="email" required>
+        <button type="submit">Enviar</button>
+    </form>
 
-            <body>
+    
 
-                <section class="facebookIframe-container">
-                    <!-- <iframe src="https://www.facebook.com/developper/soundboxsl" frameborder="0" width="500" height="500"></iframe> -->
-                </section>
-                
-                <h3>Ubicacion en Argentina:</h3>
-                <section class="maps-argentina-container">
-                    <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2460.238887554154!2d-58.383910912540166!3d-34.603516541432064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sar!4v1707331498447!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+    <script>
+        const form = document.getElementById("contactForm");
 
-                </section>
-            
-            </body>
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
 
-        </main>
+            const email = document.getElementById("email").value;
 
-        <%- include('./partials/footer.ejs') %>
+            // Envía el correo electrónico utilizando AJAX y PHP
+            const xhr = new XMLHttpRequest();
+            xhr.open("POST", "send_email.php");
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.send("email=" + email);
+
+            // Muestra un mensaje de confirmación
+            alert("Se ha enviado un mensaje a " + email);
+
+            // Reinicia el formulario
+            form.reset();
+        });
+    </script>
+    
+</body>
+
+</html>

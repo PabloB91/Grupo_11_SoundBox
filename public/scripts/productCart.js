@@ -9,8 +9,8 @@
 //     document.getElementById("labels-ordenador").style.display = "flex";
 
 
-    // var desplegable = document.getElementById("desplegable");
-    // desplegable.addClass('productCart-open')
+// var desplegable = document.getElementById("desplegable");
+// desplegable.addClass('productCart-open')
 // }
 
 
@@ -21,26 +21,26 @@
 function ordenarAlfabeticamente() {
     // Obtener el elemento desplegable
     const desplegable = document.getElementById("desplegable");
-  
+
     // Obtener los elementos .card dentro del desplegable
     const cards = Array.from(desplegable.getElementsByClassName("card"));
-  
+
     // Ordenar las tarjetas alfabéticamente
     cards.sort((a, b) => {
-      const aName = a.getElementsByClassName("nombre-marca")[0].getElementsByTagName("h5")[0].innerText;
-      const bName = b.getElementsByClassName("nombre-marca")[0].getElementsByTagName("h5")[0].innerText;
-  
-      return aName.localeCompare(bName);
+        const aName = a.querySelector('.nombre-marca h5').innerText.trim();
+        const bName = b.querySelector('.nombre-marca h5').innerText.trim();
+
+        return aName.localeCompare(bName);
     });
-  
+
     // Limpiar el desplegable
-    desplegable.innerHTML = "";
-  
-    // Agregar las tarjetas ordenadas al desplegable
-    cards.forEach(card => {
-      desplegable.appendChild(card);
+    // desplegable.innerHTML = "";
+
+    // Agrega las tarjetas ordenadas al desplegable
+    cards.forEach((card, id) => {
+        card.style.order = id;
     });
-  }
+}
 
 
 
@@ -51,17 +51,21 @@ function ordenarAlfabeticamente() {
 const showCart = document.querySelector('.showCart');
 const desplegable = document.querySelector('.desplegable');
 const hideCart = document.querySelector('.hideCart');
-const ordenadorContainer = document.querySelector('ordenador-container')
+const ordenadorContainer = document.querySelector('.labels-ordenador')
 
-showCart.addEventListener('click', (e)=> {
+showCart.addEventListener('click', (e) => {
     e.preventDefault();
     desplegable.classList.add('modal__show');
+    desplegable.classList.remove('modal__hide');
+    ordenadorContainer.style.display = 'flex';
 });
 
-hideCart.addEventListener('click', (e)=> {
+hideCart.addEventListener('click', (e) => {
     e.preventDefault();
+    desplegable.classList.add('modal__hide');
     desplegable.classList.remove('modal__show');
-    // ordenadorContainer.style.width = "0";
+    ordenadorContainer.style.display = 'none';
+
 })
 
 // _______________________________________________________________________________________________
