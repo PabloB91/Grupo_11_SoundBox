@@ -17,7 +17,7 @@ const adminController = {
     allProducts: async (req, res) => {
         try {
             let products = await db.Productos.findAll();
-
+            console.log("products: ",products.length);
             res.render("product/allTheProducts.ejs", { products })
         }
         catch(err) {

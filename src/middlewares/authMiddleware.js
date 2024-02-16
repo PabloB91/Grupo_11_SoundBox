@@ -6,10 +6,11 @@
 function authMiddleware(req, res, next){
     if(req.session.userLoggedIn != undefined){
         /* console.log("En session se guardo el siguiente User to Log In: ");
-       // console.log(req.session.userLoggedIn); */
+       console.log(req.session.userLoggedIn);  */
         next();
-    }else{
-        //console.log("else"); 
+    }else{ 
+        /* console.log("auth middleware else"); 
+        console.log(req.session.userLoggedIn); */ 
         return res.redirect('/users/login')
     }
 }

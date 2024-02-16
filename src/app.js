@@ -49,6 +49,10 @@ app.use("/users", usersRouter);
 const adminRouter = require("./routes/adminRouter");
 app.use("/admin", adminRouter);
 
+// brands
+const brandsRouter = require("./routes/brandsRouter");
+app.use("/brands", brandsRouter);
+
 //************************************* Error 404 *************************************\\
 app.use((req, res, next) => {
     res.status(404).render("not-found")
