@@ -33,13 +33,6 @@ const mainController = {
         res.render("admin.ejs", {users, products});
     },
 
-    allProducts: (req, res) => {
-        const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-        // console.log(products)
-        res.render("product/allTheProducts.ejs", { products })
-
-    },
-
     categories: (req, res) => {
         const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
         //console.log(req.params.nombre);

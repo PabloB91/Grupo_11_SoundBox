@@ -18,8 +18,6 @@ router.get("/productCart", authMiddleware ,mainController.carrito); /* --> Se ap
                                                                     * si no, lo redirige al login) */
 router.get("/admin", authMiddleware,mainController.admin);
 
-router.get("/allTheProducts", mainController.allProducts);
-
 router.get("/contactUs", mainController.contactUs);
 
 /**

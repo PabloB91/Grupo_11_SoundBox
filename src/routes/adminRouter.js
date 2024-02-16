@@ -7,4 +7,5 @@ const authMiddleware = require('../middlewares/authMiddleware'); //--> Requerimo
 router.get('/usersList', authMiddleware,adminController.listUsers); /* --> Se aplica el 'authMiddleware' (si el usuario está logueado, continúa con el controlador,
                                                                 * si no, lo redirige al login) */
 
+router.get('/allTheProducts', authMiddleware,adminController.allProducts);
 module.exports = router;

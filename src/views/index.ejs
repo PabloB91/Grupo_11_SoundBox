@@ -72,23 +72,21 @@
                         <div class="last-seen_title title-section">
                             <h3>Ultimos vistos</h3>
                         </div>
-
+                        
                         <div class="cards">
-
-                            <% lastSeen.forEach(product=> { %>
                                 <div
                                     class="last-seen_card color-card letter-from-outside width-height-card margin-card">
-                                    <a href="/products/productDetail/<%= product.id %>" class="product">
+                                    <a href="/products/productDetail/<%= products.id %>" class="product">
                                         <div class="card">
                                             <picture class="img-product">
-                                                <img src="/img/products/<%= product.imagen %>"
-                                                    alt="<%= product.categories, product.name, product.brands %>">
+                                                <img src="/img/products/<%= products.image %>"
+                                                    alt="<%= products.category, products.name, products.brand %>">
                                             </picture>
 
                                             <section class="product-info">
 
                                                 <div class="nameProduct">
-                                                    <p class="nameProduct">Nombre del producto <%= product.name%>
+                                                    <p class="nameProduct">Nombre del producto <%= products.name%>
                                                     </p>
                                                 </div>
 
@@ -108,7 +106,7 @@
                                                 </form>
 
                                                 <div class="discount">
-                                                    <p>$ <%= product.price %>
+                                                    <p>$ <%= products.price %>
                                                     </p>
                                                 </div>
 
@@ -116,7 +114,6 @@
                                         </div>
                                     </a>
                                 </div>
-                                <% }); %>
                         </div>
 
                     </section>
