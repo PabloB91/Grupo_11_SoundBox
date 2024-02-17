@@ -25,6 +25,7 @@ main {
 	&:hover {
 		border-radius: 15%;
 		transition-duration: 0.8s;
+
 	}
 }
 
