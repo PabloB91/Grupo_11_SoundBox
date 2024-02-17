@@ -5,9 +5,9 @@
 
         <main class="main">
 
-            <div class="main-center">
+            <div class="main__div--max-width">
 
-                <section class="slider">
+                <section class="main__slider" id="index-slider">
 
                     <div class="slider--inner" id="slider--inner">
 
@@ -64,7 +64,7 @@
 
                 </section>
 
-                <section class="container-cards last-seen margin-bottom" id="last-seen">
+                <section class="main__container-cards main__section--margin-bottom" id="last-seen">
 
                     <div class="last-seen_title title-section">
                         <h3>Ultimos vistos</h3>
@@ -125,7 +125,7 @@
 
                 </section>
 
-                <section class="cards-prom margin-bottom">
+                <section class="main__cards-prom main__section--margin-bottom" id="cards-prom">
                     <div class="center_cards-prom">
 
                         <div class="cardProm card1 free-shipping">
@@ -208,7 +208,7 @@
                     </div>
                 </section>
 
-                <section class="container-cards last-seen margin-bottom">
+                <section class="main__container-cards main__section--margin-bottom" id="top-sales">
 
                     <div class="last-seen_title title-section" id="offers">
                         <h3>Ofertas</h3>
@@ -261,7 +261,7 @@
 
                 </section>
 
-                <section class="slider-brands margin-bottom" id="seccion-brands-banners">
+                <section class="main__slider-brands main__section--margin-bottom" id="seccion-brands-banners">
                     <div class="box-brands">
 
                         <div class="bransOneSection brandsSection">
@@ -299,7 +299,60 @@
                     </div>
                 </section>
 
-                <section class="content-categories margin-bottom">
+                <section class="main__container-cards main__section--margin-bottom" id="offers">
+
+                    <div class="last-seen_title title-section" id="offers">
+                        <h3>Ofertas</h3>
+                    </div>
+
+                    <div class="cards">
+
+                        <% lastSeen.forEach(product=> { %>
+                            <div class="card-outline">
+                                <a href="/products/productDetail/<%= product.id %>" class="product">
+                                    <div class="card">
+                                        <picture class="img-product">
+                                            <img src="/img/products/<%= product.imagen %>"
+                                                alt="<%= product.categories, product.name, product.brands %>">
+                                        </picture>
+
+                                        <section class="product-info">
+
+                                            <div class="nameProduct">
+                                                <p class="nameProduct">Nombre del producto <%= product.name%>
+                                                </p>
+                                            </div>
+
+                                            <form class="form-qualification qualification stars">
+                                                <p class="qualification">
+                                                    <input id="radio1" type="radio" name="stars" value="5">
+                                                    <label for="radio1"><i class="fa-solid fa-star"></i></label>
+                                                    <input id="radio2" type="radio" name="stars" value="4">
+                                                    <label for="radio2"><i class="fa-solid fa-star"></i></label>
+                                                    <input id="radio3" type="radio" name="stars" value="3">
+                                                    <label for="radio3"><i class="fa-solid fa-star"></i></label>
+                                                    <input id="radio4" type="radio" name="stars" value="2">
+                                                    <label for="radio4"><i class="fa-solid fa-star"></i></label>
+                                                    <input id="radio5" type="radio" name="stars" value="1">
+                                                    <label for="radio5"><i class="fa-solid fa-star"></i></label>
+                                                </p>
+                                            </form>
+
+                                            <div class="discount">
+                                                <p>$ <%= product.price %>
+                                                </p>
+                                            </div>
+
+                                        </section>
+                                    </div>
+                                </a>
+                            </div>
+                            <% }); %>
+                    </div>
+
+                </section>
+
+                <section class="main__content-categories main__section--margin-bottom" id="categories">
 
                     <div class="center-category">
 
@@ -375,7 +428,7 @@
 
                 </section>
 
-                <section class="promo-container margin-bottom">
+                <section class="main__promo-container main__section--margin-bottom" id="comments-prom-promBaner">
 
                     <div class="container-boxes">
 
