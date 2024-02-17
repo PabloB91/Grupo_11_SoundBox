@@ -5,7 +5,7 @@ const app = express();
 const fs = require("fs");
 const { log } = require("console");
 const { validationResult } = require("express-validator")
-
+const db = require("../database/models")
 
 
 /* En la constante "products" ya tienen los productos que están 
@@ -26,20 +26,17 @@ const mainController = {
 
     },
 
-    admin: (req, res) => {
-        const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-        const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
-        res.render("admin.ejs", {users, products});
+    admin: async (req, res) => {
+        try {
+            let users = await db.Usuarios.findAll()
+            let products = await db.Productos.findAll();
+            res.render("admin.ejs", {users, products});
+        }
+        catch(err) {
+            console.log(err);
+			res.render("not-found")
+		}
     },
-
-    allProducts: (req, res) => {
-        const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-        // console.log(products)
-        res.render("product/allTheProducts.ejs", { products })
-
-    },
-
     categories: (req, res) => {
         const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
         //console.log(req.params.nombre);

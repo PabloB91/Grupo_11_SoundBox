@@ -27,9 +27,9 @@ const usersControllers = {
             // console.log(errores);
 
             let country_registro;  //--> Esto es para tomar el valor de país del input de usuario y guardarlo con el Id correspondiente
-            if (req.body.pais == 'Argentina'){
+            if (req.body.country == 'Argentina'){
                 country_registro= 1
-            }else if(req.body.pais == 'Colombia'){
+            }else if(req.body.country == 'Colombia'){
                 country_registro= 2
             }
         
@@ -49,8 +49,8 @@ const usersControllers = {
 
                     user_type_id: 2,    //--> En este caso el Id debería ser siempre '2', porque es el que corresponde a 'common_user'
                                         //--Definir cómo vamos a crear el usuario 'admin', que debería ser creado una sola vez.
-                    country_id: 2 /* country_registro */       //--> Actualizar el formulario de registro para incluir esto, 
-                })               //  una vez esté listo el formulario, descomentar
+                    country_id: country_registro     
+                })               
                 console.log("usuario a crear: ",CreateUser);  //--> Muestra por consola cómo quedó el registro que se inserta en la BD
                 return res.redirect('login')  //--> Una vez creado el registro en la DB. se redirige a la página de logueo
             }
@@ -59,88 +59,85 @@ const usersControllers = {
             return console.log(err); //--> Esto nos muestra en la consola si es que hubo algún error en el proceso
         }
     },
+
     // (GET) Formulario de Login
     login: (req, res) => {
       res.render("forms/login.ejs");
     },
 
     // (POST) Proceso de Login
-    processToLogin: (req, res) => {
+    processToLogin: async (req, res) => {
+        let userToLogIn;   //--> Creamos la variable del usuario a loguearse 
         
-        const errors = validationResult(req);
-        
-        if(errors.isEmpty()){
-            /* aca estamos trayendo la lista de usuarios y la estamos convirtiendo a array */
-            const usersJSON = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-            /**
-             * en las siguientes lineas de codigo estamos leyendo el array pasado anteriormente
-             * y si usersJSON es estrictamente igual a "" 
-             */
-            let users;
+        try{
+            const errors = validationResult(req);
+            if(errors.isEmpty()){
+                let userToFind= await db.Usuarios.findOne({   //--> Crea una variable 'userToFind', que busca el usuario en la DB según el e_mail del formulario
+                        where:{
+                            e_mail: req.body.email
+                        }
+                    })
+                /* console.log("usuario a encontrar: ",userToFind) ; */
 
-            if (usersJSON === ""){
-                users = [];
-            }else {
-                users = usersJSON;
-            }
-            
-            let userToLogIn; 
-            /**
-             * si existe el usuario en la db en tonces vamos a renderizar
-             *  `/users/userProfile/:id`con el siguiente codigo
-            */
-            for(let user = 0; user<users.length; user++ ) {
-                /* en el siguiente if estamos diciendo si dentro de usuarios hay un
-                usuario con correo y el correo es estrictamente igual al que se esta
-                pasando por body y además si la contraseña matcheada y la contraseña y el email coinciden vamos a guardar de usuarios un usuario y break */
-                if (users[user].email === req.body.email) {
-                    if (bcrypt.compareSync(req.body.password, users[user].password)){
-                        userToLogIn = users[user];
-                        break;
+                if (req.body.email === userToFind.e_mail) {     //--> Si el e_mail ingresado coincide con alguno buscado en la DB, pasa a comparar las contraseñas
+                    if (bcrypt.compareSync(req.body.password, userToFind.password)){
+                        if (req.body.remember != undefined){        //--> Creación de cookie con el email del usuario, para poder recuperar la sesión 
+                            //--> Si el usuario clickea el checkbox, se crea la cookie. 'req.body.remember' es el elemento HTML del checkbox
+                            //--> Entonces si ese elemento NO es indefinido (al clickearse, toma el valor de 'on'), se crea la cookie.
+                            console.log(req.body.remember);/* (verificar el valor del checkbox) */         
+                            res.cookie('remember', userToLogIn.e_mail, {maxAge: 60000})
+                            console.log(req.session.userLoggedIn);
+                            delete userToLogIn['dataValues'].password //--> Borramos el password de la variable a guardar en session, por seguridad
+                            delete userToLogIn['_previousDataValues'].password 
+                            userToLogIn = userToFind;   
+                            req.session.userLoggedIn = userToLogIn;
+                            }
+                        userToLogIn = userToFind;              //--> Si las contraseñas coinciden, hacemos que la variable usuario a loguearse sea igual al usuario encontrado en la DB
                     }else {
-                        res.render("forms/login.ejs", { errors : [
-                            {msg: 'La contraseña no concide'}
-                         ], 
-                         old: req.body
-                     });
+                        return res.render("forms/login.ejs", { errors : [    //--> Si no coinciden las contraseñas vuelve al login con el mensaje de error.
+                                {msg: 'La contraseña no concide'}
+                            ], 
+                            old: req.body
+                        }); 
                     }
                 }
-            }
 
+                /*console.log("usertoLogin: ",userToLogIn); */
+                /* console.log(userToLogIn['dataValues']); */
+                delete userToLogIn['dataValues'].password //--> Borramos el password de la variable a guardar en session, por seguridad
+                delete userToLogIn['_previousDataValues'].password 
+                req.session.userLoggedIn = userToLogIn;  //--> Si el usuario ingresó satisfactoriamente vamos a guardar sus datos en 'session' --> 'userLoggedIn'
+                /* console.log('session: ', req.session);  */
+                /* console.log('session: ', req.session.userLoggedIn); */
+
+                
+
+                /* este redirect actúa solo si el usuario existe en el db */
+                console.log('redirect');
+                console.log(userToLogIn.id);
+                console.log('session userloggedin Id: ', req.session.userLoggedIn.id);
+                return res.redirect(`/users/userProfile/${userToLogIn.id}`);
+            }else{
+
+                return res.render("forms/login.ejs", { errors: errors.array(), old: req.body });
+            }
+        }
+        catch{
+            console.log("catch usertoLogin: ",userToLogIn);
             /**
-             * en la siguiente sentencia de codigo estamos diciendo que si el usuario
-             * logueado tiene algun campo que no coincida que la contrasena o el 
-             * email no coinsidan con los registrados en la db entonces vamos a 
-             * enviar un error
-            */
+                 * en la siguiente sentencia de codigo estamos diciendo que si el usuario
+                 * logueado tiene algun campo que no coincida que la contrasena o el 
+                 * email no coinsidan con los registrados en la db entonces vamos a 
+                 * enviar un error
+                */
             if (userToLogIn === undefined){
-                res.render("forms/login.ejs", { errors : [
-                       {msg: 'EL correo o la contraseña no coinciden o este usuario aún no es parte de SoundBox'}
+                return res.render("forms/login.ejs", { errors : [
+                    {msg: 'EL correo no coincide o este usuario aún no es parte de SoundBox'}
                     ], 
                     old: req.body
                 });
-            }
-            /**
-             * si el usuario ingresó satisfactoriamente vamos a guardar sus datos en 
-             * session --> userTologIn
-             */
-            //console.log(userToLogIn);
-            delete userToLogIn.password  //--> Borramos el password de la variable guardada en session, por seguridad
-
-            req.session.userLoggedIn = userToLogIn;  
-
-            if (req.body.remember != undefined){        //--> Creación de cookie con el email del usuario, para poder recuperar la sesión 
-                                                        //--> Si el usuario clickea el checkbox, se crea la cookie. 'req.body.remember' es el elemento HTML del checkbox
-                                                        //--> Entonces si ese elemento NO es indefinido (al clickearse, toma el valor de 'on'), se crea la cookie.
-                //console.log(req.body.remember);/* (verificar el valor del checkbox) */         
-                res.cookie('remember', userToLogIn.email, {maxAge: 60000})
-            }
-
-            /* este redirect actúa solo si el usuario existe en el db */
-            res.redirect(`/users/userProfile/${userToLogIn.userId}`);
-        }else{
-            return res.render("forms/login.ejs", { errors: errors.array(), old: req.body });
-        }
+                }
+        }       //--> Acá termina todo el 'try-catch'
     },
 
     // (GET) Perfil del Usuario

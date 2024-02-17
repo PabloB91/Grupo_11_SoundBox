@@ -1,25 +1,3 @@
-/* const express = require('express');
-const path = require("path");
-const fs = require('fs');
-const db = require("../database/models")
-
-
-const usersFilePath = path.join(__dirname, '../data/usersDataBase.json');
-
-const aController = {
-    
-    listUsers :(req, res) => {
-
-        const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-
-        res.render("user/usersList.ejs", {users});
-    }
-}
-module.exports = aController; */ 
-
-
-
-
 const express = require('express');
 const path = require("path");
 const fs = require('fs');
@@ -35,6 +13,17 @@ const adminController = {
             console.log(err);
 			res.render("not-found")
 		}
+    },
+    allProducts: async (req, res) => {
+        try {
+            let products = await db.Productos.findAll();
+            console.log("products: ",products.length);
+            res.render("product/allTheProducts.ejs", { products })
+        }
+        catch(err) {
+			res.render("not-found")
+		}
+
     }
 }
 module.exports = adminController;

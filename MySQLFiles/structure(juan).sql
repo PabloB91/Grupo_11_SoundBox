@@ -42,7 +42,7 @@ CREATE TABLE `product` (
   `image` varchar(255) NOT NULL,
   `quantity` int(11) NOT NULL,
   `price` int(11) NOT NULL,
-  `discount` int(11) DEFAULT NULL,
+  `discount` int(11) DEFAULT 0,
   `color_id` int(11) NOT NULL,
   `brand_id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL,

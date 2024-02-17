@@ -141,35 +141,36 @@
                             </div>
                         </a>
                     </article>
-                    <% products.forEach(product=> { %>
+                    <% products.forEach(product => {  %>
+                        
                         <article class="container-producto">
                             <a href="/products/productDetail/<%= product.id %>" class="card">
                                 <div class="face front">
-                                    <img src="/img/products/<%= product.imagen %> " alt=<%=product.nombre %> >
+                                    <img src="/img/products/<%= product.image %> " alt=<%=product.name %> >
                                     <h3>
-                                        <%= product.nombre%>
+                                        <%= product.name%>
                                     </h3>
                                 </div>
                                 <div class="face back">
                                     <h3>
-                                        <%= product.nombre%>
+                                        <%= product.name%>
                                     </h3>
                                     <p class="marca-descripcion">
-                                        <%= product.marca %>
+                                        <%= product.brand %>
                                     </p>
                                     <p class="marca-descripcion">
-                                        <%= product.descripcion %>
+                                        <%= product.description %>
                                     </p>
-                                    <p class="price">$<%= product.precio %>
+                                    <p class="price">$<%= product.price %>
                                     </p>
                                     <p>
-                                        <%= product.descuento %>%
+                                        <%= product.discount %>
                                     </p>
                                 </div>
                             </a>
                         </article>
+                    <% }); %>
 
-                        <%})%>
                 </div>
             </section>
 

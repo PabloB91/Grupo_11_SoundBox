@@ -1,0 +1,32 @@
+
+    <%- include('../partials/head.ejs') %>
+    <link href="/styles/home.css" rel="stylesheet">
+
+    <%- include('../partials/header.ejs') %>
+
+    <main>
+    
+        <div class="items-mas-vendidos">
+        <% brands.forEach(brand => { %>
+            
+            <article class="producto">
+                <!-- <a href="/products/brandDetail"> -->
+                <!-- <img src= imagen alt="Imagen"> -->
+                <div class="detalle-producto">
+                    <p class="descripciones"><strong><%= brand.brand_name %></strong></p>
+                </div>
+                </a>
+            </article>
+        <% }) %>
+                
+        </div>
+        
+        <hr class="separador">
+        
+        <hr class="separador">
+        
+    </main>
+
+    <%- include('../partials/footer.ejs') %>
+
+

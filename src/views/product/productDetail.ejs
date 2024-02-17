@@ -17,7 +17,7 @@
                     </div>
 
                     <div class="caja-imagenes-general">
-                        <img src="/img/products/<%= singleProduct.imagen %> " class="imagen-producto-principal">
+                        <img src="/img/products/<%= products.image %> " class="imagen-producto-principal">
 
                         <div class="imagenes-secundarias-inferior">
                             <!-- <img src="/img/products/"  class="imagen-producto-secundaria">
@@ -30,14 +30,14 @@
                         <div class="caja-primera">
                             <div class="caja-titulo-producto">
                                 <h2 class="titulo-producto">
-                                    <%= singleProduct.marca + " " + singleProduct.nombre %>
+                                    <%= products.brand_id + " " + products.name %>
                                 </h2>
                             </div>
 
                             <div class="caja-precio-clasificacion">
-                                <span class="precio-producto"> $ <%= singleProduct.precio %> </span>
+                                <span class="precio-producto"> $ <%= products.price %> </span>
                                 <span class="descuento-producto">
-                                    <%= singleProduct.descuento %> % OFF
+                                    <%= products.discount %> % OFF
                                 </span>
 
                                 <form class="formulario-clasificacion">
@@ -60,7 +60,7 @@
                         <div class="caja-segunda">
                             <div class="caja-descripcion-producto">
                                 <p class="descripcion-producto">
-                                    <%= singleProduct.descripcion %>
+                                    <%= products.description %>
                                 </p>
                             </div>
 
@@ -70,11 +70,8 @@
                                 <div class="caja-seleccion-colores">
                                     <form action="">
                                         <select id="colores-seleccion">
-                                            <% for (const iterator of singleProduct["coloresDisponibles"]) { %>
-                                                <option value="negro">
-                                                    <%= iterator %>
+                                                <option value="<%= products.color_id %>">
                                                 </option>
-                                                <% } %>
                                         </select>
                                     </form>
                                 </div>
@@ -84,7 +81,7 @@
 
                         <div class="caja-cantidad-producto-carrito">
                             <div class="caja-cantidad-producto">
-                                <input type="number" id="cantidad-seleccion" min="1" max="<%= singleProduct.cantidad %>"
+                                <input type="number" id="cantidad-seleccion" min="1" max="<%= products.quantity %>"
                                     value="1">
                             </div>
 
@@ -105,28 +102,26 @@
                         <div class="caja-links-extra-producto">
                             <div class="caja-categories-producto">
                                 <span class="links-categories-producto">Categorías:
-                                    <% for (const iterator of singleProduct["categories"]) { %>
-                                        <a href="">
-                                            <%= iterator %>
+                                        <a>
+                                        <a href="#"> <%= products.category_id %>
                                         </a>,
-                                        <% } %>
                                 </span>
                             </div>
 
                             <div class="caja-tags-producto">
                                 <span class="links-tags-producto">Estado:
                                     <a href="#">
-                                        <%= singleProduct.estado %>
+                                        <%= products.state_id %>
                                     </a>
                                 </span>
                             </div>
                         </div>
 
                         <div class="editar-borrar">
-                            <a href="/products/edit/<%= singleProduct.id %>"><button class="boton-accion-editar">EDITAR
+                            <a href="/products/edit/<%= products.id %>"><button class="boton-accion-editar">EDITAR
                                     PRODUCTO</button></a>
 
-                            <form action="/products/delete/<%= singleProduct.id %>?_method=DELETE" method="POST"
+                            <form action="/products/delete/<%= products.id %>?_method=DELETE" method="POST"
                                 style="display: inline-flex">
                                 <button type="submit" class="boton-accion-borrar">ELIMINAR</button>
                         </div>
