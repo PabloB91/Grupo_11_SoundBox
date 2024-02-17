@@ -46,7 +46,6 @@
 
                     </div>
 
-
                     <div class="slider-buttons">
 
                         <div class="slider--btns slider--bts-left" id="btn-left">
@@ -54,16 +53,18 @@
                                 skip_previous
                             </span>
                         </div>
+
                         <div class="slider--btns slider--bts-rigth" id="btn-rigth">
                             <span class="material-symbols-outlined">
                                 skip_next
                             </span>
                         </div>
+
                     </div>
 
                 </section>
 
-                <section class="container-cards last-seen">
+                <section class="container-cards last-seen margin-bottom">
 
                     <div class="last-seen_title title-section">
                         <h3>Ultimos vistos</h3>
@@ -72,9 +73,13 @@
                     <div class="cards">
 
                         <% lastSeen.forEach(product=> { %>
-                            <div class="last-seen_card color-card letter-from-outside width-height-card margin-card">
+
+                            <div class="card-outline">
+
                                 <a href="/products/productDetail/<%= product.id %>" class="product">
+
                                     <div class="card">
+
                                         <picture class="img-product">
                                             <img src="/img/products/<%= product.imagen %>"
                                                 alt="<%= product.categories, product.name, product.brands %>">
@@ -108,15 +113,19 @@
                                             </div>
 
                                         </section>
+
                                     </div>
+
                                 </a>
+
                             </div>
+
                             <% }); %>
                     </div>
 
                 </section>
 
-                <section class="cards-prom">
+                <section class="cards-prom margin-bottom">
                     <div class="center_cards-prom">
 
                         <div class="cardProm card1 free-shipping">
@@ -199,7 +208,7 @@
                     </div>
                 </section>
 
-                <section class="container-cards last-seen">
+                <section class="container-cards last-seen margin-bottom">
 
                     <div class="last-seen_title title-section">
                         <h3>Ofertas</h3>
@@ -208,7 +217,7 @@
                     <div class="cards">
 
                         <% lastSeen.forEach(product=> { %>
-                            <div class="last-seen_card color-card letter-from-outside width-height-card margin-card">
+                            <div class="card-outline">
                                 <a href="/products/productDetail/<%= product.id %>" class="product">
                                     <div class="card">
                                         <picture class="img-product">
@@ -252,7 +261,7 @@
 
                 </section>
 
-                <section class="slider-brands" id="seccion-brands-banners">
+                <section class="slider-brands margin-bottom" id="seccion-brands-banners">
                     <div class="box-brands">
 
                         <div class="bransOneSection brandsSection">
@@ -260,11 +269,11 @@
                             <div class="brand">
                                 <img src="/img/banners/SliderBrands/boss.svg" alt="">
                             </div>
-    
+
                             <div class="brand">
                                 <img src="/img/banners/SliderBrands/epiphone.svg" alt="">
                             </div>
-    
+
                             <div class="brand">
                                 <img src="/img/banners/SliderBrands/gibson.svg" alt="">
                             </div>
@@ -276,11 +285,11 @@
                             <div class="brand">
                                 <img src="/img/banners/SliderBrands/marshall.svg" alt="">
                             </div>
-    
+
                             <div class="brand">
                                 <img src="/img/banners/SliderBrands/yamaha.svg" alt="">
                             </div>
-    
+
                             <div class="brand">
                                 <img src="/img/banners/SliderBrands/zildjian.svg" alt="">
                             </div>
@@ -290,7 +299,7 @@
                     </div>
                 </section>
 
-                <section class="dropdown-content-category">
+                <section class="content-categories margin-bottom">
 
                     <div class="center-category">
 
@@ -366,11 +375,155 @@
 
                 </section>
 
-                <div class="promo-container">
-                    <img src="img/banners/banner_promo.jpg" alt="">
-                </div>
+                <section class="promo-container margin-bottom">
 
-            </div>
+                    <div class="container-boxes">
+
+                        <div class="box featured">
+
+                            <div class="title">
+                                <h2>DESTACADOS</h2>
+                            </div>
+
+                            <div class="promo-container_card">
+
+                                <% lastSeen.forEach(product=> { %>
+                                    <picture class="img-product">
+                                        <img src="/img/products/<%= product.imagen %>"
+                                            alt="<%= product.categories, product.name, product.brands %>">
+                                    </picture>
+                                    <article>
+                                        <div class="nameProduct">
+                                            <p class="nameProduct">Nombre del producto <%= product.name%>
+                                            </p>
+                                        </div>
+
+                                        <form class="form-qualification qualification stars">
+                                            <p class="qualification">
+                                                <input id="radio1" type="radio" name="stars" value="5">
+                                                <label for="radio1"><i class="fa-solid fa-star"></i></label>
+                                                <input id="radio2" type="radio" name="stars" value="4">
+                                                <label for="radio2"><i class="fa-solid fa-star"></i></label>
+                                                <input id="radio3" type="radio" name="stars" value="3">
+                                                <label for="radio3"><i class="fa-solid fa-star"></i></label>
+                                                <input id="radio4" type="radio" name="stars" value="2">
+                                                <label for="radio4"><i class="fa-solid fa-star"></i></label>
+                                                <input id="radio5" type="radio" name="stars" value="1">
+                                                <label for="radio5"><i class="fa-solid fa-star"></i></label>
+                                            </p>
+                                        </form>
+
+                                        <div class="discount">
+                                            <p>$ <%= product.price %>
+                                            </p>
+                                        </div>
+                                    </article>
+                                    <% }); %>
+
+                            </div>
+
+                        </div>
+
+                        <div class="box comments">
+
+                            <div class="title">
+                                <h2>COMENTARIOS</h2>
+                            </div>
+
+                            <% lastSeen.forEach(product=> { %>
+                                <div class="promo-container_card">
+
+                                    <picture class="img-product">
+                                        <img src="/img/products/<%= product.imagen %>"
+                                            alt="<%= product.categories, product.name, product.brands %>">
+                                    </picture>
+                                    <article>
+                                        <div class="nameProduct">
+                                            <p class="nameProduct">Nombre del producto <%= product.name%>
+                                            </p>
+                                        </div>
+
+                                        <form class="form-qualification qualification stars">
+                                            <p class="qualification">
+                                                <input id="radio1" type="radio" name="stars" value="5">
+                                                <label for="radio1"><i class="fa-solid fa-star"></i></label>
+                                                <input id="radio2" type="radio" name="stars" value="4">
+                                                <label for="radio2"><i class="fa-solid fa-star"></i></label>
+                                                <input id="radio3" type="radio" name="stars" value="3">
+                                                <label for="radio3"><i class="fa-solid fa-star"></i></label>
+                                                <input id="radio4" type="radio" name="stars" value="2">
+                                                <label for="radio4"><i class="fa-solid fa-star"></i></label>
+                                                <input id="radio5" type="radio" name="stars" value="1">
+                                                <label for="radio5"><i class="fa-solid fa-star"></i></label>
+                                            </p>
+                                        </form>
+
+                                        <div class="discount">
+                                            <p>$ <%= product.price %>
+                                            </p>
+                                        </div>
+                                    </article>
+
+                                </div>
+                                <% }); %>
+                        </div>
+
+                        <div class="box news">
+
+                            <div class="title">
+                                <h2>NOVEDADES</h2>
+                            </div>
+
+                            <div class="promo-container_card">
+
+                                <% lastSeen.forEach(product=> { %>
+                                    <picture class="img-product">
+                                        <img src="/img/products/<%= product.imagen %>"
+                                            alt="<%= product.categories, product.name, product.brands %>">
+                                    </picture>
+                                    <article>
+                                        <div class="nameProduct">
+                                            <p class="nameProduct">Nombre del producto <%= product.name%>
+                                            </p>
+                                        </div>
+
+                                        <form class="form-qualification qualification stars">
+                                            <p class="qualification">
+                                                <input id="radio1" type="radio" name="stars" value="5">
+                                                <label for="radio1"><i class="fa-solid fa-star"></i></label>
+                                                <input id="radio2" type="radio" name="stars" value="4">
+                                                <label for="radio2"><i class="fa-solid fa-star"></i></label>
+                                                <input id="radio3" type="radio" name="stars" value="3">
+                                                <label for="radio3"><i class="fa-solid fa-star"></i></label>
+                                                <input id="radio4" type="radio" name="stars" value="2">
+                                                <label for="radio4"><i class="fa-solid fa-star"></i></label>
+                                                <input id="radio5" type="radio" name="stars" value="1">
+                                                <label for="radio5"><i class="fa-solid fa-star"></i></label>
+                                            </p>
+                                        </form>
+
+                                        <div class="discount">
+                                            <p>$ <%= product.price %>
+                                            </p>
+                                        </div>
+                                    </article>
+                                    <% }); %>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <aside class="aside_prom-baner">
+                        <picture>
+                            <img src="img/banners/banner_promo.jpg"
+                                alt="soundBox promocionesSoundbox SoundboxPromotion">
+                        </picture>
+                    </aside>
+
+                </section>
+
             </div>
 
         </main>
