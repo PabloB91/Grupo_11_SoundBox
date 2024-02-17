@@ -24,7 +24,7 @@ function ordenarAlfabeticamente() {
 
     // Obtener los elementos .card dentro del desplegable
     const cards = Array.from(desplegable.getElementsByClassName("card"));
-
+    
     // Ordenar las tarjetas alfabéticamente
     cards.sort((a, b) => {
         const aName = a.querySelector('.nombre-marca h5').innerText.trim();
