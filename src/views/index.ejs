@@ -79,19 +79,6 @@
                                             <img src="/img/products/<%= product.imagen %>"
                                                 alt="<%= product.categories, product.name, product.brands %>">
                                         </picture>
-                        <div class="last-seen_title title-section">
-                            <h3>Ultimos vistos</h3>
-                        </div>
-                        
-                        <div class="cards">
-                                <div
-                                    class="last-seen_card color-card letter-from-outside width-height-card margin-card">
-                                    <a href="/products/productDetail/<%= products.id %>" class="product">
-                                        <div class="card">
-                                            <picture class="img-product">
-                                                <img src="/img/products/<%= products.image %>"
-                                                    alt="<%= products.category, products.name, products.brand %>">
-                                            </picture>
 
                                         <section class="product-info">
 
@@ -99,10 +86,6 @@
                                                 <p class="nameProduct">Nombre del producto <%= product.name%>
                                                 </p>
                                             </div>
-                                                <div class="nameProduct">
-                                                    <p class="nameProduct">Nombre del producto <%= products.name%>
-                                                    </p>
-                                                </div>
 
                                             <form class="form-qualification qualification stars">
                                                 <p class="qualification">
@@ -123,10 +106,6 @@
                                                 <p>$ <%= product.price %>
                                                 </p>
                                             </div>
-                                                <div class="discount">
-                                                    <p>$ <%= products.price %>
-                                                    </p>
-                                                </div>
 
                                         </section>
                                     </div>
@@ -134,11 +113,6 @@
                             </div>
                             <% }); %>
                     </div>
-                                            </section>
-                                        </div>
-                                    </a>
-                                </div>
-                        </div>
 
                 </section>
 
@@ -233,13 +207,13 @@
 
                     <div class="cards">
 
-                        <% products.forEach(product=> { %>
+                        <% lastSeen.forEach(product=> { %>
                             <div class="last-seen_card color-card letter-from-outside width-height-card margin-card">
                                 <a href="/products/productDetail/<%= product.id %>" class="product">
                                     <div class="card">
                                         <picture class="img-product">
-                                            <img src="/img/products/<%= product.image %>"
-                                                alt="<%= product.category, product.name, product.brand %>">
+                                            <img src="/img/products/<%= product.imagen %>"
+                                                alt="<%= product.categories, product.name, product.brands %>">
                                         </picture>
 
                                         <section class="product-info">
@@ -281,29 +255,38 @@
                 <section class="slider-brands" id="seccion-brands-banners">
                     <div class="box-brands">
 
-                        <div class="brand">
-                            <img src="/img/banners/SliderBrands/boss.svg" alt="">
+                        <div class="bransOneSection brandsSection">
+
+                            <div class="brand">
+                                <img src="/img/banners/SliderBrands/boss.svg" alt="">
+                            </div>
+    
+                            <div class="brand">
+                                <img src="/img/banners/SliderBrands/epiphone.svg" alt="">
+                            </div>
+    
+                            <div class="brand">
+                                <img src="/img/banners/SliderBrands/gibson.svg" alt="">
+                            </div>
+
                         </div>
 
-                        <div class="brand">
-                            <img src="/img/banners/SliderBrands/epiphone.svg" alt="">
+                        <div class="barndsTwoSection brandsSection">
+
+                            <div class="brand">
+                                <img src="/img/banners/SliderBrands/marshall.svg" alt="">
+                            </div>
+    
+                            <div class="brand">
+                                <img src="/img/banners/SliderBrands/yamaha.svg" alt="">
+                            </div>
+    
+                            <div class="brand">
+                                <img src="/img/banners/SliderBrands/zildjian.svg" alt="">
+                            </div>
+
                         </div>
 
-                        <div class="brand">
-                            <img src="/img/banners/SliderBrands/gibson.svg" alt="">
-                        </div>
-
-                        <div class="brand">
-                            <img src="/img/banners/SliderBrands/marshall.svg" alt="">
-                        </div>
-
-                        <div class="brand">
-                            <img src="/img/banners/SliderBrands/yamaha.svg" alt="">
-                        </div>
-
-                        <div class="brand">
-                            <img src="/img/banners/SliderBrands/zildjian.svg" alt="">
-                        </div>
                     </div>
                 </section>
 
