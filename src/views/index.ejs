@@ -76,23 +76,20 @@
 
                     <div class="cards">
 
-                        <% lastSeen.forEach(product=> { %>
-
+                        <% products.forEach(product=> { %>
                             <div class="card-outline">
-
                                 <a href="/products/productDetail/<%= product.id %>" class="product">
-
                                     <div class="card">
-
                                         <picture class="img-product">
-                                            <img loading="lazy" src="/img/products/<%= product.imagen %>"
-                                                alt="<%= product.categories, product.name, product.brands %>">
+                                            <img loading="lazy" src="/img/products/<%= product.image %>"
+                                                alt="<%= product.category, product.name, product.brand_id %>">
                                         </picture>
 
                                         <section class="product-info">
 
                                             <div class="nameProduct">
-                                                <p class="nameProduct">Nombre del producto <%= product.name%>
+                                                <p class="nameProduct">
+                                                    <%= product.name%>
                                                 </p>
                                             </div>
 
@@ -117,13 +114,9 @@
                                             </div>
 
                                         </section>
-
                                     </div>
-
                                 </a>
-
                             </div>
-
                             <% }); %>
                     </div>
 
@@ -220,19 +213,20 @@
 
                     <div class="cards">
 
-                        <% lastSeen.forEach(product=> { %>
+                        <% products.forEach(product=> { %>
                             <div class="card-outline">
                                 <a href="/products/productDetail/<%= product.id %>" class="product">
                                     <div class="card">
                                         <picture class="img-product">
-                                            <img loading="lazy" src="/img/products/<%= product.imagen %>"
-                                                alt="<%= product.categories, product.name, product.brands %>">
+                                            <img loading="lazy" src="/img/products/<%= product.image %>"
+                                                alt="<%= product.category, product.name, product.brand_id %>">
                                         </picture>
 
                                         <section class="product-info">
 
                                             <div class="nameProduct">
-                                                <p class="nameProduct">Nombre del producto <%= product.name%>
+                                                <p class="nameProduct">
+                                                    <%= product.name%>
                                                 </p>
                                             </div>
 
@@ -261,6 +255,7 @@
                                 </a>
                             </div>
                             <% }); %>
+
                     </div>
 
                 </section>
@@ -313,19 +308,20 @@
 
                     <div class="cards">
 
-                        <% lastSeen.forEach(product=> { %>
+                        <% products.forEach(product=> { %>
                             <div class="card-outline">
                                 <a href="/products/productDetail/<%= product.id %>" class="product">
                                     <div class="card">
                                         <picture class="img-product">
-                                            <img loading="lazy" src="/img/products/<%= product.imagen %>"
-                                                alt="<%= product.categories, product.name, product.brands %>">
+                                            <img loading="lazy" src="/img/products/<%= product.image %>"
+                                                alt="<%= product.category, product.name, product.brand_id %>">
                                         </picture>
 
                                         <section class="product-info">
 
                                             <div class="nameProduct">
-                                                <p class="nameProduct">Nombre del producto <%= product.name%>
+                                                <p class="nameProduct">
+                                                    <%= product.name%>
                                                 </p>
                                             </div>
 
@@ -354,6 +350,7 @@
                                 </a>
                             </div>
                             <% }); %>
+
                     </div>
 
                 </section>
@@ -439,25 +436,25 @@
                     <div class="container-boxes">
 
                         <div class="box featured">
-                            
+
                             <div class="box___title">
                                 <h2>DESTACADOS</h2>
                             </div>
-                            
+
                             <div class="promo-container_cards">
-                                <% lastSeen.forEach(product=> { %>
+                                <% products.forEach(product=> { %>
                                     <div class="card">
-                                        
+
                                         <picture class="img-product">
-                                            <img loading="lazy" src="/img/products/<%= product.imagen %>"
-                                                alt="<%= product.categories, product.name, product.brands %>">
+                                            <img loading="lazy" src="/img/products/<%= product.image %>"
+                                                alt="<%= product.category, product.name, product.brand %>">
                                         </picture>
                                         <article>
                                             <div class="nameProduct">
                                                 <p class="nameProduct">Nombre del producto <%= product.name%>
                                                 </p>
                                             </div>
-    
+
                                             <form class="form-qualification qualification stars">
                                                 <p class="qualification">
                                                     <input id="radio1" type="radio" name="stars" value="5">
@@ -472,15 +469,15 @@
                                                     <label for="radio5"><i class="fa-solid fa-star"></i></label>
                                                 </p>
                                             </form>
-    
+
                                             <div class="discount">
                                                 <p>$ <%= product.price %>
                                                 </p>
                                             </div>
                                         </article>
                                     </div>
-    
-                                <% }); %>
+
+                                    <% }); %>
                             </div>
 
                         </div>
@@ -492,19 +489,19 @@
                             </div>
 
                             <div class="promo-container_cards">
-                                <% lastSeen.forEach(product=> { %>
+                                <% products.forEach(product=> { %>
                                     <div class="card">
-                                        
+
                                         <picture class="img-product">
-                                            <img loading="lazy" src="/img/products/<%= product.imagen %>"
-                                                alt="<%= product.categories, product.name, product.brands %>">
+                                            <img loading="lazy" src="/img/products/<%= product.image %>"
+                                                alt="<%= product.category, product.name, product.brand %>">
                                         </picture>
                                         <article>
                                             <div class="nameProduct">
                                                 <p class="nameProduct">Nombre del producto <%= product.name%>
                                                 </p>
                                             </div>
-    
+
                                             <form class="form-qualification qualification stars">
                                                 <p class="qualification">
                                                     <input id="radio1" type="radio" name="stars" value="5">
@@ -519,15 +516,15 @@
                                                     <label for="radio5"><i class="fa-solid fa-star"></i></label>
                                                 </p>
                                             </form>
-    
+
                                             <div class="discount">
                                                 <p>$ <%= product.price %>
                                                 </p>
                                             </div>
                                         </article>
                                     </div>
-    
-                                <% }); %>
+
+                                    <% }); %>
                             </div>
                         </div>
 
@@ -538,19 +535,19 @@
                             </div>
 
                             <div class="promo-container_cards">
-                                <% lastSeen.forEach(product=> { %>
+                                <% products.forEach(product=> { %>
                                     <div class="card">
-                                        
+
                                         <picture class="img-product">
-                                            <img loading="lazy" src="/img/products/<%= product.imagen %>"
-                                                alt="<%= product.categories, product.name, product.brands %>">
+                                            <img loading="lazy" src="/img/products/<%= product.image %>"
+                                                alt="<%= product.category, product.name, product.brand %>">
                                         </picture>
                                         <article>
                                             <div class="nameProduct">
                                                 <p class="nameProduct">Nombre del producto <%= product.name%>
                                                 </p>
                                             </div>
-    
+
                                             <form class="form-qualification qualification stars">
                                                 <p class="qualification">
                                                     <input id="radio1" type="radio" name="stars" value="5">
@@ -565,15 +562,15 @@
                                                     <label for="radio5"><i class="fa-solid fa-star"></i></label>
                                                 </p>
                                             </form>
-    
+
                                             <div class="discount">
                                                 <p>$ <%= product.price %>
                                                 </p>
                                             </div>
                                         </article>
                                     </div>
-    
-                                <% }); %>
+
+                                    <% }); %>
                             </div>
                         </div>
 
@@ -581,7 +578,8 @@
 
                     <aside class="aside_prom-baner">
                         <picture>
-                            <img loading="lazy" src="img/banners/banner_promo.jpg" alt="soundBox promocionesSoundbox SoundboxPromotion">
+                            <img loading="lazy" src="img/banners/banner_promo.jpg"
+                                alt="soundBox promocionesSoundbox SoundboxPromotion">
                         </picture>
                     </aside>
 
