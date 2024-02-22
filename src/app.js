@@ -41,6 +41,10 @@ app.use("/", mainRouter);
 const productsRouter = require("./routes/productsRouter");
 app.use("/products", productsRouter);
 
+// categories: por verificar
+const categoriesRouter = require("./routes/categoriesRouter");
+app.use("/categories", categoriesRouter);
+
 // user
 const usersRouter = require("./routes/usersRouter");
 app.use("/users", usersRouter);
