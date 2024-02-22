@@ -840,30 +840,35 @@ footer {
 	position: fixed;
 	top: 50vh;
 	right: 5px;
+	width: 50px;
 	z-index: 998;
 	color: black;
+	background-color: #ff540a;
+	border-radius: 8px;
+	padding: 5px;
 
-	.right-menu {
-		display: flex;
-		width: 50px;
-		background: #005773;
-		padding: 5px;
-		border-radius: 15px;
+
+	.right-icons-text {
+		display: none;
+
+	}
+
+	#cart {
 		margin: 5px;
-		font-size: 28px;
-
 		&:hover {
-			width: auto;
-
-		}
-
-		&:hover .right-icons-text{
-			display: flex;
+			
 
 		}
 	}
-	.right-icons-text {
-		display: none;
+	#favourites {
+		margin: 15px;
+		&:hover {
+			
+
+		}
+	}
+	#goTop {
+		margin-top: 15px;
 
 	}
 }
