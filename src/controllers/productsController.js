@@ -1,6 +1,3 @@
-
-
-
 const path = require("path");
 const express = require("express");
 const app = express();
@@ -14,12 +11,30 @@ const controller = {
 	// (get) Detail - Detalle de un producto
 	detail: async (req, res) => {
 		try {
-			let products = await db.Productos.findByPk(req.params.id)
+			let products = await db.Productos.findByPk(req.params.id/* , {
+				include: [
+					{
+					  model: db.Color,
+					  attributes: ['color_name']
+					},
+					{
+					  model: db.State,
+					  attributes: ['state']
+					},
+					{
+					  model: db.Category,
+					  attributes: ['category']
+					},
+					{
+					  model: db.Brand,
+					  attributes: ['brand_name']
+					}
+				  ]
+			  } */)
 			res.render("product/productDetail", { products })
 		}
 		catch(err) {
 			res.render("not-found")
-			console.log(err);
 		}
 	},
 
@@ -42,7 +57,7 @@ const controller = {
 				color: req.body.color == undefined ? "Sin Asignar" : req.body.color,
 				category: req.body.category == undefined ? "Sin Asignar" : req.body.category,
 				state: req.body.state == undefined ? "Sin Asignar" : req.body.state
-			}) 
+			})  
 			res.render("product/allTheProducts.ejs", { products })
 		} 
 		catch(err) {
