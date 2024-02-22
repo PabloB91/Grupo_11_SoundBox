@@ -4,9 +4,10 @@
 //-- si no, lo redirige al formulario de login.--//
 
 function authMiddleware(req, res, next){
+
     if(req.session.userLoggedIn != undefined){
         /* console.log("En session se guardo el siguiente User to Log In: ");
-       console.log(req.session.userLoggedIn);  */
+        console.log(req.session.userLoggedIn);  */
         next();
     }else{ 
         /* console.log("auth middleware else"); 
