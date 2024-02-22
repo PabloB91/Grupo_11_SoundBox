@@ -16,11 +16,12 @@ const usersFilePath = path.join(__dirname, '../data/usersDataBase.json');
 const mainController = {
 
     index: (req, res) => {
+        const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
         const lastSeen= products.filter(product => product.precio <= 2500)
         //console.log("masvendidos: ", masVendidos);
         const ofertas = products.filter(product => product.descuento != 0)
         // console.log(ofertas);
-        res.render("index", {},
+        res.render("index", { lastSeen: lastSeen, products : products},
         ); 
 
     },
