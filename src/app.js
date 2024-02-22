@@ -53,6 +53,10 @@ app.use("/admin", adminRouter);
 const brandsRouter = require("./routes/brandsRouter");
 app.use("/brands", brandsRouter);
 
+// reset-password
+const resetPassword = require("./routes/mailerRouter")
+app.get('/reset-password', resetPassword)
+
 //************************************* Error 404 *************************************\\
 app.use((req, res, next) => {
     res.status(404).render("not-found")

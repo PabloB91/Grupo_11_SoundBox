@@ -30,7 +30,7 @@
                         <div class="caja-primera">
                             <div class="caja-titulo-producto">
                                 <h2 class="titulo-producto">
-                                    <%= products.brand_id + " " + products.name %>
+                                    <%= products.brand.brand_name + " " + products.name %>
                                 </h2>
                             </div>
 
@@ -70,7 +70,7 @@
                                 <div class="caja-seleccion-colores">
                                     <form action="">
                                         <select id="colores-seleccion">
-                                                <option value="<%= products.color_id %>">
+                                                <option value="<%= products.color %>">
                                                 </option>
                                         </select>
                                     </form>
@@ -103,7 +103,7 @@
                             <div class="caja-categories-producto">
                                 <span class="links-categories-producto">Categorías:
                                         <a>
-                                        <a href="#"> <%= products.category_id %>
+                                        <a href="#"> <%= products.category %>
                                         </a>,
                                 </span>
                             </div>
@@ -111,7 +111,7 @@
                             <div class="caja-tags-producto">
                                 <span class="links-tags-producto">Estado:
                                     <a href="#">
-                                        <%= products.state_id %>
+                                        <%= products.state %>
                                     </a>
                                 </span>
                             </div>

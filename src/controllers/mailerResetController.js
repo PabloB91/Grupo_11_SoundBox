@@ -47,7 +47,7 @@ const resetPasswordController =  {
             console.log("User message sent", userInfo.messageId);
             console.log("Store owner message sent", storeOwnerInfo.messageId);
 
-            res.render("resetPasswordForm")
+            res.redirect("/users/login")
         }
         catch(err) {
             res.render("not-found")
