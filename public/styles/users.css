@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 main{
     display: flex;
     flex-direction: column;
@@ -8,7 +7,7 @@ main{
 
 .primary-section {
     width: 75%;
-    height: 55vh;
+    height: 57vh;
     display: flex;
     flex-direction: row;
     background: #fff;
@@ -16,6 +15,7 @@ main{
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
     overflow: hidden;
+    margin-bottom: 5vh;
 
 }
 
@@ -48,28 +48,20 @@ h3{
         flex-direction: column;
         label {
             p {
-                font-size: 18px;
-
+                font-size: 20px;
             }
-            
             input {
                 margin: 15px;
-    
+                margin-left: 0px;
+                font-family: "Montserrat", sans-serif;
+                font-weight: 700;
+                font-size: 20px;
+                background-color: #e1dddd;
             }
-
         }
         
-
     }
-
 }
-=======
-.primary-section {
-    width: 100%;
-    display: flex;
-}
-
->>>>>>> 6a06ea3d454b2e9d32af4f5278273790f3a7356c
 
 .first-section {
     width: 50%;
@@ -144,32 +136,33 @@ h3{
 .profile-button{
     border-radius: 8px;
     width: 100%;
-    height: 100%;
+    height: 70%;
     padding: 5px;
     font-size: 18px;
+    margin-bottom: 1vh;
 }
 
 .registered-purchases {
-<<<<<<< HEAD
-    
+    background-color: #fff;
+    border-radius: 8px;
+    margin-bottom: 3vh;
 
     h3 {
         text-align: center;
+        padding-bottom: 0
     }
-=======
->>>>>>> 6a06ea3d454b2e9d32af4f5278273790f3a7356c
 
-    .lastest-purchases {
+    .latest-purchases {
         display: flex;
         justify-content: space-evenly;
         margin: 0.5rem;
         margin-bottom: 0;
-/* 
+ 
         img {
             border-radius: 30px;
             padding: 1rem;
 
-        } */
+        } 
     }
 
 }
@@ -182,15 +175,56 @@ h3{
     
 }
 
-@media (max-width:769px) {
+/************************************************************************************/
+
+/* MEDIA TABLET */
+
+@media (max-width:768px) {
+
+    h3{
+        font-size: 22px;
+    }
+
     .primary-section {
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
+        font-size: 14px;
+        height: 60vh;
+
         .first-section {
             width: 90%;
 
         }
     }
-
-    
+    .registered-purchases {
+        width: 75%;
+        background-color: #fff;
+        border-radius: 8px;
+        margin-bottom: 3vh;
+    }
 }
+
+/* MEDIA CELULARES */
+
+@media screen and (max-width: 376px) {
+    h3 {
+        font-size: 18px;
+    }
+    .primary-section {
+        
+        font-size: 14px;
+        height: 65vh;
+
+        .first-section {
+            width: 90%;
+
+        }
+    }
+    .second-section
+    .img-container {
+        margin-left: 5vw;
+        width: 110px;
+        height: 110px;
+    }
+    }
+    
