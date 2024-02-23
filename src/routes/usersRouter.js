@@ -11,6 +11,7 @@ const usersController = require('../controllers/usersController');
 // Middlewares
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
+const upload = require("../middlewares/multer")
 
 // Validacion de Registro
 const registerValidations = [
@@ -31,38 +32,10 @@ const registerValidations = [
 
 
 // Validacion de Login
-/**
- * En esta constaten estamos haciendo la validacion de emain y de password las cuales deben de cumplir
- * con los requerimientos 
- */
 const loginValidations = [
     check('email').notEmpty().withMessage('Ingresa tu E-mail').isEmail().withMessage('Ingresa un correo electrónico válido'),
     check('password').notEmpty().withMessage('Ingresa tu contraseña').isLength({ min: 8 }).withMessage('La contraseña debe tener al menos 8 caracteres'),
 ];
-
-
-// Mu-lter
-/** 
- * En este bloque de codigo estamos creando la memoria donde se gusrdaran las imagenes y con el nombre 
- * que se guardaran, estamos diciendo que dentro de la carpeta users que esta dentro de la carpeta img 
- * la cual esta dentro de public vamos a guardar una imagen con el nombre:
- * USER-ICONnombreDelArchivo-numeroDelDate.now.extencionDeLaImagen.
- * ↓
- */
-const storage = multer.diskStorage({
-
-    // donde guardamos los archivos
-    destination : function(req, file, cb){
-        cb(null, "public/img/users")
-    },
-
-    // que nombre tendra el archivo nuevo
-    filename : function(req, file, cb){
-        cb(null, 'USER-ICON'+file.fieldname + " - " + Date.now() + path.extname(file.originalname));
-    }
-
-});
-const upload = multer({storage});
 
 
 // Perfil del usuario
@@ -74,32 +47,17 @@ const upload = multer({storage});
 router.get('/userProfile/:id', authMiddleware,usersController.userProfile);
 
 // Login
-/**
- * en esta dos lineas de código lo que estamos diciendo es que al entrar en la ruta por get de /login
- * vamos a usar del usersController le objeto login y en el router que viaja por post estamos diciendo
- * que vamos a usar la validación y por último vamos a ingresar al processToRegister que esta en el 
- * usersController. Además, se aplica el 'guestMiddleware' (Si el usuario está logueado, lo redirige a su página de perfil, si no, continúa 
- * al formulario de login)
- */
 router.get('/login', guestMiddleware, usersController.login);
 router.post('/login', loginValidations, usersController.processToLogin);
 
 
 // Register
-/**
- * en esta dos lineas de codigo lo que estamos diciendo es que al entrar en la ruta por get de /regiter
- * vamos a usar del usersController le objeto register y en el router que viaja por post estamo diciendo
- * que vamos a cargar una sola imagen en el input con el name imgProfile luego vamos a usar la validacion
- * y por ultimo vamos a ingresar al processToCreate que esta en el usersController.
- * Además, se aplica el 'guestMiddleware' (Si el usuario está logueado, lo redirige a su página de perfil, si no, continúa 
- * al formulario de login)
- */
+
 router.get('/register', guestMiddleware,usersController.register);
 router.post('/register', upload.single('imgProfile'), registerValidations, usersController.processToRegister); 
-//---> El orden de los parámetros es importante, porque si no las validaciones de error no se procesan correctamente. Primero se pasa el Multer y después las Validaciones
-
 
 // Editar Preferencias
+<<<<<<< HEAD
 /* router.get('/editUser/:id', authMiddleware,usersController.edit)  /*--> se aplica el 'authMiddleware' (si el usuario está logueado, continúa con el controlador,
                                                                                      * si no, lo redirige al login) */ 
 router.put('/userProfile/:id', /* upload.single("imgProfile") ,*/ usersController.editUser);
@@ -108,5 +66,13 @@ router.put('/userProfile/:id', /* upload.single("imgProfile") ,*/ usersControlle
 // Eliminar usuario 
 router.delete('/delete/:id', authMiddleware,usersController.delete); /* se aplica el 'authMiddleware' (si el usuario está logueado, continúa con el controlador,
                                                                     * si no, lo redirige al login) */
+=======
+router.get('/editUser/:id/preference', authMiddleware,usersController.preference)  
+router.put('/editUser/:id/preference', upload.single("imgProfile"), usersController.editPreferences);
+
+
+// Eliminar usuario 
+router.delete('/delete/:id', authMiddleware,usersController.delete); 
+>>>>>>> 6a06ea3d454b2e9d32af4f5278273790f3a7356c
 
 module.exports = router;

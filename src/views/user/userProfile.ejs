@@ -1,7 +1,6 @@
+<!-- -VISTA PARA USUARIOS- -->
 
-    <!-- -VISTA PARA USUARIOS- -->
-
-    <%- include('../partials/head.ejs') %>
+<%- include('../partials/head.ejs') %>
     <link href="/styles/users.css" rel="stylesheet">
 
     <!-- =========================================================================================================== -->
@@ -9,7 +8,7 @@
     <!-- -HEADER / ENCABEZADO- -->
     <%- include('../partials/header.ejs') %>
 
-    <!-- =========================================================================================================== -->
+        <!-- =========================================================================================================== -->
 
     <main>             
                 
@@ -39,45 +38,46 @@
                 
                 <section class="first-section">
                     <div class="user-description" id="user-description">
-                        <h3>Tus datos:</h3>
+                        <h3>
+                            <strong> Bienvenido/a a Sound-Box </strong>
+                            <%= user.first_name %>
+                            !!
+                        </h3>
+                        <h3>
+                            <%= user.last_name %>
+                        </h3>
                         <h3>
                             <%= user.e_mail %>
                         </h3>
-                        <h3>
-                            <%= user.user_type.user_type %>
-                        </h3>
-                        <h3>
-                            <%= user.country.country %>
-                        </h3>
+                        <p>Argentina</p>
 
-                        <div>
-                            <button class="profile-button" onclick="show()"> Editar usuario </button>
+                        <div class="delete-user">
+                            <button onclick="show()"> Editar usuario </button>
                         </div>
                     </div>
                     <section id="edit-user-form">
-                        <form action="<%= user.id %>?_method=PUT" method="POST" enctype="application/x-www-form-urlencoded"> <!--Esto es para que el controlador pueda reconocer el body-->
-                            <label for="first_name"><p>Name</p>
-                                <input type="text" name="first_name" value="<%= user.first_name %>" >
+                        <form action="">
+                            <label for=""><p>Name</p>
+                                <input type="text" value="<%= user.first_name %>" >
                             </label>
-                            <label for="last_name"><p>Last name</p>
-                                <input type="text" name="last_name" value="<%= user.last_name %>">
+                            <label for=""><p>Last name</p>
+                                <input type="text" value="<%= user.last_name %>">
                             </label>
-                            <label for="e_mail"><p>Email</p>
-                                <input type="text" name="e_mail" value="<%= user.e_mail %>" >
+                            <label for=""><p>Email</p>
+                                <input type="text" value="<%= user.e_mail %>" >
                             </label>
                             
-                           <div>
-                                <input type="submit" >
-                            </div> 
-                            
+                            <div>
+                                <input type="submit">
+                            </div>
+                            <div>
+                                <button onclick="hide()">volver</button>
+                            </div>
                         </form>
-                        <div>
-                            <button onclick="hide()">volver</button>
-                        </div>
                     </section>
                     
                 </section>
-            </section>   
+                
                 
                 <section class="registered-purchases">
                     <h3>Compras anteriores</h3>
@@ -88,13 +88,12 @@
                         <img src="/img/products/IMG_DEFAULT.svg" alt="">
                     </div>
 
-                </section>
-    </main>
+            </section>
+        </main>
 
-    <!-- =========================================================================================================== -->
+        <!-- =========================================================================================================== -->
 
-    <!-- FOOTER / PIE DE PAGINA -->
-    <%- include('../partials/footer.ejs') %>
+        <!-- FOOTER / PIE DE PAGINA -->
+        <%- include('../partials/footer.ejs') %>
 
-    <script src="/scripts/user.js"></script>
     <!-- =========================================================================================================== -->

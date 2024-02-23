@@ -17,63 +17,65 @@
 
                 <div class="top-navigation-bar access-and-purchase-buttons">
                     <nav>
-                        <ul>
+                        <% if(locals.userIsLogged==false){ %>
+                            <ul>
 
-                            <li class="li_register-login">
+                                <li class="li_register-login">
 
-                                <div class="register-login">
+                                    <div class="register-login">
 
-                                    <div class="register">
-                                        <a href="/users/register">
-                                            <i class="fa-regular fa-user"></i>
-                                            <p>Crear cuenta</p>
+                                        <div class="register">
+                                            <a href="/users/register">
+                                                <i class="fa-regular fa-user"></i>
+                                                <p>Crear cuenta</p>
+                                            </a>
+                                        </div>
+
+                                        <div class="login">
+                                            <a href="/users/login">
+                                                <p>Ingresar</p>
+                                                <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                            </a>
+                                        </div>
+
+                                    </div>
+
+                                </li>
+
+                                <li class="li_user admin">
+                                    <div class="admin-container">
+                                        <a href="/admin">
+                                            <i class="fa-solid fa-user-tie"></i>
                                         </a>
                                     </div>
-
-                                    <div class="login">
-                                        <a href="/users/login">
-                                            <p>Ingresar</p>
-                                            <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                </li>
+                            <% }else{ %>
+                                    <li class="li-miCajita">
+                                        <a href="/productCart">
+                                            <div class="btn-cajita">
+                                                <img src="/img/svg/cajitaSBX.svg" class="svg-miCajita">
+                                                <P>Mi cajita</P>
+                                            </div>
                                         </a>
-                                    </div>
+                                    </li>
+                                    <li class="li_user dropdown">
 
-                                </div>
+                                        <div>
+                                            <i class="fa-sharp fa-solid fa-circle-user"></i>
+                                        </div>
 
-                            </li>
+                                        <div class="user-dropdown">
+                                            <p><a href="/users/userProfile/"><i
+                                                        class="fa-regular fa-user"></i>Perfil</a></p>
+                                            <p><a href="#"><i class="fa-solid fa-gear"></i>Ajustes</a></p>
+                                            <p><a href="#"><i class="fa-solid fa-pen-to-square"></i>Editar</a></p>
+                                            <p><a href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i>Salir</a>
+                                            </p>
+                                        </div>
 
-                            <li class="li-miCajita">
-                                <a href="/productCart">
-                                    <div class="btn-cajita">
-                                        <img src="/img/svg/cajitaSBX.svg" class="svg-miCajita">
-                                        <P>Mi cajita</P>
-                                    </div>
-                                </a>
-                            </li>
-
-                            <li class="li_user admin">
-                                <div class="admin-container">
-                                    <a href="/admin">
-                                        <i class="fa-solid fa-user-tie"></i>
-                                    </a>
-                                </div>
-                            </li>
-
-                            <li class="li_user dropdown">
-
-                                <div>
-                                    <i class="fa-sharp fa-solid fa-circle-user"></i>
-                                </div>
-
-                                <div class="user-dropdown">
-                                    <p><a href="/users/userProfile/"><i class="fa-regular fa-user"></i>Perfil</a></p>
-                                    <p><a href="#"><i class="fa-solid fa-gear"></i>Ajustes</a></p>
-                                    <p><a href="#"><i class="fa-solid fa-pen-to-square"></i>Editar</a></p>
-                                    <p><a href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i>Salir</a></p>
-                                </div>
-
-                            </li>
-
-                        </ul>
+                                    </li>
+                                    <% } %>
+                            </ul>
                     </nav>
                 </div>
 
@@ -273,8 +275,7 @@
                             <li class="dropdown">
 
                                 <div>
-                                    <a href="#accessories">Accesorios</a><i
-                                        class="fa-solid fa-chevron-down"></i>
+                                    <a href="#accessories">Accesorios</a><i class="fa-solid fa-chevron-down"></i>
                                 </div>
 
                                 <div class="dropdown-content">

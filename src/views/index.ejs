@@ -76,7 +76,7 @@
 
                     <div class="cards">
 
-                        <% products.forEach(product=> { %>
+                        <% topSeller.forEach(product=> { %>
                             <div class="card-outline">
                                 <a href="/products/productDetail/<%= product.id %>" class="product">
                                     <div class="card">
@@ -213,7 +213,7 @@
 
                     <div class="cards">
 
-                        <% products.forEach(product=> { %>
+                        <% offerts.forEach(product=> { %>
                             <div class="card-outline">
                                 <a href="/products/productDetail/<%= product.id %>" class="product">
                                     <div class="card">
@@ -308,7 +308,7 @@
 
                     <div class="cards">
 
-                        <% products.forEach(product=> { %>
+                        <% topSeller.forEach(product=> { %>
                             <div class="card-outline">
                                 <a href="/products/productDetail/<%= product.id %>" class="product">
                                     <div class="card">
@@ -442,7 +442,7 @@
                             </div>
 
                             <div class="promo-container_cards">
-                                <% products.forEach(product=> { %>
+                                <% topSeller.forEach(product=> { %>
                                     <div class="card">
 
                                         <picture class="img-product">
@@ -489,7 +489,7 @@
                             </div>
 
                             <div class="promo-container_cards">
-                                <% products.forEach(product=> { %>
+                                <% topSeller.forEach(product=> { %>
                                     <div class="card">
 
                                         <picture class="img-product">
@@ -535,7 +535,7 @@
                             </div>
 
                             <div class="promo-container_cards">
-                                <% products.forEach(product=> { %>
+                                <% topSeller.forEach(product=> { %>
                                     <div class="card">
 
                                         <picture class="img-product">
@@ -586,7 +586,5 @@
                 </section>
 
             </div>
-
         </main>
-
         <%- include('./partials/footer.ejs') %>

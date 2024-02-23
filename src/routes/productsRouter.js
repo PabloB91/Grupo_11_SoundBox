@@ -4,26 +4,14 @@ const router = express.Router();
 const multer = require('multer');
 const path = require("path")
 
+const upload = require( "../middlewares/multer" )
+
 // ************ Controller Require ************
 const productsController = require('../controllers/productsController');
 
 // *********** Middlewares Especificos ***********
 const authMiddleware = require('../middlewares/authMiddleware'); //--> Requerimos el 'authMiddleware'
-// *********** Multer ***********
-const storage = multer.diskStorage({
 
-    // donde guardamos los archivos
-    destination : function(req, file, cb){
-        cb(null, "public/img/products")
-    },
-
-    // que nombre tendra el archivo nuevo
-    filename : function(req, file, cb){
-        cb(null, 'SOUNDBOX'+file.fieldname + " - " + Date.now() + path.extname(file.originalname));
-    }
-
-});
-const upload = multer({storage});
 
 // Devolver un producto 
 router.get('/productDetail/:id', productsController.detail);

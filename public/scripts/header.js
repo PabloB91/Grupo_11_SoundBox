@@ -57,7 +57,6 @@ window.addEventListener('scroll', fixed );
 
  } */
 
-
 //  _________________________________________________________________________________________________________
 
                                                 // menu hamburguesa de aqui para abajo.
