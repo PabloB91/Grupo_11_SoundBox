@@ -18,7 +18,7 @@ const storage = multer.diskStorage({
     // donde guardamos los archivos (OJO: pendiente crear la carpeta brands en img y ubicar los archivos svg de las 7 marcas que distribuye SOUNDBOX 
     
     destination : function(req, file, cb){
-        cb(null, "public/img/brands")
+        cb(null, "public/img/brands") // OJO: Está pendiente crear carpeta 'brands'
     },
 
     // que nombre tendra el archivo nuevo

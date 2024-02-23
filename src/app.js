@@ -8,7 +8,7 @@ const remindMiddleware= require("./middlewares/remindMiddleware");
 const app = express();
 const session = require("express-session");
 const cookieParser = require("cookie-parser"); //--> Requerimos el módulo 'cookieParser' para manejar las cookies.
-
+const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware")
 
 
 //************************************* Middlewares *************************************\\
@@ -27,7 +27,7 @@ app.use(cookieParser())
 // app.use(logMiddleware);
 app.use(session({secret: "es secreto pa!", resave: false, saveUninitialized: false}))
 app.use(remindMiddleware)   //--> Es imprescindible el orden de estos middleware, porque tienen un orden de ejecución.
-
+app.use(userLoggedMiddleware)
 //************************************* Template Engine *************************************\\
 app.set("view engine", "ejs");
 app.set("views", path.resolve(__dirname, "views/"));
@@ -40,6 +40,10 @@ app.use("/", mainRouter);
 // products
 const productsRouter = require("./routes/productsRouter");
 app.use("/products", productsRouter);
+
+// categories: por verificar
+const categoriesRouter = require("./routes/categoriesRouter");
+app.use("/categories", categoriesRouter);
 
 // user
 const usersRouter = require("./routes/usersRouter");
@@ -55,7 +59,7 @@ app.use("/brands", brandsRouter);
 
 // reset-password
 const resetPassword = require("./routes/mailerRouter")
-app.get('/reset-password', resetPassword)
+app.use('/reset', resetPassword)
 
 //************************************* Error 404 *************************************\\
 app.use((req, res, next) => {

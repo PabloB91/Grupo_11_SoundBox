@@ -11,7 +11,7 @@ const controller = {
 	// (get) Detail - Detalle de un producto
 	detail: async (req, res) => {
 		try {
-			let products = await db.Productos.findByPk(req.params.id, {
+			let products = await db.Productos.findByPk(req.params.id/* , {
 				include: [
 					{
 					  model: db.Color,
@@ -30,7 +30,7 @@ const controller = {
 					  attributes: ['brand_name']
 					}
 				  ]
-			  })
+			  } */)
 			res.render("product/productDetail", { products })
 		}
 		catch(err) {
@@ -68,7 +68,7 @@ const controller = {
 	// (get) Update - Formulario para editar
 	edit: async (req, res) => {
 		try {
-			let products = db.Productos.findByPk(req.params.id,{
+			let products = await db.Productos.findByPk(req.params.id,{
 				include: [
 					{association: "brand"}, 
 					{association: "category"},

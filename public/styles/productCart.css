@@ -670,25 +670,8 @@ input:checked+.slider:before {
     }
 }
 
-@keyframes fly {
-    0% {
-        transform: translateY(0px);
-    }
-
-    25% {}
-
-    50% {}
-
-    75% {}
-
-    100% {
-        transform: translateY(-10px);
-    }
-}
-
 @keyframes changeColor {
     0% {
-        transform: translateY(0px);
 
     }
 
@@ -701,7 +684,6 @@ input:checked+.slider:before {
     75% {}
 
     100% {
-        transform: translateY(-10px);
         background-color: rgb(224, 223, 223);
         border-radius: 18px;
     }
@@ -749,7 +731,6 @@ input:checked+.slider:before {
         background-color: rgb(222, 222, 222);
         border-radius: 8px;
         /* transition: all .3s ease-in-out; */
-        animation-name: fly;
         animation-duration: 7s;
 
     }
