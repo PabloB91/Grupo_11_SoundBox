@@ -57,8 +57,15 @@ router.get('/register', guestMiddleware,usersController.register);
 router.post('/register', upload.single('imgProfile'), registerValidations, usersController.processToRegister); 
 
 // Editar Preferencias
-router.get('/editUser/:id/preference', authMiddleware,usersController.preference)  
-router.put('/editUser/:id/preference', upload.single("imgProfile"), usersController.editPreferences);
+/* router.get('/editUser/:id', authMiddleware,usersController.edit)  /*--> se aplica el 'authMiddleware' (si el usuario está logueado, continúa con el controlador,
+                                                                                     * si no, lo redirige al login) */ 
+router.put('/userProfile/:id', /* upload.single("imgProfile") ,*/ usersController.editUser);
+
+
+// Eliminar usuario 
+router.delete('/delete/:id', authMiddleware,usersController.delete); /* se aplica el 'authMiddleware' (si el usuario está logueado, continúa con el controlador,
+                                                                    * si no, lo redirige al login) */
+
 
 
 // Eliminar usuario 

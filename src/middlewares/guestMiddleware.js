@@ -13,6 +13,8 @@ function guestMiddleware(req, res, next){
         console.log("Guest middleware: el usuario no está logueado"); 
         console.log("Usuario: ",req.session.userLoggedIn);
         console.log("Continúa a la página de login o register"); 
+        // console.log("middleware userLoggedIn");
+        // console.log(req.session.userLoggedIn); 
         next()
     }
 }

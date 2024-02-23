@@ -9,6 +9,8 @@ function authMiddleware(req, res, next){
         console.log("Auth middleware: en session se guardó el siguiente User to Log In: ");
         console.log(req.session.userLoggedIn);
         console.log("Continúa la ejecución de la ruta seleccionada");
+        /* console.log("En session se guardo el siguiente User to Log In: ");
+        console.log(req.session.userLoggedIn);  */
         next();
     }else{ 
         console.log("Auth middleware: el usuario no está logueado"); 

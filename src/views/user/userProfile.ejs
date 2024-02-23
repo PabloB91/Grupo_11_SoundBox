@@ -28,7 +28,7 @@
                         </div>
                         
                         <div class="editar-borrar">
-                            <form action="/users/delete/<%= user.Id %>?_method=DELETE" method="POST"
+                            <form action="/users/delete/<%= user.id %>?_method=DELETE" method="POST"
                                 style="display: inline-flex">
                                 <button type="submit" class="boton-accion-borrar">ELIMINAR</button>
                             </form>
@@ -49,22 +49,27 @@
                         <h3>
                             <%= user.e_mail %>
                         </h3>
-                        <p>Argentina</p>
+                        <h3>
+                            <%= user.user_type.user_type %>
+                        </h3>
+                        <h3>
+                            <%= user.country.country %>
+                        </h3>
 
                         <div class="delete-user">
                             <button onclick="show()"> Editar usuario </button>
                         </div>
                     </div>
                     <section id="edit-user-form">
-                        <form action="">
+                        <form action="/users/userProfile/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/x-www-form-urlencoded">
                             <label for=""><p>Name</p>
-                                <input type="text" value="<%= user.first_name %>" >
+                                <input name="first_name" type="text" value="<%= user.first_name %>" >
                             </label>
                             <label for=""><p>Last name</p>
-                                <input type="text" value="<%= user.last_name %>">
+                                <input name="last_name" type="text" value="<%= user.last_name %>">
                             </label>
                             <label for=""><p>Email</p>
-                                <input type="text" value="<%= user.e_mail %>" >
+                                <input name="e_mail" type="text" value="<%= user.e_mail %>" >
                             </label>
                             
                             <div>
@@ -95,5 +100,6 @@
 
         <!-- FOOTER / PIE DE PAGINA -->
         <%- include('../partials/footer.ejs') %>
+        <script src="/scripts/user.js"></script>
 
     <!-- =========================================================================================================== -->
