@@ -107,8 +107,8 @@ const usersControllers = {
                 delete userToLogIn['dataValues'].password //--> Borramos el password de la variable a guardar en session, por seguridad
                 delete userToLogIn['_previousDataValues'].password 
                 req.session.userLoggedIn = userToLogIn;  //--> Si el usuario ingresó satisfactoriamente vamos a guardar sus datos en 'session' --> 'userLoggedIn'
-                /* console.log('session: ', req.session);  */
-                /* console.log('session: ', req.session.userLoggedIn); */
+                 console.log('session: ', req.session);  
+                 console.log('session: ', req.session.userLoggedIn); 
 
                 
 
