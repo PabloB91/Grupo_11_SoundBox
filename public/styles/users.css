@@ -1,14 +1,81 @@
+<<<<<<< HEAD
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #cbcbcb;
+}
+
+.primary-section {
+    width: 75%;
+    height: 55vh;
+    display: flex;
+    flex-direction: row;
+    background: #fff;
+    border-radius: 8px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    overflow: hidden;
+
+}
+
+h1 {
+    text-align: center;
+    background: black;
+    color: wheat;
+}
+
+h3{
+    padding-bottom: 3vh;
+}
+
+#profile-title{
+    background-color: #fff;
+    width: 75%;
+    text-align: center;
+    margin-top: 3vh;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    height: 5vh;
+    padding-top: 1px;
+}
+
+#edit-user-form {
+    display: none;
+    
+    form {
+        display: flex;
+        flex-direction: column;
+        label {
+            p {
+                font-size: 18px;
+
+            }
+            
+            input {
+                margin: 15px;
+    
+            }
+
+        }
+        
+
+    }
+
+}
+=======
 .primary-section {
     width: 100%;
     display: flex;
 }
 
+>>>>>>> 6a06ea3d454b2e9d32af4f5278273790f3a7356c
 
 .first-section {
     width: 50%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     padding: 1rem;
     margin: 5px;
@@ -22,6 +89,11 @@
 
         }
     }
+}
+
+.user-description {
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -69,19 +141,35 @@
     }
 }
 
+.profile-button{
+    border-radius: 8px;
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    font-size: 18px;
+}
+
 .registered-purchases {
+<<<<<<< HEAD
+    
+
+    h3 {
+        text-align: center;
+    }
+=======
+>>>>>>> 6a06ea3d454b2e9d32af4f5278273790f3a7356c
 
     .lastest-purchases {
         display: flex;
         justify-content: space-evenly;
         margin: 0.5rem;
         margin-bottom: 0;
-
+/* 
         img {
             border-radius: 30px;
             padding: 1rem;
 
-        }
+        } */
     }
 
 }
