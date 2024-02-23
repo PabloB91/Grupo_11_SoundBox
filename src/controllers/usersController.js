@@ -153,7 +153,7 @@ const usersControllers = {
         } 
     },
 
-    // (GET) Edición de Usuario
+    // (PUT) Editar Usuario
     editUser: async (req, res) => {
         console.log("Edit User");
         try {
@@ -178,31 +178,8 @@ const usersControllers = {
         }	
     },
 
-    // (PUT) Editar Usuario
-    processToEdit: (req, res) => {
-        const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-
-		const id = req.params.id;
-		let usersToEdit = usersJson.find(users => users.id == id);
-
-		usersToEdit = {
-			userId: usersToEdit.id,
-			name: req.body.name,
-            lastName: req.body.lastName,
-            email: req.body.email,
-            imgProfile: req.file == undefined ? "alvaro.jpg" : req.file.filename
-		}
-
-		let indice = usersJson.findIndex(users => {
-			return users.id == id
-		})
-
-		usersJson[indice] = usersToEdit;
-
-		fs.writeFileSync(usersFilePath, JSON.stringify(usersJson, null, " "));
-		res.redirect("users/userProfile/" + usersToEdit.id)
-    },
-
+    
+    
     delete: (req, res) => {
 
         const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));

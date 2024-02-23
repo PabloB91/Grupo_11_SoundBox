@@ -57,7 +57,6 @@ router.get('/register', guestMiddleware,usersController.register);
 router.post('/register', upload.single('imgProfile'), registerValidations, usersController.processToRegister); 
 
 // Editar Preferencias
-<<<<<<< HEAD
 /* router.get('/editUser/:id', authMiddleware,usersController.edit)  /*--> se aplica el 'authMiddleware' (si el usuario está logueado, continúa con el controlador,
                                                                                      * si no, lo redirige al login) */ 
 router.put('/userProfile/:id', /* upload.single("imgProfile") ,*/ usersController.editUser);
@@ -66,13 +65,10 @@ router.put('/userProfile/:id', /* upload.single("imgProfile") ,*/ usersControlle
 // Eliminar usuario 
 router.delete('/delete/:id', authMiddleware,usersController.delete); /* se aplica el 'authMiddleware' (si el usuario está logueado, continúa con el controlador,
                                                                     * si no, lo redirige al login) */
-=======
-router.get('/editUser/:id/preference', authMiddleware,usersController.preference)  
-router.put('/editUser/:id/preference', upload.single("imgProfile"), usersController.editPreferences);
+
 
 
 // Eliminar usuario 
 router.delete('/delete/:id', authMiddleware,usersController.delete); 
->>>>>>> 6a06ea3d454b2e9d32af4f5278273790f3a7356c
 
 module.exports = router;
