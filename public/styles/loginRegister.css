@@ -296,6 +296,11 @@ label {
 	background-color: lightcoral;
 }
 
+.fa-brands{
+	padding: 8px 16px;
+	font-size: 30px;
+}
+
 /*----------------------------------------------------------------------------------------------------------------*/
 /* MEDIA QUERIES */
 

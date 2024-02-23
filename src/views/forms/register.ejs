@@ -1,5 +1,6 @@
     <%- include('../partials/head.ejs') %>
     <link href="/styles/loginRegister.css" rel="stylesheet">
+    
 
 <!-- =========================================================================================================== -->
         
@@ -24,6 +25,12 @@
                             <h2>CREAR CUENTA</h2>
                         </div>
                         
+                        <div class="register-method-change">
+                                <i class="fa-brands fa-google-plus-g"></i>
+                                <i class="fa-brands fa-square-facebook"></i>
+                                <i class="fa-brands fa-apple fa"></i>
+                                <i class="fa-brands fa-twitter"></i>
+                        </div>
                         <% if (locals.errores) {  
 
                             errores.forEach(error => { %>
