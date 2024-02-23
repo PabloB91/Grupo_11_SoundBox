@@ -43,6 +43,11 @@ header {
 	.headerTop .top-navigation-bar {
 		width: 100%;
 
+		nav {
+			display: flex;
+			justify-content: flex-end;
+		}
+
 		ul {
 			width: 100%;
 			display: flex;
@@ -143,7 +148,7 @@ header {
 				flex-wrap: wrap;
 				width: 120px;
 				position: absolute;
-				top: 2.4rem;
+				top: 4.3rem;
 				right: 3rem;
 				z-index: 100;
 				transition: 1s;
@@ -855,18 +860,16 @@ footer {
 
 	#cart {
 		margin: 5px;
-		&:hover {
-			
 
-		}
+		&:hover {}
 	}
+
 	#favourites {
 		margin: 15px;
-		&:hover {
-			
 
-		}
+		&:hover {}
 	}
+
 	#goTop {
 		margin-top: 15px;
 

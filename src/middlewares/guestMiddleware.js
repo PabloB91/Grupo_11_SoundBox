@@ -5,7 +5,6 @@
 
 function guestMiddleware(req, res, next){
     if(req.session.userLoggedIn){
-<<<<<<< HEAD
         console.log("Guest middleware: el usuario ya está logueado");
         console.log("Usuario: ",req.session.userLoggedIn);
         console.log("Continúa a la página de perfil"); 
@@ -14,14 +13,6 @@ function guestMiddleware(req, res, next){
         console.log("Guest middleware: el usuario no está logueado"); 
         console.log("Usuario: ",req.session.userLoggedIn);
         console.log("Continúa a la página de login o register"); 
-=======
-        // console.log("middleware userLoggedIn");
-        // console.log(req.session.userLoggedIn); 
-        return res.redirect(`/users/userProfile/${req.session.userLoggedIn.id}`)
-    }else{
-        // console.log("guest middleware else"); 
-        // console.log(req.session.userLoggedIn); 
->>>>>>> 6a06ea3d454b2e9d32af4f5278273790f3a7356c
         next()
     }
 }

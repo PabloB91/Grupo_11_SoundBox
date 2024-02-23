@@ -30,7 +30,7 @@ VALUES
 (14, 'Lautaro', 'Espejo', 'monito123!', 'lautaro@mail.com', NULL,  NOW(), 2, 1),
 (15, 'Thiago', 'Riuz', 'monito123!', 'thiago@mail.com', NULL,  NOW(), 2, 2)
 
-
+--------------------> PRODUCTOS  <----------------------
 INSERT INTO color  
 (color_name)
 VALUES ('Rojo'),('Amarillo'),('Azul'),('Negro')
