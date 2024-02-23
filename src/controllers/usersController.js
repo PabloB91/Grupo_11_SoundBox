@@ -102,34 +102,26 @@ const usersControllers = {
                     }
                 }
 
-                /*console.log("usertoLogin: ",userToLogIn); */
-                /* console.log(userToLogIn['dataValues']); */
                 delete userToLogIn['dataValues'].password //--> Borramos el password de la variable a guardar en session, por seguridad
                 delete userToLogIn['_previousDataValues'].password 
-                req.session.userLoggedIn = userToLogIn;  //--> Si el usuario ingresó satisfactoriamente vamos a guardar sus datos en 'session' --> 'userLoggedIn'
-                /* console.log('session: ', req.session);  */
-                /* console.log('session: ', req.session.userLoggedIn); */
-
-                
+                req.session.userLoggedIn = userToLogIn;  //--> Si el usuario ingresó satisfactoriamente vamos a guardar sus datos en 'session' --> 'userLoggedIn'       
 
                 /* este redirect actúa solo si el usuario existe en el db */
-                console.log('redirect');
+                console.log('El usuario existe en la DB, se redirecciona al perfil');
                 console.log(userToLogIn.id);
-                console.log('session userloggedin Id: ', req.session.userLoggedIn.id);
+                console.log('userloggedin Id: ', req.session.userLoggedIn.id);
                 return res.redirect(`/users/userProfile/${userToLogIn.id}`);
             }else{
-
                 return res.render("forms/login.ejs", { errors: errors.array(), old: req.body });
             }
         }
         catch{
             console.log("catch usertoLogin: ",userToLogIn);
-            /**
-                 * en la siguiente sentencia de codigo estamos diciendo que si el usuario
-                 * logueado tiene algun campo que no coincida que la contrasena o el 
-                 * email no coinsidan con los registrados en la db entonces vamos a 
+            /*
+                 * en la siguiente sentencia de codigo estamos diciendo que si la contraseña o el 
+                 * email ingresados por el usuario no coinciden con los registrados en la DB entonces vamos a 
                  * enviar un error
-                */
+            */
             if (userToLogIn === undefined){
                 return res.render("forms/login.ejs", { errors : [
                     {msg: 'EL correo no coincide o este usuario aún no es parte de SoundBox'}
@@ -137,36 +129,53 @@ const usersControllers = {
                     old: req.body
                 });
                 }
-        }       //--> Acá termina todo el 'try-catch'
+        }   //--> Acá termina todo el 'try-catch'
     },
 
     // (GET) Perfil del Usuario
     userProfile: async (req, res) => {
         try{
-            let user= await db.Usuarios.findByPk(req.params.id) //--> Busca el usuario en la BD según su Id
+            let user= await db.Usuarios.findByPk(req.params.id, {     //--> Busca el usuario en la BD según su Id
+                include: [
+                    {association: 'user_type'}, 
+                    {association: 'country'}
+                ]
+            }) 
             return res.render('user/userProfile.ejs', {user})
         }   //--Hay que usar 'return' para evitar el error de '[ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client'
         catch(err) {
             console.log(err);
             return res.render("not-found")
         } 
-        //console.log("user Profile");
-        //console.log(req.session);
     },
 
     // (GET) Edición de Usuario
-    preference: (req, res) => {
-        const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-
-		const usersToEdit = usersJson.find((users) => {
-			return users.id == req.params.id;
-		}) 
-
-		res.render("user/userEdit.ejs", {usersToEdit})
+    editUser: async (req, res) => {
+        console.log("Edit User");
+        try {
+            let e_mail= await req.body.e_mail
+            console.log(e_mail);
+            let userToEdit= await db.Usuarios.update({
+                first_name: req.body.first_name,
+                last_name: req.body.last_name,
+                /* password: req, */
+                e_mail: req.body.e_mail,
+                /* country:,  */
+            }, {
+				where: {
+					id: req.params.id
+				}
+			})
+            console.log(userToEdit); 
+            return res.redirect(req.params.id)
+        } catch (err) {
+            console.log(err);
+            return res.render("not-found")
+        }	
     },
 
     // (PUT) Editar Usuario
-    editPreferences: (req, res) => {
+    processToEdit: (req, res) => {
         const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 		const id = req.params.id;

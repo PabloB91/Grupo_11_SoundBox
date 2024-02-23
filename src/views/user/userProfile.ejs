@@ -12,15 +12,20 @@
     <!-- =========================================================================================================== -->
 
     <main>             
-                <section class="primary-section">
+                
+        <h3 id="profile-title">
+            <strong> Perfil de Usuario de </strong>
+            <%= user.first_name %> <%= user.last_name %>
+        </h3>
+        <section class="primary-section">
                     
                     <section class="second-section">
                         <div class="img-container">
                             <img src="/img/users/<%= user.image %>" alt="">
                         </div>
                         <div class="img-buttons">
-                            <input type="file">
-                            <input type="submit">
+                            <input class="profile-button" type="file">
+                            <input class="profile-button" type="submit">
                         </div>
                         
                         <div class="editar-borrar">
@@ -30,52 +35,49 @@
                             </form>
                         </div>
                     </section>
-                    <!-- google maps div -->
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31814.088114193386!2d-74.170368!3d4.636672!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9dcb9ac15e93%3A0xc6bf5b05b9a52c99!2sParque%20Dindalito%20Bella%20Vista!5e0!3m2!1ses-419!2sco!4v1707265372189!5m2!1ses-419!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                <!-- google maps fin -->
-                </section>
+                    
+                
                 <section class="first-section">
                     <div class="user-description" id="user-description">
-                        <h3>
-                            <strong> Bienvenido/a a Sound-Box </strong>
-                            <%= user.first_name %>
-                            !!
-                        </h3>
-                        <h3>
-                            <%= user.last_name %>
-                        </h3>
+                        <h3>Tus datos:</h3>
                         <h3>
                             <%= user.e_mail %>
                         </h3>
-                        <p>Argentina</p>
+                        <h3>
+                            <%= user.user_type.user_type %>
+                        </h3>
+                        <h3>
+                            <%= user.country.country %>
+                        </h3>
 
-                        <div class="delete-user">
-                            <button onclick="show()"> Editar usuario </button>
+                        <div>
+                            <button class="profile-button" onclick="show()"> Editar usuario </button>
                         </div>
                     </div>
                     <section id="edit-user-form">
-                        <form action="">
-                            <label for=""><p>Name</p>
-                                <input type="text" value="<%= user.first_name %>" >
+                        <form action="<%= user.id %>?_method=PUT" method="POST" enctype="application/x-www-form-urlencoded"> <!--Esto es para que el controlador pueda reconocer el body-->
+                            <label for="first_name"><p>Name</p>
+                                <input type="text" name="first_name" value="<%= user.first_name %>" >
                             </label>
-                            <label for=""><p>Last name</p>
-                                <input type="text" value="<%= user.last_name %>">
+                            <label for="last_name"><p>Last name</p>
+                                <input type="text" name="last_name" value="<%= user.last_name %>">
                             </label>
-                            <label for=""><p>Email</p>
-                                <input type="text" value="<%= user.e_mail %>" >
+                            <label for="e_mail"><p>Email</p>
+                                <input type="text" name="e_mail" value="<%= user.e_mail %>" >
                             </label>
                             
-                            <div>
-                                <input type="submit">
-                            </div>
-                            <div>
-                                <button onclick="hide()">volver</button>
-                            </div>
+                           <div>
+                                <input type="submit" >
+                            </div> 
+                            
                         </form>
+                        <div>
+                            <button onclick="hide()">volver</button>
+                        </div>
                     </section>
                     
                 </section>
-                
+            </section>   
                 
                 <section class="registered-purchases">
                     <h3>Compras anteriores</h3>
@@ -94,4 +96,5 @@
     <!-- FOOTER / PIE DE PAGINA -->
     <%- include('../partials/footer.ejs') %>
 
+    <script src="/scripts/user.js"></script>
     <!-- =========================================================================================================== -->

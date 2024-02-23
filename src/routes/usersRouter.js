@@ -68,7 +68,7 @@ const upload = multer({storage});
 // Perfil del usuario
 /**
  * en esta linea de codigo estamos diciendo que al entrar en la ruta /userProfile/:userId nos va a
- * devolver la vista de user que esta en el usersConreoller. Además, se aplica el 'authMiddleware' (si el usuario está logueado, continúa con el controlador,
+ * devolver la vista de user que esta en el usersController. Además, se aplica el 'authMiddleware' (si el usuario está logueado, continúa con el controlador,
  * si no, lo redirige al login)
  */
 router.get('/userProfile/:id', authMiddleware,usersController.userProfile);
@@ -100,13 +100,13 @@ router.post('/register', upload.single('imgProfile'), registerValidations, users
 
 
 // Editar Preferencias
-router.get('/editUser/:id/preference', authMiddleware,usersController.preference)  /*--> se aplica el 'authMiddleware' (si el usuario está logueado, continúa con el controlador,
-                                                                                     * si no, lo redirige al login) */
-router.put('/editUser/:id/preference', upload.single("imgProfile"), usersController.editPreferences);
+/* router.get('/editUser/:id', authMiddleware,usersController.edit)  /*--> se aplica el 'authMiddleware' (si el usuario está logueado, continúa con el controlador,
+                                                                                     * si no, lo redirige al login) */ 
+router.put('/userProfile/:id', /* upload.single("imgProfile") ,*/ usersController.editUser);
 
 
 // Eliminar usuario 
 router.delete('/delete/:id', authMiddleware,usersController.delete); /* se aplica el 'authMiddleware' (si el usuario está logueado, continúa con el controlador,
-                                                        * si no, lo redirige al login) */
+                                                                    * si no, lo redirige al login) */
 
 module.exports = router;
