@@ -23,7 +23,7 @@
                             <img src="/img/users/<%= user.image %>" alt="">
                         </div>
                         <div class="img-buttons">
-                            <input class="profile-button" type="file">
+                            <input class="profile-button" type="file" value="nada">
                             <input class="profile-button" type="submit">
                         </div>
                         
@@ -38,26 +38,27 @@
                 
                 <section class="first-section">
                     <div class="user-description" id="user-description">
-                        <h3>
-                            <strong> Bienvenido/a a Sound-Box </strong>
-                            <%= user.first_name %>
-                            !!
+                        <h3 style="text-decoration: underline;">
+                            Tus Datos:
                         </h3>
                         <h3>
-                            <%= user.last_name %>
+                            Nombre: <%= user.first_name %>
                         </h3>
                         <h3>
-                            <%= user.e_mail %>
+                            Apellido: <%= user.last_name %>
                         </h3>
                         <h3>
-                            <%= user.user_type.user_type %>
+                            E-mail: <%= user.e_mail %>
                         </h3>
                         <h3>
-                            <%= user.country.country %>
+                            Tipo de usuario: <%= user.user_type.user_type %>
+                        </h3>
+                        <h3>
+                            País: <%= user.country.country %>
                         </h3>
 
                         <div class="delete-user">
-                            <button onclick="show()"> Editar usuario </button>
+                            <button class="profile-button" onclick="show()"> Editar usuario </button>
                         </div>
                     </div>
                     <section id="edit-user-form">
@@ -65,28 +66,29 @@
                             <label for=""><p>Name</p>
                                 <input name="first_name" type="text" value="<%= user.first_name %>" >
                             </label>
-                            <label for=""><p>Last name</p>
+                            <label for="">
+                                <p>Last name</p>
                                 <input name="last_name" type="text" value="<%= user.last_name %>">
                             </label>
-                            <label for=""><p>Email</p>
+                            <label for="">
+                                <p>Email</p>
                                 <input name="e_mail" type="text" value="<%= user.e_mail %>" >
                             </label>
                             
                             <div>
-                                <input type="submit">
+                                <input class="profile-button" type="submit">
+                                <button class="profile-button" onclick="hide()">Volver</button>
                             </div>
-                            <div>
-                                <button onclick="hide()">volver</button>
-                            </div>
+                            
                         </form>
                     </section>
                     
                 </section>
-                
+            </section>
                 
                 <section class="registered-purchases">
                     <h3>Compras anteriores</h3>
-                    <div class="lastest-purchases">
+                    <div class="latest-purchases">
                         <img src="/img/products/IMG_DEFAULT.svg" alt="">
                         <img src="/img/products/IMG_DEFAULT.svg" alt="">
                         <img src="/img/products/IMG_DEFAULT.svg" alt="">
