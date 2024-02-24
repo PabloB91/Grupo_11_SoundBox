@@ -43,6 +43,24 @@ header {
 	.headerTop .top-navigation-bar {
 		width: 100%;
 
+		nav {
+			display: flex;
+			justify-content: flex-end;
+
+			.translate-button {
+				background: #d3d3d3a8;
+				width: 15%;
+				display: flex;
+				align-items: center;
+				justify-content: space-around;
+				
+				i {
+					color: whitesmoke;
+
+				}
+			}
+		}
+
 		ul {
 			width: 100%;
 			display: flex;
@@ -54,6 +72,8 @@ header {
 
 		li {
 			margin-right: 5%;
+
+			
 		}
 
 		.register-login {
@@ -123,7 +143,7 @@ header {
 		}
 
 		.li_user {
-			font-size: 25px;
+			font-size: 6px;
 
 			.fa-circle-user {
 				border-radius: 50%;
@@ -143,7 +163,7 @@ header {
 				flex-wrap: wrap;
 				width: 120px;
 				position: absolute;
-				top: 2.4rem;
+				top: 2.45rem;
 				right: 3rem;
 				z-index: 100;
 				transition: 1s;
@@ -509,20 +529,23 @@ footer {
 			}
 
 			.li-miCajita {
-				width: 114px;
+				display: flex;
+				width: auto;
+				align-items: center;
 			}
 
 			.btn-cajita {
-				width: 100%;
+				width: 185px;
 			}
 
 			.btn-cajita img {
-				width: 30%;
+				margin: 8px;
+				width: 10%;
 			}
 
 			.btn-cajita p {
 				display: inline;
-				font-size: 0.9rem;
+				font-size: 0.8rem;
 				font-family: "sans-serif";
 			}
 		}
@@ -855,18 +878,16 @@ footer {
 
 	#cart {
 		margin: 5px;
-		&:hover {
-			
 
-		}
+		&:hover {}
 	}
+
 	#favourites {
 		margin: 15px;
-		&:hover {
-			
 
-		}
+		&:hover {}
 	}
+
 	#goTop {
 		margin-top: 15px;
 

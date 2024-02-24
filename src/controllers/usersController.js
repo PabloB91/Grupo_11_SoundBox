@@ -95,7 +95,7 @@ const usersControllers = {
                         userToLogIn = userToFind;              //--> Si las contraseñas coinciden, hacemos que la variable usuario a loguearse sea igual al usuario encontrado en la DB
                     }else {
                         return res.render("forms/login.ejs", { errors : [    //--> Si no coinciden las contraseñas vuelve al login con el mensaje de error.
-                                {msg: 'La contraseña no concide'}
+                                {msg: 'Las contraseñas no conciden'}
                             ], 
                             old: req.body
                         }); 
@@ -107,17 +107,18 @@ const usersControllers = {
                 req.session.userLoggedIn = userToLogIn;  //--> Si el usuario ingresó satisfactoriamente vamos a guardar sus datos en 'session' --> 'userLoggedIn'
                  console.log('session: ', req.session);  
                  console.log('session: ', req.session.userLoggedIn); 
-
-                
+                 
 
                 /* este redirect actúa solo si el usuario existe en el db */
                 console.log('El usuario existe en la DB, se redirecciona al perfil');
                 console.log(userToLogIn.id);
                 console.log('userloggedin Id: ', req.session.userLoggedIn.id);
                 return res.redirect(`/users/userProfile/${userToLogIn.id}`);
+
             }else{
                 return res.render("forms/login.ejs", { errors: errors.array(), old: req.body });
             }
+
         }
         catch{
             console.log("catch usertoLogin: ",userToLogIn);
@@ -128,7 +129,7 @@ const usersControllers = {
             */
             if (userToLogIn === undefined){
                 return res.render("forms/login.ejs", { errors : [
-                    {msg: 'EL correo no coincide o este usuario aún no es parte de SoundBox'}
+                    {msg: 'El correo no coincide o aún no eres parte de SoundBox'}
                     ], 
                     old: req.body
                 });

@@ -38,22 +38,17 @@
                     <div class="desplegable show__modal" id="desplegable">
                         <% products.forEach(product=> { %>
                             <div class="card" id="card" data-order="<%= product.id %>">
-                                <!-- Rounded switch -->
-                                <label class="switch">
-                                    <input type="checkbox" required>
-                                    <span class="slider round"></span>
-                                </label>
                                 <div class="card-image-container">
-                                    <img class="card-img" src="/img/products/<%= product.imagen %>" alt="">
+                                    <img class="card-img" src="/img/products/<%= product.image %>" alt="">
                                 </div>
                                 <div class="nombre-marca">
                                     <a href="/products/productDetail/<%= product.id %>">
                                         <h5>
-                                            <%= product.nombre %>
+                                            <%= product.name %>
                                         </h5>
                                     </a>
                                     <p>
-                                        <%= product.marca %>
+                                        <%= product.brand %>
                                     </p>
                                 </div>
                                 <div class="addNumber_cont">
@@ -67,17 +62,21 @@
                                         <h1 id="cantidad-<%= product.id %>" value=""> 1 </h1>
                                     </div>
 
-                                    <button onclick="incrementar('<%= product.id %>','<%= product.cantidad %>')">
+                                    <button onclick="incrementar('<%= product.id %>','<%= product.quantity %>')">
                                         <i class="fa-solid fa-plus"></i>
                                     </button>
 
                                 </div>
                                 <div class="precio-descuento">
                                     <span>
-                                        <%= product.precio %> $
+                                        <%= product.price %> $
                                     </span>
                                     <span style="color: green;">
-                                        - <%= product.descuento %>% OFF
+                                        <% if (product.discount == null ) {%>
+                                            0
+                                           <% } else {%>
+                                               -<%= product.discount %> %
+                                               <% }  %>
                                     </span>
                                 </div>
                                 <div class="delete-card">
@@ -87,7 +86,6 @@
 
                             <% }); %>
                                 <div class="descripcion-card">
-                                    <p>check</p>
                                     <p>imagen</p>
                                     <p>producto</p>
                                     <p>cantidad</p>
@@ -101,22 +99,26 @@
                 <section class="segunda-seccion">
                     <div class="descripcion-pago-total">
                         <h6 class="titulo-desplegable-pago-total">TOTAL:</h6>
-                        <% productos.forEach(product=> { %>
+                        <% products.forEach(product=> { %>
                             <div class="separador-izquierda">
                                 <p>
-                                    <%= product.nombre %>
+                                    <%= product.name %>
                                 </p>
                             </div>
 
                             <div class="separador-medio">
                                 <p style="color: green;">
-                                    -<%= product.descuento + "%" %>
+                                    <% if (product.discount == null ) {%>
+                                         0
+                                        <% } else {%>
+                                            -<%= product.discount %> %
+                                            <% }  %>
                                 </p>
                             </div>
 
                             <div class="separador-derecha">
                                 <p>
-                                    <%= product.precio + "$" %>
+                                    <%= product.price + "$" %>
                                 </p>
                             </div>
 
@@ -136,25 +138,29 @@
 
             <div class="grid-container">
                 <% products.forEach(product=> { %>
-                    <div class="grid-item">
+                    <a href="/products/productDetail/<%= product.id %>" class="grid-item">
                         <div class="image-related-container">
-                            <img src="/img/products/<%= product.imagen %>" alt="">
+                            <img src="/img/products/<%= product.image %>" alt="">
                         </div>
                         <section class="name-related-card">
                             <p>
-                                <%=product.nombre%>
+                                <%=product.name%>
                             </p>
                         </section>
                         <section class="description-related-card">
                             <p>
-                                <%=product.precio + "$" %>
+                                <%=product.price + "$" %>
                             </p>
                             <p>
-                                -<%= product.descuento + "%" %>
+                                <% if (product.discount == null ) {%>
+                                    0
+                                   <% } else {%>
+                                       -<%= product.discount %> %
+                                       <% } %>
                             </p>
 
                         </section>
-                    </div>
+                    </a>
 
                     <% }); %>
             </div>
