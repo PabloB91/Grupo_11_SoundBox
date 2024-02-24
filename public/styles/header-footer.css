@@ -53,7 +53,7 @@ header {
 				display: flex;
 				align-items: center;
 				justify-content: space-around;
-				
+
 				i {
 					color: whitesmoke;
 
@@ -73,7 +73,7 @@ header {
 		li {
 			margin-right: 5%;
 
-			
+
 		}
 
 		.register-login {
@@ -407,6 +407,81 @@ footer {
 	padding: 30px;
 	z-index: 99;
 
+	.right-menu-container {
+		z-index: 998;
+		border-radius: 8px;
+
+		#cart-text {
+			width: 200px;
+			height: 50px;
+			position: fixed;
+			bottom: 55%;
+			right: 65px;
+			background-color: rgba(0, 0, 0, 0.35);
+			border-radius: 0px 15px 15px 0px;
+			margin-right: 5px;
+		}
+
+		#cart {
+			position: fixed;
+			bottom: 55%;
+			right: 15px;
+			background-color: rgba(0, 0, 0, 0.35);
+			border-radius: 8px;
+			width: 50px;
+			height: 50px;
+
+		}
+
+		#fav-text {
+			width: 200px;
+			height: 50px;
+			position: fixed;
+			bottom: 45%;
+			right: 65px;
+			background-color: rgba(0, 0, 0, 0.35);
+			border-radius: 0px 15px 15px 0px;
+			margin-right: 5px;
+		}
+
+		#favourites {
+			position: fixed;
+			bottom: 45%;
+			right: 15px;
+			background-color: rgba(0, 0, 0, 0.35);
+			border-radius: 8px;
+			width: 50px;
+			height: 50px;
+			display: flex;
+			font-size: 18px;
+			justify-content: center;
+			align-items: center;
+
+			&:hover {}
+		}
+
+
+
+		#goTop {
+			position: fixed;
+			bottom: 45px;
+			right: 15px;
+			background-color: #ff540a;
+			border-radius: 50%;
+			width: 50px;
+			height: 50px;
+			display: flex;
+			font-size: 18px;
+			justify-content: center;
+			align-items: center;
+
+			i {
+				color: white;
+
+			}
+		}
+	}
+
 	.footer-center {
 		position: relative;
 		max-width: 1555px;
@@ -477,6 +552,22 @@ footer {
 /************************************************************************************/
 
 /* MEDIA */
+
+@media screen and (max-width: 425px) {
+	footer {
+		.right-menu-container {
+			#cart {
+				display: none;
+
+			}
+
+			#favourites {
+				display: none;
+
+			}
+		}
+	}
+}
 
 @media screen and (min-width: 768px) {
 	header {
@@ -857,39 +948,4 @@ footer {
 		}
 	}
 
-}
-
-.right-menu-container {
-	position: fixed;
-	top: 50vh;
-	right: 5px;
-	width: 50px;
-	z-index: 998;
-	color: black;
-	background-color: #ff540a;
-	border-radius: 8px;
-	padding: 5px;
-
-
-	.right-icons-text {
-		display: none;
-
-	}
-
-	#cart {
-		margin: 5px;
-
-		&:hover {}
-	}
-
-	#favourites {
-		margin: 15px;
-
-		&:hover {}
-	}
-
-	#goTop {
-		margin-top: 15px;
-
-	}
 }

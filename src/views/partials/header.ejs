@@ -17,7 +17,7 @@
 
                 <div class="top-navigation-bar access-and-purchase-buttons">
                     <nav>
-                        <% if(locals.userIsLogged == false){ %>
+                        <% if(locals.userIsLogged==false){ %>
                             <ul>
 
                                 <li class="li_register-login">
@@ -43,44 +43,44 @@
                                 </li>
 
                                 <% }else{ %>
-                                        <li class="li_user admin">
-                                            <div class="admin-container">
-                                                <a href="/admin">
-                                                    <i class="fa-solid fa-user-tie"></i>
-                                                </a>
+                                    <li class="li_user admin">
+                                        <div class="admin-container">
+                                            <a href="/admin">
+                                                <i class="fa-solid fa-user-tie"></i>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li class="li-miCajita">
+                                        <a href="/productCart">
+                                            <div class="btn-cajita">
+                                                <img src="/img/svg/cajitaSBX.svg" class="svg-miCajita">
+                                                <p>Mi cajita- 0 items - $0.00</p>
                                             </div>
-                                        </li>
-                                            <li class="li-miCajita">
-                                                <a href="/productCart">
-                                                    <div class="btn-cajita">
-                                                        <img src="/img/svg/cajitaSBX.svg" class="svg-miCajita">
-                                                        <p>Mi cajita- 0 items - $0.00</p>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li class="translate-button">
-                                                <p>esp</p>
-                                                <i class="fa-solid fa-globe"></i>
-                                            </li>
-                                            <li class="li_user dropdown">
-                                                
-                                                <div>
-                                                    <i class="fa-sharp fa-solid fa-circle-user"></i>
-                                                </div>
+                                        </a>
+                                    </li>
+                                    <li class="translate-button">
+                                        <p>esp</p>
+                                        <i class="fa-solid fa-globe"></i>
+                                    </li>
+                                    <li class="li_user dropdown">
 
-                                                <div class="user-dropdown">
-                                                    <p><a href="/users/userProfile/"><i
-                                                                class="fa-regular fa-user"></i>Perfil</a></p>
-                                                    <p><a href="#"><i class="fa-solid fa-gear"></i>Ajustes</a></p>
-                                                    <p><a href="#"><i class="fa-solid fa-pen-to-square"></i>Editar</a>
-                                                    </p>
-                                                    <p><a href="#"><i
-                                                                class="fa-solid fa-arrow-right-from-bracket"></i>Salir</a>
-                                                    </p>
-                                                </div>
+                                        <div>
+                                            <i class="fa-sharp fa-solid fa-circle-user"></i>
 
-                                            </li>
-                                        <% } %>
+                                        </div>
+
+                                        <div class="user-dropdown">
+                                            <p><a href="/users/userProfile/"><i
+                                                        class="fa-regular fa-user"></i>Perfil</a></p>
+                                            <p><a href="#"><i class="fa-solid fa-gear"></i>Ajustes</a></p>
+                                            <p><a href="#"><i class="fa-solid fa-pen-to-square"></i>Editar</a>
+                                            </p>
+                                            <p><a href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i>Salir</a>
+                                            </p>
+                                        </div>
+
+                                    </li>
+                                    <% } %>
                             </ul>
                     </nav>
                 </div>
@@ -237,7 +237,7 @@
                                 <div>
                                     <a href="#last-seen">Ultimos
                                         vistos</a>
-                                </div>                        
+                                </div>
 
                             </li>
 
