@@ -6,12 +6,13 @@ function userLoggedMiddleware(req, res, next) {
          
         }
         
-        // if (userLoggedIn.user_type_id == 2) {
+        // if (req.session.userLoggedIn.db.user.user_type_id == 2) {
         //         req.session.admin = userLoggedIn.dataValues;
         //         console.log(req.session.admin, 'este usuario es admin');
         //     } else {
         //         console.log(req.session.admin, 'este usuario es comun');
         //     }  
+
         next()
      
 }
