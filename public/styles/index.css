@@ -394,24 +394,29 @@ body {
 	border-radius: 8px;
 	background: #fff;
 	width: 85%;
+	width: 100%;
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: center;
 	overflow: hidden;
 
 	.container-boxes {
 		display: flex;
+		flex-wrap: wrap;
 		width: 80%;
+		width: 100%;
 		padding: 20px;
 	}
 
 	.box {
 		width: 35%;
+		width: 100%;
 		height: auto;
 	}
 
 	.box__title {
 		width: 100%;
-		font-family: ;
+		font-family: "Monserat";
 	}
 
 	.promo-container_cards {
