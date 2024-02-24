@@ -56,7 +56,6 @@ header {
 
 				i {
 					color: whitesmoke;
-
 				}
 			}
 		}
@@ -72,8 +71,6 @@ header {
 
 		li {
 			margin-right: 5%;
-
-
 		}
 
 		.register-login {
@@ -212,7 +209,6 @@ header {
 				width: 50px;
 				margin: auto;
 			}
-
 		}
 
 		.menu-burguer-desplegable {
@@ -375,7 +371,6 @@ header {
 		}
 	}
 
-
 	/*ANIMATION*/
 
 	.disappear {
@@ -412,7 +407,8 @@ footer {
 		border-radius: 8px;
 
 		#cart-text {
-			width: 200px;
+			width: 0%;
+			max-width: 200px;
 			height: 50px;
 			position: fixed;
 			bottom: 55%;
@@ -420,6 +416,8 @@ footer {
 			background-color: rgba(0, 0, 0, 0.35);
 			border-radius: 0px 15px 15px 0px;
 			margin-right: 5px;
+			transition: 1s;
+			overflow: hidden;
 		}
 
 		#cart {
@@ -430,11 +428,11 @@ footer {
 			border-radius: 8px;
 			width: 50px;
 			height: 50px;
-
 		}
 
 		#fav-text {
-			width: 200px;
+			width: 0%;
+			max-width: 200px;
 			height: 50px;
 			position: fixed;
 			bottom: 45%;
@@ -442,6 +440,8 @@ footer {
 			background-color: rgba(0, 0, 0, 0.35);
 			border-radius: 0px 15px 15px 0px;
 			margin-right: 5px;
+			transition: 1s;
+			overflow: hidden;
 		}
 
 		#favourites {
@@ -456,11 +456,16 @@ footer {
 			font-size: 18px;
 			justify-content: center;
 			align-items: center;
-
-			&:hover {}
+			cursor: pointer;
 		}
 
-
+		.container__button:hover {
+			.aside-text,
+			#cart-text,
+			#fav-text {
+				width: 100%;
+			}
+		}
 
 		#goTop {
 			position: fixed;
@@ -477,7 +482,6 @@ footer {
 
 			i {
 				color: white;
-
 			}
 		}
 	}
@@ -558,12 +562,10 @@ footer {
 		.right-menu-container {
 			#cart {
 				display: none;
-
 			}
 
 			#favourites {
 				display: none;
-
 			}
 		}
 	}
@@ -660,9 +662,7 @@ footer {
 
 			.menu-burguer-desplegable {
 				width: 50vw;
-
 			}
-
 		}
 	}
 
@@ -904,18 +904,15 @@ footer {
 
 			.menu-burguer {
 				display: none;
-
 			}
 		}
 
 		.menu-burguer {
 			display: none;
-
 		}
 
 		.menu-burguer-desplegable {
 			display: none;
-
 		}
 	}
 
@@ -947,5 +944,4 @@ footer {
 			}
 		}
 	}
-
 }
