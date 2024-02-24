@@ -36,7 +36,7 @@
                         </div>
                     </div>
                     <div class="desplegable show__modal" id="desplegable">
-                        <% productos.forEach(product=> { %>
+                        <% products.forEach(product=> { %>
                             <div class="card" id="card" data-order="<%= product.id %>">
                                 <!-- Rounded switch -->
                                 <label class="switch">
@@ -135,7 +135,7 @@
 
 
             <div class="grid-container">
-                <% productos.forEach(product=> { %>
+                <% products.forEach(product=> { %>
                     <div class="grid-item">
                         <div class="image-related-container">
                             <img src="/img/products/<%= product.imagen %>" alt="">

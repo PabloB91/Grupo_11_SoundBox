@@ -1,14 +1,73 @@
-.primary-section {
-    width: 100%;
+main{
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #cbcbcb;
 }
 
+.primary-section {
+    width: 75%;
+    height: 57vh;
+    display: flex;
+    flex-direction: row;
+    background: #fff;
+    border-radius: 8px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    overflow: hidden;
+    margin-bottom: 5vh;
+
+}
+
+h1 {
+    text-align: center;
+    background: black;
+    color: wheat;
+}
+
+h3{
+    padding-bottom: 3vh;
+}
+
+#profile-title{
+    background-color: #fff;
+    width: 75%;
+    text-align: center;
+    margin-top: 3vh;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    height: 5vh;
+    padding-top: 1px;
+}
+
+#edit-user-form {
+    display: none;
+    
+    form {
+        display: flex;
+        flex-direction: column;
+        label {
+            p {
+                font-size: 20px;
+            }
+            input {
+                margin: 15px;
+                margin-left: 0px;
+                font-family: "Montserrat", sans-serif;
+                font-weight: 700;
+                font-size: 20px;
+                background-color: #e1dddd;
+            }
+        }
+        
+    }
+}
 
 .first-section {
     width: 50%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     padding: 1rem;
     margin: 5px;
@@ -22,6 +81,11 @@
 
         }
     }
+}
+
+.user-description {
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -69,19 +133,36 @@
     }
 }
 
-.registered-purchases {
+.profile-button{
+    border-radius: 8px;
+    width: 100%;
+    height: 70%;
+    padding: 5px;
+    font-size: 18px;
+    margin-bottom: 1vh;
+}
 
-    .lastest-purchases {
+.registered-purchases {
+    background-color: #fff;
+    border-radius: 8px;
+    margin-bottom: 3vh;
+
+    h3 {
+        text-align: center;
+        padding-bottom: 0
+    }
+
+    .latest-purchases {
         display: flex;
         justify-content: space-evenly;
         margin: 0.5rem;
         margin-bottom: 0;
-
+ 
         img {
             border-radius: 30px;
             padding: 1rem;
 
-        }
+        } 
     }
 
 }
@@ -94,15 +175,56 @@
     
 }
 
-@media (max-width:769px) {
+/************************************************************************************/
+
+/* MEDIA TABLET */
+
+@media (max-width:768px) {
+
+    h3{
+        font-size: 22px;
+    }
+
     .primary-section {
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
+        font-size: 14px;
+        height: 60vh;
+
         .first-section {
             width: 90%;
 
         }
     }
-
-    
+    .registered-purchases {
+        width: 75%;
+        background-color: #fff;
+        border-radius: 8px;
+        margin-bottom: 3vh;
+    }
 }
+
+/* MEDIA CELULARES */
+
+@media screen and (max-width: 376px) {
+    h3 {
+        font-size: 18px;
+    }
+    .primary-section {
+        
+        font-size: 14px;
+        height: 65vh;
+
+        .first-section {
+            width: 90%;
+
+        }
+    }
+    .second-section
+    .img-container {
+        margin-left: 5vw;
+        width: 110px;
+        height: 110px;
+    }
+    }
+    
