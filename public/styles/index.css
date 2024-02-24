@@ -576,6 +576,11 @@ body {
 			grid-template-columns: repeat(4, 1fr);
 		}
 	}
+	/* Promo and comments */
+
+	.main__promo-container {
+		width: 85%;
+	}
 }
 @media screen and (min-width: 1020px) {
 	.cards-prom {
