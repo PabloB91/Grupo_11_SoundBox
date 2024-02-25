@@ -1,6 +1,6 @@
-html {
+/* html {
 	scroll-behavior: smooth;
-}
+} */
 
 body {
 	background: #e6e6e6;
@@ -122,10 +122,11 @@ body {
 		.qualification {
 			width: 50%;
 		}
-		.discount {
+		.price {
 			display: flex;
 			align-items: center;
 			width: 50%;
+			color: #ff540a;
 		}
 	}
 
@@ -133,25 +134,22 @@ body {
 		display: flex;
 		align-items: center;
 		width: 100%;
+
 		input[type="radio"] {
 			display: none;
 		}
 
-		.clasificacion {
-			direction: rtl;
-			unicode-bidi: bidi-override;
-		}
-
 		label:hover {
-			color: orange;
+			cursor: pointer;
+			color: #ff540a;
 		}
 
 		label:hover ~ label {
-			color: orange;
+			color: #ff540a;
 		}
 
 		input[type="radio"]:checked ~ label {
-			color: orange;
+			color: #ff540a;
 		}
 
 		input[type="number"]::-webkit-inner-spin-button,
@@ -161,13 +159,14 @@ body {
 		}
 
 		.qualification {
+			width: 80%;
 			direction: rtl;
 			unicode-bidi: bidi-override;
 		}
 
 		p {
 			font-family: "Montserrat";
-			font-size: 9px;
+			font-size: 0.7rem;
 			text-wrap: pretty;
 		}
 	}
@@ -414,6 +413,10 @@ body {
 		height: auto;
 	}
 
+	.box--magin-bottom {
+		margin-bottom: 30px;
+	}
+
 	.box__title {
 		width: 100%;
 		font-family: "Monserat";
@@ -431,6 +434,7 @@ body {
 		margin: 7px 0px;
 		cursor: pointer;
 		width: 100%;
+		align-items: center;
 
 		&:hover {
 			background: #e6e6e6;
@@ -448,32 +452,38 @@ body {
 		}
 	}
 
+	.info-product {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		overflow: hidden;
+		padding-left: 5px;
+	}
+
 	.nameProduct {
 		font-size: 0.9rem;
 	}
+
 	.form-qualification {
 		display: flex;
 		align-items: center;
 		width: 100%;
+
 		input[type="radio"] {
 			display: none;
 		}
 
-		.clasificacion {
-			direction: rtl;
-			unicode-bidi: bidi-override;
-		}
-
 		label:hover {
-			color: orange;
+			cursor: pointer;
+			color: #ff540a;
 		}
 
 		label:hover ~ label {
-			color: orange;
+			color: #ff540a;
 		}
 
 		input[type="radio"]:checked ~ label {
-			color: orange;
+			color: #ff540a;
 		}
 
 		input[type="number"]::-webkit-inner-spin-button,
@@ -489,7 +499,7 @@ body {
 
 		p {
 			font-family: "Montserrat";
-			font-size: 9px;
+			font-size: 0.7rem;
 			text-wrap: pretty;
 		}
 	}
