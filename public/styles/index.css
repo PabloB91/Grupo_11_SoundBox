@@ -75,7 +75,8 @@ body {
 	.cards {
 		display: flex;
 		flex-wrap: nowrap;
-		overflow-x: scroll;
+		overflow-x: auto;
+		scrollbar-width: none;
 	}
 
 	.card-outline {
@@ -285,8 +286,9 @@ body {
 		background: #000;
 		display: flex;
 		width: 200%;
-		height: 100px;
+		height: 170px;
 		margin-left: -100%;
+		position: relative;
 
 		.brand {
 			display: flex;
@@ -304,6 +306,21 @@ body {
 		.brandsSection {
 			width: 200%;
 			display: flex;
+		}
+
+		.div__btn {
+			position: absolute;
+			width: 50px;
+			height: 50px;
+			.material-symbols-outlined {
+				color: #ff540a;
+			}
+		}
+
+		.div__btn-left {
+			top: 45%;
+			left: 10px;
+			
 		}
 	}
 }
