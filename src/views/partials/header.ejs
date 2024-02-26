@@ -333,7 +333,7 @@
                             <form action="/search" method="GET">
 
                                 <div class="search-bar_input">
-                                    <input name="search" type="search" id="buscador" placeholder="Guitarra electrica">
+                                    <input name="search" type="search" id="buscador" placeholder="   Busca segun el nombre. por ej:Guitarra electrica">
                                 </div>
 
                                 <button type="submit" name="search" class="btn-search-bar">
@@ -346,7 +346,7 @@
                                 <p><i class="fa-solid fa-xmark"></i></p>
                             </div>
 
-                            <div class="search">
+                            <div class="cards-container">
                                 <% products.forEach(product => { %>
                                         <a href="/products/productDetail/<%= product.id %>" class="product">
                                             <div class="card">
