@@ -158,7 +158,7 @@ const usersControllers = {
             const users = await db.Usuarios.findAll()
             const products = await db.Productos.findAll();
             const userloggedin = req.session.userLoggedIn.id
-            res.render("/header.ejs", {users, products, userloggedin});
+            res.render("/header", {users, products, userloggedin});
         }
         catch(err) {
             console.log(err);

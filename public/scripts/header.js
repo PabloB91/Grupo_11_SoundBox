@@ -102,7 +102,7 @@ document.addEventListener("keyup", (e) => {
     if(e.target.matches("#buscador")){
         if (e.key === "Escape") e.target.value = "";
 
-        const cards = Array.from(document.querySelectorAll(".card"));
+        const cards = Array.from(document.querySelectorAll(".cardTosearch"));
 
         cards.forEach(product => {
             const text = product.textContent.toLowerCase();

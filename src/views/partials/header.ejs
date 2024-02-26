@@ -349,7 +349,7 @@
                             <div class="cards-container">
                                 <% products.forEach(product => { %>
                                         <a href="/products/productDetail/<%= product.id %>" class="product">
-                                            <div class="card">
+                                            <div class="cardTosearch">
                                                 <picture class="img-product">
                                                     <img loading="lazy" src="/img/products/<%= product.image %>"
                                                         alt="<%= product.category, product.name, product.brand_id %>">
@@ -362,27 +362,6 @@
                                                             <%= product.name%>
                                                         </p>
                                                     </div>
-        
-                                                    <form class="form-qualification qualification stars">
-                                                        <p class="qualification">
-        
-                                                            <input id="radio5" type="radio" name="stars" value="1">
-                                                            <label for="radio5"><i class="fa-solid fa-star"></i></label>
-        
-                                                            <input id="radio4" type="radio" name="stars" value="2">
-                                                            <label for="radio4"><i class="fa-solid fa-star"></i></label>
-        
-                                                            <input id="radio3" type="radio" name="stars" value="3">
-                                                            <label for="radio3"><i class="fa-solid fa-star"></i></label>
-        
-                                                            <input id="radio2" type="radio" name="stars" value="4">
-                                                            <label for="radio2"><i class="fa-solid fa-star"></i></label>
-        
-                                                            <input id="radio1" type="radio" name="stars" value="5">
-                                                            <label for="radio1"><i class="fa-solid fa-star"></i></label>
-        
-                                                        </p>
-                                                    </form>
         
                                                     <div class="price">
                                                         <p>$ <%= product.price %>
@@ -417,7 +396,7 @@
                     <li><p>Ir a:</p></li>
                     <li><a href="/">Inicio</a></li>
                     <li><a href="/productCart">Carrito</a></li>
-                    <li><a href="">Favoritos</a></li>
+                    <li><a href="/" class="btnSearchOpenModal">buscar</a></li>
                     <li><a href="//#seccion-marcas-banners">Categorías</a></li>
                     <li><a href="/contactUs">Quienes somos?</a></li>
                 </ul>

@@ -904,16 +904,29 @@ footer {
 						/*para separar sin margin*/
 					}
 
-					.card {
+					.cardTosearch {
+						position: relative;
 						background: #ff540a;
 						width: 100%;
 
 						.img-product {
 							width: 100px;
-
+							
 							img {
+								padding: 5px;
 								width: 100%;
 							}
+						}
+						.product-info {
+							width: 100%;
+							max-height: 30%;
+							position: absolute;
+							top: 0px;
+							background-color: rgba(0, 0, 0, 0.4);
+							backdrop-filter: blur(2px);
+							color: white;
+							overflow: hidden;
+							border-radius: 0 0 18px 18px;
 						}
 					}
 				}
