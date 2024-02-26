@@ -899,7 +899,7 @@ footer {
 						overflow: hidden;
 						overflow-y: auto;
 						display: grid;
-						grid-template-columns: repeat(6, 1fr);
+						grid-template-columns: repeat(5, 1fr);
 						gap: 15px;
 						/*para separar sin margin*/
 					}
