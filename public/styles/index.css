@@ -66,6 +66,12 @@ body {
 	overflow: hidden;
 	.title-section {
 		width: 100%;
+		text-align: center;
+		padding: 15px 0px;
+
+		h3 {
+			font-size: 1.4rem;
+		}
 	}
 
 	.cards {
@@ -408,7 +414,6 @@ body {
 .main__promo-container {
 	border-radius: 8px;
 	background: #fff;
-	width: 85%;
 	width: 100%;
 	display: flex;
 	flex-wrap: wrap;
@@ -451,7 +456,7 @@ body {
 		margin: 7px 0px;
 		cursor: pointer;
 		width: 100%;
-		align-items: center;
+		align-items: flex-start;
 
 		&:hover {
 			background: #e6e6e6;
@@ -478,8 +483,12 @@ body {
 		width: 60%;
 	}
 
-	.info-product p{
-		
+	.info-product p {
+		font-size: 0.7rem;
+		font-weight: 600;
+	}
+	.price p {
+		font-weight: 300;
 	}
 
 	.nameProduct {
@@ -612,6 +621,8 @@ body {
 
 	.main__promo-container {
 		width: 85%;
+		flex-wrap: nowrap;
+		height: 13%;
 		.container-boxes {
 			width: 80%;
 			flex-wrap: nowrap;
