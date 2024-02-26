@@ -70,8 +70,8 @@
                                         </div>
 
                                         <div class="user-dropdown">
-                                            <p><a href="/users/userProfile/"><i
-                                                        class="fa-regular fa-user"></i>Perfil</a></p>
+                                            <p><a href="/users/userProfile/">
+                                                <i class="fa-regular fa-user"></i>Perfil</a></p>
                                             <p><a href="#"><i class="fa-solid fa-gear"></i>Ajustes</a></p>
                                             <p><a href="#"><i class="fa-solid fa-pen-to-square"></i>Editar</a>
                                             </p>
@@ -244,7 +244,7 @@
                             <li class="dropdown">
 
                                 <div>
-                                    <a href="#seccion-marcas-banners">Instrumentos musicales</a><i
+                                    <a href="/admin/allTheProducts#seccion-marcas-banners">Instrumentos musicales</a><i
                                         class="fa-solid fa-chevron-down"></i>
                                 </div>
 
@@ -260,7 +260,7 @@
                             <li class="dropdown">
 
                                 <div>
-                                    <a href="#best-sellers">Top de ventas</a>
+                                    <a href="#offers">Top de ventas</a>
                                 </div>
 
                             </li>
@@ -333,7 +333,7 @@
                             <form action="/search" method="GET">
 
                                 <div class="search-bar_input">
-                                    <input name="search" type="search" placeholder="Guitarra electrica">
+                                    <input name="search" type="search" id="buscador" placeholder="Guitarra electrica">
                                 </div>
 
                                 <button type="submit" name="search" class="btn-search-bar">
@@ -347,18 +347,57 @@
                             </div>
 
                             <div class="search">
-
-                                <div class="card">
-                                    <picture>
-                                        <img src="" alt="">
-                                    </picture>
-                                    <article>
-                                        <p>
-
-                                        </p>
-                                    </article>
-                                </div>
-
+                                <% products.forEach(product => { %>
+                                        <a href="/products/productDetail/<%= product.id %>" class="product">
+                                            <div class="card">
+                                                <picture class="img-product">
+                                                    <img loading="lazy" src="/img/products/<%= product.image %>"
+                                                        alt="<%= product.category, product.name, product.brand_id %>">
+                                                </picture>
+        
+                                                <section class="product-info">
+        
+                                                    <div class="nameProduct">
+                                                        <p class="nameProduct">
+                                                            <%= product.name%>
+                                                        </p>
+                                                    </div>
+        
+                                                    <form class="form-qualification qualification stars">
+                                                        <p class="qualification">
+        
+                                                            <input id="radio5" type="radio" name="stars" value="1">
+                                                            <label for="radio5"><i class="fa-solid fa-star"></i></label>
+        
+                                                            <input id="radio4" type="radio" name="stars" value="2">
+                                                            <label for="radio4"><i class="fa-solid fa-star"></i></label>
+        
+                                                            <input id="radio3" type="radio" name="stars" value="3">
+                                                            <label for="radio3"><i class="fa-solid fa-star"></i></label>
+        
+                                                            <input id="radio2" type="radio" name="stars" value="4">
+                                                            <label for="radio2"><i class="fa-solid fa-star"></i></label>
+        
+                                                            <input id="radio1" type="radio" name="stars" value="5">
+                                                            <label for="radio1"><i class="fa-solid fa-star"></i></label>
+        
+                                                        </p>
+                                                    </form>
+        
+                                                    <div class="price">
+                                                        <p>$ <%= product.price %>
+                                                        </p>
+                                                        <p style="color: green;"><% if (product.discount == null ) {%>
+                                            
+                                                            <% } else {%>
+                                                                -<%= product.discount %> %
+                                                                <% } %></p>
+                                                    </div>
+        
+                                                </section>
+                                            </div>
+                                        </a>
+                                <% })%>
                             </div>
 
                         </div>
@@ -371,16 +410,17 @@
                     <i class="fa-solid fa-bars"></i>
                 </div>
                 <!-- desplegable del menu burguer -->
-                <section class="menu-burguer-desplegable" id="menuBurguerDesplegable" onclick="show()">
+                <ul class="menu-burguer-desplegable" id="menuBurguerDesplegable" onclick="show()">
                     <li class="closeMenu">
                         <i class="fa-solid fa-xmark" aria-hidden="true" id="closeMenu" onclick="hide()"></i>
                     </li>
+                    <li><p>Ir a:</p></li>
                     <li><a href="/">Inicio</a></li>
                     <li><a href="/productCart">Carrito</a></li>
                     <li><a href="">Favoritos</a></li>
                     <li><a href="//#seccion-marcas-banners">Categorías</a></li>
                     <li><a href="/contactUs">Quienes somos?</a></li>
-                </section>
+                </ul>
 
             </section>
 

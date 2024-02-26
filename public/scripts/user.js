@@ -5,7 +5,7 @@ function show() {    //--> Función para esconder los datos del usuario y mostra
     console.log("show");
     document.getElementById("edit-user-form").style.display = "flex";
     document.getElementById("user-description").style.display = "none"; 
-
+    
 }
 
 function hide() {       //--> Función para esconder el formulario de editar usuario y mostrar los datos del usuario

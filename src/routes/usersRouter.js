@@ -49,7 +49,7 @@ router.get('/userProfile/:id', authMiddleware,usersController.userProfile);
 // Login
 router.get('/login', guestMiddleware, usersController.login);
 router.post('/login', loginValidations, usersController.processToLogin);
-
+router.get("/header", usersController.header);
 
 // Register
 

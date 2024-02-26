@@ -37,7 +37,11 @@
                             <div class="caja-precio-clasificacion">
                                 <span class="precio-producto"> $ <%= products.price %> </span>
                                 <span class="descuento-producto">
-                                    <%= products.discount %> % OFF
+                                    <% if (products.discount == null ) {%>
+                                    
+                                        <% } else {%>
+                                            -<%= products.discount %> %
+                                            <% } %>
                                 </span>
 
                                 <form class="formulario-clasificacion">

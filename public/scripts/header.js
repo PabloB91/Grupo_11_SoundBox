@@ -90,3 +90,21 @@ closeMenu.addEventListener('click', (e) => {
 // function show() {
 //     document.getElementById("menuBurguerDesplegable").style.display.toggle('flex')
 // }
+
+
+
+
+
+//  ________________________________________________________________________________________________________
+//                                            search-bar ventana modal
+//  ---------------------------------------------------------------------------------------------------------
+document.addEventListener("keyup", (e) => {
+    if(e.target.matches("#buscador")){
+        if (e.key === "escape")e.taget.value = ""
+        document.querySelectorAll(".card").forEach(product => {
+            product.textContent.toLowerCase().includes(e.target.value.toLowerCase())
+            ?product.classList.remove("filtro")
+            :product.classList.add("filtro")
+        })
+    }
+})

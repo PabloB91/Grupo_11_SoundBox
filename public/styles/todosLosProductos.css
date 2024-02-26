@@ -1,3 +1,4 @@
+
 body {
 	font-family: "Montserrat", sans-serif;
 	font-weight: 400;
@@ -16,9 +17,10 @@ main {
 	margin-top: 50px;
 	background-color: rgba(0, 0, 0, 0.4);
 	color: #fff;
-	position: absolute;
+	position: fixed;
+	top: 0px;
 	left: 1px;
-	z-index: 50;
+	z-index: 999;
 	border-radius: 18px;
 }
 
@@ -29,6 +31,7 @@ main {
 	border: 2px solid white;
 	padding: 15px;
 	position: fixed;
+	top: 26.9vh;
 	color: white;
 
 }
@@ -49,7 +52,9 @@ main {
 	margin: 1rem;
 	padding: 0.5rem;
 }
-
+#slide-item {
+	flex: auto 1 0 ;
+}
 .primer-seccion {
 	margin: 1rem;
 	padding: 0.5rem;
@@ -85,7 +90,6 @@ main {
 	width: 100vw;
 	margin-top: 50px;
 	padding-top: 20px;
-	background-color: #cbcbcb;
 	flex-direction: row;
 	justify-content: center;
 	flex-wrap: wrap;
@@ -130,26 +134,32 @@ main {
 
 .ordenador:hover {
 	width: 35vw;
-	backdrop-filter: blur(4px);
+	backdrop-filter: blur(25px);
 	transition: 0.5s;
 	display: flex;
 	flex-direction: column;
+	overflow: hidden;
 }
 
 .ordenador:hover .dropdown-ordenador {
 	display: flex;
-	flex-direction: column;
+    height: 100vh;
+    flex-wrap: nowrap;
+    overflow-y: scroll;
+    flex-direction: column;
 }
+
 
 .ordenador:hover .titulo-ordenador {
 	align-self: center;
 	width: 100px;
 	margin-top: 15px;
 	border: 0;
-	background-color: rgba(0, 0, 0, 0.2);
+	background-color: #ff540a;
 	position: sticky;
+	top: 0px;
 	font-size: 24px;
-	color: #ff540a;
+	border: 2px solid black;
 	transition: all .7s ease;
 }
 
@@ -196,8 +206,7 @@ main {
 
 /* la verdadera card */
 .container-producto {
-	margin: auto;
-	box-shadow: 1px 22px 129px -60px rgb(255, 255, 0);
+	margin: 15px;
 	display: flex;
 	align-items: center;
 	flex-direction: column;
@@ -292,11 +301,16 @@ a:active {
 		justify-content: space-between;
 		text-align: center;
 		border: 2px solid black;
+
+		.face-back-child {
+			height: 100%;
+			background-color: whitesmoke;
+
+		}
 	}
 
 	.card .back h3 {
-		font-size: 30px;
-		margin-top: 20px;
+		font-size: 14px;
 		letter-spacing: 2px;
 		color: white;
 		background-color: rgba(0, 0, 0, 0.4);
@@ -346,7 +360,7 @@ a:active {
 		margin: auto;
 		width: 90%;
 		display: grid;
-		grid-template-columns: repeat(4, 1fr);
+		grid-template-columns: repeat(3, 1fr);
 		grid-auto-rows: minmax(100px, auto);
 	}
 }

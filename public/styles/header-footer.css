@@ -457,6 +457,7 @@ footer {
 			justify-content: center;
 			align-items: center;
 			cursor: pointer;
+		
 		}
 
 		.container__button:hover {
@@ -551,6 +552,20 @@ footer {
 			font-size: 0.9em;
 		}
 	}
+}
+
+.promo_modalWindow {
+
+	position: fixed;
+	bottom: 15px;
+	right: 15px;
+	
+	iframe {
+		width: 25vw;
+		height: 25vh;
+		
+	}
+
 }
 
 /************************************************************************************/
@@ -893,6 +908,10 @@ footer {
 						background: #ff540a;
 						width: 100%;
 						height: 230px;
+
+						.img-product {
+							width: 100px;
+						}
 					}
 				}
 
@@ -944,4 +963,8 @@ footer {
 			}
 		}
 	}
+}
+
+.filtro {
+	display: none;
 }
