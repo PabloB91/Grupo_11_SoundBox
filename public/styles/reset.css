@@ -14,11 +14,14 @@ html {
 
 	/* se lo aplique al scroll de todas las vistas si quieren ver cambios sobre alguna sona especifica en su vista entoncen pongan estas propiedades y modifiquenlas como quieran en la vista necesaria, se modifica segun que tenga la propiedad de overflow*/
 	scrollbar-color: #ff540a #0000; /* el primer color seria el de la barra el segundo el fondo de la barra  */
-	scrollbar-width: auto; /* con esta propiedad manejamos el ancho de la barra tenemos tres propiedades thin, auto y none */
-
+	scrollbar-width: thin; /* con esta propiedad manejamos el ancho de la barra tenemos tres propiedades thin, auto y none */
 	&::-webkit-scrollbar {
 		width: 7px;
 	}
+}
+
+html {
+	scroll-behavior: smooth;
 }
 
 /* ETIQUETAS DEL BODY */

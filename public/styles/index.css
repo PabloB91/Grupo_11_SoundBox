@@ -345,7 +345,10 @@ body {
 		.div__btn-left {
 			top: 45%;
 			left: 10px;
+		}
 
+		&::-webkit-scrollbar {
+			width: 7px;
 		}
 	}
 }
@@ -447,9 +450,9 @@ body {
 	.container-boxes {
 		display: flex;
 		flex-wrap: wrap;
-		width: 80%;
 		width: 100%;
 		padding: 20px;
+		overflow: hidden;
 	}
 
 	.box {
@@ -462,9 +465,10 @@ body {
 		margin-bottom: 30px;
 	}
 
-	.box__title {
-		width: 100%;
-		font-family: "Monserat";
+	.box__title h2 {
+		font-family: "Montserrat", sans-serif;
+		font-weight: 600;
+		font-size: 1rem;
 	}
 
 	.promo-container_cards {
@@ -504,6 +508,11 @@ body {
 		align-items: center;
 		overflow: hidden;
 		padding-left: 5px;
+		width: 60%;
+	}
+
+	.info-product p{
+		
 	}
 
 	.nameProduct {
@@ -544,17 +553,16 @@ body {
 		}
 
 		p {
-			font-family: "Montserrat";
-			font-size: 0.7rem;
-			text-wrap: pretty;
+			font-size: 0.4rem;
 		}
 	}
 
 	.aside_prom-baner {
 		picture {
-			width: 200px;
-			height: 360px;
-
+			width: 30%;
+			height: 100%;
+			max-width: 200px;
+			max-height: 360px;
 			img {
 				width: 100%;
 				height: 100%;
@@ -654,6 +662,14 @@ body {
 
 	.main__promo-container {
 		width: 85%;
+		.container-boxes {
+			width: 80%;
+			flex-wrap: nowrap;
+		}
+
+		.promo-container_cards::-webkit-scrollbar {
+			width: 30px;
+		}
 	}
 }
 
