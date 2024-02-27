@@ -102,10 +102,10 @@
 
 	.card-outline {
 		flex: 1 0 auto;
-		margin: 0px 35px;
+		margin: 0px 5px;
 		border-radius: 7px;
 		overflow: hidden;
-		width: 100px;
+		width: 110px;
 	}
 
 	.card {
@@ -130,10 +130,11 @@
 	.product-info {
 		display: flex;
 		flex-wrap: wrap;
-		width: 80%;
+		width: 100%;
 
 		p {
 			display: block;
+			font-size: 0.8125rem;
 		}
 
 		.nameProduct {
@@ -142,13 +143,13 @@
 		}
 
 		.qualification {
-			width: 50%;
+			width: 100%;
 		}
 
 		.price {
 			display: flex;
 			align-items: center;
-			width: 50%;
+			width: 100%;
 			color: #ff540a;
 		}
 	}
@@ -156,7 +157,7 @@
 	.form-qualification {
 		display: flex;
 		align-items: center;
-		width: 100%;
+		width: 61%;
 
 		input[type="radio"] {
 			display: none;
@@ -189,7 +190,7 @@
 
 		p {
 			font-family: "Montserrat";
-			font-size: 0.7rem;
+			font-size: 0.5rem;
 			text-wrap: pretty;
 		}
 	}
@@ -609,18 +610,16 @@
 		display: flex;
 		flex-wrap: wrap;
 		width: 85%;
+		max-height: 400px;
 
 		.card-outline {
+			margin: 0px 35px;
 			width: 200px;
+			height: 97%;
 
 			&:hover {
 				box-shadow: 0px 0px 8px 0px #554b4b69;
 			}
-		}
-
-		.img-product {
-			width: 200px;
-			height: 280px;
 		}
 
 		.card {
@@ -631,10 +630,21 @@
 
 		.img-product {
 			width: 200px;
+			height: 280px;
 		}
 
 		.product-info {
-			width: 100%;
+			.qualification {
+				width: 50%;
+			}
+		}
+
+		.form-qualification {
+			width: 50%;
+		}
+
+		.form-qualification p {
+			font-size: 0.7rem;
 		}
 	}
 
