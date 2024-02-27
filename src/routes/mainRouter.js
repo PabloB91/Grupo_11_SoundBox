@@ -19,6 +19,7 @@ router.get("/productCart", authMiddleware ,mainController.carrito); /* --> Se ap
 router.get("/admin", authMiddleware,mainController.admin);
 
 
+
 /**
  * El siguente codigo solo es una prueba para session a recargar la pagina nos mostarar el numero en 
  * aumento, numero el cual queda guardado en el servidor.

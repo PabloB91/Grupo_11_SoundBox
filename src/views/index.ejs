@@ -17,25 +17,8 @@
                         </div>
 
                         <div class="img_sliderSection">
-                            <iframe loading="lazy" class="slider--img iframe" src="https://www.youtube.com/embed/3uneA-cstZs?si=4yaoLe7hZo7IzrNw&start=10&
-                            control=0" title="YouTube video player" frameborder="0"
-                                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen>
-                            </iframe>
-                        </div>
-
-                        <div class="img_sliderSection">
                             <img loading="lazy" src="/img/banners/Banner-carrusel2.jpg" class="slider--img"
                                 id="Banner-image2" alt="">
-                        </div>
-
-                        <div class="img_sliderSection">
-                            <iframe loading="lazy" class="slider--img iframe" id="yt-iframe-container2"
-                                src="https://www.youtube.com/embed/cAOfUZUiZhM?si=OsX654CAnGZhtgkb"
-                                title="YouTube video player" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen>
-                            </iframe>
                         </div>
 
                         <div class="img_sliderSection">
@@ -75,7 +58,14 @@
                     </div>
 
                     <div class="cards">
-
+                        <div class="card-wrappers">
+                            <span class="material-symbols-outlined">
+                                skip_previous
+                            </span>
+                            <span class="material-symbols-outlined">
+                                skip_next
+                            </span>
+                        </div>
                         <% topSeller.forEach(product=> { %>
                             <div class="card-outline">
                                 <a href="/products/productDetail/<%= product.id %>" class="product">
@@ -117,6 +107,11 @@
                                             <div class="price">
                                                 <p>$ <%= product.price %>
                                                 </p>
+                                                <p style="color: green;"><% if (product.discount == null ) {%>
+                                    
+                                                    <% } else {%>
+                                                        -<%= product.discount %> %
+                                                        <% } %></p>
                                             </div>
 
                                         </section>
@@ -260,6 +255,11 @@
                                             <div class="price">
                                                 <p>$ <%= product.price %>
                                                 </p>
+                                                <p style="color: green;"><% if (product.discount == null ) {%>
+                                    
+                                                    <% } else {%>
+                                                        -<%= product.discount %> %
+                                                        <% } %></p>
                                             </div>
 
                                         </section>
@@ -366,6 +366,11 @@
                                             <div class="price">
                                                 <p>$ <%= product.price %>
                                                 </p>
+                                                <p style="color: green;"><% if (product.discount == null ) {%>
+                                    
+                                                    <% } else {%>
+                                                        -<%= product.discount %> %
+                                                        <% } %></p>
                                             </div>
 
                                         </section>
@@ -502,6 +507,11 @@
                                             <div class="price">
                                                 <p>$ <%= product.price %>
                                                 </p>
+                                                <p style="color: green;"><% if (product.discount == null ) {%>
+                                    
+                                                    <% } else {%>
+                                                        -<%= product.discount %> %
+                                                        <% } %></p>
                                             </div>
                                         </article>
                                     </div>
@@ -520,7 +530,6 @@
                             <div class="promo-container_cards">
                                 <% topSeller.forEach(product=> { %>
                                     <div class="card">
-
                                         <picture class="img-product">
                                             <img loading="lazy" src="/img/products/<%= product.image %>"
                                                 alt="<%= product.category, product.name, product.brand %>">
@@ -555,6 +564,11 @@
                                             <div class="price">
                                                 <p>$ <%= product.price %>
                                                 </p>
+                                                <p style="color: green;"><% if (product.discount == null ) {%>
+                                    
+                                                    <% } else {%>
+                                                        -<%= product.discount %> %
+                                                        <% } %></p>
                                             </div>
                                         </article>
                                     </div>
@@ -606,6 +620,11 @@
                                             <div class="price">
                                                 <p>$ <%= product.price %>
                                                 </p>
+                                                <p style="color: green;"><% if (product.discount == null ) {%>
+                                    
+                                                    <% } else {%>
+                                                        -<%= product.discount %> %
+                                                        <% } %></p>
                                             </div>
                                         </article>
                                     </div>

@@ -22,17 +22,6 @@
                         <div class="img-container">
                             <img src="/img/users/<%= user.image %>" alt="">
                         </div>
-                        <div class="img-buttons">
-                            <input class="profile-button" type="file" value="nada">
-                            <input class="profile-button" type="submit">
-                        </div>
-                        
-                        <div class="editar-borrar">
-                            <form action="/users/delete/<%= user.id %>?_method=DELETE" method="POST"
-                                style="display: inline-flex">
-                                <button type="submit" class="boton-accion-borrar">ELIMINAR</button>
-                            </form>
-                        </div>
                     </section>
                     
                 

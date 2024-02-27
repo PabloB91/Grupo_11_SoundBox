@@ -38,9 +38,11 @@
                     <div class="desplegable show__modal" id="desplegable">
                         <% products.forEach(product=> { %>
                             <div class="card" id="card" data-order="<%= product.id %>">
+
                                 <div class="card-image-container">
                                     <img class="card-img" src="/img/products/<%= product.image %>" alt="">
                                 </div>
+
                                 <div class="nombre-marca">
                                     <a href="/products/productDetail/<%= product.id %>">
                                         <h5>
@@ -146,19 +148,20 @@
                             <p>
                                 <%=product.name%>
                             </p>
-                        </section>
-                        <section class="description-related-card">
                             <p>
                                 <%=product.price + "$" %>
                             </p>
                             <p>
                                 <% if (product.discount == null ) {%>
-                                    0
+                                    
                                    <% } else {%>
                                        -<%= product.discount %> %
                                        <% } %>
                             </p>
+                        </section>
 
+                        <section class="description-related-card">
+                            <p><%= product.description %></p>
                         </section>
                     </a>
 

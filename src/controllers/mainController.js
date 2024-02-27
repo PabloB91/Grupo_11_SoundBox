@@ -29,8 +29,9 @@ const mainController = {
                     }
                 }
             })
+            const products = await db.Productos.findAll();
 
-            res.render("index", { topSeller, offerts })
+            res.render("index", { topSeller, offerts, products })
         }
         catch(err) {
             res.render("not-found")
@@ -49,6 +50,7 @@ const mainController = {
 			res.render("not-found")
 		}
     },
+
     categories: async (req, res) => {
         try {
             const category = await db.Productos.findByPk({
@@ -75,7 +77,9 @@ const mainController = {
             console.log(err);
 			res.render("not-found")
 		}
-    }
+    },
+
+    
 
 }
 
