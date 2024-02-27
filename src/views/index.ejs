@@ -58,14 +58,6 @@
                     </div>
 
                     <div class="cards">
-                        <div class="card-wrappers">
-                            <span class="material-symbols-outlined">
-                                skip_previous
-                            </span>
-                            <span class="material-symbols-outlined">
-                                skip_next
-                            </span>
-                        </div>
                         <% topSeller.forEach(product=> { %>
                             <div class="card-outline">
                                 <a href="/products/productDetail/<%= product.id %>" class="product">
@@ -83,7 +75,7 @@
                                                 </p>
                                             </div>
 
-                                            <form class="form-qualification qualification stars">
+                                            <form class="form-qualification qualification-stars">
                                                 <p class="qualification">
 
                                                     <input id="radio5" type="radio" name="stars" value="1">
@@ -107,11 +99,13 @@
                                             <div class="price">
                                                 <p>$ <%= product.price %>
                                                 </p>
-                                                <p style="color: green;"><% if (product.discount == null ) {%>
-                                    
-                                                    <% } else {%>
-                                                        -<%= product.discount %> %
-                                                        <% } %></p>
+                                                <p style="color: green;">
+                                                    <% if (product.discount==null ) {%>
+
+                                                        <% } else {%>
+                                                            -<%= product.discount %> %
+                                                                <% } %>
+                                                </p>
                                             </div>
 
                                         </section>
@@ -231,7 +225,7 @@
                                                 </p>
                                             </div>
 
-                                            <form class="form-qualification qualification stars">
+                                            <form class="form-qualification qualification-stars">
                                                 <p class="qualification">
 
                                                     <input id="radio5" type="radio" name="stars" value="1">
@@ -255,11 +249,13 @@
                                             <div class="price">
                                                 <p>$ <%= product.price %>
                                                 </p>
-                                                <p style="color: green;"><% if (product.discount == null ) {%>
-                                    
-                                                    <% } else {%>
-                                                        -<%= product.discount %> %
-                                                        <% } %></p>
+                                                <p style="color: green;">
+                                                    <% if (product.discount==null ) {%>
+
+                                                        <% } else {%>
+                                                            -<%= product.discount %> %
+                                                                <% } %>
+                                                </p>
                                             </div>
 
                                         </section>
@@ -348,29 +344,37 @@
                                                 </p>
                                             </div>
 
-                                            <form class="form-qualification qualification stars">
+                                            <form class="form-qualification qualification-stars">
                                                 <p class="qualification">
-                                                    <input id="radio1" type="radio" name="stars" value="5">
-                                                    <label for="radio1"><i class="fa-solid fa-star"></i></label>
-                                                    <input id="radio2" type="radio" name="stars" value="4">
-                                                    <label for="radio2"><i class="fa-solid fa-star"></i></label>
-                                                    <input id="radio3" type="radio" name="stars" value="3">
-                                                    <label for="radio3"><i class="fa-solid fa-star"></i></label>
-                                                    <input id="radio4" type="radio" name="stars" value="2">
-                                                    <label for="radio4"><i class="fa-solid fa-star"></i></label>
+
                                                     <input id="radio5" type="radio" name="stars" value="1">
                                                     <label for="radio5"><i class="fa-solid fa-star"></i></label>
+
+                                                    <input id="radio4" type="radio" name="stars" value="2">
+                                                    <label for="radio4"><i class="fa-solid fa-star"></i></label>
+
+                                                    <input id="radio3" type="radio" name="stars" value="3">
+                                                    <label for="radio3"><i class="fa-solid fa-star"></i></label>
+
+                                                    <input id="radio2" type="radio" name="stars" value="4">
+                                                    <label for="radio2"><i class="fa-solid fa-star"></i></label>
+
+                                                    <input id="radio1" type="radio" name="stars" value="5">
+                                                    <label for="radio1"><i class="fa-solid fa-star"></i></label>
+
                                                 </p>
                                             </form>
 
                                             <div class="price">
                                                 <p>$ <%= product.price %>
                                                 </p>
-                                                <p style="color: green;"><% if (product.discount == null ) {%>
-                                    
-                                                    <% } else {%>
-                                                        -<%= product.discount %> %
-                                                        <% } %></p>
+                                                <p style="color: green;">
+                                                    <% if (product.discount==null ) {%>
+
+                                                        <% } else {%>
+                                                            -<%= product.discount %> %
+                                                                <% } %>
+                                                </p>
                                             </div>
 
                                         </section>
@@ -483,7 +487,7 @@
                                                 </p>
                                             </div>
 
-                                            <form class="form-qualification qualification stars">
+                                            <form class="form-qualification qualification-stars">
                                                 <p class="qualification">
 
                                                     <input id="radio5" type="radio" name="stars" value="1">
@@ -507,11 +511,13 @@
                                             <div class="price">
                                                 <p>$ <%= product.price %>
                                                 </p>
-                                                <p style="color: green;"><% if (product.discount == null ) {%>
-                                    
-                                                    <% } else {%>
-                                                        -<%= product.discount %> %
-                                                        <% } %></p>
+                                                <p style="color: green;">
+                                                    <% if (product.discount==null ) {%>
+
+                                                        <% } else {%>
+                                                            -<%= product.discount %> %
+                                                                <% } %>
+                                                </p>
                                             </div>
                                         </article>
                                     </div>
@@ -540,7 +546,7 @@
                                                 </p>
                                             </div>
 
-                                            <form class="form-qualification qualification stars">
+                                            <form class="form-qualification qualification-stars">
                                                 <p class="qualification">
 
                                                     <input id="radio5" type="radio" name="stars" value="1">
@@ -564,11 +570,13 @@
                                             <div class="price">
                                                 <p>$ <%= product.price %>
                                                 </p>
-                                                <p style="color: green;"><% if (product.discount == null ) {%>
-                                    
-                                                    <% } else {%>
-                                                        -<%= product.discount %> %
-                                                        <% } %></p>
+                                                <p style="color: green;">
+                                                    <% if (product.discount==null ) {%>
+
+                                                        <% } else {%>
+                                                            -<%= product.discount %> %
+                                                                <% } %>
+                                                </p>
                                             </div>
                                         </article>
                                     </div>
@@ -596,7 +604,7 @@
                                                 </p>
                                             </div>
 
-                                            <form class="form-qualification qualification stars">
+                                            <form class="form-qualification qualification-stars">
                                                 <p class="qualification">
 
                                                     <input id="radio5" type="radio" name="stars" value="1">
@@ -620,11 +628,13 @@
                                             <div class="price">
                                                 <p>$ <%= product.price %>
                                                 </p>
-                                                <p style="color: green;"><% if (product.discount == null ) {%>
-                                    
-                                                    <% } else {%>
-                                                        -<%= product.discount %> %
-                                                        <% } %></p>
+                                                <p style="color: green;">
+                                                    <% if (product.discount==null ) {%>
+
+                                                        <% } else {%>
+                                                            -<%= product.discount %> %
+                                                                <% } %>
+                                                </p>
                                             </div>
                                         </article>
                                     </div>

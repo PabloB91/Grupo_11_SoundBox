@@ -685,6 +685,10 @@ footer {
 	footer {
 		align-items: center;
 
+		.footer-center {
+			width: 89%;
+		}
+
 		.container-simbol {
 			position: absolute;
 			left: 0%;
