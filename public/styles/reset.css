@@ -30,6 +30,8 @@ body {
 	min-height: 100dvh;
 	font-family: "Montserrat", sans-serif;
 	font-size: 0.875rem;
+	background: #e6e6e6;
+	background: #fff;
 }
 
 ul {

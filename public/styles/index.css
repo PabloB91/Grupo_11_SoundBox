@@ -1,7 +1,3 @@
-body {
-	background: #e6e6e6;
-}
-
 /* ------------------------------------------------------------------ */
 .main {
 	display: flex;
@@ -94,7 +90,7 @@ body {
 			display: flex;
 			justify-content: space-between;
 
-			span{
+			span {
 				background-color: #ff540a;
 				font-size: 24px;
 				border-radius: 50%;
@@ -102,7 +98,6 @@ body {
 				color: white;
 			}
 		}
-		
 	}
 
 	.card-outline {
@@ -172,11 +167,11 @@ body {
 			color: #ff540a;
 		}
 
-		label:hover~label {
+		label:hover ~ label {
 			color: #ff540a;
 		}
 
-		input[type="radio"]:checked~label {
+		input[type="radio"]:checked ~ label {
 			color: #ff540a;
 		}
 
@@ -542,11 +537,11 @@ body {
 			color: #ff540a;
 		}
 
-		label:hover~label {
+		label:hover ~ label {
 			color: #ff540a;
 		}
 
-		input[type="radio"]:checked~label {
+		input[type="radio"]:checked ~ label {
 			color: #ff540a;
 		}
 
