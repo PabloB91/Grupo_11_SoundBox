@@ -64,11 +64,13 @@
                                     </li>
                                     <li class="li_user dropdown">
                                         <div>
-                                        <% if (locals.userLoggedIn.image) {%>
-                                            <%=locals.userLoggedIn.image%>
-                                            <%} else {%>
-                                                <i class="fa-sharp fa-solid fa-circle-user"></i>
-                                                <%} %>
+                                            <% if (locals.userLoggedIn.image) {%>
+                                                <div class="img-profile">
+                                                    <img src="/img/users/<%=locals.userLoggedIn.image%>" alt="">
+                                                </div>
+                                                <%} else {%>
+                                                    <i class="fa-sharp fa-solid fa-circle-user"></i>
+                                                    <%} %>
                                         </div>
 
                                         <div class="user-dropdown">
