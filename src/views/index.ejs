@@ -11,23 +11,43 @@
 
                     <div class="slider--inner" id="slider--inner">
 
-                        <div class="img_sliderSection">
+                        <div class="img_sliderSection img_sliderSection--min-with-1020">
                             <img loading="lazy" src="/img/banners/Banner-carrusel1.jpg" class="slider--img"
                                 id="Banner-image1" alt="">
                         </div>
 
-                        <div class="img_sliderSection">
+                        <div class="img_sliderSection img_sliderSection--min-with-768">
+                            <img loading="lazy" src="/img/banners/Banner-carrusel-responsive1.jpg" class="slider--img"
+                                id="Banner-image1" alt="">
+                        </div>
+
+                        <div class="img_sliderSection img_sliderSection--min-with-1020">
                             <img loading="lazy" src="/img/banners/Banner-carrusel2.jpg" class="slider--img"
                                 id="Banner-image2" alt="">
                         </div>
 
-                        <div class="img_sliderSection">
+                        <div class="img_sliderSection img_sliderSection--min-with-768">
+                            <img loading="lazy" src="/img/banners/Banner-carrusel-responsive2.jpg" class="slider--img"
+                                id="Banner-image2" alt="">
+                        </div>
+
+                        <div class="img_sliderSection img_sliderSection--min-with-1020">
                             <img loading="lazy" src="/img/banners/Banner-carrusel3.jpg" class="slider--img"
                                 id="Banner-image3" alt="">
                         </div>
 
-                        <div class="img_sliderSection">
+                        <div class="img_sliderSection img_sliderSection--min-with-768">
+                            <img loading="lazy" src="/img/banners/Banner-carrusel-responsive3.jpg" class="slider--img"
+                                id="Banner-image3" alt="">
+                        </div>
+
+                        <div class="img_sliderSection img_sliderSection--min-with-1020">
                             <img loading="lazy" src="/img/banners/Banner-carrusel4.jpg" class="slider--img"
+                                id="Banner-image4" alt="">
+                        </div>
+
+                        <div class="img_sliderSection img_sliderSection--min-with-768">
+                            <img loading="lazy" src="/img/banners/Banner-carrusel-responsive4.jpg" class="slider--img"
                                 id="Banner-image4" alt="">
                         </div>
 
@@ -57,7 +77,7 @@
                         <h3>Ultimos vistos</h3>
                     </div>
 
-                    <div class="cards">
+                    <div id="div_cards--scrolling" class="cards">
                         <% topSeller.forEach(product=> { %>
                             <div class="card-outline">
                                 <a href="/products/productDetail/<%= product.id %>" class="product">
@@ -115,13 +135,13 @@
                             <% }); %>
                     </div>
 
-                    <div class="btnsCards btnLeft">
+                    <div id="btnsCards-left" class="btnsCards btnLeft">
                         <span class="material-symbols-outlined">
                             chevron_left
                         </span>
                     </div>
 
-                    <div class="btnsCards btnRight">
+                    <div id="btnsCards-right" class="btnsCards btnRight">
                         <span class="material-symbols-outlined">
                             chevron_right
                         </span>
@@ -218,7 +238,7 @@
                         <h3>Top ventas</h3>
                     </div>
 
-                    <div class="cards">
+                    <div id="div_cards--scrolling" class="cards">
 
                         <% offerts.forEach(product=> { %>
                             <div class="card-outline">
@@ -278,13 +298,13 @@
 
                     </div>
 
-                    <div class="btnsCards btnLeft">
+                    <div id="btnsCards-left" class="btnsCards btnLeft">
                         <span class="material-symbols-outlined">
                             chevron_left
                         </span>
                     </div>
 
-                    <div class="btnsCards btnRight">
+                    <div id="btnsCards-right" class="btnsCards btnRight">
                         <span class="material-symbols-outlined">
                             chevron_right
                         </span>
@@ -333,6 +353,7 @@
                                 skip_previous
                             </span>
                         </div>
+
                         <div class="div__btn div__btn-right">
                             <span class="material-symbols-outlined">
                                 skip_next
@@ -349,7 +370,7 @@
                         <h3>Ofertas</h3>
                     </div>
 
-                    <div class="cards">
+                    <div id="div_cards--scrolling" class="cards">
 
                         <% topSeller.forEach(product=> { %>
                             <div class="card-outline">
@@ -409,13 +430,13 @@
 
                     </div>
 
-                    <div class="btnsCards btnLeft">
+                    <div id="btnsCards-left" class="btnsCards btnLeft">
                         <span class="material-symbols-outlined">
                             chevron_left
                         </span>
                     </div>
 
-                    <div class="btnsCards btnRight">
+                    <div id="btnsCards-right" class="btnsCards btnRight">
                         <span class="material-symbols-outlined">
                             chevron_right
                         </span>

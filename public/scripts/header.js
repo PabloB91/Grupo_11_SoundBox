@@ -35,19 +35,22 @@ let headerBottomAnimation  = document.querySelector('.headerBottom');
 headerBottomAnimation.classList.toggle('fixed', window.scrollY);
 };
 
-const openModal = document.querySelector('.btnSearchOpenModal');
-const modal = document.querySelector('.search-modal_window');
-const closeModal = document.querySelector('.close-window')
+// moguel esto esta comentado porque pase el search modal window a la vista search, si lo descomentas buguea el menu burguer
+// MOGUEEEL
 
-openModal.addEventListener('click', (e)=> {
-    e.preventDefault();
-    modal.classList.add('modal__show');
-});
+// const openModal = document.querySelector('.btnSearchOpenModal');
+// const modal = document.querySelector('.search-modal_window');
+// const closeModal = document.querySelector('.close-window')
 
-closeModal.addEventListener('click', (e)=> {
-    e.preventDefault();
-    modal.classList.remove('modal__show');
-})
+// openModal.addEventListener('click', (e)=> {
+//     e.preventDefault();
+//     modal.classList.add('modal__show');
+// });
+
+// closeModal.addEventListener('click', (e)=> {
+//     e.preventDefault();
+//     modal.classList.remove('modal__show');
+// })
 
 window.addEventListener('scroll', disappear );
 window.addEventListener('scroll', grow );
@@ -59,14 +62,15 @@ window.addEventListener('scroll', fixed );
 
 //  _________________________________________________________________________________________________________
 
-                                                // menu hamburguesa de aqui para abajo.
+                                                // menu hamburguesa
 //  _________________________________________________________________________________________________________
 
-let menuContainer = document.querySelector('#menu-burguer');
-let menuBurguerDesplegable = document.querySelector('#menuBurguerDesplegable');
+const menuContainer = document.querySelector('#menu-burguer');
+const menuBurguerDesplegable = document.querySelector('#menuBurguerDesplegable');
 
 menuContainer.addEventListener('click', (e) => {
     e.preventDefault();
+    console.log("hola")
     // alternamos estilos para el menu 
     menuBurguerDesplegable.style.display= "flex";
     
@@ -82,63 +86,4 @@ closeMenu.addEventListener('click', (e) => {
 
 
 
-// function hide() {
-//     document.getElementById("desplegable").style.display = "none";
-//     document.getElementById("labels-ordenador").style.display = "none";
-// }
-
-// function show() {
-//     document.getElementById("menuBurguerDesplegable").style.display.toggle('flex')
-// }
-
-
-
-
-
-//  ________________________________________________________________________________________________________
-//                                            search-bar ventana modal
-//  ---------------------------------------------------------------------------------------------------------
-document.addEventListener("keyup", (e) => {
-    if(e.target.matches("#buscador")){
-        if (e.key === "Escape") e.target.value = "";
-
-        const cards = Array.from(document.querySelectorAll(".cardTosearch"));
-
-        cards.forEach(product => {
-            const text = product.textContent.toLowerCase();
-            const searchValue = e.target.value.toLowerCase();
-            product.textContent.toLowerCase().includes(searchValue)
-                ? product.classList.remove("filtro")
-                : product.classList.add("filtro");
-        });
-
-        // Ordenar las cards según la cantidad de letras en común
-        cards.sort((a, b) => {
-            const textA = a.textContent.toLowerCase();
-            const textB = b.textContent.toLowerCase();
-            const searchValue = e.target.value.toLowerCase();
-
-            const matchCountA = countMatchingLetters(textA, searchValue);
-            const matchCountB = countMatchingLetters(textB, searchValue);
-
-            // Ordenar en orden descendente (mayor coincidencia primero)
-            return matchCountB - matchCountA;
-        });
-
-        // Mover las cards ordenadas al contenedor
-        const cardsContainer = document.querySelector(".cards-container");
-        cards.forEach(card => cardsContainer.appendChild(card));
-    }
-});
-
-function countMatchingLetters(str, searchValue) {
-    // Función para contar la cantidad de letras coincidentes
-    let count = 0;
-    for (let char of searchValue) {
-        if (str.includes(char)) {
-            count++;
-        }
-    }
-    return count;
-}
 
