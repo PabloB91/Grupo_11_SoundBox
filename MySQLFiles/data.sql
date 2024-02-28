@@ -35,7 +35,7 @@ INSERT INTO color
 (color_name)
 VALUES ('Rojo'),('Amarillo'),('Azul'),('Negro')
 
-INSERT into brand 
+INSERT INTO brand 
 (brand_name)
 VALUES ('Marshall'),('Zildjian'),('Gibson'),('Yamaha')
 

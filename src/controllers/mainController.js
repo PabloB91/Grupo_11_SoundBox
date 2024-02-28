@@ -33,6 +33,7 @@ const mainController = {
             res.render("index", { topSeller, offerts })
         }
         catch(err) {
+            console.log(err);
             res.render("not-found")
         }
 

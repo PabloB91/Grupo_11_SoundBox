@@ -11,7 +11,7 @@ const usersController = require('../controllers/usersController');
 // Middlewares
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
-const upload = require("../middlewares/multer")
+const upload = require("../middlewares/multer")  //--> Acá requerimos a toda la configuración de multer (el 'destination' y 'filename')
 
 // Validacion de Registro
 const registerValidations = [
@@ -54,7 +54,7 @@ router.post('/login', loginValidations, usersController.processToLogin);
 // Register
 
 router.get('/register', guestMiddleware,usersController.register);
-router.post('/register', upload.single('imgProfile'), registerValidations, usersController.processToRegister); 
+router.post('/register', upload.single('imgProfile'), registerValidations, usersController.processToRegister); //-->Se guarda la imagen a través de multer, y los datos a través de Sequelize
 
 // Editar Preferencias
 /* router.get('/editUser/:id', authMiddleware,usersController.edit)  /*--> se aplica el 'authMiddleware' (si el usuario está logueado, continúa con el controlador,

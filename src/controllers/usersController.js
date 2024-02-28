@@ -22,6 +22,8 @@ const usersControllers = {
     },
     // (POST) Proceso de Registro
     processToRegister: async (req, res) => {
+        console.log("file.file:", req.file);
+        console.log("file.filename:", req.file);
         try{
             const errores = validationResult(req);  //--->Traemos las validaciones
             // console.log(errores);
@@ -44,7 +46,7 @@ const usersControllers = {
                     last_name: req.body.lastName,
                     e_mail: req.body.email,
                     password: bcrypt.hashSync(passwordToValidate, 10),
-                    image: req.file == undefined ? "alvaro.jpg" : req.file.filename,
+                    image: req.file == undefined ? "alvaro.jpg" : req.file.filename,    //--> Acá guardamos el NOMBRE del archivo en la BD, y después se renderiza la ruta completa con EJS
                     registered_date: Date.now(),    //--> Esta función trae la fecha actual
 
                     user_type_id: 2,    //--> En este caso el Id debería ser siempre '2', porque es el que corresponde a 'common_user'
@@ -146,6 +148,7 @@ const usersControllers = {
                     {association: 'country'}
                 ]
             }) 
+            console.log(user);
             return res.render('user/userProfile.ejs', {user})
         }   //--Hay que usar 'return' para evitar el error de '[ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client'
         catch(err) {
