@@ -63,14 +63,16 @@
                                         <i class="fa-solid fa-globe"></i>
                                     </li>
                                     <li class="li_user dropdown">
-
                                         <div>
-                                            <i class="fa-sharp fa-solid fa-circle-user"></i>
-
+                                        <% if (locals.userLoggedIn.image) {%>
+                                            <%=locals.userLoggedIn.image%>
+                                            <%} else {%>
+                                                <i class="fa-sharp fa-solid fa-circle-user"></i>
+                                                <%} %>
                                         </div>
 
                                         <div class="user-dropdown">
-                                            <p><a href="/users/userProfile/">
+                                            <p><a href="/users/userProfile/<%=locals.userLoggedIn.id%>">
                                                     <i class="fa-regular fa-user"></i>Perfil</a></p>
                                             <p><a href="#"><i class="fa-solid fa-gear"></i>Ajustes</a></p>
                                             <p><a href="#"><i class="fa-solid fa-pen-to-square"></i>Editar</a>
@@ -218,7 +220,7 @@
                             <li class="dropdown">
 
                                 <div>
-                                    <a href="#section-mas-vendidos">Categorias</a><i
+                                    <a href="/#section-mas-vendidos">Categorias</a><i
                                         class="fa-solid fa-chevron-down"></i>
                                 </div>
 
@@ -235,7 +237,7 @@
                             <li class="dropdown">
 
                                 <div>
-                                    <a href="#last-seen">Ultimos
+                                    <a href="/#last-seen">Ultimos
                                         vistos</a>
                                 </div>
 
@@ -244,7 +246,7 @@
                             <li class="dropdown">
 
                                 <div>
-                                    <a href="/admin/allTheProducts#seccion-marcas-banners">Instrumentos musicales</a><i
+                                    <a href="/admin/allTheProducts">Instrumentos musicales</a><i
                                         class="fa-solid fa-chevron-down"></i>
                                 </div>
 
@@ -322,13 +324,10 @@
                     <li class="closeMenu">
                         <i class="fa-solid fa-xmark" aria-hidden="true" id="closeMenu" onclick="hide()"></i>
                     </li>
-                    <li>
-                        <p>Ir a:</p>
-                    </li>
                     <li><a href="/">Inicio</a></li>
                     <li><a href="/productCart">Carrito</a></li>
-                    <li><a href="/" class="btnSearchOpenModal">buscar</a></li>
-                    <li><a href="//#seccion-marcas-banners">Categorías</a></li>
+                    <li><a href="/products/search">buscar</a></li>
+                    <li><a href="/#seccion-marcas-banners">Categorías</a></li>
                     <li><a href="/contactUs">Quienes somos?</a></li>
                 </ul>
 
