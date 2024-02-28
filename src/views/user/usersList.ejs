@@ -16,9 +16,9 @@
         <div class="title-of-page">
             <h1>Usuarios de soundbox</h1>
         </div>
-
+        
         <section class="users">
-            <% users.forEach(user => { %>
+            <% full_user.users.forEach(user => { %>
                 <div class="user-card">
                     
                     <a href="/users/userProfile/<%= user.id%>">
@@ -26,7 +26,8 @@
                         <div class="a-user_card">
                             
                             <div class="img">
-                                <img src="/img/users/default-image/<%= user.image %>" alt="ft-profile soundBox">
+                                <!--En la ruta de la imagen, lo que está dentro de la etiqueta EJS, es el filename de la imagen que viene desde la BD-->
+                                <img src='/img/users/<%= user.image %>' alt="ft-profile soundBox"> 
                             </div>
                             
                             <div class="infoUser">

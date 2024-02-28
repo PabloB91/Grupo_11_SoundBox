@@ -6,8 +6,18 @@ const db = require("../database/models")
 const adminController = {
     listUsers: async (req, res) => {
         try {
-            let users = await db.Usuarios.findAll()
-            res.render("user/usersList.ejs", { users });
+            let users = await db.Usuarios.findAll(/* {
+                limit: 5
+            } */)
+
+            let user_image= '/img/users/default-image/javier.jpg'
+
+            let full_user= {'users': users, 'user_image': user_image}
+
+
+
+            /* console.log(users); */
+            res.render("user/usersList.ejs", { full_user });
         }
         catch(err) {
             console.log(err);

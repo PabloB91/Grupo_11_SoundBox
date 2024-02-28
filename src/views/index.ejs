@@ -57,7 +57,7 @@
                         <h3>Ultimos vistos</h3>
                     </div>
 
-                    <div class="cards">
+                    <div id="div_cards--scrolling" class="cards">
                         <% topSeller.forEach(product=> { %>
                             <div class="card-outline">
                                 <a href="/products/productDetail/<%= product.id %>" class="product">
@@ -115,13 +115,13 @@
                             <% }); %>
                     </div>
 
-                    <div class="btnsCards btnLeft">
+                    <div id="btnsCards-left" class="btnsCards btnLeft">
                         <span class="material-symbols-outlined">
                             chevron_left
                         </span>
                     </div>
 
-                    <div class="btnsCards btnRight">
+                    <div id="btnsCards-right" class="btnsCards btnRight">
                         <span class="material-symbols-outlined">
                             chevron_right
                         </span>
@@ -218,7 +218,7 @@
                         <h3>Top ventas</h3>
                     </div>
 
-                    <div class="cards">
+                    <div id="div_cards--scrolling" class="cards">
 
                         <% offerts.forEach(product=> { %>
                             <div class="card-outline">
@@ -278,13 +278,13 @@
 
                     </div>
 
-                    <div class="btnsCards btnLeft">
+                    <div id="btnsCards-left" class="btnsCards btnLeft">
                         <span class="material-symbols-outlined">
                             chevron_left
                         </span>
                     </div>
 
-                    <div class="btnsCards btnRight">
+                    <div id="btnsCards-right" class="btnsCards btnRight">
                         <span class="material-symbols-outlined">
                             chevron_right
                         </span>
@@ -333,6 +333,7 @@
                                 skip_previous
                             </span>
                         </div>
+
                         <div class="div__btn div__btn-right">
                             <span class="material-symbols-outlined">
                                 skip_next
@@ -349,7 +350,7 @@
                         <h3>Ofertas</h3>
                     </div>
 
-                    <div class="cards">
+                    <div id="div_cards--scrolling" class="cards">
 
                         <% topSeller.forEach(product=> { %>
                             <div class="card-outline">
@@ -409,13 +410,13 @@
 
                     </div>
 
-                    <div class="btnsCards btnLeft">
+                    <div id="btnsCards-left" class="btnsCards btnLeft">
                         <span class="material-symbols-outlined">
                             chevron_left
                         </span>
                     </div>
 
-                    <div class="btnsCards btnRight">
+                    <div id="btnsCards-right" class="btnsCards btnRight">
                         <span class="material-symbols-outlined">
                             chevron_right
                         </span>

@@ -58,6 +58,25 @@ btnRight.addEventListener("click", function(){
     nextRight();
 });
 
+
+/* el siguiente frfagmento de codigo es para que el slider se 
+ reprodusca automaticamente. */
+
 /* setInterval(function(){
     nextRight();
 }, 10000) */
+
+/**Funcion para las flechas de desplazamiento delas cards */
+const rightBtn = document.querySelector("#btnsCards-right")
+const leftBtn = document.querySelector("#btnsCards-left")
+const containerCards = document.querySelector("#div_cards--scrolling")
+
+//scroll left
+
+rightBtn.addEventListener("click", ()=>{
+    containerCards.scrollLeft += 800;
+})
+leftBtn.addEventListener("click", ()=>{
+    containerCards.scrollLeft -= 800;
+})
+

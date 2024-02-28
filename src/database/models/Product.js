@@ -55,9 +55,9 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: "state_id"
         })
     }
-    Producto.prototype.getColors = function() {
+    /* Producto.prototype.getColors = function() {
         return Color.findAll({ where: { product_id: this.id } });
-      };
+      }; */
 
     return Producto
 } 
