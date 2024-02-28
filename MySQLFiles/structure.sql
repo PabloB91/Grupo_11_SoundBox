@@ -36,6 +36,14 @@ CREATE TABLE `brand` (
   UNIQUE KEY `color_UNIQUE` (`brand_name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+CREATE TABLE `product_color` (
+  `id` INT AUTO_INCREMENT PRIMARY KEY,
+  `product_id` INT,
+  `color_id` INT,
+  CONSTRAINT `product_id` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`),
+  CONSTRAINT `color_id` FOREIGN KEY (`color_id`) REFERENCES `color` (`id`)
+);
+
 
 CREATE TABLE `product` (  
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -45,22 +53,20 @@ CREATE TABLE `product` (
   `quantity` int(11) NOT NULL,
   `price` int(11) NOT NULL,
   `discount` int(11) DEFAULT NULL,
-  `color_id` int(11) NOT NULL,
   `brand_id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL,
   `state_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
   UNIQUE KEY `name_UNIQUE` (`name`),
-  KEY `color_id` (`color_id`),
   KEY `brand_id` (`brand_id`),
   KEY `category_id` (`category_id`),
   KEY `state_id` (`state_id`),
   CONSTRAINT `brand_id` FOREIGN KEY (`brand_id`) REFERENCES `brand` (`id`),  
   CONSTRAINT `category_id` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`), 
-  CONSTRAINT `color_id` FOREIGN KEY (`color_id`) REFERENCES `color` (`id`), 
   CONSTRAINT `state_id` FOREIGN KEY (`state_id`) REFERENCES `state` (`id`) 
 ) DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 
 
 /*----SCRIPT DE USUARIOS----*/
