@@ -122,6 +122,16 @@ const controller = {
 		catch(err) {
 			res.render("not-found")
 		}
+	},
+
+	search: async (req, res) => {
+		try {
+			let products = await db.Productos.findAll()
+			res.render("product/search", { products })
+		}
+		catch(err) {
+			res.render("not-found")
+		}
 	}
 };
 

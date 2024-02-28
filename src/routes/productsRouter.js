@@ -12,6 +12,8 @@ const productsController = require('../controllers/productsController');
 // *********** Middlewares Especificos ***********
 const authMiddleware = require('../middlewares/authMiddleware'); //--> Requerimos el 'authMiddleware'
 
+// Buscar un producto
+router.get('/search', productsController.search);
 
 // Devolver un producto 
 router.get('/productDetail/:id', productsController.detail);

@@ -1,0 +1,126 @@
+header
+.headerBottom
+.navContainer
+.btnSearchOpenModal {
+    display: none;
+}
+
+.search-modal_window {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title-Wmodal {
+    h2 {
+        text-shadow: 2px 2px 4px #ff540a;
+        color: wheat;
+        font-size: 2.5rem;
+    }
+}
+
+form {
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #ff540a;
+    background: #ff540a;
+    display: flex;
+    width: 90%;
+    height: 32px;
+}
+
+.search-bar_input {
+    width: 335%;
+}
+
+input {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    color: #000;
+    text-indent: 0px;
+    display: inline-block;
+    text-align: start;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    margin: 0em;
+    padding: 1px 0px;
+    border-image: initial;
+    padding-block: 1px;
+    padding-inline: 2px;
+    height: 100%;
+    width: 100%;
+}
+
+.btn-search-bar {
+    position: relative;
+    cursor: pointer;
+    width: 125px;
+    background: #ff540a;
+
+    .fa-solid {
+        position: absolute;
+        color: #fff;
+        left: 6px;
+        top: 4px;
+        font-size: 1.3rem;
+    }
+}
+
+.cards-container {
+    width: 95%;
+    height: 80%;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    overflow: hidden;
+    overflow-y: auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    /*para separar sin margin*/
+}
+
+.cardTosearch {
+    border-radius: 18px;
+    position: relative;
+    background: #ff540a;
+    width: 100%;
+
+    .img-product {
+        width: 100px;
+        
+        img {
+            border-radius: 18px;
+            padding: 5px;
+            width: 100%;
+        }
+    }
+    .product-info {
+        padding: 5px;
+        width: 100%;
+        max-height: 30%;
+        position: absolute;
+        top: 0px;
+        background-color: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(2px);
+        color: white;
+        overflow: hidden;
+        border-radius: 0 0 18px 18px;
+    }
+}
+
+.filtro {
+	display: none;
+}
+
+@media (max-width: 768px) {
+    .cards-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 425px) {
+    .cards-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
