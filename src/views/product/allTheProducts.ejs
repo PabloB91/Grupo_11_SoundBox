@@ -14,7 +14,7 @@
                 </h2>
                 <section class="dropdown-ordenador">
 
-                    <div class="filtrar-plata">
+                    <div id="slide-item" class="filtrar-plata">
                         <div class="filtro-presupuesto">
                             <input type="range">
                             <h6>desde 0$ hasta 1.000.000$ </h6>
@@ -22,7 +22,7 @@
                         <div class="barra-filtro"></div>
                     </div>
 
-                    <div class="primer-seccion">
+                    <div id="slide-item" class="primer-seccion">
                         <span class="titulo-filtros">Filtros Populares:</span>
                         <div class="populares-1">
 
@@ -87,14 +87,14 @@
                         </div>
                     </div>
 
-                    <div class="segunda-seccion">
+                    <div id="slide-item" class="segunda-seccion">
                         <span class="titulo-filtros">Condición del instrumento:</span>
                         <div class="populares-1"><input type="checkbox"><span> Nuevo</span><span>8</span></div>
                         <div class="populares-1"><input type="checkbox"><span> Segunda Mano</span><span>8</span>
                         </div>
                     </div>
 
-                    <div class="tercer-seccion">
+                    <div id="slide-item" class="tercer-seccion">
                         <span class="titulo-filtros">Categorías:</span>
                         <div class="populares-1"><input type="checkbox"><span> Instrumentos
                                 Electricos</span><span>8</span>
@@ -113,7 +113,7 @@
                         </div>
                     </div>
 
-                    <div class="cuarta-seccion">
+                    <div id="slide-item" class="cuarta-seccion">
                         <span class="titulo-filtros">Por Marca:</span>
                         <div class="populares-1"><input type="checkbox"><span> Marshall</span><span>8</span>
                         </div>
@@ -141,8 +141,8 @@
                             </div>
                         </a>
                     </article>
-                    <% products.forEach(product => {  %>
-                        
+                    <% products.forEach(product=> { %>
+
                         <article class="container-producto">
                             <a href="/products/productDetail/<%= product.id %>" class="card">
                                 <div class="face front">
@@ -152,24 +152,26 @@
                                     </h3>
                                 </div>
                                 <div class="face back">
-                                    <h3>
-                                        <%= product.name%>
-                                    </h3>
-                                    <p class="marca-descripcion">
-                                        <%= product.brand_id %>
-                                    </p>
-                                    <p class="marca-descripcion">
-                                        <%= product.description %>
-                                    </p>
-                                    <p class="price">$<%= product.price %>
-                                    </p>
-                                    <p>
-                                        <%= product.discount %>
-                                    </p>
+                                    <div class="face-back-child">
+                                        <h3>
+                                            <%= product.name%>
+                                        </h3>
+                                        <p class="marca-descripcion">
+                                            <%= product.brand %>
+                                        </p>
+                                        <p class="marca-descripcion">
+                                            <%= product.description %>
+                                        </p>
+                                        <p class="price">$<%= product.price %>
+                                        </p>
+                                        <p>
+                                            <%= product.discount %>
+                                        </p>
+                                    </div>
                                 </div>
                             </a>
                         </article>
-                    <% }); %>
+                        <% }); %>
 
                 </div>
             </section>

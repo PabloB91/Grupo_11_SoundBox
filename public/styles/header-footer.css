@@ -457,9 +457,11 @@ footer {
 			justify-content: center;
 			align-items: center;
 			cursor: pointer;
+
 		}
 
 		.container__button:hover {
+
 			.aside-text,
 			#cart-text,
 			#fav-text {
@@ -551,6 +553,20 @@ footer {
 			font-size: 0.9em;
 		}
 	}
+}
+
+.promo_modalWindow {
+
+	position: fixed;
+	bottom: 15px;
+	right: 15px;
+
+	iframe {
+		width: 25vw;
+		height: 25vh;
+
+	}
+
 }
 
 /************************************************************************************/
@@ -668,6 +684,10 @@ footer {
 
 	footer {
 		align-items: center;
+
+		.footer-center {
+			width: 89%;
+		}
 
 		.container-simbol {
 			position: absolute;
@@ -874,7 +894,7 @@ footer {
 						}
 					}
 
-					.search {
+					.cards-container {
 						width: 90%;
 						height: 80%;
 						background: #fff;
@@ -883,16 +903,35 @@ footer {
 						overflow: hidden;
 						overflow-y: auto;
 						display: grid;
-						grid-template-columns: repeat(6, 1fr);
-						grid-template-rows: repeat(auto, 1fr);
-						grid-gap: 32px 15px;
+						grid-template-columns: repeat(5, 1fr);
+						gap: 15px;
 						/*para separar sin margin*/
 					}
 
-					.card {
+					.cardTosearch {
+						position: relative;
 						background: #ff540a;
 						width: 100%;
-						height: 230px;
+
+						.img-product {
+							width: 100px;
+							
+							img {
+								padding: 5px;
+								width: 100%;
+							}
+						}
+						.product-info {
+							width: 100%;
+							max-height: 30%;
+							position: absolute;
+							top: 0px;
+							background-color: rgba(0, 0, 0, 0.4);
+							backdrop-filter: blur(2px);
+							color: white;
+							overflow: hidden;
+							border-radius: 0 0 18px 18px;
+						}
 					}
 				}
 
@@ -944,4 +983,8 @@ footer {
 			}
 		}
 	}
+}
+
+.filtro {
+	display: none;
 }
