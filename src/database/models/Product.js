@@ -26,7 +26,7 @@ module.exports = (sequelize, dataTypes) => {
         },
         discount: {
             type: dataTypes.INTEGER,
-            default: true
+            defaultValue: 0
         },
         image: {
             type: dataTypes.STRING(255)
@@ -42,22 +42,23 @@ module.exports = (sequelize, dataTypes) => {
             as: "brand",
             foreignKey: "brand_id"
         })
-        Producto.hasMany(models.Categorias, {
+        Producto.belongsTo(models.Categorias, {
             as: "category",
             foreignKey: "category_id"
         })
-        Producto.hasMany(models.Colores, {
-            as: "color",
-            foreignKey: "color_id"
+        Producto.belongsToMany(models.Colores, {
+            through: "product_color",   // Nombre de la tabla intermedia
+            foreignKey: "product_id",
+            otherKey: "color_id", // Nombre de la columna que referencia a Color en la tabla intermedia
+            timestamps: false
         })
+        Producto.hasMany(models.ProductosColores, {
+            foreignKey: 'product_id'
+        });
         Producto.belongsTo(models.Estado, {
             as: "state",
             foreignKey: "state_id"
         })
     }
-    /* Producto.prototype.getColors = function() {
-        return Color.findAll({ where: { product_id: this.id } });
-      }; */
-
     return Producto
 } 

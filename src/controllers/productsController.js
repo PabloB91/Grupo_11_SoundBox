@@ -45,49 +45,49 @@ const controller = {
 
 	// (post) Create - Método para guardar la info
 	processCreate: async (req, res) => {
-		try{	//---TODOS LOS DATOS QUE SE AGREGUEN DE TABLAS SECUNDARIAS TIENEN QUE SER SELECCIONANDO LOS VALORES DE ESAS TABLAS, CON OPCIONES---//
-			
-			let product_brand= await db.Marcas.findAll({
+		try{	//---A FUTURO, TODOS LOS DATOS QUE SE AGREGUEN DE TABLAS SECUNDARIAS TIENEN QUE SER SELECCIONANDO LOS VALORES DE ESAS TABLAS, CON OPCIONES---//
+				//--PARA EVITAR ERRORES EN LOS INPUT--//
+			let product_brand= await db.Marcas.findOne({
 				where: {
-					brand_name: req.body.brand
+					brand_name: req.body.brand		//--> Se buscan todos los atributos de la marca ingresada por el usuario
 				}
 			});
-			/* let product_color= await db.Colores.findAll({
-				where: {
-					color_name: req.body.color
-				}
-			}); */
-			let product_color= await db.Colores.findAll();
-			let product_category= await db.Categorias.findAll({
-				where: {
-					color_name: req.body.category
-				}
-			});
-			let product_state= await db.Estado.findAll({
-				where: {
-					color_name: req.body.state
-				}
-			})
-
-			console.log("product_brand: ",product_brand);
-			console.log("product_brand ID: ",product_brand[0]['dataValues'].id);
-			console.log("product_color: ",product_color);
-			/* console.log("product_color ID: ",product_color[0]['dataValues'].id); */	
-
+			let colors = req.body.colors;		//--> Se asignan los colores elegidos por el usuario a la variable 'colors'
 			
-			let products = await db.Productos.create({
+			let product_category= await db.Categorias.findOne({
+				where: {
+					category: req.body.category //--> Se buscan todos los atributos de la categoría ingresada por el usuario
+				}
+			}) 
+			let product_state= await db.Estado.findOne({
+				where: {
+					state: req.body.state //--> Se buscan todos los atributos del estado ingresad por el usuario
+				}
+			}) 
+
+
+			let new_product = await db.Productos.create({
 				image: req.file == undefined ? "IMG_DEFAULT.svg": req.file.filename,
-				brand_id: req.body.brand == undefined ? "Sin Asignar": product_brand[0]['dataValues'].id, 
+				brand_id: req.body.brand == undefined ? "Sin Asignar": product_brand.id, 	//--> Se asigna un valor default o el Id de la marca seleccionada
 				name: req.body.name == undefined ? "Sin Asignar" : req.body.name,
 				price: req.body.price == undefined ? 0 : req.body.price,
 				discount: req.body.discount == undefined ? 0 : req.body.discount,
 				description: req.body.description == undefined ? "Sin Asignar" : req.body.description,
 				quantity: req.body.quantity == undefined ? 0 : req.body.quantity,
-				/* color_id: req.body.color == undefined ? "Sin Asignar" : product_color[0]['dataValues'].id,   
-				category_id: req.body.category == undefined ? "Sin Asignar" : product_category[0]['dataValues'].id,  
-				state_id: req.body.state == undefined ? "Sin Asignar" : product_state[0]['dataValues'].id    */
-			})
+				category_id: req.body.category == undefined ? "Sin Asignar" : product_category.id,   //--> Se asigna un valor default o el Id de la categoría seleccionada
+				state_id: req.body.state == undefined ? "Sin Asignar" : product_state.id    	//--> Se asigna un valor default o el Id del estado seleccionado
+			});
+			//--> Acá ya se creó el nuevo producto
 
+			//--> Acá se le asignan los colores al nuevo producto
+			// Para cada color seleccionado, crea una entrada en ProductosColores (tabla intermedia que permite la relación muchos a muchos)
+			for (let colorId of colors) {
+				await db.ProductosColores.create({
+					product_id: new_product.id, 	//--> Se asigna el product Id en la tabla intermedia según el product Id del producto recién creado
+					color_id: colorId	//--> Se asigna el Id del o de los colores seleccionados por el usuario
+				});
+
+			}
 			res.redirect('../admin/allTheProducts')
 		} 
 		catch(err) {

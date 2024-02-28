@@ -295,7 +295,7 @@ a:active {
 		transform: perspective(600px) rotateY(180deg);
 		background-color: #ff540a;
 		padding: 15px;
-		color: white;
+		color: black;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;

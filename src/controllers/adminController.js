@@ -14,9 +14,6 @@ const adminController = {
 
             let full_user= {'users': users, 'user_image': user_image}
 
-
-
-            /* console.log(users); */
             res.render("user/usersList.ejs", { full_user });
         }
         catch(err) {
@@ -26,8 +23,21 @@ const adminController = {
     },
     allProducts: async (req, res) => {
         try {
-            let products = await db.Productos.findAll();
-            console.log("products: ",products.length);
+            let products = await db.Productos.findAll({
+                include: [{ 
+                    model: db.Colores,      // Vamos a buscar el color a través de la relación entre tablas
+                    attributes: ['color_name'] // Aquí especificamos que solo queremos el nombre del color
+                }]
+            });
+            //--> Todos estos console log son para entender còmo vienen los datos
+            
+            /* console.log("products: ",products[3]['dataValues']);
+            console.log("iterar el datavalues");
+            console.log(products[3]['dataValues'].Colores[0]['dataValues']);
+            const colorName = products[3]['dataValues'].Colores[0]['dataValues'].color_name;
+            console.log("Color Name: ", colorName);
+            console.log("products: ",products.length); */
+
             res.render("product/allTheProducts.ejs", { products })
         }
         catch(err) {

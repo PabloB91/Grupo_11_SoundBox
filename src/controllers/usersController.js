@@ -88,7 +88,7 @@ const usersControllers = {
                             //--> Entonces si ese elemento NO es indefinido (al clickearse, toma el valor de 'on'), se crea la cookie.
                             console.log(req.body.remember);/* (verificar el valor del checkbox) */         
                             res.cookie('remember', userToLogIn.e_mail, {maxAge: 60000})
-                            console.log(req.session.userLoggedIn);
+                            /* console.log(req.session.userLoggedIn); */
                             delete userToLogIn['dataValues'].password //--> Borramos el password de la variable a guardar en session, por seguridad
                             delete userToLogIn['_previousDataValues'].password 
                             userToLogIn = userToFind;   
@@ -107,8 +107,8 @@ const usersControllers = {
                 delete userToLogIn['dataValues'].password //--> Borramos el password de la variable a guardar en session, por seguridad
                 delete userToLogIn['_previousDataValues'].password 
                 req.session.userLoggedIn = userToLogIn;  //--> Si el usuario ingresó satisfactoriamente vamos a guardar sus datos en 'session' --> 'userLoggedIn'
-                 console.log('session: ', req.session);  
-                 console.log('session: ', req.session.userLoggedIn); 
+                /* console.log('session: ', req.session);  
+                console.log('session: ', req.session.userLoggedIn);  */
                  
 
                 /* este redirect actúa solo si el usuario existe en el db */
@@ -148,7 +148,6 @@ const usersControllers = {
                     {association: 'country'}
                 ]
             }) 
-            console.log(user);
             return res.render('user/userProfile.ejs', {user})
         }   //--Hay que usar 'return' para evitar el error de '[ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client'
         catch(err) {

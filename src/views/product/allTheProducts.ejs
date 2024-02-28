@@ -150,6 +150,9 @@
                                     <h3>
                                         <%= product.name%>
                                     </h3>
+                                    <h3>
+                                        <%= product.ProductosColores %>
+                                    </h3>
                                 </div>
                                 <div class="face back">
                                     <div class="face-back-child">
@@ -161,6 +164,17 @@
                                         </p>
                                         <p class="marca-descripcion">
                                             <%= product.description %>
+                                        </p>
+                                        <p class="marca-descripcion">
+                                            <%= product.color_name %>
+                                        </p>
+                                        <p>Color(es): 
+                                            <% product.Colores.forEach(color => { %>
+                                                <%= color.color_name %>
+                                                <% if (color !== product.Colores[product.Colores.length - 1]) { %>
+                                                    , <!-- Añade una coma si no es el último color -->
+                                                <% } %>
+                                            <% }) %>
                                         </p>
                                         <p class="price">$<%= product.price %>
                                         </p>
