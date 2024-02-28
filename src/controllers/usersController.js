@@ -156,18 +156,6 @@ const usersControllers = {
             return res.render("not-found")
         } 
     },
-    header: async (req, res) => {
-        try {
-            const users = await db.Usuarios.findAll()
-            const products = await db.Productos.findAll();
-            const userloggedin = req.session.userLoggedIn.id
-            res.render("/header", {users, products, userloggedin});
-        }
-        catch(err) {
-            console.log(err);
-			res.render("not-found")
-		}
-    },
 
     // (PUT) Editar Usuario
     editUser: async (req, res) => {

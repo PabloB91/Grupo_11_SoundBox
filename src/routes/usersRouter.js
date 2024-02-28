@@ -49,7 +49,6 @@ router.get('/userProfile/:id', authMiddleware,usersController.userProfile);
 // Login
 router.get('/login', guestMiddleware, usersController.login);
 router.post('/login', loginValidations, usersController.processToLogin);
-router.get("/header", usersController.header);
 
 // Register
 
@@ -61,12 +60,9 @@ router.post('/register', upload.single('imgProfile'), registerValidations, users
                                                                                      * si no, lo redirige al login) */ 
 router.put('/userProfile/:id', /* upload.single("imgProfile") ,*/ usersController.editUser);
 
-
 // Eliminar usuario 
 router.delete('/delete/:id', authMiddleware,usersController.delete); /* se aplica el 'authMiddleware' (si el usuario está logueado, continúa con el controlador,
                                                                     * si no, lo redirige al login) */
-
-
 
 // Eliminar usuario 
 router.delete('/delete/:id', authMiddleware,usersController.delete); 
