@@ -3,7 +3,7 @@
   Si no, tira error de 'CONSTRAINTS' */
 
 
-/* Esta BBDD se usa para ejecutar en cualquier programa que no sea MySQL: WORKBENCH */
+/* PRIMERO ES NECESARIO CREAR LA BD MANUALMENTE */
 
 CREATE TABLE `state` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -62,6 +62,8 @@ CREATE TABLE `product` (
   CONSTRAINT `state_id` FOREIGN KEY (`state_id`) REFERENCES `state` (`id`) 
 ) DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+
+/*----SCRIPT DE USUARIOS----*/
 
 CREATE TABLE `country` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
