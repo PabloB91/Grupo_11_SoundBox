@@ -194,6 +194,10 @@
 			text-wrap: pretty;
 		}
 	}
+
+	.btnsCards {
+		display: none;
+	}
 }
 
 /* ------------------------------------------------------------------ */
@@ -611,6 +615,7 @@
 		flex-wrap: wrap;
 		width: 85%;
 		max-height: 400px;
+		position: relative;
 
 		.card-outline {
 			margin: 0px 35px;
@@ -635,6 +640,10 @@
 
 		.product-info {
 			.qualification {
+				width: 100%;
+			}
+
+			.price {
 				width: 50%;
 			}
 		}
@@ -644,7 +653,44 @@
 		}
 
 		.form-qualification p {
-			font-size: 0.7rem;
+		}
+
+		.btnsCards {
+			display: block;
+			position: absolute;
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			background: #e6e6e6;
+			top: 50%;
+			color: #ff540a;
+			cursor: pointer;
+			opacity: 0.3;
+
+			&:hover {
+				opacity: 1;
+			}
+
+			span {
+				font-size: 3rem;
+				position: absolute;
+			}
+		}
+
+		.btnLeft {
+			left: 5px;
+
+			span {
+				left: -2%;
+			}
+		}
+		
+		.btnRight {
+			right: 5px;
+
+			span {
+				right: -2%;
+			}
 		}
 	}
 
