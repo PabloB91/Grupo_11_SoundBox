@@ -95,17 +95,7 @@
 
                                 </div>
 
-                                <div class="fieldset colores-disponibles">
-
-                                    <input type="text" name="color" class="fieldset-input colors-form">
-
-                                    <label for="colors" class="fieldset-lbl lbl-productColor">
-                                        <span class="lbl-text">
-                                            Colores disponibles
-                                        </span>
-                                    </label>
-
-                                </div>
+                                
 
                                 <div class="fieldset cantidad-disponibles">
 
@@ -140,14 +130,29 @@
 
                                     <select name="state" id="estado" class="fieldset-input estado-producto">
 
-                                        <option value="choose">Más vendido</option>
-                                        <option value="Oferta">Último visto</option>
-                                        <option value="Últimos agregados">Recién agregado</option>
+                                        <option value="Más vendido">Más vendido</option>
+                                        <option value="Último visto">Último visto</option>
+                                        <option value="Recién agregado">Recién agregado</option>
 
                                     </select>
 
                                 </div>
-
+                                <div class="fieldset-colores colores-disponibles">
+                                    <span class="lbl-text">
+                                        Colores
+                                    </span>
+                                    <input type="checkbox" name="colors" value="1" class="fieldset-input colors-form">
+                                    <label for="color1" class="fieldset-lbl lbl-productColor">Rojo</label>
+                            
+                                    <input type="checkbox" name="colors" value="2" class="fieldset-input colors-form">
+                                    <label for="color2" class="fieldset-lbl lbl-productColor">Amarillo</label>
+                                    <input type="checkbox" name="colors" value="3" class="fieldset-input colors-form">
+                                    <label for="color3" class="fieldset-lbl lbl-productColor">Azul</label>
+                                    <input type="checkbox" name="colors" value="4" class="fieldset-input colors-form">
+                                    <label for="color4" class="fieldset-lbl lbl-productColor">Negro</label>
+                            
+                                    <!-- Agregar más checkboxes según la cantidad de colores disponibles -->
+                                </div>
                                 <div class="botones crear-carta-borrar-carta">
 
                                     <label for="send-form"></label>
