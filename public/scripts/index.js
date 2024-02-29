@@ -51,8 +51,8 @@ btnRight.addEventListener("click", function(){
 
 
 /**Funcion para las flechas de desplazamiento delas cards */
-const rightBtnSliderCards = document.querySelector("#btnsCards-right")
-const leftBtnSliderCards = document.querySelector("#btnsCards-left")
+const rightBtnSliderCards = document.querySelector("div#btnsCards-right")
+const leftBtnSliderCards = document.querySelector("div#btnsCards-left")
 const containerCards = document.querySelector("#div_cards--scrolling")
 
 //scroll left
