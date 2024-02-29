@@ -10,114 +10,105 @@
 
     <main>
 
-                <section class="admin-container">
+        <section class="admin-container">
 
-                    <div class="admin-containe_title">
-                        <h1> EDITAR PRODUCTO </h1>
-                    </div>
+            <div class="admin-containe_title">
+                <h1> EDITAR PRODUCTO </h1>
+            </div>
 
-                    <section class="contenedor-total">
+            <section class="contenedor-total">
 
-                        <div class="form-creat-product">
+                <div class="form-creat-product">
 
-                            <form action="/products/edit/ <%= productToEdit.id %>?_method=PUT" method="POST"
-                                enctype="multipart/form-data">
+                    <form action="/products/edit/ <%= productToEdit.id %>?_method=PUT" method="POST"
+                        enctype="multipart/form-data">
 
-                                <div class="imagenes">
-
-                                    <div class="fieldset imagen-of-product">
-                                        <label for="imagen"></label>
-                                        <input placeholder="Imagen" type="file" name="form-imagen" class="imagen-form">
-                                    </div>
-
-                                    <div class="fieldset imagen-of-product ">
-                                        <label for="imagen"></label>
-                                        <input placeholder="Imagen" type="file" name="form-imagen" class="imagen-form">
-                                    </div>
-
-                                    <div class="fieldset imagen-of-product ">
-                                        <label for="imagen"></label>
-                                        <input placeholder="Imagen" type="file" name="form-imagen" class="imagen-form">
-                                    </div>
-
-                                    <div class="fieldset imagen-of-product ">
-                                        <label for="imagen"></label>
-                                        <input placeholder="Imagen" type="file" name="form-imagen" class="imagen-form">
-                                    </div>
-
-                                </div>
-
-                                <div class="caja-grande">
-                                    <div class="fieldset titulo-producto">
-                                        <label for="nombre">Nombre del producto</label>
-                                        <input type="text" name="nombre" class="nombre-form"
-                                            value="<%= productToEdit.nombre %>">
-                                    </div>
-
-                                    <div class="fieldset marca-producto">
-                                        <label for="marca">Marca</label>
-                                        <input type="text" name="marca" class="marca-form"
-                                            value="<%= productToEdit.marca %>">
-                                    </div>
-
-                                    <div class="fieldset precio">
-                                        <label for="precio">Precio</label>
-                                        <input placeholder="Precio" type="number" name="precio" min="1" max="9999999"
-                                            class="precio-form" value="<%= productToEdit.precio %>">
-                                    </div>
-
-                                    <div class="fieldset descuento">
-                                        <label for="descuento">Descuento</label>
-                                        <input placeholder="Descuento" type="number" name="descuento" min="5" max="99"
-                                            class="descuento-form" value="<%= productToEdit.descuento %>">
-                                    </div>
-
-                                    <div class="fieldset descripcion">
-                                        <label for="descripcion">Descripcion</label>
-                                        <input type="text" name="descripcion" id="" cols="30" rows="10"
-                                            class="descripcion-form" value="<%= productToEdit.descripcion %>"></input>
-                                    </div>
-
-                                    <div class="fieldset colores-disponibles">
-                                        <label for="colors">Colores disponibles</label>
-                                        <input placeholder="Gris" type="text" name="coloresDisponibles"
-                                            class="colors-form" value="<%= productToEdit.coloresDisponibles %>">
-                                    </div>
-
-                                    <div class="fieldset cantidad-disponibles">
-                                        <label for="disponibles">Cantidad disponibles</label>
-                                        <input type="number" name="cantidad" min="1" max="1000"
-                                            class="cantidad-disponible" value="<%= productToEdit.cantidad %>">
-                                    </div>
-
-                                    <div class="fieldset agregar-category">
-                                        <label for="categories">categories</label>
-                                        <input placeholder="Guitarras, Instrumentos de cuerda" type="text"
-                                            name="categories" class="cantidad-disponible"
-                                            value="<%= productToEdit.categories %>">
-                                    </div>
-
-                                    <div class="fieldset estado">
-                                        <label for="estado">Estado</label>
-                                        <select name="estado" id="estado" class="estado-producto">
-                                            <option value="indefinido">Elegir</option>
-                                            <option value="oferta">En oferta</option>
-                                            <option value="masVisitado">Últimos agregados</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="botones crear-carta-borrar-carta">
-
-                                    <label for=""></label>
-                                    <input type="submit" value="Editar" class="enviar-form">
-
-                                </div>
-
-                            </form>
+                        <div class="imagenes">
+                            <img src="/img/products/<%= productToEdit.image %> " alt=<%=productToEdit.name %> >
+                            <div class="fieldset imagen-of-product">
+                                <label for="imagen"></label>
+                                <input placeholder="Imagen" type="file" name="form-imagen" class="imagen-form">
+                            </div>
 
                         </div>
 
-                    </section>
+                        <div class="caja-grande">
+                            <div class="fieldset titulo-producto">
+                                <label for="nombre">Nombre del producto</label>
+                                <input type="text" name="nombre" class="nombre-form"
+                                    value="<%= productToEdit.name %>">
+                            </div>
+
+                            <div class="fieldset marca-producto">
+                                <label for="marca">Marca</label>
+                                <input type="text" name="marca" class="marca-form"
+                                    value="<%= productToEdit.brand.brand_name %>">
+                            </div>
+
+                            <div class="fieldset precio">
+                                <label for="precio">Precio</label>
+                                <input placeholder="Precio" type="number" name="precio" min="1" max="9999999"
+                                    class="precio-form" value="<%= productToEdit.price %>">
+                            </div>
+
+                            <div class="fieldset descuento">
+                                <label for="descuento">Descuento</label>
+                                <input placeholder="Descuento" type="number" name="descuento" min="5" max="99"
+                                    class="descuento-form" value="<%= productToEdit.discount %>">
+                            </div>
+
+                            <div class="fieldset descripcion">
+                                <label for="descripcion">Descripcion</label>
+                                <input type="text" name="descripcion" id="" cols="30" rows="10"
+                                    class="descripcion-form" value="<%= productToEdit.description %>"></input>
+                            </div>
+
+                            <div class="fieldset-colores colores-disponibles">
+                                <% productToEdit.Colores.forEach(color => { %>
+                                    <input type="checkbox" name="colors" value="<%= color.color_name %>" class="fieldset-input colors-form" checked>
+                                    <label for="color1" class="fieldset-lbl lbl-productColor"><%= color.color_name %></label>
+                                <% }) %>
+                            </div>
+
+                            <div class="fieldset cantidad-disponibles">
+                                <label for="disponibles">Cantidad disponibles</label>
+                                <input type="number" name="cantidad" min="1" max="1000"
+                                    class="cantidad-disponible" value="<%= productToEdit.quantity %>">
+                            </div>
+
+                            <div class="fieldset agregar-category">
+                                <label for="categories">Categoría</label>
+                                <input placeholder="Guitarras, Instrumentos de cuerda" type="text"
+                                    name="categories" class="cantidad-disponible"
+                                    value="<%= productToEdit.category.category %>">
+                            </div>
+
+                            <div class="fieldset estado">
+                                <label for="estado">Estado</label>
+                                <select name="estado" id="estado" class="estado-producto">
+                                    <!-- La opción que está seleccionada es el estado actual, y las opciones disponibles que se muestran son las que son distintas al estado actual -->
+                                    <option value="<%= productToEdit.state.state %>"><%= productToEdit.state.state %></option>
+                                   <% availableStates.forEach(availableState => { %>
+                                        <% if (availableState.state != productToEdit.state.state) { %>
+                                            <option value="<%= availableState.state %>"><%= availableState.state %></option>
+                                        <% } %>
+                                   <% }) %>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="botones crear-carta-borrar-carta">
+
+                            <label for=""></label>
+                            <input type="submit" value="Editar" class="enviar-form">
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </section>
     </main>
 
     <!-- Footer -->

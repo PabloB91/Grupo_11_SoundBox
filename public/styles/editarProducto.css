@@ -34,6 +34,7 @@
 
 .imagenes {
 	display: flex;
+	flex-direction: column;
 	padding-bottom: 10px;
 
 	.imagen-of-product {
@@ -46,6 +47,11 @@
 		background-color: #550c18;
 	}
 }
+
+.imagenes img{
+	width: 30%;
+}
+
 
 .fieldset {
 	display: flex;

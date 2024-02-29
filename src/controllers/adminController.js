@@ -25,11 +25,11 @@ const adminController = {
         try {
             let products = await db.Productos.findAll({
                 include: [{ 
-                    model: db.Colores,      // Vamos a buscar el color a través de la relación entre tablas
-                    attributes: ['color_name'] // Aquí especificamos que solo queremos el nombre del color
+                    model: db.Colores,      // Vamos a buscar los colores a través de la relación entre tablas
+                    attributes: ['color_name'] // Aquí especificamos que solo queremos el nombre de los colores
                 }]
             });
-            //--> Todos estos console log son para entender còmo vienen los datos
+            //--> Todos estos console log son para entender cómo vienen los datos
             
             /* console.log("products: ",products[3]['dataValues']);
             console.log("iterar el datavalues");

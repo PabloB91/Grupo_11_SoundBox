@@ -11,27 +11,15 @@ const controller = {
 	// (get) Detail - Detalle de un producto
 	detail: async (req, res) => {
 		try {
-			let products = await db.Productos.findByPk(req.params.id/* , {
+			let product = await db.Productos.findByPk(req.params.id , {
 				include: [
-					{
-					  model: db.Color,
-					  attributes: ['color_name']
-					},
-					{
-					  model: db.State,
-					  attributes: ['state']
-					},
-					{
-					  model: db.Category,
-					  attributes: ['category']
-					},
-					{
-					  model: db.Brand,
-					  attributes: ['brand_name']
-					}
+					{model: db.Colores, attributes: ['color_name']}, // Vamos a buscar los colores a través de la relación entre tablas, especificando que solo queremos el nombre de los colores
+					{association: "state"},
+					{association: "category"},
+					{association: "brand", attributes: ['brand_name']},
 				  ]
-			  } */)
-			res.render("product/productDetail", { products })
+			  })
+			res.render("product/productDetail", { product })
 		}
 		catch(err) {
 			res.render("not-found")
@@ -65,7 +53,6 @@ const controller = {
 				}
 			}) 
 
-
 			let new_product = await db.Productos.create({
 				image: req.file == undefined ? "IMG_DEFAULT.svg": req.file.filename,
 				brand_id: req.body.brand == undefined ? "Sin Asignar": product_brand.id, 	//--> Se asigna un valor default o el Id de la marca seleccionada
@@ -77,7 +64,7 @@ const controller = {
 				category_id: req.body.category == undefined ? "Sin Asignar" : product_category.id,   //--> Se asigna un valor default o el Id de la categoría seleccionada
 				state_id: req.body.state == undefined ? "Sin Asignar" : product_state.id    	//--> Se asigna un valor default o el Id del estado seleccionado
 			});
-			//--> Acá ya se creó el nuevo producto
+			//--> Hasta acá ya se creó el nuevo producto
 
 			//--> Acá se le asignan los colores al nuevo producto
 			// Para cada color seleccionado, crea una entrada en ProductosColores (tabla intermedia que permite la relación muchos a muchos)
@@ -86,7 +73,6 @@ const controller = {
 					product_id: new_product.id, 	//--> Se asigna el product Id en la tabla intermedia según el product Id del producto recién creado
 					color_id: colorId	//--> Se asigna el Id del o de los colores seleccionados por el usuario
 				});
-
 			}
 			res.redirect('../admin/allTheProducts')
 		} 
@@ -99,17 +85,20 @@ const controller = {
 	// (get) Update - Formulario para editar
 	edit: async (req, res) => {
 		try {
-			let products = await db.Productos.findByPk(req.params.id,{
+			let productToEdit = await db.Productos.findByPk(req.params.id,{
 				include: [
-					{association: "brand"}, 
+					{association: "brand", attributes: ['brand_name']}, 
 					{association: "category"},
-					{association: "color"},
-					{association: "state"}
+					{association: "state"},
+					{model: db.Colores, attributes: ['color_name']} // Vamos a buscar los colores a través de la relación entre tablas, especificando que solo queremos el nombre de los colores
 				]
 			})
-			res.render("product/productEdit", { products })
+			let availableStates= await db.Estado.findAll() //--> Traemos todos los estados disponibles, para poder comparar con el que tiene el producto actualmente
+			
+			res.render("product/productEdit", { productToEdit, availableStates })
 		}
 		catch(err) {
+			console.log(err);
 			res.render("not-found")
 		}
 	},
@@ -117,7 +106,7 @@ const controller = {
 	// (post) Update - Método para actualizar la info
 	processEdit: async (req, res) => {
 		try {
-			let products = await db.Productos.update({
+			let editedProduct = await db.Productos.update({
 				image: req.file == undefined ? "IMG_DEFAULT.svg": req.file.filename,
 				brand: req.body.brand,
 				name: req.body.name,
