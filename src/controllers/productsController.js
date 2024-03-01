@@ -93,9 +93,14 @@ const controller = {
 					{model: db.Colores, attributes: ['color_name']} // Vamos a buscar los colores a través de la relación entre tablas, especificando que solo queremos el nombre de los colores
 				]
 			})
+			let availableBrands= await db.Marcas.findAll() /* REPETIR EL PROCESO DE STATES */
+
+			
 			let availableStates= await db.Estado.findAll() //--> Traemos todos los estados disponibles, para poder comparar con el que tiene el producto actualmente
 			
-			res.render("product/productEdit", { productToEdit, availableStates })
+			console.log("prodcut Edit: ", productToEdit);
+			console.log("avaliable brands: ", availableBrands);
+			res.render("product/productEdit", { productToEdit, availableStates, availableBrands })
 		}
 		catch(err) {
 			console.log(err);
@@ -108,23 +113,38 @@ const controller = {
 		try {
 			let editedProduct = await db.Productos.update({
 				image: req.file == undefined ? "IMG_DEFAULT.svg": req.file.filename,
-				brand: req.body.brand,
 				name: req.body.name,
+				brand_id: req.body.brand, 
 				price: req.body.price,
 				discount: req.body.discount,
 				description: req.body.description,
+				/* color: 3, */ 
 				quantity: req.body.quantity,
-				color: req.body.color,
-				category: req.body.category,
-				state: req.body.state
+				category_id: 2,
+				state_id: req.body.state
+				/* YA ESTARÍA LA LÓGICA DE UPDATE, PERO HAY QUE SE PUEDAN ELEGIR LAS OPCIONES */
 			}, {
 				where: {
 					id: req.params.id
 				}
 			})
-			res.redirect("product/productDetail/" + req.params.id)
+			console.log("brand: ", req.body.brand,);
+			/* console.log("name: ", req.body.name,);
+			
+			console.log("price: ", req.body.price,);
+			console.log("discount: ", req.body.discount,);
+			console.log("description: ", req.body.description,);
+			console.log("color: ", req.body.colors);
+			console.log("quantity: ", req.body.quantity);
+			console.log("category: ", req.body.category); */
+			/* console.log("state: " ,req.body.state); */
+			
+			console.log(req.params.id);
+			console.log("Producto editado: ",editedProduct);
+			res.redirect("/products/productDetail/"+req.params.id)
 		}
 		catch(err) {
+			console.log(err);
 			res.render("not-found")
 		}
 	},

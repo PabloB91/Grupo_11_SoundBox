@@ -6,14 +6,20 @@ const db = require("../database/models")
 const adminController = {
     listUsers: async (req, res) => {
         try {
-            let users = await db.Usuarios.findAll(/* {
-                limit: 5
-            } */)
+            let users = await db.Usuarios.findAll({ 
+                include: [
+                    {association: 'user_type'}, 
+                    {association: 'country'}
+                ]}
+                )
 
             let user_image= '/img/users/default-image/javier.jpg'
 
-            let full_user= {'users': users, 'user_image': user_image}
-
+            let full_user= {'users': users, 'user_image': user_image} //--> Se guardan por un lado los datos y por otro la imagen
+            
+            users.forEach(element => {
+                console.log(element);
+            });
             res.render("user/usersList.ejs", { full_user });
         }
         catch(err) {
@@ -24,9 +30,11 @@ const adminController = {
     allProducts: async (req, res) => {
         try {
             let products = await db.Productos.findAll({
-                include: [{ 
-                    model: db.Colores,      // Vamos a buscar los colores a través de la relación entre tablas
-                    attributes: ['color_name'] // Aquí especificamos que solo queremos el nombre de los colores
+                include: [
+                    {association: "brand", attributes: ['brand_name']}, 
+					{association: "category"},
+					{association: "state"},
+                    { model: db.Colores,attributes: ['color_name'] // Vamos a buscar los colores a través de la relación entre tablas// Aquí especificamos que solo queremos el nombre de los colores
                 }]
             });
             //--> Todos estos console log son para entender cómo vienen los datos

@@ -35,31 +35,38 @@
                         <div class="caja-grande">
                             <div class="fieldset titulo-producto">
                                 <label for="nombre">Nombre del producto</label>
-                                <input type="text" name="nombre" class="nombre-form"
+                                <input type="text" name="name" class="nombre-form"
                                     value="<%= productToEdit.name %>">
                             </div>
 
                             <div class="fieldset marca-producto">
-                                <label for="marca">Marca</label>
-                                <input type="text" name="marca" class="marca-form"
-                                    value="<%= productToEdit.brand.brand_name %>">
+                                <label for="brand">Marca</label>
+                                <select name="brand" id="marca" class="estado-producto">
+                                    <!-- La opción que está seleccionada es el estado actual, y las opciones disponibles que se muestran son las que son distintas al estado actual -->
+                                    <option value="<%= productToEdit.brand_id %>"><%= productToEdit.brand.brand_name %></option>
+                                   <% availableBrands.forEach(availableBrand => { %>
+                                        <% if (availableBrand.brand_name != productToEdit.brand.brand_name) { %>
+                                            <option value="<%= availableBrand.id %>"><%= availableBrand.brand_name %></option>
+                                        <% } %>
+                                   <% }) %>
+                                </select>
                             </div>
 
                             <div class="fieldset precio">
                                 <label for="precio">Precio</label>
-                                <input placeholder="Precio" type="number" name="precio" min="1" max="9999999"
+                                <input placeholder="Precio" type="number" name="price" min="1" max="9999999"
                                     class="precio-form" value="<%= productToEdit.price %>">
                             </div>
 
                             <div class="fieldset descuento">
                                 <label for="descuento">Descuento</label>
-                                <input placeholder="Descuento" type="number" name="descuento" min="5" max="99"
+                                <input placeholder="Descuento" type="number" name="discount" max="99"
                                     class="descuento-form" value="<%= productToEdit.discount %>">
                             </div>
 
                             <div class="fieldset descripcion">
                                 <label for="descripcion">Descripcion</label>
-                                <input type="text" name="descripcion" id="" cols="30" rows="10"
+                                <input type="text" name="description" id="" cols="30" rows="10"
                                     class="descripcion-form" value="<%= productToEdit.description %>"></input>
                             </div>
 
@@ -72,25 +79,25 @@
 
                             <div class="fieldset cantidad-disponibles">
                                 <label for="disponibles">Cantidad disponibles</label>
-                                <input type="number" name="cantidad" min="1" max="1000"
+                                <input type="number" name="quantity" min="1" max="1000"
                                     class="cantidad-disponible" value="<%= productToEdit.quantity %>">
                             </div>
 
                             <div class="fieldset agregar-category">
                                 <label for="categories">Categoría</label>
                                 <input placeholder="Guitarras, Instrumentos de cuerda" type="text"
-                                    name="categories" class="cantidad-disponible"
+                                    name="category" class="cantidad-disponible"
                                     value="<%= productToEdit.category.category %>">
                             </div>
 
                             <div class="fieldset estado">
                                 <label for="estado">Estado</label>
-                                <select name="estado" id="estado" class="estado-producto">
+                                <select name="state" id="estado" class="estado-producto">
                                     <!-- La opción que está seleccionada es el estado actual, y las opciones disponibles que se muestran son las que son distintas al estado actual -->
-                                    <option value="<%= productToEdit.state.state %>"><%= productToEdit.state.state %></option>
+                                    <option value="<%= productToEdit.state.id %>"><%= productToEdit.state.state %></option>
                                    <% availableStates.forEach(availableState => { %>
                                         <% if (availableState.state != productToEdit.state.state) { %>
-                                            <option value="<%= availableState.state %>"><%= availableState.state %></option>
+                                            <option value="<%= availableState.id %>"><%= availableState.state %></option>
                                         <% } %>
                                    <% }) %>
                                 </select>

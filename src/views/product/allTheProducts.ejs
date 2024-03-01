@@ -146,12 +146,9 @@
                         <article class="container-producto">
                             <a href="/products/productDetail/<%= product.id %>" class="card">
                                 <div class="face front">
-                                    <img src="/img/products/<%= product.image %> " alt=<%=product.name %> >
+                                    <img src="/img/products/<%= product.image %> " alt=<%=product.name %> >                              
                                     <h3>
-                                        <%= product.name%>
-                                    </h3>
-                                    <h3>
-                                        <%= product.ProductosColores %>
+                                         <%= product.name%> <%= product.brand.brand_name %>
                                     </h3>
                                 </div>
                                 <div class="face back">
@@ -160,15 +157,21 @@
                                             <%= product.name%>
                                         </h3>
                                         <p class="marca-descripcion">
-                                            <%= product.brand %>
+                                            <%= product.brand.brand_name %>
+                                        </p>
+                                        <p class="marca-categoria">
+                                            <%= product.category.category %>
                                         </p>
                                         <p class="marca-descripcion">
                                             <%= product.description %>
                                         </p>
+                                        <p class="marca-estado">
+                                            <%= product.state.state %>
+                                        </p>
                                         <p class="marca-descripcion">
                                             <%= product.color_name %>
                                         </p>
-                                        <p>Color(es): 
+                                        <p>Color/es: 
                                             <% product.Colores.forEach(color => { %>
                                                 <%= color.color_name %>
                                                 <% if (color !== product.Colores[product.Colores.length - 1]) { %>
@@ -179,7 +182,7 @@
                                         <p class="price">$<%= product.price %>
                                         </p>
                                         <p>
-                                            <%= product.discount %>
+                                            <%= product.discount %>%
                                         </p>
                                     </div>
                                 </div>
