@@ -183,18 +183,19 @@ const usersControllers = {
 
     
     
-    delete: (req, res) => {
-
-        const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-
-		// eliminar
-		users = usersJson.filter(user =>{           //--> Buscamos el usuario seleccionado dentro del json
-			return user.userId != req.params.id;    //--> Se devuelven todos los usuarios excepto el seleccionado
-		})
-
-		fs.writeFileSync(usersFilePath, JSON.stringify(users, null, " "))
-
-		res.redirect("/admin/usersList")
+    destroy: async (req, res) => {
+		try {
+			let users = await db.Usuarios.destroy({
+				where: {
+					id: req.params.id
+				}
+			})
+			res.redirect("/admin/usersList")
+		}
+		catch(err) {
+			res.render("not-found")
+			console.log(err)
+		}
 	}
 }
 

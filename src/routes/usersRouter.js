@@ -61,10 +61,10 @@ router.post('/register', upload.single('imgProfile'), registerValidations, users
 router.put('/userProfile/:id', /* upload.single("imgProfile") ,*/ usersController.editUser);
 
 // Eliminar usuario 
-router.delete('/delete/:id', authMiddleware,usersController.delete); /* se aplica el 'authMiddleware' (si el usuario está logueado, continúa con el controlador,
+router.delete('/delete/:id', authMiddleware,usersController.destroy); /* se aplica el 'authMiddleware' (si el usuario está logueado, continúa con el controlador,
                                                                     * si no, lo redirige al login) */
 
 // Eliminar usuario 
-router.delete('/delete/:id', authMiddleware,usersController.delete); 
+router.delete('/delete/:id', authMiddleware,usersController.destroy); 
 
 module.exports = router;

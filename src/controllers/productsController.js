@@ -152,15 +152,21 @@ const controller = {
 	// (delete) Delete - Eliminar un producto de la DB
 	destroy: async (req, res) => {
 		try {
+			let color = await db.ProductosColores.destroy({
+				where:{
+					product_id:req.params.id
+				}
+			})
 			let products = await db.Productos.destroy({
 				where: {
 					id: req.params.id
 				}
 			})
-			res.redirect("/")
+			res.redirect("/admin/allTheProducts")
 		}
 		catch(err) {
 			res.render("not-found")
+			console.log(err)
 		}
 	},
 
