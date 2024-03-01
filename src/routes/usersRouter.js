@@ -57,7 +57,7 @@ router.post('/register', upload.single('imgProfile'), registerValidations, users
 
 /* log out */
 
-router.get('/logOut', usersController.logOut);
+router.delete('/logOut', usersController.logOut);
 
 
 // Editar Preferencias

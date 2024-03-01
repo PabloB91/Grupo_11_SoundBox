@@ -16,42 +16,60 @@ const controller = {
 					{model: db.Colores, attributes: ['color_name']}, // Vamos a buscar los colores a través de la relación entre tablas, especificando que solo queremos el nombre de los colores
 					{association: "state"},
 					{association: "category"},
-					{association: "brand", attributes: ['brand_name']},
+					{association: "brand", attributes: ['brand_name']}, // Vamos a buscar la marca a través de la relación entre tablas, especificando que solo queremos el nombre de la marca
 				  ]
 			  })
 			res.render("product/productDetail", { product })
 		}
 		catch(err) {
+			console.log(err);
 			res.render("not-found")
 		}
 	},
 
 	// (get) Create - Formulario para crear
-	create: (req, res) => {
-			res.render("product/productCreate")
+	create: async (req, res) => {
+		try {
+			//--> Se traen todas las características que se obtengan desde otras tablas a través de las relaciones
+			let availableBrands= await db.Marcas.findAll(); 
+			let availableCategories= await db.Categorias.findAll();
+			let availableColors= await db.Colores.findAll();
+			let availableStates= await db.Estado.findAll();
+
+			res.render("product/productCreate", {availableBrands, availableCategories, availableColors,availableStates})
+		} catch (err) {
+			console.log(err);
+			res.render("not-found")
+		}		
     },
 
 	// (post) Create - Método para guardar la info
 	processCreate: async (req, res) => {
 		try{	//---A FUTURO, TODOS LOS DATOS QUE SE AGREGUEN DE TABLAS SECUNDARIAS TIENEN QUE SER SELECCIONANDO LOS VALORES DE ESAS TABLAS, CON OPCIONES---//
 				//--PARA EVITAR ERRORES EN LOS INPUT--//
+
+			/* console.log("color: ", req.body.colors);
+			console.log("brand: ", req.body.brand);
+			console.log("category: ", req.body.category); 
+			console.log("state: " ,req.body.state);  */
+
 			let product_brand= await db.Marcas.findOne({
 				where: {
-					brand_name: req.body.brand		//--> Se buscan todos los atributos de la marca ingresada por el usuario
+					id: req.body.brand		//--> Se buscan todos los atributos de la marca ingresada por el usuario
 				}
 			});
-			let colors = req.body.colors;		//--> Se asignan los colores elegidos por el usuario a la variable 'colors'
 			
 			let product_category= await db.Categorias.findOne({
 				where: {
-					category: req.body.category //--> Se buscan todos los atributos de la categoría ingresada por el usuario
+					id: req.body.category //--> Se buscan todos los atributos de la categoría ingresada por el usuario
 				}
 			}) 
 			let product_state= await db.Estado.findOne({
 				where: {
-					state: req.body.state //--> Se buscan todos los atributos del estado ingresad por el usuario
+					id: req.body.state //--> Se buscan todos los atributos del estado ingresado por el usuario
 				}
 			}) 
+			let colors = req.body.colors;		//--> Se asignan los colores elegidos por el usuario a la variable 'colors'
 
 			let new_product = await db.Productos.create({
 				image: req.file == undefined ? "IMG_DEFAULT.svg": req.file.filename,
@@ -90,17 +108,18 @@ const controller = {
 					{association: "brand", attributes: ['brand_name']}, 
 					{association: "category"},
 					{association: "state"},
-					{model: db.Colores, attributes: ['color_name']} // Vamos a buscar los colores a través de la relación entre tablas, especificando que solo queremos el nombre de los colores
+					{model: db.Colores,} // Vamos a buscar los colores a través de la relación entre tablas, especificando que solo queremos el nombre de los colores
 				]
 			})
-			let availableBrands= await db.Marcas.findAll() /* REPETIR EL PROCESO DE STATES */
-
+			//--> Se traen todas las características que se obtengan desde otras tablas a través de las relaciones
+			//--> Para poder comparar con las que tiene el producto actualmente
+			let availableBrands= await db.Marcas.findAll() 
+			let availableCategories= await db.Categorias.findAll()
+			let availableStates= await db.Estado.findAll() 
 			
-			let availableStates= await db.Estado.findAll() //--> Traemos todos los estados disponibles, para poder comparar con el que tiene el producto actualmente
+			console.log("product Edit: ", productToEdit);
 			
-			console.log("prodcut Edit: ", productToEdit);
-			console.log("avaliable brands: ", availableBrands);
-			res.render("product/productEdit", { productToEdit, availableStates, availableBrands })
+			res.render("product/productEdit", { productToEdit, availableStates, availableCategories, availableBrands })
 		}
 		catch(err) {
 			console.log(err);
@@ -122,7 +141,7 @@ const controller = {
 				quantity: req.body.quantity,
 				category_id: 2,
 				state_id: req.body.state
-				/* YA ESTARÍA LA LÓGICA DE UPDATE, PERO HAY QUE SE PUEDAN ELEGIR LAS OPCIONES */
+				/* YA ESTARÍA LA LÓGICA DE UPDATE, PERO HAY HACER QUE SE PUEDAN ELEGIR LAS OPCIONES */
 			}, {
 				where: {
 					id: req.params.id
@@ -165,17 +184,18 @@ const controller = {
 			res.redirect("/admin/allTheProducts")
 		}
 		catch(err) {
-			res.render("not-found")
 			console.log(err)
+			res.render("not-found")
 		}
 	},
 
 	search: async (req, res) => {
 		try {
-			let products = await db.Productos.findAll()
-			res.render("product/search", { products })
+			let productsSearch = await db.Productos.findAll()
+			res.render("product/search", { productsSearch })
 		}
 		catch(err) {
+			console.log(err);
 			res.render("not-found")
 		}
 	}

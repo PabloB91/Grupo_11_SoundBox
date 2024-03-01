@@ -198,6 +198,7 @@ const usersControllers = {
 
     logOut: (req, res) => {
         res.clearCookie('remember');
+        loi
         req.session.destroy();
         return res.redirect('/');
     }

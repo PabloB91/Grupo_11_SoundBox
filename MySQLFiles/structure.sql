@@ -5,6 +5,10 @@
 
 /* PRIMERO ES NECESARIO CREAR LA BD MANUALMENTE */
 
+/* CREATE DATABASE 'soundbox' */
+
+/* ---------------------------- */
+
 CREATE TABLE `state` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `state` varchar(50) NOT NULL,
