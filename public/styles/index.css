@@ -340,17 +340,21 @@
 
 		.div__btn {
 			position: absolute;
+			top: 50%;
 			width: 50px;
 			height: 50px;
 
-			.material-symbols-outlined {
+			span {
 				color: #ff540a;
 			}
 		}
 
 		.div__btn-left {
-			top: 45%;
-			left: 10px;
+			left: 1px;
+		}
+
+		.div__btn-right {
+			right: 10px;
 		}
 
 		&::-webkit-scrollbar {
@@ -669,6 +673,8 @@
 
 			&:hover {
 				opacity: 1;
+				border: 1px solid #000;
+				box-shadow: 1px 0px 5px #737272;
 			}
 
 			span {
@@ -684,7 +690,7 @@
 				left: -2%;
 			}
 		}
-		
+
 		.btnRight {
 			right: 5px;
 
