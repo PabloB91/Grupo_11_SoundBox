@@ -181,8 +181,6 @@ const usersControllers = {
         }	
     },
 
-    
-    
     destroy: async (req, res) => {
 		try {
 			let users = await db.Usuarios.destroy({
@@ -196,7 +194,13 @@ const usersControllers = {
 			res.render("not-found")
 			console.log(err)
 		}
-	}
+	},
+
+    logOut: (req, res) => {
+        res.clearCookie('remember');
+        req.session.destroy();
+        return res.redirect('/');
+    }
 }
 
 module.exports = usersControllers;
