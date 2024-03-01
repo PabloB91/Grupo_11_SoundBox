@@ -22,6 +22,8 @@ const usersControllers = {
     },
     // (POST) Proceso de Registro
     processToRegister: async (req, res) => {
+        console.log("file.file:", req.file);
+        console.log("file.filename:", req.file);
         try{
             const errores = validationResult(req);  //--->Traemos las validaciones
             // console.log(errores);
@@ -44,7 +46,7 @@ const usersControllers = {
                     last_name: req.body.lastName,
                     e_mail: req.body.email,
                     password: bcrypt.hashSync(passwordToValidate, 10),
-                    image: req.file == undefined ? "alvaro.jpg" : req.file.filename,
+                    image: req.file == undefined ? "alvaro.jpg" : req.file.filename,    //--> Acá guardamos el NOMBRE del archivo en la BD, y después se renderiza la ruta completa con EJS
                     registered_date: Date.now(),    //--> Esta función trae la fecha actual
 
                     user_type_id: 2,    //--> En este caso el Id debería ser siempre '2', porque es el que corresponde a 'common_user'
@@ -86,7 +88,7 @@ const usersControllers = {
                             //--> Entonces si ese elemento NO es indefinido (al clickearse, toma el valor de 'on'), se crea la cookie.
                             console.log(req.body.remember);/* (verificar el valor del checkbox) */         
                             res.cookie('remember', userToLogIn.e_mail, {maxAge: 60000})
-                            console.log(req.session.userLoggedIn);
+                            /* console.log(req.session.userLoggedIn); */
                             delete userToLogIn['dataValues'].password //--> Borramos el password de la variable a guardar en session, por seguridad
                             delete userToLogIn['_previousDataValues'].password 
                             userToLogIn = userToFind;   
@@ -105,8 +107,8 @@ const usersControllers = {
                 delete userToLogIn['dataValues'].password //--> Borramos el password de la variable a guardar en session, por seguridad
                 delete userToLogIn['_previousDataValues'].password 
                 req.session.userLoggedIn = userToLogIn;  //--> Si el usuario ingresó satisfactoriamente vamos a guardar sus datos en 'session' --> 'userLoggedIn'
-                 console.log('session: ', req.session);  
-                 console.log('session: ', req.session.userLoggedIn); 
+                /* console.log('session: ', req.session);  
+                console.log('session: ', req.session.userLoggedIn);  */
                  
 
                 /* este redirect actúa solo si el usuario existe en el db */
@@ -152,18 +154,6 @@ const usersControllers = {
             console.log(err);
             return res.render("not-found")
         } 
-    },
-    header: async (req, res) => {
-        try {
-            const users = await db.Usuarios.findAll()
-            const products = await db.Productos.findAll();
-            const userloggedin = req.session.userLoggedIn.id
-            res.render("/header", {users, products, userloggedin});
-        }
-        catch(err) {
-            console.log(err);
-			res.render("not-found")
-		}
     },
 
     // (PUT) Editar Usuario

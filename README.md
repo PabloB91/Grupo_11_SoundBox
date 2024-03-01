@@ -6,7 +6,9 @@ Temática del Market Place, Referentes y Perfil del grupo
 
 ## 1. ¿Qué es soundBox®?
 
-Es una tienda online especializada en la venta de instrumentos musicales e implementos para la producción musical nuevos y de segunda.
+Somos un comercio electrónico de instrumentos musicales y accesorios con sedes en Colombia y Argentina. Enviamos productos a cualquier parte del mundo. En nuestra página, podrás encontrar descuentos y ofertas. Ofrecemos una amplia variedad de instrumentos musicales y accesorios, desde guitarras hasta mezcladores de sonido, auriculares y maracas. Se aplicará un cargo adicional del 5% del valor del producto en los envíos que no sean dentro de Argentina o Colombia.
+
+Recuerda llevar la buena vibra.
 
 ## 2. ¿Cuáles son los productos y servicios que ofrecerá este ecommerce?
 

@@ -63,15 +63,19 @@
                                         <i class="fa-solid fa-globe"></i>
                                     </li>
                                     <li class="li_user dropdown">
-
                                         <div>
-                                            <i class="fa-sharp fa-solid fa-circle-user"></i>
-
+                                            <% if (locals.userLoggedIn.image) {%>
+                                                <div class="img-profile">
+                                                    <img src="/img/users/<%=locals.userLoggedIn.image%>" alt="">
+                                                </div>
+                                                <%} else {%>
+                                                    <i class="fa-sharp fa-solid fa-circle-user"></i>
+                                                    <%} %>
                                         </div>
 
                                         <div class="user-dropdown">
-                                            <p><a href="/users/userProfile/">
-                                                <i class="fa-regular fa-user"></i>Perfil</a></p>
+                                            <p><a href="/users/userProfile/<%=locals.userLoggedIn.id%>">
+                                                    <i class="fa-regular fa-user"></i>Perfil</a></p>
                                             <p><a href="#"><i class="fa-solid fa-gear"></i>Ajustes</a></p>
                                             <p><a href="#"><i class="fa-solid fa-pen-to-square"></i>Editar</a>
                                             </p>
@@ -218,7 +222,7 @@
                             <li class="dropdown">
 
                                 <div>
-                                    <a href="#section-mas-vendidos">Categorias</a><i
+                                    <a href="/#section-mas-vendidos">Categorias</a><i
                                         class="fa-solid fa-chevron-down"></i>
                                 </div>
 
@@ -235,7 +239,7 @@
                             <li class="dropdown">
 
                                 <div>
-                                    <a href="#last-seen">Ultimos
+                                    <a href="/#last-seen">Ultimos
                                         vistos</a>
                                 </div>
 
@@ -244,7 +248,7 @@
                             <li class="dropdown">
 
                                 <div>
-                                    <a href="/admin/allTheProducts#seccion-marcas-banners">Instrumentos musicales</a><i
+                                    <a href="/admin/allTheProducts">Instrumentos musicales</a><i
                                         class="fa-solid fa-chevron-down"></i>
                                 </div>
 
@@ -304,82 +308,11 @@
 
                         </div>
 
-                        <li class="search-bar">
-                            <form action="/search" method="GET">
-
-                                <div class="search-bar_input">
-                                    <input name="search" type="search" placeholder="Guitarra electrica">
-                                </div>
-                                <button type="submit" name="search" class="btn-search-bar">
-                                    <i class="fa-solid fa-magnifying-glass"></i>
-                                </button>
-
-                            </form>
-                        </li>
-
                         <li class="btnSearchOpenModal">
-                            <a href="#">
+                            <a href="/products/search">
                                 <i class="fa-solid fa-magnifying-glass"></i>
                             </a>
                         </li>
-
-                        <div class="search-modal_window">
-
-                            <div class="title-Wmodal">
-
-                                <h2>QUE VAMOS A BUSCAR HOY?</h2>
-                            </div>
-
-                            <form action="/search" method="GET">
-
-                                <div class="search-bar_input">
-                                    <input name="search" type="search" id="buscador" placeholder="   Busca segun el nombre. por ej:Guitarra electrica">
-                                </div>
-
-                                <button type="submit" name="search" class="btn-search-bar">
-                                    <i class="fa-solid fa-magnifying-glass"></i>
-                                </button>
-
-                            </form>
-
-                            <div class="close-window ">
-                                <p><i class="fa-solid fa-xmark"></i></p>
-                            </div>
-
-                            <div class="cards-container">
-                                <% products.forEach(product => { %>
-                                        <a href="/products/productDetail/<%= product.id %>" class="product">
-                                            <div class="cardTosearch">
-                                                <picture class="img-product">
-                                                    <img loading="lazy" src="/img/products/<%= product.image %>"
-                                                        alt="<%= product.category, product.name, product.brand_id %>">
-                                                </picture>
-        
-                                                <section class="product-info">
-        
-                                                    <div class="nameProduct">
-                                                        <p class="nameProduct">
-                                                            <%= product.name%>
-                                                        </p>
-                                                    </div>
-        
-                                                    <div class="price">
-                                                        <p>$ <%= product.price %>
-                                                        </p>
-                                                        <p style="color: green;"><% if (product.discount == null ) {%>
-                                            
-                                                            <% } else {%>
-                                                                -<%= product.discount %> %
-                                                                <% } %></p>
-                                                    </div>
-        
-                                                </section>
-                                            </div>
-                                        </a>
-                                <% })%>
-                            </div>
-
-                        </div>
 
                     </nav>
                 </div>
@@ -393,11 +326,10 @@
                     <li class="closeMenu">
                         <i class="fa-solid fa-xmark" aria-hidden="true" id="closeMenu" onclick="hide()"></i>
                     </li>
-                    <li><p>Ir a:</p></li>
                     <li><a href="/">Inicio</a></li>
                     <li><a href="/productCart">Carrito</a></li>
-                    <li><a href="/" class="btnSearchOpenModal">buscar</a></li>
-                    <li><a href="//#seccion-marcas-banners">Categorías</a></li>
+                    <li><a href="/products/search">buscar</a></li>
+                    <li><a href="/#seccion-marcas-banners">Categorías</a></li>
                     <li><a href="/contactUs">Quienes somos?</a></li>
                 </ul>
 

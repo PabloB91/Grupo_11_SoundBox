@@ -1,0 +1,68 @@
+    <!---------------- HEAD ---------------->
+
+    <%- include ("../partials/head") %>
+    <link href="/styles/search.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/971bd64f71.js" crossorigin="anonymous"></script>
+
+    <!---------------- HEADER ---------------->
+
+    <%- include ("../partials/header") %>
+
+    <!---------------- BODY ---------------->
+<body>
+    <div class="search-modal_window">
+
+        <div class="title-Wmodal">
+
+            <h2>QUE BUSCAS HOY?</h2>
+        </div>
+
+        <form action="/search" method="GET">
+
+            <div class="search-bar_input">
+                <input name="search" type="search" id="buscador" placeholder="   filtrá según el nombre: Guitarra electrica, por precio: 1500 o segun el descuento: 10">
+            </div>
+
+            <button type="submit" name="search" class="btn-search-bar">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+
+        </form>
+
+        <div class="cards-container">
+            <% products.forEach(product => { %>
+                    <a href="/products/productDetail/<%= product.id %>" class="product">
+                        <div class="cardTosearch">
+                            <picture class="img-product">
+                                <img loading="lazy" src="/img/products/<%= product.image %>"
+                                    alt="<%= product.category, product.name, product.brand_id %>">
+                            </picture>
+
+                            <section class="product-info">
+
+                                <div class="nameProduct">
+                                    <p class="nameProduct">
+                                        <%= product.name%>
+                                    </p>
+                                </div>
+
+                                <div class="price">
+                                    <p>$ <%= product.price %>
+                                    </p>
+                                    <p style="color: green;"><% if (product.discount == null ) {%>
+                        
+                                        <% } else {%>
+                                            -<%= product.discount %> %
+                                            <% } %></p>
+                                </div>
+
+                            </section>
+                        </div>
+                    </a>
+            <% })%>
+        </div>
+
+    </div>
+</body>
+<script src="/scripts/search.js"></script>
+<%- include ("../partials/footer") %>

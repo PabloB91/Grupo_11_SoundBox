@@ -21,8 +21,8 @@
 
 	.slider--inner {
 		display: flex;
-		width: 600%;
-		/*se le aumenta 100 dependiendo de las secciones hay 6 por ahora*/
+		/*se le aumenta 100 dependiendo de las secciones hay 4 por ahora*/
+		width: 400%;
 		margin-left: -100%;
 	}
 
@@ -35,6 +35,10 @@
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
+	}
+
+	.img_sliderSection--min-with-1020 {
+		display: none;
 	}
 
 	.slider-buttons {
@@ -83,6 +87,8 @@
 		flex-wrap: nowrap;
 		overflow-x: scroll;
 		scrollbar-width: none;
+		scroll-behavior: smooth;
+
 		.card-wrappers {
 			position: absolute;
 			top: 50%;
@@ -101,7 +107,7 @@
 	}
 
 	.card-outline {
-		flex: 1 0 auto;
+		flex: 0 0 auto;
 		margin: 0px 5px;
 		border-radius: 7px;
 		overflow: hidden;
@@ -657,6 +663,7 @@
 		}
 
 		.form-qualification p {
+			font-size: 0.1rem;
 		}
 
 		.btnsCards {
@@ -747,5 +754,15 @@
 			width: 85%;
 			grid-template-columns: repeat(3, 1fr);
 		}
+	}
+
+	.main__slider {
+		.img_sliderSection--min-with-1020 {
+			display: flex;
+		}
+	}
+
+	.img_sliderSection--min-with-768 {
+		display: none;
 	}
 }

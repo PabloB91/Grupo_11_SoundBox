@@ -11,7 +11,7 @@ const usersController = require('../controllers/usersController');
 // Middlewares
 const guestMiddleware = require('../middlewares/guestMiddleware');
 const authMiddleware = require('../middlewares/authMiddleware');
-const upload = require("../middlewares/multer")
+const upload = require("../middlewares/multer")  //--> Acá requerimos a toda la configuración de multer (el 'destination' y 'filename')
 
 // Validacion de Registro
 const registerValidations = [
@@ -49,24 +49,20 @@ router.get('/userProfile/:id', authMiddleware,usersController.userProfile);
 // Login
 router.get('/login', guestMiddleware, usersController.login);
 router.post('/login', loginValidations, usersController.processToLogin);
-router.get("/header", usersController.header);
 
 // Register
 
 router.get('/register', guestMiddleware,usersController.register);
-router.post('/register', upload.single('imgProfile'), registerValidations, usersController.processToRegister); 
+router.post('/register', upload.single('imgProfile'), registerValidations, usersController.processToRegister); //-->Se guarda la imagen a través de multer, y los datos a través de Sequelize
 
 // Editar Preferencias
 /* router.get('/editUser/:id', authMiddleware,usersController.edit)  /*--> se aplica el 'authMiddleware' (si el usuario está logueado, continúa con el controlador,
                                                                                      * si no, lo redirige al login) */ 
 router.put('/userProfile/:id', /* upload.single("imgProfile") ,*/ usersController.editUser);
 
-
 // Eliminar usuario 
 router.delete('/delete/:id', authMiddleware,usersController.delete); /* se aplica el 'authMiddleware' (si el usuario está logueado, continúa con el controlador,
                                                                     * si no, lo redirige al login) */
-
-
 
 // Eliminar usuario 
 router.delete('/delete/:id', authMiddleware,usersController.delete); 
