@@ -5,7 +5,7 @@
 
 /* PRIMERO ES NECESARIO CREAR LA BD MANUALMENTE */
 
-/* CREATE DATABASE 'soundbox' */
+/* CREATE DATABASE soundbox */
 
 /* ---------------------------- */
 
