@@ -19,6 +19,12 @@
 	overflow: hidden;
 	width: 100%;
 
+	/* para evitar que selexionen el texto */
+	-webkit-user-select: none; /* Safari */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* Internet Explorer */
+	user-select: none; /* Standard syntax */
+
 	.slider--inner {
 		display: flex;
 		/*se le aumenta 100 dependiendo de las secciones hay 4 por ahora*/
@@ -677,6 +683,12 @@
 			color: #ff540a;
 			cursor: pointer;
 			opacity: 0.3;
+
+			/* para evitar que selexionen el texto */
+			-webkit-user-select: none; /* Safari */
+			-moz-user-select: none; /* Firefox */
+			-ms-user-select: none; /* Internet Explorer */
+			user-select: none; /* Standard syntax */
 
 			&:hover {
 				opacity: 1;
