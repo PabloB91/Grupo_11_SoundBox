@@ -16,7 +16,7 @@
 /*Slider*/
 .main__slider {
 	border-radius: 10px;
-
+	overflow: hidden;
 	width: 100%;
 
 	.slider--inner {
@@ -611,11 +611,11 @@
 		width: 85%;
 
 		.slider--inner {
-			height: 400px;
+			height: 90%;
 		}
 
 		.slider-buttons {
-			height: 50px;
+			height: 10%;
 		}
 	}
 
@@ -760,9 +760,9 @@
 		.img_sliderSection--min-with-1020 {
 			display: flex;
 		}
-	}
 
-	.img_sliderSection--min-with-768 {
-		display: none;
+		.img_sliderSection--min-with-768 {
+			display: none;
+		}
 	}
 }

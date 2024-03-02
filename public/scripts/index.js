@@ -4,30 +4,31 @@ let sliderSectionLast = sliderSection[sliderSection.length -1]
 
 const btnLeft = document.querySelector("#btn-left");
 const btnRight = document.querySelector("#btn-right");
+const btnSopt = document.querySelector("#btn-stop")
 
 slider.insertAdjacentElement("afterbegin", sliderSectionLast);
 
 function nextLeft(){
     let sliderSectionFirst = document.querySelectorAll(".img_sliderSection")[0];
     slider.style.marginLeft = "-200%";
-    slider.style.transition = "all 500ms";
+    slider.style.transition = "all 800ms";
     setTimeout(function (){
         slider.style.transition = "none";
         slider.insertAdjacentElement("beforeend", sliderSectionFirst);
         slider.style.marginLeft = "-100%";
-    }, 500)
+    }, 800)
 };
 
 function nextRight(){
     let sliderSection = document.querySelectorAll(".img_sliderSection");
     let sliderSectionLast = sliderSection[sliderSection.length -1]
     slider.style.marginLeft = "0";
-    slider.style.transition = "all 500ms";
+    slider.style.transition = "all 800ms";
     setTimeout(function (){
         slider.style.transition = "none";
         slider.insertAdjacentElement("afterbegin", sliderSectionLast);
         slider.style.marginLeft = "-100%";
-    }, 500)
+    }, 800)
 };
 
 btnRight.addEventListener("click", function(){
