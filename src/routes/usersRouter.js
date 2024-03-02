@@ -55,16 +55,21 @@ router.post('/login', loginValidations, usersController.processToLogin);
 router.get('/register', guestMiddleware,usersController.register);
 router.post('/register', upload.single('imgProfile'), registerValidations, usersController.processToRegister); //-->Se guarda la imagen a través de multer, y los datos a través de Sequelize
 
+/* log out */
+
+router.delete('/logOut', usersController.logOut);
+
+
 // Editar Preferencias
 /* router.get('/editUser/:id', authMiddleware,usersController.edit)  /*--> se aplica el 'authMiddleware' (si el usuario está logueado, continúa con el controlador,
                                                                                      * si no, lo redirige al login) */ 
 router.put('/userProfile/:id', /* upload.single("imgProfile") ,*/ usersController.editUser);
 
 // Eliminar usuario 
-router.delete('/delete/:id', authMiddleware,usersController.delete); /* se aplica el 'authMiddleware' (si el usuario está logueado, continúa con el controlador,
+router.delete('/delete/:id', authMiddleware,usersController.destroy); /* se aplica el 'authMiddleware' (si el usuario está logueado, continúa con el controlador,
                                                                     * si no, lo redirige al login) */
 
 // Eliminar usuario 
-router.delete('/delete/:id', authMiddleware,usersController.delete); 
+router.delete('/delete/:id', authMiddleware,usersController.destroy); 
 
 module.exports = router;

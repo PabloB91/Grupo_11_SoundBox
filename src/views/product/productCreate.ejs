@@ -44,16 +44,14 @@
 
                                 </div>
 
-                                <div class="fieldset product-brand">
-
-                                    <input type="text" name="brand" class="fieldset-input marca-form">
-
-                                    <label for="marca" class="fieldset-lbl lbl-productBrand">
-                                        <span class="lbl-text">
-                                            Marca
-                                        </span>
-                                    </label>
-
+                                <div class="fieldset marca-producto">
+                                    <label for="brand">Marca</label>
+                                    <select name="brand" id="marca" class="estado-producto">
+                                        
+                                       <% availableBrands.forEach(availableBrand => { %>
+                                            <option value="<%= availableBrand.id %>"><%= availableBrand.brand_name %></option>
+                                       <% }) %>
+                                    </select>
                                 </div>
 
                                 <div class="fieldset price">
@@ -89,14 +87,11 @@
 
                                     <label for="descripcion" class="fieldset-lbl lbl-productDescription">
                                         <span class="lbl-text">
-                                            Descripcion
+                                            Descripción
                                         </span>
                                     </label>
 
                                 </div>
-
-                                
-
                                 <div class="fieldset cantidad-disponibles">
 
                                     <input type="number" name="quantity" min="1" max="1000"
@@ -104,54 +99,40 @@
 
                                     <label for="disponibles" class="fieldset-lbl lbl-productAvailable">
                                         <span class="lbl-text">
-                                            Cantidad disponibles
+                                            Cantidad disponible
                                         </span>
                                     </label>
 
                                 </div>
-
+                           
                                 <div class="fieldset agregar-category">
-
-                                    <input type="text" name="category" class="fieldset-input categories">
-
-                                    <label for="category" class="fieldset-lbl lbl-productCaategory">
+                                    <label for="categoría" class="fieldset-lbl lbl-productCaategory">
                                         <span class="lbl-text">
-                                            categories
+                                            Categorías
                                         </span>
                                     </label>
-
+                                    <select name="category" id="categoría" class="categoria-producto">
+                                        <% availableCategories.forEach(availableCategory => { %>
+                                             <option value="<%= availableCategory.id %>"><%= availableCategory.category %></option>
+                                        <% }) %>
+                                     </select>
                                 </div>
 
                                 <div class="fieldset estado">
-
-                                    <label for="state" class="estado">
-                                        <!-- Estado -->
-                                    </label>
-
-                                    <select name="state" id="estado" class="fieldset-input estado-producto">
-
-                                        <option value="Más vendido">Más vendido</option>
-                                        <option value="Último visto">Último visto</option>
-                                        <option value="Recién agregado">Recién agregado</option>
-
+                                    <label for="estado">Estado</label>
+                                    <select name="state" id="estado" class="estado-producto">
+                                       <% availableStates.forEach(availableState => { %>
+                                            <option value="<%= availableState.id %>"><%= availableState.state %></option>
+                                       <% }) %>
                                     </select>
-
                                 </div>
+                                
                                 <div class="fieldset-colores colores-disponibles">
-                                    <span class="lbl-text">
-                                        Colores
-                                    </span>
-                                    <input type="checkbox" name="colors" value="1" class="fieldset-input colors-form">
-                                    <label for="color1" class="fieldset-lbl lbl-productColor">Rojo</label>
-                            
-                                    <input type="checkbox" name="colors" value="2" class="fieldset-input colors-form">
-                                    <label for="color2" class="fieldset-lbl lbl-productColor">Amarillo</label>
-                                    <input type="checkbox" name="colors" value="3" class="fieldset-input colors-form">
-                                    <label for="color3" class="fieldset-lbl lbl-productColor">Azul</label>
-                                    <input type="checkbox" name="colors" value="4" class="fieldset-input colors-form">
-                                    <label for="color4" class="fieldset-lbl lbl-productColor">Negro</label>
-                            
-                                    <!-- Agregar más checkboxes según la cantidad de colores disponibles -->
+                                    <label for="colores">Colores</label>
+                                    <% availableColors.forEach(color => { %>
+                                        <input type="checkbox" name="colors" value="<%= color.id %>" class="fieldset-input colors-form" >
+                                        <label for="color" class="fieldset-lbl lbl-productColor"><%= color.color_name %></label>
+                                    <% }) %>
                                 </div>
                                 <div class="botones crear-carta-borrar-carta">
 
@@ -178,26 +159,6 @@
                                             <label for="imagen"></label>
                                             <input placeholder="Imagen" type="file" name="form-imagen"
                                                 class="imagen-form">
-                                        </div>
-
-                                        <div class="img-footer">
-                                            <div class="fieldset imagen-of-product img-secundarias ">
-                                                <label for="imagen"></label>
-                                                <input placeholder="Imagen" type="file" name="form-imagen"
-                                                    class="imagen-form">
-                                            </div>
-
-                                            <div class="fieldset imagen-of-product img-secundarias ">
-                                                <label for="imagen"></label>
-                                                <input placeholder="Imagen" type="file" name="form-imagen"
-                                                    class="imagen-form">
-                                            </div>
-
-                                            <div class="fieldset imagen-of-product img-secundarias ">
-                                                <label for="imagen"></label>
-                                                <input placeholder="Imagen" type="file" name="form-imagen"
-                                                    class="imagen-form">
-                                            </div>
                                         </div>
 
                                     </div>

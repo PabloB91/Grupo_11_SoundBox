@@ -17,7 +17,7 @@ const mainController = {
             const topSeller = await db.Productos.findAll({
                 where: {
                    price: {
-                    [Op.gt]: 15000
+                    [Op.gt]: 1500
                    }
                 },
                 limit: 10

@@ -30,7 +30,7 @@ router.get('/edit/:id',authMiddleware, productsController.edit); /* --> Se aplic
 router.put('/edit/:id', upload.single('form-imagen'), productsController.processEdit);
 
 // Eliminar un producto 
-router.delete('/delete/:userId', authMiddleware,productsController.destroy); /* --> Se aplica el 'authMiddleware' (si el usuario está logueado, continúa con el controlador,
+router.delete('/delete/:id', authMiddleware,productsController.destroy); /* --> Se aplica el 'authMiddleware' (si el usuario está logueado, continúa con el controlador,
                                                                              * si no, lo redirige al login) */
 
 module.exports = router;

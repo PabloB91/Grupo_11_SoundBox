@@ -181,21 +181,27 @@ const usersControllers = {
         }	
     },
 
-    
-    
-    delete: (req, res) => {
+    destroy: async (req, res) => {
+		try {
+			let users = await db.Usuarios.destroy({
+				where: {
+					id: req.params.id
+				}
+			})
+			res.redirect("/admin/usersList")
+		}
+		catch(err) {
+			res.render("not-found")
+			console.log(err)
+		}
+	},
 
-        const usersJson = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-
-		// eliminar
-		users = usersJson.filter(user =>{           //--> Buscamos el usuario seleccionado dentro del json
-			return user.userId != req.params.id;    //--> Se devuelven todos los usuarios excepto el seleccionado
-		})
-
-		fs.writeFileSync(usersFilePath, JSON.stringify(users, null, " "))
-
-		res.redirect("/admin/usersList")
-	}
+    logOut: (req, res) => {
+        res.clearCookie('remember');
+        loi
+        req.session.destroy();
+        return res.redirect('/');
+    }
 }
 
 module.exports = usersControllers;
