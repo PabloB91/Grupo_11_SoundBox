@@ -341,7 +341,7 @@ label {
 	}
 
     @keyframes registerForm {
-        0%{opacity: 0.1;
+        0%{opacity: 1;
             right: 50%;
         }
 
