@@ -16,7 +16,7 @@
 /*Slider*/
 .main__slider {
 	border-radius: 10px;
-	overflow: hidden;
+
 	width: 100%;
 
 	.slider--inner {
@@ -58,7 +58,7 @@
 		left: 40%;
 	}
 
-	div#btn-rigth {
+	div#btn-right {
 		right: 40%;
 	}
 }

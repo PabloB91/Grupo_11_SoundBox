@@ -3,14 +3,14 @@ let sliderSection = document.querySelectorAll(".img_sliderSection");
 let sliderSectionLast = sliderSection[sliderSection.length -1]
 
 const btnLeft = document.querySelector("#btn-left");
-const btnRight = document.querySelector("#btn-rigth");
+const btnRight = document.querySelector("#btn-right");
 
 slider.insertAdjacentElement("afterbegin", sliderSectionLast);
 
-function nextRight(){
+function nextLeft(){
     let sliderSectionFirst = document.querySelectorAll(".img_sliderSection")[0];
     slider.style.marginLeft = "-200%";
-    slider.style.transition = "all 0.5s";
+    slider.style.transition = "all 500ms";
     setTimeout(function (){
         slider.style.transition = "none";
         slider.insertAdjacentElement("beforeend", sliderSectionFirst);
@@ -18,11 +18,11 @@ function nextRight(){
     }, 500)
 };
 
-function nextLeft(){
+function nextRight(){
     let sliderSection = document.querySelectorAll(".img_sliderSection");
     let sliderSectionLast = sliderSection[sliderSection.length -1]
-    slider.style.marginLeft = "0%";
-    slider.style.transition = "all 0.5s";
+    slider.style.marginLeft = "0";
+    slider.style.transition = "all 500ms";
     setTimeout(function (){
         slider.style.transition = "none";
         slider.insertAdjacentElement("afterbegin", sliderSectionLast);
@@ -30,12 +30,12 @@ function nextLeft(){
     }, 500)
 };
 
-btnLeft.addEventListener("click", function(){
-    nextLeft();
-});
-
 btnRight.addEventListener("click", function(){
     nextRight();
+});
+
+btnLeft.addEventListener("click", function(){
+    nextLeft();
 });
 
 
