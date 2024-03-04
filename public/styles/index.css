@@ -321,8 +321,6 @@
 /* ------------------------------------------------------------------ */
 /*-----SLIDER BRANDS-----*/
 
-/* Por favor revisar opción de animación del banner en brandSliderBanner.ejs / brandSliderBanner.css */
-
 .main__slider-brands {
 	border-radius: 18px;
 	overflow: hidden;
@@ -414,7 +412,7 @@
 		position: relative;
 
 		&:hover img {
-			box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.45);
+			box-shadow: 0px 0px 15px 0px #00000073;
 			border: #ff540a;
 			transform: translateY(15px);
 			transform: scale(1.1);
@@ -450,13 +448,6 @@
 
 		&:hover .fade-diagonal {
 			color: #ff540a;
-			/* .fade-diagonal {
-				position: absolute;
-				background: linear-gradient(to bottom right, transparent 50%, rgba(255, 255, 255, 0.5) 50%);
-				background-size: 200% 200%;
-				animation: fadeDiagonal 4s linear infinite;
-				z-index: 800;
-			  } */
 		}
 	}
 }
