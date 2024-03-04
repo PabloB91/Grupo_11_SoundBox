@@ -182,7 +182,6 @@ header {
 
 			&:hover .user-dropdown {
 				height: 90px;
-				box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 			}
 		}
 	}
@@ -695,11 +694,13 @@ footer {
 
 					/* Contenido desplegable (oculto de forma predeterminada) */
 					.dropdown-content {
+						/* overflow: hidden; */
 						display: none;
 						position: absolute;
-						background-color: rgba(0, 0, 0, 0.3);
+						background-color: #fff;
+						border-radius: 5px;
 						min-width: 160px;
-						box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+						box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
 						z-index: 999;
 
 						/* Enlaces dentro del menú desplegable */
