@@ -61,6 +61,13 @@ app.use("/brands", brandsRouter);
 const resetPassword = require("./routes/mailerRouter")
 app.use('/reset', resetPassword)
 
+// Acceso momentáneo al infinite banner slider de las marcas soundBox (borrar luego)
+// Creo que se debe crear la respectiva ruta y el respectivo controlador para visualizarlo
+
+app.get('/brandsBanner', (req, res) => {
+    res.sendFile(path.resolve(__dirname, './src/views/brandSlideBanner.ejs'));
+})
+
 //************************************* Error 404 *************************************\\
 app.use((req, res, next) => {
     res.status(404).render("not-found")

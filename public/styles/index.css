@@ -320,6 +320,9 @@
 
 /* ------------------------------------------------------------------ */
 /*-----SLIDER BRANDS-----*/
+
+/* Por favor revisar opción de animación del banner en brandSliderBanner.ejs / brandSliderBanner.css */
+
 .main__slider-brands {
 	border-radius: 18px;
 	overflow: hidden;
