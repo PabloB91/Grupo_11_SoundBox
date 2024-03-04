@@ -11,7 +11,7 @@ slider.insertAdjacentElement("afterbegin", sliderSectionLast);
 function nextLeft(){
     let sliderSectionFirst = document.querySelectorAll(".img_sliderSection")[0];
     slider.style.marginLeft = "-200%";
-    slider.style.transition = "all 800ms";
+    slider.style.transition = " 800ms";
     setTimeout(function (){
         slider.style.transition = "none";
         slider.insertAdjacentElement("beforeend", sliderSectionFirst);
@@ -23,7 +23,7 @@ function nextRight(){
     let sliderSection = document.querySelectorAll(".img_sliderSection");
     let sliderSectionLast = sliderSection[sliderSection.length -1]
     slider.style.marginLeft = "0";
-    slider.style.transition = "all 800ms";
+    slider.style.transition = " 800ms";
     setTimeout(function (){
         slider.style.transition = "none";
         slider.insertAdjacentElement("afterbegin", sliderSectionLast);

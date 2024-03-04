@@ -58,6 +58,7 @@
 	.slider--btns {
 		position: absolute;
 		cursor: pointer;
+		top: 50%;
 	}
 
 	div#btn-left {
