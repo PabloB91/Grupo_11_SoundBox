@@ -193,6 +193,7 @@ header {
 	}
 
 	.headerBottom {
+		box-shadow: 0px 5px 20px 0px gray;
 		background: #ffffff;
 		display: flex;
 		width: 100%;
@@ -637,7 +638,6 @@ footer {
 		.fixed {
 			position: fixed;
 			z-index: 999;
-			box-shadow: 1px -6px 20px 0px rgb(0 0 0 / 85%);
 		}
 
 		.headerBottom {
