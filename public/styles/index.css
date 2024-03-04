@@ -19,6 +19,12 @@
 	overflow: hidden;
 	width: 100%;
 
+	/* para evitar que selexionen el texto */
+	-webkit-user-select: none; /* Safari */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* Internet Explorer */
+	user-select: none; /* Standard syntax */
+
 	.slider--inner {
 		display: flex;
 		/*se le aumenta 100 dependiendo de las secciones hay 4 por ahora*/
@@ -52,13 +58,14 @@
 	.slider--btns {
 		position: absolute;
 		cursor: pointer;
+		top: 50%;
 	}
 
 	div#btn-left {
 		left: 40%;
 	}
 
-	div#btn-rigth {
+	div#btn-right {
 		right: 40%;
 	}
 }
@@ -313,6 +320,9 @@
 
 /* ------------------------------------------------------------------ */
 /*-----SLIDER BRANDS-----*/
+
+/* Por favor revisar opción de animación del banner en brandSliderBanner.ejs / brandSliderBanner.css */
+
 .main__slider-brands {
 	border-radius: 18px;
 	overflow: hidden;
@@ -611,11 +621,11 @@
 		width: 85%;
 
 		.slider--inner {
-			height: 400px;
+			height: 90%;
 		}
 
 		.slider-buttons {
-			height: 50px;
+			height: 10%;
 		}
 	}
 
@@ -677,6 +687,12 @@
 			color: #ff540a;
 			cursor: pointer;
 			opacity: 0.3;
+
+			/* para evitar que selexionen el texto */
+			-webkit-user-select: none; /* Safari */
+			-moz-user-select: none; /* Firefox */
+			-ms-user-select: none; /* Internet Explorer */
+			user-select: none; /* Standard syntax */
 
 			&:hover {
 				opacity: 1;
@@ -760,9 +776,9 @@
 		.img_sliderSection--min-with-1020 {
 			display: flex;
 		}
-	}
 
-	.img_sliderSection--min-with-768 {
-		display: none;
+		.img_sliderSection--min-with-768 {
+			display: none;
+		}
 	}
 }

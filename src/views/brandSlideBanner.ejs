@@ -1,0 +1,45 @@
+<!-- ARCHIVO MOMENTÁNEO DE VISUALIZACIÓN. UNA VEZ ADAPTADO EN EL INDEX SE ELIMINA-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="/img/ico/simbolequalizer.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" /><!-- añadido link google icons opción redondeada -->
+   
+    <link href="/styles/reset.css" rel="stylesheet">
+    <link href="/styles/brandSlideBanner.css" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/971bd64f71.js" crossorigin="anonymous"></script>
+
+    <title>SoundBox Brand Logo Carousel</title>
+</head>
+<body>
+
+    <section class="banners">
+        <div class="brands-box">
+            <div class="logos-slide">
+                <img src="/img/banners/SliderBrands/boss.svg">
+                <img src="/img/banners/SliderBrands/d-addario.svg">
+                <img src="/img/banners/SliderBrands/epiphone.svg">
+                <img src="/img/banners/SliderBrands/gibson.svg">
+                <img src="/img/banners/SliderBrands/marshall.svg">
+                <img src="/img/banners/SliderBrands/yamaha.svg">
+                <img src="/img/banners/SliderBrands/zildjian.svg">
+            </div>
+            <!--Script para duplicar / clonar elementos HTML-CSS. Aplicado aquí de momento, luego se puede añadir a los scripts del index.js-->
+            <script>
+                let copy = document.querySelector(".logos-slide").cloneNode(true);
+                document.querySelector(".box-marcas").appendChild(copy);
+            </script>
+        </div>
+    </section>
+
+</body>
+</html>

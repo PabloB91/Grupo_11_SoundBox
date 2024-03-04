@@ -3,39 +3,40 @@ let sliderSection = document.querySelectorAll(".img_sliderSection");
 let sliderSectionLast = sliderSection[sliderSection.length -1]
 
 const btnLeft = document.querySelector("#btn-left");
-const btnRight = document.querySelector("#btn-rigth");
+const btnRight = document.querySelector("#btn-right");
+const btnSopt = document.querySelector("#btn-stop")
 
 slider.insertAdjacentElement("afterbegin", sliderSectionLast);
 
-function nextRight(){
+function nextLeft(){
     let sliderSectionFirst = document.querySelectorAll(".img_sliderSection")[0];
     slider.style.marginLeft = "-200%";
-    slider.style.transition = "all 0.5s";
+    slider.style.transition = " 800ms";
     setTimeout(function (){
         slider.style.transition = "none";
         slider.insertAdjacentElement("beforeend", sliderSectionFirst);
         slider.style.marginLeft = "-100%";
-    }, 500)
+    }, 800)
 };
 
-function nextLeft(){
+function nextRight(){
     let sliderSection = document.querySelectorAll(".img_sliderSection");
     let sliderSectionLast = sliderSection[sliderSection.length -1]
-    slider.style.marginLeft = "0%";
-    slider.style.transition = "all 0.5s";
+    slider.style.marginLeft = "0";
+    slider.style.transition = " 800ms";
     setTimeout(function (){
         slider.style.transition = "none";
         slider.insertAdjacentElement("afterbegin", sliderSectionLast);
         slider.style.marginLeft = "-100%";
-    }, 500)
+    }, 800)
 };
-
-btnLeft.addEventListener("click", function(){
-    nextLeft();
-});
 
 btnRight.addEventListener("click", function(){
     nextRight();
+});
+
+btnLeft.addEventListener("click", function(){
+    nextLeft();
 });
 
 
