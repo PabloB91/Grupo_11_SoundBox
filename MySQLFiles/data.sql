@@ -14,21 +14,13 @@ VALUES ('Argentina'), ('Colombia')
 INSERT INTO soundbox.`user`
 (id, first_name, last_name, password, e_mail, image, registered_date, user_type_id, country_id)
 VALUES
-(1, 'Usuario', 'Administrador', 'monito123!', 'mail@mail.com', NULL ,NOW(), 1, 1), 
-(2, 'José', 'López', 'monito123!', 'jose@mail.com', NULL ,NOW(), 2, 1),
-(3, 'Juan', 'Pérez', 'monito123!', 'juan@mail.com', NULL, NOW(), 2, 1),
-(4, 'María', 'González', 'monito123!', 'maria@mail.com', NULL, NOW(), 2, 2),
-(5, 'Laura', 'Benegas', 'monito123!', 'laura@mail.com', NULL,  NOW(), 2, 2),
-(6, 'Federico', 'Agustin', 'monito123!', 'federico@mail.com', NULL,  NOW(), 2, 1),
-(7, 'Francisco', 'José', 'monito123!', 'francisco@mail.com', NULL,  NOW(), 2, 2),
-(8, 'Pablo', 'Gutierrez', 'monito123!', 'pablo@mail.com', NULL,  NOW(), 2, 2),
-(9, 'Bautista', 'Juan', 'monito123!', 'bautista@mail.com', NULL,  NOW(), 2, 1),
-(10, 'Jimenez', 'Benegas', 'monito123!', 'jimenez@mail.com', NULL,  NOW(), 2, 1),
-(11, 'Micaela', 'Castro', 'monito123!', 'micaela@mail.com', NULL,  NOW(), 2, 2),
-(12, 'Valentina', 'Castro', 'monito123!', 'valentina@mail.com', NULL,  NOW(), 2, 2),
-(13, 'Miguel', 'Torrez', 'monito123!', 'miguel@mail.com', NULL,  NOW(), 2, 1),
-(14, 'Lautaro', 'Espejo', 'monito123!', 'lautaro@mail.com', NULL,  NOW(), 2, 1),
-(15, 'Thiago', 'Riuz', 'monito123!', 'thiago@mail.com', NULL,  NOW(), 2, 2)
+(1, 'Miguel Ángel', 'Vargas Navarro', '$2a$10$qOXjMZlLURip7CodLiLi/Oc1RY.hv4zIotSPZgv0lm5xwm3Ju6WSC' , 'mvargasnavarro19@gmail.com','user-1709673238622.png','2005-01-14', 1, 2), 
+(2, 'Alvaro', 'Ramirez Rojas', '$2a$10$DZFCIljx6ix.BaKCq5uCiuACFeJrCcfJMts15gR5xVhMyIWOwd0BG', 'alvarorr@gmail.com', 'user-1709672545109.jpg','2024-03-05', 2, 1),
+(3, 'Melena ', 'Gomez Pereira', '$2a$10$wcMyhj31oIqjUBVpMfphOObChOAJGgdnva.l0d/9RwkviQBIdA7I2', 'muchopelo@gmail.com', 'user-1709672662977.jpg', '2024-03-05', 2, 2),
+(4, 'Camila', 'Bautista Fosh', '$2a$10$Tgwp3HaDp.BlhT552Al3N.KvBUuXLXYpHJrChe96IgHmxR8E.et76', 'camilabf@gmail.com', 'user-1709672783164.jpg', '2024-03-05', 2, 2),
+(5, 'Mateo', 'Armando Cazasa', '$2a$10$4gZTx3g67fhcPINv7bED6exD.JZg621lJgvZs5JD0RXdWqjrGXpFO', 'javierac@gmail.com', 'user-1709672844054.jpg',  '2024-03-05', 2, 1),
+(6, 'Phonix', 'Alvares Capullo', '$2a$10$m0HHT0Oz8f4hrqlTMWRhs.2I65kimtZt1s/9lSqsrmkhfGzNb8ta6', 'mateoac@gmail.com', 'user-1709672974782.jpg',  '2024-03-05', 2, 2),
+(7, 'Francisco', 'Espejo Castro', '$2a$10$wiVOwFOWyX.dlWrHnjttDurhNjXIfsWB3myCk8/Gq1.g9I4gweKhG', 'phonixec@gmail.com', 'user-1709673066028.jpg',  '2024-03-05', 2, 2)
 
 --------------------> PRODUCTOS  <----------------------
 INSERT INTO color  

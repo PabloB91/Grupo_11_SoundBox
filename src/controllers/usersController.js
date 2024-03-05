@@ -114,16 +114,16 @@ const usersControllers = {
                     }
                 }
                 /* este redirect actúa solo si el usuario existe en el db */
-                console.log('El usuario existe en la DB, se redirecciona al perfil');
-                console.log('userloggedin Id: ', req.session.userLoggedIn.id);
+              /*   console.log('El usuario existe en la DB, se redirecciona al perfil');
+                console.log('userloggedin Id: ', req.session.userLoggedIn.id); */
                 return res.redirect(`/users/userProfile/${userToLogIn.id}`);
 
             } else {
                 return res.render("forms/login.ejs", { errors: errors.array(), old: req.body });
             }
         }
-        catch {
-            console.log("catch usertoLogin: ", userToLogIn);
+        catch{
+           /*  console.log("catch usertoLogin: ",userToLogIn); */
             /* En la siguiente sentencia de codigo estamos diciendo que si la contraseña o el email ingresados por el usuario no coinciden 
                con los registrados en la DB entonces vamos a  enviar un error */
             if (userToLogIn === undefined) {
