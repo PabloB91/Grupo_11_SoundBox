@@ -36,6 +36,7 @@
 
 	.img_sliderSection {
 		width: 100%;
+		height: 200px;
 	}
 
 	.slider--img {
@@ -60,7 +61,7 @@
 	.slider--btns {
 		position: absolute;
 		cursor: pointer;
-		top: 50%;
+		top: 15%;
 	}
 
 	div#btn-left {
@@ -768,7 +769,6 @@
 }
 
 @media screen and (min-width: 1020px) {
-	
 	.cards-prom {
 		.center_cards-prom {
 			width: 85%;
