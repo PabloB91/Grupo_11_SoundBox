@@ -1,3 +1,11 @@
+.propiety-TNotSelect {
+	/* para evitar que selexionen el texto */
+	-webkit-user-select: none; /* Safari */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* Internet Explorer */
+	user-select: none; /* Standard syntax */
+}
+
 /* ------------------------------------------------------------------ */
 .main {
 	display: flex;
@@ -18,12 +26,6 @@
 	border-radius: 10px;
 	overflow: hidden;
 	width: 100%;
-
-	/* para evitar que selexionen el texto */
-	-webkit-user-select: none; /* Safari */
-	-moz-user-select: none; /* Firefox */
-	-ms-user-select: none; /* Internet Explorer */
-	user-select: none; /* Standard syntax */
 
 	.slider--inner {
 		display: flex;
@@ -320,59 +322,67 @@
 
 /* ------------------------------------------------------------------ */
 /*-----SLIDER BRANDS-----*/
-
 .main__slider-brands {
-	border-radius: 18px;
+	border-radius: 10px;
+	position: relative;
 	overflow: hidden;
+	height: 200px;
 	width: 100%;
 
-	.box-brands {
-		background: #000;
+	.div__slider-brands {
+		width: 100%;
+		padding: 20px;
+		white-space: nowrap;
+		border-radius: 5px;
+		background: black;
 		display: flex;
-		width: 200%;
-		height: 170px;
-		margin-left: -100%;
-		position: relative;
+		align-items: center;
+		overflow-x: scroll;
+	}
 
-		.brand {
-			display: flex;
-			width: 33%;
-			justify-content: center;
-			align-items: center;
+	.a__img-brand {
+		cursor: auto;
+		display: block;
+		height: 100px;
+		flex: 1 0 auto;
+		width: 30%;
+		justify-content: space-between;
 
-			img {
-				display: block;
-				width: 60%;
-				height: 60%;
-			}
+		img {
+			cursor: pointer;
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	.div__btn-SBrands {
+		cursor: pointer;
+		position: absolute;
+		color: #ff540a;
+		top: 50%;
+		width: 100%;
+		height: 40px;
+		transition: 500ms;
+		span {
+			font-size: 2rem;
+		}
+	}
+
+	.div__btn-left-SBrands {
+		right: 4%;
+	}
+
+	.div__btn-right-SBrands {
+		left: 101%;
+	}
+
+	&:hover {
+		.div__btn-left-SBrands {
+			right: -2%;
 		}
 
-		.brandsSection {
-			width: 200%;
-			display: flex;
-		}
-
-		.div__btn {
-			position: absolute;
-			top: 50%;
-			width: 50px;
-			height: 50px;
-
-			span {
-				color: #ff540a;
-			}
-		}
-
-		.div__btn-left {
-			left: 1px;
-		}
-
-		.div__btn-right {
-			right: 10px;
-		}
-
-		&::-webkit-scrollbar {
-			width: 7px;
+		.div__btn-right-SBrands {
+			left: 95%;
 		}
 	}
 }
@@ -451,77 +461,11 @@
 		}
 	}
 }
-
-/* brand slider */
-
-
-@keyframes slide {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-100%);
-    }
-}
-
-/*----- Contenedor logos -----*/
-
-.brands-box {
-    width: 88%;
-    height: 110px;
-    margin: auto;
-    white-space: nowrap;
-    position: relative;
-    border-radius: 5px;
-    background-color: black;
-}
-
-/*----- Efecto blur/fade en ambos extremos del contenedor -----*/
-
-.brands-box:before,
-.brands-box:after {
-    position: absolute;
-    top: 0;
-    width: 120px;
-    height: 100%;
-    content: "";
-    z-index: 2;
-}
-
-.brands-box:before {
-    left: 0;
-    border-radius: 5px;
-    background: linear-gradient(to left, rgba(255, 255, 255, 0), black);
-}
-
-.brands-box:after {
-    right: 0;
-    border-radius: 5px;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0), black);
-}
-
-/*----- Detener la animación -----*/
-
-.brands-box:hover .logos-slide {
-    animation-play-state: paused;
-}
-
-/*----- Slider logos -----*/
-
-.logos-slide {
-    display: inline-block;
-    height: 100%;
-    animation: 35s slide infinite linear; /* Para activar la animación infinita */
-}
-
-.logos-slide img {
-    width: 160px;
-    margin: 0 40px;
-}
-
+/* ------------------------------------------------------------------ */
 
 /* ------------------------------------------------------------------ */
 /*PROM CONTAINER AND COMMENTS*/
+
 .main__promo-container {
 	border-radius: 8px;
 	background: #fff;
@@ -661,13 +605,13 @@
 
 /* ------------------------------------------------------------------ */
 /*---MEDIA QUERIES---*/
-@media screen and (max-width: 425px) {
+/* @media screen and (max-width: 425px) {
 	.main__content-categories {
 		.items-categories {
 			grid-template-columns: repeat(1, 1fr);
 		}
 	}
-}
+} */
 
 @media screen and (min-width: 768px) {
 	.main__section--margin-bottom {
@@ -827,6 +771,7 @@
 	.cards-prom {
 		.center_cards-prom {
 			width: 85%;
+			height: 200px;
 			grid-template-columns: repeat(3, 1fr);
 		}
 	}
