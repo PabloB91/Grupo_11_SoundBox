@@ -198,7 +198,6 @@ header {
 		padding: 5px;
 		justify-content: space-evenly;
 		transition: 200ms;
-		overflow: hidden;
 		border-bottom: 0.5px solid #000;
 
 		.menu-burguer {
@@ -609,7 +608,7 @@ footer {
 			.navContainer {
 				display: flex;
 				align-items: center;
-				justify-content: center	;
+				justify-content: center;
 				width: 45%;
 
 				nav {
