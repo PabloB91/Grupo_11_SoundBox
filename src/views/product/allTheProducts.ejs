@@ -165,6 +165,8 @@
 
             <section class="seccion-general">
                 <div class="todasLasCards">
+                    <% if(locals.userIsLogged==true && locals.userIsAdmin==true){ %>
+                    <!-- carta de creacion del admin -->
                     <article class="container-producto" id="creationCard">
                         <a href="/products/create" class="card">
                             <div class="face front">
@@ -178,6 +180,8 @@
                             </div>
                         </a>
                     </article>
+                    <% }  %>
+
                     <% products.forEach(product=> { %>
 
                         <article class="container-producto">
