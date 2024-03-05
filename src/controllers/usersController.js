@@ -22,24 +22,24 @@ const usersControllers = {
     processToRegister: async (req, res) => {
         console.log("file.file:", req.file);
         console.log("file.filename:", req.file);
-        try{
+        try {
             const errores = validationResult(req);  //--->Traemos las validaciones
             // console.log(errores);
 
             let country_registro;  //--> Esto es para tomar el valor de país del input de usuario y guardarlo con el Id correspondiente
-            if (req.body.country == 'Argentina'){
-                country_registro= 1
-            }else if(req.body.country == 'Colombia'){
-                country_registro= 2
+            if (req.body.country == 'Argentina') {
+                country_registro = 1
+            } else if (req.body.country == 'Colombia') {
+                country_registro = 2
             }
-        
-            if(!errores.isEmpty()){ //-->Si existen errores, se renderizan y además se renderizan los input de usuario que sean correctos en el objeto 'old' 
+
+            if (!errores.isEmpty()) { //-->Si existen errores, se renderizan y además se renderizan los input de usuario que sean correctos en el objeto 'old' 
                 //console.log("Errores: ", errores);
-                return res.render("forms/register.ejs", { errores: errores.array(), old: req.body}) 
-            }else{
+                return res.render("forms/register.ejs", { errores: errores.array(), old: req.body })
+            } else {
                 const passwordToValidate = req.body.password  //-->Se trae el password ingresado por el usuario, para su posterior hasheo
                 //--> Se llama al método de Sequelize 'create' para crear un registro en la DB 
-                let CreateUser= await db.Usuarios.create({
+                let CreateUser = await db.Usuarios.create({
                     first_name: req.body.name,      //-->Los nombres de los campos tienen que ser iguales a los nombres del modelo 'Usuario' de DB
                     last_name: req.body.lastName,
                     e_mail: req.body.email,
@@ -48,65 +48,69 @@ const usersControllers = {
                     registered_date: Date.now(),    //--> Esta función trae la fecha actual
 
                     user_type_id: 2,    //--> En este caso el Id debería ser siempre '2', porque es el que corresponde a 'common_user'
-                                        //--Definir cómo vamos a crear el usuario 'admin', que debería ser creado una sola vez.
-                    country_id: country_registro     
-                })               
-                console.log("usuario a crear: ",CreateUser);  //--> Muestra por consola cómo quedó el registro que se inserta en la BD
+                    //--Definir cómo vamos a crear el usuario 'admin', que debería ser creado una sola vez.
+                    country_id: country_registro
+                })
+                console.log("usuario a crear: ", CreateUser);  //--> Muestra por consola cómo quedó el registro que se inserta en la BD
                 return res.redirect('login')  //--> Una vez creado el registro en la DB. se redirige a la página de logueo
             }
         }   //--Hay que usar 'return' para evitar el error de '[ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client'
-        catch(err) {
+        catch (err) {
             return console.log(err); //--> Esto nos muestra en la consola si es que hubo algún error en el proceso
         }
     },
 
     // (GET) Formulario de Login
     login: (req, res) => {
-      res.render("forms/login.ejs");
+        res.render("forms/login.ejs");
     },
 
     // (POST) Proceso de Login
     processToLogin: async (req, res) => {
         let userToLogIn;   //--> Creamos la variable del usuario a loguearse 
-        
-        try{
-            const errors = validationResult(req);
-            if(errors.isEmpty()){
-                let userToFind= await db.Usuarios.findOne({   //--> Crea una variable 'userToFind', que busca el usuario en la DB según el e_mail del formulario
-                        where:{
-                            e_mail: req.body.email
-                        },
-                        include: [
-                            {association: "user_type" , attributes: ['user_type']},
-                            /* {association: "brand", attributes: ['brand_name']}, */ // Vamos a buscar la marca a través de la relación entre tablas, especificando que solo queremos el nombre de la marca
-                          ]
-                    })
 
+        // Obtengo el valor de user_type y guárdalo en req.session.userType
+        
+        try {
+            const errors = validationResult(req);
+            if (errors.isEmpty()) {
+                let userToFind = await db.Usuarios.findOne({   //--> Crea una variable 'userToFind', que busca el usuario en la DB según el e_mail del formulario
+                    where: {
+                        e_mail: req.body.email
+                    },
+                    include: [
+                        { association: "user_type", attributes: ['user_type'] },
+                        /* {association: "brand", attributes: ['brand_name']}, */ // Vamos a buscar la marca a través de la relación entre tablas, especificando que solo queremos el nombre de la marca
+                    ]
+                })
+                
                 if (req.body.email === userToFind.e_mail) {     //--> Si el e_mail ingresado coincide con alguno buscado en la DB, pasa a comparar las contraseñas
-                    if (bcrypt.compareSync(req.body.password, userToFind.password)){
-                        if (req.body.remember != undefined){        //--> Creación de cookie con el email del usuario, para poder recuperar la sesión 
+                    if (bcrypt.compareSync(req.body.password, userToFind.password)) {
+                        req.session.userType = userToFind.user_type.user_type;
+                        if (req.body.remember != undefined) {        //--> Creación de cookie con el email del usuario, para poder recuperar la sesión 
                             //--> Si el usuario clickea el checkbox, se crea la cookie. 'req.body.remember' es el elemento HTML del checkbox
                             //--> Entonces si ese elemento NO es indefinido (al clickearse, toma el valor de 'on'), se crea la cookie.
-                            console.log("remember: ",req.body.remember);/* (verificar el valor del checkbox) */         
+                            console.log("remember: ", req.body.remember);/* (verificar el valor del checkbox) */
                             console.log("sigue");
                             delete userToFind['dataValues'].password       //--> Borramos el password de la variable a guardar en session, por seguridad
-                            delete userToFind['_previousDataValues'].password 
+                            delete userToFind['_previousDataValues'].password
                             userToLogIn = userToFind;           //--> Si las contraseñas coinciden, hacemos que la variable usuario a loguearse sea igual al usuario encontrado en la DB
                             req.session.userLoggedIn = userToLogIn;
-                            res.cookie('remember', userToLogIn.e_mail, {maxAge: 60000})
-                        }else{
+                            res.cookie('remember', userToLogIn.e_mail, { maxAge: 60000 })
+                        } else {
                             delete userToFind['dataValues'].password //--> Borramos el password de la variable a guardar en session, por seguridad
-                            delete userToFind['_previousDataValues'].password 
+                            delete userToFind['_previousDataValues'].password
                             userToLogIn = userToFind;              //--> Si las contraseñas coinciden, hacemos que la variable usuario a loguearse sea igual al usuario encontrado en la DB
                             req.session.userLoggedIn = userToLogIn;  //--> Si el usuario ingresó satisfactoriamente vamos a guardar sus datos en 'session' --> 'userLoggedIn'
                         }
-                        
-                    }else {
-                        return res.render("forms/login.ejs", { errors : [    //--> Si no coinciden las contraseñas vuelve al login con el mensaje de error.
-                                {msg: 'Las contraseñas no conciden'}
-                            ], 
+
+                    } else {
+                        return res.render("forms/login.ejs", {
+                            errors: [    //--> Si no coinciden las contraseñas vuelve al login con el mensaje de error.
+                                { msg: 'Las contraseñas no conciden' }
+                            ],
                             old: req.body
-                        }); 
+                        });
                     }
                 }
                 /* este redirect actúa solo si el usuario existe en el db */
@@ -114,7 +118,7 @@ const usersControllers = {
                 console.log('userloggedin Id: ', req.session.userLoggedIn.id); */
                 return res.redirect(`/users/userProfile/${userToLogIn.id}`);
 
-            }else{
+            } else {
                 return res.render("forms/login.ejs", { errors: errors.array(), old: req.body });
             }
         }
@@ -122,72 +126,73 @@ const usersControllers = {
            /*  console.log("catch usertoLogin: ",userToLogIn); */
             /* En la siguiente sentencia de codigo estamos diciendo que si la contraseña o el email ingresados por el usuario no coinciden 
                con los registrados en la DB entonces vamos a  enviar un error */
-            if (userToLogIn === undefined){
-                return res.render("forms/login.ejs", { errors : [
-                    {msg: 'El correo no coincide o aún no eres parte de SoundBox'}
-                    ], 
+            if (userToLogIn === undefined) {
+                return res.render("forms/login.ejs", {
+                    errors: [
+                        { msg: 'El correo no coincide o aún no eres parte de SoundBox' }
+                    ],
                     old: req.body
                 });
-                }
+            }
         }   //--> Acá termina todo el 'try-catch'
     },
 
     // (GET) Perfil del Usuario
     userProfile: async (req, res) => {
-        try{
-            let user= await db.Usuarios.findByPk(req.params.id, {     //--> Busca el usuario en la BD según su Id
+        try {
+            let user = await db.Usuarios.findByPk(req.params.id, {     //--> Busca el usuario en la BD según su Id
                 include: [
-                    {association: 'user_type'}, 
-                    {association: 'country'}
+                    { association: 'user_type' },
+                    { association: 'country' }
                 ]
-            }) 
-            return res.render('user/userProfile.ejs', {user})
+            })
+            return res.render('user/userProfile.ejs', { user })
         }   //--Hay que usar 'return' para evitar el error de '[ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client'
-        catch(err) {
+        catch (err) {
             console.log(err);
             return res.render("not-found")
-        } 
+        }
     },
 
     // (PUT) Editar Usuario
     editUser: async (req, res) => {
         console.log("Edit User");
         try {
-            let e_mail= await req.body.e_mail
+            let e_mail = await req.body.e_mail
             console.log(e_mail);
-            let userToEdit= await db.Usuarios.update({
+            let userToEdit = await db.Usuarios.update({
                 first_name: req.body.first_name,
                 last_name: req.body.last_name,
                 /* password: req, */
                 e_mail: req.body.e_mail,
                 /* country:,  */
             }, {
-				where: {
-					id: req.params.id
-				}
-			})
-            console.log(userToEdit); 
+                where: {
+                    id: req.params.id
+                }
+            })
+            console.log(userToEdit);
             return res.redirect(req.params.id)
         } catch (err) {
             console.log(err);
             return res.render("not-found")
-        }	
+        }
     },
 
     destroy: async (req, res) => {
-		try {
-			let users = await db.Usuarios.destroy({
-				where: {
-					id: req.params.id
-				}
-			})
-			res.redirect("/admin/usersList")
-		}
-		catch(err) {
-			res.render("not-found")
-			console.log(err)
-		}
-	},
+        try {
+            let users = await db.Usuarios.destroy({
+                where: {
+                    id: req.params.id
+                }
+            })
+            res.redirect("/admin/usersList")
+        }
+        catch (err) {
+            res.render("not-found")
+            console.log(err)
+        }
+    },
 
     logOut: (req, res) => {
         res.clearCookie('remember');

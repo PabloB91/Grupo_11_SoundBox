@@ -1,6 +1,6 @@
-    <!---------------- HEAD ---------------->
+<!---------------- HEAD ---------------->
 
-    <%- include ("../partials/head") %>
+<%- include ("../partials/head") %>
     <link href="/styles/productDetail.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/971bd64f71.js" crossorigin="anonymous"></script>
 
@@ -8,34 +8,32 @@
 
     <%- include ("../partials/header") %>
 
-    <!---------------- BODY ---------------->
+        <!---------------- BODY ---------------->
 
-    <section>
-                <div class="caja-general">
-                    <div class="caja-objeto-favorito caja-me-gusta">
-                        <a href="#"> <i class="fa-solid fa-heart"></i> </a>
-                    </div>
+        <section>
+            <div class="caja-general">
 
-                    <div class="caja-imagenes-general">
-                        <img src="/img/products/<%= product.image %> " class="imagen-producto-principal">
-                    </div>
+                <div class="caja-imagenes-general">
+                    <img src="/img/products/<%= product.image %> " class="imagen-producto-principal">
+                </div>
 
-                    <div class="caja-sub-general-informacion">
+                <div class="caja-sub-general-informacion">
+                    <div class="border-div">
                         <div class="caja-primera">
                             <div class="caja-titulo-producto">
                                 <h2 class="titulo-producto">
-                                    <%= product.name + " " + product.brand.brand_name  %>
+                                    <%= product.name + " " + product.brand.brand_name %>
                                 </h2>
                             </div>
 
                             <div class="caja-precio-clasificacion">
                                 <span class="precio-producto"> $ <%= product.price %> </span>
                                 <span class="descuento-producto">
-                                    <% if (product.discount == null ) {%>
-                                    
+                                    <% if (product.discount==null ) {%>
+
                                         <% } else {%>
                                             -<%= product.discount %> %
-                                            <% } %>
+                                                <% } %>
                                 </span>
 
                                 <form class="formulario-clasificacion">
@@ -67,15 +65,18 @@
                                 <div class="caja-seleccion-colores">
                                     <form action="">
                                         <select id="colores-seleccion">
-                                            <% product.Colores.forEach(color => { %>
-                                                <option value="<%= color.color_name %>"><%= color.color_name %></option>
-                                            <% }) %>
+                                            <% product.Colores.forEach(color=> { %>
+                                                <option value="<%= color.color_name %>">
+                                                    <%= color.color_name %>
+                                                </option>
+                                                <% }) %>
                                         </select>
                                     </form>
                                 </div>
                             </div>
                         </div>
-                        <p>Stock disponible: <%= product.quantity %></p>
+                        <p>Stock disponible: <%= product.quantity %>
+                        </p>
                         <div class="caja-cantidad-producto-carrito">
                             <div class="caja-cantidad-producto">
                                 <input type="number" id="cantidad-seleccion" min="1" max="<%= product.quantity %>"
@@ -87,33 +88,17 @@
                                 <i class="fa-solid fa-caret-down"></i>
                             </div>
 
-                            <div class="caja-agregar-carrito">
-                                <form action="/productCart" class="formulario-boton-agregar-carrito">
-                                    <button type="submit" class="boton-agregar-carrito"><i
-                                            class="fa-solid fa-cart-shopping"></i> <span
-                                            class="texto-boton-agregar-carrito">ADD TO CART</span></button>
-                                </form>
-                            </div>
                         </div>
-
-                        <div class="caja-links-extra-producto">
-                            <div class="caja-categories-producto">
-                                <span class="links-categories-producto">Categoría:
-                                        <a>
-                                        <a href="#"> <%= product.category.category %>
-                                        </a>
-                                </span>
-                            </div>
-
-                            <div class="caja-tags-producto">
-                                <span class="links-tags-producto">Estado:
-                                    <a href="#">
-                                        <%= product.state.state %>
-                                    </a>
-                                </span>
-                            </div>
+                        <div class="caja-agregar-carrito">
+                            <form action="/productCart" class="formulario-boton-agregar-carrito">
+                                <button type="submit" class="boton-agregar-carrito"><i
+                                        class="fa-solid fa-cart-shopping"></i> <span
+                                        class="texto-boton-agregar-carrito">ADD TO CART</span></button>
+                            </form>
                         </div>
-
+                    </div>
+                    
+            <% if(locals.userIsLogged==true && locals.userIsAdmin==true){ %>
                         <div class="editar-borrar">
                             <a href="/products/edit/<%= product.id %>"><button class="boton-accion-editar">EDITAR
                                     PRODUCTO</button></a>
@@ -122,19 +107,38 @@
                                 style="display: inline-flex">
                                 <button type="submit" class="boton-accion-borrar">ELIMINAR</button>
                         </div>
-                    </div>
-
                 </div>
+
+            </div>
+            <% } %>
                 <div class="caja-descripcion-secundaria-producto">
                     <h6 class="parrafo-descripcion-producto">Información Adicional</h6>
+
+                    <div class="caja-links-extra-producto">
+                        <div class="caja-categories-producto">
+                            <span class="links-categories-producto">Categoría:
+                                <a href="#">
+                                    <%= product.category.category %>
+                                </a>
+                            </span>
+                        </div>
+
+                        <div class="caja-tags-producto">
+                            <span class="links-tags-producto">Estado:
+                                <a href="#">
+                                    <%= product.state.state %>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
 
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis error architecto similique
                         cumque. Exercitationem iure qui possimus facilis iusto, beatae temporibus omnis. Aliquam eum
                         voluptas ab exercitationem rem libero est!</p>
                 </div>
 
-    </section>
+        </section>
 
-    <!---------------- FOOTER ---------------->
+        <!---------------- FOOTER ---------------->
 
-    <%- include ("../partials/footer") %>
+        <%- include ("../partials/footer") %>

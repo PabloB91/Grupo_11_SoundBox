@@ -414,7 +414,7 @@
 		padding: 15px 15px 30px 15px;
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
-		grid-gap: 25px;
+		grid-gap: 10px;
 	}
 
 	.categoria {
@@ -427,8 +427,8 @@
 			border: #ff540a;
 			transform: translateY(15px);
 			transform: scale(1.1);
-			transition: 0.5s;
-		}
+			transition: all 0.5s ease;
+		} 
 	}
 
 	.categoria a {
@@ -635,6 +635,7 @@
 
 	/*cards*/
 	.main__container-cards {
+		margin-top: 2rem;
 		display: flex;
 		flex-wrap: wrap;
 		width: 85%;

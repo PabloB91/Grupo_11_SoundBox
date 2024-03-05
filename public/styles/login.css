@@ -368,21 +368,21 @@ label {
 		align-items: center;
 		justify-content: center;
 		width: 50%;
-		animation: normal 1s appear ease-in-out;
+		animation: normal 2s appear ease-in-out;
 	}
 
 	@keyframes appear {
         0%{opacity: 0;
-            right: 50%;
+            /* right: 50%; */
         }
 
-		50%{opacity: 0;
-            right: 25%;
+		50%{opacity: 0.0;
+            right: 20%;
         }
 
         100% {
             opacity: 1;
-            right: 15px;
+            /* right: 15px; */
         }
     }
 
