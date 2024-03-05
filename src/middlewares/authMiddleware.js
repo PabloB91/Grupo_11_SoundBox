@@ -4,9 +4,15 @@
 //-- si no, lo redirige al formulario de login.--//
 
 function authMiddleware(req, res, next){
-
-    if(req.session.userLoggedIn != undefined){
-        console.log("Auth middleware: Usuario ya logueado, estos son los datos guardados en session: ");
+    if(req.session.userLoggedIn != undefined && req.session.userLoggedIn.user_type.user_type != 'admin'){
+        console.log("Auth middleware: Usuario logueado como Usuario Común, estos son los datos guardados en session: ");
+        console.log(req.session.userLoggedIn);
+        console.log("Continúa la ejecución de la ruta seleccionada");
+        /* console.log("En session se guardo el siguiente User to Log In: ");
+        console.log(req.session.userLoggedIn);  */
+        next();
+    }else if (req.session.userLoggedIn != undefined && req.session.userLoggedIn.user_type.user_type == 'admin') {
+        console.log("Auth middleware: Usuario logueado como Administrador, estos son los datos guardados en session: ");
         console.log(req.session.userLoggedIn);
         console.log("Continúa la ejecución de la ruta seleccionada");
         /* console.log("En session se guardo el siguiente User to Log In: ");
