@@ -28,6 +28,7 @@ app.use(cookieParser())
 app.use(session({secret: "es secreto pa!", resave: false, saveUninitialized: false}))
 app.use(remindMiddleware)   //--> Es imprescindible el orden de estos middleware, porque tienen un orden de ejecución.
 app.use(userLoggedMiddleware)
+
 //************************************* Template Engine *************************************\\
 app.set("view engine", "ejs");
 app.set("views", path.resolve(__dirname, "views/"));

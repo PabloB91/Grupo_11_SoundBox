@@ -11,8 +11,6 @@ const db = require("../database/models")
 const { validationResult } = require("express-validator");
 const { log } = require("console");
 
-const usersFilePath = path.join(__dirname, "../data/usersDataBase.json");
-
 
 const usersControllers = {
 
@@ -77,24 +75,32 @@ const usersControllers = {
                 let userToFind= await db.Usuarios.findOne({   //--> Crea una variable 'userToFind', que busca el usuario en la DB según el e_mail del formulario
                         where:{
                             e_mail: req.body.email
-                        }
+                        },
+                        include: [
+                            {association: "user_type" , attributes: ['user_type']},
+                            /* {association: "brand", attributes: ['brand_name']}, */ // Vamos a buscar la marca a través de la relación entre tablas, especificando que solo queremos el nombre de la marca
+                          ]
                     })
-                /* console.log("usuario a encontrar: ",userToFind) ; */
 
                 if (req.body.email === userToFind.e_mail) {     //--> Si el e_mail ingresado coincide con alguno buscado en la DB, pasa a comparar las contraseñas
                     if (bcrypt.compareSync(req.body.password, userToFind.password)){
                         if (req.body.remember != undefined){        //--> Creación de cookie con el email del usuario, para poder recuperar la sesión 
                             //--> Si el usuario clickea el checkbox, se crea la cookie. 'req.body.remember' es el elemento HTML del checkbox
                             //--> Entonces si ese elemento NO es indefinido (al clickearse, toma el valor de 'on'), se crea la cookie.
-                            console.log(req.body.remember);/* (verificar el valor del checkbox) */         
-                            res.cookie('remember', userToLogIn.e_mail, {maxAge: 60000})
-                            /* console.log(req.session.userLoggedIn); */
-                            delete userToLogIn['dataValues'].password //--> Borramos el password de la variable a guardar en session, por seguridad
-                            delete userToLogIn['_previousDataValues'].password 
-                            userToLogIn = userToFind;   
+                            console.log("remember: ",req.body.remember);/* (verificar el valor del checkbox) */         
+                            console.log("sigue");
+                            delete userToFind['dataValues'].password       //--> Borramos el password de la variable a guardar en session, por seguridad
+                            delete userToFind['_previousDataValues'].password 
+                            userToLogIn = userToFind;           //--> Si las contraseñas coinciden, hacemos que la variable usuario a loguearse sea igual al usuario encontrado en la DB
                             req.session.userLoggedIn = userToLogIn;
-                            }
-                        userToLogIn = userToFind;              //--> Si las contraseñas coinciden, hacemos que la variable usuario a loguearse sea igual al usuario encontrado en la DB
+                            res.cookie('remember', userToLogIn.e_mail, {maxAge: 60000})
+                        }else{
+                            delete userToFind['dataValues'].password //--> Borramos el password de la variable a guardar en session, por seguridad
+                            delete userToFind['_previousDataValues'].password 
+                            userToLogIn = userToFind;              //--> Si las contraseñas coinciden, hacemos que la variable usuario a loguearse sea igual al usuario encontrado en la DB
+                            req.session.userLoggedIn = userToLogIn;  //--> Si el usuario ingresó satisfactoriamente vamos a guardar sus datos en 'session' --> 'userLoggedIn'
+                        }
+                        
                     }else {
                         return res.render("forms/login.ejs", { errors : [    //--> Si no coinciden las contraseñas vuelve al login con el mensaje de error.
                                 {msg: 'Las contraseñas no conciden'}
@@ -103,32 +109,19 @@ const usersControllers = {
                         }); 
                     }
                 }
-
-                delete userToLogIn['dataValues'].password //--> Borramos el password de la variable a guardar en session, por seguridad
-                delete userToLogIn['_previousDataValues'].password 
-                req.session.userLoggedIn = userToLogIn;  //--> Si el usuario ingresó satisfactoriamente vamos a guardar sus datos en 'session' --> 'userLoggedIn'
-                /* console.log('session: ', req.session);  
-                console.log('session: ', req.session.userLoggedIn);  */
-                 
-
                 /* este redirect actúa solo si el usuario existe en el db */
                 console.log('El usuario existe en la DB, se redirecciona al perfil');
-                console.log(userToLogIn.id);
                 console.log('userloggedin Id: ', req.session.userLoggedIn.id);
                 return res.redirect(`/users/userProfile/${userToLogIn.id}`);
 
             }else{
                 return res.render("forms/login.ejs", { errors: errors.array(), old: req.body });
             }
-
         }
         catch{
             console.log("catch usertoLogin: ",userToLogIn);
-            /*
-                 * en la siguiente sentencia de codigo estamos diciendo que si la contraseña o el 
-                 * email ingresados por el usuario no coinciden con los registrados en la DB entonces vamos a 
-                 * enviar un error
-            */
+            /* En la siguiente sentencia de codigo estamos diciendo que si la contraseña o el email ingresados por el usuario no coinciden 
+               con los registrados en la DB entonces vamos a  enviar un error */
             if (userToLogIn === undefined){
                 return res.render("forms/login.ejs", { errors : [
                     {msg: 'El correo no coincide o aún no eres parte de SoundBox'}
