@@ -19,9 +19,7 @@
                     <nav>
                         <% if(locals.userIsLogged==false){ %>
                             <ul>
-
                                 <li class="li_register-login">
-
                                     <div class="register-login">
 
                                         <div class="register">
@@ -37,19 +35,11 @@
                                                 <i class="fa-solid fa-arrow-right-to-bracket"></i>
                                             </a>
                                         </div>
-
                                     </div>
-
                                 </li>
 
-                                <% }else{ %>
-                                    <li class="li_user admin">
-                                        <div class="admin-container">
-                                            <a href="/admin">
-                                                <i class="fa-solid fa-user-tie"></i>
-                                            </a>
-                                        </div>
-                                    </li>
+                                <% }else if(locals.userIsLogged==true && locals.userIsAdmin==false){ %>
+                                
                                     <li class="li-miCajita">
                                         <a href="/productCart">
                                             <div class="btn-cajita">
@@ -75,11 +65,44 @@
                                             <p><a href="#"><i class="fa-solid fa-gear"></i>Ajustes</a></p>
                                             <p><a href="#"><i class="fa-solid fa-pen-to-square"></i>Editar</a>
                                             </p>
-                                            <p><a href="/logOut"><i class="fa-solid fa-arrow-right-from-bracket"></i>Salir</a>
+                                            <p><a href="/logOut"><i
+                                                        class="fa-solid fa-arrow-right-from-bracket"></i>Salir</a>
                                             </p>
                                         </div>
 
                                     </li>
+                                    <% }else if(locals.userIsLogged==true && locals.userIsAdmin==true){ %> %>
+                                        <li class="li_user admin">
+                                            <div class="admin-container">
+                                                <a href="/admin">
+                                                    <i class="fa-solid fa-user-tie"></i>
+                                                </a>
+                                            </div>
+                                        </li>
+                                        
+                                        <li class="li_user dropdown">
+                                            <div>
+                                                <% if (locals.userLoggedIn.image) {%>
+                                                    <div class="img-profile">
+                                                        <img src="/img/users/<%=locals.userLoggedIn.image%>" alt="">
+                                                    </div>
+                                                    <%} else {%>
+                                                        <i class="fa-sharp fa-solid fa-circle-user"></i>
+                                                        <%} %>
+                                            </div>
+    
+                                            <div class="user-dropdown">
+                                                <p><a href="/users/userProfile/<%=locals.userLoggedIn.id%>">
+                                                        <i class="fa-regular fa-user"></i>Perfil</a></p>
+                                                <p><a href="#"><i class="fa-solid fa-gear"></i>Ajustes</a></p>
+                                                <p><a href="#"><i class="fa-solid fa-pen-to-square"></i>Editar</a>
+                                                </p>
+                                                <p><a href="/logOut"><i
+                                                            class="fa-solid fa-arrow-right-from-bracket"></i>Salir</a>
+                                                </p>
+                                            </div>
+    
+                                        </li>
                                     <% } %>
                             </ul>
                     </nav>
@@ -89,8 +112,15 @@
 
             <section class="headerBottom">
 
+                <div class="div__btnSearch div__btnSearch--cell-phone">
+                    <a href="/products/search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </a>
+                </div>
+
                 <!-- Logo SBX es mejor colapsar para que no se confundan -->
                 <div class="logoSbx fireldGeaderBottom">
+
 
                     <div class="img-logoSBX">
                         <a href="/">
@@ -305,13 +335,16 @@
 
                             </li>
 
+
                         </div>
 
-                        <li class="btnSearchOpenModal">
+                        <li class="li__btnSearch li__btnSearch--tablet-computer">
                             <a href="/products/search">
                                 <i class="fa-solid fa-magnifying-glass"></i>
                             </a>
                         </li>
+
+
 
                     </nav>
                 </div>

@@ -17,22 +17,22 @@
     
 function disappear () {
 let boxMusicSBX  = document.querySelector('.box-img');
-boxMusicSBX.classList.toggle('disappear', window.scrollY);
+boxMusicSBX.classList.toggle('disappear', window.scrollY > 20);
 };
 
 function grow () {
 let textMusicSBX  = document.querySelector('.tex-soundbox');
-textMusicSBX.classList.toggle('grow', window.scrollY);
+textMusicSBX.classList.toggle('grow', window.scrollY > 20);
 };
 
 function flatten () {
 let containerMusicSBX  = document.querySelector('.logoSbx');
-containerMusicSBX.classList.toggle('flatten', window.scrollY);
+containerMusicSBX.classList.toggle('flatten', window.scrollY > 20);
 };
 
 function fixed () {
 let headerBottomAnimation  = document.querySelector('.headerBottom');
-headerBottomAnimation.classList.toggle('fixed', window.scrollY);
+headerBottomAnimation.classList.toggle('fixed', window.scrollY), 500;
 };
 
 // moguel esto esta comentado porque pase el search modal window a la vista search, si lo descomentas buguea el menu burguer
