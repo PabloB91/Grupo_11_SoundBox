@@ -1,0 +1,80 @@
+/*====== BANNER CARRUSEL MARCAS SOUNDBOX ======*/
+
+/* Opción de banner infinito para adaptar en el Index / Main / Sección banner marcas soundBox */
+/* Recordar hacer las respectivas modificaciones en los @media queries */
+/* Luego de adaptar estos selectores donde deben estar en la hoja de estilo del index.css, borrar */
+
+/*----- Clase de la sección principal que contiene el banner -----*/
+
+.banners {
+    width: 95%;
+    margin: auto;
+    display: block;
+    padding-top: 30px;
+}
+
+/*----- Animación en el eje X (horizontal) -----*/
+
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/*----- Contenedor logos -----*/
+
+.brands-box {
+    width: 88%;
+    height: 110px;
+    margin: auto;
+    white-space: nowrap;
+    position: relative;
+    border-radius: 5px;
+    background-color: black;
+}
+
+/*----- Efecto blur/fade en ambos extremos del contenedor -----*/
+
+.brands-box:before,
+.brands-box:after {
+    position: absolute;
+    top: 0;
+    width: 120px;
+    height: 100%;
+    content: "";
+    z-index: 2;
+}
+
+.brands-box:before {
+    left: 0;
+    border-radius: 5px;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), black);
+}
+
+.brands-box:after {
+    right: 0;
+    border-radius: 5px;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), black);
+}
+
+/*----- Detener la animación -----*/
+
+.brands-box:hover .logos-slide {
+    animation-play-state: paused;
+}
+
+/*----- Slider logos -----*/
+
+.logos-slide {
+    display: inline-block;
+    height: 100%;
+    animation: 35s slide infinite linear; /* Para activar la animación infinita */
+}
+
+.logos-slide img {
+    width: 160px;
+    margin: 0 40px;
+}
