@@ -14,7 +14,7 @@ VALUES ('Argentina'), ('Colombia')
 INSERT INTO soundbox.`user`
 (id, first_name, last_name, password, e_mail, image, registered_date, user_type_id, country_id)
 VALUES
-(1, 'Miguel Ángel', 'Vargas Navarro', '$2a$10$qOXjMZlLURip7CodLiLi/Oc1RY.hv4zIotSPZgv0lm5xwm3Ju6WSC' , 'mvargasnavarro19@gmail.com','user-1709673238622.png','2005-01-14', 1, 2), 
+(1, 'Miguel Ángel', 'Vargas Navarro', '$2a$10$qOXjMZlLURip7CodLiLi/Oc1RY.hv4zIotSPZgv0lm5xwm3Ju6WSC' , 'mvargasnavarro19@gmail.com','user-1709673238622.png','2005-01-14', 1, 2),
 (2, 'Alvaro', 'Ramirez Rojas', '$2a$10$DZFCIljx6ix.BaKCq5uCiuACFeJrCcfJMts15gR5xVhMyIWOwd0BG', 'alvarorr@gmail.com', 'user-1709672545109.jpg','2024-03-05', 2, 1),
 (3, 'Melena ', 'Gomez Pereira', '$2a$10$wcMyhj31oIqjUBVpMfphOObChOAJGgdnva.l0d/9RwkviQBIdA7I2', 'muchopelo@gmail.com', 'user-1709672662977.jpg', '2024-03-05', 2, 2),
 (4, 'Camila', 'Bautista Fosh', '$2a$10$Tgwp3HaDp.BlhT552Al3N.KvBUuXLXYpHJrChe96IgHmxR8E.et76', 'camilabf@gmail.com', 'user-1709672783164.jpg', '2024-03-05', 2, 2),

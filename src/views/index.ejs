@@ -60,10 +60,10 @@
                         </div>
 
                         <div class="slider--btns slider--btns-rightCenter" id="div__btn-pause-play">
-                            <span class="material-symbols-outlined" id="span__puse-play">
-                                skip_previous
+                            <span class="material-symbols-outlined" data-id="span__puse-play">
+                                pause
                             </span>
-                        </div>pause
+                        </div>
 
                         <div class="slider--btns slider--btns-right" id="btn-right">
                             <span class="material-symbols-outlined">
@@ -377,7 +377,7 @@
                     <div id="div_cards--scrolling" class="cards">
 
                         <% offerts.forEach(product=> { %>
-                            
+
                             <div class="card-outline">
                                 <a href="/products/productDetail/<%= product.id %>" class="product">
                                     <div class="card">
