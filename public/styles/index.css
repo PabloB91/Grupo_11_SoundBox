@@ -322,69 +322,103 @@
 }
 
 /* ------------------------------------------------------------------ */
-/*-----SLIDER BRANDS-----*/
-.main__slider-brands {
-	border-radius: 10px;
-	position: relative;
-	overflow: hidden;
-	height: 200px;
-	width: 100%;
+/* ------------------------------------------------------------------ */
+/*SECTION BRANDS*/
+/*====== BANNER CARRUSEL MARCAS SOUNDBOX ======*/
 
-	.div__slider-brands {
+/* Opción de banner infinito para adaptar en el Index / Main / Sección banner marcas soundBox */
+/* Recordar hacer las respectivas modificaciones en los @media queries */
+/* Luego de adaptar estos selectores donde deben estar en la hoja de estilo del index.css, borrar */
+
+/*----- Clase de la sección principal que contiene el banner -----*/
+
+.main__brands-slider {
+	overflow: hidden;
+	width: 85%;
+
+	/*----- Contenedor logos -----*/
+
+	.div__brands-box {
+		width: 88%;
 		width: 100%;
-		padding: 20px;
+		height: 110px;
+		margin: auto;
 		white-space: nowrap;
+		position: relative;
 		border-radius: 5px;
-		background: black;
-		display: flex;
-		align-items: center;
-		overflow-x: scroll;
+		background-color: black;
 	}
 
-	.a__img-brand {
-		cursor: auto;
-		display: block;
-		height: 100px;
-		flex: 1 0 auto;
-		width: 30%;
-		justify-content: space-between;
+	/*----- Efecto blur/fade en ambos extremos del contenedor -----*/
+
+	.div__brands-box:before,
+	.div__brands-box:after {
+		position: absolute;
+		top: 0;
+		width: 120px;
+		height: 100%;
+		content: "";
+		z-index: 2;
+	}
+
+	.div__brands-box:before {
+		left: 0;
+		border-radius: 5px;
+		background: linear-gradient(to left, rgba(255, 255, 255, 0), black);
+	}
+
+	.div__brands-box:after {
+		right: 0;
+		border-radius: 5px;
+		background: linear-gradient(to right, rgba(255, 255, 255, 0), black);
+	}
+
+	/*----- Detener la animación -----*/
+
+	.div__brands-box:hover .div__logos-slide {
+		animation-play-state: paused;
+	}
+
+	/*----- Slider logos -----*/
+
+	.div__logos-slide {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+		animation: slide 20s linear infinite;
+		-webkit-animation: slide 20s linear infinite;
+		width: calc(200px * 14);
+		/* Para activar la animación infinita */
+	}
+	.a__content-image {
+		width: 200px;
+		height: 60px;
+		margin: 0 40px;
 
 		img {
-			cursor: pointer;
 			width: 100%;
 			height: 100%;
 		}
-	}
 
-	.div__btn-SBrands {
-		cursor: pointer;
-		position: absolute;
-		color: #ff540a;
-		top: 50%;
-		width: 100%;
-		height: 40px;
-		transition: 500ms;
-		span {
-			font-size: 2rem;
+		img:hover {
+			cursor: pointer;
+			filter: drop-shadow(0 0 10px #ff530a);
 		}
 	}
+}
 
-	.div__btn-left-SBrands {
-		right: 4%;
+/*----- Animación en el eje X (horizontal) -----*/
+
+@keyframes slide {
+	from {
+		-webkit-transform: translateX(0);
+		transform: translateX(0);
 	}
 
-	.div__btn-right-SBrands {
-		left: 101%;
-	}
-
-	&:hover {
-		.div__btn-left-SBrands {
-			right: -2%;
-		}
-
-		.div__btn-right-SBrands {
-			left: 95%;
-		}
+	to {
+		-webkit-transform: translateX(calc(-200px * 7));
+		transform: translateX(calc(-200px * 7));
 	}
 }
 
@@ -635,7 +669,6 @@
 
 	/*cards*/
 	.main__container-cards {
-		margin-top: 2rem;
 		display: flex;
 		flex-wrap: wrap;
 		width: 85%;
@@ -733,114 +766,6 @@
 		.center_cards-prom {
 			width: 85%;
 			grid-template-columns: repeat(3, 1fr);
-		}
-	}
-
-	/* ------------------------------------------------------------------ */
-	/*SECTION BRANDS*/
-	/*====== BANNER CARRUSEL MARCAS SOUNDBOX ======*/
-
-	/* Opción de banner infinito para adaptar en el Index / Main / Sección banner marcas soundBox */
-	/* Recordar hacer las respectivas modificaciones en los @media queries */
-	/* Luego de adaptar estos selectores donde deben estar en la hoja de estilo del index.css, borrar */
-
-	/*----- Clase de la sección principal que contiene el banner -----*/
-
-	.main__brands-slider {
-		overflow: hidden;
-		width: 95%;
-		width: 88%;
-		margin: auto;
-		display: block;
-		padding-top: 30px;
-
-		/*----- Contenedor logos -----*/
-
-		.div__brands-box {
-			width: 88%;
-			width: 100%;
-			height: 110px;
-			margin: auto;
-			white-space: nowrap;
-			position: relative;
-			border-radius: 5px;
-			background-color: black;
-		}
-
-		/*----- Efecto blur/fade en ambos extremos del contenedor -----*/
-
-		.div__brands-box:before,
-		.div__brands-box:after {
-			position: absolute;
-			top: 0;
-			width: 120px;
-			height: 100%;
-			content: "";
-			z-index: 2;
-		}
-
-		.div__brands-box:before {
-			left: 0;
-			border-radius: 5px;
-			background: linear-gradient(to left, rgba(255, 255, 255, 0), black);
-		}
-
-		.div__brands-box:after {
-			right: 0;
-			border-radius: 5px;
-			background: linear-gradient(
-				to right,
-				rgba(255, 255, 255, 0),
-				black
-			);
-		}
-
-		/*----- Detener la animación -----*/
-
-		.div__brands-box:hover .div__logos-slide {
-			animation-play-state: paused;
-		}
-
-		/*----- Slider logos -----*/
-
-		.div__logos-slide {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			height: 100%;
-			animation: slide 20s linear infinite;
-			-webkit-animation: slide 20s linear infinite;
-			width: calc(200px * 14);
-			/* Para activar la animación infinita */
-		}
-		.a__content-image {
-			width: 200px;
-			height: 60px;
-			margin: 0 40px;
-
-			img {
-				width: 100%;
-				height: 100%;
-			}
-
-			img:hover {
-				cursor: pointer;
-				filter: drop-shadow(0 0 10px #ff530a);
-			}
-		}
-	}
-
-	/*----- Animación en el eje X (horizontal) -----*/
-
-	@keyframes slide {
-		from {
-			-webkit-transform: translateX(0);
-			transform: translateX(0);
-		}
-
-		to {
-			-webkit-transform: translateX(calc(-200px * 7));
-			transform: translateX(calc(-200px * 7));
 		}
 	}
 
