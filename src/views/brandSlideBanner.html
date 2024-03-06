@@ -1,0 +1,137 @@
+<!-- ARCHIVO MOMENTÁNEO DE VISUALIZACIÓN. UNA VEZ ADAPTADO EN EL INDEX SE ELIMINA-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="/public/img/ico/simbolequalizer.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+        rel="stylesheet" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <!-- añadido link google icons opción redondeada -->
+
+    <link href="/public/styles/reset.css" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/971bd64f71.js" crossorigin="anonymous"></script>
+
+    <title>SoundBox Brand Logo Carousel</title>
+</head>
+
+<body>
+
+    <style>
+        /*====== BANNER CARRUSEL MARCAS SOUNDBOX ======*/
+
+        /* Opción de banner infinito para adaptar en el Index / Main / Sección banner marcas soundBox */
+        /* Recordar hacer las respectivas modificaciones en los @media queries */
+        /* Luego de adaptar estos selectores donde deben estar en la hoja de estilo del index.css, borrar */
+
+        /*----- Clase de la sección principal que contiene el banner -----*/
+
+        .banners {
+            width: 95%;
+            margin: auto;
+            display: block;
+            padding-top: 30px;
+        }
+
+        /*----- Animación en el eje X (horizontal) -----*/
+
+        @keyframes slide {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-100%);
+            }
+        }
+
+        /*----- Contenedor logos -----*/
+
+        .brands-box {
+            width: 88%;
+            height: 110px;
+            margin: auto;
+            white-space: nowrap;
+            position: relative;
+            border-radius: 5px;
+            background-color: black;
+        }
+
+        /*----- Efecto blur/fade en ambos extremos del contenedor -----*/
+
+        .brands-box:before,
+        .brands-box:after {
+            position: absolute;
+            top: 0;
+            width: 120px;
+            height: 100%;
+            content: "";
+            z-index: 2;
+        }
+
+        .brands-box:before {
+            left: 0;
+            border-radius: 5px;
+            background: linear-gradient(to left, rgba(255, 255, 255, 0), black);
+        }
+
+        .brands-box:after {
+            right: 0;
+            border-radius: 5px;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0), black);
+        }
+
+        /*----- Detener la animación -----*/
+
+        .brands-box:hover .logos-slide {
+            animation-play-state: paused;
+        }
+
+        /*----- Slider logos -----*/
+
+        .logos-slide {
+            display: inline-block;
+            height: 100%;
+            animation: 35s slide infinite linear;
+            /* Para activar la animación infinita */
+        }
+
+        .logos-slide img {
+            width: 160px;
+            margin: 0 40px;
+        }
+    </style>
+
+    <section class="banners">
+        <div class="brands-box">
+            <div class="logos-slide">
+                <img src="/public/img/banners/SliderBrands/boss.svg">
+                <img src="/public/img/banners/SliderBrands/d-addario.svg">
+                <img src="/public/img/banners/SliderBrands/epiphone.svg">
+                <img src="/public/img/banners/SliderBrands/gibson.svg">
+                <img src="/public/img/banners/SliderBrands/marshall.svg">
+                <img src="/public/img/banners/SliderBrands/yamaha.svg">
+                <img src="/public/img/banners/SliderBrands/zildjian.svg">
+            </div>
+        </div>
+    </section>
+    
+    <!--Script para duplicar / clonar elementos HTML-CSS. Aplicado aquí de momento, luego se puede añadir a los scripts del index.js-->
+    <script>
+        let copy = document.querySelector(".logos-slide").cloneNode(true);
+        document.querySelector(".brands-box").appendChild(copy);
+    </script>
+
+</body>
+
+</html>
