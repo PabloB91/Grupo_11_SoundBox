@@ -8,7 +8,6 @@ const btnRight = document.querySelector("#btn-right");
 const btnStop = document.querySelector("#div__btn-pause-play span");
 
 btnStop.addEventListener("click", function () {
-
 	const id = btnStop.getAttribute("data-id");
 
 	//llamar a un servicio para actualizar si me gusta
@@ -107,10 +106,13 @@ leftBtnSliderCards.addEventListener("click", () => {
 //                            slider brands                                   |
 //-----------------------------------------------------------------------------|
 
+/* const copy = document.querySelector(".div__logos-slide").cloneNode(true);
+document.querySelector(".div__brands-box").appendChild(copy);
+
 document.addEventListener("DOMContentLoaded", function () {
-	const logosSlide = document.querySelector(".logos-slide");
+	const logosSlide = document.querySelector(".div__logos-slide");
 	const copy = logosSlide.cloneNode(true);
-	document.querySelector(".brands-box").appendChild(copy);
+	document.querySelector(".div__brands-box").appendChild(copy);
 
 	let scrollAmount = 0;
 
@@ -127,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	}
 
 	setInterval(startAnimation, 25);
-});
+}); */
 
 //-----------------------------------------------------------------------------|
 //                            NO FUNCIONARON                                   |
