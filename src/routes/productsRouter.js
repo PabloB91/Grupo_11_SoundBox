@@ -2,7 +2,6 @@
 const express = require('express');
 const router = express.Router();
 const multer = require('multer');
-const path = require("path")
 
 const upload = require( "../middlewares/multer" )
 
@@ -19,18 +18,16 @@ router.get('/search', productsController.search);
 router.get('/productDetail/:id', productsController.detail);
 
 // Crear un producto
-router.get('/create', authMiddleware ,productsController.create);/* --> Se aplica el 'authMiddleware' (si el usuario está logueado, continúa con el controlador,
-                                                                * si no, lo redirige al login) */
+router.get('/create', authMiddleware.admin ,productsController.create); //--> Se aplica el método 'admin' del 'authMiddleware' ('authMiddleware.admin'), 
+                                                                        //--si el usuario está logueado como admin, continúa con el controlador, si no, lo redirige al login) 
 router.post('/create', upload.single('form-imagen'), productsController.processCreate);
-/* router.post('/create', upload.single('image'),productsController.processCreate); */
 
 // Editar un producto 
-router.get('/edit/:id',authMiddleware, productsController.edit); /* --> Se aplica el 'authMiddleware' (si el usuario está logueado, continúa con el controlador,
-                                                * si no, lo redirige al login) */
+router.get('/edit/:id',authMiddleware.admin, productsController.edit); //--> Se aplica el método 'admin' del 'authMiddleware' ('authMiddleware.admin'), 
+                                                                        //--si el usuario está logueado como admin, continúa con el controlador, si no, lo redirige al login) 
 router.put('/edit/:id', upload.single('form-imagen'), productsController.processEdit);
 
 // Eliminar un producto 
-router.delete('/delete/:id', authMiddleware,productsController.destroy); /* --> Se aplica el 'authMiddleware' (si el usuario está logueado, continúa con el controlador,
-                                                                             * si no, lo redirige al login) */
-
+router.delete('/delete/:id', authMiddleware.admin,productsController.destroy); //--> Se aplica el método 'admin' del 'authMiddleware' ('authMiddleware.admin'), 
+                                                                               //--si el usuario está logueado como admin, continúa con el controlador, si no, lo redirige al login) 
 module.exports = router;

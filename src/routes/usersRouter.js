@@ -1,8 +1,7 @@
 // Requerimientos 
 const express = require('express');
 const router = express.Router();
-const multer = require('multer');
-const path = require("path");
+const multer = require('multer'); 
 const { body, check } = require('express-validator');
 
 // Controlador de usuarios
@@ -30,46 +29,29 @@ const registerValidations = [
       }),
 ];
 
-
 // Validacion de Login
 const loginValidations = [
     check('email').notEmpty().withMessage('Ingresa tu E-mail').isEmail().withMessage('Ingresa un correo electrónico válido'),
     check('password').notEmpty().withMessage('Ingresa tu contraseña').isLength({ min: 8 }).withMessage('La contraseña debe tener al menos 8 caracteres'),
 ];
 
-
-// Perfil del usuario
-/**
- * en esta linea de codigo estamos diciendo que al entrar en la ruta /userProfile/:userId nos va a
- * devolver la vista de user que esta en el usersController. Además, se aplica el 'authMiddleware' (si el usuario está logueado, continúa con el controlador,
- * si no, lo redirige al login)
- */
-router.get('/userProfile/:id', authMiddleware,usersController.userProfile);
+// Register
+router.get('/register', guestMiddleware,usersController.register);
+router.post('/register', upload.single('imgProfile'), registerValidations, usersController.processToRegister); //-->Se guarda la imagen a través de multer, y los datos a través de Sequelize
 
 // Login
 router.get('/login', guestMiddleware, usersController.login);
 router.post('/login', loginValidations, usersController.processToLogin);
 
-// Register
+// Perfil del usuario
+//--> Si el usuario está logueado y quiere ingresar a su perfil, se aplica el 'authMiddleware': primero para saber si es un usuario común (con el método 'common_user') y luego para saber si
+//-- está queriendo ingresar a su perfil o a otro (con el método 'profile_filter'). Si pasa ambos filtros, continúa a la ejecución del controlador, sino, es redirigido al login o al index respectivamente 
+router.get('/userProfile/:id', authMiddleware.common_user,authMiddleware.profile_filter ,usersController.userProfile); 
 
-router.get('/register', guestMiddleware,usersController.register);
-router.post('/register', upload.single('imgProfile'), registerValidations, usersController.processToRegister); //-->Se guarda la imagen a través de multer, y los datos a través de Sequelize
-
+// Editar Perfil
+router.put('/userProfile/:id', /* upload.single("imgProfile") ,*/ authMiddleware.common_user, usersController.editUser); //--> Se aplica el método 'common_user' del 'authMiddleware' ('authMiddleware.common_user'),
+                                                                                                                        //--si el usuario está logueado como usuario común, continúa con el controlador, si no, lo redirige al login)
 /* log out */
-
 router.delete('/logOut', usersController.logOut);
-
-
-// Editar Preferencias
-/* router.get('/editUser/:id', authMiddleware,usersController.edit)  /*--> se aplica el 'authMiddleware' (si el usuario está logueado, continúa con el controlador,
-                                                                                     * si no, lo redirige al login) */ 
-router.put('/userProfile/:id', /* upload.single("imgProfile") ,*/ usersController.editUser);
-
-// Eliminar usuario 
-router.delete('/delete/:id', authMiddleware,usersController.destroy); /* se aplica el 'authMiddleware' (si el usuario está logueado, continúa con el controlador,
-                                                                    * si no, lo redirige al login) */
-
-// Eliminar usuario 
-router.delete('/delete/:id', authMiddleware,usersController.destroy); 
 
 module.exports = router;
