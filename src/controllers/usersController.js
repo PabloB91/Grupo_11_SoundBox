@@ -1,17 +1,13 @@
 // Requerimientos
-
-const path = require("path")
 const express = require("express")
 const app = express();
-const fs = require("fs");
 const bcrypt = require("bcryptjs")
-const e = require("method-override");
 const db = require("../database/models")
 
 const { validationResult } = require("express-validator");
 const { log } = require("console");
 
-
+// Funcionalidades
 const usersControllers = {
 
     // (GET) Formulario de Registro
@@ -59,17 +55,15 @@ const usersControllers = {
             return console.log(err); //--> Esto nos muestra en la consola si es que hubo algún error en el proceso
         }
     },
-
     // (GET) Formulario de Login
     login: (req, res) => {
         res.render("forms/login.ejs");
     },
-
     // (POST) Proceso de Login
     processToLogin: async (req, res) => {
         let userToLogIn;   //--> Creamos la variable del usuario a loguearse 
 
-        // Obtengo el valor de user_type y guárdalo en req.session.userType
+        // Obtengo el valor de user_type y guárdalo en req.session.userType /* BAUTI REVISAR SI ESTO FUNCIONA */
         
         try {
             const errors = validationResult(req);
@@ -79,14 +73,13 @@ const usersControllers = {
                         e_mail: req.body.email
                     },
                     include: [
-                        { association: "user_type", attributes: ['user_type'] },
-                        /* {association: "brand", attributes: ['brand_name']}, */ // Vamos a buscar la marca a través de la relación entre tablas, especificando que solo queremos el nombre de la marca
+                        { association: "user_type", attributes: ['user_type'] } //--> Vamos a buscar el tipo de usuario a través de la relación entre tablas, especificando que solo queremos el valor del tipo de usuario
                     ]
                 })
                 
                 if (req.body.email === userToFind.e_mail) {     //--> Si el e_mail ingresado coincide con alguno buscado en la DB, pasa a comparar las contraseñas
                     if (bcrypt.compareSync(req.body.password, userToFind.password)) {
-                        req.session.userType = userToFind.user_type.user_type;
+                        req.session.userType = userToFind.user_type.user_type;   /* BAUTI REVISAR SI ESTO FUNCIONA */
                         if (req.body.remember != undefined) {        //--> Creación de cookie con el email del usuario, para poder recuperar la sesión 
                             //--> Si el usuario clickea el checkbox, se crea la cookie. 'req.body.remember' es el elemento HTML del checkbox
                             //--> Entonces si ese elemento NO es indefinido (al clickearse, toma el valor de 'on'), se crea la cookie.
@@ -113,19 +106,22 @@ const usersControllers = {
                         });
                     }
                 }
-                /* este redirect actúa solo si el usuario existe en el db */
-              /*   console.log('El usuario existe en la DB, se redirecciona al perfil');
+            //--> Si el usuario existe en la DB, redirecciona según el tipo de usuario logueado
+            /*  console.log('El usuario existe en la DB, se redirecciona al perfil');
                 console.log('userloggedin Id: ', req.session.userLoggedIn.id); */
-                return res.redirect(`/users/userProfile/${userToLogIn.id}`);
-
+                if (userToLogIn.user_type.user_type == 'common_user') {    
+                    return res.redirect(`/users/userProfile/${userToLogIn.id}`);
+                } else if (userToLogIn.user_type.user_type == 'admin') {
+                    return res.redirect(`/admin`);
+                }
+            //--> Si el usuario no existe, redirecciona al login mostrando los errores
             } else {
                 return res.render("forms/login.ejs", { errors: errors.array(), old: req.body });
             }
         }
         catch{
            /*  console.log("catch usertoLogin: ",userToLogIn); */
-            /* En la siguiente sentencia de codigo estamos diciendo que si la contraseña o el email ingresados por el usuario no coinciden 
-               con los registrados en la DB entonces vamos a  enviar un error */
+           //--> Si la contraseña o el email ingresados por el usuario no coinciden con los registrados en la DB entonces vamos a  enviar un error //
             if (userToLogIn === undefined) {
                 return res.render("forms/login.ejs", {
                     errors: [
@@ -136,8 +132,8 @@ const usersControllers = {
             }
         }   //--> Acá termina todo el 'try-catch'
     },
-
     // (GET) Perfil del Usuario
+    //--> A este método pueden acceder tanto el admin como los usuarios comunes, con sus rutas particulares y luego de ejecutarse los middlewares
     userProfile: async (req, res) => {
         try {
             let user = await db.Usuarios.findByPk(req.params.id, {     //--> Busca el usuario en la BD según su Id
@@ -153,8 +149,8 @@ const usersControllers = {
             return res.render("not-found")
         }
     },
-
     // (PUT) Editar Usuario
+    //--> A este método pueden acceder tanto el admin como los usuarios comunes, con sus rutas particulares y luego de ejecutarse los middlewares
     editUser: async (req, res) => {
         console.log("Edit User");
         try {
@@ -171,29 +167,32 @@ const usersControllers = {
                     id: req.params.id
                 }
             })
-            console.log(userToEdit);
+
             return res.redirect(req.params.id)
+
         } catch (err) {
             console.log(err);
             return res.render("not-found")
         }
     },
-
-    destroy: async (req, res) => {
+    // (DELETE) Borrar usuario
+    //--> A este método sólo puede acceder el admin
+    deleteUser: async (req, res) => {
         try {
             let users = await db.Usuarios.destroy({
                 where: {
                     id: req.params.id
                 }
             })
+            console.log("Usuario borrado");
             res.redirect("/admin/usersList")
         }
         catch (err) {
+            console.log(err);
             res.render("not-found")
-            console.log(err)
         }
     },
-
+    // (DELETE) Borrar sesión
     logOut: (req, res) => {
         res.clearCookie('remember');
         loi

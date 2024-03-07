@@ -21,7 +21,7 @@
             <% full_user.users.forEach(user => { %>
                 <div class="user-card">
                     
-                    <a href="/users/userProfile/<%= user.id%>">
+                    <a href="/admin/userProfile/<%= user.id%>">
 
                         <div class="a-user_card">
                             
@@ -51,13 +51,13 @@
                     <div class="butons">
     
                         <div class="delete">
-                            <form action="/users/delete/<%= user.id %>?_method=DELETE" method="POST">
+                            <form action="/admin/usersList/delete/<%= user.id %>?_method=DELETE" method="POST">
                                 <button type="submit" class="boton-accion-borrar">ELIMINAR</button>
                             </form>
                         </div>
 
                         <div class="ban">
-                            <button type="submit" class="boton-accion-borrar">EANEAR</button>
+                            <button type="submit" class="boton-accion-borrar">BANEAR</button>
                         </div>
 
                     </div>

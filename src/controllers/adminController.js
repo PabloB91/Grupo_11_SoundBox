@@ -17,9 +17,6 @@ const adminController = {
 
             let full_user= {'users': users, 'user_image': user_image} //--> Se guardan por un lado los datos y por otro la imagen
             
-            users.forEach(element => {
-                console.log(element);
-            });
             res.render("user/usersList.ejs", { full_user });
         }
         catch(err) {

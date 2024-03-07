@@ -14,28 +14,10 @@ router.get("/",mainController.index);
 
 router.get("/category/:nombre", mainController.categories)
 
-router.get("/productCart", authMiddleware ,mainController.carrito); /* --> Se aplica el 'authMiddleware' (si el usuario está logueado, continúa con el controlador,
-                                                                    * si no, lo redirige al login) */
-router.get("/admin", authMiddleware,mainController.admin);
+router.get("/productCart", authMiddleware.common_user, mainController.carrito); //--> Se aplica el método 'common_user' del 'authMiddleware' ('authMiddleware.common_user'),
+                                                                                //--si el usuario está logueado como usuario común, continúa con el controlador, si no, lo redirige al login) 
 
-
-
-/**
- * El siguente codigo solo es una prueba para session a recargar la pagina nos mostarar el numero en 
- * aumento, numero el cual queda guardado en el servidor.
- */
-router.get('/pruebaSession', (req, res) => {
-
-    if (req.session.visitas == undefined){
-        req.session.visitas = 0;
-    }
-    req.session.visitas++;
-
-    res.send('session tiene el numero = '+req.session.visitas)
-});
-
-router.get('/mostarNumeroSession', (req, res) => {
-    res.send('session tiene el numero = '+req.session.visitas)
-});
+router.get("/admin", authMiddleware.admin, mainController.admin); //--> Se aplica el método 'admin' del 'authMiddleware' ('authMiddleware.admin'), 
+                                                                  //--si el usuario está logueado como admin, continúa con el controlador, si no, lo redirige al login) 
 
 module.exports = router;

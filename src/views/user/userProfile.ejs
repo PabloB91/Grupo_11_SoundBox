@@ -51,7 +51,12 @@
                         </div>
                     </div>
                     <section id="edit-user-form">
-                        <form action="/users/userProfile/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/x-www-form-urlencoded">
+                        <!-- SE BUSCA EL TIPO DE USUARIO DE LA SESIÓN A TRAVÉS DE 'LOCALS', PARA CONFIGURAR EL ATRIBUTO 'action' DEL FORMULARIO -->
+                        <% if (locals.userIsLogged==true && locals.userIsAdmin==false) { %>
+                            <form action="/users/userProfile/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/x-www-form-urlencoded">
+                        <% } else if (locals.userIsLogged==true && locals.userIsAdmin==true) { %>
+                            <form action="/admin/userProfile/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/x-www-form-urlencoded">
+                        <% } %>
                             <label for=""><p>Name</p>
                                 <input name="first_name" type="text" value="<%= user.first_name %>" >
                             </label>
