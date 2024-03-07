@@ -18,32 +18,34 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
+	align-items: center;
 }
 
 /* ------------------------------------------------------------------ */
 /*Slider*/
 .main__slider {
-	border-radius: 10px;
+	border-radius: 0px;
 	overflow: hidden;
 	width: 100%;
+	height: calc(50vw);
 
 	.slider--inner {
 		display: flex;
 		/*se le aumenta 100 dependiendo de las secciones hay 4 por ahora*/
 		width: 400%;
+		height: 90%;
 		margin-left: -100%;
 	}
 
 	.img_sliderSection {
 		width: 100%;
-		height: 200px;
 	}
 
 	.slider--img {
 		display: block;
-		width: 100%;
 		height: 100%;
-		object-fit: cover;
+		width: 100%;
+		/* object-fit: cover; */
 	}
 
 	.img_sliderSection--min-with-1020 {
@@ -51,28 +53,30 @@
 	}
 
 	.slider-buttons {
-		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		width: 100%;
-		height: 30px;
+		height: 10%;
 		background: #ff540a;
 		color: #fff;
 	}
 
+	span.material-symbols-outlined {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 16px;
+	}
+
 	.slider--btns {
-		position: absolute;
 		cursor: pointer;
-		top: 15%;
 	}
 
-	div#btn-left {
-		left: 40%;
-	}
-
-	div#btn-right {
-		right: 40%;
+	div#div__btn-pause-play {
+		margin: 0px 15%;
 	}
 }
-
 /* ------------------------------------------------------------------ */
 /*cards*/
 .main__container-cards {
@@ -226,7 +230,6 @@
 
 	.center_cards-prom {
 		width: 100%;
-		background: #fff;
 		display: grid;
 		grid-template-columns: repeat(1, 1fr);
 		gap: 30px;
@@ -335,13 +338,13 @@
 .main__brands-slider {
 	overflow: hidden;
 	width: 85%;
+	height: 115px;
 
 	/*----- Contenedor logos -----*/
 
 	.div__brands-box {
-		width: 88%;
 		width: 100%;
-		height: 110px;
+		height: 100%;
 		margin: auto;
 		white-space: nowrap;
 		position: relative;
@@ -578,6 +581,7 @@
 		font-size: 0.7rem;
 		font-weight: 600;
 	}
+
 	.price p {
 		font-weight: 300;
 	}
@@ -653,18 +657,26 @@
 		margin-bottom: 30px;
 	}
 
+	.main__section--bgColor {
+		border-radius: 8px;
+		background: #e3e3e3;
+		box-shadow: -5px 5px 16px #949494, 5px -5px 16px #ffffff;
+	}
+
 	/*slider*/
 	.main__slider {
 		margin: 60px;
 		width: 85%;
+		height: 65vh;
+		max-height: 400px;
+	}
 
-		.slider--inner {
-			height: 90%;
-		}
+	.slider--inner {
+		height: 90%;
+	}
 
-		.slider-buttons {
-			height: 10%;
-		}
+	.slider-buttons {
+		height: 10%;
 	}
 
 	/*cards*/
@@ -672,6 +684,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		width: 85%;
+		height: 65vh;
 		max-height: 400px;
 		position: relative;
 
@@ -763,8 +776,12 @@
 
 	/*cads-prom*/
 	.main__cards-prom {
+		width: 85%;
+		border-radius: 8px;
+
 		.center_cards-prom {
-			width: 85%;
+			width: 100%;
+			height: 100%;
 			grid-template-columns: repeat(3, 1fr);
 		}
 	}

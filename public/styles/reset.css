@@ -26,8 +26,8 @@ body {
 	min-height: 100dvh;
 	font-family: "Montserrat", sans-serif;
 	font-size: 0.875rem;
-	background: #e6e6e6;
 	background: #fff;
+	background: #e3e3e3;
 }
 
 ul {
@@ -36,7 +36,12 @@ ul {
 
 /* ETIQUETAS DE TEXTO */
 
-h1,h2,h3,h4,h5,h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	text-wrap: balance;
 }
 
