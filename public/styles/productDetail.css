@@ -1,10 +1,10 @@
 /* GENERAL */
 
 .caja-general {
-	/* background-image: linear-gradient(180deg, #9cacb6b5 0%, #dedfe0d3 100%), url(/img/home/categoria-amplificacion.jpg);
+	background-image: url(/img/home/fondo-product-detail.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed; */
+    background-attachment: fixed;
 }
 
 a {
@@ -196,10 +196,13 @@ a:hover {
 /* CAJAS */
 
 .border-div {
-	backdrop-filter: blur(17px);
-	background-color: #fe9b3e15;
-	border: #ff540a solid 3px;
-	padding: 5px;
+	display: flex;
+    backdrop-filter: blur(17px);
+    background-color: #fe9b3e15;
+    border: #ff540a solid 3px;
+    padding: 5px;
+    flex-direction: column;
+    align-items: center;
 }
 
 .caja-general {
@@ -266,7 +269,9 @@ a:hover {
 
 .caja-descripcion-secundaria-producto {
 	padding: 2rem;
-	margin: 0 0 70px 0;
+	margin: 70px 0 70px 0;
+	box-shadow: 0px 0px 20px 0px black;
+	background: #ebebeb;
 }
 
 .caja-secciones-secundarias-informacion {

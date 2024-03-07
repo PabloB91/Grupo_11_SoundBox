@@ -5,7 +5,7 @@ function userLoggedMiddleware(req, res, next) {
         
         if (req.session.userLoggedIn && req.session.userLoggedIn.user_type.user_type == 'common_user') {
                 console.log("userLoggedMiddleware");
-                console.log(req.session.userType);
+                console.log("El usuario es de tipo: ",req.session.userType);
 
                 res.locals.userIsLogged = true; //----> y aca la misma variable cambia a true ya que hay un usuario logueado dentro del sessions. entonces en el if del header.ejs mostramos parte del header o no, segun el valor de la misma.
                 res.locals.userLoggedIn = req.session.userLoggedIn;
