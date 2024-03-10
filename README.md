@@ -41,7 +41,7 @@ Servicios:
 ### 6. DESCRIPCIÓN DE LOS INTEGRANTES DEL GRUPO
 ___________________________________________________________________________________________________________________________________
 
-  - ##### ***Miguel Ángel Vargas Navarro***
+  - ##### ***[Miguel Ángel Vargas Navarro](https://github.com/Miguel-A-VN)***
     
     - Soy un colombiano apasionado por las nuevas tecnologías y me gusta estar en constante aprendizaje.
     - Tengo 19 años.
