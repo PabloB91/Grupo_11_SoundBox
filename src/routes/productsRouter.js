@@ -6,13 +6,18 @@ const multer = require('multer');
 const upload = require( "../middlewares/multer" )
 
 // ************ Controller Require ************
+//--> Se requieren ambos controladores, porque el métodos 'allProducts' del controlador de Administrador se reutiliza
 const productsController = require('../controllers/productsController');
+const adminController = require("../controllers/adminController");
 
 // *********** Middlewares Especificos ***********
 const authMiddleware = require('../middlewares/authMiddleware'); //--> Requerimos el 'authMiddleware'
 
 // Buscar un producto
 router.get('/search', productsController.search);
+
+// Ruta para ingresar al listado de todos los productos como Usuario común
+router.get('/allTheProducts', adminController.allProducts); 
 
 // Devolver un producto 
 router.get('/productDetail/:id', productsController.detail);
