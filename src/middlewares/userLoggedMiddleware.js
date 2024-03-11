@@ -2,7 +2,7 @@
 function userLoggedMiddleware(req, res, next) {
         res.locals.userIsLogged = false //----> esta variable se en el header.ejs es la que define dentro del if si el usuario esta logueado o no, de momento es false.
         res.locals.userIsAdmin = false
-        
+        console.log("session en user logged middleware: ",req.session.userLoggedIn);
         if (req.session.userLoggedIn && req.session.userLoggedIn.user_type.user_type == 'common_user') {
                 console.log("userLoggedMiddleware");
                 console.log("El usuario es de tipo: ",req.session.userType);
@@ -23,7 +23,6 @@ function userLoggedMiddleware(req, res, next) {
         //         res.locals.admin = true;
         //         console.log(req.session.admin, 'este usuario es admin');
         //     }
-
         next()
 
 }

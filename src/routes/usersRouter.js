@@ -52,6 +52,6 @@ router.get('/userProfile/:id', authMiddleware.common_user,authMiddleware.profile
 router.put('/userProfile/:id', /* upload.single("imgProfile") ,*/ authMiddleware.common_user, usersController.editUser); //--> Se aplica el método 'common_user' del 'authMiddleware' ('authMiddleware.common_user'),
                                                                                                                         //--si el usuario está logueado como usuario común, continúa con el controlador, si no, lo redirige al login)
 /* log out */
-router.delete('/logOut', usersController.logOut);
+router.get('/logOut', usersController.logOut);
 
 module.exports = router;

@@ -89,7 +89,7 @@ const usersControllers = {
                             delete userToFind['_previousDataValues'].password
                             userToLogIn = userToFind;           //--> Si las contraseñas coinciden, hacemos que la variable usuario a loguearse sea igual al usuario encontrado en la DB
                             req.session.userLoggedIn = userToLogIn;
-                            res.cookie('remember', userToLogIn.e_mail, { maxAge: 60000 })
+                            res.cookie('remember', userToLogIn.e_mail, { maxAge: 120000 })
                         } else {
                             delete userToFind['dataValues'].password //--> Borramos el password de la variable a guardar en session, por seguridad
                             delete userToFind['_previousDataValues'].password
@@ -194,8 +194,8 @@ const usersControllers = {
     },
     // (DELETE) Borrar sesión
     logOut: (req, res) => {
+        console.log("LOGOUT");
         res.clearCookie('remember');
-        loi
         req.session.destroy();
         return res.redirect('/');
     }

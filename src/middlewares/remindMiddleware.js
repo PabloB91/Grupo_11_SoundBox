@@ -9,27 +9,31 @@ const db = require("../database/models")
 
 function remindMiddleware(req, res, next) {
 
-    if (req.cookies.remember != undefined && req.session.userToLogin == undefined) {  //--> Si existe la cookie Y la sesión NO existe, sigue con el proceso
-        console.log('userToLogin :', req.session.userToLogIn) ;
+    if (req.cookies.remember != undefined && req.session.userLoggedIn == undefined) {  //--> Si existe la cookie Y la sesión NO existe, sigue con el proceso
+        console.log('userLoggedIn :', req.session.userLoggedIn) ;
         console.log("useremail de cookie: ", req.cookies.remember);
       
         try {
             let userToFind= db.Usuarios.findOne({   //--> Crea una variable 'userToFind', que busca el usuario en la DB según el e_mail del formulario
                 where:{
                     e_mail: req.cookies.remember
-                }
+                },
+                include: [
+                    {association: 'user_type'}  //--> Se incluye el tipo de usuario porque el middleware 'userLoggedMiddleware' lo requiere
+                ]
             })
             .then(function(userToFind){
                 console.log("usuario a encontrar: ",userToFind) ;
                 console.log(userToFind.e_mail);
                 if (userToFind.e_mail === req.cookies.remember ){
-                    console.log("usuario ya logueado:", req.session.userLoggedIn)
                     req.session.userLoggedIn = userToFind
+                    console.log("usuario ya logueado:", req.session.userLoggedIn)
                     
                 }
                 console.log("remindMiddleware: Se recupera la sesión del usuario");
                 console.log(req.session.userLoggedIn);
-                
+                console.log('Redirect del Recuérdame');
+                res.redirect('/') 
             })
 
         } catch (err) {
