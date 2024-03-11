@@ -1,19 +1,3 @@
-/* document.addEventListener('DOMContentLoaded', function() {
-    let link_usuario= document.querySelector('.account')
-    //console.log(link_usuario.href);
-})
- */
-
-/* var iconMenu = document.querySelector('.m+enu-burguer');
-        
-    iconMenu.addEventListener('click', function () {
-        if (iconMenu.classList.contains('open')) {
-            iconMenu.classList.remove('open');
-        } else {
-            iconMenu.classList.add('open');
-        }
-    }, false); */
-
     
 function disappear () {
 let boxMusicSBX  = document.querySelector('.box-img');
@@ -70,7 +54,6 @@ const menuBurguerDesplegable = document.querySelector('#menuBurguerDesplegable')
 
 menuContainer.addEventListener('click', (e) => {
     e.preventDefault();
-    console.log("hola")
     // alternamos estilos para el menu 
     menuBurguerDesplegable.style.display= "flex";
     

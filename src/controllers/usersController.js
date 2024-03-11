@@ -79,7 +79,7 @@ const usersControllers = {
                 
                 if (req.body.email === userToFind.e_mail) {     //--> Si el e_mail ingresado coincide con alguno buscado en la DB, pasa a comparar las contraseñas
                     if (bcrypt.compareSync(req.body.password, userToFind.password)) {
-                        req.session.userType = userToFind.user_type.user_type;   /* BAUTI REVISAR SI ESTO FUNCIONA */
+                        req.session.userType = userToFind.user_type.user_type;
                         if (req.body.remember != undefined) {        //--> Creación de cookie con el email del usuario, para poder recuperar la sesión 
                             //--> Si el usuario clickea el checkbox, se crea la cookie. 'req.body.remember' es el elemento HTML del checkbox
                             //--> Entonces si ese elemento NO es indefinido (al clickearse, toma el valor de 'on'), se crea la cookie.
@@ -195,7 +195,6 @@ const usersControllers = {
     // (DELETE) Borrar sesión
     logOut: (req, res) => {
         res.clearCookie('remember');
-        loi
         req.session.destroy();
         return res.redirect('/');
     }
