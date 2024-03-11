@@ -25,8 +25,8 @@ router.get('/userProfile/:id', authMiddleware.admin, usersController.userProfile
 // Ruta para Editar Perfil de cada usuario como Administrador
 router.put('/userProfile/:id', /* upload.single("imgProfile") ,*/ authMiddleware.admin,usersController.editUser); 
 
-// Ruta para ingresar al listado de todos los productos
-router.get('/allTheProducts',  adminController.allProducts);   
+// Ruta para ingresar al listado de todos los productos como Administrador
+router.get('/allTheProducts',  authMiddleware.admin, adminController.allProducts);   
 
 // Ruta para eliminar usuario 
 router.delete('/usersList/delete/:id', authMiddleware.admin, usersController.deleteUser); 
