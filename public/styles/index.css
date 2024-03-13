@@ -430,7 +430,7 @@
 /*-----CATEGORIES-----*/
 .main__content-categories {
 	width: 100%;
-	background: ;
+	background: #949494;
 
 	.dropdown-content-category_title {
 		width: 100%;
@@ -462,8 +462,8 @@
 		align-items: center;
 
 		&:hover img {
-			filter: brightness(1);
-			transition: 1s;
+			filter: brightness(0.9);
+			transition: 500ms;
 		}
 	}
 
@@ -479,7 +479,7 @@
 
 	.categoria p {
 		display: block;
-		background-color: rgba(0, 0, 0, 0.1);
+		background-color: rgba(0, 0, 0, 0.115);
 		color: white;
 		font-family: "Bebas Neue", sans-serif;
 		font-size: 1.5em;
@@ -489,7 +489,7 @@
 	}
 
 	.categoria img {
-		filter: brightness(0.3);
+		filter: brightness(0.5);
 	}
 }
 
