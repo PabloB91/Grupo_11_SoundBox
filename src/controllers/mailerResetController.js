@@ -43,14 +43,14 @@ const resetPasswordController =  {
                 html:  `<p>A user requested to reset their password. Here's the user's email:</p><p>${userEmail}</p><p>And here's the reset link:</p><p>${userResetLink}</p>`
             });
 
-            console.log("User message sent", userInfo.messageId);
-            console.log("Store owner message sent", storeOwnerInfo.messageId);
+            /* console.log("User message sent", userInfo.messageId);
+            console.log("Store owner message sent", storeOwnerInfo.messageId); */
 
             res.redirect("/")
         }
         catch(err) {
             res.render("not-found")
-            console.log(err)
+            /* console.log(err); */
         }
     }, 
     validateStoreDeleteToken : (req, res) => {

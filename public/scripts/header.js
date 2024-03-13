@@ -70,7 +70,7 @@ const menuBurguerDesplegable = document.querySelector('#menuBurguerDesplegable')
 
 menuContainer.addEventListener('click', (e) => {
     e.preventDefault();
-    console.log("hola")
+    /* console.log("hola") */
     // alternamos estilos para el menu 
     menuBurguerDesplegable.style.display= "flex";
     
