@@ -32,7 +32,7 @@ const mainController = {
 			res.render("index", { topSeller, offerts, products });
 		} catch (err) {
 			/* console.log(err); */
-			res.render("not-found");
+			res.render("errors/404.ejs");
 		}
 	},
 
@@ -43,7 +43,7 @@ const mainController = {
 			res.render("admin.ejs", { users, products });
 		} catch (err) {
 			/* console.log(err); */
-			res.render("not-found");
+			res.render("errors/404.ejs");
 		}
 	},
 
@@ -58,7 +58,16 @@ const mainController = {
 			res.render("product/categories.ejs", { category });
 		} catch (err) {
 			c;
-			res.render("not-found");
+			res.render("errors/404.ejs");
+		}
+	},
+
+	allCategories: async (req, res) => {
+		try {
+			res.render("product/allCategories.ejs");
+		} catch (err) {
+			c;
+			res.render("errors/404.ejs");
 		}
 	},
 
@@ -69,7 +78,7 @@ const mainController = {
 			res.render("product/productCart.ejs", { products });
 		} catch (err) {
 			/* console.log(err); */
-			res.render("not-found");
+			res.render("errors/404.ejs");
 		}
 	},
 };

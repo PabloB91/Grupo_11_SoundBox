@@ -20,7 +20,7 @@ const brandsController = {
 			);
 		} catch (err) {
 			/* console.log(err); */
-			res.render("not-found");
+			res.render("errors/404.ejs");
 		}
 	},
 };

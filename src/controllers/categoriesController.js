@@ -13,7 +13,7 @@ const brandsController = {
 			res.render("product/categories.ejs", { categories });
 		} catch (err) {
 			/* console.log(err); */
-			res.render("not-found");
+			res.render("errors/404.ejs");
 		}
 	},
 };

@@ -20,7 +20,7 @@ const controller = {
 			});
 			res.render("product/productDetail", { product });
 		} catch (err) {
-			/* console.log(err); */ res.render("not-found");
+			/* console.log(err); */ res.render("errors/404.ejs");
 		}
 	},
 
@@ -40,7 +40,7 @@ const controller = {
 				availableStates,
 			});
 		} catch (err) {
-			/* console.log(err); */ res.render("not-found");
+			/* console.log(err); */ res.render("errors/404.ejs");
 		}
 	},
 
@@ -114,7 +114,7 @@ const controller = {
 			}
 			res.redirect("../admin/allTheProducts");
 		} catch (err) {
-			/* console.log(err); */ res.render("not-found");
+			/* console.log(err); */ res.render("errors/404.ejs");
 		}
 	},
 
@@ -144,7 +144,7 @@ const controller = {
 				availableBrands,
 			});
 		} catch (err) {
-			/* console.log(err); */ res.render("not-found");
+			/* console.log(err); */ res.render("errors/404.ejs");
 		}
 	},
 
@@ -189,8 +189,8 @@ const controller = {
 			console.log("Producto editado: ", editedProduct); */
 			res.redirect("/products/productDetail/" + req.params.id);
 		} catch (err) {
-			/* console.log(err); */ 
-			res.render("not-found");
+			/* console.log(err); */
+			res.render("errors/404.ejs");
 		}
 	},
 
@@ -210,7 +210,7 @@ const controller = {
 			res.redirect("/admin/allTheProducts");
 		} catch (err) {
 			/* console.log(err); */
-			res.render("not-found");
+			res.render("errors/404.ejs");
 		}
 	},
 
@@ -219,8 +219,8 @@ const controller = {
 			let productsSearch = await db.Productos.findAll();
 			res.render("product/search", { productsSearch });
 		} catch (err) {
-			/* console.log(err); */ 
-			res.render("not-found");
+			/* console.log(err); */
+			res.render("errors/404.ejs");
 		}
 	},
 };

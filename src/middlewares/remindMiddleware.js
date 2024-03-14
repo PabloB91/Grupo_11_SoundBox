@@ -14,9 +14,7 @@ function remindMiddleware(req, res, next) {
 	) {
 		//--> Si existe la cookie Y la sesión NO existe, sigue con el proceso
 		/* console.log("userLoggedIn :", req.session.userLoggedIn);
-		console.log("useremail de cookie: ", req.cookies.remember) */;
-
-		try {
+		console.log("useremail de cookie: ", req.cookies.remember) */ try {
 			let userToFind = db.Usuarios.findOne({
 				//--> Crea una variable 'userToFind', que busca el usuario en la DB según el e_mail del formulario
 				where: {
@@ -38,12 +36,12 @@ function remindMiddleware(req, res, next) {
 				/* console.log(
 					"remindMiddleware: Se recupera la sesión del usuario"
 				); */
-			/* 	console.log(req.session.userLoggedIn);
+				/* 	console.log(req.session.userLoggedIn);
 				console.log("Redirect del Recuérdame"); */
 				res.redirect("/");
 			});
 		} catch (err) {
-			/* console.log(err); */ return res.render("not-found");
+			/* console.log(err); */ return res.render("errors/404.ejs");
 		}
 	}
 	next(); //--> Luego de recuperar la sesión, permite seguir ejecutando la ruta para el controlador del login
