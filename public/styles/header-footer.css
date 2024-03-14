@@ -257,7 +257,7 @@ header {
 
 	.logoSbx {
 		width: 50px;
-		height: 65px;
+		/*height: 65px;*/
 		transition: 100ms;
 
 		.img-logoSBX {
@@ -319,7 +319,7 @@ header {
 		justify-content: center;
 
 		a {
-			font-size: 1.5rem;
+			font-size: 1rem;
 			border-radius: 5px;
 			background: #ff540a;
 			display: flex;
@@ -632,14 +632,14 @@ footer {
 			}
 
 			.li__btnSearch {
-				width: 100%;
+				/*width: 100%;*/
 				height: auto;
 				display: flex;
 				align-items: center;
 				justify-content: center;
 
 				a {
-					font-size: 1.5rem;
+					font-size: 1rem;
 					border-radius: 5px;
 					background: #ff540a;
 					display: flex;
