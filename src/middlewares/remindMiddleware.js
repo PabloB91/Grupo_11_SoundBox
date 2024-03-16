@@ -11,7 +11,7 @@ function remindMiddleware(req, res, next) {
 
     if (req.cookies.remember != undefined && req.session.userToLogin == undefined) {  //--> Si existe la cookie Y la sesión NO existe, sigue con el proceso
         console.log('userToLogin :', req.session.userToLogIn) ;
-        console.log("useremail de cookie: ", req.cookies.remember);
+        console.log("user email de cookie: ", req.cookies.remember);
       
         try {
             let userToFind= db.Usuarios.findOne({   //--> Crea una variable 'userToFind', que busca el usuario en la DB según el e_mail del formulario

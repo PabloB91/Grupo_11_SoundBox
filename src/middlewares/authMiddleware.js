@@ -2,7 +2,7 @@
 
 // Se crea un objeto con distintos métodos para permitir ejecutar rutas a cada tipo de usuario
 
-const auth= {
+const auth = {
     // Método para permitir accesos a rutas de usuario administrador
     admin: (req, res, next) => {        //--> Si el usuario está logueado y es igual a 'admin', y accede a la ruta seleccionada, continúa la ejecución del controlador de esa ruta, 
                                         //-- si no, lo redirige al formulario de login.--//
@@ -20,8 +20,9 @@ const auth= {
             return res.redirect('/users/login')
         }
     },
+
     // Método para permitir acceso a rutas de usuarios comunes
-    common_user: (req,res,next) => {        //--> Si el usuario está logueado y es distinto a 'admin', y accede a la ruta seleccionada, continúa la ejecución del controlador de esa ruta, 
+    common_user: (req, res, next) => {        //--> Si el usuario está logueado y es distinto a 'admin', y accede a la ruta seleccionada, continúa la ejecución del controlador de esa ruta, 
                                             //-- si no, lo redirige al formulario de login.--//
         if(req.session.userLoggedIn != undefined && req.session.userLoggedIn.user_type.user_type != 'admin'){
             console.log("Auth middleware: Usuario logueado como Usuario Común, estos son los datos guardados en session: ");

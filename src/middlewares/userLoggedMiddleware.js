@@ -18,11 +18,6 @@ function userLoggedMiddleware(req, res, next) {
 
                 res.locals.userLoggedIn = req.session.userLoggedIn;
         }
-        // const cookieUser = req.cookies.userCookie 
-        // if (req.session.userLoggedIn.db.user.user_type_id == 2) {
-        //         res.locals.admin = true;
-        //         console.log(req.session.admin, 'este usuario es admin');
-        //     }
 
         next()
 

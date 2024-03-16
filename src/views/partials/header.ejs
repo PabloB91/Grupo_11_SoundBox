@@ -17,7 +17,7 @@
 
                 <div class="top-navigation-bar access-and-purchase-buttons">
                     <nav>
-                        <% if(locals.userIsLogged==false){ %>
+                        <% if(locals.userIsLogged == false){ %>
                             <ul>
                                 <li class="li_register-login">
                                     <div class="register-login">
@@ -71,7 +71,7 @@
                                         </div>
 
                                     </li>
-                                    <% }else if(locals.userIsLogged==true && locals.userIsAdmin==true){ %> %>
+                                    <% }else if(locals.userIsLogged==true && locals.userIsAdmin==true){ %>
                                         <li class="li_user admin">
                                             <div class="admin-container">
                                                 <a href="/admin">

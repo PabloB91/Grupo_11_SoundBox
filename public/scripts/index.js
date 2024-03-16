@@ -106,7 +106,7 @@ leftBtnSliderCards.addEventListener("click", () => {
 //                            slider brands                                   |
 //-----------------------------------------------------------------------------|
 
-/* const copy = document.querySelector(".div__logos-slide").cloneNode(true);
+const copy = document.querySelector(".div__logos-slide").cloneNode(true);
 document.querySelector(".div__brands-box").appendChild(copy);
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -129,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	}
 
 	setInterval(startAnimation, 25);
-}); */
+}); 
 
 //-----------------------------------------------------------------------------|
 //                            NO FUNCIONARON                                   |

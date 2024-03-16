@@ -368,7 +368,7 @@ label {
 		align-items: center;
 		justify-content: center;
 		width: 50%;
-		animation: normal 2s appear ease-in-out;
+		animation: normal 1s appear ease-in-out;
 	}
 
 	@keyframes appear {
