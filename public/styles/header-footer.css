@@ -47,6 +47,8 @@ header {
 
 		p {
 			font-size: 0.7rem;
+			text-align: center;
+			padding: 10px;
 			color: #fff;
 			width: 95%;
 		}
@@ -54,6 +56,7 @@ header {
 
 	.headerTop .top-navigation-bar {
 		width: 100%;
+		padding: 10px;
 
 		nav {
 			display: flex;
@@ -67,10 +70,6 @@ header {
 			justify-content: space-evenly;
 			/* flex-wrap: wrap;
 			 */
-		}
-
-		li {
-			margin-right: 5%;
 		}
 
 		.register-login {
@@ -546,6 +545,10 @@ footer {
 			width: 50%;
 			justify-content: start;
 			align-items: center;
+
+			p {
+				text-align: revert;
+			}
 		}
 
 		.headerTop .top-navigation-bar {
@@ -553,6 +556,10 @@ footer {
 
 			ul {
 				justify-content: end;
+			}
+
+			li {
+				margin-right: -2.5em; /* Medida negativa momentánea para justificar con respecto a lupa */
 			}
 
 			.li_register-login {
