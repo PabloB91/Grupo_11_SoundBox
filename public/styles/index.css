@@ -27,7 +27,7 @@
 	border-radius: 0px;
 	overflow: hidden;
 	width: 100%;
-	height: calc(50vw);
+	/*height: calc(50vw);*/
 
 	.slider--inner {
 		display: flex;
@@ -638,13 +638,6 @@
 
 /* ------------------------------------------------------------------ */
 /*---MEDIA QUERIES---*/
-/* @media screen and (max-width: 425px) {
-	.main__content-categories {
-		.items-categories {
-			grid-template-columns: repeat(1, 1fr);
-		}
-	}
-} */
 
 @media screen and (min-width: 768px) {
 	.main__section--margin-bottom {
@@ -661,8 +654,8 @@
 	.main__slider {
 		margin: 60px;
 		width: 85%;
-		height: 65vh;
-		max-height: 400px;
+		/*height: 65vh;*/
+		/*max-height: 400px;*/
 	}
 
 	.slider--inner {

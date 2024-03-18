@@ -225,4 +225,38 @@ const usersControllers = {
 	},
 };
 
+<<<<<<< HEAD
+        } catch (err) {
+            console.log(err);
+            return res.render("not-found")
+        }
+    },
+    // (DELETE) Borrar usuario
+    //--> A este método sólo puede acceder el admin
+    deleteUser: async (req, res) => {
+        try {
+            let users = await db.Usuarios.destroy({
+                where: {
+                    id: req.params.id
+                }
+            })
+            console.log("Usuario borrado");
+            res.redirect("/admin/usersList")
+        }
+        catch (err) {
+            console.log(err);
+            res.render("not-found")
+        }
+    },
+    // (DELETE) Borrar sesión
+    logOut: (req, res) => {
+        res.clearCookie('remember');
+        req.session.destroy();
+        return res.redirect('/');
+    }
+}
+
 module.exports = usersControllers;
+=======
+module.exports = usersControllers;
+>>>>>>> c50469f2375dcef3dd2c573982c0aa33bf1225f1

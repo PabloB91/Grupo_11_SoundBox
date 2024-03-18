@@ -1,3 +1,5 @@
+
+
 const goTopBtn = document.getElementById("goTop")
 
 window.addEventListener( 'scroll', ()=>{
@@ -18,3 +20,4 @@ function scrollFunction() {
 goTopBtn.addEventListener('click', function () {
     window.scrollTo(0, 0);
 })
+
