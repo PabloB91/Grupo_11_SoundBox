@@ -1,11 +1,3 @@
-.propiety-TNotSelect {
-	/* para evitar que selexionen el texto */
-	-webkit-user-select: none; /* Safari */
-	-moz-user-select: none; /* Firefox */
-	-ms-user-select: none; /* Internet Explorer */
-	user-select: none; /* Standard syntax */
-}
-
 /* ------------------------------------------------------------------ */
 .main {
 	display: flex;
@@ -509,7 +501,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	overflow: hidden;
+	/* overflow: hidden; */
 
 	.container-boxes {
 		display: flex;
@@ -762,17 +754,17 @@
 	}
 
 	/*cads-prom*/
-	.main__cards-prom {
+	/* .main__cards-prom {
 		width: 85%;
 		border-radius: 8px;
 
 		.center_cards-prom {
 			width: 100%;
 			height: 100%;
-			grid-template-columns: repeat(3, 1fr);
+			grid-template-columns: repeat(4, 1fr);
 		}
 	}
-
+ */
 	/* ------------------------------------------------------------------ */
 	/*CATEGORIES*/
 	.main__content-categories {
