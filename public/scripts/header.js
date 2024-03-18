@@ -1,5 +1,5 @@
     
-function disappear () {
+/* function disappear () {
 let boxMusicSBX  = document.querySelector('.box-img');
 boxMusicSBX.classList.toggle('disappear', window.scrollY > 20);
 };
