@@ -99,3 +99,13 @@ a:hover,
 a:active {
 	color: #000;
 }
+
+/* Properties */
+
+.property-TNotSelect {
+	/* para evitar que selexionen el texto */
+	-webkit-user-select: none; /* Safari */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* Internet Explorer */
+	user-select: none; /* Standard syntax */
+}
