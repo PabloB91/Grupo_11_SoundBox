@@ -317,20 +317,40 @@ header {
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		position: relative;
 
 		a {
 			font-size: 1rem;
 			border-radius: 5px;
-			background: #ff540a;
+			background: #E6E6E6;
 			display: flex;
 			justify-content: center;
 			align-items: center;
 			width: 30px;
 			height: 30px;
+			transition-duration: 0.4s;
+		}
+
+		a:hover {
+			background-color: #FF540A;
 		}
 
 		.fa-solid {
-			color: #fff;
+			color: #FF540A;
+			background-color: transparent;
+			border-radius: 5px;
+			width: 30px;
+			height: 30px;
+			position: absolute;
+			/*top: 0px;
+			left: 0px; pendiente organizar posicionamiento absoluto con respecto a contenedor madre div_btnSearch ¿por qué funciona en @media query 768 y aquí no?...*/
+			background-origin: padding-box;
+			transition-duration: 0.4s;
+		}
+
+		.fa-solid:hover {
+			color: white;
+			background-color: transparent;
 		}
 	}
 
@@ -648,7 +668,6 @@ footer {
 			}
 
 			.li__btnSearch {
-				/*width: 100%;*/
 				height: auto;
 				display: flex;
 				align-items: center;
@@ -664,7 +683,7 @@ footer {
 					align-items: center;
 					width: 30px;
 					height: 30px;
-					transition-duration: 0.5s;
+					transition-duration: 0.4s;
 				}
 
 				a:hover {
@@ -681,7 +700,7 @@ footer {
 					top: 7px;
 					left: 7px;
 					background-origin: padding-box;
-					transition-duration: 0.5s;
+					transition-duration: 0.4s;
 				}
 
 				.fa-solid:hover {
