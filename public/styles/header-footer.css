@@ -431,7 +431,7 @@ footer {
 			position: fixed;
 			bottom: 45px;
 			right: 15px;
-			background-color: #ff540a;
+			background-color: #8F8F8F;
 			border-radius: 50%;
 			width: 50px;
 			height: 50px;
@@ -439,10 +439,17 @@ footer {
 			font-size: 18px;
 			justify-content: center;
 			align-items: center;
+			transition-duration: 0.8ms;
+			cursor: pointer;
 
 			i {
 				color: white;
 			}
+		}
+
+		#goTop:hover {
+			background-color: #FF540A;
+			cursor: pointer;
 		}
 	}
 
@@ -646,20 +653,40 @@ footer {
 				display: flex;
 				align-items: center;
 				justify-content: center;
+				position: relative;
 
 				a {
 					font-size: 1rem;
 					border-radius: 5px;
-					background: #ff540a;
+					background: #E6E6E6;
 					display: flex;
 					justify-content: center;
 					align-items: center;
 					width: 30px;
 					height: 30px;
+					transition-duration: 0.5s;
+				}
+
+				a:hover {
+					background-color: #FF540A;
 				}
 
 				.fa-solid {
-					color: #fff;
+					color: #FF540A;
+					background-color: transparent;
+					border-radius: 5px;
+					width: 30px;
+					height: 30px;
+					position: absolute;
+					top: 7px;
+					left: 7px;
+					background-origin: padding-box;
+					transition-duration: 0.5s;
+				}
+
+				.fa-solid:hover {
+					color: white;
+					background-color: transparent;
 				}
 			}
 
