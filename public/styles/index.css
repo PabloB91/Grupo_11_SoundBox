@@ -82,6 +82,11 @@
 
 	.slider--btns {
 		cursor: pointer;
+		color: #FFD4C2;
+	}
+
+	.slider--btns:hover {
+		color: white;
 	}
 
 	div#div__btn-pause-play {
