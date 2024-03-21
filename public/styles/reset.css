@@ -100,6 +100,12 @@ a:active {
 	color: #000;
 }
 
+.T-color {
+	color: #000;
+}
+.orange-T-color {
+	color: #ff540a;
+}
 /* Properties */
 
 .property-TNotSelect {
