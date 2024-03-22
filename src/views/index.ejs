@@ -232,7 +232,7 @@
 
                 </section>
 
-                <section id="cards-prom"
+                <section id="brands-prom"
                     class="main__section-brands-prom property-TNotSelect main__section--flex main__section--margin-bottom main__section--bgColor mnw-768px--w-85">
 
                     <section class="main__section-brands-slider ">
@@ -533,7 +533,7 @@
                                 <h2>DESTACADOS</h2>
                             </div>
 
-                            <div class="promo-container_cards">
+                            <div class="promo-container_cards" id="promo-container-one">
                                 <% topSeller.forEach(product=> { %>
                                     <div class="card">
 
@@ -593,7 +593,7 @@
                                 <h2>COMENTARIOS</h2>
                             </div>
 
-                            <div class="promo-container_cards">
+                            <div class="promo-container_cards" id="promo-container-two">
                                 <% topSeller.forEach(product=> { %>
                                     <div class="card">
                                         <picture class="img-product">
@@ -719,5 +719,7 @@
                 </section>
 
             </div>
+
         </main>
-        <%- include('./partials/footer.ejs') %>
+
+    <%- include('./partials/footer.ejs') %>
