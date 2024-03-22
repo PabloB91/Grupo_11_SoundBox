@@ -527,7 +527,7 @@
                                 <h2>DESTACADOS</h2>
                             </div>
 
-                            <div class="promo-container_cards">
+                            <div class="promo-container_cards" id="promo-container-one">
                                 <% topSeller.forEach(product=> { %>
                                     <div class="card">
 
@@ -587,7 +587,7 @@
                                 <h2>COMENTARIOS</h2>
                             </div>
 
-                            <div class="promo-container_cards">
+                            <div class="promo-container_cards" id="promo-container-two">
                                 <% topSeller.forEach(product=> { %>
                                     <div class="card">
                                         <picture class="img-product">
@@ -713,5 +713,7 @@
                 </section>
 
             </div>
+
         </main>
-        <%- include('./partials/footer.ejs') %>
+
+    <%- include('./partials/footer.ejs') %>
