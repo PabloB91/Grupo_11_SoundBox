@@ -14,13 +14,13 @@
 
         <div class="title-Wmodal">
 
-            <h2>QUE BUSCAS HOY?</h2>
+            <h2>¿QUÉ BUSCÁS HOY?</h2>
         </div>
 
         <form action="/search" method="GET">
 
             <div class="search-bar_input">
-                <input name="search" type="search" id="buscador" placeholder="   filtrá según el nombre: Guitarra electrica, por precio: 1500 o segun el descuento: 10">
+                <input name="search" type="search" id="buscador" placeholder="   filtrá según el nombre 'Guitarra eléctrica', por precio '1500' o según el descuento '10'">
             </div>
 
             <button type="submit" name="search" class="btn-search-bar">
@@ -28,7 +28,8 @@
             </button>
 
         </form>
-
+        <br>
+        <br>
         <div class="cards-container">
             <% productsSearch.forEach(product => { %>
                     <a href="/products/productDetail/<%= product.id %>" class="product">
