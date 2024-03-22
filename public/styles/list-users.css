@@ -6,6 +6,7 @@
 .title-of-page {
 	display: flex;
 	justify-content: center;
+	margin: 15px;
 }
 
 .users {
@@ -34,6 +35,7 @@
 		height: 90%;
 		display: flex;
 		align-items: center;
+		background-color: white;
 
 		&:hover {
 			background: #ffd4c2;
@@ -54,4 +56,28 @@
 
 .infoUser {
 	width: 50%;
+	margin: 0 10px 0 10px;
+}
+
+#name, #last, #email, #country{
+	padding: 7px 0 7px 0;
+	font-size: 15px;
+}
+
+.boton-accion-borrar{
+	border: 1px solid rgb(106, 106, 106);
+	border-radius: 3px;
+	padding: 3px;
+	-webkit-text-stroke: 0.3px;
+	background-color: white;
+}
+
+.ban{
+	position: relative;
+	left: 80px;
+	bottom: 8px;
+}
+.delete{
+	position: relative;
+	top: 15px;
 }

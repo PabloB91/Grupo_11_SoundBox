@@ -14,16 +14,16 @@ const upload = require("../middlewares/multer")  //--> Acá requerimos a toda la
 
 // Validacion de Registro
 const registerValidations = [
-    body('name').notEmpty().withMessage('Tu nombre es necesario'),
-    body('lastName').notEmpty().withMessage('Tu apellido es necesario'),
-    body('email').trim().notEmpty().isEmail().withMessage('Tu E-mail es necesario'),
-    body('password').notEmpty().isLength({min: 8, max: 16 }).withMessage('La contraseña debe tener entre 8 y 16 caracteres'),
-    body('password').matches(/[A-Z]/).withMessage('La contraseña debe tener al menos una mayúscula'),
-    body('password').matches(/[a-z]/).withMessage('La contraseña debe tener al menos una minúscula'),
-    body('password').matches(/[!@#$%^&/_*]/).withMessage('La contraseña debe tener al menos un carácter especial (!@#$%^&*)'),
+    body('name').notEmpty(),
+    body('lastName').notEmpty(),
+    body('email').trim().notEmpty().isEmail(),
+    body('password').notEmpty().isLength({min: 8, max: 16 }),
+    body('password').matches(/[A-Z]/),
+    body('password').matches(/[a-z]/),
+    body('password').matches(/[!@#$%^&/_*]/),
     body('confirm-password').custom((validationPassword, { req }) => {
         if (validationPassword !== req.body.password) {
-          throw new Error('La contraseña no es la misma que se ingresó en el campo anterior');
+          new Error('La contraseña no es la misma que se ingresó en el campo anterior');
         }
         return true;
       }),
