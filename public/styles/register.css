@@ -179,6 +179,7 @@ header {
 	font-family: "Montserrat";
 	font-size: 14px;
 	font-weight: 400;
+	padding-top: 10px;
 }
 
 .a-crear-cuenta {
@@ -276,6 +277,7 @@ label {
 
 	input {
 		border: none;
+		border-radius: 5px;
 		background: #ff540a;
 		color: #fff;
 		height: 30px;
@@ -433,6 +435,7 @@ label {
 
 		input {
 			border: none;
+			border-radius: 5px;
 			background: #ff540a;
 			color: #fff;
 			height: 30px;

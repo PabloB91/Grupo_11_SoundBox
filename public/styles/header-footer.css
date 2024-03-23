@@ -94,6 +94,11 @@ header {
 					p {
 						color: #ff540a;
 					}
+
+					.fa-regular,
+					.fa-solid {
+						color: #FFD4C2;
+					}
 				}
 			}
 		}
@@ -134,7 +139,7 @@ header {
 			color: #ff540a;
 
 			&:hover {
-				color: #550c18;
+				color: white;
 			}
 		}
 
@@ -170,6 +175,10 @@ header {
 				color: #ff540a;
 				margin: 0px 4px;
 				font-size: 1rem;
+			}
+
+			.fa-regular:hover {
+				color: white;
 			}
 
 			.user-dropdown a {
@@ -566,6 +575,10 @@ footer {
 			color: #ff540a;
 			margin: 0px 4px;
 			font-size: 1.5rem;
+
+			&:hover {
+				color: #FFD4C2;
+			}
 		}
 
 		.headerTop .comment {
@@ -704,7 +717,7 @@ footer {
 				}
 
 				.fa-solid:hover {
-					color: white;
+					color: #fff;
 					background-color: transparent;
 				}
 			}

@@ -101,6 +101,7 @@
 	background: #fff;
 	border-radius: 8px;
 	overflow: hidden;
+	padding-bottom: 1.5em;
 
 	.title-section {
 		width: 100%;
@@ -144,7 +145,7 @@
 		overflow: hidden;
 		width: 110px;
 		border: 1px solid #000;
-		border-radius: 7px;
+		border-radius: 5px;
 	}
 
 	.card {
@@ -156,7 +157,7 @@
 		overflow: hidden;
 		border-bottom: 1px solid #7a7c7d;
 		width: 100%;
-		height: 125px;
+		/*height: 125px; ¿por qué estas medidas?*/
 		/* 	height: 280px; */
 
 		img {
@@ -177,7 +178,7 @@
 
 		.nameProduct {
 			width: 100%;
-			font-size: 0.9rem;
+			font-size: 0.8rem;
 		}
 
 		.qualification {
@@ -235,9 +236,10 @@
 }
 
 /* ------------------------------------------------------------------ */
-/*CARDS PROM*/
+/*SERVICES BANNERS SECTION*/
 .main__section-cards-prom {
 	width: 100%;
+	background-color: white;
 	height: auto;
 	display: flex;
 	justify-content: center;
@@ -252,116 +254,18 @@
 	}
 
 	.cardProm {
-		background: #E6E6E6;
-		/*border: 1px solid #333333;*/
-		border-radius: 15px;
-		height: 115px;
-		color: #ff540a;
-		fill: #ff540a;
+		border-radius: 8px;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		text-align: center;
 		cursor: pointer;
 
-		h2 {
-			color: #000;
-			font-size: 1.9rem;
-			height: 32px;
-		}
-
-		p {
-			color: #000;
-			font-size: 0.7rem;
-		}
-
-		a {
-			color: #fff;
-			height: 100%;
-			width: 100%;
-			font-size: 0.63rem;
-		}
-	}
-
-	.card1 {
-		h2 {
-			font-size: 2.3rem;
-		}
-
-		p {
-			color: #000;
-			font-size: 0.8rem;
-		}
-	}
-
-	.card2 {
-		h2 {
-			height: 30px;
-		}
-
-		p {
-			font-size: 0.86rem;
-		}
-	}
-
-	.card3 {
-		h2 {
-			height: 30px;
-		}
-
-		p {
-			font-size: 0.90rem;
-		}
-	}
-
-
-	.picture-prom {
-		margin-right: 10px;
-		display: block;
-		width: 60px;
-		height: 60px;
-		position: relative;
-
 		img {
 			width: 100%;
 			height: 100%;
+			border-radius: 8px;
 		}
-	}
-
-	.box-black{
-		background: #000;
-	}
-
-	.picture-prom span {
-		display: block;
-		width: 100%;
-		height: 100%;
-		font-size: 5rem;
-		position: absolute;
-		left: -16%;
-		top: -10%;
-	}
-
-	.picture-prom svg {
-		width: 130%;
-		height: 115%;
-
-		g {
-			width: 100%;
-			height: 100%;
-		}
-	}
-
-	.picture-prom.svg {
-		width: 60px;
-		height: 60px;
-	}
-
-	.border-orange {
-		border: 4px solid #ff540a;
-		border-radius: 4px;
-		width: 100%;
-		height: 107%;
 	}
 }
 
@@ -382,7 +286,7 @@
 		margin: auto;
 		white-space: nowrap;
 		position: relative;
-		border-radius: 5px;
+		border-radius: 8px 8px 0px 0px;
 		background-color: black;
 	}
 
@@ -463,7 +367,7 @@
 /*-----CATEGORIES-----*/
 .main__content-categories {
 	width: 100%;
-	background: #949494;
+	background-color: #fff;
 
 	.dropdown-content-category_title {
 		width: 100%;
@@ -620,7 +524,7 @@
 	}
 
 	.nameProduct {
-		font-size: 0.9rem;
+		font-size: 0.8rem;
 	}
 
 	.form-qualification {
@@ -700,18 +604,22 @@
 		display: flex;
 		flex-wrap: wrap;
 		width: 85%;
-		height: 65vh;
+		/*height: 65vh;*/
 		max-height: 400px;
 		position: relative;
+		padding-bottom: revert;
 
 		.card-outline {
 			margin: 0px 35px;
 			width: 200px;
-			height: 97%;
+			/*height: 97%;*/
 
 			&:hover {
 				box-shadow: 0px 0px 8px 0px #554b4b69;
 			}
+		}
+		.cards {
+			padding-bottom: 20px;
 		}
 
 		.card {
@@ -721,8 +629,9 @@
 		}
 
 		.img-product {
-			width: 200px;
-			height: 280px;
+			width: 100%;
+			/*width: 200px; ¿por qué esta medida?*/
+			/*height: 280px; ¿por qué esta medida?*/
 		}
 
 		.product-info {
