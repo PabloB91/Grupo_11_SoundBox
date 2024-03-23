@@ -97,7 +97,7 @@ header {
 
 					.fa-regular,
 					.fa-solid {
-						color: #FFD4C2;
+						color: #fff;
 					}
 				}
 			}
@@ -577,7 +577,7 @@ footer {
 			font-size: 1.5rem;
 
 			&:hover {
-				color: #FFD4C2;
+				color: #fff;
 			}
 		}
 

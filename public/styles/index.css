@@ -170,6 +170,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		width: 100%;
+		padding: 7px;
 
 		p {
 			display: block;
