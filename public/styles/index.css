@@ -424,15 +424,22 @@
 		filter: brightness(0.5);
 	}
 
-	.div__footer-category {
+	.categories-button {
 		display: flex;
-		justify-content: end;
-		align-items: center;
-		height: 20px;
-		a {
-			color: #ff540a;
-			margin-right: 1.5%;
-			font-size: 0.7rem;
+		justify-content: center;
+		margin-top: 1em;
+		margin-bottom: 3em;
+		
+		button {
+			font-family: 'Montserrat';
+			font-weight: bold;
+			font-size: 10px;
+			color: white;
+			background-color: black;
+			padding: 1rem 2rem;
+			border-radius: 8px;
+			border-style: hidden;
+			cursor: pointer;
 		}
 	}
 }
@@ -748,6 +755,10 @@
 }
 
 @media screen and (min-width: 1200px) {
+	/*CATEGORIES*/
+	.main__content-categories {
+		background-color: #CAC7BA;
+	}
 	/*cards*/
 	.main__container-cards {
 		.card-outline {
