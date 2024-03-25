@@ -1,4 +1,4 @@
-    <%- include('../partials/head.ejs') %>
+<%- include('../partials/head.ejs') %>
     <link href="/styles/register.css" rel="stylesheet">
     
 
@@ -15,7 +15,7 @@
             <section class="main-login_section">
 
                 <div class="main-login_title">
-                    <h1>¡Comienza la buena vibra!</h1>
+                    <h1>¡Inicia la buena vibra!</h1>
                 </div>
                 <form action="/users/register" method="POST" class="main-login_form" enctype="multipart/form-data">
 
@@ -29,7 +29,6 @@
                                 <i class="fa-brands fa-google-plus-g"></i>
                                 <i class="fa-brands fa-square-facebook"></i>
                                 <i class="fa-brands fa-apple fa"></i>
-                                <i class="fa-brands fa-twitter"></i>
                         </div>
                         <% if (locals.errores) {  
 
@@ -38,6 +37,10 @@
                             <%  }); 
                         }%>
                         
+                        <div class="errores">
+                            <ul></ul>    
+                        </div>
+                        
                         <div class="fieldset names">
                             <div class="label">
                                 <label for="Nombres"></label>
@@ -45,7 +48,7 @@
                                 <div class="fa-onda fa-logo">
                                     <img src="/img/svg/simbolequalizer.svg" alt="">
                                 </div>
-                            <div class="input">                                 <!-- Condición para el manejo de errores en el input. Si el input es correcto se lo recupera con 'old' -->
+                            <div class="input">                              
                                 <input id="user-name" name="name" type="text" placeholder="Nombres" value="<%= locals.old && old.name ? old.name : '' %>">
                             </div>
                         </div>
@@ -78,8 +81,40 @@
                             
                             <select name="country" id="country" class="fieldset-input estado-producto">
                                 <option value="choose">Elegir país</option>
+                                <option value="Antigua y Barbuda">Antigua y Barbuda</option>
                                 <option value="Argentina">Argentina</option>
+                                <option value="Bahamas">Bahamas</option>
+                                <option value="Barbados">Barbados</option>
+                                <option value="Belice">Belice</option>
+                                <option value="Bolivia">Bolivia</option>
+                                <option value="Brasil">Brasil</option>
+                                <option value="Canada">Canadá</option>
+                                <option value="Chile">Chile</option>
                                 <option value="Colombia">Colombia</option>
+                                <option value="Costa Rica">Costa Rica</option>
+                                <option value="Cuba">Cuba</option>
+                                <option value="Dominicana">Dominicana</option>
+                                <option value="El Salvador">El Salvador</option>
+                                <option value="Estados Unidos">Estados Unidos</option>
+                                <option value="Granada">Granada</option>
+                                <option value="Guatemala">Guatemala</option>
+                                <option value="Guyana">Guyana</option>
+                                <option value="Haiti">Haití</option>
+                                <option value="Honduras">Honduras</option>
+                                <option value="Jamaica">Jamaica</option>
+                                <option value="Mexico">México</option>
+                                <option value="Nicaragua">Nicaragua</option>
+                                <option value="Panama">Panamá</option>
+                                <option value="Paraguay">Paraguay</option>
+                                <option value="Peru">Perú</option>
+                                <option value="Republica Dominicana">República Dominicana</option>
+                                <option value="San Cristóbal y Nieves">San Cristóbal y Nieves</option>
+                                <option value="San Vicente y las Granadinas">San Vicente y la Granadinas</option>
+                                <option value="Santa Lucia">Santa Lucía</option>
+                                <option value="Surinam">Surinam</option>
+                                <option value="Trinidad y Tobago">Trinidad y Tobago</option>
+                                <option value="Uruguay">Uruguay</option>
+                                <option value="Venezuela">Venezuela</option>
                             </select>
 
                         </div>
@@ -139,7 +174,7 @@
                             
                             <div class="text">
                                 
-                                <p>Ya eres parte de SoundBox?</p>
+                                <p>¿Ya eres parte de SoundBox?</p>
                                 
                                 <div class="a-crear-cuenta">
                                     <a href="/login">Ingresar</a>
@@ -165,6 +200,7 @@
             
         </main>
 
+        <script src="../scripts/forms.js"></script>
 <!-- =========================================================================================================== -->
         
         <!-- FOOTER / PIE DE PAGINA -->

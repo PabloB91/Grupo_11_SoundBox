@@ -20,7 +20,7 @@ const adminController = {
 			res.render("user/usersList.ejs", { full_user });
 		} catch (err) {
 			/* console.log(err); */
-			res.render("not-found");
+			res.render("errors/404.ejs");
 		}
 	},
 	allProducts: async (req, res) => {
@@ -48,7 +48,7 @@ const adminController = {
 			res.render("product/allTheProducts.ejs", { products });
 		} catch (err) {
 			/* console.log(err); */
-			res.render("not-found");
+			res.render("errors/404.ejs");
 		}
 	},
 };

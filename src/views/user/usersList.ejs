@@ -1,4 +1,3 @@
-
 <!-- -USER LIST- -->
 
 <%- include('../partials/head.ejs') %>
@@ -21,7 +20,7 @@
             <% full_user.users.forEach(user => { %>
                 <div class="user-card">
                     
-                    <a href="/admin/userProfile/<%= user.id%>">
+                    <a href="/admin/userProfile/<%= user.id%>" id="identificate-user">
 
                         <div class="a-user_card">
                             
@@ -36,12 +35,10 @@
                             <p>#<%= user.id%></p>
                         </div>
     
-                        <p>Nombres: <%= user.first_name %></p>
-                        <p>Apellidos: <%= user.last_name %></p>
-                        <p>Correo: <%= user.e_mail%></p>
-                        <p>País: <%= user.country.country%></p>  <!-- Acá habría que ver cómo poner que se vea el nombre del país -->
-                        <p>Fecha de registro: <%= user.registered_date%></p>
-                        <p>Compras hechas: 0</p>
+                        <p id="name">Nombres: <%= user.first_name %></p>
+                        <p id="last">Apellidos: <%= user.last_name %></p>
+                        <p id="email">Correo: <%= user.e_mail%></p>
+                          <!-- Acá habría que ver cómo poner que se vea el nombre del país -->
     
                             </div>
                         </div>
@@ -74,4 +71,3 @@
     <%- include('../partials/footer.ejs') %>
 
 <!-- =========================================================================================================== -->
-

@@ -271,18 +271,18 @@ label {
 
 	input {
 		border: none;
+		border-radius: 5px;
 		background: #ff540a;
 		color: #fff;
 		height: 30px;
 		width: 100px;
-
 		font-family: "Montserrat";
 		font-size: 14px;
 		font-weight: 400;
 
 		&:hover {
 			cursor: pointer;
-			background: #550c18;
+			background: black;
 		}
 	}
 }
@@ -368,7 +368,7 @@ label {
 		align-items: center;
 		justify-content: center;
 		width: 50%;
-		animation: normal 2s appear ease-in-out;
+		animation: normal 1s appear ease-in-out;
 	}
 
 	@keyframes appear {
@@ -423,6 +423,7 @@ label {
 
 		input {
 			border: none;
+			border-radius: 5px;
 			background: #ff540a;
 			color: #fff;
 			height: 30px;
@@ -434,7 +435,7 @@ label {
 
 			&:hover {
 				cursor: pointer;
-				background: #550c18;
+				background: black;
 			}
 		}
 	}

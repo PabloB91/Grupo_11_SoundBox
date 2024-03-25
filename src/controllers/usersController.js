@@ -170,7 +170,7 @@ const usersControllers = {
 			return res.render("user/userProfile.ejs", { user });
 		} catch (err) {
 			//--Hay que usar 'return' para evitar el error de '[ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client'
-			/* console.log(err); */ return res.render("not-found");
+			/* console.log(err); */ return res.render("errors/404.ejs");
 		}
 	},
 	// (PUT) Editar Usuario
@@ -197,8 +197,8 @@ const usersControllers = {
 
 			return res.redirect(req.params.id);
 		} catch (err) {
-			/* console.log(err); */ 
-			return res.render("not-found");
+			/* console.log(err); */
+			return res.render("errors/404.ejs");
 		}
 	},
 	// (DELETE) Borrar usuario
@@ -213,7 +213,7 @@ const usersControllers = {
 			/* console.log("Usuario borrado"); */
 			res.redirect("/admin/usersList");
 		} catch (err) {
-			/* console.log(err); */ res.render("not-found");
+			/* console.log(err); */ res.render("errors/404.ejs");
 		}
 	},
 	// (DELETE) Borrar sesión

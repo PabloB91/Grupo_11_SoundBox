@@ -65,7 +65,8 @@ h2 {
 h3 {
 	font-family: "Montserrat", sans-serif;
 	font-weight: 700;
-	font-size: 1.75rem;
+	font-size: 1.4rem;
+    padding-top: 1rem;
 }
 
 h4 {
@@ -98,4 +99,20 @@ a:visited,
 a:hover,
 a:active {
 	color: #000;
+}
+
+.T-color {
+	color: #000;
+}
+.orange-T-color {
+	color: #ff540a;
+}
+/* Properties */
+
+.property-TNotSelect {
+	/* para evitar que selexionen el texto */
+	-webkit-user-select: none; /* Safari */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* Internet Explorer */
+	user-select: none; /* Standard syntax */
 }

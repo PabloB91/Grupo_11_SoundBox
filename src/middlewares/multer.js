@@ -18,12 +18,18 @@ const storage = multer.diskStorage({
     }
 })
 
-const upload = multer({ storage })
+const upload = multer({ 
+    storage : storage, 
+    fileFilter: function(req, file, cb) {
+        const allowExtensions = ["png", "jpg", "jpeg", "gif", "webp"];
+        const fileExtensions = path.extname(file.originalname).toLowerCase().substring(1);
 
+        if(!allowExtensions.includes(fileExtensions)) {
+            req.fileValidationError = "La imagen debe estar en formato PNG, JPG, JPEG o WEBP"
+            return cb(null, false, new Error("La imagen debe estar en formato PNG, JPG, JPEG o WEBP"))
+        }
+
+        cb(null, true)
+    }
+})
 module.exports = upload;
-
-// 1. dest - указывает на папку куда будут
-
-// сохраняться загружаемые файлы. По умолчанию
-
-// это папка tmp, но мы можем задать свою

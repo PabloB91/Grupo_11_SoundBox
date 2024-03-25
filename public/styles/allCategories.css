@@ -1,0 +1,11 @@
+main {
+	display: flex;
+	align-items: center;
+}
+
+section {
+	a {
+		display: block;
+		height: 30px;
+	}
+}

@@ -25,6 +25,7 @@ header {
 		height: 38px;
 		border-radius: 50%;
 		overflow: hidden;
+
 		img {
 			width: 100%;
 			height: 100%;
@@ -46,6 +47,8 @@ header {
 
 		p {
 			font-size: 0.7rem;
+			text-align: center;
+			padding: 10px;
 			color: #fff;
 			width: 95%;
 		}
@@ -53,6 +56,7 @@ header {
 
 	.headerTop .top-navigation-bar {
 		width: 100%;
+		padding: 10px;
 
 		nav {
 			display: flex;
@@ -66,10 +70,6 @@ header {
 			justify-content: space-evenly;
 			/* flex-wrap: wrap;
 			 */
-		}
-
-		li {
-			margin-right: 5%;
 		}
 
 		.register-login {
@@ -93,6 +93,11 @@ header {
 
 					p {
 						color: #ff540a;
+					}
+
+					.fa-regular,
+					.fa-solid {
+						color: #fff;
 					}
 				}
 			}
@@ -134,7 +139,7 @@ header {
 			color: #ff540a;
 
 			&:hover {
-				color: #550c18;
+				color: white;
 			}
 		}
 
@@ -170,6 +175,10 @@ header {
 				color: #ff540a;
 				margin: 0px 4px;
 				font-size: 1rem;
+			}
+
+			.fa-regular:hover {
+				color: white;
 			}
 
 			.user-dropdown a {
@@ -217,7 +226,7 @@ header {
 			right: 0;
 			top: 0;
 			background: rgba(0, 0, 0, 0.5);
-			backdrop-filter: blur(2px);
+			backdrop-filter: blur(4px);
 			width: 100vw;
 			height: 100vh;
 			z-index: 999;
@@ -227,7 +236,7 @@ header {
 
 			.closeMenu {
 				font-size: 25px;
-				color: #ff540a;
+				color: white;
 				width: 50px;
 				height: 50px;
 				display: flex;
@@ -257,7 +266,7 @@ header {
 
 	.logoSbx {
 		width: 50px;
-		height: 65px;
+		/*height: 65px;*/
 		transition: 100ms;
 
 		.img-logoSBX {
@@ -317,20 +326,40 @@ header {
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		position: relative;
 
 		a {
-			font-size: 1.5rem;
+			font-size: 1rem;
 			border-radius: 5px;
-			background: #ff540a;
+			background: #E6E6E6;
 			display: flex;
 			justify-content: center;
 			align-items: center;
 			width: 30px;
 			height: 30px;
+			transition-duration: 0.4s;
+		}
+
+		a:hover {
+			background-color: #FF540A;
 		}
 
 		.fa-solid {
-			color: #fff;
+			color: #FF540A;
+			background-color: transparent;
+			border-radius: 5px;
+			width: 30px;
+			height: 30px;
+			position: absolute;
+			/*top: 0px;
+			left: 0px; pendiente organizar posicionamiento absoluto con respecto a contenedor madre div_btnSearch ¿por qué funciona en @media query 768 y aquí no?...*/
+			background-origin: padding-box;
+			transition-duration: 0.4s;
+		}
+
+		.fa-solid:hover {
+			color: white;
+			background-color: transparent;
 		}
 	}
 
@@ -419,6 +448,7 @@ footer {
 		}
 
 		.container__button:hover {
+
 			.aside-text,
 			#cart-text,
 			#fav-text {
@@ -430,7 +460,7 @@ footer {
 			position: fixed;
 			bottom: 45px;
 			right: 15px;
-			background-color: #ff540a;
+			background-color: #8F8F8F;
 			border-radius: 50%;
 			width: 50px;
 			height: 50px;
@@ -438,10 +468,17 @@ footer {
 			font-size: 18px;
 			justify-content: center;
 			align-items: center;
+			transition-duration: 0.8ms;
+			cursor: pointer;
 
 			i {
 				color: white;
 			}
+		}
+
+		#goTop:hover {
+			background-color: #FF540A;
+			cursor: pointer;
 		}
 	}
 
@@ -476,6 +513,10 @@ footer {
 			a {
 				font-size: 0.9em;
 				color: #fff;
+
+				&:hover {
+					color: #ff540a;
+				}
 			}
 
 			li {
@@ -492,8 +533,44 @@ footer {
 
 		.redes_img {
 			width: 20%;
+			position: relative;
 			height: 30px;
 			margin: 10px 0px 10px;
+
+			.fcbk-icon,
+			.fcbk-icon-hover,
+			.x-icon,
+			.x-icon-hover,
+			.ytb-icon,
+			.ytb-icon-hover,
+			.inst-icon, 
+			.inst-icon-hover {
+				position: absolute;
+			}
+
+			.fcbk-icon-hover,
+			.x-icon-hover,
+			.ytb-icon-hover,
+			.inst-icon-hover {
+				display: none;
+			}
+
+				&:hover {
+
+				.fcbk-icon,
+				.x-icon,
+				.ytb-icon,
+				.inst-icon {
+					display: none;
+				}
+
+				.fcbk-icon-hover,
+				.x-icon-hover,
+				.ytb-icon-hover,
+				.inst-icon-hover {
+					display: block;
+				}
+			}
 		}
 
 		img {
@@ -538,12 +615,20 @@ footer {
 			color: #ff540a;
 			margin: 0px 4px;
 			font-size: 1.5rem;
+
+			&:hover {
+				color: #fff;
+			}
 		}
 
 		.headerTop .comment {
 			width: 50%;
 			justify-content: start;
 			align-items: center;
+
+			p {
+				text-align: revert;
+			}
 		}
 
 		.headerTop .top-navigation-bar {
@@ -551,6 +636,10 @@ footer {
 
 			ul {
 				justify-content: end;
+			}
+
+			li {
+				margin-right: -2.5em; /* Medida negativa momentánea para justificar con respecto a lupa */
 			}
 
 			.li_register-login {
@@ -632,25 +721,44 @@ footer {
 			}
 
 			.li__btnSearch {
-				width: 100%;
 				height: auto;
 				display: flex;
 				align-items: center;
 				justify-content: center;
+				position: relative;
 
 				a {
-					font-size: 1.5rem;
+					font-size: 1rem;
 					border-radius: 5px;
-					background: #ff540a;
+					background: #E6E6E6;
 					display: flex;
 					justify-content: center;
 					align-items: center;
 					width: 30px;
 					height: 30px;
+					transition-duration: 0.4s;
+				}
+
+				a:hover {
+					background-color: #FF540A;
 				}
 
 				.fa-solid {
+					color: #FF540A;
+					background-color: transparent;
+					border-radius: 5px;
+					width: 30px;
+					height: 30px;
+					position: absolute;
+					top: 7px;
+					left: 7px;
+					background-origin: padding-box;
+					transition-duration: 0.4s;
+				}
+
+				.fa-solid:hover {
 					color: #fff;
+					background-color: transparent;
 				}
 			}
 

@@ -1,4 +1,4 @@
-/*===============================================================================================================*/
+/* =============================================================================================================== */
 header {
 	position: static;
 
@@ -138,6 +138,11 @@ header {
 	}
 }
 
+.country{
+	position: relative;
+	left: 10%;
+}
+
 .one-login label {
 	font-family: "Montserrat";
 	font-size: 14px;
@@ -174,6 +179,7 @@ header {
 	font-family: "Montserrat";
 	font-size: 14px;
 	font-weight: 400;
+	padding-top: 10px;
 }
 
 .a-crear-cuenta {
@@ -271,18 +277,18 @@ label {
 
 	input {
 		border: none;
+		border-radius: 5px;
 		background: #ff540a;
 		color: #fff;
 		height: 30px;
 		width: 100px;
-
 		font-family: "Montserrat";
 		font-size: 14px;
 		font-weight: 400;
 
 		&:hover {
 			cursor: pointer;
-			background: #550c18;
+			background: black;
 		}
 	}
 }
@@ -305,7 +311,12 @@ label {
     display: none;
 }
 
-/*----------------------------------------------------------------------------------------------------------------*/
+.errores{
+	color: crimson;
+	font-size: 12px;
+
+}
+
 /* MEDIA QUERIES */
 
 @media screen and (min-width: 768px) {
@@ -423,6 +434,7 @@ label {
 
 		input {
 			border: none;
+			border-radius: 5px;
 			background: #ff540a;
 			color: #fff;
 			height: 30px;
@@ -434,7 +446,7 @@ label {
 
 			&:hover {
 				cursor: pointer;
-				background: #550c18;
+				background: black;
 			}
 		}
 	}

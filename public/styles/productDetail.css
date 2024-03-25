@@ -197,7 +197,7 @@ a:hover {
 
 .border-div {
 	display: flex;
-    backdrop-filter: blur(17px);
+    backdrop-filter: blur(4px);
     background-color: #fe9b3e15;
     border: #ff540a solid 3px;
     padding: 5px;
