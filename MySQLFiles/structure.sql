@@ -40,14 +40,6 @@ CREATE TABLE `brand` (
   UNIQUE KEY `color_UNIQUE` (`brand_name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-CREATE TABLE `product_color` (
-  `id` INT AUTO_INCREMENT PRIMARY KEY,
-  `product_id` INT,
-  `color_id` INT,
-  CONSTRAINT `product_id` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`),
-  CONSTRAINT `color_id` FOREIGN KEY (`color_id`) REFERENCES `color` (`id`)
-);
-
 
 CREATE TABLE `product` (  
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -71,7 +63,13 @@ CREATE TABLE `product` (
   CONSTRAINT `state_id` FOREIGN KEY (`state_id`) REFERENCES `state` (`id`) 
 ) DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-
+CREATE TABLE `product_color` (
+  `id` INT AUTO_INCREMENT PRIMARY KEY,
+  `product_id` INT,
+  `color_id` INT,
+  CONSTRAINT `product_id` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`),
+  CONSTRAINT `color_id` FOREIGN KEY (`color_id`) REFERENCES `color` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 /*----SCRIPT DE USUARIOS----*/
 
