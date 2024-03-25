@@ -514,14 +514,11 @@ footer {
 			a {
 				font-size: 0.9em;
 				color: #fff;
-<<<<<<< HEAD
-=======
 				transition-duration: 0.4s;
 
 				&:hover {
 					color: #ff540a;
 				}
->>>>>>> 2ff8106 (Proceso optimización visual: se adicionó transition-duration para el efecto hover del navbar Footer)
 			}
 
 			li {
