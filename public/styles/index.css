@@ -440,6 +440,11 @@
 			border-radius: 8px;
 			border-style: hidden;
 			cursor: pointer;
+			transition-duration: 0.4s;
+
+			&:hover {
+				background-color: #ff540a;
+			}
 		}
 	}
 }
