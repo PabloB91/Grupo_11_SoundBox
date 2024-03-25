@@ -282,7 +282,7 @@ label {
 
 		&:hover {
 			cursor: pointer;
-			background: #550c18;
+			background: black;
 		}
 	}
 }
@@ -435,7 +435,7 @@ label {
 
 			&:hover {
 				cursor: pointer;
-				background: #550c18;
+				background: black;
 			}
 		}
 	}
