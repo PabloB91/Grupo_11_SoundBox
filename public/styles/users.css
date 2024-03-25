@@ -29,7 +29,7 @@ h3 {
 
 #profile-title {
     background-color: #fff;
-    width: 75%;
+    width: 85%;
     text-align: center;
     margin-top: 3vh;
     border-top-left-radius: 8px;
@@ -111,11 +111,11 @@ h3 {
     margin: 5px;
     padding: 1rem;
     justify-content: center;
-
+    
     .img-container {
-        width: 180px;
-        height: 180px;
-
+        width: 355px;
+        height: 355px;
+    
         img {
             object-fit: cover;
             border-radius: 50%;

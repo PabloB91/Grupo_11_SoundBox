@@ -380,21 +380,20 @@ label {
 		align-items: center;
 		justify-content: center;
 		width: 50%;
-        animation: normal 1s appear ease-in-out;
+        animation: normal 1.5s appear ease-in-out;
 	}
 
     @keyframes appear {
-        0%{opacity: 0;
-            left: 50%;
+        0%{
+			opacity: 0;
         }
 
-        50%{opacity: 0;
-            left: 25%;
+        50%{
+			opacity: 0;
         }
 
         100% {
             opacity: 1;
-            left: 15px;
         }
     }
 

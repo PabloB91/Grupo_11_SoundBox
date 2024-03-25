@@ -12,7 +12,13 @@ header
 }
 
 .title-Wmodal {
+    background: whitesmoke;
+    width: 100%;
+    border-bottom: 2px black solid;
+    border-radius: 0 0 50% 50%;
+    text-align: center;
     h2 {
+        text-shadow: #ff540a9c 0px 2px 0px;
         color: black;
         font-size: 2.5rem;
         padding: 1em;
@@ -20,6 +26,7 @@ header
 }
 
 form {
+    margin-top: 2rem;
     border-radius: 8px;
     overflow: hidden;
     border: 1px solid #ff540a;
@@ -106,6 +113,33 @@ input {
             width: 100%;
         }
     }
+
+
+    .nameProduct {
+        display: none;
+    }
+
+    .price:hover .nameProduct{
+        animation: .7s appearCartDescription ease-in;
+
+    }
+
+    @keyframe appearCartDescription {
+        0%{
+            display: flex;
+            height: 50%;
+        },
+        25%{
+            
+        },
+        50%{
+
+        }
+        100%{
+        }
+
+    }
+
     .product-info {
         padding: 5px;
         width: 100%;
@@ -132,6 +166,7 @@ input {
 
 @media (max-width: 425px) {
     .cards-container {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0;
     }
 }
