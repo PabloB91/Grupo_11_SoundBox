@@ -271,7 +271,6 @@
 }
 
 /* ------------------------------------------------------------------ */
-/* ------------------------------------------------------------------ */
 /*SECTION BRANDS*/
 
 .main__section-brands-slider {
@@ -491,7 +490,7 @@
 	.promo-container_cards {
 		display: flex;
 		flex-wrap: wrap;
-		border: 2px red solid;
+		/* border: 2px red solid; */
 		grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr));
 		grid-gap: 30px;
 	}
