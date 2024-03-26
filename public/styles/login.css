@@ -225,6 +225,7 @@ span#check {
 	background: none;
 	border: 1px solid #000;
 	border-radius: 3px;
+	font-size: 14px;
 	transition-duration: all 0.7s;
 
 	&:after {
@@ -297,13 +298,13 @@ label {
 	background-color: lightcoral;
 }
 
-.fa-brands{
+.fa-brands {
 	padding: 8px 16px;
 	font-size: 30px;
 }
 
 .right-menu-container {
-    display: none;
+	display: none;
 }
 
 /*----------------------------------------------------------------------------------------------------------------*/
@@ -338,19 +339,20 @@ label {
 		height: 390px;
 		z-index: 10;
 		left: 15px;
-        animation: normal loginForm 1s ease-in-out;
+		animation: normal loginForm 1s ease-in-out;
 	}
 
-    @keyframes loginForm {
-        0%{opacity: 1;
-            left: 50%;
-        }
+	@keyframes loginForm {
+		0% {
+			opacity: 1;
+			left: 50%;
+		}
 
-        100% {
-            opacity: 1;
-            left: 15px;
-        }
-    }
+		100% {
+			opacity: 1;
+			left: 15px;
+		}
+	}
 
 	.one-login .label {
 		width: 100%;
@@ -373,18 +375,18 @@ label {
 	}
 
 	@keyframes appear {
-        0%{
+		0% {
 			opacity: 0;
-        }
+		}
 
-        50%{
+		50% {
 			opacity: 0;
-        }
+		}
 
-        100% {
-            opacity: 1;
-        }
-    }
+		100% {
+			opacity: 1;
+		}
+	}
 
 	.two-login .paragraph {
 		flex-direction: column;

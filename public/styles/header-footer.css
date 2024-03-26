@@ -332,7 +332,7 @@ header {
 		a {
 			font-size: 1rem;
 			border-radius: 5px;
-			background: #E6E6E6;
+			background: #e6e6e6;
 			display: flex;
 			justify-content: center;
 			align-items: center;
@@ -342,18 +342,14 @@ header {
 		}
 
 		a:hover {
-			background-color: #FF540A;
+			background-color: #ff540a;
 		}
 
 		.fa-solid {
-			color: #FF540A;
+			color: #ff540a;
 			background-color: transparent;
 			border-radius: 5px;
-			width: 30px;
-			height: 30px;
 			position: absolute;
-			/*top: 0px;
-			left: 0px; pendiente organizar posicionamiento absoluto con respecto a contenedor madre div_btnSearch ¿por qué funciona en @media query 768 y aquí no?...*/
 			background-origin: padding-box;
 			transition-duration: 0.4s;
 		}
@@ -449,7 +445,6 @@ footer {
 		}
 
 		.container__button:hover {
-
 			.aside-text,
 			#cart-text,
 			#fav-text {
@@ -461,7 +456,7 @@ footer {
 			position: fixed;
 			bottom: 45px;
 			right: 15px;
-			background-color: #8F8F8F;
+			background-color: #8f8f8f;
 			border-radius: 50%;
 			width: 50px;
 			height: 50px;
@@ -478,7 +473,7 @@ footer {
 		}
 
 		#goTop:hover {
-			background-color: #FF540A;
+			background-color: #ff540a;
 			cursor: pointer;
 		}
 	}
@@ -545,7 +540,7 @@ footer {
 			.x-icon-hover,
 			.ytb-icon,
 			.ytb-icon-hover,
-			.inst-icon, 
+			.inst-icon,
 			.inst-icon-hover {
 				position: absolute;
 			}
@@ -557,8 +552,7 @@ footer {
 				display: none;
 			}
 
-				&:hover {
-
+			&:hover {
 				.fcbk-icon,
 				.x-icon,
 				.ytb-icon,
@@ -733,7 +727,7 @@ footer {
 				a {
 					font-size: 1rem;
 					border-radius: 5px;
-					background: #E6E6E6;
+					background: #e6e6e6;
 					display: flex;
 					justify-content: center;
 					align-items: center;
@@ -743,11 +737,11 @@ footer {
 				}
 
 				a:hover {
-					background-color: #FF540A;
+					background-color: #ff540a;
 				}
 
 				.fa-solid {
-					color: #FF540A;
+					color: #ff540a;
 					background-color: transparent;
 					border-radius: 5px;
 					width: 30px;
