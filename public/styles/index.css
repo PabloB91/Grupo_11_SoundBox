@@ -208,7 +208,7 @@
 			color: #ff540a;
 		}
 
-		label:hover~label {
+		label:hover ~ label {
 			color: #ff540a;
 		}
 
@@ -380,19 +380,12 @@
 		font-weight: 700;
 	}
 
-	.overflow__container {
-		overflow-x: scroll;
-		position: relative;
-
-		.div__items-categories--grid {
-			width: 150%;
-			padding: 15px 15px 30px 15px;
-			display: grid;
-			grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr));
-			grid-gap: 15px;
-		}
+	.div__items-categories--grid {
+		padding: 15px 15px 30px 15px;
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr));
+		grid-gap: 15px;
 	}
-
 
 	.categoria {
 		overflow: hidden;
@@ -432,16 +425,27 @@
 		filter: brightness(0.5);
 	}
 
-	.div__footer-category {
+	.categories-button {
 		display: flex;
-		justify-content: end;
-		align-items: center;
-		height: 20px;
+		justify-content: center;
+		margin-top: 1em;
+		margin-bottom: 3em;
 
-		a {
-			color: #ff540a;
-			margin-right: 1.5%;
-			font-size: 0.7rem;
+		button {
+			font-family: "Montserrat";
+			font-weight: bold;
+			font-size: 10px;
+			color: white;
+			background-color: black;
+			padding: 1rem 2rem;
+			border-radius: 8px;
+			border-style: hidden;
+			cursor: pointer;
+			transition-duration: 0.4s;
+
+			&:hover {
+				background-color: #ff540a;
+			}
 		}
 	}
 }
@@ -551,11 +555,11 @@
 			color: #ff540a;
 		}
 
-		label:hover~label {
+		label:hover ~ label {
 			color: #ff540a;
 		}
 
-		input[type="radio"]:checked~label {
+		input[type="radio"]:checked ~ label {
 			color: #ff540a;
 		}
 
@@ -580,7 +584,6 @@
 /*---MEDIA QUERIES---*/
 
 @media screen and (min-width: 576px) {
-
 	/*cards*/
 	.main__container-cards {
 		.card-outline {
@@ -734,6 +737,10 @@
 			grid-template-columns: repeat(3, 1fr);
 		}
 	}
+
+	.main__content-categories {
+		background-color: #cac7ba;
+	}
 }
 
 @media screen and (min-width: 1020px) {
@@ -764,7 +771,6 @@
 }
 
 @media screen and (min-width: 1200px) {
-
 	/*cards*/
 	.main__container-cards {
 		.card-outline {
