@@ -84,6 +84,23 @@ main {
 	}
 }
 
+@keyframes dropdownTituloAnimation {
+	0% {
+		opacity: 0;
+
+	}
+
+	25% {}
+
+	75% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
 .closeDropDown {
 	width: 60vh;
 	display: none;
@@ -94,7 +111,11 @@ main {
 	left: 0;
 	background: rgba(0, 0, 0, 0.305);
 	z-index: 1001;
-	border: 1px solid white;
+	border-radius: 18px;
+	border: 3px solid white;
+    text-shadow: #ff540a 0 2px 0px;
+	animation: 2s dropdownTituloAnimation ease;
+
 
 	span {
 		
@@ -236,7 +257,8 @@ input:checked+.slider:before {
 .titulo {
 	font-family: "Montserrat", sans-serif;
 	font-size: 26px;
-	text-shadow: 0px 2px 0px white;
+	text-shadow: 0px 1.7px 0px black;
+	color: white;
 
 }
 
@@ -261,6 +283,29 @@ input:checked+.slider:before {
 	overflow-y: scroll;
 	flex-direction: column;
 	backdrop-filter: blur(15px);
+	animation: 2s dropdownOrdenadorAnimation ease;
+}
+
+@keyframes dropdownOrdenadorAnimation {
+0% {
+	height: 0vh;
+	opacity: 0;
+	backdrop-filter: blur(0px);
+	top: 0;
+
+}
+25% {
+}
+50% {
+}
+75% {
+}
+100% {
+	top: 0;
+	backdrop-filter: blur(15px);
+	opacity: 1;
+	height: 90vh;
+}
 }
 
 
