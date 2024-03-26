@@ -315,9 +315,9 @@ a:active {
 /*      media queryes */
 /****************************/
 
-@media (min-width: 1240px) {
+@media (min-width: 1024px) {
 	.closeDropDown {
-		width: 54vh;
+		width: 53vh;
 	}
 }
 
