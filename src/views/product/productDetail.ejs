@@ -54,11 +54,6 @@
                         </div>
 
                         <div class="caja-segunda">
-                            <div class="caja-descripcion-producto">
-                                <p class="descripcion-producto">
-                                    <%= product.description %>
-                                </p>
-                            </div>
 
                             <div class="caja-colores-producto">
                                 <span class="texto-color">Color</span>
@@ -116,7 +111,7 @@
 
                     <div class="caja-links-extra-producto">
                         <div class="caja-categories-producto">
-                            <span class="links-categories-producto">Categoría:
+                            <span class="links-categories-producto">Categoría: <br>
                                 <a href="#">
                                     <%= product.category.category %>
                                 </a>
@@ -124,15 +119,18 @@
                         </div>
 
                         <div class="caja-tags-producto">
-                            <span class="links-tags-producto">Estado:
+                            <span class="links-tags-producto">Estado: <br>
                                 <a href="#">
                                     <%= product.state.state %>
+                                    <br>
+                                    <br>
                                 </a>
                             </span>
                         </div>
                     </div>
 
-                    <p><%= product.description %></p>
+                    <p>descripcion: <br>
+                        <%= product.description %></p>
                 </div>
 
         </section>

@@ -333,6 +333,7 @@
 		width: calc(200px * 14);
 		/* Para activar la animación infinita */
 	}
+
 	.a__content-image {
 		width: 200px;
 		height: 60px;
@@ -639,6 +640,7 @@
 				box-shadow: 0px 0px 8px 0px #554b4b69;
 			}
 		}
+
 		.cards {
 			padding-bottom: 20px;
 		}
@@ -684,10 +686,14 @@
 			opacity: 0.3;
 
 			/* para evitar que selexionen el texto */
-			-webkit-user-select: none; /* Safari */
-			-moz-user-select: none; /* Firefox */
-			-ms-user-select: none; /* Internet Explorer */
-			user-select: none; /* Standard syntax */
+			-webkit-user-select: none;
+			/* Safari */
+			-moz-user-select: none;
+			/* Firefox */
+			-ms-user-select: none;
+			/* Internet Explorer */
+			user-select: none;
+			/* Standard syntax */
 
 			&:hover {
 				opacity: 1;
@@ -728,6 +734,10 @@
 			grid-template-columns: repeat(3, 1fr);
 		}
 	}
+
+	.main__content-categories {
+		background-color: #cac7ba;
+	}
 }
 
 @media screen and (min-width: 1024px) {
@@ -748,6 +758,7 @@
 			display: none;
 		}
 	}
+
 	/*cards*/
 	.main__container-cards {
 		.card-outline {

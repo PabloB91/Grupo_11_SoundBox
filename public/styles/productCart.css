@@ -294,6 +294,7 @@ details p {
 }
 
 .titulo-desplegable-pago-total {
+    position: absolute;
     color: white;
     background: black;
     display: flex;
@@ -303,18 +304,14 @@ details p {
 }
 
 .descripcion-pago-total {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     justify-content: space-evenly;
     background-color: #ebebeb;
     max-height: 30rem;
-    width: 75%;
-    margin: auto;
-    margin-bottom: 2rem;
     border: 5px solid black;
-    border-radius: 18px;
-    box-shadow: 25px 25px 50px gray;
+    box-shadow: 25px 25px 50px #ffffff73;
     overflow-y: scroll;
 }
 

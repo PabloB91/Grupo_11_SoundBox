@@ -175,6 +175,7 @@ header {
 				color: #ff540a;
 				margin: 0px 4px;
 				font-size: 1rem;
+				transition-duration: 0.4s;
 			}
 
 			.fa-regular:hover {
@@ -513,6 +514,7 @@ footer {
 			a {
 				font-size: 0.9em;
 				color: #fff;
+				transition-duration: 0.4s;
 
 				&:hover {
 					color: #ff540a;
@@ -615,6 +617,7 @@ footer {
 			color: #ff540a;
 			margin: 0px 4px;
 			font-size: 1.5rem;
+			transition-duration: 0.4s;
 
 			&:hover {
 				color: #fff;

@@ -188,10 +188,6 @@
                             <a href="/products/productDetail/<%= product.id %>" class="card">
                                 <div class="face front">
                                     <img src="/img/products/<%= product.image %> " alt=<%=product.name %> >
-                                    <h3>
-                                        <%= product.name%>
-                                            <%= product.brand.brand_name %>
-                                    </h3>
                                 </div>
                                 <div class="face back">
                                     <div class="face-back-child">
@@ -213,18 +209,7 @@
                                         <p class="marca-descripcion">
                                             <%= product.color_name %>
                                         </p>
-                                        <p>Color/es:
-                                            <% product.Colores.forEach(color=> { %>
-                                                <%= color.color_name %>
-                                                    <% if (color !==product.Colores[product.Colores.length - 1]) { %>
-                                                        , <!-- Añade una coma si no es el último color -->
-                                                        <% } %>
-                                                            <% }) %>
-                                        </p>
                                         <p class="price">$<%= product.price %>
-                                        </p>
-                                        <p>
-                                            <%= product.discount %>%
                                         </p>
                                     </div>
                                 </div>

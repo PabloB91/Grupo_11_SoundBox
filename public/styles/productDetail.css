@@ -198,7 +198,7 @@ a:hover {
 .border-div {
 	display: flex;
     backdrop-filter: blur(4px);
-    background-color: #fe9b3e15;
+    background-color: rgba(211, 211, 211, 0.551);
     border: #ff540a solid 3px;
     padding: 5px;
     flex-direction: column;

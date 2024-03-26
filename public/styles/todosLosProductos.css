@@ -295,20 +295,6 @@ a:active {
 		grid-auto-rows: minmax(100px, auto);
 	}
 
-	.cardPlusIcon {
-		color: #008000ab;
-		transform: translateX(-5px);
-		text-align: center;
-		justify-content: center;
-		width: 100%;
-		font-size: 175px;
-		position: absolute;
-		z-index: 999;
-		/* luego quiero eliminar 
-        la foto del Sounbox y dejar 
-        solo el texto con el más arriba */
-	}
-
 	.card .face {
 		position: absolute;
 		width: 100%;
@@ -322,6 +308,8 @@ a:active {
 	.card .front {
 		transform: perspective(600px) rotateY(0deg);
 		box-shadow: 0 5px 10px black;
+		z-index: 1;
+
 	}
 
 	.card .front img {
@@ -345,36 +333,22 @@ a:active {
 		transform: perspective(600px) rotateY(180deg);
 		background-color: #ff540a;
 		padding: 15px;
-		color: black;
+		color: white;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
 		text-align: center;
 		border: 2px solid black;
-
-		.face-back-child {
-			height: 100%;
-			background-color: whitesmoke;
-
-		}
 	}
 
 	.card .back h3 {
 		font-size: 14px;
 		letter-spacing: 2px;
-		color: white;
-		background-color: rgba(0, 0, 0, 0.4);
-		border: 2px solid black;
-		border-radius: 8px;
-		padding: 8px;
-	}
-
-	.card .back p {
-		letter-spacing: 1px;
-	}
-
-	.marca-descripcion {
 		color: black;
+		background-color: rgb(255, 255, 255);
+		border: 2px solid black;
+		backdrop-filter: blur(4px);
+		padding: 8px;
 	}
 
 	.price {
@@ -388,6 +362,8 @@ a:active {
 
 	.card:hover {
 		transform: scale(1.1);
+
+
 	}
 
 	.card:hover .back {
