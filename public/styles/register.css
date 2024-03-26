@@ -285,6 +285,7 @@ label {
 		font-family: "Montserrat";
 		font-size: 14px;
 		font-weight: 400;
+		transition-duration: 0.4s;
 
 		&:hover {
 			cursor: pointer;
@@ -438,10 +439,10 @@ label {
 			color: #fff;
 			height: 30px;
 			width: 100px;
-
 			font-family: "Montserrat";
 			font-size: 14px;
 			font-weight: 400;
+			transition-duration: 0.4s;
 
 			&:hover {
 				cursor: pointer;

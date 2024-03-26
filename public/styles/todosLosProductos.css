@@ -1,4 +1,3 @@
-
 body {
 	font-family: "Montserrat", sans-serif;
 	font-weight: 400;
@@ -18,7 +17,7 @@ main {
 	background-color: rgba(0, 0, 0, 0.4);
 	color: #fff;
 	position: fixed;
-	top: 0px;
+	bottom: 0px;
 	left: 1px;
 	z-index: 999;
 	border-radius: 18px;
@@ -27,12 +26,88 @@ main {
 .titulo-ordenador {
 	font-size: 22px;
 	background-color: rgba(0, 0, 0, 0.4);
-    border-radius: 18px;
+	border-radius: 18px;
 	border: 2px solid white;
 	padding: 15px;
-	position: sticky;
+	position: absolute;
+	left: 0;
 	color: white;
+	text-align: center;
 
+}
+
+/* animacion de javascript*/
+
+@keyframes titleAnimation {
+	0% {
+		display: flex;
+		background-color: rgba(0, 0, 0, 0.4);
+		width: auto;
+		left: 0%;
+		opacity: 100%;
+	}
+
+	25% {
+		background-color: rgba(0, 0, 0, 0.4);
+		width: auto;
+
+		left: 25%;
+		opacity: 100%;
+	}
+
+	75% {
+		width: auto;
+
+		background-color: rgba(0, 0, 0, 0.4);
+		left: 75%;
+		opacity: 15%;
+	}
+
+	100% {
+		width: auto;
+		display: flex;
+		left: 100%;
+		opacity: 0;
+	}
+}
+
+@keyframes dropdownOrdenadorAnimation {
+	0% {}
+
+	25% {}
+
+	75% {}
+
+	100% {
+		height: 0;
+		opacity: 0;
+	}
+}
+
+.closeDropDown {
+	width: 60vh;
+	display: none;
+	justify-content: space-around;
+    align-items: center;
+	position: fixed;
+	top: 0vh;
+	left: 0;
+	background: rgba(0, 0, 0, 0.305);
+	z-index: 1001;
+	border: 1px solid white;
+
+	span {
+		
+		color: white;
+		font-size: 25px
+
+	}
+
+	p {
+		color: white;
+		padding: 5px;
+		font-size: 50px;
+	}
 }
 
 .filtro-presupuesto {
@@ -53,7 +128,7 @@ main {
 }
 
 #slide-item {
-	flex: auto 1 0 ;
+	flex: auto 1 0;
 }
 
 .primer-seccion {
@@ -63,54 +138,54 @@ main {
 
 
 .switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
+	position: relative;
+	display: inline-block;
+	width: 60px;
+	height: 34px;
 }
 
-.switch input { 
-  opacity: 0;
-  width: 0;
-  height: 0;
+.switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
 }
 
 .slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #ccc;
+	-webkit-transition: .4s;
+	transition: .4s;
 }
 
 .slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+	position: absolute;
+	content: "";
+	height: 26px;
+	width: 26px;
+	left: 4px;
+	bottom: 4px;
+	background-color: white;
+	-webkit-transition: .4s;
+	transition: .4s;
 }
 
-input:checked + .slider {
-  background-color: #2196F3;
+input:checked+.slider {
+	background-color: #2196F3;
 }
 
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
+input:focus+.slider {
+	box-shadow: 0 0 1px #2196F3;
 }
 
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
+input:checked+.slider:before {
+	-webkit-transform: translateX(26px);
+	-ms-transform: translateX(26px);
+	transform: translateX(26px);
 }
 
 .segunda-seccion {
@@ -141,25 +216,27 @@ input:checked + .slider:before {
 
 .seccion-general {
 	width: 100vw;
-	margin-top: 50px;
+	margin-top: 7.5rem;
 	padding-top: 20px;
 }
 
 .barra-titulo {
-    box-shadow: 18px 48px 100px -13px black;
-    position: absolute;
-    border-radius: 18px;
-    width: 85vw;
-    background-color: #ff540a;
-    height: 3.5rem;
-    display: flex;
-    justify-content: center;
+	box-shadow: inset 0px 0px 20px 0px whitesmoke;
+	position: fixed;
+	border-radius: 18px;
+	width: 85vw;
+	background-color: #ff540a;
+	height: 4rem;
+	display: flex;
+	justify-content: center;
 	align-items: center;
+	z-index: 999;
 }
 
 .titulo {
 	font-family: "Montserrat", sans-serif;
 	font-size: 26px;
+	text-shadow: 0px 2px 0px white;
 
 }
 
@@ -180,60 +257,12 @@ input:checked + .slider:before {
 
 .dropdown-ordenador {
 	display: none;
-}
-
-.ordenador:hover {
-	width: 35vw;
-	backdrop-filter: blur(25px);
-	transition: 0.5s;
-	display: flex;
+	flex-wrap: nowrap;
+	overflow-y: scroll;
 	flex-direction: column;
-	overflow: hidden;
+	backdrop-filter: blur(15px);
 }
 
-.ordenador:hover .dropdown-ordenador {
-	display: flex;
-    height: 100vh;
-    flex-wrap: nowrap;
-    overflow-y: scroll;
-    flex-direction: column;
-}
-
-
-.ordenador:hover .titulo-ordenador {
-	align-self: center;
-	width: 100px;
-	margin-top: 15px;
-	border: 0;
-	background-color: #ff540a;
-	position: sticky;
-	top: 0px;
-	font-size: 24px;
-	border: 2px solid black;
-	transition: all .7s ease;
-}
-
-@keyframes titleAnimation {
-	0% {
-		transform: translateX(-40%);
-		margin-left: 0;
-		opacity: 100%;
-	}
-
-	25% {
-		opacity: 50%;
-	}
-
-	50% {
-		transform: translateX(50%);
-		opacity: 25%;
-	}
-
-	100% {
-		transform: translateX(100%);
-		opacity: 0;
-	}
-}
 
 /*tageta add*/
 
@@ -286,6 +315,12 @@ a:active {
 /*      media queryes */
 /****************************/
 
+@media (min-width: 1024px) {
+	.closeDropDown {
+		width: 53vh;
+	}
+}
+
 @media (max-width: 4000px) {
 	.todasLasCards {
 		margin: auto;
@@ -308,8 +343,6 @@ a:active {
 	.card .front {
 		transform: perspective(600px) rotateY(0deg);
 		box-shadow: 0 5px 10px black;
-		z-index: 1;
-
 	}
 
 	.card .front img {
@@ -333,22 +366,36 @@ a:active {
 		transform: perspective(600px) rotateY(180deg);
 		background-color: #ff540a;
 		padding: 15px;
-		color: white;
+		color: black;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
 		text-align: center;
 		border: 2px solid black;
+
+		.face-back-child {
+			height: 100%;
+			background-color: whitesmoke;
+
+		}
 	}
 
 	.card .back h3 {
 		font-size: 14px;
 		letter-spacing: 2px;
-		color: black;
-		background-color: rgb(255, 255, 255);
+		color: white;
+		background-color: rgba(0, 0, 0, 0.4);
 		border: 2px solid black;
-		backdrop-filter: blur(4px);
+		border-radius: 8px;
 		padding: 8px;
+	}
+
+	.card .back p {
+		letter-spacing: 1px;
+	}
+
+	.marca-descripcion {
+		color: black;
 	}
 
 	.price {
@@ -362,8 +409,6 @@ a:active {
 
 	.card:hover {
 		transform: scale(1.1);
-
-
 	}
 
 	.card:hover .back {
@@ -382,6 +427,9 @@ a:active {
 }
 
 @media (max-width: 1024px) {
+
+
+
 	.todasLasCards {
 		margin: auto;
 		width: 90%;
@@ -404,18 +452,16 @@ a:active {
 
 @media (max-width: 645px) {
 
-	.ordenador:hover {
-		width: 100vw;
-
-	}
-
 	.todasLasCards {
-		width: 90%;
+		width: 100%;
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		grid-auto-rows: minmax(100px, auto);
 
 	}
+
+
+
 }
 
 @media (max-width: 425px) {
@@ -426,6 +472,7 @@ a:active {
 		grid-template-columns: repeat(1, 1fr);
 		grid-auto-rows: minmax(100px, auto);
 	}
+
 
 
 }
