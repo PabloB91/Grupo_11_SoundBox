@@ -756,15 +756,15 @@
 	}
 }
 
-/* @media screen and (min-width: 1200px) {
-	/*CATEGORIES
+@media screen and (min-width: 1200px) {
+	/*CATEGORIES*/
 	.main__content-categories {
 		background-color: #cac7ba;
 	}
-	/*cards
+	/*cards*/
 	.main__container-cards {
 		.card-outline {
 			width: 202px;
 		}
 	}
-} */
+}
