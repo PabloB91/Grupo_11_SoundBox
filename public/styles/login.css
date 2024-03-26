@@ -271,18 +271,18 @@ label {
 
 	input {
 		border: none;
+		border-radius: 5px;
 		background: #ff540a;
 		color: #fff;
 		height: 30px;
 		width: 100px;
-
 		font-family: "Montserrat";
 		font-size: 14px;
 		font-weight: 400;
 
 		&:hover {
 			cursor: pointer;
-			background: #550c18;
+			background: black;
 		}
 	}
 }
@@ -422,6 +422,7 @@ label {
 
 		input {
 			border: none;
+			border-radius: 5px;
 			background: #ff540a;
 			color: #fff;
 			height: 30px;
@@ -433,7 +434,7 @@ label {
 
 			&:hover {
 				cursor: pointer;
-				background: #550c18;
+				background: black;
 			}
 		}
 	}

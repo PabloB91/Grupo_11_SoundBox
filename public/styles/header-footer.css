@@ -535,8 +535,44 @@ footer {
 
 		.redes_img {
 			width: 20%;
+			position: relative;
 			height: 30px;
 			margin: 10px 0px 10px;
+
+			.fcbk-icon,
+			.fcbk-icon-hover,
+			.x-icon,
+			.x-icon-hover,
+			.ytb-icon,
+			.ytb-icon-hover,
+			.inst-icon, 
+			.inst-icon-hover {
+				position: absolute;
+			}
+
+			.fcbk-icon-hover,
+			.x-icon-hover,
+			.ytb-icon-hover,
+			.inst-icon-hover {
+				display: none;
+			}
+
+				&:hover {
+
+				.fcbk-icon,
+				.x-icon,
+				.ytb-icon,
+				.inst-icon {
+					display: none;
+				}
+
+				.fcbk-icon-hover,
+				.x-icon-hover,
+				.ytb-icon-hover,
+				.inst-icon-hover {
+					display: block;
+				}
+			}
 		}
 
 		img {
