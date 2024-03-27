@@ -20,6 +20,22 @@ const mainController = {
 				},
 				limit: 10,
 			});
+			const newsComments = await db.Productos.findAll({
+				where: {
+					price: {
+						[Op.gt]: 1500,
+					},
+				},
+				limit: 3,
+			});
+			const newsAdd = await db.Productos.findAll({
+				where: {
+					price: {
+						[Op.gt]: 1500,
+					},
+				},
+				limit: 3,
+			});
 			const offerts = await db.Productos.findAll({
 				where: {
 					discount: {
@@ -29,7 +45,7 @@ const mainController = {
 			});
 			const products = await db.Productos.findAll();
 
-			res.render("index", { topSeller, offerts, products });
+			res.render("index", { topSeller, offerts, products, newsComments,newsAdd });
 		} catch (err) {
 			/* console.log(err); */
 			res.render("errors/404.ejs");

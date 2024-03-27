@@ -177,7 +177,7 @@
                                                 </p>
                                             </div>
 
-                                            <form class="form-qualification qualification-stars">
+                                            <div class="div-qualification qualification-stars">
                                                 <p class="qualification">
 
                                                     <input id="radio5" type="radio" name="stars" value="1">
@@ -196,7 +196,7 @@
                                                     <label for="radio1"><i class="fa-solid fa-star"></i></label>
 
                                                 </p>
-                                            </form>
+                                            </div>
 
                                             <div class="price">
                                                 <p>$ <%= product.price %>
@@ -323,7 +323,7 @@
                                                 </p>
                                             </div>
 
-                                            <form class="form-qualification qualification-stars">
+                                            <div class="div-qualification qualification-stars">
                                                 <p class="qualification">
 
                                                     <input id="radio5" type="radio" name="stars" value="1">
@@ -342,7 +342,7 @@
                                                     <label for="radio1"><i class="fa-solid fa-star"></i></label>
 
                                                 </p>
-                                            </form>
+                                            </div>
 
                                             <div class="price">
                                                 <p>$ <%= product.price %>
@@ -403,7 +403,7 @@
                                                 </p>
                                             </div>
 
-                                            <form class="form-qualification qualification-stars">
+                                            <div class="div-qualification qualification-stars">
                                                 <p class="qualification">
 
                                                     <input id="radio5" type="radio" name="stars" value="1">
@@ -422,7 +422,7 @@
                                                     <label for="radio1"><i class="fa-solid fa-star"></i></label>
 
                                                 </p>
-                                            </form>
+                                            </div>
 
                                             <div class="price">
                                                 <p>$ <%= product.price %>
@@ -469,7 +469,7 @@
                             </div>
 
                             <div class="promo-container_cards" id="promo-container-one">
-                                <% topSeller.forEach(product=> { %>
+                                <% newsAdd.forEach(product=> { %>
                                     <div class="card">
 
                                         <picture class="img-product">
@@ -482,7 +482,7 @@
                                                 </p>
                                             </div>
 
-                                            <form class="form-qualification qualification-stars">
+                                            <div class="div-qualification qualification-stars">
                                                 <p class="qualification">
 
                                                     <input id="radio5" type="radio" name="stars" value="1">
@@ -501,7 +501,7 @@
                                                     <label for="radio1"><i class="fa-solid fa-star"></i></label>
 
                                                 </p>
-                                            </form>
+                                            </div>
 
                                             <div class="price">
                                                 <p>$ <%= product.price %>
@@ -522,14 +522,14 @@
 
                         </div>
 
-                        <div class="box box--magin-bottom" id="comments">
+                        <div class="box box--magin-bottom" id="comments">   
 
                             <div class="box__title">
                                 <h2>COMENTARIOS</h2><span class="bar-bottom"></span>
                             </div>
 
                             <div class="promo-container_cards" id="promo-container-two">
-                                <% topSeller.forEach(product=> { %>
+                                <% newsComments.forEach(product=> { %>
                                     <div class="card">
                                         <picture class="img-product">
                                             <img loading="lazy" src="/img/products/<%= product.image %>"
@@ -541,7 +541,7 @@
                                                 </p>
                                             </div>
 
-                                            <form class="form-qualification qualification-stars">
+                                            <div class="div-qualification qualification-stars">
                                                 <p class="qualification">
 
                                                     <input id="radio5" type="radio" name="stars" value="1">
@@ -560,7 +560,7 @@
                                                     <label for="radio1"><i class="fa-solid fa-star"></i></label>
 
                                                 </p>
-                                            </form>
+                                            </div>
 
                                             <div class="price">
                                                 <p>$ <%= product.price %>
@@ -588,7 +588,7 @@
                             </div>
 
                             <div class="promo-container_cards" id="promo-container-third">
-                                <% topSeller.forEach(product=> { %>
+                                <% newsAdd.forEach(product=> { %>
                                     <div class="card">
                                         <picture class="img-product">
                                             <img loading="lazy" src="/img/products/<%= product.image %>"
@@ -600,7 +600,7 @@
                                                 </p>
                                             </div>
 
-                                            <form class="form-qualification qualification-stars">
+                                            <div class="div-qualification qualification-stars">
                                                 <p class="qualification">
 
                                                     <input id="radio5" type="radio" name="stars" value="1">
@@ -619,7 +619,7 @@
                                                     <label for="radio1"><i class="fa-solid fa-star"></i></label>
 
                                                 </p>
-                                            </form>
+                                            </div>
 
                                             <div class="price">
                                                 <p>$ <%= product.price %>
