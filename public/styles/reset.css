@@ -118,6 +118,21 @@ a:active {
 	user-select: none; /* Standard syntax */
 }
 
+span.bar-top::before {
+	content: "";
+	display: block;
+	width: 90%;
+	height: 2px;
+	margin: 10px 0px 10px 0px;
+	background: #ff540a;
+}
+span.bar-right::after {
+	content: "";
+	width: 90%;
+	height: 2px;
+	margin: 10px 0px 10px 0px;
+	background: #ff540a;
+}
 span.bar-bottom::after {
 	content: "";
 	display: block;
@@ -126,20 +141,12 @@ span.bar-bottom::after {
 	margin: 10px 0px 10px 0px;
 	background: #ff540a;
 }
-
-.center-x {
-	display: flex;
-	justify-content: center;
-}
-
-.width-full{
-	width: 100%;
-
-}
-
-.center-y{
-	display: flex;
-	align-items: center;
+span.bar-left::before {
+	content: "";
+	width: 90%;
+	height: 2px;
+	margin: 10px 0px 10px 0px;
+	background: #ff540a;
 }
 
 .max-width-1555px {
@@ -150,8 +157,23 @@ span.bar-bottom::after {
 	align-items: center;
 }
 
-.flex-wrap {
+.width-full{
+	width: 100%;
+}
+
+.flex{
 	display: flex;
+}
+
+.center-x {
+	justify-content: center;
+}
+
+.center-y{
+	align-items: center;
+}
+
+.flex-wrap {
 	flex-wrap: wrap;
 }
 
