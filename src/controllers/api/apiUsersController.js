@@ -12,21 +12,22 @@ const apiUsersController = {
                 ]
                 
             });
-            let users= [];
+            let users= []; //--> Creamos un array vacío para agregar los usuarios con los atributos pedidos, de manera ordenada
             for (const user of usuarios) {
-                users.push({'Id': user.id,
+                users.push({
+                            'Id': user.id,
                             'name': user.first_name,
                             'email': user.e_mail,
-                            'detail': `/api/users/${user.id}`})
+                            'detail': `/api/users/${user.id}`
+                        })
             }
             return res.status(200).json({
                 meta: {
                     status: 200,
                     count: usuarios.length,
-                    id: usuarios.id, 
                     url: "/api/users"
                 },
-                users: users
+                users: users //--> La llave 'usuarios' pedida va a tener como valor el array de usuarios que creamos antes
             });
             
         } catch (error) {
