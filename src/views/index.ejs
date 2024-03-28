@@ -462,7 +462,7 @@
 
                     <div class="container-boxes">
 
-                        <div class="box box--magin-bottom" id="featured">
+                        <div class="box"  id="featured">
 
                             <div class="box__title">
                                 <h2>DESTACADOS</h2><span class="bar-bottom"></span>
@@ -478,7 +478,7 @@
                                         </picture>
                                         <article class="info-product">
                                             <div class="nameProduct">
-                                                <p class="nameProduct">Nombre del producto <%= product.name%>
+                                                <p class="nameProduct"><%= product.name%>
                                                 </p>
                                             </div>
 
@@ -504,14 +504,15 @@
                                             </div>
 
                                             <div class="price">
-                                                <p>$ <%= product.price %>
-                                                </p>
-                                                <p style="color: green;">
-                                                    <% if (product.discount==null ) {%>
+                                                <p>$<%= product.price %></p>
 
-                                                        <% } else {%>
-                                                            -<%= product.discount %> %
-                                                                <% } %>
+                                                <p class="discount">
+                                                    <% if (product.discount==null ) {%>
+    
+                                                    <% } else {%>
+                                                        -<%= product.discount %>%
+                                                    <% } %>
+    
                                                 </p>
                                             </div>
                                         </article>
@@ -522,7 +523,7 @@
 
                         </div>
 
-                        <div class="box box--magin-bottom" id="comments">   
+                        <div class="box" id="comments">   
 
                             <div class="box__title">
                                 <h2>COMENTARIOS</h2><span class="bar-bottom"></span>
@@ -537,7 +538,7 @@
                                         </picture>
                                         <article class="info-product">
                                             <div class="nameProduct">
-                                                <p class="nameProduct">Nombre del producto <%= product.name%>
+                                                <p class="nameProduct"><%= product.name%>
                                                 </p>
                                             </div>
 
@@ -563,14 +564,15 @@
                                             </div>
 
                                             <div class="price">
-                                                <p>$ <%= product.price %>
-                                                </p>
-                                                <p style="color: green;">
+                                                <p>$<%= product.price %></p>
+                                                
+                                                <p class="discount">
                                                     <% if (product.discount==null ) {%>
-
-                                                        <% } else {%>
-                                                            -<%= product.discount %> %
-                                                                <% } %>
+    
+                                                    <% } else {%>
+                                                        -<%= product.discount %>%
+                                                    <% } %>
+    
                                                 </p>
                                             </div>
                                         </article>
@@ -581,7 +583,7 @@
 
                         </div>
 
-                        <div class="box box--magin-bottom" id="news">
+                        <div class="box" id="news">
 
                             <div class="box__title">
                                 <h2>NOVEDADES</h2><span class="bar-bottom"></span>
@@ -596,7 +598,7 @@
                                         </picture>
                                         <article class="info-product">
                                             <div class="nameProduct">
-                                                <p class="nameProduct">Nombre del producto <%= product.name%>
+                                                <p class="nameProduct"><%= product.name%>
                                                 </p>
                                             </div>
 
@@ -622,14 +624,15 @@
                                             </div>
 
                                             <div class="price">
-                                                <p>$ <%= product.price %>
-                                                </p>
-                                                <p style="color: green;">
+                                                <p>$<%= product.price %></p>
+                                                
+                                                <p class="discount">
                                                     <% if (product.discount==null ) {%>
-
-                                                        <% } else {%>
-                                                            - <%= product.discount %> %
-                                                                <% } %>
+    
+                                                    <% } else {%>
+                                                        -<%= product.discount %>%
+                                                    <% } %>
+    
                                                 </p>
                                             </div>
                                         </article>
@@ -640,9 +643,9 @@
 
                         </div>
 
-                        <article class="box box--magin-bottom">
+                        <article class="box">
 
-                            <picture>
+                            <picture class="promo-container__box-picture">
                                 <img loading="lazy" src="img/banners/banner_promo.jpg"
                                     alt="soundBox promocionesSoundbox SoundboxPromotion">
                             </picture>
