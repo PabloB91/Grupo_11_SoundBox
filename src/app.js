@@ -10,6 +10,12 @@ const session = require("express-session");
 const cookieParser = require("cookie-parser"); //--> Requerimos el módulo 'cookieParser' para manejar las cookies.
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
 
+
+//************************************* API *************************************\\
+//---Estas rutas deben estar antes de los middlewares para el correcto funcionamiento
+const apiUsersRoutes= require('./routes/api/apiUsersRouter')
+app.use(apiUsersRoutes)
+
 //************************************* Middlewares *************************************\\
 app.use(express.static("public")); // para usar los archivos estaticos de la carpeta public
 
@@ -31,6 +37,7 @@ app.use(
 		saveUninitialized: false,
 	})
 );
+
 app.use(remindMiddleware); //--> Es imprescindible el orden de estos middleware, porque tienen un orden de ejecución.
 app.use(userLoggedMiddleware);
 
