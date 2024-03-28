@@ -3,9 +3,9 @@
 
     <%- include('./partials/header.ejs') %>
 
-        <main class="main">
+        <main class="main center-x width-full">
 
-            <div class="main__div--max-width">
+            <div class="max-width-1555px">
 
                 <section id="index-slider"
                     class="main__slider property-TNotSelect main__section--bgColor mnw-768px--w-85">
@@ -233,7 +233,7 @@
                 </section>
 
                 <section id="brands-prom"
-                    class="main__section-brands-prom property-TNotSelect main__section--flex main__section--margin-bottom main__section--bgColor mnw-768px--w-85">
+                    class="main__section-brands-prom property-TNotSelect flex-wrap main__section--margin-bottom main__section--bgColor mnw-768px--w-85">
 
                     <section class="main__section-brands-slider ">
                         <div class="div__brands-box">
@@ -462,7 +462,7 @@
 
                     <div class="container-boxes">
 
-                        <div class="box"  id="featured">
+                        <div class="box" id="featured">
 
                             <div class="box__title">
                                 <h2>DESTACADOS</h2><span class="bar-bottom"></span>
@@ -478,7 +478,8 @@
                                         </picture>
                                         <article class="info-product">
                                             <div class="nameProduct">
-                                                <p class="nameProduct"><%= product.name%>
+                                                <p class="nameProduct">
+                                                    <%= product.name%>
                                                 </p>
                                             </div>
 
@@ -504,15 +505,16 @@
                                             </div>
 
                                             <div class="price">
-                                                <p>$<%= product.price %></p>
+                                                <p>$<%= product.price %>
+                                                </p>
 
                                                 <p class="discount">
                                                     <% if (product.discount==null ) {%>
-    
-                                                    <% } else {%>
-                                                        -<%= product.discount %>%
-                                                    <% } %>
-    
+
+                                                        <% } else {%>
+                                                            -<%= product.discount %>%
+                                                                <% } %>
+
                                                 </p>
                                             </div>
                                         </article>
@@ -523,7 +525,7 @@
 
                         </div>
 
-                        <div class="box" id="comments">   
+                        <div class="box" id="comments">
 
                             <div class="box__title">
                                 <h2>COMENTARIOS</h2><span class="bar-bottom"></span>
@@ -538,7 +540,8 @@
                                         </picture>
                                         <article class="info-product">
                                             <div class="nameProduct">
-                                                <p class="nameProduct"><%= product.name%>
+                                                <p class="nameProduct">
+                                                    <%= product.name%>
                                                 </p>
                                             </div>
 
@@ -564,15 +567,16 @@
                                             </div>
 
                                             <div class="price">
-                                                <p>$<%= product.price %></p>
-                                                
+                                                <p>$<%= product.price %>
+                                                </p>
+
                                                 <p class="discount">
                                                     <% if (product.discount==null ) {%>
-    
-                                                    <% } else {%>
-                                                        -<%= product.discount %>%
-                                                    <% } %>
-    
+
+                                                        <% } else {%>
+                                                            -<%= product.discount %>%
+                                                                <% } %>
+
                                                 </p>
                                             </div>
                                         </article>
@@ -598,7 +602,8 @@
                                         </picture>
                                         <article class="info-product">
                                             <div class="nameProduct">
-                                                <p class="nameProduct"><%= product.name%>
+                                                <p class="nameProduct">
+                                                    <%= product.name%>
                                                 </p>
                                             </div>
 
@@ -624,15 +629,16 @@
                                             </div>
 
                                             <div class="price">
-                                                <p>$<%= product.price %></p>
-                                                
+                                                <p>$<%= product.price %>
+                                                </p>
+
                                                 <p class="discount">
                                                     <% if (product.discount==null ) {%>
-    
-                                                    <% } else {%>
-                                                        -<%= product.discount %>%
-                                                    <% } %>
-    
+
+                                                        <% } else {%>
+                                                            -<%= product.discount %>%
+                                                                <% } %>
+
                                                 </p>
                                             </div>
                                         </article>

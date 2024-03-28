@@ -1,24 +1,4 @@
 /* ------------------------------------------------------------------ */
-.main {
-	display: flex;
-	justify-content: center;
-	width: 100%;
-}
-
-.main__div--max-width {
-	max-width: 1555px;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
-}
-
-.main__section--flex {
-	display: flex;
-	flex-wrap: wrap;
-}
-
-/* ------------------------------------------------------------------ */
 /*Slider*/
 .main__slider {
 	border-radius: 0px;
@@ -157,8 +137,6 @@
 		overflow: hidden;
 		border-bottom: 1px solid #7a7c7d;
 		width: 100%;
-		/*height: 125px; ¿por qué estas medidas?*/
-		/* 	height: 280px; */
 
 		img {
 			width: 100%;
