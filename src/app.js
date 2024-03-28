@@ -13,9 +13,11 @@ const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
 
 //************************************* API *************************************\\
 //---Estas rutas deben estar antes de los middlewares para el correcto funcionamiento
-const apiUsersRoutes= require('./routes/api/apiUsersRouter')
-app.use(apiUsersRoutes)
+const apiUsersRouter= require('./routes/api/apiUsersRouter')
+app.use(apiUsersRouter)
 
+const apiProductsRouter= require('./routes/api/apiProductsRouter')
+app.use(apiProductsRouter)
 //************************************* Middlewares *************************************\\
 app.use(express.static("public")); // para usar los archivos estaticos de la carpeta public
 
