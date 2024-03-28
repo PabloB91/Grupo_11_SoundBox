@@ -73,7 +73,6 @@
 		margin: 0px 15%;
 	}
 }
-
 /* ------------------------------------------------------------------ */
 /*cards*/
 .main__container-cards {
@@ -203,7 +202,6 @@
 		display: none;
 	}
 }
-
 /* ------------------------------------------------------------------ */
 /*SERVICES BANNERS SECTION*/
 .main__section-cards-prom {
@@ -237,10 +235,8 @@
 		}
 	}
 }
-
 /* ------------------------------------------------------------------ */
 /*SECTION BRANDS*/
-
 .main__section-brands-slider {
 	overflow: hidden;
 	width: 100%;
@@ -317,9 +313,7 @@
 		}
 	}
 }
-
 /*----- Animación en el eje X (horizontal) -----*/
-
 @keyframes slide {
 	from {
 		-webkit-transdiv: translateX(0);
@@ -331,7 +325,6 @@
 		transform: translateX(calc(-200px * 7));
 	}
 }
-
 /* ------------------------------------------------------------------ */
 /*-----CATEGORIES-----*/
 .main__content-categories {
@@ -416,10 +409,8 @@
 		}
 	}
 }
-
 /* ------------------------------------------------------------------ */
 /*PROM CONTAINER AND COMMENTS*/
-
 .main__promo-container {
 	border-radius: 8px;
 	background: #fff;
@@ -547,10 +538,8 @@
 		}
 	}
 }
-
 /* ------------------------------------------------------------------ */
 /*---MEDIA QUERIES---*/
-
 /* @media screen and (min-width: 576px) {
 	/*cards*
 	.main__container-cards {
@@ -707,7 +696,6 @@
 		background-color: #cac7ba;
 	}
 }
-
 @media screen and (min-width: 1024px) {
 	.cards-prom {
 		.center_cards-prom {
@@ -743,7 +731,6 @@
 		}
 	} */
 }
-
 @media screen and (min-width: 1200px) {
 	/*CATEGORIES*/
 	.main__content-categories {
